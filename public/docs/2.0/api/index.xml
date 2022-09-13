@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on Eclipse Hono&amp;trade; Vers.: 2.0</title>
+    <link>https://www.eclipse.org/hono/docs/2.0/api/</link>
+    <description>Recent content in API on Eclipse Hono&amp;trade; Vers.: 2.0</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/2.0/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Telemetry API Specification for Kafka</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/telemetry-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/telemetry-kafka/</guid>
+      <description>The Telemetry API is used by Protocol Adapters to send telemetry data downstream. Business Applications and other consumers use the API to receive data published by devices belonging to a particular tenant.
+See Kafka-based APIs for fundamental information about Hono&amp;rsquo;s Kafka-based APIs. The statements there apply to this specification.
+Southbound Operations The following operation can be used by Protocol Adapters to send telemetry data received from devices to downstream consumers like Business Applications.</description>
+    </item>
+    <item>
+      <title>Event API Specification for Kafka</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/event-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/event-kafka/</guid>
+      <description>The Event API is used by Protocol Adapters to send event messages downstream. Business Applications and other consumers use the API to receive messages published by devices belonging to a particular tenant.
+See Kafka-based APIs for fundamental information about Hono&amp;rsquo;s Kafka-based APIs. The statements there apply to this specification.
+Southbound Operations The following operation can be used by Protocol Adapters to send event messages received from devices to downstream consumers like Business Applications.</description>
+    </item>
+    <item>
+      <title>Command &amp; Control API Specification for Kafka</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/command-and-control-kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/command-and-control-kafka/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Command &amp;amp; Control&lt;/em&gt; API of Eclipse Hono™ is used by &lt;em&gt;Business Applications&lt;/em&gt; to send commands to connected
+devices.&lt;/p&gt;
+&lt;p&gt;Commands can be used to trigger actions on devices. Examples include updating a configuration property, installing a
+software component or switching the state of an actuator.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kafka-based APIs</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/kafka-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/kafka-api/</guid>
+      <description>The Kafka-based APIs of Eclipse Hono™ provide an alternative to the existing APIs based on AMQP 1.0. With these APIs, clients publish data to as well as consume data from an Apache Kafka® cluster instead of using an AMQP messaging network.
+Kafka-based Messaging Using Kafka instead of AMQP comes with slightly different behavior. Kafka provides a Publish/Subscribe messaging style. Every message is sent by a producer to a topic in a Kafka cluster, where it will be persisted by (multiple) brokers.</description>
+    </item>
+    <item>
+      <title>Telemetry API Specification for AMQP 1.0</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/telemetry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/telemetry/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Telemetry&lt;/em&gt; API is used by &lt;em&gt;Protocol Adapters&lt;/em&gt; to send telemetry data downstream. &lt;em&gt;Business Applications&lt;/em&gt; and other
+consumers use the API to receive data published by devices belonging to a particular tenant.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Event API Specification for AMQP 1.0</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/event/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/event/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Event&lt;/em&gt; API is used by &lt;em&gt;Protocol Adapters&lt;/em&gt; to send event messages downstream.
+&lt;em&gt;Business Applications&lt;/em&gt; and other consumers use the API to receive messages published by devices belonging to a
+particular tenant.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Command &amp; Control API Specification for AMQP 1.0</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/command-and-control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/command-and-control/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Command &amp;amp; Control&lt;/em&gt; API of Eclipse Hono™ is used by &lt;em&gt;Business Applications&lt;/em&gt; to send commands to connected
+devices.&lt;/p&gt;
+&lt;p&gt;Commands can be used to trigger actions on devices. Examples include updating a configuration property, installing a
+software component or switching the state of an actuator.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tenant API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/tenant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/tenant/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Tenant API&lt;/em&gt; is used by Hono&amp;rsquo;s protocol adapters to retrieve information that affects all devices belonging to a particular tenant.
+A tenant is a logical entity, which groups together a set of devices. The information registered for a tenant is used for example to
+determine if devices belonging to the tenant are allowed to connect to a certain protocol adapter or if devices are required to authenticate.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Command Router API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/command-router/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/command-router/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Protocol Adapters&lt;/em&gt; use the &lt;em&gt;Command Router API&lt;/em&gt; to supply information with which a Command Router service component can route command &amp;amp; control messages to the protocol adapters that the target devices are connected to.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Device Registration API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/device-registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/device-registration/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Device Registration API&lt;/em&gt; is used by Hono&amp;rsquo;s protocol adapters to get information about devices connecting to the adapters.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Credentials API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/credentials/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/credentials/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Credentials API&lt;/em&gt; is used by &lt;em&gt;Protocol Adapters&lt;/em&gt; to retrieve credentials used to authenticate &lt;em&gt;Devices&lt;/em&gt; connecting to the adapter. In particular, the API supports to look up &lt;em&gt;shared secrets&lt;/em&gt; which are often used by IoT devices by means of &lt;em&gt;username/password&lt;/em&gt; based authentication schemes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Authentication API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/authentication/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Authentication API&lt;/em&gt; is used to retrieve a &lt;em&gt;token&lt;/em&gt; asserting a subject&amp;rsquo;s identity and granted authorities.
+Other service implementations use such a token to make authorization decisions on a client&amp;rsquo;s request to read or
+write from/to a resource or to invoke a certain operation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Device Registry Management API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/management/</guid>
+      <description> </description>
+    </item>
+    <item>
+      <title>Metrics</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/metrics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/metrics/</guid>
+      <description>&lt;p&gt;Eclipse Hono™&amp;rsquo;s components report several metrics which may be used to gain some insight
+into the running system. For instance, the HTTP adapter reports the number of successfully
+processed telemetry messages. Some of these metrics are considered part of Hono&amp;rsquo;s external
+interface. This section describes the semantics and format of the metrics, how they can be retrieved
+and how to interpret actual values.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Device Connection API Specification</title>
+      <link>https://www.eclipse.org/hono/docs/2.0/api/device-connection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.0/api/device-connection/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Device Connection API&lt;/em&gt; is used by &lt;em&gt;Protocol Adapters&lt;/em&gt; to set and retrieve information about the connections from devices or gateways to the protocol adapters.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

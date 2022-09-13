@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="1.1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Building from Source :: Eclipse Hono&trade; Vers.: 1.1</title>
+    <link rel="icon" href="/images/favicon.ico?1663048713" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048713" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048713" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048713" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048713"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.1/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048713"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Building from Source :: Eclipse Hono&amp;trade; Vers.: 1.1">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Building from Source :: Eclipse Hono&amp;trade; Vers.: 1.1" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.1/dev-guide/building_hono//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.1/dev-guide/building_hono/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.1</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/dev-guide/building_hono.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.1/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.1/dev-guide/"><span itemprop="name">Developer Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.1/dev-guide/building_hono/" aria-disabled="true"><span itemprop="name">Building from Source</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites-for-building-hono">Prerequisites for building Hono</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#getting-the-hono-source-code">Getting the Hono Source Code</a></li>
+    <li><a href="#starting-the-hono-build-process">Starting the Hono Build Process</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Building from Source</h1>
+<p>Hono can be deployed using the pre-built Docker images available from our <a href="https://hub.docker.com/u/eclipse/">Docker Hub repositories</a>. However, customizing and/or extending Hono&rsquo;s functionality requires building the images from source code.</p>
+<p>This page provides step by step instructions for getting the source code and building the Hono&rsquo;s Docker images from it.</p>
+<h2 id="prerequisites-for-building-hono">Prerequisites for building Hono</h2>
+<h4 id="docker">Docker</h4>
+<p>Creating Hono&rsquo;s container images using the Hono build process requires a <a href="http://www.docker.com">Docker</a> daemon running either locally or on another host you have access to. Please follow the instructions on the <a href="http://www.docker.com">Docker web site</a> to install Docker on your platform.</p>
+<h4 id="java">Java</h4>
+<p>Hono is written in Java and therefore requires a Java Development Kit (JDK) version 11 or higher installed on your computer. Please follow the JDK vendor&rsquo;s instructions for installing Java on your operating system.</p>
+<h4 id="maven">Maven</h4>
+<p>Hono&rsquo;s build process is based on <a href="https://maven.apache.org">Apache Maven</a>. You need at least Maven 3.5 in order to build Hono.
+Please follow the <a href="https://maven.apache.org/">installation instructions on the Maven home page</a>.</p>
+<h4 id="git">Git</h4>
+<p>A Git client is required if you want to contribute changes/improvements to the Hono project. It is not necessary for simply building Hono locally.
+Please refer to the <a href="https://git-scm.com/downloads">Git Downloads page</a> for installation instructions.</p>
+<h2 id="getting-the-hono-source-code">Getting the Hono Source Code</h2>
+<p>Either</p>
+<ul>
+<li>download the latest <a href="https://github.com/eclipse/hono/releases">release archive</a> and extract the archive to a local folder or</li>
+<li>clone the Hono source code repository from GitHub:
+<pre tabindex="0"><code>git clone https://github.com/eclipse/hono.git
+</code></pre>This will create a <code>hono</code> folder in the current working directory and clone the whole repository into that folder.</li>
+</ul>
+<h2 id="starting-the-hono-build-process">Starting the Hono Build Process</h2>
+<p>Run the following from the source folder:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in the &#34;hono&#34; folder containing the source code</span>
+</span></span><span style="display:flex;"><span>mvn clean install -Ddocker.host<span style="color:#f92672">=</span>tcp://<span style="color:#e6db74">${</span>host<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>port<span style="color:#e6db74">}</span> -Pbuild-docker-image,metrics-prometheus
+</span></span></code></pre></div><p>with <code>${host}</code> and <code>${port}</code> reflecting the name/IP address and port of the host where Docker is running on. This will build all libraries, Docker images and example code. If you are running on Linux and Docker is installed locally or you have set the <code>DOCKER_HOST</code> environment variable, you can omit the <code>-Ddocker.host</code> property definition.</p>
+<p>If you plan to build the Docker images more frequently, e.g. because you want to extend or improve the Hono code, then you should define the <code>docker.host</code> property in your Maven <code>settings.xml</code> file containing the very same value as you would use on the command line as indicated above. The file is usually located in the <code>.m2</code> folder in your user&rsquo;s home directory. This way you can simply do a <code>mvn clean install</code> later on and the Docker images will be built automatically as well because the <code>build-docker-image</code> profile is activated automatically if the Maven property <code>docker.host</code> is set.</p>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Be patient</h4>
+    <div>The first build might take several minutes because Docker will need to download all the base images that Hono is relying on. However, most of these will be cached by Docker so that subsequent builds will be running much faster.</div>
+</div>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048713"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048713"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048713"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048713"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048713"></script>
+        <script src="/hono/docs/js/search.js?1663048713"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.1/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.1/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.1/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.1/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.1/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.1/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.1/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.1/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.1/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.1/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.1/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.1/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.1/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.1/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.1/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.1/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.1/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/" title="Developer Guide" class="dd-item parent"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle" checked/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.1/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/building_hono/" title="Building from Source" class="dd-item active"><a href="/hono/docs/1.1/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.1/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.1/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.1/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.1/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.1/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.1/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.1/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.1/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.1/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.1/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.1/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.1/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.1/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.1/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.1/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.1/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.1/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.1/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.1/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.1/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.1/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.1/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.1/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.1/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.1/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/dev-guide/building_hono/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/dev-guide/building_hono/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/dev-guide/building_hono/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/dev-guide/building_hono/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/dev-guide/building_hono/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/dev-guide/building_hono/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/dev-guide/building_hono/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/dev-guide/building_hono/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/dev-guide/building_hono/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/dev-guide/building_hono/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/dev-guide/building_hono/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/dev-guide/building_hono/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/dev-guide/building_hono/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/dev-guide/building_hono/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/dev-guide/building_hono/" selected>1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/dev-guide/building_hono/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/dev-guide/building_hono/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048713"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048713"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048713"></script>
+    <script src="/hono/docs/js/theme.js?1663048713"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

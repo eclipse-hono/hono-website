@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="1.8">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>CoAP Adapter :: Eclipse Hono&trade; Vers.: 1.8</title>
+    <link rel="icon" href="/images/favicon.ico?1663048684" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048684" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048684" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048684" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048684"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.8/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048684"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="CoAP Adapter :: Eclipse Hono&amp;trade; Vers.: 1.8">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="CoAP Adapter :: Eclipse Hono&amp;trade; Vers.: 1.8" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.8/user-guide/coap-adapter//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.8/user-guide/coap-adapter/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.8</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/user-guide/coap-adapter.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.8/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.8/user-guide/"><span itemprop="name">User Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.8/user-guide/coap-adapter/" aria-disabled="true"><span itemprop="name">CoAP Adapter</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#device-authentication">Device Authentication</a>
+      <ul>
+        <li><a href="#psk">PSK</a></li>
+        <li><a href="#x509">X.509</a></li>
+      </ul>
+    </li>
+    <li><a href="#message-limits">Message Limits</a></li>
+    <li><a href="#coap-content-format-codes">CoAP Content Format Codes</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</a></li>
+    <li><a href="#publish-an-event-authenticated-device">Publish an Event (authenticated Device)</a></li>
+    <li><a href="#publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</a></li>
+    <li><a href="#publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</a></li>
+    <li><a href="#command--control">Command &amp; Control</a>
+      <ul>
+        <li><a href="#commands-handled-by-gateways">Commands handled by gateways</a></li>
+        <li><a href="#sending-a-response-to-a-command-authenticated-device">Sending a Response to a Command (authenticated Device)</a></li>
+        <li><a href="#sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</a></li>
+        <li><a href="#sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</a></li>
+      </ul>
+    </li>
+    <li><a href="#downstream-meta-data">Downstream Meta Data</a>
+      <ul>
+        <li><a href="#event-message-time-to-live">Event Message Time-to-live</a></li>
+      </ul>
+    </li>
+    <li><a href="#tenant-specific-configuration">Tenant specific Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>CoAP Adapter</h1>
+<p>The CoAP protocol adapter exposes <a href="https://tools.ietf.org/html/rfc7252">CoAP</a> based endpoints for Eclipse Hono™&rsquo;s south bound Telemetry, Event and Command &amp; Control APIs.</p>
+<h2 id="device-authentication">Device Authentication</h2>
+<p>The CoAP adapter by default requires clients (devices or gateway components) to authenticate during connection establishment.
+The adapter (currently) supports the use of pre-shared keys (PSK) and X.509 certificates as part of a DTLS handshake for that purpose.
+Additional variants mentioned in <a href="https://tools.ietf.org/html/rfc7252#section-9">Securing CoAP</a> might be added in the future.</p>
+<h3 id="psk">PSK</h3>
+<p>The <em>identity</em> provided in the ClientKeyExchange must have the form <em>auth-id@tenant</em>, e.g. <code>sensor1@DEFAULT_TENANT</code>.
+The adapter performs the handshake using the credentials which the
+<a href="/hono/docs/1.8/admin-guide/common-config/#credentials-service-connection-configuration">configured Credentials service</a>
+has on record for the client. The adapter uses the Credentials API&rsquo;s <em>get</em> operation to retrieve the credentials on record
+with the <em>tenant</em> and <em>auth-id</em> provided by the device in the <em>identity</em> and <code>psk</code> as the <em>type</em> of secret as query parameters.</p>
+<p>The examples below refer to devices <code>4711</code> and <code>gw-1</code> of tenant <code>DEFAULT_TENANT</code> using <em>auth-ids</em> <code>sensor1</code> and <code>gw1</code> and
+corresponding secrets. The example deployment as described in the <a href="/hono/docs/1.8/deployment/">Deployment Guides</a> comes pre-configured
+with the corresponding entities in its device registry component.
+Please refer to the <a href="/hono/docs/1.8/api/credentials/#standard-credential-types">Credentials API</a> for details regarding the different
+types of secrets.</p>
+<p><strong>NB</strong> There is a subtle difference between the <em>device identifier</em> (<em>device-id</em>) and the <em>auth-id</em> a device uses for authentication.
+See <a href="/hono/docs/1.8/concepts/device-identity/">Device Identity</a> for a discussion of the concepts.</p>
+<h3 id="x509">X.509</h3>
+<p>When a device uses a client certificate for authentication during the DTLS handshake, the adapter tries to determine the
+tenant that the device belongs to, based on the <em>issuer DN</em> contained in the certificate.
+In order for the lookup to succeed, the tenant&rsquo;s trust anchor needs to be configured by means of
+<a href="/hono/docs/1.8/api/tenant/#tenant-information-format">registering the trusted certificate authority</a>.
+The device&rsquo;s client certificate will then be validated using the registered trust anchor, thus implicitly establishing
+the tenant that the device belongs to.</p>
+<p>In a second step, the adapter then determines the device identifier using the Credentials API&rsquo;s <em>get</em> operation with the
+client certificate&rsquo;s <em>subject DN</em> as the <em>auth-id</em> and <code>x509-cert</code> as the <em>type</em> of secret as query parameters.</p>
+<p><strong>NB</strong> The CoAP adapter needs to be <a href="/hono/docs/1.8/admin-guide/secure_communication/#coap-adapter">configured for DTLS</a>
+in order to support this mechanism. X.509 based authentication of clients is only supported with <em>elliptic curve cryptography</em>
+(ECC) based keys.</p>
+<h2 id="message-limits">Message Limits</h2>
+<p>The adapter rejects</p>
+<ul>
+<li>a client&rsquo;s request to upload data with status code <code>429 Too Many Requests</code> and</li>
+<li>any AMQP 1.0 message containing a command sent by a north bound application</li>
+</ul>
+<p>if the <a href="/hono/docs/1.8/concepts/resource-limits/">message limit</a> that has been configured for the device&rsquo;s tenant is exceeded.</p>
+<h2 id="coap-content-format-codes">CoAP Content Format Codes</h2>
+<p>CoAP doesn&rsquo;t use a textual identifier for content types. Instead, numbers are used, which are maintained by the <a href="https://www.iana.org/">IANA</a>.
+The <a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">IANA - CoAP Content Formats</a> page lists all
+(currently) registered codes and the corresponding media types.</p>
+<h2 id="publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</h2>
+<p>The device is authenticated using PSK.</p>
+<ul>
+<li>URI: <code>/telemetry</code></li>
+<li>Method: <code>POST</code></li>
+<li>Type:
+<ul>
+<li><code>CON</code>: <em>at least once</em> delivery semantics</li>
+<li><code>NON</code>: <em>at most once</em> delivery semantics</li>
+</ul>
+</li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-format</code>: The type of payload contained in the request body. Required, if request contains payload.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>empty</code>: Marks the request as an <a href="/hono/docs/1.8/api/event/#empty-notification">empty notification</a>.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary payload encoded according to the given content type. Maybe empty, if <code>URI-query: empty</code> is provided.</li>
+</ul>
+</li>
+<li>Response Options:
+<ul>
+<li>(optional) <code>content-format</code>: A media type describing the semantics and format of payload contained in the response body.
+This option will only be present if the response contains a command to be executed by the device which requires input data.
+Note that this option will be empty if the media type contained in the command (AMQP) message&rsquo;s <em>content-type</em> property cannot
+be mapped to one of the registered CoAP <em>content-format</em> codes.</li>
+<li>(optional) <code>location-query</code>: The <code>hono-command</code> query parameter contains the name of the command to execute.
+This option will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>location-path</code>: The location path is <code>command</code> for one-way-commands and
+<code>command_response/&lt;command-request-id&gt;</code> for commands expecting  a response.
+In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending its
+response to the command.
+This option will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device.</li>
+<li>(optional) Error details, if status code is &gt;= 4.00.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The data in the request body has been accepted for processing. The response may contain a command for the device to execute.
+Note that if the message type is <code>NON</code> (<em>at most once</em> semantics), this status code does <strong>not</strong> mean that the message has been
+delivered to any potential consumer (yet). However, if the message type is <code>CON</code> (<em>at least once</em> semantics), then the adapter waits
+for the message to be delivered and accepted by a downstream consumer before responding with this status code.</li>
+<li>4.00 (Bad Request): The request cannot be processed. Possible reasons include:
+<ul>
+<li>the request body is empty, and the <em>URI-query</em> option doesn&rsquo;t contain the <code>empty</code> parameter.</li>
+</ul>
+</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+<ul>
+<li>There is no consumer of telemetry data for the given tenant connected to Hono, or the consumer has not indicated that it may receive further messages (not giving credits).</li>
+<li>If the message type is <code>CON</code> (<em>at least once</em> semantics), the reason may be:
+<ul>
+<li>The consumer has indicated that it didn&rsquo;t process the telemetry data.</li>
+<li>The consumer failed to indicate in time whether it has processed the telemetry data.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish telemetry data. It is available only if the protocol adapter is configured to require
+devices to authenticate (which is the default).</p>
+<p><strong>Examples</strong></p>
+<p>The examples provided below make use of the <em>coap-client</em> command line tool which is part of the <a href="https://libcoap.net/">libcoap project</a>.
+Precompiled packages should be available for different Linux variants.</p>
+<p>Publish some JSON data for device <code>4711</code> using default message type <code>CON</code> (<em>at least once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret -m POST coaps://hono.eclipseprojects.io/telemetry -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div><em>coap-client</em> only reports error response-codes, so the expected 2.04 response code will not be printed to the terminal.</div>
+</div>
+<p>Publish some JSON data for device <code>4711</code> using message type <code>NON</code> (<em>at most once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret -N -m POST coaps://hono.eclipseprojects.io/telemetry -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code>, indicating that the device will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret -m POST coaps://hono.eclipseprojects.io/telemetry?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>In the example above the response actually contains payload that should be used as input to a command to be executed by the device.
+This is just for illustrative purposes. You will usually get an empty response because there is no downstream application attached which could
+send any commands to the device.</div>
+</div>
+<h2 id="publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</h2>
+<ul>
+<li>URI: <code>/telemetry/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Type:
+<ul>
+<li><code>CON</code>: <em>at least once</em> delivery semantics</li>
+<li><code>NON</code>: <em>at most once</em> delivery semantics</li>
+</ul>
+</li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-format</code>: The type of payload contained in the request body. Required, if request contains payload.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>empty</code>: Marks the request as an <a href="/hono/docs/1.8/api/event/#empty-notification">empty notification</a>.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary payload encoded according to the given content type. Maybe empty, if <code>URI-query: empty</code> is provided.</li>
+</ul>
+</li>
+<li>Response Options:
+<ul>
+<li>(optional) <code>content-format</code>: A media type describing the semantics and format of payload contained in the response body.
+This option will only be present if the response contains a command to be executed by the device which requires input data.
+Note that this option will be empty if the media type contained in the command (AMQP) message&rsquo;s <em>content-type</em> property cannot
+be mapped to one of the registered CoAP <em>content-format</em> codes.</li>
+<li>(optional) <code>location-query</code>: The <code>hono-command</code> query parameter contains the name of the command to execute.
+This option will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>location-path</code>: The location path is <code>command</code> for one-way-commands and
+<code>command_response/&lt;command-request-id&gt;</code> for commands expecting  a response.
+In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending its
+response to the command.
+This option will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 2.05 (Content).</li>
+<li>(optional) Error details, if status code is &gt;= 4.00.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The data in the request body has been accepted for processing. The response may contain a command for the device to execute.
+Note that if the message type is <code>NON</code> (<em>at most once</em> semantics), this status code does <strong>not</strong> mean that the message has been
+delivered to any potential consumer (yet). However, if the message type is <code>CON</code> (<em>at least once</em> semantics), then the adapter waits
+for the message to be delivered and accepted by a downstream consumer before responding with this status code.</li>
+<li>4.00 (Bad Request): The request cannot be processed. Possible reasons include:
+<ul>
+<li>the request body is empty, and the <em>URI-query</em> option doesn&rsquo;t contain the <code>empty</code> parameter.</li>
+</ul>
+</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+<li>The given device does not belong to the given tenant.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+<ul>
+<li>There is no consumer of telemetry data for the given tenant connected to Hono, or the consumer has not indicated that it may receive further messages (not giving credits).</li>
+<li>If the message type is <code>CON</code> (<em>at least once</em> semantics), the reason may be:
+<ul>
+<li>The consumer has indicated that it didn&rsquo;t process the telemetry data.</li>
+<li>The consumer failed to indicate in time whether it has processed the telemetry data.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the
+<code>HONO_COAP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code> using default message type <code>CON</code> (<em>at least once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -m PUT coap://hono.eclipseprojects.io/telemetry/DEFAULT_TENANT/4711 -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> using message type <code>NON</code> (<em>at most once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -N -m PUT coap://hono.eclipseprojects.io/telemetry/DEFAULT_TENANT/4711 -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code>, indicating that the device will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -m PUT coap://hono.eclipseprojects.io/telemetry/DEFAULT_TENANT/4711?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</h2>
+<ul>
+<li>URI: <code>/telemetry/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Type:
+<ul>
+<li><code>CON</code>: <em>at least once</em> delivery semantics</li>
+<li><code>NON</code>: <em>at most once</em> delivery semantics</li>
+</ul>
+</li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-format</code>: The type of payload contained in the request body. Required, if request contains payload.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>empty</code>: Marks the request as an <a href="/hono/docs/1.8/api/event/#empty-notification">empty notification</a>.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary payload encoded according to the given content type. Maybe empty, if <code>URI-query: empty</code> is provided.</li>
+</ul>
+</li>
+<li>Response Options:
+<ul>
+<li>(optional) <code>content-format</code>: A media type describing the semantics and format of payload contained in the response body.
+This option will only be present if the response contains a command to be executed by the device which requires input data.
+Note that this option will be empty if the media type contained in the command (AMQP) message&rsquo;s <em>content-type</em> property cannot
+be mapped to one of the registered CoAP <em>content-format</em> codes.</li>
+<li>(optional) <code>location-query</code>: The <code>hono-command</code> query parameter contains the name of the command to execute.
+This option will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>location-path</code>: The location path is <code>command/${tenantId}/${deviceId}</code> for one-way-commands and
+<code>command_response/${tenantId}/${deviceId}/&lt;command-request-id&gt;</code> for commands expecting  a response.
+In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending its
+response to the command. Note that in both cases the <code>${tenantId}/${deviceId}</code> path segments indicate the device that
+the command is targeted at.
+This option will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 2.05 (Content).</li>
+<li>(optional) Error details, if status code is &gt;= 4.00.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The data in the request body has been accepted for processing. The response may contain a command for a device to execute.
+Note that if the message type is <code>NON</code> (<em>at most once</em> semantics), this status code does <strong>not</strong> mean that the message has been
+delivered to any potential consumer (yet). However, if the message type is <code>CON</code> (<em>at least once</em> semantics), then the adapter waits
+for the message to be delivered and accepted by a downstream consumer before responding with this status code.</li>
+<li>4.00 (Bad Request): The request cannot be processed. Possible reasons include:
+<ul>
+<li>the request body is empty, and the <em>URI-query</em> option doesn&rsquo;t contain the <code>empty</code> parameter.</li>
+</ul>
+</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The tenant that the gateway belongs to is not allowed to use this protocol adapter.</li>
+<li>The device belongs to another tenant than the gateway.</li>
+<li>The gateway is not authorized to act <em>on behalf of</em> the device.</li>
+<li>The gateway associated with the device is not registered or disabled.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+<ul>
+<li>There is no consumer of telemetry data for the given tenant connected to Hono, or the consumer has not indicated that it may receive further messages (not giving credits).</li>
+<li>If the message type is <code>CON</code> (<em>at least once</em> semantics), the reason may be:
+<ul>
+<li>The consumer has indicated that it didn&rsquo;t process the telemetry data.</li>
+<li>The consumer failed to indicate in time whether it has processed the telemetry data.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a protocol adapter
+directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a>
+or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during connection establishment with the
+protocol adapter are used to authenticate the gateway whereas the parameters from the URI are used to identify the device that the gateway
+publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to publish data on behalf of the device implicitly by means of retrieving a <em>registration assertion</em>
+for the device from the <a href="/hono/docs/1.8/admin-guide/common-config/#device-registration-service-connection-configuration">configured Device Registration service</a>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4712</code> using default message type <code>CON</code> (<em>at least once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u gw@DEFAULT_TENANT -k gw-secret -m PUT coaps://hono.eclipseprojects.io/telemetry/DEFAULT_TENANT/4712 -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4712</code> using message type <code>NON</code> (<em>at most once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u gw@DEFAULT_TENANT -k gw-secret -N -m PUT coaps://hono.eclipseprojects.io/telemetry/DEFAULT_TENANT/4712 -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4712</code>, indicating that the gateway will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u gw@DEFAULT_TENANT -k gw-secret -m PUT coaps://hono.eclipseprojects.io/telemetry/DEFAULT_TENANT/4712?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><strong>NB</strong> The examples above assume that a gateway device has been registered with <code>psk</code> credentials with <em>auth-id</em> <code>gw</code> and secret <code>gw-secret</code>
+which is authorized to publish data <em>on behalf of</em> device <code>4712</code>.</p>
+<h2 id="publish-an-event-authenticated-device">Publish an Event (authenticated Device)</h2>
+<p>The device is authenticated using PSK.</p>
+<ul>
+<li>URI: <code>/event</code></li>
+<li>Method: <code>POST</code></li>
+<li>Type:<code>CON</code></li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-format</code>: The type of payload contained in the request body. Required, if request contains payload.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>empty</code>: Marks the request as an <a href="/hono/docs/1.8/api/event/#empty-notification">empty notification</a>.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary payload encoded according to the given content type. Maybe empty, if <code>URI-query: empty</code> is provided.</li>
+</ul>
+</li>
+<li>Response Options:
+<ul>
+<li>(optional) <code>content-format</code>: A media type describing the semantics and format of payload contained in the response body.
+This option will only be present if the response contains a command to be executed by the device which requires input data.
+Note that this option will be empty if the media type contained in the command (AMQP) message&rsquo;s <em>content-type</em> property cannot
+be mapped to one of the registered CoAP <em>content-format</em> codes.</li>
+<li>(optional) <code>location-query</code>: The <code>hono-command</code> query parameter contains the name of the command to execute.
+This option will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>location-path</code>: The location path is <code>command</code> for one-way-commands and
+<code>command_response/&lt;command-request-id&gt;</code> for commands expecting  a response.
+In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending its
+response to the command.
+This option will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 2.05 (Content).</li>
+<li>(optional) Error details, if status code is &gt;= 4.00.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The data in the request body has been accepted for processing. The response may contain a command for the device to execute.
+Note that if the message type is <code>NON</code> (<em>at most once</em> semantics), this status code does <strong>not</strong> mean that the message has been
+delivered to any potential consumer (yet). However, if the message type is <code>CON</code> (<em>at least once</em> semantics), then the adapter waits
+for the message to be delivered and accepted by a downstream consumer before responding with this status code.</li>
+<li>4.00 (Bad Request): The request cannot be processed. Possible reasons include:
+<ul>
+<li>the request body is empty, and the <em>URI-query</em> option doesn&rsquo;t contain the <code>empty</code> parameter.</li>
+</ul>
+</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed because there is no consumer of events for the given tenant connected to Hono, or the consumer didn&rsquo;t process the event.</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish events. It is available only if the protocol adapter is configured to require
+devices to authenticate (which is the default).</p>
+<p><strong>Examples</strong></p>
+<p>The examples provided below make use of the <em>coap-client</em> command line tool which is part of the <a href="https://libcoap.net/">libcoap project</a>.
+Precompiled packages should be available for different Linux variants.</p>
+<p>Publish some JSON data for device <code>4711</code> using default message type <code>CON</code> (<em>at least once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret -m POST coaps://hono.eclipseprojects.io/event -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div><em>coap-client</em> only reports error response-codes, so the expected 2.04 response code will not be printed to the terminal.</div>
+</div>
+<p>Publish some JSON data for device <code>4711</code>, indicating that the device will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret -m POST coaps://hono.eclipseprojects.io/event?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>In the example above the response actually contains payload that should be used as input to a command to be executed by the device.
+This is just for illustrative purposes. You will usually get an empty response because there is no downstream application attached which could
+send any commands to the device.</div>
+</div>
+<h2 id="publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</h2>
+<ul>
+<li>URI: <code>/event/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Type:<code>CON</code></li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-format</code>: The type of payload contained in the request body. Required, if request contains payload.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>empty</code>: Marks the request as an <a href="/hono/docs/1.8/api/event/#empty-notification">empty notification</a>.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary payload encoded according to the given content type. Maybe empty, if <code>URI-query: empty</code> is provided.</li>
+</ul>
+</li>
+<li>Response Options:
+<ul>
+<li>(optional) <code>content-format</code>: A media type describing the semantics and format of payload contained in the response body.
+This option will only be present if the response contains a command to be executed by the device which requires input data.
+Note that this option will be empty if the media type contained in the command (AMQP) message&rsquo;s <em>content-type</em> property cannot
+be mapped to one of the registered CoAP <em>content-format</em> codes.</li>
+<li>(optional) <code>location-query</code>: The <code>hono-command</code> query parameter contains the name of the command to execute.
+This option will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>location-path</code>: The location path is <code>command</code> for one-way-commands and
+<code>command_response/&lt;command-request-id&gt;</code> for commands expecting  a response.
+In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending its
+response to the command.
+This option will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 2.05 (Content).</li>
+<li>(optional) Error details, if status code is &gt;= 4.00.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The data in the request body has been accepted for processing. The response may contain a command for the device to execute.
+Note that if the message type is <code>NON</code> (<em>at most once</em> semantics), this status code does <strong>not</strong> mean that the message has been
+delivered to any potential consumer (yet). However, if the message type is <code>CON</code> (<em>at least once</em> semantics), then the adapter waits
+for the message to be delivered and accepted by a downstream consumer before responding with this status code.</li>
+<li>4.00 (Bad Request): The request cannot be processed. Possible reasons include:
+<ul>
+<li>the request body is empty, and the <em>URI-query</em> option doesn&rsquo;t contain the <code>empty</code> parameter.</li>
+</ul>
+</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+<li>The given device does not belong to the given tenant.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed because there is no consumer of events for the given tenant connected to Hono, or the consumer didn&rsquo;t process the event.</li>
+</ul>
+</li>
+</ul>
+<p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the
+<code>HONO_COAP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code> using default message type <code>CON</code> (<em>at least once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -m PUT coap://hono.eclipseprojects.io/event/DEFAULT_TENANT/4711 -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code>, indicating that the device will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -m PUT coap://hono.eclipseprojects.io/event/DEFAULT_TENANT/4711?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</h2>
+<ul>
+<li>URI: <code>/event/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Type:<code>CON</code></li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-format</code>: The type of payload contained in the request body. Required, if request contains payload.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>empty</code>: Marks the request as an <a href="/hono/docs/1.8/api/event/#empty-notification">empty notification</a>.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary payload encoded according to the given content type. Maybe empty, if <code>URI-query: empty</code> is provided.</li>
+</ul>
+</li>
+<li>Response Options:
+<ul>
+<li>(optional) <code>content-format</code>: A media type describing the semantics and format of payload contained in the response body.
+This option will only be present if the response contains a command to be executed by the device which requires input data.
+Note that this option will be empty if the media type contained in the command (AMQP) message&rsquo;s <em>content-type</em> property cannot
+be mapped to one of the registered CoAP <em>content-format</em> codes.</li>
+<li>(optional) <code>location-query</code>: The <code>hono-command</code> query parameter contains the name of the command to execute.
+This option will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>location-path</code>: The location path is <code>command/${tenantId}/${deviceId}</code> for one-way-commands and
+<code>command_response/${tenantId}/${deviceId}/&lt;command-request-id&gt;</code> for commands expecting  a response.
+In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending its
+response to the command. Note that in both cases the <code>${tenantId}/${deviceId}</code> path segments indicate the device that
+the command is targeted at.
+This option will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 2.05 (Content).</li>
+<li>(optional) Error details, if status code is &gt;= 4.00.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The data in the request body has been accepted for processing. The response may contain a command for a device to execute.
+Note that if the message type is <code>NON</code> (<em>at most once</em> semantics), this status code does <strong>not</strong> mean that the message has been
+delivered to any potential consumer (yet). However, if the message type is <code>CON</code> (<em>at least once</em> semantics), then the adapter waits
+for the message to be delivered and accepted by a downstream consumer before responding with this status code.</li>
+<li>4.00 (Bad Request): The request cannot be processed. Possible reasons include:
+<ul>
+<li>the request body is empty, and the <em>URI-query</em> option doesn&rsquo;t contain the <code>empty</code> parameter.</li>
+</ul>
+</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The tenant that the gateway belongs to is not allowed to use this protocol adapter.</li>
+<li>The device belongs to another tenant than the gateway.</li>
+<li>The gateway is not authorized to act <em>on behalf of</em> the device.</li>
+<li>The gateway associated with the device is not registered or disabled.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed because there is no consumer of events for the given tenant connected to Hono, or the consumer didn&rsquo;t process the event.</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a protocol adapter
+directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a>
+or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during connection establishment with the
+protocol adapter are used to authenticate the gateway whereas the parameters from the URI are used to identify the device that the gateway
+publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to publish data on behalf of the device implicitly by means of retrieving a <em>registration assertion</em>
+for the device from the <a href="/hono/docs/1.8/admin-guide/common-config/#device-registration-service-connection-configuration">configured Device Registration service</a>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4712</code> using default message type <code>CON</code> (<em>at least once</em>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u gw@DEFAULT_TENANT -k gw-secret -m PUT coaps://hono.eclipseprojects.io/event/DEFAULT_TENANT/4712 -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4712</code>, indicating that the gateway will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u gw@DEFAULT_TENANT -k gw-secret -m PUT coaps://hono.eclipseprojects.io/event/DEFAULT_TENANT/4712?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -t application/json -e <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><strong>NB</strong> The examples above assume that a gateway device has been registered with <code>psk</code> credentials with <em>auth-id</em> <code>gw</code> and secret <code>gw-secret</code>
+which is authorized to publish data <em>on behalf of</em> device <code>4712</code>.</p>
+<h2 id="command--control">Command &amp; Control</h2>
+<p>The CoAP adapter enables devices to receive commands that have been sent by business applications. Commands are delivered to the device by means of a response message. That means a device first has to send a request, indicating how long it will wait for the response. That request can either be a telemetry or event message, with a <code>hono-ttd</code> query parameter (<code>ttd</code> for <code>time till disconnect</code>) specifying the number of seconds the device will wait for the response. The business application can react on that message by sending a command message, targeted at the device. The CoAP adapter will then send the command message as part of the response message to the device.</p>
+<h3 id="commands-handled-by-gateways">Commands handled by gateways</h3>
+<p>Authenticated gateways will receive commands for devices which do not connect to a protocol adapter directly but instead are connected to the gateway. Corresponding devices have to be configured so that they can be used with a gateway. See <a href="/hono/docs/1.8/admin-guide/file-based-device-registry-config/#configuring-gateway-devices">Configuring Gateway Devices</a> for details.</p>
+<p>A gateway can send a request with the <code>hono-ttd</code> query parameter on the <code>/event</code> or <code>/telemetry</code> URI, indicating its readiness to receive a command for <em>any</em> device it acts on behalf of. Note that in this case, the business application will be notified with the gateway id in the <code>device_id</code> property of the downstream message.</p>
+<p>An authenticated gateway can also indicate its readiness to receive a command targeted at a <em>specific</em> device. For that, the <code>/event/${tenantId}/${deviceId}</code> or <code>/telemetry/${tenantId}/${deviceId}</code> URI is to be used, containing the id of the device to receive a command for. The business application will receive a notification with that device id.</p>
+<p>If there are multiple concurrent requests with a <code>hono-ttd</code> query parameter, sent by the command target device and/or one or more of its potential gateways, the CoAP adapter will choose the device or gateway to send the command to as follows:</p>
+<ul>
+<li>A request done by the command target device or by a gateway specifically done for that device, has precedence. If there are multiple, concurrent such requests, the last one will get the command message (if received) in its response. Note that the other requests won&rsquo;t be answered with a command message in their response event if the business application sent multiple command messages. That means commands for a single device can only be requested sequentially, not in parallel.</li>
+<li>If the above doesn&rsquo;t apply, a single <code>hono-ttd</code> request on the <code>/event</code> or <code>/telemetry</code> URI, sent by a gateway that the command target device is configured for, will get the command message in its response.</li>
+<li>If there are multiple, concurrent such requests by different gateways, all configured for the command target device, the request by the gateway will be chosen, through which the target device has last sent a telemetry or event message. If the target device hasn&rsquo;t sent a message yet and it is thereby unknown via which gateway the device communicates, then one of the requests will be chosen randomly to set the command in its response.</li>
+</ul>
+<h3 id="sending-a-response-to-a-command-authenticated-device">Sending a Response to a Command (authenticated Device)</h3>
+<p>The device is authenticated using PSK.</p>
+<ul>
+<li>URI: <code>/command_response/${commandRequestId}</code></li>
+<li>Method: <code>POST</code></li>
+<li>Type: <code>CON</code></li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of the payload contained in the request body.
+This option must be set if the result of processing the command on the device is non-empty. In this case the result data is
+contained in the request body.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(required) <code>hono-cmd-status</code>: An HTTP status code indicating the outcome of processing the command.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary data representing the result of processing the command on the device.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The response has been successfully delivered to the application that has sent the command.</li>
+<li>4.00 (Bad Request): The request cannot be processed because the command status or command request ID are missing/malformed.</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+<ul>
+<li>There is no application listening for a reply to the given <em>commandRequestId</em>.</li>
+<li>The application has already given up on waiting for a response.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to respond to commands. It is available only if the protocol adapter is configured to require devices to
+authenticate (which is the default).</p>
+<p><strong>Example</strong></p>
+<p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret coaps://hono.eclipseprojects.io/command_response/req-id-uuid?hono-cmd-status<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
+</span></span></code></pre></div><h3 id="sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</h3>
+<ul>
+<li>URI: <code>/command_response/${tenantId}/${deviceId}/${commandRequestId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Type: <code>CON</code></li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of the payload contained in the request body.
+This option must be set if the result of processing the command on the device is non-empty. In this case the result data is
+contained in the request body.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(required) <code>hono-cmd-status</code>: An HTTP status code indicating the outcome of processing the command.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary data representing the result of processing the command on the device.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The response has been successfully delivered to the application that has sent the command.</li>
+<li>4.00 (Bad Request): The request cannot be processed because the command status or command request ID are missing/malformed.</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+<li>The given device does not belong to the given tenant.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+<ul>
+<li>There is no application listening for a reply to the given <em>commandRequestId</em>.</li>
+<li>The application has already given up on waiting for a response.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the
+<code>HONO_HTTP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for the unauthenticated device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u sensor1@DEFAULT_TENANT -k hono-secret coaps://hono.eclipseprojects.io/command_response/DEFAULT_TENANT/4711/req-id-uuid?hono-cmd-status<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span> -e <span style="color:#e6db74">&#39;{&#34;brightness-changed&#34;: true}&#39;</span>
+</span></span></code></pre></div><h3 id="sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</h3>
+<ul>
+<li>URI: <code>/command_response/${tenantId}/${deviceId}/${commandRequestId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Type: <code>CON</code></li>
+<li>Request Options:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of the payload contained in the request body.
+This option must be set if the result of processing the command on the device is non-empty. In this case the result data is
+contained in the request body.</li>
+</ul>
+</li>
+<li>Query Parameters:
+<ul>
+<li>(required) <code>hono-cmd-status</code>: An HTTP status code indicating the outcome of processing the command.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary data representing the result of processing the command on the device.</li>
+</ul>
+</li>
+<li>Response Codes:
+<ul>
+<li>2.04 (Changed): The response has been successfully delivered to the application that has sent the command.</li>
+<li>4.00 (Bad Request): The request cannot be processed because the command status or command request ID are missing/malformed.</li>
+<li>4.03 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted.
+Possible reasons for this include:
+<ul>
+<li>The given tenant is not allowed to use this protocol adapter.</li>
+<li>The given device does not belong to the given tenant.</li>
+<li>The gateway is not authorized to act <em>on behalf of</em> the device.</li>
+<li>The gateway associated with the device is not registered or disabled.</li>
+</ul>
+</li>
+<li>4.04 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>4.13 (Request Entity Too Large): The request cannot be processed because the request body exceeds the maximum supported size.</li>
+<li>4.29 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>5.03 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+<ul>
+<li>There is no application listening for a reply to the given <em>commandRequestId</em>.</li>
+<li>The application has already given up on waiting for a response.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used by <em>gateway</em> components to send the response to a command <em>on behalf of</em> other devices which do not connect
+to a protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like
+<a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during
+connection establishment with the protocol adapter are used to authenticate the gateway whereas the parameters from the URI are used
+to identify the device that the gateway publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to send responses to a command on behalf of the device implicitly by means of
+retrieving a <em>registration assertion</em> for the device from the <a href="/hono/docs/1.8/admin-guide/common-config/#device-registration-service-connection-configuration">configured Device Registration service</a>.</p>
+<p><strong>Examples</strong></p>
+<p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for device <code>4712</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>coap-client -u gw@DEFAULT_TENANT -k gw-secret coaps://hono.eclipseprojects.io/command_response/DEFAULT_TENANT/4712/req-id-uuid?hono-cmd-status<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span> -e <span style="color:#e6db74">&#39;{&#34;brightness-changed&#34;: true}&#39;</span>
+</span></span></code></pre></div><p><strong>NB</strong> The example above assumes that a gateway device has been registered with <code>psk</code> credentials with <em>auth-id</em> <code>gw</code> and secret <code>gw-secret</code> which is
+authorized to publish data <em>on behalf of</em> device <code>4712</code>.</p>
+<h2 id="downstream-meta-data">Downstream Meta Data</h2>
+<p>The adapter includes the following meta data in the application properties of messages being sent downstream:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>device_id</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The identifier of the device that the message originates from.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_adapter</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the adapter&rsquo;s <em>type name</em> which can be used by downstream consumers to determine the protocol adapter that the message has been received over. The CoAP adapter&rsquo;s type name is <code>hono-coap</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_address</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the (relative) URI that the device has originally posted the data to.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>ttd</em></td>
+<td style="text-align:left"><em>integer</em></td>
+<td style="text-align:left">Contains the effective number of seconds that the device will wait for a response. This property is only set if the request contains the <code>hono-ttd</code> <em>URI-query</em> option.</td>
+</tr>
+</tbody>
+</table>
+<p>The adapter also considers <em>defaults</em> registered for the device at either the <a href="/hono/docs/1.8/api/tenant/#tenant-information-format">tenant</a> or the <a href="/hono/docs/1.8/api/device-registration/#assert-device-registration">device level</a>. The values of the default properties are determined as follows:</p>
+<ol>
+<li>If the message already contains a non-empty property of the same name, the value if unchanged.</li>
+<li>Otherwise, if a default property of the same name is defined in the device&rsquo;s registration information, that value is used.</li>
+<li>Otherwise, if a default property of the same name is defined for the tenant that the device belongs to, that value is used.</li>
+</ol>
+<p>Note that of the standard AMQP 1.0 message properties only the <em>content-type</em> and <em>ttl</em> can be set this way to a default value.</p>
+<h3 id="event-message-time-to-live">Event Message Time-to-live</h3>
+<p>Events published by devices will usually be persisted by the AMQP Messaging Network in order to support deferred delivery to downstream consumers.
+In most cases the AMQP Messaging Network can be configured with a maximum <em>time-to-live</em> to apply to the events so that the events will be removed
+from the persistent store if no consumer has attached to receive the event before the message expires.</p>
+<p>In order to support environments where the AMQP Messaging Network cannot be configured accordingly, the protocol adapter supports setting a
+downstream event message&rsquo;s <em>ttl</em> property based on the <em>hono-ttl</em> property set as a query parameter in the event requests by the devices.
+Also the default <em>ttl</em> and <em>max-ttl</em> values can be configured for a tenant/device as described in the <a href="/hono/docs/1.8/api/tenant/#resource-limits-configuration-format">Tenant API</a>.</p>
+<h2 id="tenant-specific-configuration">Tenant specific Configuration</h2>
+<p>The adapter uses the <a href="https://www.eclipse.org/hono/docs/1.8/api/tenant/#get-tenant-information">Tenant API</a> to retrieve <em>tenant specific configuration</em> for adapter type <code>hono-coap</code>.
+The following properties are (currently) supported:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>enabled</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>false</code> the adapter will reject all data from devices belonging to the tenant.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>max-ttd</em></td>
+<td style="text-align:left"><em>integer</em></td>
+<td style="text-align:left"><code>60</code></td>
+<td style="text-align:left">Defines a tenant specific upper limit for the <em>time until disconnect</em> property that devices may include in requests for uploading telemetry data or events. Please refer to the <a href="/hono/docs/1.8/concepts/command-and-control/">Command &amp; Control concept page</a> for a discussion of this parameter&rsquo;s purpose and usage.<br>This property can be set for the <code>hono-coap</code> adapter type as an <em>extension</em> property in the adapter section of the tenant configuration.<br>If it is not set, then the default value of <code>60</code> seconds is used.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>timeoutToAck</em></td>
+<td style="text-align:left"><em>integer</em></td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">This property has the same semantics as the <a href="/hono/docs/1.8/admin-guide/coap-adapter-config/">corresponding property at the adapter level</a>. However, any (non-null) value configured for a tenant takes precedence over the adapter level value for all devices of the particular tenant.</td>
+</tr>
+</tbody>
+</table>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048685"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048685"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048685"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048685"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048685"></script>
+        <script src="/hono/docs/js/search.js?1663048685"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.8/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.8/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.8/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.8/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.8/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.8/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.8/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.8/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.8/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.8/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.8/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.8/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/" title="User Guide" class="dd-item parent"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle" checked/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.8/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.8/user-guide/mongodb-based-device-registry/" title="MongoDB Based Device Registry" class="dd-item"><a href="/hono/docs/1.8/user-guide/mongodb-based-device-registry/">MongoDB Based Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/jdbc-based-device-registry/" title="JDBC Based Device Registry" class="dd-item"><a href="/hono/docs/1.8/user-guide/jdbc-based-device-registry/">JDBC Based Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/file-based-device-registry/" title="File Based Device Registry" class="dd-item"><a href="/hono/docs/1.8/user-guide/file-based-device-registry/">File Based Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.8/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.8/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.8/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item active"><a href="/hono/docs/1.8/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.8/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.8/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.8/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.8/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/file-based-device-registry-config/" title="File Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/file-based-device-registry-config/">File Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/1.8/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.8/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.8/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.8/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.8/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.8/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.8/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.8/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.8/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.8/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.8/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.8/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.8/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.8/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.8/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.8/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.8/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.8/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.8/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.8/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.8/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.8/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/1.8/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/telemetry-kafka/" title="Telemetry API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.8/api/telemetry-kafka/">Telemetry API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/event-kafka/" title="Event API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.8/api/event-kafka/">Event API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/command-and-control-kafka/" title="Command &amp; Control API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.8/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.8/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/1.8/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.8/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.8/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.8/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.8/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.8/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.8/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.8/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.8/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.8/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.8/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.8/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.8/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.8/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.8/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.8/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.8/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.8/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.8/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.8/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.8/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.8/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.8/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.8/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/user-guide/coap-adapter/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/user-guide/coap-adapter/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/user-guide/coap-adapter/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/user-guide/coap-adapter/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/user-guide/coap-adapter/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/user-guide/coap-adapter/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/user-guide/coap-adapter/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/user-guide/coap-adapter/" selected>1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/user-guide/coap-adapter/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/user-guide/coap-adapter/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/user-guide/coap-adapter/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/user-guide/coap-adapter/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/user-guide/coap-adapter/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/user-guide/coap-adapter/">1.2</option>
+                    <option id="dev" value="/hono/docs/dev/user-guide/coap-adapter/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048685"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048685"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048685"></script>
+    <script src="/hono/docs/js/theme.js?1663048685"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

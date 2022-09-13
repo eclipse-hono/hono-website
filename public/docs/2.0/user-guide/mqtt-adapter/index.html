@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="2.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>MQTT Adapter :: Eclipse Hono&trade; Vers.: 2.0</title>
+    <link rel="icon" href="/images/favicon.ico?1663048658" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048658" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048658" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048658" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048658"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/2.0/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048658"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="MQTT Adapter :: Eclipse Hono&amp;trade; Vers.: 2.0">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="MQTT Adapter :: Eclipse Hono&amp;trade; Vers.: 2.0" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/2.0/user-guide/mqtt-adapter//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/2.0/user-guide/mqtt-adapter/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>2.0</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/user-guide/mqtt-adapter.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/2.0/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/2.0/user-guide/"><span itemprop="name">User Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/2.0/user-guide/mqtt-adapter/" aria-disabled="true"><span itemprop="name">MQTT Adapter</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#authentication">Authentication</a>
+      <ul>
+        <li><a href="#client-certificate">Client Certificate</a></li>
+        <li><a href="#usernamepassword">Username/Password</a></li>
+      </ul>
+    </li>
+    <li><a href="#resource-limit-checks">Resource Limit Checks</a>
+      <ul>
+        <li><a href="#connection-limits">Connection Limits</a></li>
+        <li><a href="#connection-duration-limits">Connection Duration Limits</a></li>
+        <li><a href="#message-limits">Message Limits</a></li>
+      </ul>
+    </li>
+    <li><a href="#connection-events">Connection Events</a></li>
+    <li><a href="#publishing-telemetry-data">Publishing Telemetry Data</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</a></li>
+    <li><a href="#publishing-events">Publishing Events</a></li>
+    <li><a href="#publish-an-event-authenticated-device">Publish an Event (authenticated Device)</a></li>
+    <li><a href="#publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</a></li>
+    <li><a href="#publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</a></li>
+    <li><a href="#command--control">Command &amp; Control</a>
+      <ul>
+        <li><a href="#receiving-commands-authenticated-device">Receiving Commands (authenticated Device)</a></li>
+        <li><a href="#receiving-commands-unauthenticated-device">Receiving Commands (unauthenticated Device)</a></li>
+        <li><a href="#receiving-commands-authenticated-gateway">Receiving Commands (authenticated Gateway)</a></li>
+        <li><a href="#sending-a-response-to-a-command-authenticated-device">Sending a Response to a Command (authenticated Device)</a></li>
+        <li><a href="#sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</a></li>
+        <li><a href="#sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-reporting-via-error-topic">Error Reporting via Error Topic</a>
+      <ul>
+        <li><a href="#receiving-error-messages-authenticated-device">Receiving Error Messages (authenticated Device)</a></li>
+        <li><a href="#receiving-error-messages-unauthenticated-device">Receiving Error Messages (unauthenticated Device)</a></li>
+        <li><a href="#receiving-error-messages-authenticated-gateway">Receiving Error Messages (authenticated Gateway)</a></li>
+        <li><a href="#error-message-payload">Error Message Payload</a></li>
+      </ul>
+    </li>
+    <li><a href="#error-handling">Error Handling</a></li>
+    <li><a href="#custom-message-mapping">Custom Message Mapping</a></li>
+    <li><a href="#downstream-meta-data">Downstream Meta Data</a>
+      <ul>
+        <li><a href="#event-message-time-to-live">Event Message Time-to-live</a></li>
+      </ul>
+    </li>
+    <li><a href="#tenant-specific-configuration">Tenant specific Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>MQTT Adapter</h1>
+<p>The MQTT protocol adapter exposes an MQTT topic hierarchy for publishing telemetry data and events to downstream
+consumers and for receiving commands from applications and sending back responses.</p>
+<p>The MQTT adapter is <strong>not</strong> a general purpose MQTT broker. In particular the adapter</p>
+<ul>
+<li>supports MQTT 3.1.1 only.</li>
+<li>does not maintain session state for clients and thus always sets the <em>session present</em> flag in its CONNACK packet
+to <code>0</code>, regardless of the value  of the <em>clean session</em> flag provided in a client&rsquo;s CONNECT packet.</li>
+<li>ignores any <em>Will</em> included in a client&rsquo;s CONNECT packet.</li>
+<li>only supports topic names/filters for devices to publish and subscribe to that are specific to Hono&rsquo;s functionality
+as described in the following sections.</li>
+<li>does not support <em>retaining</em> messages. However, if an event or telemetry message&rsquo;s <em>retain</em> flag is set to <code>1</code> then
+the corresponding AMQP 1.0 message being sent downstream by the adapter will contain an <em>x-opt-retain</em> message
+annotation containing the boolean value <code>true</code>. A downstream consumer may then react according to the presence of
+this annotation.</li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>The MQTT adapter by default requires clients (devices or gateway components) to authenticate during connection
+establishment. The adapter supports both the authentication based on the username/password provided in an MQTT CONNECT
+packet as well as client certificate based authentication as part of a TLS handshake for that purpose.</p>
+<p>The adapter tries to authenticate the device using these mechanisms in the following order</p>
+<h3 id="client-certificate">Client Certificate</h3>
+<p>The MQTT adapter supports authenticating clients based on TLS cipher suites using a digital signature based key
+exchange algorithm as described in <a href="https://datatracker.ietf.org/doc/html/rfc5246">RFC 5246 (TLS 1.2)</a> and
+<a href="https://datatracker.ietf.org/doc/html/rfc8446">RFC 8446 (TLS 1.3)</a>. This requires a client to provide an X.509
+certificate containing a public key that can be used for digital signature. The adapter uses the information in the
+client certificate to verify the device&rsquo;s identity as described in
+<a href="/hono/docs/2.0/concepts/device-identity/#client-certificate-based-authentication">Client Certificate based Authentication</a>.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The adapter needs to be <a href="/hono/docs/2.0/admin-guide/secure_communication/#mqtt-adapter">configured for TLS</a>
+in order to support this mechanism.</p>
+    </div>
+</div>
+<h3 id="usernamepassword">Username/Password</h3>
+<p>The MQTT adapter supports authenticating clients based on credentials provided during MQTT connection establishment.
+This means that clients need to provide a <em>user</em> and a <em>password</em> field in their MQTT CONNECT packet as defined in
+<a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718028">MQTT Version 3.1.1, Section 3.1</a>
+when connecting to the MQTT adapter. The username provided in the <em>user</em> field must match the pattern
+<em>auth-id@tenant</em>, e.g. <code>sensor1@DEFAULT_TENANT</code>.</p>
+<p>The adapter extracts the <em>auth-id</em>, <em>tenant</em> and password from the CONNECT packet and verifies them using the
+credentials that the
+<a href="/hono/docs/2.0/admin-guide/common-config/#credentials-service-connection-configuration">configured Credentials service</a>
+has on record for the client as described in
+<a href="/hono/docs/2.0/concepts/device-identity/#usernamepassword-based-authentication">Username/Password based Authentication</a>.
+If the credentials match, the client has been authenticated successfully and the connection is being established.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>There is a subtle difference between the <em>device identifier</em> (<em>device-id</em>) and the <em>auth-id</em> a device uses
+for authentication. See <a href="/hono/docs/2.0/concepts/device-identity/">Device Identity</a> for a discussion of the
+concepts.</p>
+    </div>
+</div>
+<h2 id="resource-limit-checks">Resource Limit Checks</h2>
+<p>The adapter performs additional checks regarding <a href="https://www.eclipse.org/hono/docs/2.0/concepts/resource-limits/">resource limits</a> when
+a client tries to connect and/or send a message to the adapter.</p>
+<h3 id="connection-limits">Connection Limits</h3>
+<p>The adapter rejects a client’s connection attempt with return code</p>
+<ul>
+<li><code>0x03</code> (<em>Connection Refused: server unavailable</em>), if the maximum number of connections per protocol adapter instance
+is reached</li>
+<li><code>0x05</code> (<em>Connection Refused: not authorized</em>), if the maximum number of simultaneously connected devices for the
+tenant is reached.</li>
+</ul>
+<h3 id="connection-duration-limits">Connection Duration Limits</h3>
+<p>The adapter rejects a client’s connection attempt with return code <code>0x05</code> (<em>Connection Refused: not authorized</em>), if the
+<a href="/hono/docs/2.0/concepts/resource-limits/#connection-duration-limit">connection duration limit</a> that has been
+configured for the client’s tenant is exceeded.</p>
+<h3 id="message-limits">Message Limits</h3>
+<p>The adapter</p>
+<ul>
+<li>rejects a client&rsquo;s connection attempt with return code <code>0x05</code> (<em>Connection Refused: not authorized</em>),</li>
+<li>discards any MQTT PUBLISH packet containing telemetry data or an event that is sent by a client and</li>
+<li>rejects any AMQP 1.0 message containing a command sent by a north bound application</li>
+</ul>
+<p>if the <a href="/hono/docs/2.0/concepts/resource-limits/">message limit</a> that has been configured for the device’s tenant
+is exceeded.</p>
+<h2 id="connection-events">Connection Events</h2>
+<p>The adapter can emit <a href="/hono/docs/2.0/api/event/#connection-event">Connection Events</a> for client connections being
+established and/or terminated. Please refer to the
+<a href="/hono/docs/2.0/admin-guide/common-config/#connection-event-producer-configuration">common configuration options</a>
+for details regarding how to enable this behavior.</p>
+<p>The adapter includes the <em>client identifier</em> from the client&rsquo;s MQTT CONNECT packet as the Connection Event&rsquo;s <em>remote-id</em>.</p>
+<h2 id="publishing-telemetry-data">Publishing Telemetry Data</h2>
+<p>The MQTT adapter supports the publishing of telemetry data by means of MQTT <em>PUBLISH</em> packets using either QoS 0 or QoS 1.
+Using QoS 1 will result in the adapter sending an MQTT <em>PUBACK</em> packet to the client once the message has been accepted
+by the downstream messaging infrastructure.</p>
+<p>This requires that</p>
+<ul>
+<li>the messages published by the client comply with the format defined by the Telemetry API and</li>
+<li>the downstream messaging infrastructure has capacity to process telemetry messages for the client&rsquo;s tenant.</li>
+</ul>
+<p>The protocol adapter checks the configured <a href="/hono/docs/2.0/concepts/resource-limits/">message limit</a> before
+accepting any telemetry messages. An exceeded message limit will cause an error.</p>
+<p>Any kind of error when processing an incoming telemetry message will be reported back to the client if the client has
+subscribed on a dedicated error topic. See <a href="#error-reporting-via-error-topic">Error Reporting via Error Topic</a>
+for details.</p>
+<p>If such an error subscription by the client exists, the error will by default be ignored after it got published on
+the error topic, otherwise the connection to the client will be closed. The handling of errors can further be controlled
+by means of an <em>on-error</em> property bag parameter set on the telemetry message topic. Refer to
+<a href="#error-handling">Error Handling</a> for details.</p>
+<p>The devices can optionally indicate the content type of the payload by setting the <em>content-type</em> property explicitly
+in the <code>property-bag</code>. The <code>property-bag</code> is an optional collection of properties intended for the receiver of the message.
+A property bag is only allowed at the very end of a topic. It always starts with a <code>/?</code> character, followed by pairs of
+URL encoded property names and values that are separated by <code>&amp;</code>. For example, a property bag containing two properties
+<em>seqNo</em> and <em>importance</em> looks like this: <code>/topic/name/?seqNo=10034&amp;importance=high</code>.</p>
+<h2 id="publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</h2>
+<ul>
+<li>Topic:
+<ul>
+<li><code>t</code></li>
+<li><code>telemetry</code></li>
+</ul>
+</li>
+<li>Authentication: required</li>
+<li>Payload:
+<ul>
+<li>(required) Arbitrary payload</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish telemetry data. It is available only if the protocol adapter is
+configured to require devices to authenticate (which is the default). When using this topic, the MQTT adapter determines
+the device&rsquo;s tenant and device identity as part of the authentication process.</p>
+<p><strong>Example</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> using a client certificate for authentication:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in base directory of Hono repository:</span>
+</span></span><span style="display:flex;"><span>mosquitto_pub -p <span style="color:#ae81ff">8883</span> -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> --cert demo-certs/certs/device-4711-cert.pem --key demo-certs/certs/device-4711-key.pem --cafile demo-certs/certs/trusted-certs.pem
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The example above assumes that the MQTT adapter is
+<a href="https://www.eclipse.org/hono/docs/2.0/admin-guide/secure_communication/#mqtt-adapter">configured for TLS</a> and the secure port is used.</p>
+    </div>
+</div>
+<h2 id="publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</h2>
+<ul>
+<li>Topic:
+<ul>
+<li><code>t/${tenant-id}/${device-id}</code></li>
+<li><code>telemetry/${tenant-id}/${device-id}</code></li>
+</ul>
+</li>
+<li>Authentication: none</li>
+<li>Payload:
+<ul>
+<li>(required) Arbitrary payload</li>
+</ul>
+</li>
+</ul>
+<p>This topic can be used by devices that have not authenticated to the protocol adapter. Note that this requires the
+<code>HONO_MQTT_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t t/DEFAULT_TENANT/4711 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><h2 id="publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</h2>
+<ul>
+<li>Topic:
+<ul>
+<li><code>t//${device-id}</code></li>
+<li><code>telemetry//${device-id}</code></li>
+<li><code>t/${tenant-id}/${device-id}</code></li>
+<li><code>telemetry/${tenant-id}/${device-id}</code></li>
+</ul>
+</li>
+<li>Authentication: required</li>
+<li>Payload:
+<ul>
+<li>(required) Arbitrary payload</li>
+</ul>
+</li>
+</ul>
+<p>This topic can be used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a
+protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology
+like <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by
+the gateway during connection establishment with the protocol adapter are used to authenticate the gateway whereas the
+parameters from the topic name are used to identify the device that the gateway publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to publish data on behalf of the device implicitly by means of
+retrieving a <em>registration assertion</em> for the device from the configured
+<a href="/hono/docs/2.0/admin-guide/common-config/#device-registration-service-connection-configuration">Device Registration service</a>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4712</code> via gateway <code>gw-1</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t t/DEFAULT_TENANT/4712 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The example above assumes that a gateway device with ID <code>gw-1</code> has been registered with <code>hashed-password</code> credentials
+with <em>auth-id</em> <code>gw</code> and password <code>gw-secret</code>.</p>
+    </div>
+</div>
+<h2 id="publishing-events">Publishing Events</h2>
+<p>The MQTT adapter supports the publishing of events by means of MQTT <em>PUBLISH</em> packets using QoS 1 only.
+The adapter will send an MQTT <em>PUBACK</em> packet to the client once the event has been accepted by the downstream messaging
+infrastructure.</p>
+<p>This requires that</p>
+<ul>
+<li>the events published by the client comply with the format defined by the Event API and</li>
+<li>the downstream messaging infrastructure has capacity to process events for the client&rsquo;s tenant.</li>
+</ul>
+<p>The protocol adapter checks the configured <a href="/hono/docs/2.0/concepts/resource-limits/">message limit</a> before
+accepting any event messages. An exceeded message limit will cause an error.</p>
+<p>Any kind of error when processing an incoming event message will be reported back to the client if the client has
+subscribed on a dedicated error topic. See <a href="#error-reporting-via-error-topic">Error Reporting via Error Topic</a>
+for details.</p>
+<p>If such an error subscription by the client exists, the error will by default be ignored after it got published on the
+error topic, otherwise the connection to the client will be closed. The handling of errors can further be controlled
+by means of an <em>on-error</em> property bag parameter set on the event message topic. Refer to
+<a href="#error-handling">Error Handling</a> for details.</p>
+<p>The devices can optionally indicate a <em>time-to-live</em> duration for event messages and the content type of the payload
+by setting the <em>hono-ttl</em> and <em>content-type</em> properties explicitly in the <code>property-bag</code>. The <code>property-bag</code> is an optional
+collection of properties intended for the receiver of the message. A property bag is only allowed at the very end of a
+topic. It always starts with a <code>/?</code> character, followed by pairs of URL encoded property names and values that are
+separated by <code>&amp;</code>. For example, a property bag containing two properties <em>seqNo</em> and <em>importance</em> looks like this:
+<code>/topic/name/?seqNo=10034&amp;importance=high</code>.</p>
+<p>The MQTT adapter currently does not use any properties except <em>hono-ttl</em>.</p>
+<h2 id="publish-an-event-authenticated-device">Publish an Event (authenticated Device)</h2>
+<ul>
+<li>Topic:
+<ul>
+<li><code>e</code></li>
+<li><code>event</code></li>
+</ul>
+</li>
+<li>Authentication: required</li>
+<li>Payload:
+<ul>
+<li>(required) Arbitrary payload</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish events. It is available only if the protocol adapter has been configured
+to require devices to authenticate (which is the default).</p>
+<p><strong>Examples</strong></p>
+<p>Upload a JSON string for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t e -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+</span></span></code></pre></div><p>Upload a JSON string for device <code>4711</code> with <code>time-to-live</code> as 10 seconds:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t e/?hono-ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+</span></span></code></pre></div><h2 id="publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</h2>
+<ul>
+<li>Topic:
+<ul>
+<li><code>e/${tenant-id}/${device-id}</code></li>
+<li><code>event/${tenant-id}/${device-id}</code></li>
+</ul>
+</li>
+<li>Authentication: none</li>
+<li>Payload:
+<ul>
+<li>(required) Arbitrary payload</li>
+</ul>
+</li>
+</ul>
+<p>This topic can be used by devices that have not authenticated to the protocol adapter. Note that this requires the
+<code>HONO_MQTT_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t e/DEFAULT_TENANT/4711 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> with <code>time-to-live</code> as 15 seconds:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t e/DEFAULT_TENANT/4711/?hono-ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span> -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+</span></span></code></pre></div><h2 id="publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</h2>
+<ul>
+<li>Topic:
+<ul>
+<li><code>e//${device-id}</code></li>
+<li><code>event//${device-id}</code></li>
+<li><code>e/${tenant-id}/${device-id}</code></li>
+<li><code>event/${tenant-id}/${device-id}</code></li>
+</ul>
+</li>
+<li>Authentication: required</li>
+<li>Payload:
+<ul>
+<li>(required) Arbitrary payload</li>
+</ul>
+</li>
+</ul>
+<p>This topic can be used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a
+protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology
+like <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by
+the gateway during connection establishment with the protocol adapter are used to authenticate the gateway whereas the
+parameters from the topic name are used to identify the device that the gateway publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to publish data on behalf of the device implicitly by means of
+retrieving a <em>registration assertion</em> for the device from the configured
+<a href="/hono/docs/2.0/admin-guide/common-config/#device-registration-service-connection-configuration">Device Registration service</a>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4712</code> via gateway <code>gw-1</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t e//4712 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The example above assumes that a gateway device with ID <code>gw-1</code> has been registered with <code>hashed-password</code> credentials
+with <em>auth-id</em> <code>gw</code> and password <code>gw-secret</code>.</p>
+    </div>
+</div>
+<h2 id="command--control">Command &amp; Control</h2>
+<p>The MQTT adapter enables devices to receive commands that have been sent by business applications by means of sending an
+MQTT <em>SUBSCRIBE</em> packet containing a device specific <em>topic filter</em> as described below. Devices can subscribe with QoS
+1 or QoS 0. The adapter indicates the outcome of the subscription request by sending back a corresponding <em>SUBACK</em> packet.
+The SUBACK packet will contain <em>Success - QoS 0</em> (<code>0x00</code>) or <em>Success - QoS 1</em> (<code>0x01</code>), indicating QoS 0 or 1, if the
+command topic filter is valid and the subscription was successfully registered. The SUBACK packet will contain the
+<em>Failure</em> (<code>0x80</code>) value in case of an invalid or unsupported filter and in case there was a (temporary) error
+registering the command subscription. Devices should therefore retry sending an MQTT <em>SUBSCRIBE</em> packet in case a SUBACK
+packet with the <em>Failure</em> value is received, provided a valid filter is used. When a device no longer wants to receive
+commands anymore, it can send an MQTT <em>UNSUBSCRIBE</em> packet to the adapter, including the same topic filter that has been
+used to subscribe.</p>
+<p>When a device has successfully subscribed, the adapter sends an
+<a href="/hono/docs/2.0/api/event/#empty-notification">empty notification</a> on behalf of the device to the downstream
+messaging infrastructure with the <em>ttd</em> header set to <code>-1</code>, indicating that the device will be ready to receive commands
+until further notice. Analogously, the adapter sends an empty notification with the <em>ttd</em> header set to <code>0</code> when a
+device unsubscribes from commands.</p>
+<p>Commands can be sent following a <em>request/response</em> pattern or being <em>one-way</em>.</p>
+<p>For <em>Request/Response</em> commands, devices send their responses to commands by means of sending an MQTT <em>PUBLISH</em> message
+to a topic that is specific to the command that has been executed. The MQTT adapter accepts responses being published
+using either QoS 0 or QoS 1.</p>
+<p>The MQTT adapter checks the configured <a href="/hono/docs/2.0/concepts/resource-limits/">message limit</a> before accepting
+any command requests and responses. In case of incoming command requests from business applications, if the message
+limit is exceeded, the Adapter rejects the message with the reason <code>amqp:resource-limit-exceeded</code>. And for the incoming
+command responses from devices, the Adapter rejects the message and closes the connection to the client.</p>
+<p>The following sections define the topic filters/names to use for subscribing to and responding to commands.
+The following <em>shorthand</em> versions of topic path segments are supported:</p>
+<ul>
+<li><code>c</code> instead of <code>command</code></li>
+<li><code>q</code> instead of <code>req</code></li>
+<li><code>s</code> instead of <code>res</code></li>
+</ul>
+<p>The following variables are used:</p>
+<ul>
+<li><code>${command}</code> : An arbitrary string that indicates the command to execute, e.g. <code>setBrightness</code>. The command is provided by
+the application that sends the command.</li>
+<li><code>${req-id}</code> (only for <em>Request/Response</em> commands) : The unique identifier of the command execution request. The
+identifier is passed to the device as part of the name of the topic that the command is published to. The device needs
+to publish its response to the command to a topic which includes this identifier, thus allowing the adapter to
+correlate the response with the request.</li>
+<li><code>${status}</code> : The HTTP status code indicating the outcome of executing the command. This status code is passed on to
+the application in the AMQP message&rsquo;s <em>status</em> application property.</li>
+</ul>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The topic filters defined below make use of MQTT&rsquo;s wild card characters in certain places of topic filters.
+However, the MQTT adapter does <strong>not</strong> support the general usage of wild card characters in topic filters in any
+other way than defined below.</p>
+    </div>
+</div>
+<h3 id="receiving-commands-authenticated-device">Receiving Commands (authenticated Device)</h3>
+<p>An authenticated device MUST use one of the following topic filters for subscribing to commands:</p>
+<ul>
+<li><code>c/[${tenant-id}]/[${device-id}]/q/#</code></li>
+<li><code>command/[${tenant-id}]/[${device-id}]/req/#</code></li>
+</ul>
+<p>Both the tenant and the device ID are optional. If specified, they MUST match the authenticated device&rsquo;s tenant and/or
+device ID. Note that the <em>authentication identifier</em> used in the device&rsquo;s credentials is <em>not</em> necessarily the same as
+the device ID.</p>
+<p>The protocol adapter will publish <strong>one-way</strong> commands for the device to the following topic names respectively:</p>
+<ul>
+<li><code>c/[${tenant-id}]/[${device-id}]/q//${command}</code></li>
+<li><code>command/[${tenant-id}]/[${device-id}]/req//${command}</code></li>
+</ul>
+<p>The protocol adapter will publish <strong>request-response</strong> commands for the device to the following topic names respectively:</p>
+<ul>
+<li><code>c/[${tenant-id}]/[${device-id}]/q/${req-id}/${command}</code></li>
+<li><code>command/[${tenant-id}]/[${device-id}]/req/${req-id}/${command}</code></li>
+</ul>
+<p>The topic name will contain</p>
+<ul>
+<li>the <em>tenant-id</em> and/or <em>device-id</em> if the tenant and/or device ID had been included in the topic filter used for subscribing,</li>
+<li><code>command</code> and <code>req</code> if the topic filter used for subscribing also contained the spelled-out segments.</li>
+</ul>
+<p><strong>Examples</strong></p>
+<p>The following command can be used to subscribe to commands resulting in command messages being published to a
+topic that does not include tenant nor device ID:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t c///q/#
+</span></span></code></pre></div><p>A request-response command with name <code>setBrightness</code> from an application might look like this:</p>
+<pre tabindex="0"><code>c///q/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>A corresponding one-way command might look like this:</p>
+<pre tabindex="0"><code>c///q//setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>Note that the topic in the latter case doesn&rsquo;t contain a request identifier.</p>
+<p>The following command can be used to subscribe to commands resulting in command messages being published to a
+topic that includes the tenant ID:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t command/DEFAULT_TENANT//req/#
+</span></span></code></pre></div><p>Note the usage of the fully spelled out names (<code>command</code> and <code>req</code> instead of <code>c</code> and <code>q</code>) and the inclusion of the tenant ID
+in the topic filter.</p>
+<p>A corresponding request-response command with name <code>setBrightness</code> from an application might look like this:</p>
+<pre tabindex="0"><code>command/DEFAULT_TENANT//req/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>A corresponding one-way command might look like this:</p>
+<pre tabindex="0"><code>command/DEFAULT_TENANT//req//setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>Note that the topic also includes the tenant identifier because the
+topic filter used for subscribing did contain the tenant ID as well.</p>
+<h3 id="receiving-commands-unauthenticated-device">Receiving Commands (unauthenticated Device)</h3>
+<p>An unauthenticated device MUST use one of the following topic filters for subscribing to commands:</p>
+<ul>
+<li><code>c/${tenant-id}/${device-id}/q/#</code></li>
+<li><code>command/${tenant-id}/${device-id}/req/#</code></li>
+</ul>
+<p>The protocol adapter will publish <strong>one-way</strong> commands for the device to the following topic names respectively:</p>
+<ul>
+<li><code>c/${tenant-id}/${device-id}/q//${command}</code></li>
+<li><code>command/${tenant-id}/${device-id}/q//${command}</code></li>
+</ul>
+<p>The protocol adapter will publish <strong>request-response</strong> commands for the device to the following topic names respectively:</p>
+<ul>
+<li><code>c/${tenant-id}/${device-id}/q/${req-id}/${command}</code></li>
+<li><code>command/${tenant-id}/${device-id}/q/${req-id}/${command}</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -t c/DEFAULT_TENANT/4711/q/#
+</span></span></code></pre></div><p>A request-response command with name <code>setBrightness</code> from an application might look like this:</p>
+<pre tabindex="0"><code>c/DEFAULT_TENANT/4711/q/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>A corresponding one-way command might look like this:</p>
+<pre tabindex="0"><code>c/DEFAULT_TENANT/4711/q//setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>Note that the topic in the latter case doesn&rsquo;t contain a request identifier.</p>
+<h3 id="receiving-commands-authenticated-gateway">Receiving Commands (authenticated Gateway)</h3>
+<p><em>Gateway</em> components can receive commands for devices which do not connect to a protocol adapter directly but instead
+are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a>
+or <a href="https://lora-alliance.org/">LoRa</a>. Corresponding devices have to be configured so that they can be used with a
+gateway. See <a href="/hono/docs/2.0/concepts/connecting-devices/#connecting-via-a-device-gateway">Connecting via a Device Gateway</a>
+for details.</p>
+<p>An authenticated gateway MUST use one of the following topic filters for subscribing to commands:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Topic Filter</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>c/[${tenant-id}]/+/q/#</code><br><code>command/[${tenant-id}]/+/req/#</code></td>
+<td style="text-align:left">Subscribe to commands for <strong>all</strong> devices that the gateway is authorized to act on behalf of.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>c/[${tenant-id}]/${device-id}/q/#</code><br><code>command/[${tenant-id}]/${device-id}/req/#</code></td>
+<td style="text-align:left">Subscribe to commands for <strong>one specific</strong> device that the gateway is authorized to act on behalf of.</td>
+</tr>
+</tbody>
+</table>
+<p>The protocol adapter will publish <strong>one-way</strong> commands for devices to the following topic names respectively:</p>
+<ul>
+<li><code>c/[${tenant-id}]/${device-id}/q//${command}</code></li>
+<li><code>command/[${tenant-id}]/${device-id}/req//${command}</code></li>
+</ul>
+<p>The protocol adapter will publish <strong>request-response</strong> commands for devices to the following topic names respectively:</p>
+<ul>
+<li><code>c/[${tenant-id}]/${device-id}/q/${req-id}/${command}</code></li>
+<li><code>command/[${tenant-id}]/${device-id}/req/${req-id}/${command}</code></li>
+</ul>
+<p>The topic name will contain</p>
+<ul>
+<li>the <em>tenant-id</em> segment if the tenant identifier had been included in the topic filter used for subscribing,</li>
+<li><code>command</code> and <code>req</code> if the topic filter used for subscribing also contained the spelled-out segments.</li>
+</ul>
+<p>When processing an incoming command message, the protocol adapter will give precedence to a device-specific command
+subscription matching the command target device, whether the subscription comes from a gateway or the device itself.
+If there are multiple such subscriptions from multiple gateways and/or from the device itself, the subscription
+initiated last will get the command messages.</p>
+<p>If no device-specific command subscription exists for a command target device, but <em>one</em> gateway, that may act on behalf
+of the device, has subscribed to commands for all its devices, then the command message is sent to that gateway.</p>
+<p>If <em>multiple</em> gateways have initiated such generic subscriptions, the protocol adapter may have to decide to which
+gateway a particular command message will be sent to.
+In case the command target device has already sent a telemetry, event or command response message via a gateway and if
+that gateway has created such a command subscription, that gateway will be chosen. Otherwise one gateway that may act
+on behalf of the command target device and that has an open subscription will be chosen randomly to receive the command
+message.</p>
+<p><strong>Subscribe to Commands for all Devices</strong></p>
+<p>A subscription to commands for all devices that a gateway acts on behalf of looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c/DEFAULT_TENANT/+/q/#
+</span></span></code></pre></div><p>A request/response command for device <code>4711</code> with name <code>setBrightness</code> from an application might then look like this:</p>
+<pre tabindex="0"><code>c/DEFAULT_TENANT/4711/q/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>Note that the tenant identifier is included in the topic name that the command has been published to because it had been
+included in the topic filter used for subscribing to the commands.</p>
+<p><strong>Subscribe to Commands for a specific Device</strong></p>
+<p>A subscription to commands for a specific device can be done like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/q/#
+</span></span></code></pre></div><p>A corresponding <em>one-way</em> command might look like this:</p>
+<pre tabindex="0"><code>c//4711/q//setBrightness
+{
+  &#34;brightness&#34;: 79
+}
+</code></pre><p>Note that the topic does not include the tenant identifier because the
+topic filter used for subscribing did not contain the tenant ID either.</p>
+<h3 id="sending-a-response-to-a-command-authenticated-device">Sending a Response to a Command (authenticated Device)</h3>
+<p>An authenticated device MUST send the response to a previously received command to
+one of the following topics:</p>
+<ul>
+<li><code>c///s/${req-id}/${status}</code></li>
+<li><code>command///res/${req-id}/${status}</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t c///s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+</span></span></code></pre></div><h3 id="sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</h3>
+<p>An unauthenticated device MUST send the response to a previously received command to
+one of the following topics:</p>
+<ul>
+<li><code>c/${tenant-id}/${device-id}/s/${req-id}/${status}</code></li>
+<li><code>command/${tenant-id}/${device-id}/res/${req-id}/${status}</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t c/DEFAULT_TENANT/4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+</span></span></code></pre></div><h3 id="sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</h3>
+<p>An authenticated gateway MUST send a device&rsquo;s response to a command it has received on behalf of the device to one of the following topics:</p>
+<ul>
+<li><code>c//${device-id}/s/${req-id}/${status}</code></li>
+<li><code>command//${device-id}/res/${req-id}/${status}</code></li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+</span></span></code></pre></div><h2 id="error-reporting-via-error-topic">Error Reporting via Error Topic</h2>
+<p>The default behaviour when an error occurs while publishing telemetry, event or command response messages is for the
+MQTT adapter to close the network connection to the device, as mandated by the MQTT 3.1.1 spec.</p>
+<p>An alternative way of dealing with errors involves keeping the connection intact and letting the MQTT adapter publish a
+corresponding error message on a specific error topic to the device. To enable that behavior, the device sends an
+MQTT <em>SUBSCRIBE</em> packet with a topic filter as described below on <em>the same MQTT connection</em> that is also used for
+publishing the telemetry, event or command response messages. Devices can subscribe with QoS 0 only. The adapter
+indicates the outcome of the subscription request by sending back a corresponding <em>SUBACK</em> packet. The SUBACK packet
+will contain <em>Success - QoS 0</em> (<code>0x00</code>) for a valid error topic filter. The SUBACK packet will contain the <em>Failure</em>
+(<code>0x80</code>) value in case of an invalid or unsupported filter and in case a gateway is trying to subscribe on behalf of a
+device that doesn&rsquo;t have the gateway in its list of supported <code>via</code> gateways. In order to again activate the default
+error handling behavior, the device can send an MQTT <em>UNSUBSCRIBE</em> packet to the adapter, including the same topic
+filter that has been used to subscribe.</p>
+<p>The following sections define the topic filters to use for subscribing to error messages and the resulting error message
+topic. Instead of the <code>error</code> topic path segment, the shorthand version <code>e</code> is also supported.</p>
+<p>The following variables are used:</p>
+<ul>
+<li><code>${endpoint-type}</code>: The endpoint type of the device message that caused the error. Its value is either <code>telemetry</code>, <code>event</code>
+or the respective shorthand version. In case of a command response device message <code>command-response</code> or <code>c-s</code> is used.</li>
+<li><code>${correlation-id}</code>: The identifier that may be used to correlate the error message with the device message that caused
+the error. The identifier is either the value of a <em>correlation-id</em> property bag value contained in the device message
+topic, or the identifier is the <em>packet-id</em> of the device message if it was sent with QoS 1.
+Otherwise, a value of <code>-1</code> is used.</li>
+<li><code>${error-status}</code>: The HTTP status code of the error that was caused by the device message.</li>
+</ul>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+    <div class="box-content">
+<p>Since the subscription on the error topic needs to be done on the same MQTT connection that is also used for publishing
+the telemetry, event or command response messages, the Mosquitto MQTT Command Line Client cannot be used. The
+<a href="https://hivemq.github.io/mqtt-cli/">MQTT CLI</a> tool with its
+<a href="https://hivemq.github.io/mqtt-cli/docs/shell.html">shell mode</a> is an alternative that supports using one MQTT
+connection for both subscribing and publishing.</p>
+    </div>
+</div>
+<h3 id="receiving-error-messages-authenticated-device">Receiving Error Messages (authenticated Device)</h3>
+<p>An authenticated device MUST use one of the following topic filters for subscribing to error messages:</p>
+<ul>
+<li><code>e/[${tenant-id}]/[${device-id}]/#</code></li>
+<li><code>error/[${tenant-id}]/[${device-id}]/#</code></li>
+</ul>
+<p>Both the tenant and the device ID are optional. If specified, they MUST match the authenticated device&rsquo;s tenant and/or
+device ID. Note that the <em>authentication identifier</em> used in the device&rsquo;s credentials is <em>not</em> necessarily the same as
+the device ID.</p>
+<p>The protocol adapter will publish error messages for the device to the following topic names
+respectively:</p>
+<ul>
+<li><code>e/[${tenant-id}]/[${device-id}]/${endpoint-type}/${correlation-id}/${error-status}</code></li>
+<li><code>error/[${tenant-id}]/[${device-id}]/${endpoint-type}/${correlation-id}/${error-status}</code></li>
+</ul>
+<p>The topic name will contain</p>
+<ul>
+<li>the <em>tenant-id</em> and/or <em>device-id</em> if the tenant and/or device ID had been included in the topic filter used for subscribing,</li>
+<li><code>error</code> if the topic filter used for subscribing also contained the spelled-out segment.</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>An example using the <a href="https://hivemq.github.io/mqtt-cli/">MQTT CLI</a> that will produce an error output if there is
+no downstream consumer for the device messages.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mqtt shell
+</span></span><span style="display:flex;"><span>con -V <span style="color:#ae81ff">3</span> -h <span style="color:#f92672">[</span>MQTT_ADAPTER_IP<span style="color:#f92672">]</span> -u <span style="color:#f92672">[</span>DEVICE<span style="color:#f92672">]</span>@<span style="color:#f92672">[</span>TENANT<span style="color:#f92672">]</span> -pw <span style="color:#f92672">[</span>PWD<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>sub -t e///# --qos <span style="color:#ae81ff">0</span> --outputToConsole
+</span></span><span style="display:flex;"><span>pub -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> --qos <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>Using an explicit correlation id:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pub -t t/?correlation-id<span style="color:#f92672">=</span><span style="color:#ae81ff">123</span> -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> --qos <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h3 id="receiving-error-messages-unauthenticated-device">Receiving Error Messages (unauthenticated Device)</h3>
+<p>An unauthenticated device MUST use one of the following topic filters for subscribing to error messages:</p>
+<ul>
+<li><code>es/${tenant-id}/${device-id}/#</code></li>
+<li><code>error/${tenant-id}/${device-id}/#</code></li>
+</ul>
+<p>The protocol adapter will publish error messages for the device to the following topic names
+respectively:</p>
+<ul>
+<li><code>e/${tenant-id}/${device-id}/${endpoint-type}/${correlation-id}/${error-status}</code></li>
+<li><code>error/${tenant-id}/${device-id}/${endpoint-type}/${correlation-id}/${error-status}</code></li>
+</ul>
+<h3 id="receiving-error-messages-authenticated-gateway">Receiving Error Messages (authenticated Gateway)</h3>
+<p>An authenticated gateway MUST use one of the following topic filters for subscribing to error messages:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Topic Filter</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>e/[${tenant-id}]/+/#</code><br/><code>error/[${tenant-id}]/+/#</code></td>
+<td style="text-align:left">Subscribe to error messages for <strong>all devices</strong> that the gateway is authorized to act on behalf of.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>e/[${tenant-id}]/${device-id}/#</code><br/><code>error/[${tenant-id}]/${device-id}/#</code></td>
+<td style="text-align:left">Subscribe to error messages for <strong>one specific</strong> device that the gateway is authorized to act on behalf of.</td>
+</tr>
+</tbody>
+</table>
+<p>The protocol adapter will publish error messages for the device to the following topic names
+respectively:</p>
+<ul>
+<li><code>e/[${tenant-id}]/[${device-id}]/${endpoint-type}/${correlation-id}/${error-status}</code></li>
+<li><code>error/[${tenant-id}]/[${device-id}]/${endpoint-type}/${correlation-id}/${error-status}</code></li>
+</ul>
+<p>The topic name will contain</p>
+<ul>
+<li>the <em>tenant-id</em> and/or <em>device-id</em> if the tenant and/or device ID had been included in the topic filter used for subscribing,</li>
+<li><code>error</code> if the topic filter used for subscribing also contained the spelled-out segment.</li>
+</ul>
+<h3 id="error-message-payload">Error Message Payload</h3>
+<p>The MQTT adapter publishes error messages with a UTF-8 encoded JSON payload containing the following fields:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">JSON Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>code</em></td>
+<td style="text-align:center"><em>yes</em></td>
+<td style="text-align:left"><em>number</em></td>
+<td style="text-align:left">The HTTP error status code. See the table below for possible values.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>message</em></td>
+<td style="text-align:center"><em>yes</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The error detail message.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>timestamp</em></td>
+<td style="text-align:center"><em>yes</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The date and time the error message was published by the MQTT adapter. The value is an <a href="https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations">ISO 8601 compliant <em>combined date and time representation in extended format</em></a>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>correlation-id</em></td>
+<td style="text-align:center"><em>yes</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The identifier that may be used to correlate the error message with the device message that caused the error. The identifier is either the value of a <em>correlation-id</em> property bag value contained in the device message topic, or the identifier is the <em>packet-id</em> of the device message if it was sent with QoS 1. Otherwise a value of <code>-1</code> is used.</td>
+</tr>
+</tbody>
+</table>
+<p>The error message&rsquo;s <em>code</em> field may contain the following HTTP status codes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Code</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>400</em></td>
+<td style="text-align:left">Bad Request, the request cannot be processed. A possible reason for this is an invalid <em>PUBLISH</em> topic.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>403</em></td>
+<td style="text-align:left">Forbidden, the device&rsquo;s registration status cannot be asserted.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>404</em></td>
+<td style="text-align:left">Not Found, the device is disabled or does not exist.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>413</em></td>
+<td style="text-align:left">Request Entity Too Large, the request body exceeds the maximum supported size.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>429</em></td>
+<td style="text-align:left">Too Many Requests, the tenant&rsquo;s message limit for the current period is exceeded.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>503</em></td>
+<td style="text-align:left">Service Unavailable, the request cannot be processed. Possible reasons for this include:<ul><li>There is no consumer of telemetry data for the given tenant connected to Hono, or the consumer has not indicated that it may receive further messages (not giving credits). </li><li>If the QoS level header is set to <code>1</code> (<em>at least once</em> semantics), the reason may be: <ul><li>The consumer has indicated that it didn&rsquo;t process the telemetry data.</li> <li>The consumer failed to indicate in time whether it has processed the telemetry data.</li></ul></li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>Example payload:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;code&#34;</span>: <span style="color:#ae81ff">400</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;malformed topic name&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#e6db74">&#34;2020-12-24T19:00:00+0100&#34;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&#34;correlation-id&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="error-handling">Error Handling</h2>
+<p>When a device publishes a telemetry, event or command response message and there is an error processing the message,
+the handling of the error depends on whether there is a
+<a href="#error-reporting-via-error-topic">error topic subscription</a> for the device and whether a <em>on-error</em>
+property bag parameter was set on the topic used for sending the message.</p>
+<p>If no error subscription is in place and no <em>on-error</em> parameter was set, the default error handling behavior is to
+close the MQTT connection to the device. If the device has a subscription on the error topic (on the same MQTT
+connection the device uses for sending messages), the default behavior is to keep the MQTT connection open unless a
+terminal error happens. The errors that are classified as terminal are listed below.</p>
+<ul>
+<li>The adapter is disabled for the tenant that the client belongs to.</li>
+<li>The authenticated device or gateway is disabled or not registered.</li>
+<li>The tenant is disabled or does not exist.</li>
+</ul>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>When a terminal error occurs, the connection will always be closed irrespective of any <em>on-error</em> parameter or error
+subscription.</p>
+    </div>
+</div>
+<p>The following table lists the different behaviors based on the value of the <em>on-error</em> property bag parameter and the
+existence of an error subscription:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><em>on-error</em> topic parameter</th>
+<th style="text-align:left">Error subscription exists</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>default</em> or value not set</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">The connection to the device will get closed (like with the <em>disconnect</em> option).</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>disconnect</em></td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">The connection to the device will get closed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>ignore</em></td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">The error will be ignored and a <em>PUBACK</em> for the message that caused the error will get sent.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>skip-ack</em></td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">The error will be ignored and no <em>PUBACK</em> for the message that caused the error will get sent.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>default</em> or value not set</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">After having sent an error message on the error topic, the error will be ignored and a <em>PUBACK</em> for the message that caused the error will get sent (like with the <em>ignore</em> option).</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>disconnect</em></td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">After having sent an error message on the error topic, the connection to the device will get closed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>ignore</em></td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">After having sent an error message on the error topic, the error will be ignored and a <em>PUBACK</em> for the message that caused the error will get sent.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>skip-ack</em></td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">After having sent an error message on the error topic, the error will be ignored and no <em>PUBACK</em> for the message that caused the error will get sent.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<p>An authenticated device wanting to have errors always be ignored can for example publish telemetry messages on this topic:</p>
+<p><code>telemetry/?on-error=ignore</code></p>
+<h2 id="custom-message-mapping">Custom Message Mapping</h2>
+<p>This protocol adapter supports transformation of messages that have been uploaded by devices before they get forwarded
+to downstream consumers.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>This is an experimental feature. The names of the configuration properties, potential values and the overall
+functionality are therefore subject to change without prior notice.</p>
+    </div>
+</div>
+<p>This feature is useful in scenarios where devices are connected to the adapter via a gateway but the gateway is not
+able to include the device ID in the topic that the gateway publishes data to. The gateway will use the single-segment <code>t</code>,
+<code>e</code> or <code>c</code> topics in this case. The message payload will usually contain the identifier of the device that the
+data originates from.</p>
+<p>The same functionality can also be used to transform the payload of messages uploaded by a device. This can be used for
+example to transform binary encoded data into a JSON document which can be consumed more easily by downstream consumers.</p>
+<p>The mechanism works as follows:</p>
+<ol>
+<li>
+<p>A client uploads a message to the MQTT adapter.</p>
+</li>
+<li>
+<p>The adapter invokes the Device Registration service&rsquo;s <em>assert Registration</em> operation using either
+the authenticated device&rsquo;s identifier, if the topic does not contain a device ID, or the device ID from the
+topic.</p>
+</li>
+<li>
+<p>If the assertion succeeds, the adapter creates the downstream message using the original message&rsquo;s payload and
+the asserted device ID as the origin device.</p>
+</li>
+<li>
+<p>If the <em>assert Registration</em> response payload contains a value for the <em>mapper</em> property, the adapter tries to
+find a <em>mapper endpoint</em> configuration for the given value. If a mapper endpoint with a matching name has been
+configured for the adapter,</p>
+<ol>
+<li>the adapter sends an HTTP request to the endpoint which contains the original message&rsquo;s payload in the request body.</li>
+<li>If the response body is not empty, it is used as the downstream message&rsquo;s payload, replacing the original payload.</li>
+<li>If the response contains a <em>device_id</em> header and its value is different from the original device ID, then the adapter
+invokes the <em>assert Registration</em> operation again, this time using the mapped device ID instead of the original
+device ID. If the assertion succeeds, the adapter uses the asserted (mapped) device ID for the downstream message.</li>
+</ol>
+</li>
+<li>
+<p>The adapter forwards the downstream message.</p>
+</li>
+</ol>
+<p>Please refer to the <a href="/hono/docs/2.0/api/management/#/devices/createDeviceRegistration">Device Registry Management API</a>
+for how to register a <em>mapper</em> for a device.
+Please refer to the <a href="/hono/docs/2.0/admin-guide/mqtt-adapter-config/#custom-message-mapping">MQTT Adapter Admin Guide</a>
+for how to configure custom mapper endpoints.</p>
+<h2 id="downstream-meta-data">Downstream Meta Data</h2>
+<p>The adapter includes the following meta data in messages being sent downstream:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Location</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>orig_adapter</em></td>
+<td style="text-align:left"><em>application</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the adapter&rsquo;s <em>type name</em> which can be used by downstream consumers to determine the protocol adapter that the message has been received over. The MQTT adapter&rsquo;s type name is <code>hono-mqtt</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_address</em></td>
+<td style="text-align:left"><em>application</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the name of the MQTT topic that the device has originally published the data to.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>x-opt-retain</em></td>
+<td style="text-align:left"><em>message-annotations</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left">Contains <code>true</code> if the device has published an event or telemetry message with its <em>retain</em> flag set to <code>1</code></td>
+</tr>
+</tbody>
+</table>
+<p>The adapter also considers <em>defaults</em> registered for the device at either the
+<a href="/hono/docs/2.0/api/tenant/#tenant-information-format">tenant</a> or the
+<a href="/hono/docs/2.0/api/device-registration/#assert-device-registration">device level</a>.
+The values of the default properties are determined as follows:</p>
+<ol>
+<li>If the message already contains a non-empty property of the same name, the value if unchanged.</li>
+<li>Otherwise, if a default property of the same name is defined in the device&rsquo;s registration information,
+that value is used.</li>
+<li>Otherwise, if a default property of the same name is defined for the tenant that the device belongs to,
+that value is used.</li>
+</ol>
+<p>Note that of the standard AMQP 1.0 message properties only the <em>content-type</em> and <em>ttl</em> can be set this way to a
+default value.</p>
+<h3 id="event-message-time-to-live">Event Message Time-to-live</h3>
+<p>Events published by devices will usually be persisted by the messaging infrastructure in order to support deferred
+delivery to downstream consumers.</p>
+<p>In most cases, the messaging infrastructure can be configured with a maximum <em>time-to-live</em> to apply to the events so
+that the events will be removed from the persistent store if no consumer has attached to receive the event before
+the message expires.</p>
+<p>In order to support environments where the messaging infrastructure cannot be configured accordingly, the protocol
+adapter supports setting a downstream event message&rsquo;s <em>ttl</em> property based on the <em>hono-ttl</em> property in the
+<em>property-bag</em> at the end of the event topic. Also, the default <em>ttl</em> and <em>max-ttl</em> values can be configured for a
+tenant/device as described in the <a href="/hono/docs/2.0/api/tenant/#resource-limits-configuration-format">Tenant API</a>.</p>
+<h2 id="tenant-specific-configuration">Tenant specific Configuration</h2>
+<p>The adapter uses the <a href="https://www.eclipse.org/hono/docs/2.0/api/tenant/#get-tenant-information">Tenant API</a> to retrieve <em>tenant specific
+configuration</em> for adapter type <code>hono-mqtt</code>. The following properties are (currently) supported in the <em>Adapter</em> object:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>enabled</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>false</code> the adapter will reject all data from devices belonging to the tenant.</td>
+</tr>
+</tbody>
+</table>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048659"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048659"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048659"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048659"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048659"></script>
+        <script src="/hono/docs/js/search.js?1663048659"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/2.0/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><a href="/hono/docs/2.0/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/2.0/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/2.0/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/2.0/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/2.0/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/2.0/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/2.0/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/2.0/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/2.0/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/2.0/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/2.0/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/2.0/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.0/user-guide/" title="User Guide" class="dd-item parent"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle" checked/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/2.0/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.0/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/2.0/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/2.0/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/2.0/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.0/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item active"><a href="/hono/docs/2.0/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.0/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/2.0/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.0/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/2.0/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.0/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/2.0/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/2.0/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/2.0/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/2.0/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/2.0/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/2.0/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/2.0/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.0/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/2.0/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.0/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/2.0/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/2.0/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/2.0/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/2.0/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/2.0/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/2.0/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/2.0/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.0/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/2.0/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/2.0/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.0/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.0/api/event-kafka/">Event API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/command-and-control-kafka/" title="Command &amp; Control API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.0/api/command-and-control-kafka/">Command &amp; Control API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/2.0/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.0/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.0/api/event/">Event API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.0/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/2.0/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/2.0/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/2.0/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/2.0/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/2.0/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/2.0/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/2.0/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/2.0/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.0/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/2.0/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/2.0/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/2.0/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/2.0/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/2.0/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/2.0/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/2.0/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/2.0/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/2.0/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.0/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/2.0/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/2.0/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/2.0/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/2.0/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/2.0/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/user-guide/mqtt-adapter/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/user-guide/mqtt-adapter/" selected>2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/user-guide/mqtt-adapter/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/user-guide/mqtt-adapter/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/user-guide/mqtt-adapter/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/user-guide/mqtt-adapter/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/user-guide/mqtt-adapter/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/user-guide/mqtt-adapter/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/user-guide/mqtt-adapter/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/user-guide/mqtt-adapter/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/user-guide/mqtt-adapter/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/user-guide/mqtt-adapter/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/user-guide/mqtt-adapter/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/user-guide/mqtt-adapter/">1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/user-guide/mqtt-adapter/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/user-guide/mqtt-adapter/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048659"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048659"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048659"></script>
+    <script src="/hono/docs/js/theme.js?1663048659"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

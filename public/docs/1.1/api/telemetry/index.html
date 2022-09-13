@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="1.1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Telemetry API Specification :: Eclipse Hono&trade; Vers.: 1.1</title>
+    <link rel="icon" href="/images/favicon.ico?1663048711" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048711" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048711" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048711" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048711"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.1/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048711"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Telemetry API Specification :: Eclipse Hono&amp;trade; Vers.: 1.1">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Telemetry API Specification :: Eclipse Hono&amp;trade; Vers.: 1.1" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.1/api/telemetry//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.1/api/telemetry/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.1</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/api/telemetry/index.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.1/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.1/api/"><span itemprop="name">API</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.1/api/telemetry/" aria-disabled="true"><span itemprop="name">Telemetry API Specification</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#southbound-operations">Southbound Operations</a>
+      <ul>
+        <li><a href="#forward-telemetry-data">Forward Telemetry Data</a></li>
+      </ul>
+    </li>
+    <li><a href="#northbound-operations">Northbound Operations</a>
+      <ul>
+        <li><a href="#receive-telemetry-data">Receive Telemetry Data</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Telemetry API Specification</h1>
+<p>The <em>Telemetry</em> API is used by <em>Protocol Adapters</em> to send telemetry data downstream.
+<em>Business Applications</em> and other consumers use the API to receive data published by devices belonging to a particular tenant.</p>
+<p>The Telemetry API is defined by means of AMQP 1.0 message exchanges, i.e. a client needs to connect to Hono using AMQP 1.0 in order to invoke operations of the API as described in the following sections. Throughout the remainder of this page we will simply use <em>AMQP</em> when referring to AMQP 1.0.</p>
+<h2 id="southbound-operations">Southbound Operations</h2>
+<p>The following operations can be used by <em>Protocol Adapters</em> to forward telemetry data received from devices to downstream consumers like <em>Business Applications</em>.</p>
+<h3 id="forward-telemetry-data">Forward Telemetry Data</h3>
+<p><strong>Preconditions</strong></p>
+<ol>
+<li>Adapter has established an AMQP connection with the AMQP Messaging Network.</li>
+<li>Adapter has established an AMQP link in role <em>sender</em> with the AMQP Messaging Network using target address <code>telemetry/${tenant_id}</code> where <code>${tenant_id}</code> is the ID of the tenant that the client wants to upload telemetry data for.</li>
+<li>The device for which the adapter wants to send telemetry data has been registered (see <a href="/hono/docs/1.1/api/device-registration/">Device Registration API</a>).</li>
+</ol>
+<p>The adapter indicates its preferred message delivery mode by means of the <em>snd-settle-mode</em> and <em>rcv-settle-mode</em> fields of its <em>attach</em> frame during link establishment.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">snd-settle-mode</th>
+<th style="text-align:left">rcv-settle-mode</th>
+<th style="text-align:left">Delivery semantics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>unsettled</code>, <code>mixed</code></td>
+<td style="text-align:left"><code>first</code></td>
+<td style="text-align:left">Using <code>unsettled</code> for the <em>snd-settle-mode</em> allows for adapters to implement both <em>AT LEAST ONCE</em> or <em>AT MOST ONCE</em> delivery semantics, depending on whether the adapter waits for and considers the disposition frames it receives from the AMQP Messaging Network or not. This is the recommended mode for forwarding telemetry data.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>settled</code></td>
+<td style="text-align:left"><code>first</code></td>
+<td style="text-align:left">Using <code>settled</code> for the <em>snd-settle-mode</em> allows for adapters to implement <em>AT MOST ONCE</em> delivery semantics only. This is the fastest mode of delivery but has the drawback of less reliable end-to-end flow control and potential loss of messages without notice.</td>
+</tr>
+</tbody>
+</table>
+<p>All other combinations are not supported by Hono and may result in the termination of the link or connection (depending on the configuration of the AMQP Messaging Network).</p>
+<p><strong>Message Flow</strong></p>
+<p>As indicated above, it is up to the discretion of the protocol adapter whether it wants to use <em>AT LEAST ONCE</em> or <em>AT MOST ONCE</em> delivery semantics.</p>
+<p>Hono&rsquo;s HTTP adapter allows devices to indicate, which delivery semantics they want to use when uploading telemetry data.
+The HTTP adapter always forwards messages unsettled and either ignores the outcome of the message transfer (<em>AT MOST ONCE</em>) or waits for the downstream peer to accept the message (<em>AT LEAST ONCE</em>) before acknowledging the reception of the message to the device.</p>
+<p>The following sequence diagram illustrates the flow of messages involved in the <em>HTTP Adapter</em> forwarding an <em>unsettled</em> telemetry data message to the downstream AMQP Messaging Network implementing <em>AT MOST ONCE</em> delivery semantics.</p>
+<figure><img src="forward_qos0.svg"/><figcaption>
+            <h4>Forward telemetry data flow (AT MOST ONCE)</h4>
+        </figcaption>
+</figure>
+
+<ol>
+<li><em>Device</em> <code>4711</code> PUTs telemetry data to the <em>HTTP Adapter</em>
+<ol>
+<li><em>HTTP Adapter</em> transfers telemetry data to <em>AMQP 1.0 Messaging Network</em>.</li>
+<li><em>HTTP Adapter</em> acknowledges the reception of the data to the <em>Device</em>.</li>
+</ol>
+</li>
+<li><em>AMQP 1.0 Messaging Network</em> acknowledges reception of the message which is ignored by the <em>HTTP Adapter</em>.</li>
+</ol>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>In the example above the HTTP adapter does not wait for the outcome of the transfer of the message to the AMQP Messaging Network before sending back the HTTP response to the device.
+If the messaging network had sent a disposition frame with the <em>rejected</em> instead of the <em>accepted</em> outcome, the HTTP adapter would still have signaled a 202 status code back to the device. In this case the data would have been lost without the device noticing.</div>
+</div>
+<p>The following sequence diagram illustrates the flow of messages involved in the <em>HTTP Adapter</em> forwarding an <em>unsettled</em> telemetry data message to the downstream AMQP Messaging Network implementing <em>AT LEAST ONCE</em> delivery semantics.</p>
+<figure><img src="forward_qos1.svg"/><figcaption>
+            <h4>Forward telemetry data flow (AT LEAST ONCE)</h4>
+        </figcaption>
+</figure>
+
+<ol>
+<li><em>Device</em> <code>4711</code> PUTs telemetry data to the <em>HTTP Adapter</em>, indicating <em>QoS Level</em> 1.
+<ol>
+<li><em>HTTP Adapter</em> transfers telemetry data to <em>AMQP 1.0 Messaging Network</em>.</li>
+<li><em>AMQP 1.0 Messaging Network</em> acknowledges reception of the message.</li>
+<li><em>HTTP Adapter</em> acknowledges the reception of the data to the <em>Device</em>.</li>
+</ol>
+</li>
+</ol>
+<p>When the AMQP Messaging Network fails to settle the transfer of a telemetry message or settles the transfer with any other outcome than <code>accepted</code>, the protocol adapter MUST NOT try to re-send such rejected messages but SHOULD indicate the failed transfer to the device if the transport protocol provides means to do so.</p>
+<p><strong>Message Format</strong></p>
+<p>The following table provides an overview of the properties a client needs to set on a <em>Forward Telemetry Data</em> message.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Location</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>content-type</em></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>symbol</em></td>
+<td style="text-align:left">A content type indicating the type and characteristics of the data contained in the payload, e.g. <code>text/plain; charset=&quot;utf-8&quot;</code> for a text message or <code>application/json</code> etc. The value may be set to <code>application/octet-stream</code> if the message payload is to be considered <em>opaque</em> binary data.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>creation-time</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>timestamp</em></td>
+<td style="text-align:left">The instant in time when the message has been created (see the <a href="http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-messaging-v1.0.html">AMQP 1.0 specification</a> for details). This property is mandatory if <em>ttd</em> is set, otherwise it is optional.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>device_id</em></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><em>application-properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The identifier of the device that the data in the payload is originating from.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>ttd</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>application-properties</em></td>
+<td style="text-align:left"><em>int</em></td>
+<td style="text-align:left">The <em>time &rsquo;til disconnect</em> indicates the number of seconds that the device will remain connected to the protocol adapter. The value of this property must be interpreted relative to the message&rsquo;s <em>creation-time</em>. A value of <code>-1</code> is used to indicate that the device will remain connected until further notice, i.e. until another message indicates a <em>ttd</em> value of <code>0</code>. In absence of this property, the connection status of the device is to be considered indeterminate. <em>Backend Applications</em> might use this information to determine a time window during which the device will be able to receive a command.</td>
+</tr>
+</tbody>
+</table>
+<p>The body of the message MUST consist of a single AMQP <em>Data</em> section containing the telemetry data. The format and encoding of the data MUST be indicated by the <em>content-type</em> and (optional) <em>content-encoding</em> properties of the message.</p>
+<p>Any additional properties set by the client in either the <em>properties</em> or <em>application-properties</em> sections are preserved by Hono, i.e. these properties will also be contained in the message delivered to consumers.</p>
+<h2 id="northbound-operations">Northbound Operations</h2>
+<h3 id="receive-telemetry-data">Receive Telemetry Data</h3>
+<p>Hono delivers messages containing telemetry data reported by a particular device in the same order that they have been received in (using the <a href="#forward-telemetry-data">Forward Telemetry Data</a> operation). Hono MAY drop telemetry messages that it cannot deliver to any consumers. Reasons for this include that there are no consumers connected to Hono or the existing consumers are not able to process the messages from Hono fast enough.</p>
+<p>Hono supports multiple non-competing <em>Business Application</em> consumers of telemetry data for a given tenant. Hono allows each <em>Business Application</em> to have multiple competing consumers for telemetry data for a given tenant to share the load of processing the messages.</p>
+<p><strong>Preconditions</strong></p>
+<ol>
+<li>Client has established an AMQP connection with Hono.</li>
+<li>Client has established an AMQP link in role <em>receiver</em> with Hono using source address <code>telemetry/${tenant_id}</code> where <code>${tenant_id}</code> represents the ID of the tenant the client wants to retrieve telemetry data for.</li>
+</ol>
+<p>Hono supports both <em>AT MOST ONCE</em> as well as <em>AT LEAST ONCE</em> delivery of telemetry messages. However, clients SHOULD use <em>AT LEAST ONCE</em> delivery in order to support end-to-end flow control and therefore SHOULD set the <em>snd-settle-mode</em> field to <code>unsettled</code> and the <em>rcv-settle-mode</em> field to <code>first</code> in their <em>attach</em> frame during link establishment.</p>
+<p>A client MAY indicate to Hono during link establishment that it wants to distribute the telemetry messages received for a given tenant among multiple consumers by including a link property <code>subscription-name</code> whose value is shared by all other consumers of the tenant. Hono ensures that messages from a given device are delivered to the same consumer. Note that this also means that telemetry messages MAY not be evenly distributed among consumers, e.g. when only a single device sends data. <strong>NB</strong> This feature is not supported yet.</p>
+<p>In addition a client MAY include a boolean link property <code>ordering-required</code> with value <code>false</code> during link establishment in order to indicate to Hono that it does not require messages being delivered strictly in order per device but instead allows for messages being distributed evenly among the consumers. <strong>NB</strong> This feature is not supported yet.</p>
+<p><strong>Message Flow</strong></p>
+<p>The following sequence diagram illustrates the flow of messages involved in a <em>Business Application</em> receiving a telemetry data message from Hono. The delivery mode used is <em>AT LEAST ONCE</em>.</p>
+<figure><img src="consume.svg"/><figcaption>
+            <h4>Receive Telemetry Data</h4>
+        </figcaption>
+</figure>
+
+<ol>
+<li><em>AMQP 1.0 Messaging Network</em> delivers telemetry message to <em>Business Application</em>.
+<ol>
+<li><em>Business Application</em> acknowledges reception of message.</li>
+</ol>
+</li>
+</ol>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>The <em>Business Application</em> can only consume telemetry messages that have been uploaded to Hono <em>after</em> the <em>Business Application</em> has established the link with the <em>AMQP 1.0 Messaging Network</em>. This is because telemetry messages are not <em>durable</em>, i.e. they are not persisted in Hono in order to be forwarded at a later time.</div>
+</div>
+<p><strong>Message Format</strong></p>
+<p>The format of the messages containing the telemetry data is the same as for the <a href="#forward-telemetry-data">Forward Telemetry Data operation</a>.</p>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048711"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048711"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048711"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048711"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048711"></script>
+        <script src="/hono/docs/js/search.js?1663048711"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.1/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.1/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.1/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.1/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.1/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.1/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.1/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.1/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.1/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.1/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.1/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.1/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.1/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.1/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.1/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.1/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.1/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.1/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.1/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.1/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.1/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/api/" title="API" class="dd-item parent"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle" checked/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.1/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.1/api/telemetry/" title="Telemetry API Specification" class="dd-item active"><a href="/hono/docs/1.1/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.1/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.1/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.1/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.1/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.1/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.1/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.1/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.1/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.1/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.1/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.1/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.1/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.1/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.1/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.1/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.1/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.1/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.1/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.1/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.1/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/api/telemetry/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/api/telemetry/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/api/telemetry/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/api/telemetry/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/api/telemetry/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/api/telemetry/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/api/telemetry/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/api/telemetry/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/api/telemetry/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/api/telemetry/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/api/telemetry/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/api/telemetry/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/api/telemetry/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/api/telemetry/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/api/telemetry/" selected>1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/api/telemetry/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/api/telemetry/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048712"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048712"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048712"></script>
+    <script src="/hono/docs/js/theme.js?1663048712"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

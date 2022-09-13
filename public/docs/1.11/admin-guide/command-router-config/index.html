@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="1.11">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Configuring the Command Router Service :: Eclipse Hono&trade; Vers.: 1.11</title>
+    <link rel="icon" href="/images/favicon.ico?1663048666" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048666" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048666" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048666"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.11/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048666"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Configuring the Command Router Service :: Eclipse Hono&amp;trade; Vers.: 1.11">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Configuring the Command Router Service :: Eclipse Hono&amp;trade; Vers.: 1.11" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.11/admin-guide/command-router-config//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.11/admin-guide/command-router-config/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.11</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/admin-guide/command-router-config.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.11/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.11/admin-guide/"><span itemprop="name">Admin Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.11/admin-guide/command-router-config/" aria-disabled="true"><span itemprop="name">Configuring the Command Router Service</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#service-configuration">Service Configuration</a></li>
+    <li><a href="#port-configuration">Port Configuration</a>
+      <ul>
+        <li><a href="#secure-port-only">Secure Port Only</a></li>
+        <li><a href="#insecure-port-only">Insecure Port Only</a></li>
+        <li><a href="#dual-port">Dual Port</a></li>
+        <li><a href="#ephemeral-ports">Ephemeral Ports</a></li>
+      </ul>
+    </li>
+    <li><a href="#messaging-configuration">Messaging Configuration</a>
+      <ul>
+        <li><a href="#amqp-10-messaging-network-connection-configuration">AMQP 1.0 Messaging Network Connection Configuration</a></li>
+        <li><a href="#kafka-based-messaging-configuration">Kafka based Messaging Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#tenant-service-connection-configuration">Tenant Service Connection Configuration</a></li>
+    <li><a href="#device-registration-service-connection-configuration">Device Registration Service Connection Configuration</a></li>
+    <li><a href="#data-grid-connection-configuration">Data Grid Connection Configuration</a>
+      <ul>
+        <li><a href="#remote-cache">Remote cache</a></li>
+        <li><a href="#embedded-cache">Embedded cache</a></li>
+      </ul>
+    </li>
+    <li><a href="#authentication-service-connection-configuration">Authentication Service Connection Configuration</a></li>
+    <li><a href="#metrics-configuration">Metrics Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Configuring the Command Router Service</h1>
+<p>The Command Router service provides an implementation of Eclipse Hono™&rsquo;s
+<a href="/hono/docs/1.11/api/command-router/">Command Router API</a>.</p>
+<p><em>Protocol Adapters</em> use the <em>Command Router API</em> to supply information that the Command Router service component
+can use to route command &amp; control messages to the particular protocol adapter instances that the target devices are
+connected to.</p>
+<p>The Command Router component provides an implementation of the Command Router API which uses a remote <em>data grid</em> for
+storing information about device connections. The data grid can be scaled out independently from the Command Router
+service components to meet the storage demands at hand.</p>
+<p>The Command Router is implemented as a Quarkus application. It can be run either directly from the command line or by
+means of starting the corresponding <a href="https://hub.docker.com/r/eclipse/hono-service-command-router-quarkus/">Docker image</a>
+created from it.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The Command Router had originally been implemented as a Spring Boot application. That variant has been deprecated with Hono
+1.10.0 and will be completely removed in Hono 2.0.0.
+The <a href="https://hub.docker.com/r/eclipse/hono-service-command-router/">Spring Boot based Docker image</a> will be available until then.</p>
+    </div>
+</div>
+<h2 id="service-configuration">Service Configuration</h2>
+<p>The following table provides an overview of the configuration variables and corresponding system properties for
+configuring the Command Router component.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_APP_MAXINSTANCES</code><br><code>hono.app.maxInstances</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>#CPU cores</em></td>
+<td style="text-align:left">The number of Verticle instances to deploy. If not set, one Verticle per processor core is deployed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_BINDADDRESS</code><br><code>hono.commandRouter.amqp.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure AMQP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_CERTPATH</code><br><code>hono.commandRouter.amqp.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_COMMANDROUTER_AMQP_KEYPATH</code>.<br>Alternatively, the <code>HONO_COMMANDROUTER_AMQP_KEYSTOREPATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_INSECUREPORT</code><br><code>hono.commandRouter.amqp.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the server should listen on for AMQP 1.0 connections.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_INSECUREPORTBINDADDRESS</code><br><code>hono.commandRouter.amqp.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure AMQP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_INSECUREPORTENABLED</code><br><code>hono.commandRouter.amqp.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the server will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_COMMANDROUTER_AMQP_INSECUREPORT</code> or the default AMQP port number (<code>5672</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_KEYPATH</code><br><code>hono.commandRouter.amqp.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_COMMANDROUTER_AMQP_CERTPATH</code>. Alternatively, the <code>HONO_COMMANDROUTER_AMQP_KEYSTOREPATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_KEYSTOREPASSWORD</code><br><code>hono.commandRouter.amqp.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_KEYSTOREPATH</code><br><code>hono.commandRouter.amqp.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the server should use for authenticating to clients. Either this option or the <code>HONO_COMMANDROUTER_AMQP_KEYPATH</code> and <code>HONO_COMMANDROUTER_AMQP_CERTPATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_NATIVETLSREQUIRED</code><br><code>hono.commandRouter.amqp.nativeTlsRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">The server will probe for OpenSLL on startup if a secure port is configured. By default, the server will fall back to the JVM&rsquo;s default SSL engine if not available. However, if set to <code>true</code>, the server will fail to start at all in this case.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_PORT</code><br><code>hono.commandRouter.amqp.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>5671</code></td>
+<td style="text-align:left">The secure port that the server should listen on for AMQP 1.0 connections.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_RECEIVERLINKCREDIT</code><br><code>hono.commandRouter.amqp.receiverLinkCredit</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>100</code></td>
+<td style="text-align:left">The number of credits to flow to a client connecting to the service&rsquo;s AMQP endpoint.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_SECUREPROTOCOLS</code><br><code>hono.commandRouter.amqp.secureProtocols</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>TLSv1.3,TLSv1.2</code></td>
+<td style="text-align:left">A (comma separated) list of secure protocols (in order of preference) that are supported when negotiating TLS sessions. Please refer to the <a href="https://vertx.io/docs/vertx-core/java/#ssl">vert.x documentation</a> for a list of supported protocol names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_AMQP_SUPPORTEDCIPHERSUITES</code><br><code>hono.commandRouter.amqp.supportedCipherSuites</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A (comma separated) list of names of cipher suites (in order of preference) that are supported when negotiating TLS sessions. Please refer to <a href="https://docs.oracle.com/en/java/javase/11/docs/specs/security/standard-names.html#jsse-cipher-suite-names">JSSE Cipher Suite Names</a> for a list of supported names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_SVC_KUBERNETESBASEDADAPTERINSTANCESTATUSSERVICEENABLED</code><br><code>hono.commandRouter.svc.kubernetesBasedAdapterInstanceStatusServiceEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>true</code> and the Command Router component runs in a Kubernetes cluster, a Kubernetes based service to identify protocol adapter instances will be used to prevent sending command &amp; control messages to already terminated adapter instances. Needs to be set to <code>false</code> if not all protocol adapters are part of the Kubernetes cluster and namespace that the Command Router component is in.</td>
+</tr>
+</tbody>
+</table>
+<p>The variables only need to be set if the default value does not match your environment.</p>
+<p>In addition to the options described in the table above, this component supports the following standard configuration options:</p>
+<ul>
+<li><a href="/hono/docs/1.11/admin-guide/common-config/#java-vm-options">Common Java VM Options</a></li>
+<li><a href="/hono/docs/1.11/admin-guide/common-config/#vertx-options">Common vert.x Options</a></li>
+<li><a href="/hono/docs/1.11/admin-guide/monitoring-tracing-config/">Monitoring Options</a></li>
+</ul>
+<h2 id="port-configuration">Port Configuration</h2>
+<p>The Command Router component supports configuration of an AMQP based endpoint that can be configured to listen for connections on</p>
+<ul>
+<li>a secure port only (default) or</li>
+<li>an insecure port only or</li>
+<li>both a secure and an insecure port (dual port configuration)</li>
+</ul>
+<p>The server will fail to start if none of the ports is configured properly.</p>
+<h3 id="secure-port-only">Secure Port Only</h3>
+<p>The server needs to be configured with a private key and certificate in order to open a TLS secured port.</p>
+<p>There are two alternative ways for doing so:</p>
+<ol>
+<li>Setting the <code>HONO_COMMANDROUTER_AMQP_KEYSTOREPATH</code> and the <code>HONO_COMMANDROUTER_AMQP_KEYSTOREPASSWORD</code> variables in order to load the key &amp; certificate from a password protected key store, or</li>
+<li>setting the <code>HONO_COMMANDROUTER_AMQP_KEYPATH</code> and <code>HONO_COMMANDROUTER_AMQP_CERTPATH</code> variables in order to load the key and certificate from two separate PEM files in PKCS8 format.</li>
+</ol>
+<p>When starting up, the server will bind a TLS secured socket to the default secure AMQP port 5671. The port number can also be set explicitly using the <code>HONO_COMMANDROUTER_AMQP_PORT</code> variable.</p>
+<p>The <code>HONO_COMMANDROUTER_AMQP_BINDADDRESS</code> variable can be used to specify the network interface that the port should be exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host. Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose the port unintentionally to the outside world).</p>
+<h3 id="insecure-port-only">Insecure Port Only</h3>
+<p>The secure port will mostly be required for production scenarios. However, it might be desirable to expose a non-TLS secured port instead, e.g. for testing purposes. In any case, the non-secure port needs to be explicitly enabled either by</p>
+<ul>
+<li>explicitly setting <code>HONO_COMMANDROUTER_AMQP_INSECUREPORT</code> to a valid port number, or by</li>
+<li>implicitly configuring the default AMQP port (5672) by simply setting <code>HONO_COMMANDROUTER_AMQP_INSECUREPORTENABLED</code> to <code>true</code>.</li>
+</ul>
+<p>The server issues a warning on the console if <code>HONO_COMMANDROUTER_AMQP_INSECUREPORT</code> is set to the default secure AMQP port (5671).</p>
+<p>The <code>HONO_COMMANDROUTER_AMQP_INSECUREPORTBINDADDRESS</code> variable can be used to specify the network interface that the port should be exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host. This variable might be used to e.g. expose the non-TLS secured port on a local interface only, thus providing easy access from within the local network, while still requiring encrypted communication when accessed from the outside over public network infrastructure.</p>
+<p>Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose the port unintentionally to the outside world).</p>
+<h3 id="dual-port">Dual Port</h3>
+<p>In test setups and some production scenarios Hono server may be configured to open one secure <strong>and</strong> one insecure port at the same time.</p>
+<p>This is achieved by configuring both ports correctly (see above). The server will fail to start if both ports are configured to use the same port number.</p>
+<p>Since the secure port may need different visibility in the network setup compared to the secure port, it has its own binding address <code>HONO_COMMANDROUTER_AMQP_INSECUREPORTBINDADDRESS</code>.
+This can be used to narrow the visibility of the insecure port to a local network e.g., while the secure port may be visible worldwide.</p>
+<h3 id="ephemeral-ports">Ephemeral Ports</h3>
+<p>Both the secure as well as the insecure port numbers may be explicitly set to <code>0</code>. The Command Router component will then use arbitrary (unused) port numbers determined by the operating system during startup.</p>
+<h2 id="messaging-configuration">Messaging Configuration</h2>
+<p>The Command Router component uses a connection to an <em>AMQP 1.0 Messaging Network</em> and/or an <em>Apache Kafka cluster</em> to</p>
+<ul>
+<li>receive command &amp; control messages sent by downstream applications and to forward these commands on a specific
+address/topic so that they can be received by protocol adapters,</li>
+<li>send delivery failure command response messages in case no consumer exists for a received command (only with Kafka messaging),</li>
+<li>receive notification messages about changes to tenant/device/credentials data sent from the device registry.</li>
+</ul>
+<p>Command messages are received on each configured messaging system.</p>
+<p>For notification messages, the Kafka connection is used by default, if configured. Otherwise the <em>AMQP messaging network</em>
+is used.</p>
+<h3 id="amqp-10-messaging-network-connection-configuration">AMQP 1.0 Messaging Network Connection Configuration</h3>
+<p>The connection to the <em>AMQP 1.0 Messaging Network</em> is configured according to the
+<a href="/hono/docs/1.11/admin-guide/hono-client-configuration/">Hono Client Configuration</a> with <code>HONO_COMMAND</code> being used as <code>${PREFIX}</code>.
+The properties for configuring response caching can be ignored.</p>
+<h3 id="kafka-based-messaging-configuration">Kafka based Messaging Configuration</h3>
+<p>The connection to an <em>Apache Kafka cluster</em> can be configured according to the
+<a href="/hono/docs/1.11/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a>.</p>
+<p>The following table provides an overview of the prefixes to be used to individually configure the Kafka clients used by
+the component. The individual client configuration is optional, a minimal configuration may only contain a common client
+configuration consisting of properties prefixed with <code>HONO_KAFKA_COMMONCLIENTCONFIG_</code> and <code>hono.kafka.commonClientConfig.</code>
+respectively.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable Prefix<br>Java System Property Prefix</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_CLEANUP_ADMINCLIENTCONFIG_</code><br><code>hono.kafka.cleanup.adminClientConfig.</code></td>
+<td style="text-align:left">Configures the Kafka admin client that removes Hono internal topics.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_COMMAND_CONSUMERCONFIG_</code><br><code>hono.kafka.command.consumerConfig.</code></td>
+<td style="text-align:left">Configures the Kafka consumer that receives command messages.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_COMMANDINTERNAL_PRODUCERCONFIG_</code><br><code>hono.kafka.commandInternal.producerConfig.</code></td>
+<td style="text-align:left">Configures the Kafka producer that publishes command messages to Hono internal topics.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_COMMANDRESPONSE_PRODUCERCONFIG_</code><br><code>hono.kafka.commandResponse.producerConfig.</code></td>
+<td style="text-align:left">Configures the Kafka producer that publishes command response messages.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_NOTIFICATION_CONSUMERCONFIG_</code><br><code>hono.kafka.notification.consumerConfig.</code></td>
+<td style="text-align:left">Configures the Kafka consumer that receives notification messages about changes to tenant/device/credentials data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tenant-service-connection-configuration">Tenant Service Connection Configuration</h2>
+<p>The Command Router component requires a connection to an implementation of Hono&rsquo;s <a href="https://www.eclipse.org/hono/docs/1.11/api/tenant/">Tenant API</a> in order to retrieve information for a tenant.</p>
+<p>The connection to the Tenant Service is configured according to the <a href="/hono/docs/1.11/admin-guide/hono-client-configuration/">Hono Client Configuration</a>
+where the <code>${PREFIX}</code> is set to <code>HONO_TENANT</code> and the additional values for response caching apply.</p>
+<p>The adapter caches the responses from the service according to the <em>cache directive</em> included in the response.
+If the response doesn&rsquo;t contain a <em>cache directive</em> no data will be cached.</p>
+<h2 id="device-registration-service-connection-configuration">Device Registration Service Connection Configuration</h2>
+<p>The Command Router component requires a connection to an implementation of Hono&rsquo;s <a href="/hono/docs/1.11/api/device-registration/">Device Registration API</a> in order to retrieve registration status assertions for the target devices of incoming command messages.</p>
+<p>The connection to the Device Registration Service is configured according to the <a href="/hono/docs/1.11/admin-guide/hono-client-configuration/">Hono Client Configuration</a>
+where the <code>${PREFIX}</code> is set to <code>HONO_REGISTRATION</code>.</p>
+<p>The adapter caches the responses from the service according to the <em>cache directive</em> included in the response.
+If the response doesn&rsquo;t contain a <em>cache directive</em> no data will be cached.</p>
+<p>Note that the adapter uses a single cache for all responses from the service regardless of the tenant identifier.
+Consequently, the Device Registration Service client configuration&rsquo;s <em>responseCacheMinSize</em> and <em>responseCacheMaxSize</em> properties
+determine the overall number of responses that can be cached.</p>
+<h2 id="data-grid-connection-configuration">Data Grid Connection Configuration</h2>
+<p>The Command Router component requires either an embedded cache or a remote
+data grid, using the Infinispan Hotrod protocol to store device information.</p>
+<p>The following table provides an overview of the configuration variables and corresponding command line options for
+configuring the common aspects of the service:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_COMMON_CACHENAME</code><br><code>hono.commandRouter.cache.common.cacheName</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>command-router</code></td>
+<td style="text-align:left">The name of the cache</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_COMMON_CHECKKEY</code><br><code>hono.commandRouter.cache.common.checkKey</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>KEY_CONNECTION_CHECK</code></td>
+<td style="text-align:left">The key used to check the health of the cache. This is only used in case of a remote cache.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_COMMON_CHECKVALUE</code><br><code>hono.commandRouter.cache.common.checkValue</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>VALUE_CONNECTION_CHECK</code></td>
+<td style="text-align:left">The value used to check the health of the cache. This is only used in case of a remote cache.</td>
+</tr>
+</tbody>
+</table>
+<p>The type of cache (embedded or remote) is determined during startup by means of the <code>HONO_COMMANDROUTER_CACHE_REMOTE_SERVERLIST</code>
+configuration variable. If the variable has a non empty value, a <a href="#remote-cache">remote cache</a> is configured.
+Otherwise, an <a href="#embedded-cache">embedded cache</a> is configured.</p>
+<h3 id="remote-cache">Remote cache</h3>
+<p>The following table provides an overview of the configuration variables and corresponding system properties for configuring the connection to the data grid:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_REMOTE_SERVERLIST</code><br><code>hono.commandRouter.cache.remote.serverList</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A list of remote servers in the form: <code>host1[:port][;host2[:port]]....</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_REMOTE_AUTHSERVERNAME</code><br><code>hono.commandRouter.cache.remote.authServerName</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The server name to indicate in the SASL handshake when authenticating to the server.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_REMOTE_AUTHREALM</code><br><code>hono.commandRouter.cache.remote.authRealm</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The authentication realm for the SASL handshake when authenticating to the server.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_REMOTE_AUTHUSERNAME</code><br><code>hono.commandRouter.cache.remote.authUsername</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The username to use for authenticating to the server.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_REMOTE_AUTHPASSWORD</code><br><code>hono.commandRouter.cache.remote.authPassword</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password to use for authenticating to the server.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_REMOTE_SASLMECHANISM</code><br><code>hono.commandRouter.cache.remote.saslMechanism</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The SASL mechanism to use for authenticating to the server.</td>
+</tr>
+</tbody>
+</table>
+<p>In general, the service supports all configuration properties of the <a href="https://docs.jboss.org/infinispan/12.1/apidocs/org/infinispan/client/hotrod/configuration/package-summary.html#package.description">Infinispan Hotrod client</a> using <code>hono.commandRouter.cache.remote</code> instead of the <code>infinispan.client.hotrod</code> prefix.</p>
+<h3 id="embedded-cache">Embedded cache</h3>
+<p>The following table provides an overview of the configuration variables and corresponding system properties for configuring the embedded cache:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_COMMANDROUTER_CACHE_EMBEDDED_CONFIGURATIONFILE</code><br><code>hono.commandRouter.cache.embedded.configurationFile</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to an Infinispan configuration file. Also see the <a href="https://docs.jboss.org/infinispan/12.1/configdocs/infinispan-config-12.1.html">Infinispan Configuration Schema</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authentication-service-connection-configuration">Authentication Service Connection Configuration</h2>
+<p>The Command Router component requires a connection to an implementation of Hono&rsquo;s Authentication API in order to authenticate and authorize client requests.</p>
+<p>The connection is configured according to the <a href="/hono/docs/1.11/admin-guide/hono-client-configuration/">Hono Client Configuration</a>
+where the <code>${PREFIX}</code> is set to <code>HONO_AUTH</code>. Since Hono&rsquo;s Authentication Service does not allow caching of the responses, the cache properties
+can be ignored.</p>
+<p>In addition to the standard client configuration properties, following properties need to be set for the connection:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_VALIDATION_CERTPATH</code><br><code>hono.auth.validation.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the public key that the service should use for validating tokens issued by the Authentication service. Alternatively, a symmetric key can be used for validating tokens by setting the <code>HONO_AUTH_VALIDATION_SHAREDSECRET</code> variable. If none of these variables is set, the service falls back to the key indicated by the <code>HONO_AUTH_CERTPATH</code> variable. If that variable is also not set, startup of the service fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_VALIDATION_SHAREDSECRET</code><br><code>hono.auth.validation.sharedSecret</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A string to derive a symmetric key from which is used for validating tokens issued by the Authentication service. The key is derived from the string by using the bytes of the String&rsquo;s UTF8 encoding. When setting the validation key using this variable, the Authentication service <strong>must</strong> be configured with the same key. Alternatively, an asymmetric key pair can be used for validating (and signing) by setting the <code>HONO_AUTH_SIGNING_CERTPATH</code> variable. If none of these variables is set, startup of the service fails.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics-configuration">Metrics Configuration</h2>
+<p>See <a href="https://www.eclipse.org/hono/docs/1.11/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing Admin Guide</a> for details on how to configure the reporting of metrics.</p>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048667"></script>
+        <script src="/hono/docs/js/search.js?1663048667"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.11/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.11/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.11/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.11/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.11/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.11/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.11/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.11/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.11/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.11/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.11/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.11/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.11/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.11/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/" title="Admin Guide" class="dd-item parent"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle" checked/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.11/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/file-based-device-registry-config/" title="File Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/file-based-device-registry-config/">File Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item active"><a href="/hono/docs/1.11/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.11/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.11/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.11/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.11/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.11/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.11/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.11/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.11/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.11/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.11/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.11/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.11/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.11/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/1.11/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/telemetry-kafka/" title="Telemetry API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.11/api/telemetry-kafka/">Telemetry API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/event-kafka/" title="Event API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.11/api/event-kafka/">Event API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/command-and-control-kafka/" title="Command &amp; Control API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.11/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.11/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/1.11/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.11/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.11/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.11/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.11/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.11/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.11/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.11/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.11/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.11/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.11/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.11/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.11/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.11/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.11/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.11/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.11/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.11/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/admin-guide/command-router-config/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/admin-guide/command-router-config/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/admin-guide/command-router-config/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/admin-guide/command-router-config/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/admin-guide/command-router-config/" selected>1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/admin-guide/command-router-config/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/admin-guide/command-router-config/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/admin-guide/command-router-config/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/admin-guide/command-router-config/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/admin-guide/command-router-config/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/admin-guide/command-router-config/">1.5</option>
+                    <option id="dev" value="/hono/docs/dev/admin-guide/command-router-config/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048667"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048667"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048667"></script>
+    <script src="/hono/docs/js/theme.js?1663048667"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

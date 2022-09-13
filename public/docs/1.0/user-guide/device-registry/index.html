@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Device Registry :: Eclipse Hono&trade; Vers.: 1.0</title>
+    <link rel="icon" href="/images/favicon.ico?1663048716" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048716" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048716" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048716" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048716"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.0/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048716"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Device Registry :: Eclipse Hono&amp;trade; Vers.: 1.0">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Device Registry :: Eclipse Hono&amp;trade; Vers.: 1.0" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.0/user-guide/device-registry//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.0/user-guide/device-registry/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.0</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/user-guide/device-registry.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.0/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.0/user-guide/"><span itemprop="name">User Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.0/user-guide/device-registry/" aria-disabled="true"><span itemprop="name">Device Registry</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#managing-tenants">Managing Tenants</a>
+      <ul>
+        <li><a href="#add-a-tenant">Add a Tenant</a></li>
+        <li><a href="#get-configuration-details-of-a-tenant">Get configuration details of a Tenant</a></li>
+        <li><a href="#update-tenant">Update Tenant</a></li>
+        <li><a href="#delete-tenant">Delete Tenant</a></li>
+      </ul>
+    </li>
+    <li><a href="#managing-device-registration-information">Managing Device Registration Information</a>
+      <ul>
+        <li><a href="#register-device">Register Device</a></li>
+        <li><a href="#read-device">Read Device</a></li>
+        <li><a href="#update-device">Update Device</a></li>
+        <li><a href="#delete-device">Delete Device</a></li>
+      </ul>
+    </li>
+    <li><a href="#managing-credentials">Managing Credentials</a>
+      <ul>
+        <li><a href="#update-credentials-for-a-device">Update Credentials for a Device</a></li>
+        <li><a href="#get-all-credentials-for-a-device">Get all Credentials for a Device</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Device Registry</h1>
+<p>The Device Registry component provides exemplary implementations of Hono&rsquo;s <a href="/hono/docs/1.0/api/tenant/">Tenant API</a>, <a href="/hono/docs/1.0/api/device-registration/">Device Registration API</a> and <a href="/hono/docs/1.0/api/credentials/">Credentials API</a>.</p>
+<p>As such it exposes AMQP 1.0 based endpoints for retrieving the relevant information and persists data in the local filesystem.</p>
+<p>In addition, the Device Registry also exposes HTTP resources for managing the contents of the registry according to the <a href="/hono/docs/1.0/api/management/">Device Registry HTTP API</a>.</p>
+<div class="alert alert-warning">
+    <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> Warning</h4>
+    <div><p>The Device Registry is not intended to be used in production environments. In particular, access to the HTTP resources described below is not restricted to authorized clients only.</p>
+<p>The resources have been designed to provide convenient access to the registry&rsquo;s content using command line tools like <em>curl</em> or <em>HTTPie</em>.</p>
+</div>
+</div>
+<h2 id="managing-tenants">Managing Tenants</h2>
+<p>The following sections describe the resources representing the operations of the Tenant API and how they can be used to manage tenants.
+Please refer to the <a href="/hono/docs/1.0/api/management/">Device Registry HTTP API</a> for the specific elements that are explained in detail there.</p>
+<h3 id="add-a-tenant">Add a Tenant</h3>
+<ul>
+<li>URI: <code>/v1/tenants/${tenantId}</code></li>
+<li>Method: <code>POST</code></li>
+<li>Request Headers:
+<ul>
+<li>(required) <code>Content-Type</code>: <code>application/json</code> (no other type supported)</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) A JSON object as specified by <a href="/hono/docs/1.0/api/management/">Tenant schema</a> of the HTTP API specification.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>201 (Created): Tenant has been added successfully under the resource indicated by <code>Location</code> header.</li>
+<li>400 (Bad Request): The tenant has not been created because the request was malformed, e .g. because the payload was malformed. The response body may contain hints regarding the cause of the problem.</li>
+<li>409 (Conflict): A tenant with the given <code>tenantId</code> already exists. The request has not been processed.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li><code>Location</code>: The URI under which the newly created resource can be accessed.</li>
+<li><code>ETag</code>: Version of the resource</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following commands add some tenants with different adapter configurations:</p>
+<p>Add a tenant that has all adapters set to enabled:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X POST -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> http://localhost:28080/v1/tenants/tenantAllAdapters
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">201</span> Created
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4
+</span></span><span style="display:flex;"><span>Location: /v1/tenants/tenantAllAdapters
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;tenantAllAdapters&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Add a tenant that can only use the MQTT adapter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X POST -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;adapters&#34;: [ {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;type&#34;: &#34;hono-mqtt&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;enabled&#34;: true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        } ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }&#39;</span> http://localhost:28080/v1/tenants/tenantMqttAdapter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">201</span> Created
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4
+</span></span><span style="display:flex;"><span>Location:  /v1/tenants/tenantMqttAdapter
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;tenantMqttAdapter&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="get-configuration-details-of-a-tenant">Get configuration details of a Tenant</h3>
+<ul>
+<li>URI: <code>/v1/tenants/${tenantId}</code></li>
+<li>Method: <code>GET</code></li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): A tenant with the given identifier has been found. The response body contains the tenant data as specified by <a href="/hono/docs/1.0/api/management/">Tenant schema</a> of the HTTP API specification.</li>
+<li>404 (Not Found): No tenant with the given identifier is registered.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following command retrieves the details for the tenant <code>tenantMqttAdapter</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i http://localhost:28080/v1/tenants/tenantMqttAdapter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;adapters&#34;</span>: <span style="color:#f92672">[</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;hono-mqtt&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#34;enabled&#34;</span>: true
+</span></span><span style="display:flex;"><span>     <span style="color:#f92672">}</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="update-tenant">Update Tenant</h3>
+<ul>
+<li>URI: <code>/v1/tenants/${tenantId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(required) <code>Content-Type</code>: <code>application/json</code> (no other type supported)</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) A JSON object as specified by <a href="/hono/docs/1.0/api/management/">Tenant schema</a> of the HTTP API specification.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>204 (No Content): The tenant has been updated successfully.</li>
+<li>400 (Bad Request): The tenant has not been updated because the request was malformed, e .g. because the payload was malformed. The response body may contain hints regarding the cause of the problem.</li>
+<li>404 (Not Found): The request could not be processed because no tenant with the given identifier exists.</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used to change the configuration of a particular tenant.</p>
+<p><strong>Example</strong></p>
+<p>The following command disables the MQTT adapter for devices that belong to the tenant <code>tenantMqttAdapter</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;adapters&#34;: [ {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;type&#34;: &#34;hono-mqtt&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &#34;enabled&#34;: true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          } ]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }&#39;</span> http://localhost:28080/v1/tenants/tenantMqttAdapter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>ETag: 8919c736-30aa-40ce-a45a-830b90c4cd42
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h3 id="delete-tenant">Delete Tenant</h3>
+<ul>
+<li>URI: <code>/v1/tenants/${tenantId}</code></li>
+<li>Method: <code>DELETE</code></li>
+<li>Status Codes:
+<ul>
+<li>204 (No Content): The tenant with the given identifier has been deleted.</li>
+<li>404 (Not Found): The request could not be processed because no tenant with the given identifier exists.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X DELETE http://localhost:28080/v1/tenants/tenantMqttAdapter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="managing-device-registration-information">Managing Device Registration Information</h2>
+<p>The following sections describe the resources representing the operations of the <a href="/hono/docs/1.0/api/device-registration/">Device Registration API</a> and how they can be used to manage device registration information.
+Please refer to the <a href="/hono/docs/1.0/api/management/">Device Registry HTTP API</a> for the specific elements that are explained in detail there.</p>
+<h3 id="register-device">Register Device</h3>
+<ul>
+<li>URI: <code>/v1/devices/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>POST</code></li>
+<li>Headers:
+<ul>
+<li>(required) <code>Content-Type</code>: <code>application/json</code></li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) A JSON object as specified by <a href="/hono/docs/1.0/api/management/">Device schema</a> of the HTTP API specification.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>201 (Created): Device has been registered successfully under resource indicated by <code>Location</code> header.</li>
+<li>400 (Bad Request): Device has not been registered because the request was malformed, e .g. a required header is missing (the body may contain hints regarding the problem).</li>
+<li>409 (Conflict): There already exists a device with the given ID. The request has not been processed.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following command registers a device with ID <code>4711</code> for tenant <code>DEFAULT_TENANT</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X POST -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ext&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;ep&#34;: &#34;IMEI4711&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> http://localhost:28080/v1/devices/DEFAULT_TENANT/4711
+</span></span></code></pre></div><p>The response will contain a <code>Location</code> header containing the resource path created for the device. In this example it will look
+like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">201</span> Created
+</span></span><span style="display:flex;"><span>Location: /v1/devices/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>: <span style="color:#e6db74">&#34;4711&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="read-device">Read Device</h3>
+<ul>
+<li>URI: <code>/v1/devices/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>GET</code></li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): A device with the given identifier has been found. The response body contains the registration information as specified by <a href="/hono/docs/1.0/api/management/">Device schema</a> of the HTTP API specification.</li>
+<li>404 (Not Found): No device with the given identifier is registered for the given tenant.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following command retrieves registration data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i http://localhost:28080/v1/devices/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ext&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ep&#34;</span>: <span style="color:#e6db74">&#34;IMEI4711&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="update-device">Update Device</h3>
+<ul>
+<li>URI: <code>/devices/v1/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Headers:
+<ul>
+<li>(required) <code>Content-Type</code>: <code>application/json</code></li>
+</ul>
+</li>
+<li>Parameters (encoded as a JSON object in the request body):</li>
+<li>Request Body:
+<ul>
+<li>(required) A JSON object as specified by <a href="/hono/docs/1.0/api/management/">Device schema</a> of the HTTP API specification. All existing registration information will be replaced by the data provided in the object.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>204 (No Content): Device registration data has been updated.</li>
+<li>400 (Bad Request): Device registration has not been updated because the request was malformed, e .g. a required header is missing (the body may contain hints regarding the problem).</li>
+<li>404 (Not Found): No device with the given identifier is registered for the given tenant.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;ext&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;ep&#34;: &#34;IMEI4711&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;psk-id&#34;: &#34;psk4711&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> http://localhost:28080/v1/devices/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h3 id="delete-device">Delete Device</h3>
+<ul>
+<li>URI: <code>/v1/devices/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>DELETE</code></li>
+<li>Status Codes:
+<ul>
+<li>204 (No Content): Device registration has been deleted.</li>
+<li>404 (Not Found): No device with the given identifier is registered for the given tenant.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X DELETE http://localhost:28080/v1/devices/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="managing-credentials">Managing Credentials</h2>
+<p>The following sections describe the resources representing the operations of the Credentials API and how they can be used to manage credentials for devices.
+Please refer to the <a href="/hono/docs/1.0/api/management/">Device Registry HTTP API</a> for the specific elements that are explained in detail there.</p>
+<h3 id="update-credentials-for-a-device">Update Credentials for a Device</h3>
+<ul>
+<li>URI: <code>/v1/credentials/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(required) <code>Content-Type</code>: <code>application/json</code> (no other type supported)</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) A JSON object as specified by <a href="/hono/docs/1.0/api/management/">Credentials schema</a> of the HTTP API specification.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>204 (No Content): Credentials have been updated successfully.</li>
+<li>400 (Bad Request): The credentials have not been added because the request was malformed, e .g. because the payload did not contain required values. The response body may contain hints regarding the cause of the problem.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li><code>ETag</code>: Version of the resource</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following command adds some <code>hashed-password</code> credentials from a given plain text password for device <code>4710</code> using authentication identifier <code>sensor10</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;[{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;type&#34;: &#34;hashed-password&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;auth-id&#34;: &#34;sensor10&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;secrets&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;pwd-plain&#34;: &#34;mylittlesecret&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}]&#39;</span> http://localhost:28080/v1/credentials/DEFAULT_TENANT/4710
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4x
+</span></span></code></pre></div><p>This uses a convenient option which lets the Device Registry do the hashing of the password. The following command retrieves the credentials that are stored by the Device Registry as a result of the command above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i http://localhost:28080/v1/credentials/DEFAULT_TENANT/4710
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;hashed-password&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;auth-id&#34;</span>: <span style="color:#e6db74">&#34;sensor10&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;secrets&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;pwd-hash&#34;</span>: <span style="color:#e6db74">&#34;</span>$2<span style="color:#e6db74">a</span>$10$uc<span style="color:#e6db74">.qVDwXeDRE1DWa1sM9iOaY9wuevjfALGMtXmHKP.SJDEqg0q7M6&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;hash-function&#34;</span>: <span style="color:#e6db74">&#34;bcrypt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}]</span>
+</span></span></code></pre></div><p>The following commands add some <code>hashed-password</code> credentials for device <code>4720</code> using authentication identifier <code>sensor20</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PWD_HASH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -n <span style="color:#e6db74">&#34;mylittlesecret&#34;</span> | openssl dgst -binary -sha512 | base64 -w 0<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;[{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;type&#34;: &#34;hashed-password&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;auth-id&#34;: &#34;sensor20&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;secrets&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;hash-function&#34;: &#34;sha-512&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;pwd-hash&#34;: &#34;&#39;</span>$PWD_HASH<span style="color:#e6db74">&#39;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }]&#39;</span> http://localhost:28080/v1/credentials/DEFAULT_TENANT/4720
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>ETag: 02c99fb5-af8c-409f-8520-b405e224b27f
+</span></span></code></pre></div><p>The following command adds an expiration date to the <code>hashed-password</code> credentials for authentication identifier <code>sensor20</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>PWD_HASH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -n <span style="color:#e6db74">&#34;mylittlesecret&#34;</span> | openssl dgst -binary -sha512 | base64 -w 0<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;device-id&#34;: &#34;4720&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;type&#34;: &#34;hashed-password&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;auth-id&#34;: &#34;sensor20&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;secrets&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;hash-function&#34;: &#34;sha-512&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;pwd-hash&#34;: &#34;&#39;</span>$PWD_HASH<span style="color:#e6db74">&#39;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;not-after&#34;: &#34;2018-01-01T00:00:00+01:00&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> http://localhost:28080/v1/credentials/DEFAULT_TENANT/4720
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>ETag: becc93d7-ab0f-48ec-ad26-debdf339cbf4x
+</span></span></code></pre></div><p>Multiple credentials of different type can be registered for the same authentication identifier.
+The following commands add <code>psk</code> credentials for the same device <code>4720</code> using authentication identifier <code>sensor20</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>SHARED_KEY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo -n <span style="color:#e6db74">&#34;TheSharedKey&#34;</span> | base64 -w 0<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;type&#34;: &#34;hashed-password&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;auth-id&#34;: &#34;sensor20&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;secrets&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;hash-function&#34;: &#34;bcrypt&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;pwd-hash&#34;: &#34;$2a$10$uc.qVDwXeDRE1DWa1sM9iOaY9wuevjfALGMtXmHKP.SJDEqg0q7M6&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &#34;device-id&#34;: &#34;4720&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &#34;type&#34;: &#34;psk&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &#34;auth-id&#34;: &#34;sensor20&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">   &#34;secrets&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     &#34;key&#34;: &#34;&#39;</span>$SHARED_KEY<span style="color:#e6db74">&#39;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     }]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }]&#39;</span> http://localhost:28080/v1/credentials/DEFAULT_TENANT/4720
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>ETag: 122c971a-505a-4336-8f7d-640360e909bc
+</span></span></code></pre></div><p>The following command deletes all credentials for device <code>4710</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;[]&#39;</span> http://localhost:28080/v1/credentials/DEFAULT_TENANT/4710
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> No Content
+</span></span><span style="display:flex;"><span>ETag: d383ba4d-1853-4d03-b322-b7ff5af05ae2
+</span></span></code></pre></div><h3 id="get-all-credentials-for-a-device">Get all Credentials for a Device</h3>
+<ul>
+<li>URI: <code>/v1/credentials/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>GET</code></li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): Credentials for the device have been found, body contains the credentials. The response body contains the registration information as specified by <a href="/hono/docs/1.0/api/management/">Credentials schema</a> of the HTTP API specification.</li>
+<li>404 (Not Found): No credentials for the device are registered.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>The following command retrieves credentials for device <code>4720</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i http://localhost:28080/v1/credentials/DEFAULT_TENANT/4720
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>Content-Type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>ETag: f3449b77-2c84-4b09-8d04-2b305876e0cb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;auth-id&#34;</span>: <span style="color:#e6db74">&#34;sensor20&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;secrets&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;hash-function&#34;</span>: <span style="color:#e6db74">&#34;sha-512&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;pwd-hash&#34;</span>: <span style="color:#e6db74">&#34;tnxz0zDFs+pJGdCVSuoPE4TnamXsfIjBEOb0rg3e9WFD9KfbCkoRuwVZKgRWInfqp87kCLsoV/HEwdJwgw793Q==&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;hashed-password&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;auth-id&#34;</span>: <span style="color:#e6db74">&#34;sensor20&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;secrets&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;VGhlU2hhcmVkS2V5&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;psk&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">]}</span>
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048717"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048717"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048717"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048717"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048717"></script>
+        <script src="/hono/docs/js/search.js?1663048717"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.0/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.0/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.0/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.0/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.0/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.0/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.0/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.0/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.0/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/" title="User Guide" class="dd-item parent"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle" checked/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.0/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.0/user-guide/device-registry/" title="Device Registry" class="dd-item active"><a href="/hono/docs/1.0/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.0/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.0/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.0/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.0/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.0/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.0/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.0/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.0/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.0/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.0/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.0/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.0/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.0/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.0/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.0/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.0/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.0/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.0/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.0/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.0/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.0/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.0/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.0/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.0/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.0/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.0/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.0/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.0/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.0/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.0/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.0/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.0/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/user-guide/device-registry/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/user-guide/device-registry/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/user-guide/device-registry/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/user-guide/device-registry/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/user-guide/device-registry/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/user-guide/device-registry/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/user-guide/device-registry/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/user-guide/device-registry/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/user-guide/device-registry/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/user-guide/device-registry/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/user-guide/device-registry/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/user-guide/device-registry/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/user-guide/device-registry/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/user-guide/device-registry/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/user-guide/device-registry/">1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/user-guide/device-registry/" selected>1.0</option>
+                    <option id="dev" value="/hono/docs/dev/user-guide/device-registry/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048717"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048717"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048717"></script>
+    <script src="/hono/docs/js/theme.js?1663048717"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

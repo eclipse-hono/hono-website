@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="1.12">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="Take a quick tour and learn how Hono can help you connect devices via HTTP and/or MQTT and how downstream
+applications can consume the data published by devices.
+">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Getting started with Eclipse Hono using Apache Kafka :: Eclipse Hono&trade; Vers.: 1.12</title>
+    <link rel="icon" href="/images/favicon.ico?1663048663" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048663" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048663" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048663" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048663"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.12/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048663"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Getting started with Eclipse Hono using Apache Kafka :: Eclipse Hono&amp;trade; Vers.: 1.12">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="Take a quick tour and learn how Hono can help you connect devices via HTTP and/or MQTT and how downstream
+applications can consume the data published by devices.
+">
+
+
+<meta property="og:title" content="Getting started with Eclipse Hono using Apache Kafka :: Eclipse Hono&amp;trade; Vers.: 1.12" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.12/getting-started/kafka//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.12/getting-started/kafka/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.12</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/getting-started/kafka/index.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.12/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.12/getting-started/"><span itemprop="name">Getting started with Eclipse Hono</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.12/getting-started/kafka/" aria-disabled="true"><span itemprop="name">Getting started with Eclipse Hono using Apache Kafka</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites-for-the-getting-started-guide">Prerequisites for the Getting started Guide</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#overview-of-hono-components">Overview of Hono Components</a></li>
+    <li><a href="#registering-devices">Registering Devices</a>
+      <ul>
+        <li><a href="#creating-a-new-tenant">Creating a new Tenant</a></li>
+        <li><a href="#adding-a-device-to-the-tenant">Adding a Device to the Tenant</a></li>
+        <li><a href="#setting-a-password-for-the-device">Setting a Password for the Device</a></li>
+      </ul>
+    </li>
+    <li><a href="#starting-the-example-application">Starting the example Application</a></li>
+    <li><a href="#publishing-telemetry-data-to-the-http-adapter">Publishing Telemetry Data to the HTTP Adapter</a></li>
+    <li><a href="#publishing-events-to-the-http-adapter">Publishing Events to the HTTP Adapter</a></li>
+    <li><a href="#publishing-telemetry-data-to-the-mqtt-adapter">Publishing Telemetry Data to the MQTT Adapter</a></li>
+    <li><a href="#publishing-events-to-the-mqtt-adapter">Publishing Events to the MQTT Adapter</a></li>
+    <li><a href="#advanced-sending-commands-to-a-device">Advanced: Sending Commands to a Device</a>
+      <ul>
+        <li><a href="#receiving-a-command">Receiving a Command</a></li>
+        <li><a href="#sending-a-response-to-a-command">Sending a Response to a Command</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Getting started with Eclipse Hono using Apache Kafka</h1>
+<p>This guide will walk you through an interactive example usage scenario of Eclipse Hono. You will learn how devices can
+use Hono&rsquo;s protocol adapters to publish telemetry data and events using both HTTP and/or MQTT. You will also see how
+downstream applications can consume this data via an Apache Kafka™ broker using Hono&rsquo;s north bound API regardless
+of the communication protocols used by the devices.</p>
+<h2 id="prerequisites-for-the-getting-started-guide">Prerequisites for the Getting started Guide</h2>
+<p>This guide requires several tools to be installed on your computer.
+During the course of this guide, the devices publishing data will be represented by means of running some command line
+tools for posting HTTP requests and for publishing MQTT packets.</p>
+<h4 id="curl-http-command-line-client">Curl HTTP Command Line Client</h4>
+<p>The <code>curl</code> command is used in this guide for registering devices with Hono and for simulating a device publishing data
+using HTTP. On most *nix like systems <code>curl</code> will probably already be installed. Otherwise, please refer to the
+<a href="https://curl.haxx.se/">Curl project page</a> for installation instructions.</p>
+<h4 id="mosquitto-mqtt-command-line-client">Mosquitto MQTT Command Line Client</h4>
+<p>The <code>mosquitto_pub</code> command is used in this guide for simulating a device publishing data using the MQTT protocol.
+Please refer to the <a href="https://mosquitto.org/">Mosquitto project page</a> for installation instructions, if you do not
+have it installed already.</p>
+<p><strong>NB</strong> The installation of the Mosquitto command line client is optional. If you do not install it then you will not be
+able to simulate an MQTT based device but otherwise will be able to get the same results described in this guide.</p>
+<h4 id="hono-command-line-client">Hono Command Line Client</h4>
+<p>The Hono command line client is used in this guide for simulating an application that consumes telemetry data and events
+published by devices. The client is available from <a href="https://www.eclipse.org/hono//downloads">Hono&rsquo;s download page</a>.
+Note that running the command line client requires a Java 11 runtime environment being installed locally.</p>
+<h4 id="hono-sandbox">Hono Sandbox</h4>
+<p>The most important prerequisite is, of course, a Hono instance that you can work with.</p>
+<p>The most straightforward option to use for this guide is the <a href="https://www.eclipse.org/hono//sandbox">Hono Sandbox</a> which is running on
+infrastructure provided by the Eclipse Foundation and which is publicly accessible from the internet.</p>
+<p>Using the Sandbox, there is no need to set up your own Hono instance locally. However, it requires several non-standard
+ports being accessible from your computer which may not be the case, e.g. if you are behind a firewall restricting
+internet access to a few standard ports only.</p>
+<p>You can verify if you can access the relevant ports of the Sandbox by running the following command and comparing the
+output:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -sIX GET http://hono.eclipseprojects.io:28080/v1/tenants/DEFAULT_TENANT
+</span></span></code></pre></div><p>If you get output like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>etag: 89d40d26-5956-4cc6-b978-b15fda5d1823
+</span></span><span style="display:flex;"><span>content-type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">260</span>
+</span></span></code></pre></div><p>you can use the Sandbox. Run the following commands to set some environment variables which will be used during the guide</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export REGISTRY_IP<span style="color:#f92672">=</span>hono.eclipseprojects.io
+</span></span><span style="display:flex;"><span>export HTTP_ADAPTER_IP<span style="color:#f92672">=</span>hono.eclipseprojects.io
+</span></span><span style="display:flex;"><span>export MQTT_ADAPTER_IP<span style="color:#f92672">=</span>hono.eclipseprojects.io
+</span></span></code></pre></div><p>and then proceed to the <a href="#overview-of-hono-components">Overview of Hono Components</a>.</p>
+<p>However, if the <code>curl</code> command yielded different output, you will need to set up Hono locally as described in the next
+section.</p>
+<p>For interacting with the Device Registry of the Hono Sandbox (e.g. for creating tenants, devices), you can also use the
+testing functionality integrated in the <a href="/hono/docs/1.12/api/management/">Device Registry Management API documentation</a>.</p>
+<h4 id="setting-up-a-local-hono-instance">Setting up a local Hono Instance</h4>
+<p>In case you cannot access the Hono Sandbox as described above, you will need to set up an instance of Hono running on
+your local computer. For evaluation purposes a single node <em>Minikube</em> cluster is sufficient to deploy Hono to.</p>
+<ol>
+<li>Please refer to the <a href="/hono/docs/1.12/deployment/create-kubernetes-cluster/#setting-up-a-local-development-environment">installation instructions</a>
+for setting up a local Minikube cluster, then</li>
+<li>follow the instructions in the <a href="https://github.com/eclipse/packages/blob/master/charts/hono/README.md#using-kafka-based-messaging">README</a>
+of Hono&rsquo;s Helm chart in the <a href="https://www.eclipse.org/packages/repository/">Eclipse IoT Packages chart repository</a> in
+order to install Hono with a small Kafka instance to your local Minikube cluster.</li>
+</ol>
+<p>Once Hono has been deployed to your local cluster, run the following commands to set some environment variables which
+will be used during the guide</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export REGISTRY_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-service-device-registry-ext --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>export HTTP_ADAPTER_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-http-vertx --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>export MQTT_ADAPTER_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-mqtt-vertx --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>Verify the last step with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo $REGISTRY_IP
+</span></span></code></pre></div><p>If this does not print an IP address, check that <code>minikube tunnel</code> is running.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Secure Connections to Kafka</div>
+    <div class="box-content">
+<p>By default, the Kafka broker deployed with the Helm chart is configured to accept client connections only with
+<em>Transport Layer Security</em> (TLS) enabled. While the Hono components, like protocol adapters, are already deployed with a
+matching configuration of the Kafka clients they use, external connections, like Hono&rsquo;s example application, need to be
+provided with configuration that enables TLS and a truststore file containing the broker certificate.
+The following guide assumes that for a local deployment in a Minikube cluster TLS is enabled on the Kafka broker.</p>
+<p><strong>NB</strong> The instructions below disable hostname verification (by setting the Kafka config property
+<code>ssl.endpoint.identification.algorithm</code> to an empty string) because the external IP in the Minikube cluster is dynamic
+and not included in the certificate. Don&rsquo;t disable hostname verification in productive setups!</p>
+    </div>
+</div>
+<p><a name="overview"></a></p>
+<h2 id="overview-of-hono-components">Overview of Hono Components</h2>
+<p>Hono consists of a set of microservices which are deployed as Docker containers. The diagram below provides an overview
+of the containers that are part of the example deployment of Hono on the Sandbox or a local Minikube cluster.</p>
+<figure><img src="Hono_instance.svg"
+         alt="The Docker containers representing the services of the example Hono deployment with Kafka"/><figcaption>
+            <h4>Components of the example Hono deployment with Kafka</h4>
+        </figcaption>
+</figure>
+
+<ul>
+<li>Hono Instance
+<ul>
+<li>An <em>HTTP Adapter</em> instance that exposes Hono&rsquo;s Telemetry and Event APIs as URI resources.</li>
+<li>An <em>MQTT Adapter</em> instance that exposes Hono&rsquo;s Telemetry and Event APIs as a generic MQTT topic hierarchy.</li>
+<li>An <em>AMQP Adapter</em> instance that exposes Hono&rsquo;s Telemetry and Event APIs as a set of AMQP 1.0 addresses.</li>
+<li>A <em>Command Router</em> instance that receives Command &amp; Control messages and forwards them to protocol adapters.</li>
+<li>A <em>Device Registry</em> instance that manages registration information and issues device registration assertions to
+protocol adapters.</li>
+<li>An <em>Auth Server</em> instance that authenticates Hono components and issues tokens asserting identity and authorities.</li>
+</ul>
+</li>
+<li>Kafka Cluster
+<ul>
+<li>An <em>Apache Kafka</em> broker instance that downstream applications connect to in order to consume telemetry data and
+events from devices and to send Command &amp; Control messages to devices.</li>
+<li>An <em>Apache Zookeeper</em> instance that is required by the Kafka cluster.</li>
+</ul>
+</li>
+<li>Monitoring Infrastructure
+<ul>
+<li>A <em>Prometheus</em> instance for storing metrics data from services and protocol adapters.</li>
+<li>A <em>Grafana</em> instance providing a dash board visualizing the collected metrics data.</li>
+</ul>
+</li>
+</ul>
+<p>In the example scenario used in the remainder of this guide, the devices will connect to the HTTP and MQTT adapters in
+order to publish telemetry data and events. The devices will be authenticated using information stored in the Device
+Registry. The data is then forwarded downstream to the example application via the Kafka cluster.</p>
+<h2 id="registering-devices">Registering Devices</h2>
+<p>When a device tries to connect to one of Hono&rsquo;s protocol adapters, the protocol adapter first tries to authenticate
+the device using information kept in the Device Registry. The information maintained in the registry includes the
+<em>tenant</em> (a logical scope) that the device belongs to, the device&rsquo;s unique <em>identity</em> within the tenant and the
+<em>credentials</em> used by the device for authentication.</p>
+<p>Before a device can connect to Hono and publish any data, the corresponding information needs to be added to the
+Device Registry.</p>
+<h3 id="creating-a-new-tenant">Creating a new Tenant</h3>
+<p>Register a tenant that is configured for Kafka based messaging using Hono&rsquo;s Device Registry&rsquo;s management HTTP API (a
+random tenant identifier will be generated):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X POST -H <span style="color:#e6db74">&#34;content-type: application/json&#34;</span> http://$REGISTRY_IP:28080/v1/tenants --data-binary <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;ext&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;messaging-type&#34;: &#34;kafka&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">201</span> Created
+</span></span><span style="display:flex;"><span>etag: becc93d7-ab0f-48ec-ad26-debdf339cbf4
+</span></span><span style="display:flex;"><span>location: /v1/tenants/85f63e23-1b78-4156-8500-debcbd1a8d35
+</span></span><span style="display:flex;"><span>content-type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">45</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;85f63e23-1b78-4156-8500-debcbd1a8d35&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Random tenant ID value</div>
+    <div class="box-content">
+<p>You will receive a randomly generated tenantId value. It will probably be different than the value given in this example.
+Make sure to export it to an environment variable to make the following steps easier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export MY_TENANT<span style="color:#f92672">=</span>85f63e23-1b78-4156-8500-debcbd1a8d35
+</span></span></code></pre></div>    </div>
+</div>
+<h3 id="adding-a-device-to-the-tenant">Adding a Device to the Tenant</h3>
+<p>Register a device using Hono&rsquo;s Device Registry&rsquo;s management HTTP API (a random device identifier will be assigned):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X POST http://$REGISTRY_IP:28080/v1/devices/$MY_TENANT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">201</span> Created
+</span></span><span style="display:flex;"><span>etag: 68eab243-3df9-457d-a0ab-b702e57c0c17
+</span></span><span style="display:flex;"><span>location: /v1/devices/85f63e23-1b78-4156-8500-debcbd1a8d35/4412abe2-f219-4099-ae14-b446604ae9c6
+</span></span><span style="display:flex;"><span>content-type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">45</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;4412abe2-f219-4099-ae14-b446604ae9c6&#34;</span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Random device ID value</div>
+    <div class="box-content">
+<p>You will receive a randomly generated deviceId value. It will probably be different than the value given in this example.
+Make sure to export it to an environment variable to make the following steps easier:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export MY_DEVICE<span style="color:#f92672">=</span>4412abe2-f219-4099-ae14-b446604ae9c6
+</span></span></code></pre></div>    </div>
+</div>
+<h3 id="setting-a-password-for-the-device">Setting a Password for the Device</h3>
+<p>Choose a (random) password and register it using Hono&rsquo;s Device Registry&rsquo;s management HTTP API (replace <code>my-pwd</code> with your
+password):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export MY_PWD<span style="color:#f92672">=</span>my-pwd
+</span></span><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#34;content-type: application/json&#34;</span> --data-binary <span style="color:#e6db74">&#39;[{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;type&#34;: &#34;hashed-password&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;auth-id&#34;: &#34;&#39;</span>$MY_DEVICE<span style="color:#e6db74">&#39;&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;secrets&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;pwd-plain&#34;: &#34;&#39;</span>$MY_PWD<span style="color:#e6db74">&#39;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}]&#39;</span> http://$REGISTRY_IP:28080/v1/credentials/$MY_TENANT/$MY_DEVICE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">204</span> Updated
+</span></span><span style="display:flex;"><span>etag: cf91fd4d-7111-4e8a-af68-c703993a8be1
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p><a name="starting-a-consumer"></a></p>
+<h2 id="starting-the-example-application">Starting the example Application</h2>
+<p>The telemetry data produced by devices is usually consumed by downstream applications that use it to implement their
+corresponding business functionality.
+In this guide we will use the Hono command line client to simulate such an application.
+The client will connect to the Kafka cluster that provides Hono&rsquo;s north bound Kafka based
+<a href="/hono/docs/1.12/api/telemetry-kafka/">Telemetry</a> and <a href="/hono/docs/1.12/api/event-kafka/">Event API</a>s, subscribe
+to all telemetry and event messages and log the messages to the console.</p>
+<p>Open a new terminal window to run the client from the command line.</p>
+<p>If you are using the Sandbox server (make sure to replace <code>my-tenant</code> with your tenant identifier):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory where the hono-cli-*-exec.jar file has been downloaded to</span>
+</span></span><span style="display:flex;"><span>export MY_TENANT<span style="color:#f92672">=</span>my-tenant
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>receiver,kafka,sandbox --tenant.id<span style="color:#f92672">=</span>$MY_TENANT
+</span></span></code></pre></div><p>Otherwise, if you are using a local Minikube cluster, first save the trust store file of the Kafka broker to your file
+system with the following command (adapt the value of environment variable <code>KAFKA_TRUSTSTORE_PATH</code> to the location that
+the trust store should be saved to):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export KAFKA_TRUSTSTORE_PATH<span style="color:#f92672">=</span>/tmp/truststore.pem
+</span></span><span style="display:flex;"><span>kubectl get secrets eclipse-hono-kafka-certs --template<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{index .data \&#34;ca.crt\&#34; | base64decode}}&#34;</span> -n hono &gt; $KAFKA_TRUSTSTORE_PATH
+</span></span></code></pre></div><p>Then set the following environment variables and start the client (make sure to replace <code>my-tenant</code> with your tenant
+identifier):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory where the hono-cli-*-exec.jar file has been downloaded to</span>
+</span></span><span style="display:flex;"><span>export MY_TENANT<span style="color:#f92672">=</span>my-tenant
+</span></span><span style="display:flex;"><span>export KAFKA_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-kafka-0-external --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>export KAFKA_PORT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-kafka-0-external --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.spec.ports[?(@.name==&#39;tcp-kafka&#39;)].port}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --hono.kafka.commonClientConfig.bootstrap.servers<span style="color:#f92672">=</span>$KAFKA_IP:$KAFKA_PORT --hono.kafka.commonClientConfig.ssl.truststore.location<span style="color:#f92672">=</span>$KAFKA_TRUSTSTORE_PATH --hono.kafka.commonClientConfig.ssl.truststore.type<span style="color:#f92672">=</span>PEM --spring.profiles.active<span style="color:#f92672">=</span>receiver,kafka,local --tenant.id<span style="color:#f92672">=</span>$MY_TENANT
+</span></span></code></pre></div><p>Note that the profiles <code>sandbox</code> respectively <code>local</code> enable default configurations for TLS and the authentication of an
+existing example Kafka user.</p>
+<h2 id="publishing-telemetry-data-to-the-http-adapter">Publishing Telemetry Data to the HTTP Adapter</h2>
+<p>Now that the downstream application is running, devices can start publishing telemetry data and events using Hono&rsquo;s
+protocol adapters. First, you will simulate a device publishing data to Hono using the HTTP protocol.
+Go back to the original terminal and run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u $MY_DEVICE@$MY_TENANT:$MY_PWD -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://$HTTP_ADAPTER_IP:8080/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>If you have started the downstream application as described above, you should now see the telemetry message being logged
+to the application&rsquo;s console in the other terminal. The output should look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>13:36:49.169 <span style="color:#f92672">[</span>vert.x-eventloop-thread-0<span style="color:#f92672">]</span> INFO  org.eclipse.hono.cli.app.Receiver - received telemetry message <span style="color:#f92672">[</span>device: my-device, content-type: application/json<span style="color:#f92672">]</span>: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;temp&#34;</span>: 5<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>13:36:49.170 <span style="color:#f92672">[</span>vert.x-eventloop-thread-0<span style="color:#f92672">]</span> INFO  org.eclipse.hono.cli.app.Receiver - ... with properties: <span style="color:#f92672">{</span>orig_adapter<span style="color:#f92672">=</span>hono-http, qos<span style="color:#f92672">=</span>0, device_id<span style="color:#f92672">=</span>my-device, importance<span style="color:#f92672">=</span>high, uber-trace-id<span style="color:#f92672">=</span>6fd25dfcc1904fa1:95b598b9325f7ea3:a2ab14cbc5032ec9:0, content-type<span style="color:#f92672">=</span>application/json, orig_address<span style="color:#f92672">=</span>/telemetry<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>You can publish more data simply by re-running the <code>curl</code> command above with arbitrary payload.</p>
+<p>The HTTP Adapter also supports publishing telemetry messages using <em>at least once</em> delivery semantics. For information
+on how that works and additional examples for interacting with Hono via HTTP, please refer to the
+<a href="/hono/docs/1.12/user-guide/http-adapter/">HTTP Adapter&rsquo;s User Guide</a>.</p>
+<h2 id="publishing-events-to-the-http-adapter">Publishing Events to the HTTP Adapter</h2>
+<p>In a similar way you can upload events:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u $MY_DEVICE@$MY_TENANT:$MY_PWD -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;alarm&#34;: &#34;fire&#34;}&#39;</span> http://$HTTP_ADAPTER_IP:8080/event
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>Content-Length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Again, you should see the event being logged to the console of the downstream application.</p>
+<h2 id="publishing-telemetry-data-to-the-mqtt-adapter">Publishing Telemetry Data to the MQTT Adapter</h2>
+<p>Devices can also publish data to Hono using the MQTT protocol. If you have installed the <code>mosquitto_pub</code> command line
+client, you can run the following command to publish arbitrary telemetry data to Hono&rsquo;s MQTT adapter using QoS 0:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h $MQTT_ADAPTER_IP -u $MY_DEVICE@$MY_TENANT -P $MY_PWD -t telemetry -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+</span></span></code></pre></div><p>Again, you should now see the telemetry message being logged to console of the downstream application.</p>
+<p>The MQTT Adapter also supports publishing telemetry messages using QoS 1. For information on how that works
+and additional examples for interacting with Hono via MQTT, please refer to the
+<a href="/hono/docs/1.12/user-guide/mqtt-adapter/">MQTT Adapter&rsquo;s User Guide</a>.</p>
+<h2 id="publishing-events-to-the-mqtt-adapter">Publishing Events to the MQTT Adapter</h2>
+<p>In a similar way you can upload events:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h $MQTT_ADAPTER_IP -u $MY_DEVICE@$MY_TENANT -P $MY_PWD -t event -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: &#34;fire&#34;}&#39;</span>
+</span></span></code></pre></div><p>Again, you should now see the telemetry message being logged to console of the downstream application.</p>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Congratulations</div>
+    <div class="box-content">
+<p>You have successfully connected a device to Hono and published sensor data for consumption by an application connected
+to Hono&rsquo;s north bound API. The application consumed messages from the Kafka cluster regardless of the transport protocol
+used by the device to publish the data.</p>
+<p><strong>What to try next?</strong></p>
+<ul>
+<li>Continue with the next sections to learn how applications can send commands to devices by means of the
+<a href="/hono/docs/1.12/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a>.</li>
+<li>Take a look at some of the metrics collected by Hono&rsquo;s components by opening the Hono dashboard. On the Sandbox
+server the dashboard is available at <a href="https://hono.eclipseprojects.io:3000">https://hono.eclipseprojects.io:3000</a>. When running a local Minikube cluster,
+please refer to <a href="https://github.com/eclipse/packages/tree/master/charts/hono#accessing-the-grafana-dashboard">Opening the Dashboard</a>
+for instructions.</li>
+<li>Check out the <a href="/hono/docs/1.12/user-guide/">User Guides</a> to explore more options for devices to connect to Hono
+using different transport protocols.</li>
+<li>Learn more about the managing tenants, devices and credentials using the
+<a href="/hono/docs/1.12/user-guide/device-registry/">Device Registry&rsquo;s HTTP API</a>.</li>
+</ul>
+    </div>
+</div>
+<h2 id="advanced-sending-commands-to-a-device">Advanced: Sending Commands to a Device</h2>
+<p>The following example will guide you through an advanced feature of Hono. You will see how an application can send a
+command to a device and receive a response with the result of processing the command on the device. The communication
+direction here is exactly the other way round than with telemetry and events.</p>
+<p>The following assumes that the steps in the
+<a href="#prerequisites-for-the-getting-started-guide">Prerequisites for the Getting started Guide</a> and
+<a href="#registering-devices">Registering Devices</a> sections above have been completed. To simulate the device,
+you can use the Mosquitto tools again while the Hono Command Line Client simulates the application as before.</p>
+<h3 id="receiving-a-command">Receiving a Command</h3>
+<p>With the <code>mosquitto_sub</code> command you simulate an MQTT device that receives a command.
+Create a subscription to the command topic in the terminal for the simulated device (don&rsquo;t forget to set the environment
+variables <code>MQTT_ADAPTER_IP</code>, <code>MY_TENANT</code> and <code>MY_DEVICE</code>)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h $MQTT_ADAPTER_IP -u $MY_DEVICE@$MY_TENANT -P $MY_PWD -t command///req/#
+</span></span></code></pre></div><p>Now that the device is waiting to receive commands, the application can start sending them.
+Start the Command Line Client in the terminal for the application side.
+If you are using the Sandbox server (don&rsquo;t forget to set the environment variables <code>MY_TENANT</code> and <code>MY_DEVICE</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory where the hono-cli-*-exec.jar file has been downloaded to</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>command,kafka,sandbox --tenant.id<span style="color:#f92672">=</span>$MY_TENANT --device.id<span style="color:#f92672">=</span>$MY_DEVICE
+</span></span></code></pre></div><p>Otherwise, if you are using a local Minikube cluster (don&rsquo;t forget to set the environment variables <code>KAFKA_IP</code>,
+<code>KAFKA_PORT</code>, <code>KAFKA_TRUSTSTORE_PATH</code>, <code>MY_TENANT</code> and <code>MY_DEVICE</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory where the hono-cli-*-exec.jar file has been downloaded to</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --hono.kafka.commonClientConfig.bootstrap.servers<span style="color:#f92672">=</span>$KAFKA_IP:$KAFKA_PORT --hono.kafka.commonClientConfig.ssl.truststore.location<span style="color:#f92672">=</span>$KAFKA_TRUSTSTORE_PATH --spring.profiles.active<span style="color:#f92672">=</span>command,kafka,local --tenant.id<span style="color:#f92672">=</span>$MY_TENANT --device.id<span style="color:#f92672">=</span>$MY_DEVICE
+</span></span></code></pre></div><p>Note that this time the profile <code>command</code> is activated instead of <code>receiver</code>, which enables a different mode of the
+Command Line Client.</p>
+<p>The client will prompt you to enter the command&rsquo;s name, the payload to send and the payload&rsquo;s content type.
+The example below illustrates how a one-way command to set the volume with a JSON payload is sent to the device.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter name of command <span style="color:#66d9ef">for</span> device <span style="color:#f92672">[</span>&lt;DeviceId&gt;<span style="color:#f92672">]</span> in tenant <span style="color:#f92672">[</span>&lt;TenantId&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>prefix with <span style="color:#e6db74">&#39;ow:&#39;</span> to send one-way command<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>ow:setVolume
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter command payload:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;level&#34;</span>: 50<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter content type:
+</span></span><span style="display:flex;"><span>application/json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>INFO  org.eclipse.hono.cli.app.Commander - Command sent to device
+</span></span></code></pre></div><p>In the terminal for the simulated device you should see the received command as follows</p>
+<pre><code>command///req//setVolume {&quot;level&quot;: 50}
+</code></pre>
+<h3 id="sending-a-response-to-a-command">Sending a Response to a Command</h3>
+<p>Now that you have sent a one-way command to the device,  you may get to know <em>request/response</em> commands where the
+device sends a response to the application.
+A <em>request/response</em> command received from an application contains an identifier that is unique to each new command.
+The device must include this identifier in its response so that the application can correctly correlate the response
+with the request.</p>
+<p>If you send a <em>request/response</em> command like this</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter name of command <span style="color:#66d9ef">for</span> device <span style="color:#f92672">[</span>&lt;DeviceId&gt;<span style="color:#f92672">]</span> in tenant <span style="color:#f92672">[</span>&lt;TenantId&gt;<span style="color:#f92672">]</span> <span style="color:#f92672">(</span>prefix with <span style="color:#e6db74">&#39;ow:&#39;</span> to send one-way command<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>setBrightness
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter command payload:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;brightness&#34;</span>: 87<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter content type:
+</span></span><span style="display:flex;"><span>application/json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>INFO  org.eclipse.hono.cli.app.Commander - Command sent to device... <span style="color:#f92672">[</span>waiting <span style="color:#66d9ef">for</span> response <span style="color:#66d9ef">for</span> max. <span style="color:#ae81ff">60</span> seconds<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>the application will wait up to 60 seconds for the device&rsquo;s response.</p>
+<p>In the terminal for the simulated device you should see the received command that looks like this</p>
+<pre><code>command///req/10117f669c12-09ef-416d-88c1-1787f894856d/setBrightness {&quot;brightness&quot;: 87}
+</code></pre>
+<p>The element between <code>req</code> and <code>setBrightness</code> is the request identifier that must be included in the response.</p>
+<p>You can cancel the command <code>mosquitto_sub</code> in the terminal of the device (press the key combination <code>Ctrl + C</code>) to reuse the
+configuration with the  environment variables for sending the response.
+The following example shows how an answer can be sent with MQTT. Note that the actual identifier from the received
+command must be used.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export REQ_ID<span style="color:#f92672">=</span>10117f669c12-09ef-416d-88c1-1787f894856d
+</span></span><span style="display:flex;"><span>mosquitto_pub -h $MQTT_ADAPTER_IP -u $MY_DEVICE@$MY_TENANT -P $MY_PWD -t command///res/$REQ_ID/200 -m <span style="color:#e6db74">&#39;{&#34;success&#34;: true}&#39;</span>
+</span></span></code></pre></div><p>The <code>200</code> at the end of the topic is an HTTP status code that reports the result of processing the command to the
+application.</p>
+<p>If the Command Line Client has successfully received the response in time, it will print it to the console. This looks
+like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>INFO  org.eclipse.hono.cli.app.Commander - Received Command response: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;success&#34;</span>: true<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>If the 60 seconds have already expired, an error message is logged.
+In this case you can send a new command or restart the Command Line Client with a higher timeout (append <code>--command.timeoutInSeconds=120</code>).</p>
+<p>Congratulations. Now you have successfully sent commands to a device and responded to them. For more information on
+Command &amp; Control refer to
+<a href="/hono/docs/1.12/user-guide/http-adapter/#specifying-the-time-a-device-will-wait-for-a-response">Commands using HTTP</a>
+and <a href="/hono/docs/1.12/user-guide/mqtt-adapter/#command--control">Commands using MQTT</a>.
+The <a href="/hono/docs/1.12/concepts/command-and-control/">Command and Control Concepts</a> page contains sequence diagrams that
+explain this in more detail.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048665"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048665"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048665"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048665"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048665"></script>
+        <script src="/hono/docs/js/search.js?1663048665"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.12/getting-started/" title="Getting started with Eclipse Hono" class="dd-item parent"><input type="checkbox" id="section-c727fab97b4d77e5b28ce8c448fb9000" class="toggle" checked/><label for="section-c727fab97b4d77e5b28ce8c448fb9000" ></label><a href="/hono/docs/1.12/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a><ul>
+          <li data-nav-id="/hono/docs/1.12/getting-started/kafka/" title="Getting started with Eclipse Hono using Apache Kafka" class="dd-item active"><a href="/hono/docs/1.12/getting-started/kafka/">Getting started using Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/getting-started/amqp/" title="Getting started with Eclipse Hono using AMQP 1.0" class="dd-item"><a href="/hono/docs/1.12/getting-started/amqp/">Getting started with AMQP 1.0</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.12/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.12/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.12/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.12/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.12/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.12/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.12/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.12/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.12/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.12/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.12/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.12/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.12/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.12/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/file-based-device-registry-config/" title="File Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/file-based-device-registry-config/">File Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/1.12/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.12/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.12/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.12/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.12/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.12/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.12/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.12/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.12/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.12/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.12/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.12/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.12/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.12/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/1.12/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/telemetry-kafka/" title="Telemetry API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.12/api/telemetry-kafka/">Telemetry API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/event-kafka/" title="Event API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.12/api/event-kafka/">Event API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/command-and-control-kafka/" title="Command &amp; Control API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.12/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.12/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/1.12/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.12/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.12/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.12/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.12/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.12/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.12/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.12/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.12/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.12/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.12/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.12/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.12/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.12/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.12/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.12/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.12/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.12/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="1.12" value="/hono/docs/1.12/getting-started/kafka/" selected>1.12</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048665"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048665"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048665"></script>
+    <script src="/hono/docs/js/theme.js?1663048665"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

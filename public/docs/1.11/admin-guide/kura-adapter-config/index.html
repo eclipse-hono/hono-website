@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="1.11">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.2" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Kura Adapter Configuration :: Eclipse Hono&trade; Vers.: 1.11</title>
+    <link rel="icon" href="/images/favicon.ico?1663048666" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663048666" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663048666" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663048666" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663048666"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.11/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663048666"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Kura Adapter Configuration :: Eclipse Hono&amp;trade; Vers.: 1.11">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Kura Adapter Configuration :: Eclipse Hono&amp;trade; Vers.: 1.11" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.11/admin-guide/kura-adapter-config//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.11/admin-guide/kura-adapter-config/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.11</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/admin-guide/kura-adapter-config.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.11/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.11/admin-guide/"><span itemprop="name">Admin Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.11/admin-guide/kura-adapter-config/" aria-disabled="true"><span itemprop="name">Kura Adapter Configuration</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#service-configuration">Service Configuration</a></li>
+    <li><a href="#port-configuration">Port Configuration</a>
+      <ul>
+        <li><a href="#secure-port-only">Secure Port Only</a></li>
+        <li><a href="#insecure-port-only">Insecure Port Only</a></li>
+        <li><a href="#dual-port">Dual Port</a></li>
+        <li><a href="#ephemeral-ports">Ephemeral Ports</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Kura Adapter Configuration</h1>
+<p>The Kura protocol adapter exposes an MQTT topic hierarchy allowing Eclipse Kura™ 3 based gateways to access
+Eclipse Hono™&rsquo;s south bound Telemetry, Event and Command &amp; Control APIs.</p>
+<p>The adapter is implemented as a Spring Boot application. It can be run either directly from the command line or by means
+of starting the corresponding <a href="https://hub.docker.com/r/eclipse/hono-adapter-kura/">Docker image</a> created from it.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The Kura adapter is deprecated and will be removed completely in Hono 2.0.0. Support for Kura version 4 and
+later is still available by means of Hono&rsquo;s standard MQTT adapter.</p>
+    </div>
+</div>
+<h2 id="service-configuration">Service Configuration</h2>
+<p>The following table provides an overview of the configuration variables and corresponding system properties for
+configuring the MQTT adapter.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_APP_MAXINSTANCES</code><br><code>hono.app.maxInstances</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>#CPU cores</em></td>
+<td style="text-align:left">The number of verticle instances to deploy. If not set, one verticle per processor core is deployed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_AUTHENTICATIONREQUIRED</code><br><code>hono.kura.authenticationRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>true</code> the protocol adapter requires devices to authenticate when connecting to the adapter. The credentials provided by the device are verified using the configured <a href="/hono/docs/1.11/admin-guide/common-config/#credentials-service-connection-configuration">Credentials Service</a>. Devices that have failed to authenticate are not allowed to publish any data.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_BINDADDRESS</code><br><code>hono.kura.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_CERTPATH</code><br><code>hono.kura.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the protocol adapter should use for authenticating to clients. This option must be used in conjunction with <code>HONO_KURA_KEYPATH</code>.<br>Alternatively, the <code>HONO_KURA_KEYSTOREPATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_CONTROLPREFIX</code><br><code>hono.kura.controlPrefix</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>$EDC</code></td>
+<td style="text-align:left">The <em>topic.control-prefix</em> to use for determining if a message published by a Kura gateway is a <em>control</em> message. All messages published to a topic that does not start with this prefix are considered <em>data</em> messages.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_CTRLMSGCONTENTTYPE</code><br><code>hono.kura.ctrlMsgContentType</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>application/vnd.eclipse.kura-control</code></td>
+<td style="text-align:left">The content type to set on AMQP messages created from Kura <em>control</em> messages.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_DATAMSGCONTENTTYPE</code><br><code>hono.kura.dataMsgContentType</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>application/vnd.eclipse.kura-data</code></td>
+<td style="text-align:left">The content type to set on AMQP messages created from Kura <em>data</em> messages.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_DEFAULTSENABLED</code><br><code>hono.kura.defaultsEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>true</code> the protocol adapter uses <em>default values</em> registered for a device to augment messages published by the device with missing information like a content type. In particular, the protocol adapter adds default values registered for the device as (application) properties with the same name to the AMQP 1.0 messages it sends downstream to the AMQP Messaging Network.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_INSECUREPORT</code><br><code>hono.kura.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the protocol adapter should listen on.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_INSECUREPORTBINDADDRESS</code><br><code>hono.kura.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_INSECUREPORTENABLED</code><br><code>hono.kura.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the protocol adapter will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_KURA_INSECUREPORT</code> or the default MQTT port number (<code>1883</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_KEYPATH</code><br><code>hono.kura.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the protocol adapter should use for authenticating to clients. This option must be used in conjunction with <code>HONO_KURA_CERTPATH</code>. Alternatively, the <code>HONO_KURA_KEYSTOREPATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_KEYSTOREPASSWORD</code><br><code>hono.kura.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_KEYSTOREPATH</code><br><code>hono.kura.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the protocol adapter should use for authenticating to clients. Either this option or the <code>HONO_KURA_KEYPATH</code> and <code>HONO_KURA_CERTPATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_SNI</code><br><code>hono.kura.sni</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">Set whether the server supports Server Name Indication. By default, the server will not support SNI and the option is <code>false</code>. However, if set to <code>true</code> then the key store format , <code>HONO_KURA_KEYSTOREPATH</code>,  should be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_MQTT_MAXCONNECTIONS</code><br><code>hono.mqtt.maxConnections</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>0</code></td>
+<td style="text-align:left">The maximum number of concurrent connections that the protocol adapter should accept. If not set (or set to <code>0</code>), the protocol adapter determines a reasonable value based on the available resources like memory and CPU.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_MAXPAYLOADSIZE</code><br><code>hono.kura.maxPayloadSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>2048</code></td>
+<td style="text-align:left">The maximum allowed size of an incoming MQTT message&rsquo;s payload in bytes. When a client sends a message with a larger payload, the message is discarded and the connection to the client gets closed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_NATIVETLSREQUIRED</code><br><code>hono.kura.nativeTlsRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">The server will probe for OpenSLL on startup if a secure port is configured. By default, the server will fall back to the JVM&rsquo;s default SSL engine if not available. However, if set to <code>true</code>, the server will fail to start at all in this case.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_PORT</code><br><code>hono.kura.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>8883</code></td>
+<td style="text-align:left">The secure port that the protocol adapter should listen on.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_SECUREPROTOCOLS</code><br><code>hono.kura.secureProtocols</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>TLSv1.3,TLSv1.2</code></td>
+<td style="text-align:left">A (comma separated) list of secure protocols (in order of preference) that are supported when negotiating TLS sessions. Please refer to the <a href="https://vertx.io/docs/vertx-core/java/#ssl">vert.x documentation</a> for a list of supported protocol names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AMQP_SUPPORTEDCIPHERSUITES</code><br><code>hono.amqp.supportedCipherSuites</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A (comma separated) list of names of cipher suites (in order of preference) that the adapter may use in TLS sessions with devices. Please refer to <a href="https://docs.oracle.com/en/java/javase/11/docs/specs/security/standard-names.html#jsse-cipher-suite-names">JSSE Cipher Suite Names</a> for a list of supported names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_TENANTIDLETIMEOUT</code><br><code>hono.kura.tenantIdleTimeout</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>PT0S</code></td>
+<td style="text-align:left">The duration after which the protocol adapter removes local state of the tenant (e.g. open AMQP links) with an amount and a unit, e.g. <code>2h</code> for 2 hours. See the <code>java.time.Duration</code> <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Duration.html#parse(java.lang.CharSequence)">documentation</a> for an explanation of the format. The leading <code>PT</code> can be omitted if only specifying hours, minutes or seconds. The value <code>0s</code> (or <code>PT0S</code>) disables the timeout.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KURA_SENDMESSAGETODEVICETIMEOUT</code><br><code>hono.kura.sendMessageToDeviceTimeout</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>1000</code></td>
+<td style="text-align:left">The amount of time (milliseconds) after which the sending of a command to a device using QoS 1 is considered to be failed. The value of this variable should be increased in cases where devices are connected over a network with high latency.</td>
+</tr>
+</tbody>
+</table>
+<p>The variables only need to be set if the default values do not match your environment.</p>
+<p>In addition to the options described in the table above, this component supports the following standard configuration
+options:</p>
+<ul>
+<li><a href="/hono/docs/1.11/admin-guide/common-config/#java-vm-options">Common Java VM Options</a></li>
+<li><a href="/hono/docs/1.11/admin-guide/common-config/#vertx-options">Common vert.x Options</a></li>
+<li><a href="/hono/docs/1.11/admin-guide/common-config/#protocol-adapter-options">Common Protocol Adapter Options</a></li>
+<li><a href="/hono/docs/1.11/admin-guide/monitoring-tracing-config/">Monitoring Options</a></li>
+</ul>
+<h2 id="port-configuration">Port Configuration</h2>
+<p>The Kura protocol adapter can be configured to listen for connections on</p>
+<ul>
+<li>a secure port only (default) or</li>
+<li>an insecure port only or</li>
+<li>both a secure and an insecure port (dual port configuration)</li>
+</ul>
+<p>The Kura protocol adapter will fail to start if none of the ports is configured properly.</p>
+<h3 id="secure-port-only">Secure Port Only</h3>
+<p>The protocol adapter needs to be configured with a private key and certificate in order to open a TLS secured port.</p>
+<p>There are two alternative ways for doing so:</p>
+<ol>
+<li>either setting the <code>HONO_KURA_KEYSTOREPATH</code> and the <code>HONO_KURA_KEYSTOREPASSWORD</code> variables in order to load the key &amp; certificate from a password protected key store, or</li>
+<li>setting the <code>HONO_KURA_KEYPATH</code> and <code>HONO_KURA_CERTPATH</code> variables in order to load the key and certificate from two separate PEM files in PKCS8 format.</li>
+</ol>
+<p>When starting up, the protocol adapter will bind a TLS secured socket to the default secure MQTT port 8883. The port number can also be set explicitly using the <code>HONO_KURA_PORT</code> variable.</p>
+<p>The <code>HONO_KURA_BINDADDRESS</code> variable can be used to specify the network interface that the port should be exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host. Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose the port unintentionally to the outside world).</p>
+<h3 id="insecure-port-only">Insecure Port Only</h3>
+<p>The secure port will mostly be required for production scenarios. However, it might be desirable to expose a non-TLS secured port instead, e.g. for testing purposes. In any case, the non-secure port needs to be explicitly enabled either by</p>
+<ul>
+<li>explicitly setting <code>HONO_KURA_INSECUREPORT</code> to a valid port number, or by</li>
+<li>implicitly configuring the default MQTT port (1883) by simply setting <code>HONO_KURA_INSECUREPORTENABLED</code> to <code>true</code>.</li>
+</ul>
+<p>The protocol adapter issues a warning on the console if <code>HONO_KURA_INSECUREPORT</code> is set to the default secure MQTT port (8883).</p>
+<p>The <code>HONO_KURA_INSECUREPORTBINDADDRESS</code> variable can be used to specify the network interface that the port should be exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host. This variable might be used to e.g. expose the non-TLS secured port on a local interface only, thus providing easy access from within the local network, while still requiring encrypted communication when accessed from the outside over public network infrastructure.</p>
+<p>Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose the port unintentionally to the outside world).</p>
+<h3 id="dual-port">Dual Port</h3>
+<p>The protocol adapter may be configured to open both a secure and a non-secure port at the same time simply by configuring both ports as described above. For this to work, both ports must be configured to use different port numbers, otherwise startup will fail.</p>
+<h3 id="ephemeral-ports">Ephemeral Ports</h3>
+<p>Both the secure as well as the insecure port numbers may be explicitly set to <code>0</code>. The protocol adapter will then use arbitrary (unused) port numbers determined by the operating system during startup.</p>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663048667"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663048667"></script>
+        <script src="/hono/docs/js/search.js?1663048667"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.11/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.11/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.11/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.11/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.11/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.11/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.11/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.11/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.11/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.11/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.11/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.11/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.11/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.11/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.11/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.11/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.11/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/" title="Admin Guide" class="dd-item parent"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle" checked/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.11/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/file-based-device-registry-config/" title="File Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/file-based-device-registry-config/">File Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/1.11/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.11/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item active"><a href="/hono/docs/1.11/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/1.11/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.11/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.11/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.11/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.11/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.11/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.11/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.11/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.11/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.11/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.11/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.11/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.11/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.11/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.11/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/1.11/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/telemetry-kafka/" title="Telemetry API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.11/api/telemetry-kafka/">Telemetry API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/event-kafka/" title="Event API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.11/api/event-kafka/">Event API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/command-and-control-kafka/" title="Command &amp; Control API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.11/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.11/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/1.11/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.11/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.11/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.11/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.11/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.11/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.11/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.11/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.11/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.11/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.11/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.11/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.11/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.11/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.11/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.11/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.11/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.11/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.11/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.11/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.11/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/admin-guide/kura-adapter-config/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/admin-guide/kura-adapter-config/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/admin-guide/kura-adapter-config/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/admin-guide/kura-adapter-config/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/admin-guide/kura-adapter-config/" selected>1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/admin-guide/kura-adapter-config/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/admin-guide/kura-adapter-config/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/admin-guide/kura-adapter-config/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/admin-guide/kura-adapter-config/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/admin-guide/kura-adapter-config/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/admin-guide/kura-adapter-config/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/admin-guide/kura-adapter-config/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/admin-guide/kura-adapter-config/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/admin-guide/kura-adapter-config/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/admin-guide/kura-adapter-config/">1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/admin-guide/kura-adapter-config/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/admin-guide/kura-adapter-config/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663048667"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663048667"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663048667"></script>
+    <script src="/hono/docs/js/theme.js?1663048667"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>
