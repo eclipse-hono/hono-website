@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="1.2">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>AMQP Adapter :: Eclipse Hono&trade; Vers.: 1.2</title>
+    <link rel="icon" href="/images/favicon.ico?1663249432" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663249432" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663249432" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663249432"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.2/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663249432"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="AMQP Adapter :: Eclipse Hono&amp;trade; Vers.: 1.2">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="AMQP Adapter :: Eclipse Hono&amp;trade; Vers.: 1.2" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.2/user-guide/amqp-adapter//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.2/user-guide/amqp-adapter/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.2</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/user-guide/amqp-adapter.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.2/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.2/user-guide/"><span itemprop="name">User Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.2/user-guide/amqp-adapter/" aria-disabled="true"><span itemprop="name">AMQP Adapter</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#device-authentication">Device Authentication</a>
+      <ul>
+        <li><a href="#sasl-plain-authentication">SASL PLAIN Authentication</a></li>
+        <li><a href="#sasl-external-authentication">SASL EXTERNAL Authentication</a></li>
+      </ul>
+    </li>
+    <li><a href="#resource-limit-checks">Resource Limit Checks</a>
+      <ul>
+        <li><a href="#connection-limits">Connection Limits</a></li>
+        <li><a href="#connection-duration-limits">Connection Duration Limits</a></li>
+        <li><a href="#message-limits">Message Limits</a></li>
+      </ul>
+    </li>
+    <li><a href="#connection-event">Connection Event</a></li>
+    <li><a href="#link-establishment">Link Establishment</a></li>
+    <li><a href="#error-handling">Error Handling</a></li>
+    <li><a href="#amqp-command-line-client">AMQP Command-line Client</a></li>
+    <li><a href="#publishing-telemetry-data">Publishing Telemetry Data</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</a></li>
+    <li><a href="#publishing-events">Publishing Events</a></li>
+    <li><a href="#publish-an-event-authenticated-device">Publish an Event (authenticated Device)</a></li>
+    <li><a href="#publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</a></li>
+    <li><a href="#publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</a></li>
+    <li><a href="#command--control">Command &amp; Control</a>
+      <ul>
+        <li><a href="#receiving-commands">Receiving Commands</a></li>
+        <li><a href="#sending-a-response-to-a-command">Sending a Response to a Command</a></li>
+        <li><a href="#examples">Examples</a></li>
+      </ul>
+    </li>
+    <li><a href="#downstream-meta-data">Downstream Meta Data</a>
+      <ul>
+        <li><a href="#event-message-time-to-live">Event Message Time-to-live</a></li>
+      </ul>
+    </li>
+    <li><a href="#tenant-specific-configuration">Tenant specific Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>AMQP Adapter</h1>
+<p>The AMQP protocol adapter allows clients (devices or gateway components) supporting the AMQP 1.0 protocol to publish messages to Eclipse Hono™&rsquo;s Telemetry, Event and Command &amp; Control endpoints.</p>
+<h2 id="device-authentication">Device Authentication</h2>
+<p>By default, all Hono protocol adapters require clients (devices or gateway components) to authenticate during connection establishment. This is the preferred way for devices to publish data via protocol adapters. The AMQP adapter supports both the <a href="https://tools.ietf.org/html/rfc4616">SASL PLAIN</a> and <a href="https://tools.ietf.org/html/rfc4422">SASL EXTERNAL</a> authentication mechanisms. The former uses a <em>username</em> and <em>password</em> to authenticate to the adapter while the latter uses a client certificate.</p>
+<p>In this guide, we will give examples for publishing telemetry data and events for <em>authenticated</em> (using SASL PLAIN) and <em>unauthenticated</em> clients.</p>
+<p><strong>NB</strong> The AMQP adapter can be configured to <em>allow</em> unauthenticated devices to connect by setting configuration variable <code>HONO_AMQP_AUTHENTICATION_REQUIRED</code> to <code>false</code>.</p>
+<h3 id="sasl-plain-authentication">SASL PLAIN Authentication</h3>
+<p>The AMQP adapter supports authenticating clients using a <em>username</em> and <em>password</em>. This means that clients need to provide a <em>username</em> and a <em>password</em> when connecting to the AMQP adapter. If the adapter is configured for multi-tenancy (i.e <code>HONO_AMQP_SINGLE_TENANT</code> is set to <code>false</code>), then the <em>username</em> must match the pattern [<em>auth-id@tenant</em>], e.g. <code>sensor1@DEFAULT_TENANT</code>. Otherwise the <code>DEFAULT_TENANT</code> is assumed and the tenant-id can be omitted from the username.</p>
+<p>The adapter verifies the credentials provided by the client against the credentials the <a href="/hono/docs/1.2/admin-guide/common-config/#credentials-service-connection-configuration">configured Credentials service</a> has on record for the client. If the credentials match, then authentication is successful and the client device can proceed to publish messages to Hono.</p>
+<p>The examples below refer to devices <code>4711</code> and <code>gw-1</code> of tenant <code>DEFAULT_TENANT</code> using <em>auth-ids</em> <code>sensor1</code> and <code>gw1</code> and corresponding passwords. The example deployment as described in the <a href="/hono/docs/1.2/deployment/">Deployment Guides</a> comes pre-configured with the corresponding entities in its device registry component.</p>
+<p><strong>NB</strong> There is a subtle difference between the <em>device identifier</em> (<em>device-id</em>) and the <em>auth-id</em> a device uses for authentication. See <a href="/hono/docs/1.2/concepts/device-identity/">Device Identity</a> for a discussion of the concepts.</p>
+<h3 id="sasl-external-authentication">SASL EXTERNAL Authentication</h3>
+<p>When a device uses a client certificate for authentication, the TLS handshake is initiated during TCP connection establishment. If no trust anchor is configured for the AMQP adapter, the TLS handshake will succeed only if the certificate has not yet expired. Once the TLS handshake completes and a secure connection is established, the certificate&rsquo;s signature is checked during the SASL handshake. To complete the SASL handshake and authenticate the client, the adapter performs the following steps:</p>
+<ul>
+<li>Adapter extracts the client certificate&rsquo;s <em>Issuer DN</em> and uses it to</li>
+<li>us the Tenant service to look up the tenant that the client belongs to. In order for the lookup to succeed, the tenant’s trust anchor needs to be configured by means of registering the <a href="/hono/docs/1.2/api/tenant/#trusted-ca-format">trusted certificate authority</a>.</li>
+<li>If the lookup succeeds, the Tenant service returns the tenant, thus implicitly establishing the tenant that the device belongs to.</li>
+<li>Adapter validates the device’s client certificate using the registered trust anchor for the tenant.</li>
+<li>Finally, adapter authenticates the client certificate using Hono&rsquo;s credentials API. In this step, the adapter uses the client certificate’s <em>Subject DN</em> (as authentication identifier) and <code>x509-cert</code> (for the credentials type) in order to determine the device ID.</li>
+</ul>
+<p><strong>NB</strong> The AMQP adapter needs to be configured for TLS in order to support this mechanism.</p>
+<h2 id="resource-limit-checks">Resource Limit Checks</h2>
+<p>The adapter performs additional checks regarding <a href="https://www.eclipse.org/hono/docs/1.2/concepts/resource-limits/">resource limits</a> when a client tries to connect and/or
+send a message to the adapter.</p>
+<h3 id="connection-limits">Connection Limits</h3>
+<p>The adapter fails the SASL handshake with a client</p>
+<ul>
+<li>if the maximum number of simultaneously connected devices for the client&rsquo;s tenant is reached, or</li>
+<li>if the maximum number of connections per protocol adapter instance is reached.</li>
+</ul>
+<h3 id="connection-duration-limits">Connection Duration Limits</h3>
+<p>The adapter fails the SASL handshake with a client if the
+<a href="https://www.eclipse.org/hono/docs/1.2/concepts/resource-limits/#connection-duration-limit">connection duration limit</a> that has been configured
+for the client’s tenant is exceeded.</p>
+<h3 id="message-limits">Message Limits</h3>
+<p>The adapter</p>
+<ul>
+<li>fails the SASL handshake with a client and</li>
+<li>rejects any AMQP 1.0 message containing
+<ul>
+<li>telemetry data or an event uploaded by a client</li>
+<li>a command sent by a north bound application</li>
+</ul>
+</li>
+</ul>
+<p>if the <a href="/hono/docs/1.2/concepts/resource-limits/">message limit</a> that has been configured for the device’s tenant is exceeded.</p>
+<h2 id="connection-event">Connection Event</h2>
+<p>The AMQP Adapter can send a <a href="/hono/docs/1.2/api/event/#connection-event">Connection Event</a> once the connection with a device has been successfully established or ended. Note that this requires the <a href="/hono/docs/1.2/admin-guide/mqtt-adapter-config/#service-configuration"><code>HONO_CONNECTION_EVENTS_PRODUCER</code></a> configuration property to be explicitly set to <code>events</code>.</p>
+<h2 id="link-establishment">Link Establishment</h2>
+<p>The AMQP adapter supports the <a href="http://docs.oasis-open.org/amqp/anonterm/v1.0/anonterm-v1.0.html">Anonymous Terminus for Message Routing</a> specification
+and requires clients to create a single sender link using the <code>null</code> target address for publishing all types of messages to the AMQP adapter.</p>
+<p>Using <em>AT MOST ONCE</em> delivery semantics, the client will not wait for the message to be accepted and settled by the downstream consumer. However, with <em>AT LEAST ONCE</em>, the client sends the message and waits for the message to be delivered to and accepted by the downstream consumer. If the message cannot be delivered due to a failure, the client will be notified.</p>
+<p>The client indicates its preferred message delivery mode by means of the <em>snd-settle-mode</em> and <em>rcv-settle-mode</em> fields of its <em>attach</em> frame during link establishment. Clients should use <code>mixed</code> as the <em>snd-settle-mode</em> and <code>first</code> as the <em>rcv-settle-mode</em> in order to be able to use the same link for sending all types of messages using different delivery semantics as described in the following sections.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>The AMQP adapter distinguishes between two types of errors when a message is published using <em>at least once</em>:</p>
+<ul>
+<li>An error caused by the client side, e.g invalid message address, content-type, adapter disabled for tenant etc.</li>
+<li>An error caused by the server side, e.g no downstream consumers registered, downstream connection loss etc.</li>
+</ul>
+<p>For a client side error, the adapter settles the message transfer with the <em>rejected</em> outcome and provides an error description in the corresponding disposition frame. In the case of a server-side error, the adapter settles the message with the <em>released</em> outcome, indicating to the client that the message itself was OK but it cannot be delivered due to a failure beyond the control of the client. In the latter case, a client may attempt to re-send the message unaltered.</p>
+<h2 id="amqp-command-line-client">AMQP Command-line Client</h2>
+<p>For purposes of demonstrating the usage of the AMQP adapter, the <strong>Hono CLI Module</strong> contains an AMQP command-line client for interacting with the AMQP adapter. The client can be used to send telemetry or events and to receive/respond to command request messages.</p>
+<p>The command-line client supports the following parameters (with default values):</p>
+<ul>
+<li><code>--spring.profiles.active=amqp-send</code>: Profile for sending telemetry data or events to Hono.</li>
+<li><code>--spring.profiles.active=amqp-command</code>: Profile for receiving and responding to command request messages.</li>
+<li><code>--message.address</code>: The AMQP 1.0 message address (default: <code>telemetry</code>)</li>
+<li><code>--message.payload</code>: The message payload body (default: <code>'{&quot;temp&quot;: 5}'</code>)</li>
+<li><code>--hono.client.host</code>: The host name that the AMQP adapter is running on (default: <code>localhost</code>)</li>
+<li><code>--hono.client.port</code>: The port that the adapter is listening for incoming connections (default: <code>5672</code>)</li>
+</ul>
+<p>To run the client to send a telemetry message to Hono, open a terminal and execute the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --hono.client.username<span style="color:#f92672">=</span>sensor1@DEFAULT_TENANT --hono.client.password<span style="color:#f92672">=</span>hono-secret
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Accepted<span style="color:#f92672">{}</span>
+</span></span></code></pre></div><p>The client prints the outcome of the operation to standard out. The outcome above (<code>Accepted</code>) indicates that the request to upload the data has succeeded.</p>
+<p><strong>NB</strong>
+There are two JAR files in the hono/cli/target directory. The JAR to use for the client is the <code>hono-cli-$VERSION-exec.jar</code> and not the <code>hono-cli-$VERSION.jar</code> file. Running the latter will not work and will output the message: <code>no main manifest attribute, in hono-cli-$VERSION.jar</code></p>
+<h2 id="publishing-telemetry-data">Publishing Telemetry Data</h2>
+<p>The client indicates the delivery mode to use when uploading telemetry messages by means of the <em>settled</em> and <em>rcv-settle-mode</em> properties of the AMQP <em>transfer</em> frame(s) it uses for uploading the message. The AMQP adapter will accept messages using a delivery mode according to the following table:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">settled</th>
+<th style="text-align:left">rcv-settle-mode</th>
+<th style="text-align:left">Delivery semantics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left"><code>first</code></td>
+<td style="text-align:left">The adapter will forward the message to the downstream AMQP 1.0 Messaging Network and will forward any AMQP <em>disposition</em> frame received from the AMQP 1.0 Messaging Network to the client <em>as is</em>. It is up to the client&rsquo;s discretion if and how it processes the disposition frame. The adapter will accept any re-delivered message. Sending <em>unsettled</em> messages allows for clients to implement either <em>AT LEAST ONCE</em> or <em>AT MOST ONCE</em> delivery semantics, depending on whether a client actually waits for and considers the disposition frames it receives from the adapter or not. This is the recommended mode for uploading telemetry data.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left"><code>first</code></td>
+<td style="text-align:left">The adapter will acknowledge and settle any received message spontaneously before forwarding it to the downstream AMQP 1.0 Messaging Network. The adapter will ignore any AMQP <em>disposition</em> frames it receives from the AMQP 1.0 Messaging Network. Sending <em>pre-settled</em> messages allows for clients to implement <em>AT MOST ONCE</em> delivery semantics only. This is the fastest mode of delivery but has the drawback of less reliable end-to-end flow control and potential loss of messages without notice.</td>
+</tr>
+</tbody>
+</table>
+<p>All other combinations are not supported by the adapter and will result in the message being ignored (pre-settled) or rejected (unsettled).</p>
+<h2 id="publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</h2>
+<p>The AMQP adapter supports publishing of telemetry data to Hono&rsquo;s Telemetry API. Telemetry messages can be published using either <em>AT LEAST ONCE</em> or <em>AT MOST ONCE</em> delivery semantics.</p>
+<ul>
+<li>Message Address: <code>telemetry</code> or <code>t</code>
+<ul>
+<li>This refers to the <code>to</code> property of the message.</li>
+</ul>
+</li>
+<li>Settlement Mode: <code>presettled</code> (<em>AT MOST ONCE</em>) or <code>unsettled</code> (<em>AT LEAST ONCE</em>)</li>
+<li>Authentication: SASL PLAIN or SASL EXTERNAL</li>
+<li>Message Body:
+<ul>
+<li>(optional) Arbitrary payload</li>
+</ul>
+</li>
+<li>Message properties:
+<ul>
+<li>(optional) Arbitrary properties (content-type, correlation-id, &hellip;)</li>
+</ul>
+</li>
+<li>Disposition Frames:
+<ul>
+<li>Accepted: Message successfully processed by the adapter.</li>
+<li>Released: Message cannot be processed and should be redelivered.</li>
+<li>Rejected: Adapter rejects the message due to one of the following:
+* (<code>hono:bad-request</code>): Request rejected due to a bad client request.
+* (<code>amqp:unauthorized-access</code>): Request rejected because the adapter is disabled for tenant.
+* (<code>amqp:precondition-failed</code>): Request does not fulfill certain requirements e.g adapter cannot assert device registration etc.
+* (<code>amqp:resource-limit-exceeded</code>): Request rejected because the message limit for the given tenant is exceeded.</li>
+</ul>
+</li>
+</ul>
+<p>When a device publishes data to the <code>telemetry</code> address, the AMQP adapter automatically determines the device&rsquo;s identity and tenant during the authentication process.</p>
+<p><strong>Example</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --hono.client.username<span style="color:#f92672">=</span>sensor1@DEFAULT_TENANT --hono.client.password<span style="color:#f92672">=</span>hono-secret
+</span></span></code></pre></div><p>Notice that we only supplied a new value for the message address, leaving the other default values.</p>
+<p>Publish some JSON data for device <code>4711</code> using a client certificate for authentication:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --hono.client.port<span style="color:#f92672">=</span><span style="color:#ae81ff">5671</span> --hono.client.certPath<span style="color:#f92672">=</span>config/hono-demo-certs-jar/device-4711-cert.pem --hono.client.keyPath<span style="color:#f92672">=</span>config/hono-demo-certs-jar/device-4711-key.pem --hono.client.trustStorePath<span style="color:#f92672">=</span>config/hono-demo-certs-jar/trusted-certs.pem --hono.client.hostnameVerificationRequired<span style="color:#f92672">=</span>false
+</span></span></code></pre></div><h2 id="publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</h2>
+<ul>
+<li>Message Address: <code>telemetry/${tenant-id}/${device-id}</code> or <code>t/${tenant-id}/${device-id}</code></li>
+<li>Settlement Mode: <code>presettled</code> (AT MOST ONCE) or <code>unsettled</code> (AT LEAST ONCE)</li>
+<li>Authentication: none</li>
+<li>Message Body:
+<ul>
+<li>(optional) Arbitrary payload</li>
+</ul>
+</li>
+<li>Message properties:
+<ul>
+<li>(optional) Arbitrary properties (content-type, correlation-id, &hellip;)</li>
+</ul>
+</li>
+<li>Disposition Frames:
+<ul>
+<li>Accepted: Message successfully processed by the adapter.</li>
+<li>Released: Message cannot be processed and should be redelivered.</li>
+<li>Rejected: Adapter rejects the message due to:
+* (<code>hono:bad-request</code>): A bad client request (e.g invalid content-type).
+* (<code>amqp:unauthorized-access</code>): The adapter is disabled for tenant.
+* (<code>amqp:precondition-failed</code>): Request not fulfilling certain requirements.
+* (<code>amqp:resource-limit-exceeded</code>): Request rejected because the message limit for the given tenant is exceeded.</li>
+</ul>
+</li>
+</ul>
+<p>Note how verbose the address is for unauthenticated devices. This address can be used by devices that have not authenticated to the protocol adapter. This requires the <code>HONO_AMQP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code> before starting the protocol adapter.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --message.address<span style="color:#f92672">=</span>t/DEFAULT_TENANT/4711
+</span></span></code></pre></div><h2 id="publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</h2>
+<p>A device that publishes data on behalf of another device is called a gateway device. The message address is used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during connection establishment with the protocol adapter are used to authenticate the gateway whereas the message address is used to identify the device that the gateway publishes data for.</p>
+<p><strong>Examples</strong></p>
+<p>A gateway connecting to the adapter using <code>gw@DEFAULT_TENANT</code> as username and <code>gw-secret</code> as password and then publishing some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --hono.client.username<span style="color:#f92672">=</span>gw@DEFAULT_TENANT --hono.client.password<span style="color:#f92672">=</span>gw-secret --message.address<span style="color:#f92672">=</span>t/DEFAULT_TENANT/4711
+</span></span></code></pre></div><p>In this example, we are using message address <code>t/DEFAULT_TENANT/4711</code> which contains the device that the gateway is publishing the message for.</p>
+<h2 id="publishing-events">Publishing Events</h2>
+<p>The adapter supports <em>AT LEAST ONCE</em> delivery of <em>Event</em> messages only. A client therefore MUST set the <em>settled</em> property to <code>false</code> and the <em>rcv-settle-mode</em> property to <code>first</code> in all <em>transfer</em> frame(s) it uses for uploading events. All other combinations are not supported by the adapter and result in the message being rejected.</p>
+<h2 id="publish-an-event-authenticated-device">Publish an Event (authenticated Device)</h2>
+<ul>
+<li>Message Address: <code>event</code> or <code>e</code></li>
+<li>Settlement Mode: <code>unsettled</code> (AT LEAST ONCE)</li>
+<li>Authentication: SASL PLAIN or SASL EXTERNAL</li>
+<li>Message Body:
+<ul>
+<li>(optional) Arbitrary payload</li>
+</ul>
+</li>
+<li>Message properties:
+<ul>
+<li>(optional) Arbitrary properties (content-type, correlation-id, &hellip;)</li>
+</ul>
+</li>
+<li>Disposition Frames:
+<ul>
+<li>Accepted: Message successfully processed by the adapter.</li>
+<li>Released: Message cannot be processed and should be redelivered.</li>
+<li>Rejected: Adapter rejects the message due to:
+* (<code>hono:bad-request</code>): A bad client request (e.g invalid content-type).
+* (<code>amqp:unauthorized-access</code>): The adapter is disabled for tenant.
+* (<code>amqp:precondition-failed</code>): Request not fulfilling certain requirements.
+* (<code>amqp:resource-limit-exceeded</code>): Request rejected because the message limit for the given tenant is exceeded.</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish events. It is available only if the protocol adapter has been configured to require devices to authenticate (which is the default).</p>
+<p><strong>Example</strong></p>
+<p>Upload a JSON string for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --hono.client.username<span style="color:#f92672">=</span>sensor1@DEFAULT_TENANT --hono.client.password<span style="color:#f92672">=</span>hono-secret --message.address<span style="color:#f92672">=</span>event --message.payload<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+</span></span></code></pre></div><h2 id="publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</h2>
+<ul>
+<li>Message Address: <code>event/${tenant-id}/${device-id}</code> or <code>e/${tenant-id}/${device-id}</code></li>
+<li>Settlement Mode: <code>unsettled</code> (AT LEAST ONCE)</li>
+<li>Message Body:
+<ul>
+<li>(optional) Arbitrary payload</li>
+</ul>
+</li>
+<li>Message properties:
+<ul>
+<li>(optional) Arbitrary properties (content-type, correlation-id, &hellip;)</li>
+</ul>
+</li>
+<li>Disposition Frames:
+<ul>
+<li>Accepted: Message successfully processed by the adapter.</li>
+<li>Released: Message cannot be processed and should be redelivered.</li>
+<li>Rejected: Adapter rejects the message due to:
+* (<code>hono:bad-request</code>): A bad client request (e.g invalid content-type).
+* (<code>amqp:unauthorized-access</code>): The adapter is disabled for tenant.
+* (<code>amqp:precondition-failed</code>): Request not fulfilling certain requirements.
+* (<code>amqp:resource-limit-exceeded</code>): Request rejected because the message limit for the given tenant is exceeded.</li>
+</ul>
+</li>
+</ul>
+<p>This address format is used by devices that have not authenticated to the protocol adapter. Note that this requires the
+<code>HONO_AMQP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --message.address<span style="color:#f92672">=</span>e/DEFAULT_TENANT/4711 --message.payload<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+</span></span></code></pre></div><h2 id="publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</h2>
+<p><strong>Examples</strong></p>
+<p>A gateway connecting to the adapter using <code>gw@DEFAULT_TENANT</code> as username and <code>gw-secret</code> as password and then publishing some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-send --hono.client.username<span style="color:#f92672">=</span>gw@DEFAULT_TENANT --hono.client.password<span style="color:#f92672">=</span>gw-secret --message.address<span style="color:#f92672">=</span>e/DEFAULT_TENANT/4711
+</span></span></code></pre></div><p>In this example, we are using message address <code>e/DEFAULT_TENANT/4711</code> which contains the device that the gateway is publishing the message for.</p>
+<h2 id="command--control">Command &amp; Control</h2>
+<p>The AMQP adapter enables devices to receive commands that have been sent by business applications by means of opening a receiver link using a device specific <em>source address</em> as described below. When a device no longer wants to receive commands anymore, it can simply close the link.</p>
+<p>When a device has successfully opened a receiver link for commands, the adapter sends an <a href="/hono/docs/1.2/api/event/#empty-notification">empty notification</a> on behalf of the device to the downstream AMQP 1.0 Messaging Network with the <em>ttd</em> header set to <code>-1</code>, indicating that the device will be ready to receive commands until further notice. Analogously, the adapter sends an empty notification with the <em>ttd</em> header set to <code>0</code> when a device closes the link or disconnects.</p>
+<p>Devices send their responses to commands by means of sending an AMQP message with properties specific to the command that has been executed. The AMQP adapter accepts responses being published using either <em>at most once</em> (QoS 0) or <em>at least once</em> (QoS 1) delivery semantics. The device must send the command response messages using the same (sender) link that it uses for sending telemetry data and events.</p>
+<p>The AMQP adapter checks the configured [message limit] (/hono/docs/1.2/concepts/resource-limits/) before accepting any command requests and responses. In case of incoming command requests from business applications or the command responses from devices, if the message limit is exceeded, the Adapter rejects the message with the reason <code>amqp:resource-limit-exceeded</code>.</p>
+<h3 id="receiving-commands">Receiving Commands</h3>
+<p>A device MUST use the following source address in its <em>attach</em> frame to open a link for receiving commands:</p>
+<ul>
+<li><code>command</code> (authenticated device)</li>
+<li><code>command</code> (authenticated gateway receiving commands for all devices it acts on behalf of)</li>
+<li><code>command/${tenant}/${device-id}</code> (unauthenticated device)</li>
+<li><code>command/${tenant}/${device-id}</code> (authenticated gateway receiving commands for a specific device it acts on behalf of)</li>
+</ul>
+<p>The adapter supports <em>AT LEAST ONCE</em> delivery of command messages only. A client therefore MUST use <code>unsettled</code> for the <em>snd-settle-mode</em> and <code>first</code> for the <em>rcv-settle-mode</em> fields of its <em>attach</em> frame during link establishment. All other combinations are not supported and result in the termination of the link.</p>
+<p>Once the link has been established, the adapter will send command messages having the following properties:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Location</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>subject</em></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the name of the command to be executed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>reply-to</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the address to which the command response should be sent. This property will be empty for <em>one-way</em> commands.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>correlation-id</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">This property will be empty for <em>one-way</em> commands, otherwise it will contain the identifier used to correlate the response with the command request.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>device_id</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>application-properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">This property will only be set if an authenticated gateway has connected to the adapter. It will contain the id of the device (connected to the gateway) that the command is targeted at.</td>
+</tr>
+</tbody>
+</table>
+<p>Authenticated gateways will receive commands for devices which do not connect to a protocol adapter directly but instead are connected to the gateway. Corresponding devices have to be configured so that they can be used with a gateway. See <a href="/hono/docs/1.2/admin-guide/device-registry-config/#configuring-gateway-devices">Configuring Gateway Devices</a> for details.</p>
+<p>A gateway can open a link to receive commands for <em>all</em> devices it acts on behalf of. An authenticated gateway can also open a receiver link for commands targeted at a <em>specific</em> device.</p>
+<p>When processing an incoming command message, the protocol adapter will give precedence to a device-specific command consumer matching the command target device, whether it was created by a gateway or by the device itself. If multiple such consumer links have been created, by multiple gateways and/or from the device itself, the gateway or device that last created the consumer link will get the command messages.</p>
+<p>If no device-specific command consumer exists for a command target device, but <em>one</em> gateway, that may act on behalf of the device, has opened a generic, device-unspecific command consumer link, then the command message is sent to that gateway.</p>
+<p>If <em>multiple</em> gateways have opened a generic command consumer link, the protocol adapter may have to decide to which gateway a particular command message will be sent to.
+In case the command target device has already sent a telemetry, event or command response message via a gateway and if that gateway has opened a command consumer link, that gateway will be chosen. Otherwise one gateway that may act on behalf of the command target device and that has opened a command consumer link will be chosen randomly to receive the command message.</p>
+<h3 id="sending-a-response-to-a-command">Sending a Response to a Command</h3>
+<p>A device only needs to respond to commands that contain a <em>reply-to</em> address and a <em>correlation-id</em>. However, if the application expects a response, then devices must publish a response back to the application. Devices may use the same anonymous sender link for this purpose that they also use for sending telemetry data and events.</p>
+<p>The adapter supports <em>AT LEAST ONCE</em> delivery of command response messages only. A client therefore MUST set the <em>settled</em> property to <code>true</code> and the <em>rcv-settle-mode</em> property to <code>first</code> in all <em>transfer</em> frame(s) it uses for uploading command responses. All other combinations are not supported by the adapter and result in the message being rejected.</p>
+<p>The table below provides an overview of the properties that must be set on a command response message:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Location</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>to</em></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">MUST contain the value of the <em>reply-to</em> property of the command request message.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>correlation-id</em></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><em>properties</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">MUST contain the value of the <em>correlation-id</em> property of the command request message.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>status</em></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><em>application-properties</em></td>
+<td style="text-align:left"><em>integer</em></td>
+<td style="text-align:left">MUST contain a status code indicating the outcome of processing the command at the device (see <a href="/hono/docs/1.2/api/command-and-control/">Command &amp; Control API</a> for details).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<p>The AMQP adapter client can be used to simulate a device which receives commands and sends responses back to the application. The command line client is used to simulate an application sending commands to devices and receiving command responses from devices.</p>
+<p>Start the AMQP adapter client, as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar --spring.profiles.active<span style="color:#f92672">=</span>amqp-command --hono.client.username<span style="color:#f92672">=</span>sensor1@DEFAULT_TENANT --hono.client.password<span style="color:#f92672">=</span>hono-secret
+</span></span></code></pre></div><p>After successfully starting the client, a message indicating that the device is ready to receive commands will be printed to standard output. The device is now waiting to receive commands from applications.</p>
+<p>To send a command to the device, open a new terminal shell and start the command application, as shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/</span>
+</span></span><span style="display:flex;"><span>java -jar target/hono-cli-*-exec.jar --hono.client.host<span style="color:#f92672">=</span>localhost --hono.client.username<span style="color:#f92672">=</span>consumer@HONO --hono.client.password<span style="color:#f92672">=</span>verysecret --spring.profiles.active<span style="color:#f92672">=</span>command,ssl
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>Change into the <code>cli</code> directory before running the command above to start the command application. If you change into the target directory (i.e <code>cli/target</code>), then the client will not be able to locate to certificate needed to connect to the messaging network.</div>
+</div>
+<p>Once the command application starts successfully, enter a command name, payload and content-type of the command to send to the device.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter name of command for device [DEFAULT_TENANT:4711] (prefix with &#39;ow:&#39; to send one-way command):
+</span></span><span style="display:flex;"><span>setBrightness
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter command payload:
+</span></span><span style="display:flex;"><span>some-payload
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Enter content type:
+</span></span><span style="display:flex;"><span>text/plain
+</span></span></code></pre></div><p>After sending the command, the device (i.e. AMQP command client) will print out the command name and payload that it receives and automatically sends a command response to the application.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Received Command Message : [Command name: setBrightness, Command payload: some-payload]
+</span></span><span style="display:flex;"><span>Command response sent [outcome: Accepted{}]
+</span></span></code></pre></div><h2 id="downstream-meta-data">Downstream Meta Data</h2>
+<p>The adapter includes the following meta data in the application properties of messages being sent downstream:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>device_id</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The identifier of the device that the message originates from.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_adapter</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the adapter&rsquo;s <em>type name</em> which can be used by downstream consumers to determine the protocol adapter that the message has been received over. The AMQP adapter&rsquo;s type name is <code>hono-amqp</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_address</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the AMQP <em>target address</em> that the device has used to send the data.</td>
+</tr>
+</tbody>
+</table>
+<p>The adapter also considers <em>defaults</em> registered for the device at either the <a href="/hono/docs/1.2/api/tenant/#tenant-information-format">tenant</a> or the <a href="/hono/docs/1.2/api/device-registration/#assert-device-registration">device level</a>. The values of the default properties are determined as follows:</p>
+<ol>
+<li>If the message already contains a non-empty property of the same name, the value if unchanged.</li>
+<li>Otherwise, if a default property of the same name is defined in the device&rsquo;s registration information, that value is used.</li>
+<li>Otherwise, if a default property of the same name is defined for the tenant that the device belongs to, that value is used.</li>
+</ol>
+<p>Note that of the standard AMQP 1.0 message properties only the <em>content-type</em> and <em>ttl</em> can be set this way to a default value.</p>
+<h3 id="event-message-time-to-live">Event Message Time-to-live</h3>
+<p>Events published by devices will usually be persisted by the AMQP Messaging Network in order to support deferred delivery to downstream consumers.
+In most cases the AMQP Messaging Network can be configured with a maximum <em>time-to-live</em> to apply to the events so that the events will be removed
+from the persistent store if no consumer has attached to receive the event before the message expires.</p>
+<p>In order to support environments where the AMQP Messaging Network cannot be configured accordingly, the protocol adapter supports setting a
+downstream event message&rsquo;s <em>ttl</em> property based on the default <em>ttl</em> and <em>max-ttl</em> values configured for a tenant/device as described in the [Tenant API]
+(/hono/docs/1.2/api/tenant/#resource-limits-configuration-format).</p>
+<h2 id="tenant-specific-configuration">Tenant specific Configuration</h2>
+<p>The adapter uses the <a href="https://www.eclipse.org/hono/docs/1.2/api/tenant/#get-tenant-information">Tenant API</a> to retrieve <em>tenant specific configuration</em> for adapter type <code>hono-amqp</code>.
+The following properties are (currently) supported:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>enabled</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>false</code> the adapter will reject all data from devices belonging to the tenant and respond with a <code>amqp:unauthorized-access</code> as the error condition value for rejecting the message.</td>
+</tr>
+</tbody>
+</table>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663249433"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663249433"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663249433"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663249433"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663249433"></script>
+        <script src="/hono/docs/js/search.js?1663249433"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.2/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.2/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.2/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.2/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.2/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.2/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.2/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.2/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.2/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.2/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.2/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/" title="User Guide" class="dd-item parent"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle" checked/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.2/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.2/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.2/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item active"><a href="/hono/docs/1.2/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.2/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.2/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.2/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.2/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.2/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.2/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.2/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.2/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.2/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.2/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.2/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.2/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.2/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.2/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.2/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.2/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.2/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.2/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.2/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.2/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.2/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.2/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.2/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.2/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.2/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.2/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.2/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.2/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.2/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.2/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.2/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.2/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.2/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/user-guide/amqp-adapter/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/user-guide/amqp-adapter/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/user-guide/amqp-adapter/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/user-guide/amqp-adapter/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/user-guide/amqp-adapter/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/user-guide/amqp-adapter/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/user-guide/amqp-adapter/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/user-guide/amqp-adapter/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/user-guide/amqp-adapter/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/user-guide/amqp-adapter/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/user-guide/amqp-adapter/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/user-guide/amqp-adapter/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/user-guide/amqp-adapter/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/user-guide/amqp-adapter/" selected>1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/user-guide/amqp-adapter/">1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/user-guide/amqp-adapter/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/user-guide/amqp-adapter/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663249433"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663249433"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663249433"></script>
+    <script src="/hono/docs/js/theme.js?1663249433"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

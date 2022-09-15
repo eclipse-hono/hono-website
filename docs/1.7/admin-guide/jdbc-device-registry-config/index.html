@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="1.7">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>JDBC Based Device Registry Configuration :: Eclipse Hono&trade; Vers.: 1.7</title>
+    <link rel="icon" href="/images/favicon.ico?1663249417" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663249417" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663249417" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663249417" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663249417"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.7/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663249417"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="JDBC Based Device Registry Configuration :: Eclipse Hono&amp;trade; Vers.: 1.7">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="JDBC Based Device Registry Configuration :: Eclipse Hono&amp;trade; Vers.: 1.7" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.7/admin-guide/jdbc-device-registry-config//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.7/admin-guide/jdbc-device-registry-config/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.7</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/admin-guide/jdbc-device-registry-config.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.7/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.7/admin-guide/"><span itemprop="name">Admin Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.7/admin-guide/jdbc-device-registry-config/" aria-disabled="true"><span itemprop="name">JDBC Based Device Registry Configuration</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#service-configuration">Service Configuration</a></li>
+    <li><a href="#port-configuration">Port Configuration</a></li>
+    <li><a href="#authentication-service-connection-configuration">Authentication Service Connection Configuration</a></li>
+    <li><a href="#metrics-configuration">Metrics Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>JDBC Based Device Registry Configuration</h1>
+<p>The JDBC based Device Registry components provides an implementation of Eclipse Hono™&rsquo;s
+<a href="/hono/docs/1.7/api/device-registration/">Device Registration</a>, <a href="/hono/docs/1.7/api/credentials/">Credentials</a>
+and <a href="/hono/docs/1.7/api/tenant/">Tenant</a> APIs. Protocol adapters use these APIs to determine a device&rsquo;s registration
+status, e.g. if it is enabled and if it is registered with a particular tenant, and to authenticate a device before
+accepting any data for processing from it. In addition to the above, this Device Registry also provides an
+implementation of <a href="/hono/docs/1.7/api/management/">Device Registry Management APIs</a> for managing tenants,
+registration information and credentials of devices.</p>
+<p>The application is implemented as a Spring Boot application, and it uses a JDBC compliant database to persist data. In
+provides the following features:</p>
+<ul>
+<li>Run only the registration and credentials service, or run including the tenant service.</li>
+<li>By default, supports H2 and PostgreSQL</li>
+<li>Supports different JDBC connections for read-only and read-write operations, to support read-only replicas</li>
+</ul>
+<p><strong>Note:</strong> The provided container images contains only the H2 and PostgreSQL configuration and JDBC driver. While it is
+possible to use other JDBC compliant databases, database specific configuration and JDBC driver have to be provided
+by the user.</p>
+<h2 id="service-configuration">Service Configuration</h2>
+<p>The following table provides an overview of the configuration variables and corresponding command line options for
+configuring the JDBC based Device Registry. In addition to the following options, this component also supports
+the options described in <a href="/hono/docs/1.7/admin-guide/common-config/">Common Configuration</a>.</p>
+<p>The configuration uses the section <code>ADAPTER</code> for configurations of the <em>protocol adapter facing</em> services, and the
+section <code>MANAGEMENT</code> for <em>management facing</em> services. As adapters only require read-only operations, this can be
+used to direct adapters to services instances, which are backed by read-only replicas. Which can improve performance
+and availability.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Environment Variable<br>Command Line Option</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_ADAPTER_URL</code>                 <br> <code>--hono.registry.jdbc.adapter.url</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The JDBC URL to the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_ADAPTER_DRIVERCLASS</code>         <br> <code>--hono.registry.jdbc.adapter.driverClass</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">The default driver registered for the JDBC URL.</td>
+<td style="text-align:left">The class name of the JDBC driver.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_ADAPTER_USERNAME</code>            <br> <code>--hono.registry.jdbc.adapter.username</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The username used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_ADAPTER_PASSWORD</code>            <br> <code>--hono.registry.jdbc.adapter.password</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_ADAPTER_MAXIMUMPOOLSIZE</code>     <br> <code>--hono.registry.jdbc.adapter.maximumPoolSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">Depends on the connection pool implementation. <code>15</code> for C3P0.</td>
+<td style="text-align:left">The maximum size of the connection pool.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_ADAPTER_TABLENAME</code>           <br> <code>--hono.registry.jdbc.adapter.tableName</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The name of the table the datastore uses. If the datastore requires multiple tables, this is the prefix.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_MANAGEMENT_URL</code>              <br> <code>--hono.registry.jdbc.management.url</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The JDBC URL to the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_MANAGEMENT_DRIVERCLASS</code>      <br> <code>--hono.registry.jdbc.management.driverClass</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">The default driver registered for the JDBC URL.</td>
+<td style="text-align:left">The class name of the JDBC driver.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_MANAGEMENT_USERNAME</code>         <br> <code>--hono.registry.jdbc.management.username</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The username used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_MANAGEMENT_PASSWORD</code>         <br> <code>--hono.registry.jdbc.management.password</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_MANAGEMENT_MAXIMUMPOOLSIZE</code>  <br> <code>--hono.registry.jdbc.management.maximumPoolSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">Depends on the connection pool implementation. <code>15</code> for C3P0.</td>
+<td style="text-align:left">The maximum size of the connection pool.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_JDBC_MANAGEMENT_TABLENAME</code>        <br> <code>--hono.registry.jdbc.management</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The name of the table the datastore uses. If the datastore requires multiple tables, this is the prefix.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_TASKEXECUTORQUEUESIZE</code>        <br> <code>--hono.registry.svc.taskExecutorQueueSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>1024</code></td>
+<td style="text-align:left">The size of the executor queue for hashing passwords.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_CREDENTIALSTTL</code>               <br> <code>--hono.registry.svc.credentialsTtl</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>1m</code></td>
+<td style="text-align:left">The TTL for credentials responses.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_REGISTRATIONTTL</code>              <br> <code>--hono.registry.svc.registrationTtl</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>1m</code></td>
+<td style="text-align:left">The TTL for registrations responses.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_MAXBCRYPTITERATIONS</code>          <br> <code>--hono.registry.svc.maxBcryptIterations</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>10</code></td>
+<td style="text-align:left">The maximum number of allowed bcrypt iterations.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_ADAPTER_URL</code>                   <br> <code>--hono.tenant.jdbc.adapter.url</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The JDBC URL to the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_ADAPTER_DRIVERCLASS</code>           <br> <code>--hono.tenant.jdbc.adapter.driverClass</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">The default driver registered for the JDBC URL.</td>
+<td style="text-align:left">The class name of the JDBC driver.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_ADAPTER_USERNAME</code>              <br> <code>--hono.tenant.jdbc.adapter.username</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The username used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_ADAPTER_PASSWORD</code>              <br> <code>--hono.tenant.jdbc.adapter.password</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_ADAPTER_MAXIMUMPOOLSIZE</code>       <br> <code>--hono.tenant.jdbc.adapter.maximumPoolSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">Depends on the connection pool implementation. <code>15</code> for C3P0.</td>
+<td style="text-align:left">The maximum size of the connection pool.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_ADAPTER_TABLENAME</code>             <br> <code>--hono.tenant.jdbc.adapter.tableName</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The name of the table the datastore uses. If the datastore requires multiple tables, this is the prefix.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_MANAGEMENT_URL</code>                <br> <code>--hono.tenant.jdbc.management.url</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The JDBC URL to the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_MANAGEMENT_DRIVERCLASS</code>        <br> <code>--hono.tenant.jdbc.management.driverClass</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">The default driver registered for the JDBC URL.</td>
+<td style="text-align:left">The class name of the JDBC driver.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_MANAGEMENT_USERNAME</code>           <br> <code>--hono.tenant.jdbc.management.username</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The username used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_MANAGEMENT_PASSWORD</code>           <br> <code>--hono.tenant.jdbc.management.password</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password used to access the database.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_MANAGEMENT_MAXIMUMPOOLSIZE</code>    <br> <code>--hono.tenant.jdbc.management.maximumPoolSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">Depends on the connection pool implementation. <code>15</code> for C3P0.</td>
+<td style="text-align:left">The maximum size of the connection pool.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_JDBC_MANAGEMENT_TABLENAME</code>          <br> <code>--hono.tenant.jdbc.management.tableName</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The name of the table the datastore uses. If the datastore requires multiple tables, this is the prefix.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_TENANTTTL</code>                      <br> <code>--hono.tenant.service.tenantTtl</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>1m</code></td>
+<td style="text-align:left">The TTL for tenant responses.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_BIND_ADDRESS</code><br><code>--hono.registry.amqp.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure AMQP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_CERT_PATH</code><br><code>--hono.registry.amqp.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_AMQP_KEY_PATH</code>.<br>Alternatively, the <code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_INSECURE_PORT</code><br><code>--hono.registry.amqp.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the server should listen on for AMQP 1.0 connections.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_INSECURE_PORT_BIND_ADDRESS</code><br><code>--hono.registry.amqp.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure AMQP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_INSECURE_PORT_ENABLED</code><br><code>--hono.registry.amqp.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the server will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_REGISTRY_AMQP_INSECURE_PORT</code> or the default AMQP port number (<code>5672</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_KEY_PATH</code><br><code>--hono.registry.amqp.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_AMQP_CERT_PATH</code>. Alternatively, the <code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_KEY_STORE_PASSWORD</code><br><code>--hono.registry.amqp.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code><br><code>--hono.registry.amqp.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the server should use for authenticating to clients. Either this option or the <code>HONO_REGISTRY_AMQP_KEY_PATH</code> and <code>HONO_REGISTRY_AMQP_CERT_PATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_NATIVE_TLS_REQUIRED</code><br><code>--hono.registry.amqp.nativeTlsRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">The server will probe for OpenSLL on startup if a secure port is configured. By default, the server will fall back to the JVM&rsquo;s default SSL engine if not available. However, if set to <code>true</code>, the server will fail to start at all in this case.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_PORT</code><br><code>--hono.registry.amqp.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>5671</code></td>
+<td style="text-align:left">The secure port that the server should listen on for AMQP 1.0 connections.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_SECURE_PROTOCOLS</code><br><code>--hono.registry.amqp.secureProtocols</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>TLSv1.3,TLSv1.2</code></td>
+<td style="text-align:left">A (comma separated) list of secure protocols (in order of preference) that are supported when negotiating TLS sessions. Please refer to the <a href="https://vertx.io/docs/vertx-core/java/#ssl">vert.x documentation</a> for a list of supported protocol names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_AUTHENTICATION_REQUIRED</code><br><code>--hono.registry.http.authenticationRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>true</code> the HTTP endpoint of the Device Registry requires clients to authenticate when connecting to the Device Registry. The JDBC based Device Registry currently supports basic authentication and the user credentials are to be stored in the database. <br>For more information on how to manage users please refer to <a href="https://vertx.io/docs/vertx-auth-jdbc/java/">JDBC Auth Provider</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_BIND_ADDRESS</code><br><code>--hono.registry.http.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure HTTP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_CERT_PATH</code><br><code>--hono.registry.http.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_HTTP_KEY_PATH</code>.<br>Alternatively, the <code>HONO_REGISTRY_HTTP_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_DEVICE_ID_REGEX</code><br><code>--hono.registry.http.deviceIdRegex</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>^[a-zA-Z0-9-_]+$</code></td>
+<td style="text-align:left">The regular expression to use to validate device ID. Please refer to the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html">java pattern documentation</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_INSECURE_PORT</code><br><code>--hono.registry.http.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the server should listen on for HTTP requests.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_INSECURE_PORT_BIND_ADDRESS</code><br><code>--hono.registry.http.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure HTTP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_INSECURE_PORT_ENABLED</code><br><code>--hono.registry.http.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the server will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_REGISTRY_HTTP_INSECURE_PORT</code> or the default AMQP port number (<code>5672</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_KEY_PATH</code><br><code>--hono.registry.http.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_HTTP_CERT_PATH</code>. Alternatively, the <code>HONO_REGISTRY_HTTP_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_KEY_STORE_PASSWORD</code><br><code>--hono.registry.http.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_KEY_STORE_PATH</code><br><code>--hono.registry.http.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the server should use for authenticating to clients. Either this option or the <code>HONO_REGISTRY_HTTP_KEY_PATH</code> and <code>HONO_REGISTRY_HTTP_CERT_PATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_MAXPAYLOADSIZE</code><br><code>--hono.registry.http.maxPayloadSize</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>16000</code></td>
+<td style="text-align:left">The maximum size of an HTTP request body in bytes that is accepted by the registry.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_PORT</code><br><code>--hono.registry.http.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>5671</code></td>
+<td style="text-align:left">The secure port that the server should listen on for HTTP requests.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_HTTP_TENANT_ID_REGEX</code><br><code>--hono.registry.http.tenantIdRegex</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>^[a-zA-Z0-9-_.]+$</code></td>
+<td style="text-align:left">The regular expression to use to validate tenant ID. Please refer to the <a href="https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html">java pattern documentation</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>The variables only need to be set if the default value does not match your environment.</p>
+<h2 id="port-configuration">Port Configuration</h2>
+<p>The Device Registry supports configuration of both, an AMQP based endpoint and an HTTP based endpoint proving RESTful
+resources for managing registration information and credentials. Both endpoints can be configured to listen for
+connections on:</p>
+<ul>
+<li>a secure port only (default) or</li>
+<li>an insecure port only or</li>
+<li>both a secure and an insecure port (dual port configuration)</li>
+</ul>
+<p>See <a href="/hono/docs/1.7/admin-guide/file-based-device-registry-config/#port-configuration">Port Configuration</a> for
+more information.</p>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>The environment variables to use for configuring the REST endpoint are the same as the ones for the AMQP endpoint,
+substituting <code>_AMQP_</code> with <code>_HTTP_</code>.</div>
+</div>
+<h2 id="authentication-service-connection-configuration">Authentication Service Connection Configuration</h2>
+<p>See <a href="/hono/docs/1.7/admin-guide/file-based-device-registry-config/#authentication-service-connection-configuration">Authentication Service Connection Configuration</a>
+for more information.</p>
+<h2 id="metrics-configuration">Metrics Configuration</h2>
+<p>See <a href="/hono/docs/1.7/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing Admin Guide</a> for details on how to configure
+the reporting of metrics.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663249417"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663249417"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663249417"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663249417"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663249417"></script>
+        <script src="/hono/docs/js/search.js?1663249417"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.7/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.7/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.7/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.7/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.7/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.7/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.7/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.7/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.7/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.7/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.7/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.7/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.7/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.7/user-guide/mongodb-based-device-registry/" title="MongoDB Based Device Registry" class="dd-item"><a href="/hono/docs/1.7/user-guide/mongodb-based-device-registry/">MongoDB Based Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/jdbc-based-device-registry/" title="JDBC Based Device Registry" class="dd-item"><a href="/hono/docs/1.7/user-guide/jdbc-based-device-registry/">JDBC Based Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/file-based-device-registry/" title="File Based Device Registry" class="dd-item"><a href="/hono/docs/1.7/user-guide/file-based-device-registry/">File Based Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.7/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.7/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.7/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.7/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.7/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.7/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.7/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/" title="Admin Guide" class="dd-item parent"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle" checked/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.7/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item active"><a href="/hono/docs/1.7/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/file-based-device-registry-config/" title="File Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/file-based-device-registry-config/">File Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/1.7/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.7/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.7/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.7/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.7/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.7/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.7/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.7/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.7/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.7/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.7/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.7/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.7/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.7/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.7/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.7/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.7/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.7/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.7/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.7/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.7/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.7/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/1.7/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/telemetry-kafka/" title="Telemetry API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.7/api/telemetry-kafka/">Telemetry API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/event-kafka/" title="Event API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.7/api/event-kafka/">Event API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/command-and-control-kafka/" title="Command &amp; Control API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.7/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.7/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/1.7/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.7/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.7/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.7/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.7/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.7/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.7/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.7/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.7/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.7/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.7/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.7/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.7/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.7/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.7/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.7/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.7/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.7/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.7/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.7/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.7/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.7/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.7/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.7/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/admin-guide/jdbc-device-registry-config/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/admin-guide/jdbc-device-registry-config/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/admin-guide/jdbc-device-registry-config/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/admin-guide/jdbc-device-registry-config/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/admin-guide/jdbc-device-registry-config/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/admin-guide/jdbc-device-registry-config/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/admin-guide/jdbc-device-registry-config/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/admin-guide/jdbc-device-registry-config/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/admin-guide/jdbc-device-registry-config/" selected>1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/admin-guide/jdbc-device-registry-config/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/admin-guide/jdbc-device-registry-config/">1.5</option>
+                    <option id="dev" value="/hono/docs/dev/admin-guide/jdbc-device-registry-config/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663249418"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663249418"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663249418"></script>
+    <script src="/hono/docs/js/theme.js?1663249418"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="1.1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>HTTP Adapter :: Eclipse Hono&trade; Vers.: 1.1</title>
+    <link rel="icon" href="/images/favicon.ico?1663249435" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663249435" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663249435" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663249435" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663249435"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.1/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663249435"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="HTTP Adapter :: Eclipse Hono&amp;trade; Vers.: 1.1">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="HTTP Adapter :: Eclipse Hono&amp;trade; Vers.: 1.1" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.1/user-guide/http-adapter//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.1/user-guide/http-adapter/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.1</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/user-guide/http-adapter.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.1/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.1/user-guide/"><span itemprop="name">User Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.1/user-guide/http-adapter/" aria-disabled="true"><span itemprop="name">HTTP Adapter</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#device-authentication">Device Authentication</a>
+      <ul>
+        <li><a href="#client-certificate">Client Certificate</a></li>
+        <li><a href="#http-basic-auth">HTTP Basic Auth</a></li>
+      </ul>
+    </li>
+    <li><a href="#message-limits">Message Limits</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</a></li>
+    <li><a href="#publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</a></li>
+    <li><a href="#publish-an-event-authenticated-device">Publish an Event (authenticated Device)</a></li>
+    <li><a href="#publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</a></li>
+    <li><a href="#publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</a></li>
+    <li><a href="#specifying-the-time-a-device-will-wait-for-a-response">Specifying the Time a Device will wait for a Response</a>
+      <ul>
+        <li><a href="#using-an-http-header">Using an HTTP Header</a></li>
+        <li><a href="#using-a-query-parameter">Using a Query Parameter</a></li>
+      </ul>
+    </li>
+    <li><a href="#sending-a-response-to-a-command-authenticated-device">Sending a Response to a Command (authenticated Device)</a></li>
+    <li><a href="#sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</a></li>
+    <li><a href="#sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</a></li>
+    <li><a href="#downstream-meta-data">Downstream Meta Data</a>
+      <ul>
+        <li><a href="#event-message-time-to-live">Event Message Time-to-live</a></li>
+      </ul>
+    </li>
+    <li><a href="#tenant-specific-configuration">Tenant specific Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>HTTP Adapter</h1>
+<p>The HTTP protocol adapter exposes HTTP based endpoints for Eclipse Hono™&rsquo;s south bound Telemetry, Event and Command &amp; Control APIs.</p>
+<h2 id="device-authentication">Device Authentication</h2>
+<p>The HTTP adapter by default requires clients (devices or gateway components) to authenticate during connection establishment. The adapter supports both the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a> as well as client certificate based authentication as part of a TLS handshake for that purpose.</p>
+<p>The adapter tries to authenticate the device using these mechanisms in the following order</p>
+<h3 id="client-certificate">Client Certificate</h3>
+<p>When a device uses a client certificate for authentication during the TLS handshake, the adapter tries to determine the tenant that the device belongs to, based on the <em>issuer DN</em> contained in the certificate. In order for the lookup to succeed, the tenant&rsquo;s trust anchor needs to be configured by means of <a href="/hono/docs/1.1/api/tenant/#tenant-information-format">registering the trusted certificate authority</a>. The device&rsquo;s client certificate will then be validated using the registered trust anchor, thus implicitly establishing the tenant that the device belongs to. In a second step, the adapter then uses the Credentials API&rsquo;s <em>get</em> operation with the client certificate&rsquo;s <em>subject DN</em> as the <em>auth-id</em> and <code>x509-cert</code> as the <em>type</em> of secret as query parameters.</p>
+<p><strong>NB</strong> The HTTP adapter needs to be <a href="/hono/docs/1.1/admin-guide/secure_communication/#http-adapter">configured for TLS</a> in order to support this mechanism.</p>
+<h3 id="http-basic-auth">HTTP Basic Auth</h3>
+<p>The <em>username</em> provided in the header must have the form <em>auth-id@tenant</em>, e.g. <code>sensor1@DEFAULT_TENANT</code>. The adapter verifies the credentials provided by the client against the credentials that the <a href="/hono/docs/1.1/admin-guide/http-adapter-config/#credentials-service-connection-configuration">configured Credentials service</a> has on record for the client. The adapter uses the Credentials API&rsquo;s <em>get</em> operation to retrieve the credentials on record with the <em>tenant</em> and <em>auth-id</em> provided by the device in the <em>username</em> and <code>hashed-password</code> as the <em>type</em> of secret as query parameters.</p>
+<p>The examples below refer to devices <code>4711</code> and <code>gw-1</code> of tenant <code>DEFAULT_TENANT</code> using <em>auth-ids</em> <code>sensor1</code> and <code>gw1</code> and corresponding passwords. The example deployment as described in the <a href="/hono/docs/1.1/deployment/">Deployment Guides</a> comes pre-configured with the corresponding entities in its device registry component.
+Please refer to the <a href="/hono/docs/1.1/api/credentials/#standard-credential-types">Credentials API</a> for details regarding the different types of secrets.</p>
+<p><strong>NB</strong> There is a subtle difference between the <em>device identifier</em> (<em>device-id</em>) and the <em>auth-id</em> a device uses for authentication. See <a href="/hono/docs/1.1/concepts/device-identity/">Device Identity</a> for a discussion of the concepts.</p>
+<h2 id="message-limits">Message Limits</h2>
+<p>Before accepting any telemetry or event or command messages, the HTTP adapter verifies that the configured [message limit] (/hono/docs/1.1/concepts/resource-limits/) is not exceeded. If the limit is exceeded then the incoming message is discarded with the status code <code>429 Too Many Requests</code>.</p>
+<h2 id="publish-telemetry-data-authenticated-device">Publish Telemetry Data (authenticated Device)</h2>
+<ul>
+<li>URI: <code>/telemetry</code></li>
+<li>Method: <code>POST</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>authorization</code>: The device&rsquo;s <em>auth-id</em> and plain text password encoded according to the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a>. If not set, the adapter expects the device to present a client certificate as part of the TLS handshake during connection establishment.</li>
+<li>(required) <code>content-type</code>: The type of payload contained in the request body.</li>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>qos-level</code>: The QoS level for publishing telemetry messages. The adapter supports <em>at most once</em> (<code>0</code>) and <em>at least once</em> (<code>1</code>) QoS levels. The default value of <code>0</code> is assumed if this header is omitted.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) Arbitrary payload encoded according to the given content type.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of payload contained in the response body. This header will only be present if the response contains a command to be executed by the device which requires input data.</li>
+<li>(optional) <code>hono-command</code>: The name of the command to execute. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-req-id</code>: An identifier that the device must include in its response to a command. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-target-device</code>: The id of the device that shall execute the command. This header will only be present if the response contains a command to be executed by the device and if the response goes to a gateway that acts on behalf of the target device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 200.</li>
+<li>(optional) Error details, if status code is &gt;= 400.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): The telemetry data has been accepted for processing. The response contains a command for the device to execute.</li>
+<li>202 (Accepted): The telemetry data has been accepted for processing. Note that if the <code>qos-level</code> request header is omitted (<em>at most once</em> semantics),
+this status code does <strong>not</strong> mean that the message has been delivered to any potential consumer. However, if the QoS level header is set to <code>1</code>
+(<em>at least once</em> semantics), then the adapter waits for the message to be delivered and accepted by a downstream consumer before responding with
+this status code.</li>
+<li>400 (Bad Request): The request cannot be processed. Possible reasons for this include:
+* The content type header is missing.
+* The request body is empty.
+* The QoS header value is invalid.</li>
+<li>401 (Unauthorized): The request cannot be processed because the request does not contain valid credentials.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The given tenant is not allowed to use this protocol adapter.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed because there is no consumer of telemetry data for the given tenant connected to Hono.</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish telemetry data. It is available only if the protocol adapter is configured to require devices to authenticate (which is the default).</p>
+<p>If the <code>hono-ttd</code> header is set in order to receive a command and if the authenticated device is actually a gateway, the returned command will be the first command that the northbound application has sent to either the gateway itself or (if not using the legacy control endpoint) to <em>any</em> device that has last sent a telemetry or event message via this gateway.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> using <em>at least once</em> QoS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;qos-level: 1&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://localhost:8080/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code>, indicating that the device will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;hono-ttd: 10&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://localhost:8080/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>hono-command: set
+</span></span><span style="display:flex;"><span>hono-cmd-req-id: 1010a7249aa5-f742-4376-8458-bbfc88c72d92
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> using a client certificate for authentication:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in base directory of Hono repository:</span>
+</span></span><span style="display:flex;"><span>curl -i --cert demo-certs/certs/device-4711-cert.pem --key demo-certs/certs/device-4711-key.pem --cacert demo-certs/certs/trusted-certs.pem -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> https://localhost:8443/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p><strong>NB</strong> The example above assumes that the HTTP adapter is <a href="/hono/docs/1.1/admin-guide/secure_communication/#http-adapter">configured for TLS</a> and the secure port is used.</p>
+<h2 id="publish-telemetry-data-unauthenticated-device">Publish Telemetry Data (unauthenticated Device)</h2>
+<ul>
+<li>URI: <code>/telemetry/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(required) <code>content-type</code>: The type of payload contained in the request body.</li>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>qos-level</code>: The QoS level for publishing telemetry messages. The adapter supports <em>at most once</em> (<code>0</code>) and <em>at least once</em> (<code>1</code>) QoS levels. The default value of <code>0</code> is assumed if this header is omitted.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) Arbitrary payload encoded according to the given content type.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of payload contained in the response body. This header will only be present if the response contains a command to be executed by the device which requires input data.</li>
+<li>(optional) <code>hono-command</code>: The name of the command to execute. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-req-id</code>: An identifier that the device must include in its response to a command. This header will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 200.</li>
+<li>(optional) Error details, if status code is &gt;= 400.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): The telemetry data has been accepted for processing. The response contains a command for the device to execute.</li>
+<li>202 (Accepted): The telemetry data has been accepted for processing. Note that if the <code>qos-level</code> request header is omitted (<em>at most once</em> semantics),
+this status code does <strong>not</strong> mean that the message has been delivered to any potential consumer. However, if the QoS level header is set to <code>1</code>
+(<em>at least once</em> semantics), then the adapter waits for the message to be delivered and accepted by a downstream consumer before responding with
+this status code.</li>
+<li>400 (Bad Request): The request cannot be processed. Possible reasons for this include:
+* The content type header is missing.
+* The request body is empty.
+* The QoS header value is invalid.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The given tenant is not allowed to use this protocol adapter.
+* The given device does not belong to the given tenant.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed because there is no consumer of telemetry data for the given tenant connected to Hono.</li>
+</ul>
+</li>
+</ul>
+<p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the <code>HONO_HTTP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> using <em>at least once</em> QoS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;qos-level: 1&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code>, indicating that the device will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;hono-ttd: 10&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://localhost:8080/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>hono-command: set
+</span></span><span style="display:flex;"><span>hono-cmd-req-id: 1010a7249aa5-f742-4376-8458-bbfc88c72d92
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h2 id="publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</h2>
+<ul>
+<li>URI: <code>/telemetry/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>authorization</code>: The gateway&rsquo;s <em>auth-id</em> and plain text password encoded according to the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a>. If not set, the adapter expects the gateway to present a client certificate as part of the TLS handshake during connection establishment.</li>
+<li>(required) <code>content-type</code>: The type of payload contained in the request body.</li>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>qos-level</code>: The QoS level for publishing telemetry messages. The adapter supports <em>at most once</em> (<code>0</code>) and <em>at least once</em> (<code>1</code>) QoS levels. The default value of <code>0</code> is assumed if this header is omitted.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) Arbitrary payload encoded according to the given content type.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of payload contained in the response body. This header will only be present if the response contains a command to be executed by the device which requires input data.</li>
+<li>(optional) <code>hono-command</code>: The name of the command to execute. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-req-id</code>: An identifier that the device must include in its response to a command. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-target-device</code>: The id of the device that shall execute the command. This header will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 200.</li>
+<li>(optional) Error details, if status code is &gt;= 400.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): The telemetry data has been accepted for processing. The response contains a command for the device to execute.</li>
+<li>202 (Accepted): The telemetry data has been accepted for processing. Note that if the <code>qos-level</code> request header is omitted (<em>at most once</em> semantics),
+this status code does <strong>not</strong> mean that the message has been delivered to any potential consumer. However, if the QoS level header is set to <code>1</code>
+(<em>at least once</em> semantics), then the adapter waits for the message to be delivered and accepted by a downstream consumer before responding with
+this status code.</li>
+<li>400 (Bad Request): The request cannot be processed. Possible reasons for this include:
+* The content type header is missing.
+* The request body is empty.
+* The QoS header value is invalid.</li>
+<li>401 (Unauthorized): The request cannot be processed because the request does not contain valid credentials.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The tenant that the gateway belongs to is not allowed to use this protocol adapter.
+* The device belongs to another tenant than the gateway.
+* The gateway is not authorized to act <em>on behalf of</em> the device.
+* The gateway associated with the device is not registered or disabled.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed because there is no consumer of telemetry data for the given tenant connected to Hono.</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during connection establishment with the protocol adapter are used to authenticate the gateway whereas the parameters from the URI are used to identify the device that the gateway publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to publish data on behalf of the device implicitly by means of retrieving a <em>registration assertion</em> for the device from the <a href="/hono/docs/1.1/admin-guide/http-adapter-config/#device-registration-service-connection-configuration">configured Device Registration service</a>.</p>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>When sending requests with the <code>hono-ttd</code> header in order to receive a command for a specific device connected to the gateway, it has to be noted that multiple concurrent such requests for the same gateway but different devices may lead to some commands not getting forwarded to the gateway.
+To resolve such potential issues, the corresponding tenant can be configured with a <code>support-concurrent-gateway-device-command-requests</code> option set to <code>true</code> in the <code>ext</code> field of an <code>adapters</code> entry of type <code>hono-http</code>. Note that with this option it is not supported for the authenticated gateway to send <em>one</em> message with a <code>hono-ttd</code> header and no device id to receive commands for <em>any</em> device that has last sent a telemetry or event message via this gateway.</div>
+</div>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4712</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -u gw@DEFAULT_TENANT:gw-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry/DEFAULT_TENANT/4712
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4712</code> using <em>at least once</em> QoS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -u gw@DEFAULT_TENANT:gw-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;qos-level: 1&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry/DEFAULT_TENANT/4712
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>Publish some JSON data for device <code>4712</code>, indicating that the gateway will wait for 10 seconds to receive the response:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -u gw@DEFAULT_TENANT:gw-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;hono-ttd: 10&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://localhost:8080/telemetry/DEFAULT_TENANT/4712
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>hono-command: set
+</span></span><span style="display:flex;"><span>hono-cmd-req-id: 1010a7249aa5-f742-4376-8458-bbfc88c72d92
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">23</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;brightness&#34;</span>: <span style="color:#ae81ff">87</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><strong>NB</strong> The example above assumes that a gateway device has been registered with <code>hashed-password</code> credentials with <em>auth-id</em> <code>gw</code> and password <code>gw-secret</code> which is authorized to publish data <em>on behalf of</em> device <code>4712</code>.</p>
+<h2 id="publish-an-event-authenticated-device">Publish an Event (authenticated Device)</h2>
+<ul>
+<li>URI: <code>/event</code></li>
+<li>Method: <code>POST</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>authorization</code>: The device&rsquo;s <em>auth-id</em> and plain text password encoded according to the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a>. If not set, the adapter expects the device to present a client certificate as part of the TLS handshake during connection establishment.</li>
+<li>(required) <code>content-type</code>: The type of payload contained in the request body.</li>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>hono-ttl</code>: The <em>time-to-live</em> in number of seconds for event messages.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) Arbitrary payload encoded according to the given content type.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of payload contained in the response body. This header will only be present if the response contains a command to be executed by the device which requires input data.</li>
+<li>(optional) <code>hono-command</code>: The name of the command to execute. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-req-id</code>: An identifier that the device must include in its response to a command. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-target-device</code>: The id of the device that shall execute the command. This header will only be present if the response contains a command to be executed by the device and if the response goes to a gateway that acts on behalf of the target device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 200.</li>
+<li>(optional) Error details, if status code is &gt;= 400.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): The event has been accepted for processing. The response contains a command for the device to execute.</li>
+<li>202 (Accepted): The event has been accepted for processing.</li>
+<li>400 (Bad Request): The request cannot be processed. Possible reasons for this include:
+* The content type header is missing.
+* The request body is empty but the event is not of type <a href="/hono/docs/1.1/api/event/#empty-notification">empty-notification</a>.</li>
+<li>401 (Unauthorized): The request cannot be processed because the request does not contain valid credentials.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The given tenant is not allowed to use this protocol adapter.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed because there is no consumer of events for the given tenant connected to Hono.</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to publish events. It is available only if the protocol adapter is configured to require devices to authenticate (which is the default).</p>
+<p>If the <code>hono-ttd</code> header is set in order to receive a command and if the authenticated device is actually a gateway, the returned command will be the first command that the northbound application has sent to either the gateway itself or (if not using the legacy control endpoint) to <em>any</em> device that has last sent a telemetry or event message via this gateway.</p>
+<p><strong>Example</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;alarm&#34;: true}&#39;</span> http://127.0.0.1:8080/event
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</h2>
+<ul>
+<li>URI: <code>/event/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(required) <code>content-type</code>: The type of payload contained in the request body.</li>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>hono-ttl</code>: The <em>time-to-live</em> in number of seconds for event messages.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) Arbitrary payload encoded according to the given content type.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of payload contained in the response body. This header will only be present if the response contains a command to be executed by the device which requires input data.</li>
+<li>(optional) <code>hono-command</code>: The name of the command to execute. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-req-id</code>: An identifier that the device must include in its response to a command. This header will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 200.</li>
+<li>(optional) Error details, if status code is &gt;= 400.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): The event has been accepted and put to a persistent store for delivery to consumers. The response contains a command for the device to execute.</li>
+<li>202 (Accepted): The event has been accepted and put to a persistent store for delivery to consumers.</li>
+<li>400 (Bad Request): The request cannot be processed. Possible reasons for this include:
+* The content type header is missing.
+* The request body is empty but the event is not of type <a href="/hono/docs/1.1/api/event/#empty-notification">empty-notification</a>.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The given tenant is not allowed to use this protocol adapter.
+* The given device does not belong to the given tenant.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed because there is no consumer of events for the given tenant connected to Hono.</li>
+</ul>
+</li>
+</ul>
+<p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the <code>HONO_HTTP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;alarm&#34;: true}&#39;</span> http://127.0.0.1:8080/event/DEFAULT_TENANT/4711
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</h2>
+<ul>
+<li>URI: <code>/event/${tenantId}/${deviceId}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>authorization</code>: The gateway&rsquo;s <em>auth-id</em> and plain text password encoded according to the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a>. If not set, the adapter expects the gateway to present a client certificate as part of the TLS handshake during connection establishment.</li>
+<li>(required) <code>content-type</code>: The type of payload contained in the request body.</li>
+<li>(optional) <code>hono-ttd</code>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <code>hono-ttl</code>: The <em>time-to-live</em> in number of seconds for event messages.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(required) Arbitrary payload encoded according to the given content type.</li>
+</ul>
+</li>
+<li>Response Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of payload contained in the response body. This header will only be present if the response contains a command to be executed by the device which requires input data.</li>
+<li>(optional) <code>hono-command</code>: The name of the command to execute. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-req-id</code>: An identifier that the device must include in its response to a command. This header will only be present if the response contains a command to be executed by the device.</li>
+<li>(optional) <code>hono-cmd-target-device</code>: The id of the device that shall execute the command. This header will only be present if the response contains a command to be executed by the device.</li>
+</ul>
+</li>
+<li>Response Body:
+<ul>
+<li>(optional) Arbitrary data serving as input to a command to be executed by the device, if status code is 200.</li>
+<li>(optional) Error details, if status code is &gt;= 400.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>200 (OK): The event has been accepted and put to a persistent store for delivery to consumers. The response contains a command for the device to execute.</li>
+<li>202 (Accepted): The event has been accepted and put to a persistent store for delivery to consumers.</li>
+<li>400 (Bad Request): The request cannot be processed. Possible reasons for this include:
+* The content type header is missing.
+* The request body is empty but the event is not of type <a href="/hono/docs/1.1/api/event/#empty-notification">empty-notification</a>.</li>
+<li>401 (Unauthorized): The request cannot be processed because the request does not contain valid credentials.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The tenant that the gateway belongs to is not allowed to use this protocol adapter.
+* The device belongs to another tenant than the gateway.
+* The gateway is not authorized to act <em>on behalf of</em> the device.
+* The gateway associated with the device is not registered or disabled.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed because there is no consumer of events for the given tenant connected to Hono.</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used by <em>gateway</em> components to publish data <em>on behalf of</em> other devices which do not connect to a protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during connection establishment with the protocol adapter are used to authenticate the gateway whereas the parameters from the URI are used to identify the device that the gateway publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to publish data on behalf of the device implicitly by means of retrieving a <em>registration assertion</em> for the device from the <a href="/hono/docs/1.1/admin-guide/http-adapter-config/#device-registration-service-connection-configuration">configured Device Registration service</a>.</p>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>When sending requests with the <code>hono-ttd</code> header in order to receive a command for a specific device connected to the gateway, it has to be noted that multiple concurrent such requests for the same gateway but different devices may lead to some commands not getting forwarded to the gateway.
+To resolve such potential issues, the corresponding tenant can be configured with a <code>support-concurrent-gateway-device-command-requests</code> option set to <code>true</code> in the <code>ext</code> field of an <code>adapters</code> entry of type <code>hono-http</code>. Note that with this option it is not supported for the authenticated gateway to send <em>one</em> message with a <code>hono-ttd</code> header and no device id to receive commands for <em>any</em> device that has last sent a telemetry or event message via this gateway.</div>
+</div>
+<p><strong>Examples</strong></p>
+<p>Publish some JSON data for device <code>4712</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -u gw@DEFAULT_TENANT:gw-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/event/DEFAULT_TENANT/4712
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p><strong>NB</strong> The example above assumes that a gateway device has been registered with <code>hashed-password</code> credentials with <em>auth-id</em> <code>gw</code> and password <code>gw-secret</code> which is authorized to publish data <em>on behalf of</em> device <code>4712</code>.</p>
+<h2 id="specifying-the-time-a-device-will-wait-for-a-response">Specifying the Time a Device will wait for a Response</h2>
+<p>The adapter lets devices indicate the number of seconds they will wait for a response by setting a header or a query parameter.</p>
+<h3 id="using-an-http-header">Using an HTTP Header</h3>
+<p>The (optional) <em>hono-ttd</em> header can be set in requests for publishing telemetry data or events.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> -H <span style="color:#e6db74">&#39;hono-ttd: 60&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h3 id="using-a-query-parameter">Using a Query Parameter</h3>
+<p>Alternatively the <em>hono-ttd</em> query parameter can be used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://127.0.0.1:8080/telemetry?hono-ttd<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="sending-a-response-to-a-command-authenticated-device">Sending a Response to a Command (authenticated Device)</h2>
+<ul>
+<li>Since: 0.7</li>
+<li>URI: <code>/command/res/${commandRequestId}</code> or <code>/command/res/${commandRequestId}?hono-cmd-status=${status}</code></li>
+<li>Method: <code>POST</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>authorization</code>: The device&rsquo;s <em>auth-id</em> and plain text password encoded according to the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a>. If not set, the adapter expects the device to present a client certificate as part of the TLS handshake during connection establishment.</li>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of the payload contained in the request body. This header may be set if the result of processing the command on the device is non-empty. In this case the result data is contained in the request body.</li>
+<li>(optional) <code>hono-cmd-status</code>: The status of the command execution. If not set, the adapter expects that the URI contains it
+as request parameter at the end.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary data representing the result of processing the command on the device.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>202 (Accepted): The response has been successfully delivered to the application that has sent the command.</li>
+<li>400 (Bad Request): The request cannot be processed because the command status is missing.</li>
+<li>401 (Unauthorized): The request cannot be processed because the request does not contain valid credentials.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this include:
+* The given tenant is not allowed to use this protocol adapter.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+* There is no application listening for a reply to the given <em>commandRequestId</em>.
+* The application has already given up on waiting for a response.</li>
+</ul>
+</li>
+</ul>
+<p>This is the preferred way for devices to respond to commands. It is available only if the protocol adapter is configured to require devices to authenticate (which is the default).</p>
+<p><strong>Example</strong></p>
+<p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -u sensor1@DEFAULT_TENANT:hono-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;brightness-changed&#34;: true}&#39;</span> http://127.0.0.1:8080/command/res/req-id-uuid?hono-cmd-status<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</h2>
+<ul>
+<li>Since: 0.7</li>
+<li>URI: <code>/command/res/${tenantId}/${deviceId}/${commandRequestId}</code> or <code>/command/res/${tenantId}/${deviceId}/${commandRequestId}?hono-cmd-status=${status}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of the payload contained in the request body (the outcome of processing the command).</li>
+<li>(optional) <code>hono-cmd-status</code>: The status of the command execution. If not set, the adapter expects that the URI contains it
+as request parameter at the end.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary data representing the result of processing the command on the device.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>202 (Accepted): The response has been successfully delivered to the application that has sent the command.</li>
+<li>400 (Bad Request): The request cannot be processed because the command status is missing.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this might be:
+* The given tenant is not allowed to use this protocol adapter.
+* The given device does not belong to the given tenant.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+* There is no application listening for a reply to the given <em>commandRequestId</em>.
+* The application has already given up on waiting for a response.</li>
+</ul>
+</li>
+</ul>
+<p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the <code>HONO_HTTP_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<p><strong>Examples</strong></p>
+<p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for the unauthenticated device <code>4711</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;brightness-changed&#34;: true}&#39;</span> http://127.0.0.1:8080/command/res/DEFAULT_TENANT/4711/req-id-uuid?hono-cmd-status<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</h2>
+<ul>
+<li>Since: 0.7</li>
+<li>URI: <code>/command/res/${tenantId}/${deviceId}/${commandRequestId}</code> or <code>/command/res/${tenantId}/${deviceId}/${commandRequestId}?hono-cmd-status=${status}</code></li>
+<li>Method: <code>PUT</code></li>
+<li>Request Headers:
+<ul>
+<li>(optional) <code>authorization</code>: The gateway&rsquo;s <em>auth-id</em> and plain text password encoded according to the <a href="https://tools.ietf.org/html/rfc7617">Basic HTTP authentication scheme</a>. If not set, the adapter expects the gateway to present a client certificate as part of the TLS handshake during connection establishment.</li>
+<li>(optional) <code>content-type</code>: A media type describing the semantics and format of the payload contained in the request body (the outcome of processing the command).</li>
+<li>(optional) <code>hono-cmd-status</code>: The status of the command execution. If not set, the adapter expects that the URI contains it
+as request parameter at the end.</li>
+</ul>
+</li>
+<li>Request Body:
+<ul>
+<li>(optional) Arbitrary data representing the result of processing the command on the device.</li>
+</ul>
+</li>
+<li>Status Codes:
+<ul>
+<li>202 (Accepted): The response has been successfully delivered to the application that has sent the command.</li>
+<li>400 (Bad Request): The request cannot be processed because the command status is missing.</li>
+<li>403 (Forbidden): The request cannot be processed because the device&rsquo;s registration status cannot be asserted. Possible reasons for this might be:
+* The given tenant is not allowed to use this protocol adapter.
+* The given device does not belong to the given tenant.
+* The gateway is not authorized to act <em>on behalf of</em> the device.
+* The gateway associated with the device is not registered or disabled.</li>
+<li>404 (Not Found): The request cannot be processed because the device is disabled or does not exist.</li>
+<li>429 (Too Many Requests): The request cannot be processed because the tenant&rsquo;s message limit for the current period is exceeded.</li>
+<li>503 (Service Unavailable): The request cannot be processed. Possible reasons for this include:
+* There is no application listening for a reply to the given <em>commandRequestId</em>.
+* The application has already given up on waiting for a response.</li>
+</ul>
+</li>
+</ul>
+<p>This resource can be used by <em>gateway</em> components to send the response to a command <em>on behalf of</em> other devices which do not connect to a protocol adapter directly but instead are connected to the gateway, e.g. using some low-bandwidth radio based technology like <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a>. In this case the credentials provided by the gateway during connection establishment with the protocol adapter are used to authenticate the gateway whereas the parameters from the URI are used to identify the device that the gateway publishes data for.</p>
+<p>The protocol adapter checks the gateway&rsquo;s authority to send responses to a command on behalf of the device implicitly by means of retrieving a <em>registration assertion</em> for the device from the <a href="/hono/docs/1.1/admin-guide/http-adapter-config/#device-registration-service-connection-configuration">configured Device Registration service</a>.</p>
+<p><strong>Examples</strong></p>
+<p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for device <code>4712</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -u gw@DEFAULT_TENANT:gw-secret -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;brightness-changed&#34;: true}&#39;</span> http://127.0.0.1:8080/command/res/DEFAULT_TENANT/4712/req-id-uuid?hono-cmd-status<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">202</span> Accepted
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p><strong>NB</strong> The example above assumes that a gateway device has been registered with <code>hashed-password</code> credentials with <em>auth-id</em> <code>gw</code> and password <code>gw-secret</code> which is authorized to publish data <em>on behalf of</em> device <code>4712</code>.</p>
+<h2 id="downstream-meta-data">Downstream Meta Data</h2>
+<p>The adapter includes the following meta data in the application properties of messages being sent downstream:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>device_id</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">The identifier of the device that the message originates from.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_adapter</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the adapter&rsquo;s <em>type name</em> which can be used by downstream consumers to determine the protocol adapter that the message has been received over. The HTTP adapter&rsquo;s type name is <code>hono-http</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>orig_address</em></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left">Contains the (relative) URI that the device has originally posted the data to.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>ttd</em></td>
+<td style="text-align:left"><em>integer</em></td>
+<td style="text-align:left">Contains the effective number of seconds that the device will wait for a response. This property is only set if the HTTP request contains the <code>hono-ttd</code> header or request parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>The adapter also considers <em>defaults</em> registered for the device at either the <a href="/hono/docs/1.1/api/tenant/#tenant-information-format">tenant</a> or the <a href="/hono/docs/1.1/api/device-registration/#assert-device-registration">device level</a>. The values of the default properties are determined as follows:</p>
+<ol>
+<li>If the message already contains a non-empty property of the same name, the value if unchanged.</li>
+<li>Otherwise, if a default property of the same name is defined in the device&rsquo;s registration information, that value is used.</li>
+<li>Otherwise, if a default property of the same name is defined for the tenant that the device belongs to, that value is used.</li>
+</ol>
+<p>Note that of the standard AMQP 1.0 message properties only the <em>content-type</em> and <em>ttl</em> can be set this way to a default value.</p>
+<h3 id="event-message-time-to-live">Event Message Time-to-live</h3>
+<p>Events published by devices will usually be persisted by the AMQP Messaging Network in order to support deferred delivery to downstream consumers.
+In most cases the AMQP Messaging Network can be configured with a maximum <em>time-to-live</em> to apply to the events so that the events will be removed
+from the persistent store if no consumer has attached to receive the event before the message expires.</p>
+<p>In order to support environments where the AMQP Messaging Network cannot be configured accordingly, the protocol adapter supports setting a
+downstream event message&rsquo;s <em>ttl</em> property based on the <em>hono-ttl</em> property set as a header or a query parameter in the event requests by the devices.
+Also the default <em>ttl</em> and <em>max-ttl</em> values can be configured for a tenant/device as described in the [Tenant API]
+(/hono/docs/1.1/api/tenant/#resource-limits-configuration-format).</p>
+<h2 id="tenant-specific-configuration">Tenant specific Configuration</h2>
+<p>The adapter uses the <a href="https://www.eclipse.org/hono/docs/1.1/api/tenant/#get-tenant-information">Tenant API</a> to retrieve <em>tenant specific configuration</em> for adapter type <code>hono-http</code>.
+The following properties are (currently) supported:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>enabled</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">If set to <code>false</code> the adapter will reject all data from devices belonging to the tenant.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>max-ttd</em></td>
+<td style="text-align:left"><em>integer</em></td>
+<td style="text-align:left"><code>60</code></td>
+<td style="text-align:left">Defines a tenant specific upper limit for the <em>time until disconnect</em> property that devices may include in requests for uploading telemetry data or events. Please refer to the <a href="/hono/docs/1.1/concepts/command-and-control/">Command &amp; Control concept page</a> for a discussion of this parameter&rsquo;s purpose and usage.<br>This property can be set for the <code>hono-http</code> adapter type as an <em>extension</em> property in the adapter section of the tenant configuration.<br>If it is not set, then the default value of <code>60</code> seconds is used.</td>
+</tr>
+</tbody>
+</table>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663249435"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663249435"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663249435"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663249435"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663249435"></script>
+        <script src="/hono/docs/js/search.js?1663249435"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.1/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.1/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.1/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.1/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.1/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.1/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.1/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.1/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.1/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.1/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.1/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/" title="User Guide" class="dd-item parent"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle" checked/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.1/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.1/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item active"><a href="/hono/docs/1.1/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.1/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.1/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.1/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.1/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.1/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.1/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.1/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.1/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.1/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.1/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.1/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.1/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.1/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.1/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.1/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.1/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.1/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.1/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.1/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.1/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.1/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.1/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.1/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.1/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.1/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.1/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.1/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.1/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.1/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.1/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.1/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.1/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.1/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.1/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.1/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.1/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.1/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.1/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.1/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.1/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/user-guide/http-adapter/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/user-guide/http-adapter/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/user-guide/http-adapter/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/user-guide/http-adapter/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/user-guide/http-adapter/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/user-guide/http-adapter/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/user-guide/http-adapter/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/user-guide/http-adapter/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/user-guide/http-adapter/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/user-guide/http-adapter/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/user-guide/http-adapter/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/user-guide/http-adapter/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/user-guide/http-adapter/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/user-guide/http-adapter/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/user-guide/http-adapter/" selected>1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/user-guide/http-adapter/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/user-guide/http-adapter/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663249435"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663249435"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663249435"></script>
+    <script src="/hono/docs/js/theme.js?1663249435"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

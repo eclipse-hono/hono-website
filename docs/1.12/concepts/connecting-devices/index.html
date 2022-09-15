@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="1.12">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Connecting Devices :: Eclipse Hono&trade; Vers.: 1.12</title>
+    <link rel="icon" href="/images/favicon.ico?1663249402" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663249402" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663249402" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663249402" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663249402"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.12/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663249402"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Connecting Devices :: Eclipse Hono&amp;trade; Vers.: 1.12">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Connecting Devices :: Eclipse Hono&amp;trade; Vers.: 1.12" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.12/concepts/connecting-devices//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.12/concepts/connecting-devices/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.12</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/concepts/connecting-devices/index.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.12/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.12/concepts/"><span itemprop="name">Concepts</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.12/concepts/connecting-devices/" aria-disabled="true"><span itemprop="name">Connecting Devices</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#connecting-to-a-protocol-adapter-directly">Connecting to a Protocol Adapter directly</a></li>
+    <li><a href="#connecting-via-a-device-gateway">Connecting via a Device Gateway</a>
+      <ul>
+        <li><a href="#gateway-groups">Gateway Groups</a></li>
+      </ul>
+    </li>
+    <li><a href="#connecting-via-a-protocol-gateway">Connecting via a Protocol Gateway</a></li>
+    <li><a href="#generic-mqtt-protocol-gateway-template">Generic MQTT Protocol Gateway Template</a>
+      <ul>
+        <li><a href="#example-code">Example Code</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Connecting Devices</h1>
+<p>One of the most important features of Eclipse Hono™ is to abstract away the specific communication protocols
+used by devices. This page describes the different ways of how devices can be connected to Hono.</p>
+<!-- more -->
+<p>Before a device can connect to Hono and upload data or receive commands from downstream applications,
+it needs to be <a href="/hono/docs/1.12/concepts/device-provisioning/">provisioned</a> to the system.
+As part of device provisioning, the device is associated with the <em>tenant</em> that it belongs to and gets
+assigned a logical identifier which is unique within the tenant.</p>
+<p>Devices can be generally partitioned into two groups: devices which natively support the Internet Protocol
+(IP) for communication and devices that don&rsquo;t.</p>
+<p>Devices falling into the former group can connect to Hono directly using any of the IP based protocols supported
+by Hono&rsquo;s protocol adapters. Devices from the latter group often use radio based or serial line communication protocols
+that are limited to a local area and require a <em>gateway</em> in order to connect to one of Hono&rsquo;s protocol
+adapters via IP.</p>
+<p>The diagram below shows a device that supports the MQTT protocol and connects directly to Hono&rsquo;s MQTT protocol adapter
+and another device that uses Bluetooth LE for connecting locally to a gateway which then connects to Hono&rsquo;s MQTT adapter.</p>
+<figure><img src="device-types.svg"/>
+</figure>
+
+<h2 id="connecting-to-a-protocol-adapter-directly">Connecting to a Protocol Adapter directly</h2>
+<p>The most straight forward scenario is a device connecting to one of Hono&rsquo;s protocol adapters directly via IP based
+network infrastructure. For this to work, the device needs to use a communication protocols supported
+by one of the adapters and needs to be able to use the resource endpoints exposed by that particular protocol adapter
+as described in its <a href="/hono/docs/1.12/user-guide/">user guide</a>.</p>
+<p>In this case the connected device&rsquo;s identity will be resolved as part of authentication during connection establishment.
+For this to work, a set of credentials needs to be provisioned for the device which needs to be appropriate for
+usage with one of the adapter&rsquo;s supported authentication schemes.</p>
+<h2 id="connecting-via-a-device-gateway">Connecting via a Device Gateway</h2>
+<p>In some cases, a device may not be able to directly connect to one of Hono&rsquo;s protocol adapters.
+An example is a device that uses a serial bus or radio waves for local communication.
+Such devices can be connected to a protocol adapter by means of a <em>device gateway</em> which acts on behalf
+of the device(s) when communicating with Hono. A device gateway is often implemented as a (small) hardware box
+close to the devices, running some gateway software which translates hence and forth between the device and one
+of Hono&rsquo;s protocol adapters.</p>
+<p>From the perspective of a protocol adapter, the gateway looks just like any other device having its own device
+identity and credentials.</p>
+<p>The following diagram illustrates how a gateway publishes data on behalf of a device that uses Bluetooth for local
+communication with the gateway.</p>
+<figure><img src="device-via-gateway-auth.svg"/>
+</figure>
+
+<ol>
+<li>The device establishes a Bluetooth connection with the gateway.</li>
+<li>The gateway sends an MQTT CONNECT packet to Hono&rsquo;s MQTT adapter to establish an MQTT connection.
+The packet contains the gateway&rsquo;s credentials.</li>
+<li>The MQTT adapter determines the tenant from the <em>username</em> contained in the CONNECT packet and retrieves
+the hashed password that is on record for the gateway from the Credentials service.</li>
+<li>The Credentials service returns the hashed password.</li>
+<li>The MQTT adapter checks the password and accepts the connection request.</li>
+<li>The device sends some sensor readings via Bluetooth to the gateway.</li>
+<li>The gateway forwards the sensor data in an MQTT PUBLISH packet to the MQTT adapter.
+The topic name contains the identifier of the device that the gateway acts on behalf of.</li>
+<li>The MQTT adapter invokes the Device Registration service&rsquo;s <em>assert Device Registration</em> operation to
+check if the gateway is authorized to act on behalf of the device.</li>
+<li>The Device Registration service confirms the gateway&rsquo;s authorization.</li>
+<li>The MQTT adapter accepts the sensor data from the gateway and forwards it downstream.</li>
+</ol>
+<p>Note that the device itself is not authenticated by the MQTT adapter in this case. The responsibility
+for establishing and verifying the device identity lies with the gateway in this setup.
+It is therefore not necessary to provision credentials for the devices to Hono.</p>
+<p>The <a href="/hono/docs/1.12/api/management/">Device Registry Management API</a>&rsquo;s <code>/devices</code> resource can be used to
+register gateways and devices. The gateways that are authorized to act on behalf of a device can be set by means
+of the device&rsquo;s <em>via</em> and <em>viaGroups</em> properties. This is useful in cases where a device may <em>roam</em> among multiple gateways.</p>
+<p>When sending commands to a device, Hono needs to determine which of the authorized gateways should be used to forward
+the command message to the device. For this purpose, Hono&rsquo;s protocol adapters keep track of the <em>last known gateway</em>
+which has acted on behalf of each device by means of the <a href="/hono/docs/1.12/api/device-connection/">Device Connection API</a>.</p>
+<h3 id="gateway-groups">Gateway Groups</h3>
+<p>In larger deployments with many gateways it can become cumbersome to list all possible gateways in the <em>via</em> property
+of each device explicitly. This becomes even more of a burden when gateways are added and/or removed frequently.
+To help with such situations it is possible to define groups of gateways using Hono&rsquo;s Device Registry Management API.</p>
+<p>A gateway group can be defined implicitly by means of adding the group&rsquo;s identifier to the list in the <em>memberOf</em>
+property of a (gateway) device that should belong to the group. The gateway group ID can then be added to the <em>viaGroups</em>
+property of those devices that all gateways in the gateway group are authorized to act on behalf of.</p>
+<p>Note that the Device Registration API, which is used by protocol adapters to verify if a gateway may act on behalf of a
+device, has no notion of gateway groups. Thus, the response message of the Device Registration API&rsquo;s
+<a href="/hono/docs/1.12/api/device-registration/#assert-device-registration"><em>assert Device Registration</em></a> operation <strong>does
+not</strong> contain the IDs of gateway groups in its <em>via</em> property but instead contains the IDs of all (gateway) devices
+that are a member of any of the authorized gateway groups.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>Hono&rsquo;s example device registry does not support nested gateway groups.</p>
+    </div>
+</div>
+<h2 id="connecting-via-a-protocol-gateway">Connecting via a Protocol Gateway</h2>
+<p>Hono already comes with a set of standard protocol adapters which support the most widely used (IP based) IoT protocols
+like HTTP, MQTT and AMQP 1.0. Devices using one of these protocols might be able to directly connect to the corresponding
+adapter as described in the previous section. However, even if the device supports MQTT it might still not be possible
+to connect to the MQTT adapter because the device expects to use a topic structure that differs from the one employed
+by the MQTT adapter. In other cases devices might use a proprietary, highly optimized, binary (IP based) protocol for
+communication with back end infrastructure.</p>
+<p>Hono supports connecting such devices to one of the standard protocol adapters by means of a <em>protocol gateway</em>.
+A protocol gateway is a software service which translates hence and forth between the device&rsquo;s proprietary protocol and
+the protocol used by the Hono protocol adapter. This concept is very similar to the <em>device gateway</em> described above.
+The main difference is that a protocol gateway is usually deployed in the back end (close to the protocol adapter) whereas
+a device gateway is usually deployed close to the devices that are connected to the gateway using a mechanism that is
+usually constrained to a local area.</p>
+<p>The diagram below illustrates how two devices use a proprietary IP based protocol to connect to a protocol gateway in the
+back end which in turn is connected to Hono&rsquo;s standard AMQP 1.0 protocol adapter.</p>
+<figure><img src="device-via-protocol-gw.svg"/>
+</figure>
+
+<p>The devices publish data to the <em>protocol gateway</em> using the proprietary IP based protocol. The gateway then puts the
+data into AMQP 1.0 messages and forwards them to the Hono AMQP adapter using the AMQP 1.0 protocol.</p>
+<p>The requirements and prerequisites for this approach are the same as those for the standard device gateway scenario.
+Authentication and authorization of gateways works in the same way.</p>
+<h2 id="generic-mqtt-protocol-gateway-template">Generic MQTT Protocol Gateway Template</h2>
+<p>The repository <a href="https://github.com/eclipse/hono-extras">hono-extras</a> contains a generic template for an MQTT protocol gateway.
+This template allows you to develop a production-ready protocol gateway with minimal effort, with which you can connect
+existing MQTT-enabled devices to Hono.
+For example, you can use other topic names or structures, or you can transform, enrich, compress, or encrypt the payload.</p>
+<h3 id="example-code">Example Code</h3>
+<p>Hono&rsquo;s <a href="https://github.com/eclipse/hono/tree/master/examples/protocol-gateway-example"><em>examples</em> module</a> contains code for
+a simple protocol gateway illustrating how devices using a binary TCP based protocol can be connected to Hono&rsquo;s AMQP adapter.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663249402"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663249402"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663249402"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663249402"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663249402"></script>
+        <script src="/hono/docs/js/search.js?1663249402"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.12/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><input type="checkbox" id="section-c727fab97b4d77e5b28ce8c448fb9000" class="toggle"/><label for="section-c727fab97b4d77e5b28ce8c448fb9000" ></label><a href="/hono/docs/1.12/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a><ul>
+          <li data-nav-id="/hono/docs/1.12/getting-started/kafka/" title="Getting started with Eclipse Hono using Apache Kafka" class="dd-item"><a href="/hono/docs/1.12/getting-started/kafka/">Getting started using Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/getting-started/amqp/" title="Getting started with Eclipse Hono using AMQP 1.0" class="dd-item"><a href="/hono/docs/1.12/getting-started/amqp/">Getting started with AMQP 1.0</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/" title="Concepts" class="dd-item parent"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle" checked/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.12/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.12/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.12/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.12/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.12/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/connecting-devices/" title="Connecting Devices" class="dd-item active"><a href="/hono/docs/1.12/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.12/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.12/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.12/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.12/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.12/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.12/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.12/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.12/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.12/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.12/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.12/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/file-based-device-registry-config/" title="File Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/file-based-device-registry-config/">File Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/1.12/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.12/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/1.12/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.12/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.12/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.12/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.12/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.12/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.12/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.12/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.12/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.12/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.12/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.12/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.12/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.12/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.12/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/1.12/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/telemetry-kafka/" title="Telemetry API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.12/api/telemetry-kafka/">Telemetry API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/event-kafka/" title="Event API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.12/api/event-kafka/">Event API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/command-and-control-kafka/" title="Command &amp; Control API for Kafka Specification" class="dd-item"><a href="/hono/docs/1.12/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.12/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/1.12/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.12/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.12/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.12/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.12/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.12/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.12/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.12/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.12/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.12/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.12/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.12/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.12/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.12/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.12/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.12/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.12/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.12/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.12/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.12/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.12/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/concepts/connecting-devices/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/concepts/connecting-devices/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/concepts/connecting-devices/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/concepts/connecting-devices/" selected>1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/concepts/connecting-devices/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/concepts/connecting-devices/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/concepts/connecting-devices/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/concepts/connecting-devices/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/concepts/connecting-devices/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/concepts/connecting-devices/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/concepts/connecting-devices/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/concepts/connecting-devices/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/concepts/connecting-devices/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/concepts/connecting-devices/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/concepts/connecting-devices/">1.1</option>
+                    <option id="dev" value="/hono/docs/dev/concepts/connecting-devices/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663249403"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663249403"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663249403"></script>
+    <script src="/hono/docs/js/theme.js?1663249403"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

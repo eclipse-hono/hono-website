@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Community on Eclipse Hono&amp;trade;</title>
+    <link>https://www.eclipse.org/hono/community/</link>
+    <description>Recent content in Community on Eclipse Hono&amp;trade;</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/community/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to get involved in the Hono Project</title>
+      <link>https://www.eclipse.org/hono/community/contributing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hono/community/contributing/</guid>
+      <description>&lt;p&gt;Thank you for considering to contribute to Eclipse Hono™. We really appreciate the time and effort you want to
+spend helping to improve things around here. And help we can use :-)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Additional Resources covering Hono</title>
+      <link>https://www.eclipse.org/hono/community/presentations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hono/community/presentations/</guid>
+      <description>&lt;p&gt;On this page you can find links to arbitrary resources covering Eclipse Hono™ which have been presented at events, conferences
+and meet-ups or are available online.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to get in touch with the Hono Community</title>
+      <link>https://www.eclipse.org/hono/community/get-in-touch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hono/community/get-in-touch/</guid>
+      <description>&lt;p&gt;Wanna tell us what you think about Eclipse Hono™? What we can improve? Which feature is missing? Or just discuss architectural issues?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Overview of past and future Hono Releases</title>
+      <link>https://www.eclipse.org/hono/community/road-map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hono/community/road-map/</guid>
+      <description>&lt;p&gt;We are trying our best to anticipate the needs and requirements of users based on the feedback we get from users. From this
+information we create and maintain &lt;a href=&#34;https://github.com/eclipse-hono/hono/projects?type=classic&#34;&gt;Project Boards&lt;/a&gt; on GitHub
+for upcoming Hono versions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Organizations supporting the Development of Hono</title>
+      <link>https://www.eclipse.org/hono/community/thankyou/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hono/community/thankyou/</guid>
+      <description>YourKit is kindly supporting this open source project with its full-featured Java Profiler. YourKit, LLC is the creator of innovative and intelligent tools for profiling Java and .NET applications. Take a look at YourKit&amp;rsquo;s leading software products: YourKit Java Profiler and YourKit .NET Profiler.</description>
+    </item>
+    
+  </channel>
+</rss>

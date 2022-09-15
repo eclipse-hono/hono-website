@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="1.0">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Helm based Deployment :: Eclipse Hono&trade; Vers.: 1.0</title>
+    <link rel="icon" href="/images/favicon.ico?1663249436" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663249436" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663249436" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663249436" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663249436"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.0/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663249436"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Helm based Deployment :: Eclipse Hono&amp;trade; Vers.: 1.0">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Helm based Deployment :: Eclipse Hono&amp;trade; Vers.: 1.0" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.0/deployment/helm-based-deployment//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.0/deployment/helm-based-deployment/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.0</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/deployment/helm-based-deployment.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.0/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.0/deployment/"><span itemprop="name">Deployment</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.0/deployment/helm-based-deployment/" aria-disabled="true"><span itemprop="name">Helm based Deployment</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#deploying-hono">Deploying Hono</a>
+      <ul>
+        <li><a href="#helm-3">Helm 3</a></li>
+        <li><a href="#helm-2">Helm 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#verifying-the-installation">Verifying the Installation</a></li>
+    <li><a href="#accessing-the-grafana-dashboard">Accessing the Grafana Dashboard</a></li>
+    <li><a href="#undeploying-hono">Undeploying Hono</a>
+      <ul>
+        <li><a href="#helm-3-1">Helm 3</a></li>
+        <li><a href="#helm-2-1">Helm 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-a-production-grade-amqp-messaging-network-and-device-registry">Using a production grade AMQP Messaging Network and Device Registry</a>
+      <ul>
+        <li><a href="#integrating-with-an-existing-amqp-messaging-network">Integrating with an existing AMQP Messaging Network</a></li>
+        <li><a href="#integrating-with-a-custom-device-registry">Integrating with a custom Device Registry</a></li>
+      </ul>
+    </li>
+    <li><a href="#using-the-device-connection-service">Using the Device Connection Service</a></li>
+    <li><a href="#deploying-optional-adapters">Deploying optional Adapters</a></li>
+    <li><a href="#deploying-custom-container-images">Deploying custom Container Images</a>
+      <ul>
+        <li><a href="#deploying-via-a-private-registry">Deploying via a private Registry</a></li>
+        <li><a href="#deploying-to-minikube">Deploying to Minikube</a></li>
+        <li><a href="#deploying-to-azure-kubernetes-service-aks">Deploying to Azure Kubernetes Service (AKS)</a></li>
+        <li><a href="#using-jaeger-tracing">Using Jaeger Tracing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Helm based Deployment</h1>
+<p>Eclipse Hono™&rsquo;s components are provided as container images which can be run on arbitrary container orchestration platforms.
+This page describes the steps necessary to deploy Hono to a <a href="https://kubernetes.io">Kubernetes</a> cluster using the <a href="https://helm.sh">Helm package manager</a>.</p>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>The example configuration that comes with Hono and which is used in this guide is supposed to be used for evaluation and development purposes only.</div>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<h4 id="kubernetes-cluster">Kubernetes Cluster</h4>
+<p>The most basic requirement is, of course, a Kubernetes cluster to deploy to.
+The <a href="/hono/docs/1.0/deployment/create-kubernetes-cluster/">Kubernetes setup guide</a> describes options available for setting up a cluster.</p>
+<div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Supported Kubernetes Versions</h4>
+    <div>Hono <em>should</em> run on any version of Kubernetes starting with 1.13.6. However, it has been tested with several
+specific versions only. The most recent version known to work is 1.15.4 so if you experience any issues with
+running Hono on another version, please try to deploy to 1.15.4 before raising an issue.</div>
+</div>
+<h4 id="helm">Helm</h4>
+<p>Helm is a tool for managing Kubernetes applications. In this guide, Helm is used to deploy Hono to the cluster.
+<a href="https://helm.sh/docs/install/">Helm&rsquo;s installation instructions</a> provide more details.
+The Hono chart has been written for Helm version 2 but it can also be deployed using Helm 3.
+In fact, using Helm 3 is the recommended way of deploying Hono.</p>
+<h4 id="kubectl">Kubectl</h4>
+<p>The kubectl tool is used to manage a Kubernetes cluster from the command line. In this guide it is used to retrieve information about Hono&rsquo;s service endpoints from the cluster.
+The <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">installation guide</a> provides instructions for setting up <code>kubectl</code> locally.</p>
+<h4 id="hono-helm-chart">Hono Helm Chart</h4>
+<p>The Helm chart is contained in the Hono archive that is available from <a href="https://www.eclipse.org/hono/downloads/">Hono&rsquo;s download page</a>.
+After the archive has been extracted, the chart can be found in the <code>eclipse-hono-$VERSION/eclipse-hono</code> folder.</p>
+<h4 id="hono-command-line-client">Hono Command Line Client</h4>
+<p>The Hono command line client is available from the <a href="https://www.eclipse.org/hono/downloads/">download page</a>.
+The command line client requires a Java 11 runtime environment to run.</p>
+<h2 id="deploying-hono">Deploying Hono</h2>
+<p>Hono can be deployed using Helm versions 2 (2.15 or later) or 3.
+HOwever, Helm 3 is recommended because it doesn&rsquo;t require installation
+of any additional components to the cluster like Helm 2 did (with the
+<em>Tiller</em> component).</p>
+<p>At first, the target name space needs to be created if it doesn&rsquo;t exist already.
+The following command creates name space <code>hono</code> in the Kubernetes cluster:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl create namespace hono
+</span></span></code></pre></div><h3 id="helm-3">Helm 3</h3>
+<p>The following command deploys Hono to the target name space using Helm 3</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install hono eclipse-hono/ --dependency-update --namespace hono
+</span></span></code></pre></div><h3 id="helm-2">Helm 2</h3>
+<p>The following command deploys Hono to the target name space using Helm 2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono eclipse-hono/
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Kubernetes 1.16</h4>
+    <div><p>Deploying the Hono chart to Kubernetes 1.16 or later requires Helm version 2.15 or later.
+Earlier versions [lack the ability to install the Tiller component to Kubernetes 1.16]
+(<a href="https://github.com/helm/helm/issues/6374)">https://github.com/helm/helm/issues/6374)</a>.</p>
+<p>If using a recent version of Helm 2 or Helm 3 (recommended) is not an option,
+a workaround is to either deploy to an earlier version of Kubernetes
+or deploy using the <em>kubectl</em> command as described in the next section.</p>
+</div>
+</div>
+<p>In cases where installation of Helm&rsquo;s Tiller service into the cluster is not an option, the Kubernetes resource descriptors created by Helm can be deployed manually using the <code>kubectl</code> command line tool.</p>
+<p>The following commands generate the resource descriptors:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>mkdir resources
+</span></span><span style="display:flex;"><span>helm dep update eclipse-hono/
+</span></span><span style="display:flex;"><span>helm template --name hono --namespace hono --output-dir resources eclipse-hono/
+</span></span></code></pre></div><p>This will create a <code>resources/eclipse-hono</code> folder containing all the resource descriptors which can then be deployed to the cluster using <code>kubectl</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>kubectl config set-context <span style="color:#66d9ef">$(</span>kubectl config current-context<span style="color:#66d9ef">)</span> --namespace<span style="color:#f92672">=</span>hono
+</span></span><span style="display:flex;"><span>kubectl apply -f ./resources -R
+</span></span></code></pre></div><h2 id="verifying-the-installation">Verifying the Installation</h2>
+<p>Once deployment has completed, Hono&rsquo;s external API endpoints are exposed via corresponding Kubernetes <em>Services</em>.
+The following command lists all services and their endpoints (replace <code>hono</code> with the namespace that you have deployed to):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl get service -n hono
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NAME                                    TYPE           CLUSTER-IP       EXTERNAL-IP      PORT<span style="color:#f92672">(</span>S<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>hono-adapter-amqp-vertx                 LoadBalancer   10.109.123.153   10.109.123.153   5672:32672/TCP,5671:32671/TCP
+</span></span><span style="display:flex;"><span>hono-adapter-amqp-vertx-headless        ClusterIP      None             &lt;none&gt;           &lt;none&gt;
+</span></span><span style="display:flex;"><span>hono-adapter-http-vertx                 LoadBalancer   10.99.180.137    10.99.180.137    8080:30080/TCP,8443:30443/TCP
+</span></span><span style="display:flex;"><span>hono-adapter-http-vertx-headless        ClusterIP      None             &lt;none&gt;           &lt;none&gt;
+</span></span><span style="display:flex;"><span>hono-adapter-mqtt-vertx                 LoadBalancer   10.102.204.69    10.102.204.69    1883:31883/TCP,8883:30883/TCP
+</span></span><span style="display:flex;"><span>hono-adapter-mqtt-vertx-headless        ClusterIP      None             &lt;none&gt;           &lt;none&gt;
+</span></span><span style="display:flex;"><span>hono-artemis                            ClusterIP      10.97.31.154     &lt;none&gt;           5671/TCP
+</span></span><span style="display:flex;"><span>hono-dispatch-router                    ClusterIP      10.98.111.236    &lt;none&gt;           5673/TCP
+</span></span><span style="display:flex;"><span>hono-dispatch-router-ext                LoadBalancer   10.109.220.100   10.109.220.100   15671:30671/TCP,15672:30672/TCP
+</span></span><span style="display:flex;"><span>hono-grafana                            ClusterIP      10.110.61.181    &lt;none&gt;           3000/TCP
+</span></span><span style="display:flex;"><span>hono-prometheus-server                  ClusterIP      10.96.70.135     &lt;none&gt;           9090/TCP
+</span></span><span style="display:flex;"><span>hono-service-auth                       ClusterIP      10.109.97.44     &lt;none&gt;           5671/TCP
+</span></span><span style="display:flex;"><span>hono-service-auth-headless              ClusterIP      None             &lt;none&gt;           &lt;none&gt;
+</span></span><span style="display:flex;"><span>hono-service-device-registry            ClusterIP      10.105.190.233   &lt;none&gt;           5671/TCP
+</span></span><span style="display:flex;"><span>hono-service-device-registry-ext        LoadBalancer   10.101.42.99     10.101.42.99     28080:31080/TCP,28443:31443/TCP
+</span></span><span style="display:flex;"><span>hono-service-device-registry-headless   ClusterIP      None             &lt;none&gt;           &lt;none&gt;
+</span></span></code></pre></div><p>The listing above has been retrieved from a Minikube cluster that emulates a load balancer via the <code>minikube tunnel</code> command (refer to the <a href="https://minikube.sigs.k8s.io/docs/tasks/loadbalancer/">Minikube docs</a> for details).
+The service endpoints can be accessed at the <em>EXTERNAL-IP</em> addresses and corresponding <em>PORT(S)</em>, e.g. 8080 for the HTTP adapter (<em>hono-adapter-http-vertx</em>) and 28080 for the device registry (<em>hono-service-device-registry</em>).</p>
+<p>The following command assigns the IP address of the device registry service to the <code>REGISTRY_IP</code> environment variable so that they can easily be used from the command line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>export REGISTRY_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service hono-service-device-registry-ext --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jsonpath={.status.loadBalancer.ingress[0].ip}&#39;</span> -n hono<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>The following command can then be used to check for the existence of the <em>DEFAULT_TENANT</em> which is created as part of the installation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -sIX GET http://$REGISTRY_IP:28080/v1/tenants/DEFAULT_TENANT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HTTP/1.1 <span style="color:#ae81ff">200</span> OK
+</span></span><span style="display:flex;"><span>etag: 89d40d26-5956-4cc6-b978-b15fda5d1823
+</span></span><span style="display:flex;"><span>content-type: application/json; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>content-length: <span style="color:#ae81ff">260</span>
+</span></span></code></pre></div><p><a name="dashboard"></a></p>
+<h2 id="accessing-the-grafana-dashboard">Accessing the Grafana Dashboard</h2>
+<p>Hono comes with an example Grafana dashboard which provides some insight into the messages flowing through the protocol adapters.
+The following command needs to be run first in order to forward the Grafana service&rsquo;s endpoint to the local host:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl port-forward service/hono-grafana <span style="color:#ae81ff">3000</span> -n hono
+</span></span></code></pre></div><p>Then the dashboard can be opened by pointing your browser to <code>http://localhost:3000</code> using credentials <code>admin:admin</code>.</p>
+<h2 id="undeploying-hono">Undeploying Hono</h2>
+<h3 id="helm-3-1">Helm 3</h3>
+<p>A Hono instance that has been deployed using Helm 3 can be undeployed by running</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>helm uninstall hono -n hono
+</span></span></code></pre></div><h3 id="helm-2-1">Helm 2</h3>
+<p>A Hono instance that has been deployed using Helm&rsquo;s Tiller service can be undeployed by running</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>helm delete --purge hono
+</span></span></code></pre></div><p>A Hono instance that has been deployed manually using the resource files can be undeployed by running</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>kubectl delete -f ./resources -R
+</span></span></code></pre></div><h2 id="using-a-production-grade-amqp-messaging-network-and-device-registry">Using a production grade AMQP Messaging Network and Device Registry</h2>
+<p>The Helm chart by default deploys the example Device Registry that comes with Hono. The example registry provides implementations
+of the Tenant, Device Registration, Credentials and Device Connection APIs which can be used for example/demo purposes.</p>
+<p>The chart also deploys an example AMQP Messaging Network consisting of a single Apache Qpid Dispatch Router and a single
+Apache ActiveMQ Artemis broker.</p>
+<p>The protocol adapters are configured to connect to the example messaging network and registry by default.</p>
+<p>In a production environment, though, usage of the example registry and messaging network is strongly discouraged and more
+sophisticated (custom) implementations of the service APIs should be used.</p>
+<p>The Helm chart supports configuration of the protocol adapters to connect to other service implementations than the example registry
+and messaging network as described in the following sections.</p>
+<h3 id="integrating-with-an-existing-amqp-messaging-network">Integrating with an existing AMQP Messaging Network</h3>
+<p>The Helm chart can be configured to use an existing AMQP Messaging Network implementation instead of the example implementation.
+In order to do so, the protocol adapters need to be configured with information about the AMQP Messaging Network&rsquo;s endpoint address
+and connection parameters.</p>
+<p>The easiest way to set these properties is by means of putting them into a YAML file with content like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># do not deploy example AMQP Messaging Network</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">amqpMessagingNetworkExample</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adapters</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># mount (existing) Kubernetes secret which contains</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># credentials for connecting to AMQP network</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">extraSecretMounts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">amqpNetwork</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">secretName</span>: <span style="color:#e6db74">&#34;my-secret&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">mountPath</span>: <span style="color:#e6db74">&#34;/etc/custom&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># provide connection params</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># assuming that &#34;my-secret&#34; contains an &#34;amqp-credenials.properties&#34; file</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">amqpMessagingNetworkSpec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">my-custom.amqp-network.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentialsPath</span>: <span style="color:#e6db74">&#34;/etc/custom/amqp-credentials.properties&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">commandAndControlSpec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">my-custom.amqp-network.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentialsPath</span>: <span style="color:#e6db74">&#34;/etc/custom/amqp-credentials.properties&#34;</span>
+</span></span></code></pre></div><p>Both the <em>amqpMessagingNetworkSpec</em> and the <em>commandAndControlSpec</em> need to contain Hono client configuration properties
+as described in the <a href="/hono/docs/1.0/admin-guide/hono-client-configuration/">client admin guide</a>.
+Make sure to adapt/add properties as required by the AMQP Messaging Network.</p>
+<p>Note that <em>my-secret</em> is expected to already exist in the namespace that Hono gets deployed to, i.e. the Helm chart will <strong>not</strong>
+create this secret.</p>
+<p>Assuming that the file is named <code>customAmqpNetwork.yaml</code>, the values can then be passed in to the <code>helm install</code> command
+as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono -f customAmqpNetwork.yaml eclipse-hono/
+</span></span></code></pre></div><h3 id="integrating-with-a-custom-device-registry">Integrating with a custom Device Registry</h3>
+<p>The Helm chart can be configured to use existing implementations of the Tenant, Device Registration, Credentials and Device Connection APIs
+instead of the example device registry.
+In order to do so, the protocol adapters need to be configured with information about the service endpoints and connection parameters.</p>
+<p>The easiest way to set these properties is by means of putting them into a YAML file with the following content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># do not deploy example Device Registry</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">deviceRegistryExample</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">enabled</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">adapters</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># mount (existing) Kubernetes secret which contains</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># credentials for connecting to services</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">extraSecretMounts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">customRegistry</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">secretName</span>: <span style="color:#e6db74">&#34;my-secret&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">mountPath</span>: <span style="color:#e6db74">&#34;/etc/custom&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># provide connection params</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># assuming that &#34;my-secret&#34; contains credentials files</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tenantSpec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">my-custom.registry.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentialsPath</span>: <span style="color:#e6db74">&#34;/etc/custom/tenant-service-credentials.properties&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceRegistrationSpec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">my-custom.registry.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentialsPath</span>: <span style="color:#e6db74">&#34;/etc/custom/registration-service-credentials.properties&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">credentialsSpec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">my-custom.registry.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentialsPath</span>: <span style="color:#e6db74">&#34;/etc/custom/credentials-service-credentials.properties&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">deviceConnectionSpec</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">my-custom.registry.org</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">5672</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">credentialsPath</span>: <span style="color:#e6db74">&#34;/etc/custom/device-connection-service-credentials.properties&#34;</span>
+</span></span></code></pre></div><p>All of the <em>specs</em> need to contain Hono client configuration properties
+as described in the <a href="/hono/docs/1.0/admin-guide/hono-client-configuration/">client admin guide</a>.
+Make sure to adapt/add properties as required by the custom service implementations.
+The information contained in the <em>specs</em> will then be used by all protocol adapters that get deployed.
+As a consequence, it is not possible to use credentials for the services which are specific to the
+individual protocol adapters.</p>
+<p>Note that <em>my-secret</em> is expected to already exist in the namespace that Hono gets deployed to, i.e. the Helm chart will <strong>not</strong>
+create this secret.</p>
+<p>Assuming that the file is named <code>customRegistry.yaml</code>, the values can then be passed in to the <code>helm install</code> command
+as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono -f customRegistry.yaml eclipse-hono/
+</span></span></code></pre></div><h2 id="using-the-device-connection-service">Using the Device Connection Service</h2>
+<p>Hono&rsquo;s example Device Registry component contains a simple in-memory implementation of the <a href="/hono/docs/1.0/api/device-connection/">Device Connection API</a>.
+This example implementation is used by default when the example registry is deployed.</p>
+<p>Hono also contains a production ready, data grid based implementation of the Device Connection API which can be deployed and used instead of
+the example implementation. The component can be deployed by means of setting the <em>deviceConnectionService.enabled</em> property to <code>true</code> when
+running Helm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono --set deviceConnectionService.enabled<span style="color:#f92672">=</span>true eclipse-hono/
+</span></span></code></pre></div><p>This will deploy the Device Connection service and configure all protocol adapters to use it instead of the example Device Registry implementation.
+However, the service requires a connection to a data grid in order to store the device connection data.
+The Helm chart supports deployment of a simple data grid which can be used for experimenting by means of setting the
+<em>dataGridDeployExample</em> property to <code>true</code> when running Helm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono --set deviceConnectionService.enabled<span style="color:#f92672">=</span>true --set dataGridExample.enabled<span style="color:#f92672">=</span>true eclipse-hono/
+</span></span></code></pre></div><p>This will deploy the data grid and configure the Device Connection service to use it for storing the connection data.</p>
+<p>The Device Connection service can also be configured to connect to an already existing data grid. Please refer to the
+<a href="/hono/docs/1.0/admin-guide/device-connection-config/">admin guide</a> for details regarding the corresponding configuration properties.</p>
+<h2 id="deploying-optional-adapters">Deploying optional Adapters</h2>
+<p>The Helm chart supports deployment of additional protocol adapters which are still considered experimental or have been deprecated.
+The following table provides an overview of the corresponding configuration properties that need to be set on deployment.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>adapters.lora.enabled</em></td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">Indicates if the (experimental) LoRa WAN protocol adapter should be deployed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>adapters.kura.enabled</em></td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">Indicates if the deprecated Kura protocol adapter should be deployed.</td>
+</tr>
+</tbody>
+</table>
+<p>The following command will deploy the LoRa adapter along with Hono&rsquo;s standard adapters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: eclipse-hono-$VERSION</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono --set adapters.lora.enabled<span style="color:#f92672">=</span>true eclipse-hono/
+</span></span></code></pre></div><h2 id="deploying-custom-container-images">Deploying custom Container Images</h2>
+<p>The sections above describe how Hono&rsquo;s pre-built container images can be deployed using Helm. In some cases it might be desirable to build Hono from source, e.g. in order to use a different metrics back end or to <a href="#using-jaeger-tracing">use Jaeger tracing</a>. In these cases, the Helm templates contained in the source tree can be used instead of the Helm chart from the download page.</p>
+<p>The container images created as part of the build process need to be made available to the Kubernetes cluster that Hono should be deployed to. This usually requires the images to be pushed to a (private) container registry that the cluster has pull access to. Please refer to the documentation of the employed Kubernetes service provider for details regarding the setup and configuration of a private container registry.</p>
+<h3 id="deploying-via-a-private-registry">Deploying via a private Registry</h3>
+<p>The first step is getting the source code of Hono. Please refer to <a href="/hono/docs/1.0/dev-guide/building_hono/">Building from Source</a> for details.
+Once the source code has been retrieved, the build process can be started using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in base directory of Hono working tree:</span>
+</span></span><span style="display:flex;"><span>mvn clean install -Pbuild-docker-image,metrics-prometheus
+</span></span></code></pre></div><p>After the build process has finished, the custom container images need to be pushed to the registry so that the Kubernetes cluster can pull them from there during deployment.
+Assuming that the images should be tagged with <code>1.0-CUSTOM</code> and the container registry name is <code>my.registry.io</code>, the following command can be used to tag the locally built images and push them to the registry:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in base directory of Hono working tree:</span>
+</span></span><span style="display:flex;"><span>./push_hono_images.sh 1.0-CUSTOM my.registry.io
+</span></span></code></pre></div><div class="alert alert-notice">
+    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Note</h4>
+    <div>You may need to log in to the (private) container registry before pushing the images.</div>
+</div>
+<p>Once the images have been pushed, the deployment can be done using Helm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in Hono working tree directory: hono/deploy</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono --set deviceRegistry.imageName<span style="color:#f92672">=</span>my.registry.io/eclipse/hono-service-device-registry:1.0-CUSTOM,authServer.imageName<span style="color:#f92672">=</span>my.registry.io/eclipse/hono-service-auth:1.0-CUSTOM,deviceConnectionService.imageName<span style="color:#f92672">=</span>my.registry.io/eclipse/hono-service-device-connection:1.0-CUSTOM,adapters.amqp.imageName<span style="color:#f92672">=</span>my.registry.io/eclipse/hono-adapter-amqp-vertx:1.0-CUSTOM,adapters.mqtt.imageName<span style="color:#f92672">=</span>my.registry.io/eclipse/hono-adapter-mqtt-vertx:1.0-CUSTOM,adapters.http.imageName<span style="color:#f92672">=</span>my.registry.io/eclipse/hono-adapter-http-vertx:1.0-CUSTOM target/deploy/helm/eclipse-hono/
+</span></span></code></pre></div><h3 id="deploying-to-minikube">Deploying to Minikube</h3>
+<p>When using Minikube as the deployment target, things are a little easier. Minikube comes with an embedded Docker daemon which can be used to build the container images instead of using a local Docker daemon, thus eliminating the need to push the images to a registry altogether.
+In order to use Minikube&rsquo;s Docker daemon, the following command needs to be run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>eval <span style="color:#66d9ef">$(</span>minikube docker-env<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>This will set the Docker environment variables to point to Minikube&rsquo;s Docker daemon which can then be used for building the container images and storing them locally in the Minikube VM.</p>
+<p>In any case the build process can be started using the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in base directory of Hono working tree:</span>
+</span></span><span style="display:flex;"><span>mvn clean install -Pbuild-docker-image,metrics-prometheus
+</span></span></code></pre></div><p>The newly built images can then be deployed using Helm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in Hono working tree directory: hono/deploy</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono target/deploy/helm/eclipse-hono/
+</span></span></code></pre></div><h3 id="deploying-to-azure-kubernetes-service-aks">Deploying to Azure Kubernetes Service (AKS)</h3>
+<p>The following chapter describes how to use Azure Kubernetes Service (AKS) as a deployment target that has been set up as described in the <a href="/hono/docs/1.0/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster guide</a>.</p>
+<p>First we build the docker images and push them into the ACR. Note that if you define a custom image tag you have to provide the helm with the image tags as described in the chapters above.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Resource group where the ACR is deployed.</span>
+</span></span><span style="display:flex;"><span>acr_resourcegroupname<span style="color:#f92672">={</span>YOUR_ACR_RG<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Name of your ACR.</span>
+</span></span><span style="display:flex;"><span>acr_registry_name<span style="color:#f92672">={</span>YOUR_ACR_NAME<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Full name of the ACR.</span>
+</span></span><span style="display:flex;"><span>acr_login_server<span style="color:#f92672">=</span>$acr_registry_name.azurecr.io
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Authenticate your docker daemon with the ACR.</span>
+</span></span><span style="display:flex;"><span>az acr login --name $ACR_NAME
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Build images.</span>
+</span></span><span style="display:flex;"><span>cd hono
+</span></span><span style="display:flex;"><span>mvn install -Pbuild-docker-image -Ddocker.registry<span style="color:#f92672">=</span>$acr_login_server
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Push images to ACR.</span>
+</span></span><span style="display:flex;"><span>./push_hono_images.sh 1.0.0-SNAPSHOT $acr_login_server
+</span></span></code></pre></div><p>Now we can retrieve settings from the deployment for the following steps:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Resource group of the AKS deployment</span>
+</span></span><span style="display:flex;"><span>resourcegroup_name<span style="color:#f92672">=</span>hono
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aks_cluster_name<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.aksClusterName.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>http_ip_address<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.httpPublicIPAddress.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>amqp_ip_address<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.amqpPublicIPAddress.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>mqtt_ip_address<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.mqttPublicIPAddress.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>registry_ip_address<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.registryPublicIPAddress.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>network_ip_address<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.networkPublicIPAddress.value -o tsv<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>Note: add the following lines in case you opted for the Azure Service Bus variant:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service_bus_namespace<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.serviceBusNamespaceName.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>service_bus_key_name<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.serviceBusKeyName.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>service_bus_key<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.serviceBusKey.value -o tsv<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>Next we prepare the k8s environment:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>k8s_namespace<span style="color:#f92672">=</span>honons
+</span></span><span style="display:flex;"><span>kubectl create namespace $k8s_namespace
+</span></span></code></pre></div><p>Finally install Hono. Leveraging the <em>managed-premium-retain</em> storage in combination with <em>deviceRegistry.resetFiles=false</em> parameter is optional but ensures that Device registry storage will retain future update deployments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># in Hono working tree directory: hono/deploy</span>
+</span></span><span style="display:flex;"><span>helm install target/deploy/helm/eclipse-hono/ <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --dep-up <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name hono <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --namespace $k8s_namespace <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set adapters.mqtt.svc.annotations.<span style="color:#e6db74">&#34;service\.beta\.kubernetes\.io/azure-load-balancer-resource-group&#34;</span><span style="color:#f92672">=</span>$resourcegroup_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set adapters.http.svc.annotations.<span style="color:#e6db74">&#34;service\.beta\.kubernetes\.io/azure-load-balancer-resource-group&#34;</span><span style="color:#f92672">=</span>$resourcegroup_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set adapters.amqp.svc.annotations.<span style="color:#e6db74">&#34;service\.beta\.kubernetes\.io/azure-load-balancer-resource-group&#34;</span><span style="color:#f92672">=</span>$resourcegroup_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set deviceRegistryExample.svc.annotations.<span style="color:#e6db74">&#34;service\.beta\.kubernetes\.io/azure-load-balancer-resource-group&#34;</span><span style="color:#f92672">=</span>$resourcegroup_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set amqpMessagingNetworkExample.dispatchRouter.svc.annotations.<span style="color:#e6db74">&#34;service\.beta\.kubernetes\.io/azure-load-balancer-resource-group&#34;</span><span style="color:#f92672">=</span>$resourcegroup_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set deviceRegistryExample.storageClass<span style="color:#f92672">=</span>managed-premium-retain <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set deviceRegistryExample.resetFiles<span style="color:#f92672">=</span>false <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set adapters.mqtt.svc.loadBalancerIP<span style="color:#f92672">=</span>$mqtt_ip_address <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set adapters.http.svc.loadBalancerIP<span style="color:#f92672">=</span>$http_ip_address <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set adapters.amqp.svc.loadBalancerIP<span style="color:#f92672">=</span>$amqp_ip_address <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set deviceRegistryExample.svc.loadBalancerIP<span style="color:#f92672">=</span>$registry_ip_address <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set amqpMessagingNetworkExample.dispatchRouter.svc.loadBalancerIP<span style="color:#f92672">=</span>$network_ip_address
+</span></span></code></pre></div><p>Note: add the following lines in case you opted for the Azure Service Bus variant:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>    <span style="color:#75715e"># Router update required to work together with Azure Service Bus</span>
+</span></span><span style="display:flex;"><span>    --set amqpMessagingNetworkExample.dispatchRouter.imageName<span style="color:#f92672">=</span>quay.io/enmasse/qdrouterd-base:1.8.0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set amqpMessagingNetworkExample.broker.type<span style="color:#f92672">=</span>servicebus <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set amqpMessagingNetworkExample.broker.servicebus.saslUsername<span style="color:#f92672">=</span>$service_bus_key_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set amqpMessagingNetworkExample.broker.servicebus.saslPassword<span style="color:#f92672">=</span>$service_bus_key <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --set amqpMessagingNetworkExample.broker.servicebus.host<span style="color:#f92672">=</span>$service_bus_namespace.servicebus.windows.net <span style="color:#ae81ff">\
+</span></span></span></code></pre></div><p>Have fun with Hono on Microsoft Azure!</p>
+<p>Next steps:</p>
+<p>You can follow the steps as described in the <a href="https://www.eclipse.org/hono/getting-started/">Getting Started</a> guide with the following differences:</p>
+<p>Compared to a plain k8s deployment Azure provides us DNS names with static IPs for the Hono endpoints. To retrieve them:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>HTTP_ADAPTER_IP<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.httpPublicIPFQDN.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>AMQP_ADAPTER_IP<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.amqpPublicIPFQDN.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>MQTT_ADAPTER_IP<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.mqttPublicIPFQDN.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>REGISTRY_IP<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.registryPublicIPFQDN.value -o tsv<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>AMQP_NETWORK_IP<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>az group deployment show --name HonoBasicInfrastructure --resource-group $resourcegroup_name --query properties.outputs.networkPublicIPFQDN.value -o tsv<span style="color:#e6db74">`</span>
+</span></span></code></pre></div><p>As Azure Service Bus does not support auto creation of queues you have to create a queue per tenant (ID), e.g. after you have created your tenant run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az servicebus queue create --resource-group $resourcegroup_name <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --namespace-name $service_bus_namespace <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    --name $MY_TENANT
+</span></span></code></pre></div><h3 id="using-jaeger-tracing">Using Jaeger Tracing</h3>
+<p>Hono&rsquo;s components are instrumented using OpenTracing to allow tracking of the distributed processing of messages flowing through the system.
+The Hono chart can be configured to report tracing information to the <a href="https://www.jaegertracing.io/">Jaeger tracing system</a>. The <em>Spans</em> reported
+by the components can then be viewed in a web browser.</p>
+<p>In order for Hono&rsquo;s components to use the Jaeger client for reporting tracing information, the container images need to be built
+with the <code>jaeger</code> Maven profile. Please refer to [Monitoring &amp; Tracing]
+(/hono/docs/1.0/admin-guide/monitoring-tracing-config/#configuring-usage-of-jaeger-tracing-included-in-docker-images) for details.
+The newly built images also need to be made available to the target Kubernetes cluster as described in the two previous sections.</p>
+<p>The chart can be configured to deploy and use an example Jaeger back end by means of setting the <em>jaegerBackendDeployExample</em> property
+to <code>true</code> when running Helm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in Hono working tree directory: hono/deploy</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono --set jaegerBackendExample.enabled<span style="color:#f92672">=</span>true target/deploy/helm/eclipse-hono/
+</span></span></code></pre></div><p>This will create a Jaeger back end instance suitable for testing purposes and will configure all deployed Hono components to use the
+Jaeger back end.</p>
+<p>The following command can then be used to return the IP address with which the Jaeger UI can be accessed in a browser (ensure <code>minikube tunnel</code> is running when using minikube):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>kubectl get service hono-jaeger-query --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;jsonpath={.status.loadBalancer.ingress[0].ip}&#39;</span> -n hono
+</span></span></code></pre></div><p>If no example Jaeger back end should be deployed but instead an existing Jaeger installation should be used,
+the chart&rsquo;s <em>jaegerAgentConf</em> property can be set to environment variables which are passed in to
+the Jaeger Agent that is deployed with each of Hono&rsquo;s components.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in Hono working tree directory: hono/deploy</span>
+</span></span><span style="display:flex;"><span>helm install --dep-up --name hono --namespace hono --set jaegerAgentConf.REPORTER_TYPE<span style="color:#f92672">=</span>tchannel --set jaegerAgentConf.REPORTER_TCHANNEL_HOST_PORT<span style="color:#f92672">=</span>my-jaeger-collector:14267 target/deploy/helm/eclipse-hono/
+</span></span></code></pre></div>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663249437"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663249437"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663249437"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663249437"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663249437"></script>
+        <script src="/hono/docs/js/search.js?1663249437"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.0/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.0/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.0/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.0/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.0/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.0/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.0/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.0/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.0/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.0/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.0/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.0/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.0/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.0/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.0/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.0/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.0/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.0/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.0/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.0/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.0/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.0/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.0/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.0/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.0/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.0/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.0/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.0/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.0/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.0/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.0/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.0/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.0/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.0/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.0/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.0/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.0/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.0/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.0/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.0/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/" title="Deployment" class="dd-item parent"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle" checked/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.0/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.0/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item active"><a href="/hono/docs/1.0/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.0/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.0/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.0/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.0/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.0/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.0/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.0/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.0/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.0/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.0/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/deployment/helm-based-deployment/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/deployment/helm-based-deployment/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/deployment/helm-based-deployment/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/deployment/helm-based-deployment/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/deployment/helm-based-deployment/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/deployment/helm-based-deployment/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/deployment/helm-based-deployment/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/deployment/helm-based-deployment/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/deployment/helm-based-deployment/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/deployment/helm-based-deployment/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/deployment/helm-based-deployment/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/deployment/helm-based-deployment/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/deployment/helm-based-deployment/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/deployment/helm-based-deployment/">1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/deployment/helm-based-deployment/">1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/deployment/helm-based-deployment/" selected>1.0</option>
+                    <option id="dev" value="/hono/docs/dev/deployment/helm-based-deployment/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663249437"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663249437"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663249437"></script>
+    <script src="/hono/docs/js/theme.js?1663249437"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

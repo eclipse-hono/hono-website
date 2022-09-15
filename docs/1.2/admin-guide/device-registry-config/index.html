@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="1.2">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Device Registry Configuration :: Eclipse Hono&trade; Vers.: 1.2</title>
+    <link rel="icon" href="/images/favicon.ico?1663249432" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663249432" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663249432" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663249432" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1663249432"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/1.2/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1663249432"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Device Registry Configuration :: Eclipse Hono&amp;trade; Vers.: 1.2">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Device Registry Configuration :: Eclipse Hono&amp;trade; Vers.: 1.2" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/1.2/admin-guide/device-registry-config//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/1.2/admin-guide/device-registry-config/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>1.2</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/admin-guide/device-registry-config.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/1.2/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/1.2/admin-guide/"><span itemprop="name">Admin Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/1.2/admin-guide/device-registry-config/" aria-disabled="true"><span itemprop="name">Device Registry Configuration</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#service-configuration">Service Configuration</a></li>
+    <li><a href="#port-configuration">Port Configuration</a>
+      <ul>
+        <li><a href="#secure-port-only">Secure Port Only</a></li>
+        <li><a href="#insecure-port-only">Insecure Port Only</a></li>
+        <li><a href="#dual-port">Dual Port</a></li>
+        <li><a href="#ephemeral-ports">Ephemeral Ports</a></li>
+      </ul>
+    </li>
+    <li><a href="#authentication-service-connection-configuration">Authentication Service Connection Configuration</a></li>
+    <li><a href="#metrics-configuration">Metrics Configuration</a></li>
+    <li><a href="#device-identities-file-format">Device Identities File Format</a></li>
+    <li><a href="#credentials-file-format">Credentials File Format</a></li>
+    <li><a href="#tenants-file-format">Tenants File Format</a></li>
+    <li><a href="#configuring-gateway-devices">Configuring Gateway Devices</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Device Registry Configuration</h1>
+<p>The Device Registry component provides an exemplary implementation of Eclipse Hono™&rsquo;s <a href="/hono/docs/1.2/api/device-registration/">Device Registration</a>,
+<a href="/hono/docs/1.2/api/credentials/">Credentials</a>, <a href="/hono/docs/1.2/api/tenant/">Tenant</a> and <a href="/hono/docs/1.2/api/device-connection/">Device Connection</a> APIs.</p>
+<p>Protocol adapters use these APIs to determine a device&rsquo;s registration status, e.g. if it is enabled and if it is registered with a particular tenant, and to authenticate a device before accepting any data for processing from it.</p>
+<p>There is no particular technical reason to implement these three APIs in one component, so for production scenarios there might be up to three different components each implementing one of the API&rsquo;s.</p>
+<p>The Device Registry component also exposes <a href="/hono/docs/1.2/user-guide/device-registry/">HTTP based resources</a> for managing tenants and the registration information and credentials of devices.</p>
+<p>The Device Registry is implemented as a Spring Boot application. It can be run either directly from the command line or by means of starting the corresponding <a href="https://hub.docker.com/r/eclipse/hono-service-device-registry-file/">Docker image</a> created from it.</p>
+<h2 id="service-configuration">Service Configuration</h2>
+<p>In addition to the following options, this component supports the options described in <a href="/hono/docs/1.2/admin-guide/common-config/">Common Configuration</a>.</p>
+<p>The following table provides an overview of the configuration variables and corresponding command line options for configuring the Device Registry.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Environment Variable<br>Command Line Option</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_APP_TYPE</code><br><code>--hono.app.type</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>file</code></td>
+<td style="text-align:left">The device registry implementation to use. This may be either <code>file</code> or <code>dummy</code>. In the case of <code>dummy</code> a dummy implementation will be used which will consider all devices queried for as valid devices, having the access credentials <code>hono-secret</code>. Of course this shouldn&rsquo;t be used for productive use.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_CACHE_MAX_AGE</code><br><code>--hono.credentials.svc.cacheMaxAge</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>180</code></td>
+<td style="text-align:left">The maximum period of time (seconds) that information returned by the service&rsquo;s operations may be cached for.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_FILENAME</code><br><code>--hono.credentials.svc.filename</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>/var/lib/hono/device-registry/</code><br><code>credentials.json</code></td>
+<td style="text-align:left">The path to the file where the server stores credentials of devices. Hono tries to read credentials from this file during start-up and writes out all identities to this file periodically if property <code>HONO_CREDENTIALS_SVC_SAVE_TO_FILE</code> is set to <code>true</code>.<br>Please refer to <a href="#credentials-file-format">Credentials File Format</a> for details regarding the file&rsquo;s format.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_HASH_ALGORITHMS_WHITELIST</code><br><code>--hono.credentials.svc.hashAlgorithmsWhitelist</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>empty</code></td>
+<td style="text-align:left">An array of supported hashing algorithms to be used with the <code>hashed-password</code> type of credentials. When not set, all values will be accepted.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_MAX_BCRYPT_ITERATIONS</code><br><code>--hono.credentials.svc.maxBcryptIterations</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>10</code></td>
+<td style="text-align:left">The maximum number of iterations that are supported in password hashes using the BCrypt hash function. This limit is enforced by the device registry when adding or updating corresponding credentials. Increasing this number allows for potentially more secure password hashes to be used. However, the time required to compute the hash increases exponentially with the number of iterations.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_MODIFICATION_ENABLED</code><br><code>--hono.credentials.svc.modificationEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">When set to <code>false</code> the credentials contained in the registry cannot be updated nor removed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_RECEIVER_LINK_CREDIT</code><br><code>--hono.credentials.svc.receiverLinkCredit</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>100</code></td>
+<td style="text-align:left">The number of credits to flow to a client connecting to the Credentials endpoint.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_SAVE_TO_FILE</code><br><code>--hono.credentials.svc.saveToFile</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">When set to <code>true</code> the server will periodically write out the registered credentials to the file specified by the <code>HONO_CREDENTIALS_SVC_FILENAME</code> property.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_CREDENTIALS_SVC_STARTEMPTY</code><br><code>--hono.credentials.svc.startEmpty</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">When set to <code>true</code> the server will not try to load credentials from the file specified by the <code>HONO_CREDENTIALS_SVC_FILENAME</code> property during startup.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_DEVICE_CONNECTION_SVC_MAX_DEVICES_PER_TENANT</code><br><code>--hono.deviceConnection.svc.maxDevicesPerTenant</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>100</code></td>
+<td style="text-align:left">The number of devices per tenant for which connection related data is stored. It is an error to set this property to a value &lt;= 0.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_BIND_ADDRESS</code><br><code>--hono.registry.amqp.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure AMQP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_CERT_PATH</code><br><code>--hono.registry.amqp.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_AMQP_KEY_PATH</code>.<br>Alternatively, the <code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_INSECURE_PORT</code><br><code>--hono.registry.amqp.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the server should listen on for AMQP 1.0 connections.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_INSECURE_PORT_BIND_ADDRESS</code><br><code>--hono.registry.amqp.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure AMQP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_INSECURE_PORT_ENABLED</code><br><code>--hono.registry.amqp.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the server will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_REGISTRY_AMQP_INSECURE_PORT</code> or the default AMQP port number (<code>5672</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_KEY_PATH</code><br><code>--hono.registry.amqp.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_AMQP_CERT_PATH</code>. Alternatively, the <code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_KEY_STORE_PASSWORD</code><br><code>--hono.registry.amqp.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code><br><code>--hono.registry.amqp.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the server should use for authenticating to clients. Either this option or the <code>HONO_REGISTRY_AMQP_KEY_PATH</code> and <code>HONO_REGISTRY_AMQP_CERT_PATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_NATIVE_TLS_REQUIRED</code><br><code>--hono.registry.amqp.nativeTlsRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">The server will probe for OpenSLL on startup if a secure port is configured. By default, the server will fall back to the JVM&rsquo;s default SSL engine if not available. However, if set to <code>true</code>, the server will fail to start at all in this case.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_PORT</code><br><code>--hono.registry.amqp.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>5671</code></td>
+<td style="text-align:left">The secure port that the server should listen on for AMQP 1.0 connections.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_AMQP_SECURE_PROTOCOLS</code><br><code>--hono.registry.amqp.secureProtocols</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>TLSv1.2</code></td>
+<td style="text-align:left">A (comma separated) list of secure protocols that are supported when negotiating TLS sessions. Please refer to the <a href="https://vertx.io/docs/vertx-core/java/#ssl">vert.x documentation</a> for a list of supported protocol names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_BIND_ADDRESS</code><br><code>--hono.registry.rest.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure HTTP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_CERT_PATH</code><br><code>--hono.registry.rest.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_REST_KEY_PATH</code>.<br>Alternatively, the <code>HONO_REGISTRY_REST_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_INSECURE_PORT</code><br><code>--hono.registry.rest.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the server should listen on for HTTP requests.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_INSECURE_PORT_BIND_ADDRESS</code><br><code>--hono.registry.rest.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure HTTP port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_INSECURE_PORT_ENABLED</code><br><code>--hono.registry.rest.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the server will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_REGISTRY_REST_INSECURE_PORT</code> or the default AMQP port number (<code>5672</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_KEY_PATH</code><br><code>--hono.registry.rest.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_REGISTRY_REST_CERT_PATH</code>. Alternatively, the <code>HONO_REGISTRY_REST_KEY_STORE_PATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_KEY_STORE_PASSWORD</code><br><code>--hono.registry.rest.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_KEY_STORE_PATH</code><br><code>--hono.registry.rest.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the server should use for authenticating to clients. Either this option or the <code>HONO_REGISTRY_REST_KEY_PATH</code> and <code>HONO_REGISTRY_REST_CERT_PATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_REST_PORT</code><br><code>--hono.registry.rest.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>5671</code></td>
+<td style="text-align:left">The secure port that the server should listen on for HTTP requests.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_CACHE_MAX_AGE</code><br><code>--hono.registry.svc.cacheMaxAge</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>180</code></td>
+<td style="text-align:left">The maximum period of time (seconds) that information returned by the service&rsquo;s operations may be cached for.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_FILENAME</code><br><code>--hono.registry.svc.filename</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>/var/lib/hono/device-registry/</code><br><code>device-identities.json</code></td>
+<td style="text-align:left">The path to the file where the server stores identities of registered devices. Hono tries to read device identities from this file during start-up and writes out all identities to this file periodically if property <code>HONO_REGISTRY_SVC_SAVE_TO_FILE</code> is set to <code>true</code>.<br>Please refer to <a href="#device-identities-file-format">Device Identities File Format</a> for details regarding the file&rsquo;s format.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_MAX_DEVICES_PER_TENANT</code><br><code>--hono.registry.svc.maxDevicesPerTenant</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>100</code></td>
+<td style="text-align:left">The number of devices that can be registered for each tenant. It is an error to set this property to a value &lt;= 0.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_MODIFICATION_ENABLED</code><br><code>--hono.registry.svc.modificationEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">When set to <code>false</code> the device information contained in the registry cannot be updated nor removed from the registry.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_RECEIVER_LINK_CREDIT</code><br><code>--hono.registry.svc.receiverLinkCredit</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>100</code></td>
+<td style="text-align:left">The number of credits to flow to a client connecting to the Device Registration endpoint.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_SAVE_TO_FILE</code><br><code>--hono.registry.svc.saveToFile</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">When set to <code>true</code> the server will periodically write out the registered device information to the file specified by the <code>HONO_REGISTRY_SVC_FILENAME</code> property.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_SIGNING_KEY_PATH</code><br><code>--hono.registry.svc.signing.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for signing tokens asserting a device&rsquo;s registration status. When using this variable, other services that need to validate the tokens issued by this service need to be configured with the corresponding certificate/public key. Alternatively, a symmetric key can be used for signing (and validating) by setting the <code>HONO_REGISTRY_SVC_SIGNING_SHARED_SECRET</code> variable. If none of these variables is set, the server falls back to the key indicated by the <code>HONO_REGISTRY_AMP_KEY_PATH</code> variable. If that variable is also not set, startup of the server fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_SIGNING_SHARED_SECRET</code><br><code>--hono.registry.svc.signing.sharedSecret</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A string to derive a symmetric key from that is used for signing tokens asserting a device&rsquo;s registration status. The key is derived from the string by using the bytes of the String&rsquo;s UTF8 encoding. When setting the signing key using this variable, other services that need to validate the tokens issued by this service need to be configured with the same key. Alternatively, an asymmetric key pair can be used for signing (and validating) by setting the <code>HONO_REGISTRY_SVC_SIGNING_KEY_PATH</code> variable. If none of these variables is set, startup of the server fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_SIGNING_TOKEN_EXPIRATION</code><br><code>--hono.registry.svc.signing.tokenExpiration</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>10</code></td>
+<td style="text-align:left">The expiration period to use for the tokens asserting the registration status of devices.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_REGISTRY_SVC_STARTEMPTY</code><br><code>--hono.registry.svc.startEmpty</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">When set to <code>true</code> the server will not try to load device identities from the file specified by the <code>HONO_REGISTRY_SVC_FILENAME</code> property during startup.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_CACHE_MAX_AGE</code><br><code>--hono.tenant.svc.cacheMaxAge</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>180</code></td>
+<td style="text-align:left">The maximum period of time (seconds) that information returned by the service&rsquo;s operations may be cached for.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_FILENAME</code><br><code>--hono.tenant.svc.filename</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>/var/lib/hono/device-registry/</code><br><code>tenants.json</code></td>
+<td style="text-align:left">The path to the file where the server stores tenants. Hono tries to read tenants from this file during start-up and writes out all identities to this file periodically if property <code>HONO_TENANT_SVC_SAVE_TO_FILE</code> is set to <code>true</code>.<br>Please refer to <a href="#tenants-file-format">Tenants File Format</a> for details regarding the file&rsquo;s format.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_MODIFICATION_ENABLED</code><br><code>--hono.tenant.svc.modificationEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">When set to <code>false</code> the tenants contained in the registry cannot be updated nor removed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_RECEIVER_LINK_CREDIT</code><br><code>--hono.tenant.svc.receiverLinkCredit</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>100</code></td>
+<td style="text-align:left">The number of credits to flow to a client connecting to the Tenant endpoint.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_SAVE_TO_FILE</code><br><code>--hono.tenant.svc.saveToFile</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">When set to <code>true</code> the server will periodically write out the registered tenants to the file specified by the <code>HONO_TENANTS_SVC_TENANT_FILENAME</code> property.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_TENANT_SVC_STARTEMPTY</code><br><code>--hono.tenant.svc.startEmpty</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">When set to <code>true</code> the server will not try to load tenants from the file specified by the <code>HONO_TENANT_SVC_FILENAME</code> property during startup.</td>
+</tr>
+</tbody>
+</table>
+<p>The variables only need to be set if the default value does not match your environment.</p>
+<h2 id="port-configuration">Port Configuration</h2>
+<p>The Device Registry supports configuration of both, an AMQP based endpoint as well as an HTTP based endpoint proving RESTful resources for managing registration information and credentials. Both endpoints can be configured to listen for connections on</p>
+<ul>
+<li>a secure port only (default) or</li>
+<li>an insecure port only or</li>
+<li>both a secure and an insecure port (dual port configuration)</li>
+</ul>
+<p>The server will fail to start if none of the ports is configured properly.</p>
+<p>The following sections apply to configuring both, the AMQP endpoint as well as the REST endpoint. The environment variables to use for configuring the REST endpoint are the same as the ones for the AMQP endpoint, substituting <code>_AMQP_</code> with <code>_REST_</code>, e.g. <code>HONO_REGISTRY_REST_KEY_PATH</code> instead of <code>HONO_REGISTRY_AMQP_KEY_PATH</code>.</p>
+<h3 id="secure-port-only">Secure Port Only</h3>
+<p>The server needs to be configured with a private key and certificate in order to open a TLS secured port.</p>
+<p>There are two alternative ways for doing so:</p>
+<ol>
+<li>Setting the <code>HONO_REGISTRY_AMQP_KEY_STORE_PATH</code> and the <code>HONO_REGISTRY_AMQP_KEY_STORE_PASSWORD</code> variables in order to load the key &amp; certificate from a password protected key store, or</li>
+<li>setting the <code>HONO_REGISTRY_AMQP_KEY_PATH</code> and <code>HONO_REGISTRY_AMQP_CERT_PATH</code> variables in order to load the key and certificate from two separate PEM files in PKCS8 format.</li>
+</ol>
+<p>When starting up, the server will bind a TLS secured socket to the default secure AMQP port 5671. The port number can also be set explicitly using the <code>HONO_REGISTRY_AMQP_PORT</code> variable.</p>
+<p>The <code>HONO_REGISTRY_AMQP_BIND_ADDRESS</code> variable can be used to specify the network interface that the port should be exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host. Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose the port unintentionally to the outside world).</p>
+<h3 id="insecure-port-only">Insecure Port Only</h3>
+<p>The secure port will mostly be required for production scenarios. However, it might be desirable to expose a non-TLS secured port instead, e.g. for testing purposes. In any case, the non-secure port needs to be explicitly enabled either by</p>
+<ul>
+<li>explicitly setting <code>HONO_REGISTRY_AMQP_INSECURE_PORT</code> to a valid port number, or by</li>
+<li>implicitly configuring the default AMQP port (5672) by simply setting <code>HONO_REGISTRY_AMQP_INSECURE_PORT_ENABLED</code> to <code>true</code>.</li>
+</ul>
+<p>The server issues a warning on the console if <code>HONO_REGISTRY_AMQP_INSECURE_PORT</code> is set to the default secure AMQP port (5671).</p>
+<p>The <code>HONO_REGISTRY_AMQP_INSECURE_PORT_BIND_ADDRESS</code> variable can be used to specify the network interface that the port should be exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host. This variable might be used to e.g. expose the non-TLS secured port on a local interface only, thus providing easy access from within the local network, while still requiring encrypted communication when accessed from the outside over public network infrastructure.</p>
+<p>Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose the port unintentionally to the outside world).</p>
+<h3 id="dual-port">Dual Port</h3>
+<p>In test setups and some production scenarios Hono server may be configured to open one secure <strong>and</strong> one insecure port at the same time.</p>
+<p>This is achieved by configuring both ports correctly (see above). The server will fail to start if both ports are configured to use the same port number.</p>
+<p>Since the secure port may need different visibility in the network setup compared to the secure port, it has it&rsquo;s own binding address <code>HONO_REGISTRY_AMQP_INSECURE_PORT_BIND_ADDRESS</code>.
+This can be used to narrow the visibility of the insecure port to a local network e.g., while the secure port may be visible worldwide.</p>
+<h3 id="ephemeral-ports">Ephemeral Ports</h3>
+<p>The server may be configured to open both a secure and a non-secure port at the same time simply by configuring both ports as described above. For this to work, both ports must be configured to use different port numbers, otherwise startup will fail.</p>
+<h2 id="authentication-service-connection-configuration">Authentication Service Connection Configuration</h2>
+<p>The Device Registry requires a connection to an implementation of Hono&rsquo;s Authentication API in order to authenticate and authorize client requests.</p>
+<p>The connection is configured according to <a href="/hono/docs/1.2/admin-guide/hono-client-configuration/">Hono Client Configuration</a>
+where the <code>${PREFIX}</code> is set to <code>HONO_AUTH</code>. Since Hono&rsquo;s Authentication Service does not allow caching of the responses, the cache properties
+can be ignored.</p>
+<p>In addition to the standard client configuration properties, following properties may be set for the connection:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Environment Variable<br>Command Line Option</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_VALIDATION_CERT_PATH</code><br><code>--hono.auth.validation.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the an X.509 certificate that the service should use for validating tokens issued by the Authentication service. Alternatively, a symmetric key can be used for validating tokens by setting the <code>HONO_AUTH_VALIDATION_SHARED_SECRET</code> variable. If none of these variables is set, startup of the service fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_VALIDATION_SHARED_SECRET</code><br><code>--hono.auth.validation.sharedSecret</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A string to derive a symmetric key from which is used for validating tokens issued by the Authentication service. The key is derived from the string by using the bytes of the String&rsquo;s UTF8 encoding. When setting the validation key using this variable, the Authentication service <strong>must</strong> be configured with the same key. Alternatively, an X.509 certificate can be used for validating tokens by setting the <code>HONO_AUTH_VALIDATION_CERT_PATH</code> variable. If none of these variables is set, startup of the service fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SUPPORTED_SASL_MECHANISMS</code><br><code>--hono.auth.supportedSaslMechanisms</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>EXTERNAL, PLAIN</code></td>
+<td style="text-align:left">A (comma separated) list of the SASL mechanisms that the device registry should offer to clients for authentication. This option may be set to specify only one of <code>EXTERNAL</code> or <code>PLAIN</code>, or to use a different order.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics-configuration">Metrics Configuration</h2>
+<p>See <a href="/hono/docs/1.2/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing Admin Guide</a> for details on how to configure the reporting of metrics.</p>
+<h2 id="device-identities-file-format">Device Identities File Format</h2>
+<p>The Device Registry supports persisting the device identities and their registration information to a JSON file in the local file system.
+The <em>Getting started Guide</em> includes an example configuration which illustrates the file format used. The configuration file&rsquo;s location is <code>/deploy/src/main/deploy/example-device-identities.json</code>.</p>
+<h2 id="credentials-file-format">Credentials File Format</h2>
+<p>The Device Registry supports persisting the devices&rsquo; credentials to a JSON file in the local file system.
+The <em>Getting started Guide</em> includes an example configuration which illustrates the file format used. The configuration file&rsquo;s location is <code>/deploy/src/main/deploy/example-credentials.json</code>.</p>
+<h2 id="tenants-file-format">Tenants File Format</h2>
+<p>The Device Registry supports persisting tenants to a JSON file in the local file system.
+The configuration file&rsquo;s location is <code>/deploy/src/main/deploy/example-tenants.json</code>.</p>
+<h2 id="configuring-gateway-devices">Configuring Gateway Devices</h2>
+<p>The Device Registry supports devices to <em>act on behalf of</em> other devices. This is particularly useful for cases where a device does not connect directly to a Hono protocol adapter but is connected to a <em>gateway</em> component that is usually specific to the device&rsquo;s communication protocol. It is the gateway component which then connects to a Hono protocol adapter and publishes data on behalf of the device(s). Examples of such a set up include devices using <a href="https://www.sigfox.com">SigFox</a> or <a href="https://lora-alliance.org/">LoRa</a> for communication.</p>
+<p>In these cases the protocol adapter will authenticate the gateway component instead of the device for which it wants to publish data. In order to verify that the gateway is <em>authorized</em> to publish data on behalf of the particular device, the protocol adapter should include the gateway&rsquo;s device identifier (as determined during the authentication process) in its invocation of the Device Registration API&rsquo;s <em>assert Device Registration</em> operation.</p>
+<p>The Device Registry will then do the following:</p>
+<ol>
+<li>Verify that the device exists and is enabled.</li>
+<li>Verify that the gateway exists and is enabled.</li>
+<li>Verify that the device&rsquo;s registration information contains a property called <code>via</code> and that its value is either the gateway&rsquo;s device identifier or a JSON array which contains the gateway&rsquo;s device identifier as one of its values.</li>
+</ol>
+<p>Only if all conditions are met, the Device Registry returns an assertion of the device&rsquo;s registration status. The protocol adapter can then forward the published data to the AMQP Messaging Network in the same way as for any device that connects directly to the adapter.</p>
+<p>The example configuration file (located at <code>/deploy/src/main/deploy/example-device-identities.json</code>) includes a device and a corresponding gateway configured in this way.</p>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1663249432"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663249432"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663249432"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663249432"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663249432"></script>
+        <script src="/hono/docs/js/search.js?1663249432"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/1.2/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/1.2/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/1.2/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/1.2/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/1.2/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/1.2/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/1.2/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/1.2/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/1.2/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/1.2/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/1.2/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/1.2/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/1.2/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.2/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/1.2/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/kura-adapter/" title="Kura Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/kura-adapter/">Kura Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/1.2/user-guide/sigfox-adapter/">Sigfox Adapter</a></li>
+          <li data-nav-id="/hono/docs/1.2/user-guide/jmeter_load_tests/" title="Load Tests with JMeter" class="dd-item"><a href="/hono/docs/1.2/user-guide/jmeter_load_tests/">Load Tests with JMeter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/" title="Admin Guide" class="dd-item parent"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle" checked/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/1.2/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/device-registry-config/" title="Device Registry Configuration" class="dd-item active"><a href="/hono/docs/1.2/admin-guide/device-registry-config/">Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/device-connection-config/" title="Configuring the Device Connection Service" class="dd-item"><a href="/hono/docs/1.2/admin-guide/device-connection-config/">Device Connection Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/kura-adapter-config/" title="Kura Adapter Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/kura-adapter-config/">Kura Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/1.2/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/1.2/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/1.2/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/1.2/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/1.2/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/1.2/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/1.2/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/1.2/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/1.2/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/1.2/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/1.2/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/1.2/api/telemetry/" title="Telemetry API Specification" class="dd-item"><a href="/hono/docs/1.2/api/telemetry/">Telemetry API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/event/" title="Event API Specification" class="dd-item"><a href="/hono/docs/1.2/api/event/">Event API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/command-and-control/" title="Command &amp; Control API Specification" class="dd-item"><a href="/hono/docs/1.2/api/command-and-control/">Command &amp; Control API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/1.2/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/device-connection/" title="Device Connection API Specification" class="dd-item"><a href="/hono/docs/1.2/api/device-connection/">Device Connection API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/1.2/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/1.2/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/1.2/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/1.2/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/1.2/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/1.2/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/1.2/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/1.2/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/1.2/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/1.2/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/1.2/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/1.2/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/1.2/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/1.2/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/1.2/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/1.2/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/1.2/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/1.2/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/1.2/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/admin-guide/device-registry-config/">stable (2.1)</option>
+                    <option id="2.1" value="/hono/docs/2.1/admin-guide/device-registry-config/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/admin-guide/device-registry-config/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/admin-guide/device-registry-config/">1.12</option>
+                    <option id="1.11" value="/hono/docs/1.11/admin-guide/device-registry-config/">1.11</option>
+                    <option id="1.10" value="/hono/docs/1.10/admin-guide/device-registry-config/">1.10</option>
+                    <option id="1.9" value="/hono/docs/1.9/admin-guide/device-registry-config/">1.9</option>
+                    <option id="1.8" value="/hono/docs/1.8/admin-guide/device-registry-config/">1.8</option>
+                    <option id="1.7" value="/hono/docs/1.7/admin-guide/device-registry-config/">1.7</option>
+                    <option id="1.6" value="/hono/docs/1.6/admin-guide/device-registry-config/">1.6</option>
+                    <option id="1.5" value="/hono/docs/1.5/admin-guide/device-registry-config/">1.5</option>
+                    <option id="1.4" value="/hono/docs/1.4/admin-guide/device-registry-config/">1.4</option>
+                    <option id="1.3" value="/hono/docs/1.3/admin-guide/device-registry-config/">1.3</option>
+                    <option id="1.2" value="/hono/docs/1.2/admin-guide/device-registry-config/" selected>1.2</option>
+                    <option id="1.1" value="/hono/docs/1.1/admin-guide/device-registry-config/">1.1</option>
+                    <option id="1.0" value="/hono/docs/1.0/admin-guide/device-registry-config/">1.0</option>
+                    <option id="dev" value="/hono/docs/dev/admin-guide/device-registry-config/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1663249432"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663249432"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663249432"></script>
+    <script src="/hono/docs/js/theme.js?1663249432"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

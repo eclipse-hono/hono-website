@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>What is new &amp; noteworthy in Hono? :: Eclipse Hono&trade;</title>
+<meta name="author" content="The Eclipse Hono Project" />
+
+
+
+
+
+<meta name="description" content="Information about changes in recent Hono releases. Includes new features, fixes, enhancements and API changes.">
+
+<meta name="generator" content="Hugo 0.102.3" />
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/hono/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/hono/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/hono/css/custom.css?1663249374" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/hono/img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/hono/img/apple-touch-icon.png" />
+
+
+<link href="/hono/css/owl.carousel.css" rel="stylesheet">
+<link href="/hono/css/owl.theme.css" rel="stylesheet">
+
+
+<link rel="alternate" href="https://www.eclipse.org/index.xml" type="application/rss+xml" title="Eclipse Hono&amp;trade;">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_us">
+<meta property="og:site_name" content="Eclipse Hono&amp;trade;">
+<meta property="og:title" content="What is new &amp; noteworthy in Hono?">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.eclipse.org/hono/release-notes/" />
+<meta property="og:description" content="Information about changes in recent Hono releases. Includes new features, fixes, enhancements and API changes.">
+<meta property="og:image" content="https://www.eclipse.org/hono/img/sharing-default.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="700">
+  <meta property="og:image:height" content="498">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="What is new &amp; noteworthy in Hono?">
+
+<meta name="twitter:image" content="https://www.eclipse.org/hono/img/sharing-default.png">
+
+<meta name="twitter:description" content="Information about changes in recent Hono releases. Includes new features, fixes, enhancements and API changes.">
+
+
+    
+  </head>
+
+  <body>
+
+    <div id="all">
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/">
+                    
+                      <img src="/hono/img/HONO-Logo_Bild-Wort_quer-s-310x120px.svg" alt="What is new &amp; noteworthy in Hono? logo" class="hidden-xs hidden-sm" />
+                      <img src="/hono/img/HONO-Logo_Bild-Wort_quer-s-310x120px.svg" alt="What is new &amp; noteworthy in Hono? logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">What is new &amp; noteworthy in Hono? - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/docs/getting-started/">Getting Started</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/docs/">Documentation</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/downloads/">Download</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/sandbox/">Sandbox</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/hono/community/contributing/">Contributing</a></li>
+                            
+                            <li><a href="/hono/community/presentations/">Resources</a></li>
+                            
+                            <li><a href="/hono/community/get-in-touch/">Get in Touch</a></li>
+                            
+                            <li><a href="/hono/community/road-map/">Road Map</a></li>
+                            
+                            <li><a href="/hono/community/thankyou/">Thank you</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>What is new &amp; noteworthy in Hono?</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div>
+                          <h2 id="220">2.2.0</h2>
+<h3 id="new-features">New features</h3>
+<ul>
+<li>All Hono components now support reading ECC based keys from PEM files that contain the Base64 encoded DER-encoding of an
+ECPrivateKey as described in <a href="https://datatracker.ietf.org/doc/html/rfc5915#section-4">RFC 5915, Section 4</a>.</li>
+<li>The build process now supports creating container images for the <code>arm64</code> platform. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/dev-guide/building_hono/">Developer Guide</a> for details.</li>
+</ul>
+<h2 id="210">2.1.0</h2>
+<h3 id="new-features-1">New features</h3>
+<ul>
+<li>The tracing configuration has been extended to now also support a rate-limiting sampler. See the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#tracing">Monitoring &amp; Tracing guide</a> for details.</li>
+<li>Add new metric for tracking the total number of Tenants in Hono.</li>
+<li>The Auth server component now provides an HTTP endpoint for retrieving the keys that applications should use for
+validating the signature of tokens issued by the Auth server. The keys are being transferred by means of a
+JSON Web Key set as defined by <a href="https://datatracker.ietf.org/doc/html/rfc7517">RFC 7517</a>. The Device Registry and
+Command Router components will use this endpoint to periodically download the keys if no key material has been configured
+explicitly.</li>
+<li>The handling of messages that have no payload and/or no content type has been harmonized across the protocol adapters.
+Adapters now uniformly accept messages from devices that have no payload if the device explicitly sets a non-empty content
+type on the message. Messages with a non-empty payload can be uploaded without specifying a content type. In the messages
+being forwarded to downstream consumers, the adapters will either use the devices&rsquo;s default content type, if defined, or
+otherwise fall back to <code>application/octet-stream</code> in such cases.</li>
+<li>A Linux x86_64 executable of the command line client has been added to the downloads page.</li>
+</ul>
+<h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The CoAP adapter did not properly consider the reduced minimum RAM requirements for starting up when running as a
+native executable on a SubstrateVM. This could have resulted in the adapter not starting up at all, if configured
+with less than ~150MB of RAM. This has been fixed.</li>
+<li>The HTTP protocol adapter and Device Registry now support a configuration property for explicitly setting a request&rsquo;s
+idle timeout. The timeout is configured with the property <em>idleTimeout</em>. This determines if a request will time out
+and be closed if no data is received or sent within the idle timeout period. The idle timeout is in seconds.
+A zero value means no timeout is used.</li>
+<li>The MQTT adapter skipped command or error (the first one) subscription if both were requested for the same device.
+This has been fixed.</li>
+<li>On startup, Hono components could get into a state that caused certain Kafka client metrics to not get reported.
+This has been fixed.</li>
+<li>Default messaging type changed to Kafka. Changed related documentation pages.</li>
+<li>The native executable based Lora adapter container image failed to forward Lora meta information in messages being
+sent downstream. This has been fixed.</li>
+<li>The Command Router component might not have reached the <em>ready</em> state in case the Kafka broker got restarted during
+Command Router startup. This has been fixed.</li>
+<li>The mechanism used by the Command Router component to determine the state of protocol adapter instances has been
+improved.</li>
+<li>The CoAP adapter returned a <code>500</code> error code for PUT requests without a device identifier in the URI path. This has
+been fixed, now returning a response with a <code>404</code> error code instead.</li>
+<li>The command line client no longer throws an NPE when trying to upload an empty message without a content type to the
+AMQP adapter.</li>
+</ul>
+<h2 id="202">2.0.2</h2>
+<h3 id="fixes--enhancements-1">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The default value for the HTTP protocol adapter <code>hono.http.idleTimeout</code> configuration property has been increased
+from 60 to 75 seconds. This means HTTP requests with a <code>hono-ttd</code> value of 60 seconds (which is the tenant
+configuration <code>max-ttd</code> default) will not cause the idle timeout to be reached.</li>
+<li>The mechanism used by the Command Router component to determine the state of protocol adapter instances has been
+improved.</li>
+<li>The CoAP adapter returned a 500 error code for PUT requests without a device identifier in the URI path. This has
+been fixed, now returning a response with a 404 error code instead.</li>
+</ul>
+<h2 id="201">2.0.1</h2>
+<h3 id="fixes--enhancements-2">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The CoAP adapter did not properly consider the reduced minimum RAM requirements for starting up when running as a
+native executable on a SubstrateVM. This could have resulted in the adapter not starting up at all, if configured
+with less than ~150MB of RAM. This has been fixed.</li>
+<li>The HTTP protocol adapter and Device Registry now support a configuration property for explicitly setting the idle timeout.
+The timeout is configured with the property <code>idleTimeout</code>. This determines if a connection will timeout and be closed
+if no data is received or sent within the idle timeout period. The idle timeout is in seconds.
+A zero value means no timeout is used.</li>
+<li>The MQTT adapter skipped command or error (the first one) subscription if both are requested for the same device. This has been fixed.</li>
+<li>On startup, Hono components could get into a state that caused certain Kafka client metrics to not get reported.
+This has been fixed.</li>
+<li>The native executable based Lora adapter container image failed to forward Lora meta information in messages being
+sent downstream. This has been fixed.</li>
+<li>Default messaging type changed to Kafka. Changed related documentation pages.</li>
+<li>The Command Router component possibly did not reach the &ldquo;ready&rdquo; state in case the Kafka broker got restarted during
+Command Router startup. This has been fixed.</li>
+<li>The CoAP protocol adapter now uses Eclipse Californium 3.6.0.</li>
+<li>Upgraded to JJWT 0.11.5 which contains additional security guards against an ECDSA bug in Java SE versions
+15-15.0.6, 17-17.0.2, and 18 (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-21449">CVE-2022-21449</a>).
+Note: if your application does not use these JVM versions, you are not exposed to the JVM vulnerability.
+The CVE is not a bug within JJWT itself - it is a bug within the above listed JVM versions, and the JJWT 0.11.5 release
+adds additional precautions within JJWT in case an application team is not able to upgrade their JVM in a timely manner.</li>
+<li>The Auth server failed to create a token when configured with an ECC based private key that does not use the P-256 curve.
+This has been fixed.</li>
+</ul>
+<h2 id="200">2.0.0</h2>
+<h3 id="new-features-2">New features</h3>
+<ul>
+<li>The HTTP protocol adapter now allows authenticated gateway devices to omit the tenant ID from the URI of requests
+used to upload telemetry, event or command response messages.</li>
+<li>The CoAP protocol adapter now allows authenticated gateway devices to omit the tenant ID from the URI of requests
+used to upload telemetry, event or command response messages.</li>
+<li>The AMQP protocol adapter now allows authenticated gateway devices to omit the tenant ID from the address of
+messages used to upload telemetry or event messages.</li>
+<li>The MQTT protocol adapter now allows authenticated gateway devices to omit the tenant ID from the topic of
+messages used to upload telemetry or event messages.</li>
+<li>The CoAP adapter now exposes its resources using short endpoint name alternatives to the existing resources.
+Using the short endpoint names, devices can save a few bytes per request.</li>
+<li>The protocol adapters now support a configuration property for explicitly setting the percentage of the heap memory
+not to be used for maintaining device connections. This can be used to tune the adapter&rsquo;s memory utilization with
+regard to the overall amount of memory available to the JVM and the characteristics of the garbage collector being
+used.</li>
+</ul>
+<h3 id="fixes--enhancements-3">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus variant of the MongoDB based device registry failed to start up if the <em>hono.mongodb.dbName</em> property
+was not set. However, the DB name should not be required if a connection string is set using the
+<em>hono.mongodb.connectionString</em> property. This has been fixed.</li>
+<li>When a tenant or device gets disabled or deleted, any open AMQP or MQTT connections from clients having authenticated
+themselves as belonging to that tenant or device are getting closed now.</li>
+<li>Using OpenSSL with the Quarkus based variant of Hono components did not work as described in the Secure Communication
+guide. This has been fixed.</li>
+<li>The connection pool configuration for the HotRod client in the Quarkus variant of the Command Router component
+didn&rsquo;t support using property names in camel-case. This has been fixed.</li>
+<li><em>HonoConnectionImpl</em> instances failed to release/close the underlying TCP/TLS connection when its <em>disconnect</em> or
+<em>shutdown</em> method had been invoked. This has been fixed.</li>
+<li>The LoraWAN protocol adapter has been extended with support for <em>Live Objects</em> provider.</li>
+<li>In the Quarkus variants of the MongoDB device registry and the Hono auth component, the provided metrics did not
+contain the default set of tags, as used in the other Hono components (e.g. <em>host</em> or <em>component-name</em>). This has been
+fixed.</li>
+<li>The device registry components now support the reporting of Kafka client metrics.</li>
+<li>The Java source code level of the Hono code has been raised from 11 to 17. This also means that a JDK version 17 or
+later is required for building and running Hono.</li>
+<li>The mechanism to delete obsolete <code>hono.command_internal.*</code> Kafka topics could have deleted still used topics in
+case the Kubernetes API server gave information about the running containers with a delay of several seconds. This has
+been fixed.</li>
+<li>The native executable based images of protocol adapters failed to deserialize a registration assertion if it included command
+endpoint information that had been configured for the device. This has been fixed.</li>
+</ul>
+<h3 id="api-changes">API Changes</h3>
+<ul>
+<li>The MQTT adapter no longer accepts the <code>+</code> wild card character for the tenant ID in a topic filter used for
+subscribing to commands.</li>
+<li>Support for configuration properties that had been marked as deprecated in Hono versions before 2.0.0 has been
+removed.</li>
+<li>The Kura protocol adapter has been removed. Eclipse Kura gateways starting with version 4 can still connect to Hono
+using Hono&rsquo;s standard MQTT adapter.</li>
+<li>The file based device registry has been removed.</li>
+<li>The Spring Boot based variant of the AMQP protocol adapter has been removed.</li>
+<li>The Spring Boot based variant of the HTTP protocol adapter has been removed.</li>
+<li>The Spring Boot based variant of the MQTT protocol adapter has been removed.</li>
+<li>Usage and implementations of the Device Connection API have been removed.</li>
+<li>The Spring Boot based variant of the Command Router has been removed.</li>
+<li>The <em>amqp-device</em> client has been moved from the <em>client</em> module to the new <em>client-device-amqp</em> module. The
+<code>org.eclipse.hono.client.device.amqp.AmqpAdapterClientFactory</code> class is superseded by the new
+<code>org.eclipse.hono.client.device.amqp.AmqpAdapterClient</code> class.</li>
+<li>Removed deprecated <em>startServiceClient</em>, <em>stopServiceClient</em> and <em>updateLastGateway</em> methods of class
+<em>org.eclipse.hono.adapter.AbstractProtocolAdapterBase</em>.</li>
+<li>Removed deprecated <em>org.eclipse.hono.util.BufferResult</em> class.</li>
+<li>Removed deprecated <em>org.eclipse.hono.service.http.AbstractEventBusHttpEndpoint</em> class.</li>
+<li>The <em>client</em> module has been removed. Its deprecated classes have been removed and the remaining classes have been
+moved to the <em>client-common</em>, <em>amqp-connection</em> and <em>amqp-common</em> modules. The classes for configuring AMQP client
+connections have been moved from the <em>core</em> to the <em>amqp-connection</em> module.</li>
+<li>The <em>core</em> module no longer supports Java 8 but has been changed to require at least Java 17 as all the other modules.</li>
+<li>The <em>core</em> module is no longer an OSGi bundle.</li>
+<li>The <code>org.eclipse.hono.service.auth.AuthenticationService</code>&rsquo;s method signatures have been changed to return a Future
+instead of accepting a <code>Handler&lt;AsyncResult&gt;</code>.</li>
+<li>The <code>org.eclipse.hono.client.amqp.connection.ConnectionFactory</code>&rsquo;s method signatures have been changed to return a Future
+instead of accepting a <code>Handler&lt;AsyncResult&gt;</code>.</li>
+<li>Removed unused classes <code>org.eclipse.hono.util.EventBusMessage</code> and <code>org.eclipse.hono.util.MessageTap</code>.</li>
+<li>Moved <code>org.eclipse.hono.util.BaseMessageFilter</code> to service-base module.</li>
+<li>Moved <code>org.eclipse.hono.util.AmqpErrorException</code> to amqp-connection client module.</li>
+<li>Moved <code>org.eclipse.hono.util.TimeUntilDisconnectNotification</code> to application client module.</li>
+<li>The <code>org.eclipse.hono.util.RequestResponseResult</code> class hierarchy&rsquo;s dependency on the Proton-J <code>ApplicationProperties</code> class
+has been removed. Instead, the constructors now accept a standard Map containing the properties.</li>
+<li>Moved several AMQP 1.0 specific constants from <code>org.eclipse.hono.util.Constants</code> to
+<code>org.eclipse.hono.client.amqp.connection.AmqpConstants</code> in the amqp-connection client module.</li>
+<li>Moved the code for injecting and extracting a tracing context to/from AMQP 1.0 messages to the amqp-connection
+client module.</li>
+<li>Moved <code>org.eclipse.hono.util.TelemetryExecutionContext</code> to adapter-base module.</li>
+<li>The <em>amqp-device</em> client module no longer supports including arbitrary properties in telemetry, event and command
+response messages because it was undefined how these properties would be processed by the AMQP protocol adapter.</li>
+<li>The <em>application</em> client module no longer supports including arbitrary properties in command messages
+because it was undefined how these properties would be processed by the Hono components.</li>
+<li>The order of the method parameters of the <code>org.eclipse.hono.application.client.CommandSender</code> interface have been changed
+so that mandatory parameters come first.</li>
+<li>The <em>hono-service-base-quarkus</em> module has been removed. Its content has been integrated in the <em>hono-service-base</em> module.</li>
+<li>The <em>hono-adapter-base-quarkus</em> module has been removed. Its content has been integrated in the <em>hono-adapter-base</em> module.</li>
+<li>The <em>amqp-device</em> client no longer requires supplying a tenant ID when creating a client or invoking any of its
+methods.</li>
+<li>The Hono components now export tracing data using the OpenTelemetry Protocol (OTLP). See the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#tracing">Monitoring &amp; Tracing guide</a> for details on how to
+configure the trace sampling and the OpenTelemetry Collector endpoint to send the traces to. The <code>jaeger</code> Maven build
+profile used for including the Jaeger client in the Hono images has been removed. In order to forward Hono traces to a
+Jaeger back-end, the OpenTelemetry Collector should be configured accordingly.</li>
+<li>The Hono components now support reading and writing trace context information from and to messages exchanged with
+other applications in the format defined by the <a href="https://www.w3.org/TR/trace-context/">W3C Trace Context</a> and the
+<a href="https://www.w3.org/TR/baggage/">W3C Baggage</a> specifications. The Jaeger native propagation format used in earlier Hono
+versions is not supported any more.</li>
+<li>The Hono command line client has been re-implemented using the Picocli framework. The synopsis of the client has been
+changed to provide for a richer user experience. The Getting Started guide has been updated to use the new command
+line client as well.</li>
+<li>The Hono protocol adapter, command router and device registry Maven modules and Docker images have been renamed,
+removing the <em>-vertx</em> and <em>-quarkus</em> parts from the names.</li>
+<li>The <em>hono-adapters-quarkus</em> and <em>hono-services-quarkus</em> Maven modules, used as parent modules for protocol adapter
+and service implementations, have been renamed to <em>hono-adapters-parent</em> and <em>hono-services-parent</em>, respectively.</li>
+<li>The <em>hono.messages</em> metrics have been renamed to <em>hono.telemetry</em> and <em>hono.messages.received</em> has been renamed to
+<em>hono.telemetry.processing.duration</em>.</li>
+<li>The <em>hono.commands</em> metrics have been renamed to <em>hono.command</em>.</li>
+<li>The <em>hono.downstream</em> metrics have been renamed to <em>hono.amqp</em>, <em>hono.downstream.sent</em> has been renamed to
+<em>hono.amqp.delivery.duration</em> and <em>hono.downstream.full</em> has been renamed to <em>hono.amqp.nocredit</em>.</li>
+<li>Hono’s service components and protocol adapters now use the Quarkus SmallRye Health extension to implement the health
+check and metrics endpoints. That means the health check server configuration is now done via the corresponding Quarkus
+configuration properties and not via <em>hono.healthCheck</em> properties any more. See the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#health-check-server-configuration">Monitoring &amp; Tracing guide</a>
+for details on how to configure the health check server.</li>
+</ul>
+<h3 id="deprecations">Deprecations</h3>
+<ul>
+<li>Support for implementing readiness and liveness checks based on Vert.x Health Checks has been deprecated and will be
+removed in a future version. New health checks should be implemented according to MicroProfile Health.</li>
+</ul>
+<h2 id="1123">1.12.3</h2>
+<h3 id="fixes--enhancements-4">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The mechanism to delete obsolete <code>hono.command_internal.*</code> Kafka topics could have deleted still used topics in
+case the Kubernetes API server gave information about the running containers with a delay of several seconds. This has
+been fixed.</li>
+<li>The CoAP adapter did not properly consider the reduced minimum RAM requirements for starting up when running as a
+native executable on a SubstrateVM. This could have resulted in the adapter not starting up at all, if configured
+with less than ~150MB of RAM. This has been fixed.</li>
+<li>The HTTP protocol adapter and Device Registry now support a configuration property for explicitly setting the idle timeout.
+The timeout is configured with the property <code>idleTimeout</code>. This determines if a connection will timeout and be closed
+if no data is received or sent within the idle timeout period. The idle timeout is in seconds.
+A zero value means no timeout is used.</li>
+<li>The MQTT adapter skipped command or error (the first one) subscription if both are requested for the same device. This has been fixed.</li>
+<li>The native executable based Lora adapter container image failed to forward Lora meta information in messages being
+sent downstream. This has been fixed.</li>
+<li>Upgraded to JJWT 0.11.5 which contains additional security guards against an ECDSA bug in Java SE versions
+15-15.0.6, 17-17.0.2, and 18 (<a href="https://nvd.nist.gov/vuln/detail/CVE-2022-21449">CVE-2022-21449</a>).
+Note: if your application does not use these JVM versions, you are not exposed to the JVM vulnerability.
+The CVE is not a bug within JJWT itself - it is a bug within the above listed JVM versions, and the JJWT 0.11.5 release
+adds additional precautions within JJWT in case an application team is not able to upgrade their JVM in a timely manner.</li>
+<li>The Auth server failed to create a token when configured with an ECC based private key that does not use the P-256 curve.
+This has been fixed.</li>
+<li>The CoAP protocol adapter now uses Eclipse Californium 2.7.3.</li>
+</ul>
+<h2 id="1122">1.12.2</h2>
+<h3 id="fixes--enhancements-5">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus variant of the MongoDB device registry did not accept HTTP endpoint credentials that worked with the
+Spring Boot based variant because password hashes were created in lower case instead of upper case. This has been fixed.</li>
+<li>In some cases, invalid HTTP requests to the HTTP adapter or the Device Registry caused a response
+with a 500 status code instead of the corresponding 4xx status code. This has been fixed.</li>
+<li><em>HonoConnectionImpl</em> instances failed to release/close the underlying TCP/TLS connection when its <em>disconnect</em> or
+<em>shutdown</em> method had been invoked. This has been fixed.</li>
+<li>In the Quarkus variants of the MongoDB device registry and the Hono auth component, the provided metrics did not
+contain the default set of tags, as used in the other Hono components (e.g. <em>host</em> or <em>component-name</em>). This has been
+fixed.</li>
+</ul>
+<h2 id="1121">1.12.1</h2>
+<h3 id="fixes--enhancements-6">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus variant of the MongoDB based device registry failed to start up if the <em>hono.mongodb.dbName</em> property
+was not set. However, the DB name should not be required if a connection string is set using the
+<em>hono.mongodb.connectionString</em> property. This has been fixed.</li>
+<li>Using OpenSSL with the Quarkus based variant of Hono components did not work as described in the Secure Communication
+guide. This has been fixed.</li>
+<li>The connection pool configuration for the HotRod client in the Quarkus variant of the Command Router component
+didn&rsquo;t support using property names in camel-case. This has been fixed.</li>
+</ul>
+<h2 id="1120">1.12.0</h2>
+<h3 id="new-features-3">New Features</h3>
+<ul>
+<li>The Mongo DB based device registry now supports multiple tenants to use the same trust anchors for authenticating
+devices based on client certificates. The devices belonging to such tenants need to indicate the tenant identifier
+using the Server Name Indication extension during their TLS handshake with a protocol adapter. Please refer to the
+Device Registry Management API for details on how to configure tenants accordingly. Please refer to the protocol
+adapter user guides and the Device Identity concept page for details regarding device authentication based on client
+certificates.</li>
+<li>A Quarkus based variant of the MongoDB device registry has been added.</li>
+</ul>
+<h3 id="fixes--enhancements-7">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The device registry containers might not have started up properly when used with Kafka as the messaging
+infrastructure. This has been fixed.</li>
+<li>The MongoDB device registry did not accept HTTP endpoint credentials that worked with Hono &lt;= 1.10 because
+password hashes were created in lower case instead of upper case. This has been fixed.</li>
+<li>The native executable of the Command Router component did not start when configured with an embedded cache.
+This has been fixed.</li>
+<li>There was an issue trying to send connection events concerning unauthenticated MQTT/AMQP devices. This has been fixed.</li>
+</ul>
+<h3 id="deprecations-1">Deprecations</h3>
+<ul>
+<li>The Spring Boot based variant of the MongoDB device registry has been deprecated and marked for removal in Hono 2.0.0.</li>
+</ul>
+<h3 id="api-changes-1">API Changes</h3>
+<ul>
+<li>The MongoDB device registry now uses <code>PBKDF2</code> as default hash algorithm for the HTTP endpoint credential verification.
+Hono deployments updated from an earlier version with password hashes created using the previous SHA-512 default need
+to either create new password hashes or set <code>hono.registry.http.auth.hashAlgorithm</code> to <code>SHA512</code>. See the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/mongodb-device-registry-config/#service-configuration">MongoDB based registry configuration guide</a>
+for details.</li>
+</ul>
+<h2 id="1113">1.11.3</h2>
+<h3 id="fixes--enhancements-8">Fixes &amp; Enhancements</h3>
+<ul>
+<li><em>HonoConnectionImpl</em> instances failed to release/close the underlying TCP/TLS connection when its <em>disconnect</em> or
+<em>shutdown</em> method had been invoked. This has been fixed.</li>
+<li>In the Quarkus variant of the Hono auth component, the provided metrics did not contain the default set of tags, as
+used in the other Hono components (e.g. <em>host</em> or <em>component-name</em>). This has been fixed.</li>
+</ul>
+<h2 id="1112">1.11.2</h2>
+<h3 id="fixes--enhancements-9">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The MongoDB device registry did not accept HTTP endpoint credentials that worked with Hono &lt;= 1.10 because
+password hashes were created in lower case instead of upper case. This has been fixed.</li>
+<li>The native executable of the Command Router component did not start when configured with an embedded cache.
+This has been fixed.</li>
+<li>There was an issue trying to send connection events concerning unauthenticated MQTT/AMQP devices. This has been fixed.</li>
+</ul>
+<h2 id="1111">1.11.1</h2>
+<h3 id="fixes--enhancements-10">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The device registry containers might not have started up properly when used with Kafka as the messaging
+infrastructure. This has been fixed.</li>
+</ul>
+<h2 id="1110">1.11.0</h2>
+<h3 id="new-features-4">New Features</h3>
+<ul>
+<li>The Authentication Server now also reports the <code>hono.connections.attempts</code> metric which counts the number of authentication
+attempts made by clients.</li>
+<li>The JDBC DB based registry now also supports enforcement of registration limits configured at the tenant level.
+In particular, the maximum number of devices and the maximum number of credentials per device can be set in
+a tenant&rsquo;s registration-limits property. Please refer to the User Guide for details.</li>
+<li>Kafka clients used by a component can now be configured individually instead of all clients of a type using the same
+configuration. The prefixes that are prepended to the configuration properties of the native Kafka client have
+changed. For existing configuration properties prefixed with <code>hono.kafka.commonClientConfig</code> properties, no change is
+needed. Other configurations with specific consumer/producer/admin client properties have to be adapted. Please refer
+to the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration">Hono Kafka Client Configuration Guide</a> for details.</li>
+<li>The protocol adapters now include a <em>ttl</em> header/property in every message being forwarded, regardless of message
+type. This allows a consumer of a message to easily determine if the message should be processed or considered
+<em>expired</em> already. The device registry supports the definition of default <em>ttl</em> values for the different types of
+messages at both the tenant and device level. Please refer to the Tenant API for details regarding the
+corresponding default property names to use.</li>
+</ul>
+<h3 id="fixes--enhancements-11">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The number of credits that the Mongo DB based registry would flow to a newly connected client could not be set using
+the documented environment variable <code>HONO_CREDENTIALS_SVC_RECEIVERLINKCREDIT</code>. Instead, the initial link credit can be
+configured using environment variable <code>HONO_REGISTRY_AMQP_RECEIVERLINKCREDIT</code>. The Mongo DB based registry&rsquo;s admin guide
+has been updated accordingly.</li>
+<li>When using Kafka messaging, there could possibly be an exception during startup of the Command Router component,
+meaning the component was potentially only available after a number of startup attempts. This has been fixed.</li>
+<li>The Quarkus based variant of the Lora protocol adapter did not start up unless the <code>HONO_LORA_COMMANDENABLEDTENANTS</code>
+environment variable had been set. This has been fixed by removing this (unused) variable from the Lora adapter
+altogether.</li>
+<li>All downstream messages that can be consumed via Hono&rsquo;s north bound APIs now include a <code>creation-time</code> header
+which indicates the point in time at which the message has been created.</li>
+<li>The error messages returned by protocol adapters when sending commands received via Kafka now include a reasonable
+error description.</li>
+<li>The tenant&rsquo;s configuration property <code>auto-provisioning-device-id-template</code> is now extended to support more
+subjectDN&rsquo;s attributes namely <em>Organizational Unit Name (OU)</em> and <em>Organization Name (O)</em>. For more information
+please refer to the <a href="https://www.eclipse.org/hono/docs/api/management#/tenants/createTenant">Device Registry Management API</a>.</li>
+<li>The container images published by the Hono project are now built on top of Java 17 base images provided by the
+<a href="https://adoptium.net/">Eclipse Temurin project</a>.</li>
+<li>The Hono container images released with tag 1.10.0 failed to start up when not running as user <code>root</code> because the
+Java process was lacking authority to create a temporary directory in the file system&rsquo;s root folder (<code>/</code>).
+This has been fixed.</li>
+<li>Command response messages published via Kafka did not contain the <code>tenant_id</code> header. This has been fixed.</li>
+<li>Hono&rsquo;s components now support configuring the ciphers used in the TLS handshake when connecting to Infinispan servers.
+For the Command Router component <a href="https://www.eclipse.org/hono/docs/admin-guide/command-router-config/#remote-cache">remote data grid configuration</a>
+this can be done by setting the <code>hono.commandRouter.cache.remote.sslCiphers</code> property.</li>
+<li>When using Kafka messaging, the Hono components will now retry creating the Kafka clients in case the Kafka bootstrap
+server URLs are not yet resolvable. This will prevent unnecessary restarts of the Hono components during initial
+deployment.</li>
+<li>The native image variant of the Command Router component failed to connect to an Infinispan server using SASL
+SCRAM. This has been fixed.</li>
+<li>The lora adapter supports unconfirmed uplink data for the firefly provider.</li>
+<li>The poll timeout used by the Kafka consumer clients in the Hono components can now be configured individually.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration/#consumer-configuration-properties">Hono Kafka Client Configuration Guide</a>
+for details.</li>
+</ul>
+<h2 id="deprecations-2">Deprecations</h2>
+<ul>
+<li>The Spring Boot based variant of the protocol adapters has been deprecated and marked for removal in Hono 2.0.0.</li>
+<li>The Kura 3 protocol adapter has been deprecated and marked for removal in Hono 2.0.0. Support for Kura version 4 and
+later is still available by means of Hono&rsquo;s standard MQTT adapter.</li>
+</ul>
+<h2 id="api-changes-2">API Changes</h2>
+<ul>
+<li>The <code>hono.kafka.defaultClientIdPrefix</code> configuration property needs to be removed from existing configurations.
+Configuring parts of the created Kafka client identifiers should usually not be needed any more. To still set a custom
+part, the <code>client.id</code> property value may be used instead. It is adopted as prefix for created client identifiers.</li>
+<li>A new API for notifications among Hono components has been introduced. For Hono deployments using an AMQP messaging
+network, it has to be made sure that addresses with the <code>notification/</code> prefix are configured to use multicast.
+See the <code>tests/src/test/resources/qpid/qdrouterd-with-broker.json</code> file for an example Qpid Dispatch Router
+configuration.</li>
+</ul>
+<h2 id="1101">1.10.1</h2>
+<h3 id="fixes--enhancements-12">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The number of credits that the Mongo DB based registry would flow to a newly connected client could not be set using
+the documented environment variable <code>HONO_CREDENTIALS_SVC_RECEIVERLINKCREDIT</code>. Instead, the initial link credit can be
+configured using environment variable <code>HONO_REGISTRY_AMQP_RECEIVERLINKCREDIT</code>. The Mongo DB based registry&rsquo;s admin guide
+has been updated accordingly.</li>
+<li>When using Kafka messaging, there could possibly be an exception during startup of the Command Router component,
+meaning the component was potentially only available after a number of startup attempts. This has been fixed.</li>
+<li>The Quarkus based variant of the Lora protocol adapter did not start up unless the <code>HONO_LORA_COMMANDENABLEDTENANTS</code>
+environment variable had been set. This has been fixed by removing this (unused) variable from the Lora adapter
+altogether.</li>
+<li>The Hono container images released with tag 1.10.0 failed to start up when not running as user <code>root</code> because the
+Java process was lacking authority to create a temporary directory in the file system&rsquo;s root folder (<code>/</code>).
+This has been fixed.</li>
+<li>Command response messages published via Kafka did not contain the <code>tenant_id</code> header. This has been fixed.</li>
+<li>Hono&rsquo;s components now support configuring the ciphers used in the TLS handshake when connecting to Infinispan servers.
+For the Command Router component <a href="https://www.eclipse.org/hono/docs/admin-guide/command-router-config/#remote-cache">remote data grid configuration</a>
+this can be done by setting the <code>hono.commandRouter.cache.remote.sslCiphers</code> property.</li>
+<li>When using Kafka messaging, protocol adapters may have shown a prolonged delay in processing command &amp; control messages
+in certain situations in which one Kafka cluster node was shortly unavailable. This has been fixed.</li>
+<li>The native image variant of the Command Router component failed to connect to an Infinispan server using SASL
+SCRAM. This has been fixed.</li>
+<li>The lora adapter supports unconfirmed uplink data for the firefly provider.</li>
+</ul>
+<h2 id="1100">1.10.0</h2>
+<h3 id="new-features-5">New Features</h3>
+<ul>
+<li>The JDBC and Mongo DB based registry implementations now support configuration of a regular expression that should
+be used to validate authentication identifiers (user names) of hashed-password credentials. Please refer to the
+corresponding Admin Guides for details.</li>
+<li>The Command Router component is now able to determine the state of protocol adapter instances, preventing command
+&amp; control messages to be sent to already terminated adapter instances. Hono Kubernetes deployments where not all
+protocol adapters are part of the same Kubernetes cluster and namespace that the Command Router component is in,
+need to disable this feature via the <code>hono.commandRouter.svc.kubernetesBasedAdapterInstanceStatusServiceEnabled</code>
+property. Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/command-router-config/#service-configuration">Command Router Admin Guide</a>
+for details.</li>
+<li>The authentication provider used to guard access to the Mongo DB based registry implementation&rsquo;s HTTP endpoint
+can now be configured using environment variables. Please refer to the registry&rsquo;s Admin Guide for details.</li>
+<li>The Registry Management API has been extended with an operation to delete all devices (including credentials) of a
+tenant. Both the Mongo DB and the JDBC based registry implementations support this operation.</li>
+<li>The protocol adapters and the Command Router component now by default report a set of metrics concerning the clients
+used for sending and receiving messages via Kafka. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration/#kafka-client-metrics-configuration">Hono Kafka Client Configuration Guide</a>
+for additional information.</li>
+</ul>
+<h3 id="fixes--enhancements-13">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus based variants of Hono&rsquo;s components now support configuring the Hot Rod client with a key and/or
+trust store in order to enable TLS secured connections to Infinispan servers and to authenticate using a
+client certificate.</li>
+<li>The MongoDB based DeviceManagementService erroneously removed the original device registration when trying to
+register a new device using the existing device&rsquo;s identifier. This has been fixed.</li>
+<li>The Mongo DB based registry implementation now uses a proper DB index to find credentials by type and authentication
+ID. This will speed up query execution significantly when there are a lot of devices registered for a tenant.</li>
+<li>The JDBC based device registry&rsquo;s <em>get Credentials</em> operation used by the protocol adapters now also supports
+matching credentials against a given <em>client context</em>.</li>
+<li>The device registry implementations did not return a JSON object in a response to a failed request as specified
+in the Device Registry Management API. This has been fixed.</li>
+<li>The MongoDB based registry erroneously rejected requests that would result in multiple tenants having an empty
+set of trusted CAs. This has been fixed.</li>
+<li>The <em>ttl</em> header in downstream messages with Kafka had been set in seconds instead of milliseconds, as defined
+by the <a href="https://www.eclipse.org/hono/docs/api/telemetry-kafka">API specification</a>. This has been fixed.</li>
+</ul>
+<h2 id="191">1.9.1</h2>
+<h3 id="fixes--enhancements-14">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus based variants of Hono&rsquo;s components now support configuring the Hot Rod client with a key and/or
+trust store in order to enable TLS secured connections to Infinispan servers and to authenticate using a
+client certificate.</li>
+<li>The MongoDB based DeviceManagementService erroneously removed the original device registration when trying to
+register a new device using the existing device&rsquo;s identifier. This has been fixed.</li>
+<li>The Mongo DB based registry implementation now uses a proper DB index to find credentials by type and authentication
+ID. This will speed up query execution significantly when there are a lot of devices registered for a tenant.</li>
+<li>The JDBC based device registry&rsquo;s <em>get Credentials</em> operation used by the protocol adapters now also supports
+matching credentials against a given <em>client context</em>.</li>
+<li>The device registry implementations did not return a JSON object in a response to a failed request as specified
+in the Device Registry Management API. This has been fixed.</li>
+<li>The tracing output in error scenarios has been improved in the Mongo DB based device registry.</li>
+<li>The MongoDB based registry erroneously rejected requests that would result in multiple tenants having an empty
+set of trusted CAs. This has been fixed.</li>
+</ul>
+<h2 id="190">1.9.0</h2>
+<h3 id="new-features-6">New Features</h3>
+<ul>
+<li>The Mongo DB based registry now supports enforcement of registration limits configured at the tenant level.
+In particular, the maximum number of devices and the maximum number of credentials per device can be set in
+a tenant&rsquo;s registration-limits property. Please refer to the Mongo DB User Guide for details.</li>
+<li>Hono now sends a device provisioning notification when a device or a gateway is successfully auto-provisioned.</li>
+<li>Northbound applications sending request/response Command &amp; Control messages via Kafka will now receive
+a notification about a failed command delivery via a command response message. See the
+<a href="https://www.eclipse.org/hono/docs/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a> for details.</li>
+<li>The Mongo DB based device registry implementation now supports transparent (symmetric) encryption of Pre-Shared Key
+secrets. Please refer to the user guide for details regarding configuration.</li>
+</ul>
+<h3 id="fixes--enhancements-15">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The value of the properties <code>auto-provisioned</code> and <code>auto-provisioning-notification-sent</code> had always been <em>false</em> when
+retrieving device registration information using the MongoDB based registry implementation. This has been fixed.</li>
+<li>The LoRA protocol adapter will now skip registering itself for receiving commands for a given gateway device if
+that gateway device has no command endpoint defined. The adapter will now also free command consumer resources when
+the idle timeout of the corresponding tenant (configured via the <code>hono.lora.tenantIdleTimeout</code> property) has elapsed
+and the tenant is already removed or disabled.</li>
+<li>The device registry implementations have already supported the limitation of the body size of requests to the
+<code>/tenants</code> and <code>/credentials</code> resources of the HTTP based Device Registration Management API.
+However, the admin guides did not cover the corresponding <code>HONO_REGISTRY_HTTP_MAXPAYLOADSIZE</code> configuration variable
+yet. The <code>/devices</code> resources have been added to the scope of the feature and the admin guides have been amended
+accordingly.</li>
+<li>The protocol adapters now invoke the <em>set last known gateway</em> Command Router service operation a lot less frequently,
+reducing the load on the Command Router component if gateways send messages on behalf of devices at a high rate.
+The <em>last known gateway</em> entry for a device is now set with a delay of at most 400ms as part of a batch request.</li>
+<li>The <code>keyStorePassword</code> and <code>trustStorePassword</code> properties of the Hono clients now also support specifying a file
+to read the password from. If the property value starts with <code>file:</code> then the value after the prefix is interpreted as
+as the path to a file to read the password from.</li>
+<li>The registry implementations failed to reject a request to update a device&rsquo;s empty set of credentials, e.g. right
+after the device has been created, if the request contained a secret having an ID. In fact, the registry
+implementations would have accepted such a request even if the secrets did not contain a password/key/etc at all
+but only the identifier. This has been fixed.</li>
+<li>A potential issue processing Command &amp; Control messages from a Kafka cluster while Command Router instances are
+getting stopped or started has been fixed.</li>
+<li>The rate at which the Command Router component handles Command &amp; Control messages from a Kafka cluster is now
+limited to prevent potential memory issues and reduce the load on dependent services. The limit value is adopted from
+the configured <code>max.poll.records</code> Kafka consumer configuration value.</li>
+<li>The default properties of the Hono CLI tool have been updated to match typical Hono installations. It provides now
+3 types of profiles that need to be combined: 1. select the &ldquo;mode&rdquo;: <code>receiver</code> or <code>command</code>; 2. select the &ldquo;target&rdquo;:
+<code>sandbox</code> or <code>local</code> (aims for deployment in Minikube but works for every deployment of the Helm chart); 3. select the
+&ldquo;messaging-type&rdquo;: <code>kafka</code> (if not set, it defaults to AMQP-based messaging). For details refer to the file
+<code>application.yml</code> of the CLI module.</li>
+</ul>
+<h3 id="deprecations-3">Deprecations</h3>
+<ul>
+<li>The file based device registry implementation has been deprecated and will be removed in a future version of Hono.
+Please use the Mongo DB or JDBC based registry implementations instead. The JDBC based registry can be configured
+to use an H2 database in either <em>embedded</em> or <em>in-memory</em> mode. The former can be used to persist data to the local
+file system while the latter keeps all data in memory only.</li>
+<li>The MongoDB based registry implementation no longer supports the configuration variables for disabling modification
+of existing data. In real life deployments this feature has no meaning because write access to data will need to
+be authorized more explicitly anyway, e.g. at the tenant level.</li>
+</ul>
+<h2 id="api-changes-3">API Changes</h2>
+<ul>
+<li>The client classes used by the protocol adapters for accessing the device registry, the Command Router
+and the south bound C&amp;C APIs have been reorganized into dedicated modules.
+In particular, the <em>adapter</em>, <em>adapter-amqp</em> and <em>adapter-kafka</em> modules have been resolved into modules
+<em>command</em>, <em>command-amqp</em>, <em>command-kafka</em>, <em>registry</em>, <em>registry-amqp</em>, <em>telemetry</em>, <em>telemetry-amqp</em> and
+<em>telemetry-kafka</em>. This allows Hono&rsquo;s components to define more specific dependencies on client classes
+that they require. This change should have no effect on application clients.</li>
+<li>The <em>set last known gateway</em> Command Router API operation has been extended to also support setting multiple
+values in one request.</li>
+</ul>
+<h2 id="end-of-life">End of life</h2>
+<ul>
+<li>The Maven profiles for compiling in support for exporting metrics to Graphite and InfluxDB have been removed.</li>
+</ul>
+<h2 id="183">1.8.3</h2>
+<h3 id="fixes--enhancements-16">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus based variants of Hono&rsquo;s components now support configuring the Hot Rod client with a key and/or
+trust store in order to enable TLS secured connections to Infinispan servers and to authenticate using a
+client certificate.</li>
+<li>The Mongo DB based registry implementation now uses a proper DB index to find credentials by type and authentication
+ID. This will speed up query execution significantly when there are a lot of devices registered for a tenant.</li>
+<li>The MongoDB based registry erroneously rejected requests that would result in multiple tenants having an empty
+set of trusted CAs. This has been fixed.</li>
+</ul>
+<h2 id="182">1.8.2</h2>
+<h3 id="fixes--enhancements-17">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The MQTT adapter didn&rsquo;t close the CONNECT tracing span and didn&rsquo;t report metrics on failed connection attempts. This
+has been fixed.</li>
+<li>The registry implementations failed to reject a request to update a device&rsquo;s empty set of credentials, e.g. right
+after the device has been created, if the request contained a secret having an ID. In fact, the registry
+implementations would have accepted such a request even if the secrets did not contain a password/key/etc at all
+but only the identifier. This has been fixed.</li>
+<li>A potential issue processing Command &amp; Control messages from a Kafka cluster while Command Router instances are
+getting stopped or started has been fixed.</li>
+</ul>
+<h2 id="181">1.8.1</h2>
+<h3 id="fixes--enhancements-18">Fixes &amp; Enhancements</h3>
+<ul>
+<li>Letting the trace sampling settings of the Hono components be defined via sampling strategies served by the Jaeger
+Collector did not work for components using Quarkus native images. This has been fixed.</li>
+<li>Command messages with no payload could not be sent to an MQTT device. This has been fixed.</li>
+<li>The value of the properties <code>auto-provisioned</code> and <code>auto-provisioning-notification-sent</code> are always <em>false</em> while
+retrieving device registration information using the MongoDB based registry implementation. This has been fixed now.</li>
+<li>The Command Router service could have gotten into a state of very high CPU utilization when protocol
+adapters submitted non-existing tenant IDs for which command routing should be re-enabled. This has been fixed.</li>
+<li>The LoRA protocol adapter will now free command consumer resources when the idle timeout of the corresponding tenant
+(configured via the <code>hono.lora.tenantIdleTimeout</code> property) has elapsed and the tenant is already removed or disabled.</li>
+<li>The device registry implementations have already supported the limitation of the body size of requests to the
+<code>/tenants</code> and <code>/credentials</code> resources of the HTTP based Device Registration Management API.
+However, the admin guides did not cover the corresponding <code>HONO_REGISTRY_HTTP_MAXPAYLOADSIZE</code> configuration variable
+yet. The <code>/devices</code> resources have been added to the scope of the feature and the admin guides have been amended
+accordingly.</li>
+</ul>
+<h2 id="180">1.8.0</h2>
+<h3 id="new-features-7">New Features</h3>
+<ul>
+<li>The CoAP adapter now supports authentication of client certificates using ECDSA based cipher suites.</li>
+<li>The JDBC-based device registry implementation now supports the automatic creation of the database schema, both for
+device registration and tenant data. This is especially useful for experimental setups where an embedded database,
+such <a href="http://www.h2database.com/html/features.html#embedded_databases">as H2 provides</a>, is sufficient. To enable
+automatic schema creation, activate the application profile <code>create-schema</code>.</li>
+<li>Hono&rsquo;s components now support configuration of supported TLS cipher suites. The cipher suites can be configured
+separately for both the endpoints exposed by the components as well as the clients used for accessing service
+endpoints exposed by other components. Please refer to the corresponding admin guides for details regarding the
+corresponding configuration variables.</li>
+<li>Hono now supports <em>auto-provisioning</em> of gateways. For more information please refer to the
+<a href="https://www.eclipse.org/hono/docs/concepts/device-provisioning/#automatic-gateway-provisioning">Gateway Provisioning</a>
+concept and to the <a href="https://www.eclipse.org/hono/docs/api/management#/tenants/createTenant">Device Registry Management API</a>
+on how to configure a tenant&rsquo;s trusted CA authority for that.</li>
+<li>Now the tenant configuration supports a new property namely <em>auto-provisioning-device-id-template</em> in it&rsquo;s trusted CA
+section. During auto-provisioning of devices and gateways, the device identifier is generated based on this template
+and used for the device registration. For more information please refer to the
+<a href="https://www.eclipse.org/hono/docs/concepts/device-provisioning/">Device Provisioning</a> concept and to the
+<a href="https://www.eclipse.org/hono/docs/api/management#/tenants/createTenant">Device Registry Management API</a>
+on how to configure a tenant&rsquo;s trusted CA authority for that.</li>
+<li>The Hono CLI supports now Kafka as a messaging system. Please refer to the module&rsquo;s
+<a href="https://github.com/eclipse-hono/hono/tree/master/cli">README</a> file for examples of using the CLI to receive events and
+telemetry data and send commands.</li>
+<li>The example business application supports now Kafka as a messaging system. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/dev-guide/java_client_consumer/">Developer Guide</a> for details.</li>
+</ul>
+<h3 id="fixes--enhancements-19">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The CoAP adapter did not correctly track the time it took to forward a command message to a device. This has been fixed.</li>
+<li>Sending requests using the Hono AMQP request-response client erroneously increased the <code>hono.downstream.timeout</code> metric.
+This has been fixed.</li>
+<li>Support for uplink messages from the Embedded LNS on MultiTech gateways.</li>
+<li>The <em>hono.connections.attempts</em> metric has been extended with a <code>cipher-suite</code> tag which contains the name of the
+cipher suite that is used in a device&rsquo;s attempt to establish a TLS based connection to an adapter.</li>
+<li>The Quarkus based Command Router native image failed to start an embedded cache that was configured to persist data
+to the local file system. This has been fixed.</li>
+<li>The delivery of a command message sent to an AMQP device potentially didn&rsquo;t get settled if the connection to the
+AMQP device got disconnected. This has been fixed.</li>
+<li>The Prometheus based resource limit checks&rsquo; performance has been improved. This should result in considerably less
+load on the Prometheus server when failing over all of a crashed/stopped adapter instance&rsquo;s device connections.</li>
+<li>The Hono component container images now contain the <em>Gson</em> library which is required by the Jaeger client for
+processing sampling strategy configuration retrieved from the Jaeger Collector.</li>
+<li>The Kafka based implementation of the north bound application client
+<code>org.eclipse.hono.application.client.kafka.impl.KafkaApplicationClientImpl</code> now supports sending commands and
+receiving responses in a <em>request/response</em> fashion.</li>
+</ul>
+<h3 id="deprecations-4">Deprecations</h3>
+<ul>
+<li>The <code>org.eclipse.hono.client.ApplicationClientFactory</code>, <code>org.eclipse.hono.client.AsyncCommandClient</code> and
+<code>org.eclipse.hono.client.CommandClient</code> classes have been deprecated. Client code should use
+<code>org.eclipse.hono.application.client.ApplicationClient</code> instead.</li>
+</ul>
+<h2 id="174">1.7.4</h2>
+<h3 id="fixes--enhancements-20">Fixes &amp; Enhancements</h3>
+<ul>
+<li>Letting the trace sampling settings of the Hono components be defined via sampling strategies served by the Jaeger
+Collector did not work for components using Quarkus native images. This has been fixed.</li>
+<li>Command messages with no payload could not be sent to an MQTT device. This has been fixed.</li>
+<li>The value of the properties <code>auto-provisioned</code> and <code>auto-provisioning-notification-sent</code> are always <em>false</em> while
+retrieving device registration information using the MongoDB based registry implementation. This has been fixed now.</li>
+<li>The Command Router service could have gotten into a state of very high CPU utilization when protocol
+adapters submitted non-existing tenant IDs for which command routing should be re-enabled. This has been fixed.</li>
+<li>The LoRA protocol adapter will now free command consumer resources when the idle timeout of the corresponding tenant
+(configured via the <code>hono.lora.tenantIdleTimeout</code> property) has elapsed and the tenant is already removed or disabled.</li>
+<li>The device registry implementations have already supported the limitation of the body size of requests to the
+<code>/tenants</code> and <code>/credentials</code> resources of the HTTP based Device Registration Management API.
+However, the admin guides did not cover the corresponding <code>HONO_REGISTRY_HTTP_MAXPAYLOADSIZE</code> configuration variable
+yet. The <code>/devices</code> resources have been added to the scope of the feature and the admin guides have been amended
+accordingly.</li>
+</ul>
+<h2 id="173">1.7.3</h2>
+<h3 id="fixes--enhancements-21">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Hono component container images now contain the <em>Gson</em> library which is required by the Jaeger client for
+processing sampling strategy configuration retrieved from the Jaeger Collector.</li>
+</ul>
+<h2 id="172">1.7.2</h2>
+<h3 id="fixes--enhancements-22">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Quarkus based Command Router native image failed to start an embedded cache that was configured to persist data
+to the local file system. This has been fixed.</li>
+<li>The delivery of a command message sent to an AMQP device potentially didn&rsquo;t get settled if the connection to the
+AMQP device got disconnected. This has been fixed.</li>
+</ul>
+<h2 id="171">1.7.1</h2>
+<h3 id="fixes--enhancements-23">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The CoAP adapter did not correctly track the time it took to forward a command message to a device. This has been fixed.</li>
+<li>The downstream mapping endpoint was not correctly serialized which resulted in not being able to send commands using the downstream mapping endpoint. This has been fixed.</li>
+<li>When using Kafka as messaging system, the Command Router now creates the internal Command &amp; Control topic with the
+replication factor defined in the broker <code>default.replication.factor</code> setting.</li>
+<li>Sending requests using the Hono AMQP request-response client erroneously increased the <code>hono.downstream.timeout</code> metric.
+This has been fixed.</li>
+</ul>
+<h2 id="170">1.7.0</h2>
+<h3 id="new-features-8">New Features</h3>
+<ul>
+<li>Apache Kafka is now supported as a messaging system for command messages.
+This can be enabled by configuring protocol adapters to use Hono&rsquo;s new Kafka-based
+client. Please refer to <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a>
+for details. The new <a href="https://www.eclipse.org/hono/docs/api/command-and-control-kafka/">Command &amp; Control API for Kafka</a> defines
+how applications can use Apache Kafka to send command messages to devices.
+Note that support for Kafka based messaging is still considered an <strong>experimental</strong> feature.</li>
+<li>The Device Registry Management API has been extended now to support an optional unique identifier
+for trust anchors belonging to a tenant. The file, JDBC and MongoDB based device registries
+support this feature. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/api/management#/tenants/">Device registry management API</a> for details.</li>
+<li>The LoraWAN protocol adapter has been extended with support for <em>The Things Stack</em> provider.</li>
+<li>The LoraWAN protocol adapter now supports command and control for providers <em>Chirpstack</em>, <em>Firefly</em> and <em>Loriot</em>.</li>
+<li>Added (experimental) Quarkus based variant of the Authentication service.</li>
+<li>Added (experimental) Quarkus based variant of the CoAP protocol adapter.</li>
+<li>Added (experimental) Quarkus based variant of the Command Router component.</li>
+<li>The container images for the (experimental) Quarkus based variant of Hono components are now being published on
+Docker Hub as well. The JVM based image names contain a <code>-quarkus</code> suffix whereas the native image names contain a
+<code>-quarkus-native</code> suffix. Note that the Quarkus based protocol adapter images do <strong>not</strong> support using the Device
+Connection service but require a connection to the Command Router service being configured instead.</li>
+<li>The MQTT adapter now lets devices subscribe on a new error topic to get informed about errors during the processing
+of telemetry, event or command response message. With such an error subscription in place, the default behaviour
+on such errors is now to keep the MQTT connection open. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/#error-reporting-via-error-topic">MQTT Adapter User Guide</a> for details.</li>
+<li>The MQTT adapter now supports mapping the command payload through an external http service.</li>
+<li>The Command Router component has been promoted from <em>tech preview</em> to <em>fully supported</em>.</li>
+<li>The AMQP adapter now closes the network connection to the device if any terminal errors happen. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/user-guide/amqp-adapter/#error-handling">AMQP Adapter User Guide</a> for details.</li>
+</ul>
+<h3 id="fixes--enhancements-24">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The common configuration property for setting the vert.x instance&rsquo;s max-event-loop-execute-time had erroneously
+been documented as <code>HONO_VERTX_MAX_EVENT_LOOP_EXECUTE_TIME_MILLIS</code>, accepting an integer representing the duration as
+number of milliseconds. However, the correct property is named <code>HONO_VERTX_MAX_EVENT_LOOP_EXECUTE_TIME</code> and accepts an
+ISO-8601 Duration string instead of an integer.</li>
+<li>The MQTT adapter failed to handle a command response message if the corresponding tenant object wasn&rsquo;t available
+in the cache. This has been fixed.</li>
+<li>A failed connection attempt in the default <code>org.eclipse.hono.connection.ConnectionFactory</code> implementation could
+have led to the AMQP connection not getting closed, occupying connection resources. This has been fixed.</li>
+<li>Validation of MQTT topics containing property bags has been improved, preventing unhandled exceptions.</li>
+<li>The hugo themes for the Hono website and the documentation have been updated to the latest versions respectively.
+In order for the site module build to succeed with the <code>hugo</code> binary installed locally, the
+<code>site/homepage/themes/hugo-universal-theme</code> and <code>site/documentation/themes/hugo-theme-learn</code> folders need to be deleted.
+They will automatically be (re-)created as part of the build.</li>
+<li>The Infinispan client used by the protocol adapters, the Device Connection and Command Router services has been
+updated to version 11.0.9. The syntax of configuration file used for defining an embedded cache in the Device
+Connection and/or Command Router service has changed as documented
+<a href="https://infinispan.org/docs/stable/titles/upgrading/upgrading.html#upgrading_from_10_1_to_11_0">in the Infinispan version details</a>.</li>
+<li>The Command Router no longer uses the <code>embedded-cache</code> <em>Spring profile</em> in order to configure an embedded cache.
+Instead, the Command Router determines the type of cache (embedded or remote) by means of the
+<code>HONO_COMMANDROUTER_CACHE_REMOTE_SERVERLIST</code> configuration variable. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/command-router-config/#data-grid-connection-configuration">Command Router Admin Guide</a>
+for details.</li>
+<li>The Prometheus based resource limit checks can now be configured with a time out for establishing the TCP connection
+to the Prometheus server. This is useful to limit the time it takes to invoke the Prometheus Query API.
+Please refer to the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/common-config/#resource-limits-checker-configuration">Protocol Adapter Common Configuration guide</a>
+for details.</li>
+</ul>
+<h3 id="api-changes-4">API Changes</h3>
+<ul>
+<li>The already deprecated classes <code>org.eclipse.hono.service.cache.SpringBasedExpiringValueCache</code> and
+<code>org.eclipse.hono.service.cache.SpringCacheProvider</code> have been removed.</li>
+<li>The <code>org.eclipse.hono.service.AbstractApplication</code> and <code>org.eclipse.hono.service.AbstractBaseApplication</code> classes
+have been moved to <code>org.eclipse.hono.service.spring.AbstractApplication</code> and <code>org.eclipse.hono.service.spring.AbstractApplication</code>
+in the newly added <code>service-base-spring</code> module respectively.</li>
+<li>The existing <code>mapper</code> configuration has been renamed to <code>downstream-message-mapper</code>.</li>
+<li>The Command Router component now requires the configuration of a tenant service client. Please refer to
+<a href="https://www.eclipse.org/hono/docs/admin-guide/command-router-config/#tenant-service-connection-configuration">Tenant Service Connection Configuration</a>
+for details.</li>
+</ul>
+<h3 id="end-of-life-1">End of Life</h3>
+<ul>
+<li>
+<p>The <code>build-docker-image</code> build profile is no longer activated automatically if the <em>docker.host</em> Maven property
+is set. This has been changed in order to prevent the <code>build-docker-image</code> and <code>build-native-image</code> profiles being
+activated at the same time when running something like</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn clean install -Ddocker.host<span style="color:#f92672">=</span>tcp//host:port -Pbuild-native-image
+</span></span></code></pre></div><p>Activating the <code>build-docker-image</code> profile by default can easily be achieved by adding <code>-Pbuild-docker-image</code> to
+the <em>MAVEN_OPTS</em> environment variable instead.</p>
+</li>
+</ul>
+<h2 id="162">1.6.2</h2>
+<h3 id="fixes--enhancements-25">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The CoAP adapter did not correctly track the time it took to forward a command message to a device. This has been fixed.</li>
+<li>Sending requests using the Hono AMQP request-response client erroneously increased the <code>hono.downstream.timeout</code> metric.
+This has been fixed.</li>
+</ul>
+<h2 id="161">1.6.1</h2>
+<h3 id="fixes--enhancements-26">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The common configuration property for setting the vert.x instance&rsquo;s max-event-loop-execute-time had erroneously
+been documented as <code>HONO_VERTX_MAX_EVENT_LOOP_EXECUTE_TIME_MILLIS</code>, accepting an integer representing the duration as
+number of milliseconds. However, the correct property is named <code>HONO_VERTX_MAX_EVENT_LOOP_EXECUTE_TIME</code> and accepts an
+ISO-8601 Duration string instead of an integer.</li>
+<li>The MQTT adapter failed to handle a command response message if the corresponding tenant object wasn&rsquo;t available
+in the cache. This has been fixed.</li>
+<li>A failed connection attempt in the default <code>org.eclipse.hono.connection.ConnectionFactory</code> implementation could
+have led to the AMQP connection not getting closed, occupying connection resources. This has been fixed.</li>
+<li>Validation of MQTT topics containing property bags has been improved, preventing unhandled exceptions.</li>
+<li>The protocol adapters might have run into a situation where devices connected to adapters did no longer receive
+commands when using the Command Router service. The problem occurred when a Command Router service instance had been
+restarted while one or more protocol adapters where connected to it. This has been fixed.</li>
+</ul>
+<h2 id="160">1.6.0</h2>
+<h3 id="new-features-9">New Features</h3>
+<ul>
+<li>Apache Kafka is now supported as a messaging system for events and telemetry messages.
+This can be enabled by configuring protocol adapters to use Hono&rsquo;s new Kafka-based
+client. Please refer to <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a>
+for details.</li>
+<li>New APIs have been added for the Kafka-based messaging. Please refer to
+<a href="https://www.eclipse.org/hono/docs/api/telemetry-kafka/">Telemetry API for Kafka</a> and
+<a href="https://www.eclipse.org/hono/docs/api/event-kafka/">Event API for Kafka</a> for the specifications.</li>
+<li>The MQTT adapter now allows clients to indicate whether they want the target device&rsquo;s tenant and/or device IDs
+to be included in the topic used when publishing commands.</li>
+<li>The caching behavior of the protocol adapters&rsquo; AMQP based registry clients has been changed. All adapter
+Verticle instances now share a single cache instance <em>per service</em>. In particular, there is a single cache for
+all responses returned by the Tenant, Device Registration and Credentials service respectively.
+In addition, each cache is now being used for all responses to requests regardless of the tenant. Consequently, the
+service client configurations&rsquo; <em>responseCacheMinSize</em> and <em>responseCacheMaxSize</em> properties now determine
+the overall number of responses that can be cached <em>per service</em>. In previous versions the properties determined
+the number of entries <em>per client instance and tenant</em>. The new approach allows for better control over the maximum
+amount of memory being used by the cache and should also increase cache hits when deploying multiple adapter
+Verticle instances.
+The <code>org.eclipse.hono.adapter.client.registry.amqp.ProtonBasedTenantClient</code> now makes sure that only a single
+request to the Tenant service is issued when multiple (parallel) <em>get</em> method invocations run into a cache miss.
+This should reduce the load on the Tenant service significantly in scenarios where devices of the same
+tenant connect to an adapter at a high rate, e.g. in when re-connecting after one or more adapter pods have
+crashed.</li>
+<li>The Device Registry Management API&rsquo;s <em>update credentials</em> operation has been extended to allow specifying the
+<em>auth-id</em> and validity period implicitly by means of including a (Base64 encoded) client certificate in the new
+<em>cert</em> property. This can be used instead of specifying the client certificate&rsquo;s subject DN and public key&rsquo;s
+validity period explicitly in the <em>auth-id</em> and <em>secrets</em> properties. This should make setting the correct <em>auth-id</em>
+value much less error prone.</li>
+<li>Hono now supports <em>auto-provisioning</em> of devices that connect via gateway. For more information please refer to the
+<a href="https://www.eclipse.org/hono/docs/concepts/device-provisioning/#gateway-based-auto-provisioning">Device Provisioning</a> concept and to the
+<a href="https://www.eclipse.org/hono/docs/api/management#/devices/createDeviceRegistration">Device registry management API</a> on how to
+create a device registration for a gateway which is enabled for auto-provisioning.</li>
+<li>The Device Registry Management API has been extended now to support searching tenants with optional filters,
+paging and sorting options. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/api/management#/tenants/searchTenants">Device registry management API</a> for details.</li>
+<li>The MongoDB based device registry now supports searching tenants with optional filters, paging and sorting options.</li>
+</ul>
+<h3 id="fixes--enhancements-27">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Mongo DB based Credentials service implementation failed to return the credentials matching the given
+<em>type</em> and <em>auth-id</em> if multiple credentials of the same <em>type</em> but with different <em>auth-id</em> values were
+registered for a device. This has been fixed.</li>
+<li>The Mongo DB based registry container would have failed to start if the connection to the Mongo DB could not
+be established quickly enough. This has been fixed by decoupling the creation of indices from the start up process.</li>
+<li>The protocol adapters erroneously indicated a client related error to devices if the downstream AMQP container
+rejected a message with an <code>amqp:resource-limit-exceeded</code> error condition. This has been fixed so that the adapters
+now correctly indicate a server related problem instead.</li>
+<li>The containers for the Device Registry implementations, the Authentication server, the Device Connection and
+Command Router services did not shut down gracefully upon receiving a SIGTERM signal. This has been fixed.</li>
+<li>The LoRA protocol adapter failed to start due to a missing bean declaration. This has been fixed.</li>
+</ul>
+<h3 id="deprecations-5">Deprecations</h3>
+<ul>
+<li>The <code>org.eclipse.hono.service.cache.SpringCacheProvider</code> and <code>org.eclipse.hono.service.cache.SpringBasedExpiringValueCache</code>
+classes have been deprecated to further reduce the dependency on Spring Boot. Clients should use
+<code>org.eclipse.hono.service.cache.CaffeineCacheProvider</code> and <code>org.eclipse.hono.service.cache.CaffeineBasedExpiringValueCache</code>
+instead.</li>
+<li>Most of the public interfaces of the legacy <code>client</code> module have been deprecated. Client code should be
+adapted to use the corresponding interfaces and implementations from the <code>clients/adapter</code>, <code>clients/adapter-amqp</code>
+and <code>clients/application-amqp</code> modules instead.</li>
+<li>The Authentication server&rsquo;s <code>HONO_AUTH_SVC_PERMISSIONS_PATH</code> configuration property has been changed to no
+longer accept generic Spring resource URIs. The value is now required to be a file system path. The path
+may still contain a <code>file://</code> prefix in order to not break existing configurations. However, users are encouraged
+to remove the prefix as it will no longer be supported in versions starting with 2.0.0.
+The default permissions file has been removed from the Authentication server code base. Consequently,
+permissions can no longer be loaded from the class path using a <code>classpath://</code> URI. In practice this should
+have no impact because the Hono chart comes with a default permissions file which the Authentication
+server is pre-configured to load from the file system.</li>
+</ul>
+<h2 id="152">1.5.2</h2>
+<h3 id="fixes--enhancements-28">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The protocol adapters erroneously indicated a client related error to devices if the downstream AMQP container
+rejected a message with an <code>amqp:resource-limit-exceeded</code> error condition. This has been fixed so that the adapters
+now correctly indicate a server related problem instead.</li>
+<li>The containers for the Device Registry implementations, the Authentication server, the Device Connection and
+Command Router services did not shut down gracefully upon receiving a SIGTERM signal. This has been fixed.</li>
+<li>The LoRA protocol adapter failed to start due to a missing bean declaration. This has been fixed.</li>
+</ul>
+<h2 id="151">1.5.1</h2>
+<h3 id="fixes--enhancements-29">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Mongo DB based Credentials service implementation failed to return the credentials matching the given
+<em>type</em> and <em>auth-id</em> if multiple credentials of the same <em>type</em> but with different <em>auth-id</em> values were
+registered for a device. This has been fixed.</li>
+<li>When using the Command Router or Device Connection service component with an embedded cache, a cache
+configuration file was required. Now, a default configuration will be used if no configuration file is
+given.</li>
+<li>The Mongo DB based registry container would have failed to start if the connection to the Mongo DB could not
+be established quickly enough. This has been fixed by decoupling the creation of indices from the start up process.</li>
+<li>The AMQP and MQTT adapters would erroneously forward commands to unauthorized gateway devices under certain
+conditions. This has been fixed.</li>
+</ul>
+<h2 id="150">1.5.0</h2>
+<h3 id="new-features-10">New Features</h3>
+<ul>
+<li>The CoAP adapter has been promoted from <em>experimental</em> to <em>fully supported</em>.</li>
+<li>The Hono Client now supports several configuration properties that can be used
+to limit its resource usage. In particular the AMQP connection&rsquo;s <em>max-frame-size</em>,
+the AMQP session&rsquo;s incoming window size and the <em>max-message-size</em> of receiver
+links can be configured (and thus limited).</li>
+<li>A new way of routing Command &amp; Control messages from the AMQP messaging network
+to the target protocol adapters has been introduced. For that, a new
+<a href="https://www.eclipse.org/hono/docs/admin-guide/command-router-config">Command Router service</a>
+component is used, receiving command messages and routing them to the appropriate
+protocol adapters. Protocol adapters supply routing information to the component
+by means of a new <a href="https://www.eclipse.org/hono/docs/api/command-router/">Command Router API</a>.
+Protocol adapters can be configured to either use that new API or they can continue
+using the now deprecated <a href="https://www.eclipse.org/hono/docs/api/device-connection/">Device Connection API</a>
+instead, meaning command routing will be done without using the Command Router.</li>
+<li>The pre-built Hono Docker images available from Docker Hub now include the Jaeger
+OpenTracing client.</li>
+</ul>
+<h3 id="fixes--enhancements-30">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The file based as well as the MongoDB based registry implementations now remove the shared-key from
+PSK credentials returned in the response of the Management API&rsquo;s <em>get credentials</em> operation.</li>
+<li>The Device Registry Management API erroneously declared the <em>plaintext password</em> conveyed in the
+<em>update credentials</em> operation&rsquo;s request payload as a Base64 encoded byte array instead of a
+plain string. This has been fixed.</li>
+<li>The file based as well as the Mongo DB based registry implementations had failed to do both
+updating an existing secret (referred to by ID) and adding a new secret to the same credentials
+in a single request. This has been fixed.</li>
+<li>The property names for specifying the patterns for validating Tenant and Device IDs have been fixed
+in the admin guides for the file based and the Mongo DB based registry implementations.</li>
+<li>The registry implementations did not accept X.509 credentials in an update Credentials request.
+They also failed to remove existing credentials of a device if they were not included in an
+update Credentials request. This has been fixed.</li>
+<li>The file based device registry also now supports searching devices for a tenant with optional filters,
+paging and sorting options.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/api/management#/devices/searchDevicesForTenant">Device registry management API</a>
+for details.</li>
+<li>The wildcards <code>?</code> and <code>*</code> are now supported by the search devices operation in the MongoDB based device registry.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/api/management#/devices/searchDevicesForTenant">Device registry management API</a>
+for details.</li>
+<li>Command messages that have their payload in an AMQP body section whose type isn&rsquo;t supported in Hono
+now get rejected, instead of getting forwarded to the device with an empty payload.</li>
+<li>The authentication providers in Hono use <code>CredentialsObject.getCandidateSecrets</code> to retrieve valid secrets.
+The secrets are currently filtered based on their validity period regardless of whether the status is enabled
+or not. This has been fixed now, so that the disabled secrets are filtered out.</li>
+<li>The MQTT adapter now supports specifying the content-type of a telemetry/event message via a MQTT property bag.</li>
+<li>The MQTT adapter now sets the MQTT client identifier as <em>client-id</em> in the payload of a Credentials API <em>get</em>
+operation request also when authenticating a device using the username/password mechanism. Previously that was
+only done for the client certificate authentication mechanism.</li>
+<li>The HTTP adapter did not properly forward the QoS level for events when the <em>qos-level</em> header is not set
+or set to AT_MOST_ONCE. This has been fixed.</li>
+<li>An HTTP device sending a command response request with no <code>Content-Type</code> header meant that the northbound
+application received a message with an empty content type. Now, the <code>application/octet-stream</code>
+content type is set, as it is also done for telemetry/event HTTP requests with no <code>Content-Type</code> header.</li>
+<li>There were errors sending Connection Events via the Events API if the corresponding tenant didn&rsquo;t
+have a non-default <code>max-ttl</code> resource limit configuration. This has been fixed.</li>
+</ul>
+<h3 id="api-changes-5">API Changes</h3>
+<ul>
+<li>The deprecated configuration property <code>singleTenant</code> of the protocol adapters and the device registry has been removed.</li>
+<li>The default pattern for valid device identifiers used for the file based and the MongoDB based registry
+implementations now also contains a colon for compatibility with Eclipse Ditto.</li>
+</ul>
+<h3 id="end-of-life-2">End of Life</h3>
+<ul>
+<li>The <em>hono-jmeter</em> Maven module along with the JMeter plugin that is contained in it hasn&rsquo;t been updated for
+over a year and is also not used in any automated test runs.
+JMeter has turned out not to be the best choice for conducting load tests of Hono because it is difficult to
+generate the needed AMQP message load with its (blocking) thread based execution model.
+The JMeter plugin therefore has been removed.</li>
+</ul>
+<h2 id="145">1.4.5</h2>
+<h3 id="fixes--enhancements-31">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The tenant timeout mechanism doesn&rsquo;t close command consumer resources anymore if there are still active
+command subscriptions from AMQP or MQTT devices of the corresponding tenant.</li>
+<li>The Mongo DB based Credentials service implementation failed to return the credentials matching the given
+<em>type</em> and <em>auth-id</em> if multiple credentials of the same <em>type</em> but with different <em>auth-id</em> values were
+registered for a device. This has been fixed.</li>
+<li>The Mongo DB based registry container would have failed to start if the connection to the Mongo DB could not
+be established quickly enough. This has been fixed by decoupling the creation of indices from the start up process.</li>
+<li>The AMQP and MQTT adapters would erroneously forward commands to unauthorized gateway devices under certain
+conditions. This has been fixed.</li>
+</ul>
+<h2 id="144">1.4.4</h2>
+<h3 id="fixes--enhancements-32">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The HTTP adapter did not properly forward the QoS level for events when the <em>qos-level</em> header is not set
+or set to AT_MOST_ONCE. This has been fixed.</li>
+<li>An HTTP device sending a command response request with no <code>Content-Type</code> header meant that the north bound
+application received a message with the content type set to an empty string. Now, the content type property
+isn&rsquo;t set in this case.</li>
+<li>There were errors sending Connection Events via the Events API if the corresponding tenant didn&rsquo;t
+have a non-default <code>max-ttl</code> resource limit configuration. This has been fixed.</li>
+</ul>
+<h2 id="143">1.4.3</h2>
+<h3 id="fixes--enhancements-33">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The file based as well as the Mongo DB based registry implementations now remove the shared-key from
+PSK credentials returned in the response of the Management API&rsquo;s <em>get credentials</em> operation.</li>
+<li>The Device Registry Management API erroneously declared the <em>plain text password</em> conveyed in the
+<em>update credentials</em> operation&rsquo;s request payload as a Base64 encoded byte array instead of a
+plain string. This has been fixed.</li>
+<li>The file based as well as the Mongo DB based registry implementations had failed to do both
+updating an existing secret (referred to by ID) and adding a new secret to the same credentials
+in a single request. This has been fixed.</li>
+<li>The property names for specifying the patterns for validating Tenant and Device IDs have been fixed
+in the admin guides for the file based and the Mongo DB based registry implementations.</li>
+<li>The registry implementations did not accept X.509 credentials in an update Credentials request.
+They also failed to remove existing credentials of a device if they were not included in an
+update Credentials request. This has been fixed.</li>
+<li>The AMQP protocol adapter did accept messages from clients (devices) exceeding the adapter&rsquo;s configured
+max-message-size. This has been fixed and the adapter now closes the link to the device in this case.</li>
+</ul>
+<h3 id="api-changes-6">API Changes</h3>
+<ul>
+<li>The default pattern for valid device identifiers used for the file based and the MongoDB based registry
+implementations now also contains a colon (<code>:</code>) for compatibility with Eclipse Ditto.</li>
+</ul>
+<h2 id="140">1.4.0</h2>
+<h3 id="new-features-11">New Features</h3>
+<ul>
+<li>The protocol adapters now report connection attempts made by devices
+in a new metric. In particular, the metric includes a tag reflecting the outcome
+of the attempt to establish a connection and the reason for failure.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/api/metrics">Metrics API</a> for details.</li>
+<li>A new Quarkus based HTTP protocol adapter is now available. This adapter version provides better memory consumption and
+startup times comparing to the existing one.</li>
+<li>The LoraWAN protocol adapter has been extended with support for the <em>Actility Enterprise</em> provider.</li>
+<li>The LoraWAN protocol adapter has been extended with support for the <em>Orbiwise</em> provider.</li>
+<li>Added metrics for tracking the RTT between sending an AMQP message to receiving the disposition.</li>
+<li>The CoAP adapter now supports configuration of the <em>timeoutToAck</em> parameter at the tenant level
+in addition to the adapter level. If set, the tenant specific value is used for all devices of the
+particular tenant. If not set, the value defined at the adapter level is used.</li>
+<li>The Device Registry Management API has been extended now to support searching devices for a tenant
+with optional filters, paging and sorting options.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/api/management#/devices/searchDevicesForTenant">Device registry management API</a>
+for details.</li>
+<li>The MongoDB based device registry now supports searching devices for a tenant with optional filters,
+paging and sorting options.</li>
+</ul>
+<h3 id="fixes--enhancements-34">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The MongoDB based device registry now checks for tenant existence during device registration and credentials management operations.</li>
+</ul>
+<h3 id="deprecations-6">Deprecations</h3>
+<ul>
+<li>The configuration property <code>singleTenant</code> of the protocol adapters and the device registry is now deprecated
+and planned to be removed in a future release. The use case of a system with just a single tenant should be
+realized by configuring just one tenant in the device registry.</li>
+<li>The <code>HONO_REGISTRY_REST_*</code> configuration properties of the file based device registry have been deprecated
+in favor of corresponding properties with the <code>HONO_REGISTRY_HTTP_</code> prefix.</li>
+</ul>
+<h2 id="132">1.3.2</h2>
+<h3 id="fixes--enhancements-35">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The HTTP adapter did not properly forward the QoS level for events when the <em>qos-level</em> header is not set
+or set to AT_MOST_ONCE. This has been fixed.</li>
+<li>An HTTP device sending a command response request with no <code>Content-Type</code> header meant that the northbound
+application received a message with the content type set to an empty string. Now, the content type property
+isn&rsquo;t set in this case.</li>
+<li>There were errors sending Connection Events via the Events API if the corresponding tenant didn&rsquo;t
+have a non-default <code>max-ttl</code> resource limit configuration. This has been fixed.</li>
+</ul>
+<h2 id="131">1.3.1</h2>
+<h3 id="fixes--enhancements-36">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The file based as well as the Mongo DB based registry implementations now remove the shared-key from
+PSK credentials returned in the response of the Management API&rsquo;s <em>get credentials</em> operation.</li>
+<li>The Device Registry Management API erroneously declared the <em>plain text password</em> conveyed in the
+<em>update credentials</em> operation&rsquo;s request payload as a Base64 encoded byte array instead of a
+plain string. This has been fixed.</li>
+<li>The file based as well as the Mongo DB based registry implementations had failed to do both
+updating an existing secret (referred to by ID) and adding a new secret to the same credentials
+in a single request. This has been fixed.</li>
+<li>The property names for specifying the patterns for validating Tenant and Device IDs have been fixed
+in the admin guides for the file based and the Mongo DB based registry implementations.</li>
+<li>The registry implementations did not accept X.509 credentials in an update Credentials request.
+They also failed to remove existing credentials of a device if they were not included in an
+update Credentials request. This has been fixed.</li>
+<li>The AMQP protocol adapter did accept messages from clients (devices) exceeding the adapter&rsquo;s configured
+max-message-size. This has been fixed and the adapter now closes the link to the device in this case.</li>
+</ul>
+<h3 id="api-changes-7">API Changes</h3>
+<ul>
+<li>The default pattern for valid device identifiers used for the file based and the MongoDB based registry
+implementations now also contains a colon (<code>:</code>) for compatibility with Eclipse Ditto.</li>
+</ul>
+<h2 id="130">1.3.0</h2>
+<h3 id="new-features-12">New Features</h3>
+<ul>
+<li>The LoraWAN protocol adapter has been extended with support for the <em>ChirpStack</em> provider.</li>
+<li>Hono&rsquo;s integration tests can now be run with a Jaeger back end in order to collect tracing
+information.</li>
+<li>The AMQP 1.0 event message based Connection Event producer now sets a TTL on the event messages
+it produces. The TTL is the <em>max TTL</em> configured at the tenant level.</li>
+<li>A new Device Registry implementation based on MongoDB database is now available in Hono.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/user-guide/mongodb-based-device-registry">MongoDB Device Registry User Guide</a>
+for additional information.</li>
+<li>Hono protocol adapters can now be configured to use address rewriting when opening AMQP 1.0 links to the messaging network.
+This allows an easier deployment in multi-tenant messaging environments.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/#address-rewriting">Hono Client Configuration Guide</a>
+for additional information.</li>
+</ul>
+<h3 id="fixes--enhancements-37">Fixes &amp; Enhancements</h3>
+<ul>
+<li>An admin guide for the CoAP adapter has been added.</li>
+<li>The Prometheus based resource limits checker now supports configuring a query timeout.
+Please refer to <a href="https://www.eclipse.org/hono/docs/admin-guide/common-config/#resource-limits-checker-configuration">Resource Limits Checker Configuration</a>
+for additional information.</li>
+<li>When sending a command message to a device, the AMQP adapter now waits for a
+configurable period of time (default is 1 second) for the acknowledgement from the device.
+If none is received, the downstream command sender gets back a <code>released</code> outcome.
+Please refer to the <code>sendMessageToDeviceTimeout</code> property description in the
+AMQP Adapter admin guide for additional information.</li>
+<li>The client for storing device connection information to a data grid now supports configuring
+the name of the cache to store the data in.</li>
+<li>When the connection to a device is closed or lost, a protocol adapter instance will now
+stop listening for commands targeted at the device.</li>
+<li>The AMQP adapter before accepting any connections checks if the connection limit is exceeded
+or not and if the adapter is enabled or not. These checks are currently done inside the
+<code>AmqpAdapterSaslAuthenticatorFactory</code>. Thereby, if any of these checks failed, the AMQP adapter
+reported authentication failure instead of the actual reason. This has been fixed now.</li>
+<li>The AMQP adapter did not consider the <code>HONO_CONNECTIONEVENTS_PRODUCER</code> configuration variable
+to set a Connection Event producer. This has been fixed.</li>
+<li>The <em>logging</em> Connection Event producer now supports configuring the level
+at which information should be logged. The producer type <em>none</em> has been added to explicitly
+turn off connection event reporting altogether.
+Please refer to the <em>Common Configuration</em> admin guide for details.</li>
+<li>The packages <code>org.eclipse.hono.service.credentials</code>, <code>org.eclipse.hono.service.management</code>,
+<code>org.eclipse.hono.service.management.credentials</code>, <code>org.eclipse.hono.service.management.device</code>,
+<code>org.eclipse.hono.service.management.tenant</code>, <code>org.eclipse.hono.service.registration</code> and
+<code>org.eclipse.hono.service.tenant</code> have been moved from the <em>service-base</em> to the
+<em>device-registry-base</em> module.</li>
+<li>The Device Connection service did return a 500 error code if no <em>last known gateway</em> could
+be found for a device ID. This has been fixed so that the service now returns a 404 in that
+case as specified by the Device Connection API.</li>
+<li>The cache based Device Connection service implementation now applies a lifespan of 28 days
+when setting/updating cache entries containing <em>last known gateway</em> information. This means
+no global expiration configuration is needed anymore for the cache.</li>
+<li>Protocol adapters failed to re-establish receiver links for commands to be routed after loss
+of connection to the AMQP Messaging Network. This has been fixed.</li>
+<li>The AMQP adapter reported an incorrect number of connections if resource limits had been
+defined and exceeded. This has been fixed.</li>
+<li>The device registry management HTTP endpoints now reject requests to register or update objects
+containing unknown properties. In the past such properties had been simply ignored.</li>
+<li>The Device Registry Management API has been amended with example messages and more thorough
+description of operations.</li>
+<li>The CoAP adapter has been enhanced to asynchronously look up a device&rsquo;s PSK during the
+DTLS handshake. This will allow the adapter to handle a lot more handshakes concurrently.
+The adapter also employs a more efficient message de-duplicator which reduces the adapter&rsquo;s
+memory footprint.</li>
+</ul>
+<h3 id="api-changes-8">API Changes</h3>
+<ul>
+<li>The <code>getRemoteContainer</code> method in <code>org.eclipse.hono.client.HonoConnection</code> has been
+renamed to <code>getRemoteContainerId</code>.</li>
+<li>The <code>getName</code> method in <code>org.eclipse.hono.connection.ConnectionFactory</code> has been removed
+and an additional <code>connect</code> method has been added.</li>
+<li>The <em>set command-handling protocol adapter instance</em> operation of the <em>Device Connection</em> API
+has been extended to support an additional parameter which can be used to indicate the
+maximum amount of time that the given information is to be considered valid.</li>
+<li>The <code>hono-core</code> module no longer embeds any external classes by default.
+This includes the <em>OpenTracing API</em> and <em>Spring Crypto</em> classes. You can still
+embed the classes, as in Hono versions 1.2.x and before, by enabling the
+Maven profile <code>embed-dependencies</code> (e.g. using the command line switch
+<code>-Pembed-dependencies</code>). By default this profile is not active.</li>
+<li>The <code>org.eclipse.hono.client.DeviceRegistration</code> interface&rsquo;s <em>get</em> methods have been removed
+because the Device Registration API does not define a corresponding operation.
+Consequently, the C&amp;C functionality of the Kerlink Lora provider which relied on the <em>get</em>
+method has been removed.</li>
+<li>Protocol adapters implementing the <code>org.eclipse.hono.service.AbstractAdapterConfig</code> class
+now need to implement the <code>getAdapterName</code> method. The <code>customizeDownstreamSenderFactoryConfig</code>
+method has been renamed to <code>getDownstreamSenderFactoryConfigDefaults</code>, while now returning
+properties instead of working on given ones. The new method name now more accurately conveys
+what the method is used for. The same change has been applied to the other <code>customize[*]Config</code>
+methods in the <code>AbstractAdapterConfig</code> class.</li>
+<li>The file based as well as the MongoDB based device registry implementations now disallow certain
+special characters in device and tenant identifiers. The configuration properties
+<code>HONO_REGISTRY_HTTP_TENANT_ID_PATTERN</code> and <code>HONO_REGISTRY_HTTP_DEVICE_ID_PATTERN</code> (and corresponding ones with
+prefix <code>HONO_REGISTRY_REST</code> for the file based registry) can be used to override the patterns for matching
+valid identifiers. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/file-based-device-registry-config/#service-configuration">file based registry</a> or
+<a href="https://www.eclipse.org/hono/docs/admin-guide/mongodb-device-registry-config/#service-configuration">MongoDB based registry</a>
+configuration guide for details.</li>
+</ul>
+<h3 id="deprecations-7">Deprecations</h3>
+<ul>
+<li>The configuration property <code>HONO_MQTT_COMMAND_ACK_TIMEOUT</code> of the MQTT adapter is now deprecated
+and planned to be removed in a future release. Use <code>HONO_MQTT_SEND_MESSAGE_TO_DEVICE_TIMEOUT</code> instead.</li>
+</ul>
+<h2 id="124">1.2.4</h2>
+<h3 id="fixes--enhancements-38">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The <code>HonoConnection</code> implementation didn&rsquo;t use a delay before a reconnect attempt after
+a certain number of reconnect attempts (58 with the default configuration) had already
+failed. This has been fixed.</li>
+<li>An error when freeing Command &amp; Control related resources of an idle tenant has been fixed.</li>
+<li>The Hotrod based DeviceConnectionClientFactory has been improved to prevent locking of
+objects in a clustered cache.</li>
+<li>The AMQP adapter reported an incorrect number of connections if resource limits had been
+defined and exceeded. This has been fixed.</li>
+</ul>
+<h2 id="123">1.2.3</h2>
+<h3 id="fixes--enhancements-39">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Device Connection service did return a 500 error code if no <em>last known gateway</em> could
+be found for a device ID. This has been fixed so that the service now returns a 404
+in that case as specified by the Device Connection API.</li>
+<li>The cache based Device Connection service implementation now applies a lifespan of 28 days
+when setting/updating cache entries containing <em>last known gateway</em> information. This means
+no global expiration configuration is needed anymore for the cache.</li>
+<li>Protocol adapters failed to re-establish receiver links for commands to be routed after loss
+of connection to the AMQP Messaging Network. This has been fixed.</li>
+</ul>
+<h3 id="api-changes-9">API Changes</h3>
+<ul>
+<li>The <code>org.eclipse.hono.client.DeviceRegistration</code> interface&rsquo;s <em>get</em> methods have been removed
+because the Device Registration API does not define a corresponding operation.
+Consequently, the C&amp;C functionality of the Kerlink Lora provider which relied on the <em>get</em>
+method has been removed.</li>
+</ul>
+<h2 id="122">1.2.2</h2>
+<h3 id="fixes--enhancements-40">Fixes &amp; Enhancements</h3>
+<ul>
+<li>Commands might not have been routed to the target device or gateway if multiple
+Verticle instances were deployed in a protocol adapter instance. This has been fixed.</li>
+<li>The example registry&rsquo;s admin guide has been amended with some missing configuration
+variables.</li>
+<li>The documentation of the underlying concepts of Hono&rsquo;s Command &amp; Control functionality
+has been updated to reflect recent changes.</li>
+<li>Some dependencies have been updated to more recent versions fixing potential
+vulnerabilities.</li>
+</ul>
+<h2 id="121">1.2.1</h2>
+<h3 id="fixes--enhancements-41">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The AMQP adapter didn&rsquo;t report any metrics anymore. This has been fixed.</li>
+<li>The CoAP and HTTP adapters&rsquo; user guide now correctly documents the 413 status code returned
+in response to a request that contains a payload exceeding the configured maximum size.</li>
+</ul>
+<h2 id="120">1.2.0</h2>
+<h3 id="new-features-13">New Features</h3>
+<ul>
+<li>The protocol adapters can now be configured with a direct connection to a data grid
+for storing device connection information.
+This has the advantage of saving the network hop to the Device Connection service.
+Please refer to the protocol adapter Admin Guides for details.</li>
+<li>The Prometheus based resource limits check can now be configured with a trust store, key material
+and/or a username and password in order to be able to connect to a Prometheus server
+that requires TLS and/or client authentication.</li>
+<li>A Java client for the communication with the AMQP protocol adapter has been added.
+It can be used to implement devices, (protocol) gateways and for testing purposes.
+For more information refer to <a href="https://www.eclipse.org/hono/docs/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a>.</li>
+<li>Devices can now be configured with <em>groups</em> of gateways that are allowed to act on behalf of the
+device. This makes it easier to support scenarios in which a device may <em>roam</em> between multiple
+gateways. The HTTP based management API has been adapted accordingly.</li>
+<li>The CoAP adapter now supports forwarding commands to devices in the response body of requests for
+uploading telemetry data and/or events, analogous to the HTTP adapter.
+Please note that the CoAP adapter is still considered <em>experimental</em> and its device facing API
+is therefore still subject to change.</li>
+</ul>
+<h3 id="fixes--enhancements-42">Fixes &amp; Enhancements</h3>
+<ul>
+<li>When a message arrived, the <em>message limit</em> checks failed to calculate the payload size
+of the incoming message based on the configured <em>minimum message size</em>. Instead, it used the
+actual payload size to verify if the <em>message limit</em> has been exceeded or not. This has been
+fixed now.</li>
+<li>The Command &amp; Control implementation in the protocol adapters has been optimized to use
+far fewer consumer links to the AMQP Messaging Network, saving up on resources.
+Before this change, the protocol adapters created a separate receiver link for each device that wanted
+to receive commands. Now each protocol adapter instance creates only a single receiver link over
+which all commands for all devices connected to the adapter instance are transmitted.</li>
+<li>The base classes for implementing a device registry have been moved into their own <code>device-registry-based</code>
+module.</li>
+<li>The example device registry&rsquo;s AMQP and HTTP endpoints do no longer exchange incoming request messages and outgoing
+response messages with the service implementation verticles over the Vert.x EventBus. This reduces complexity
+and should improve throughput as messages no longer need to be serialized anymore.</li>
+<li>A first version of the CoAP User Guide has been added.</li>
+<li>A concept page explaining the different ways devices can be connected to Hono&rsquo;s protocol adapters has been
+added. There is also example code illustrating how a protocol gateway which connects to the AMQP adapter can
+be implemented.</li>
+<li>If both AMQP and Kafka messaging systems are configured, then Command &amp; Control messages will be received from
+both systems. A command response message from a device will by default be forwarded using the messaging system
+that the corresponding command message was received in.</li>
+</ul>
+<h3 id="api-changes-10">API Changes</h3>
+<ul>
+<li>The device registry credentials endpoint will no longer hand out sensitive details for hashed-password secrets.
+<code>pwd-hash</code>, <code>salt</code> and <code>hash-function</code> are stored by the device registry but not returned to the user.
+Each secret is given an ID which is now returned, along with the other metadata (time validity and optional fields).</li>
+<li>The <code>tenant</code> and <code>devices</code> endpoints of the management HTTP API now accept creation requests without a body.
+As there is no mandatory field, having a mandatory body was confusing.</li>
+<li>The methods of the service base classes <code>CredentialsManagementService</code>, <code>CredentialsService</code>,
+<code>DeviceConnectionService</code>, <code>DeviceManagementService</code>, <code>RegistrationService</code>, <code>TenantManagementService</code> and
+<code>TenantService</code> have been refactored to now return a Vert.x Future instead of taking a Handler as an argument.</li>
+<li>The <code>CommandConsumerFactory</code> interface has been renamed to <code>ProtocolAdapterCommandConsumerFactory</code> and method
+signatures have been changed slightly. Also, a new <code>initialize</code> method has been added to be called on protocol
+adapter startup.</li>
+<li>The AMQP Messaging Network now has to be configured in such a way that protocol adapters can send and
+receive messages on the <code>command_internal/*</code> instead of the <code>control/*</code> address pattern.</li>
+<li>The Device Registry Management API has been extended to support the definition of <em>Gateway Groups</em> which
+can be referenced in a device&rsquo;s <em>viaGroups</em> property in order to authorize all gateways that are a member
+of any of the groups to act on behalf of the device.</li>
+</ul>
+<h2 id="112">1.1.2</h2>
+<h3 id="api-changes-11">API Changes</h3>
+<ul>
+<li>The <code>org.eclipse.hono.client.DeviceRegistration</code> interface&rsquo;s <em>get</em> methods have been removed
+because the Device Registration API does not define a corresponding operation.
+Consequently, the C&amp;C functionality of the Kerlink Lora provider which relied on the <em>get</em>
+method has been removed.</li>
+</ul>
+<h2 id="111">1.1.1</h2>
+<h3 id="fixes--enhancements-43">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The <em>FireFly</em> LoRa adapter now supports mapping of the <em>mic</em> property.</li>
+<li>A bug preventing the lora and SigFox adapters to start up correctly has been fixed.</li>
+<li>The MQTT adapter failed to accept command response messages from authenticated gateways that had
+been published to the <code>command//${device-id}/res/${req-id}/${status}</code> topic. This has been fixed
+and the adapter now correctly uses the gateway&rsquo;s tenant in this case.</li>
+<li>When a north bound application sent a command to a device that is connected via a gateway, the
+AMQP adapter set the gateway&rsquo;s ID instead of the device&rsquo;s ID in the command response forwarded
+to the application. This has been fixed.</li>
+</ul>
+<h2 id="110">1.1.0</h2>
+<h3 id="new-features-14">New Features</h3>
+<ul>
+<li>The Sigfox and LoRaWAN adapters now report metrics analogously to the other protocol
+adapters.</li>
+<li>With the release of <a href="https://www.eclipse.org/californium">Eclipse Californium</a> 2.0.0,
+the CoAP adapter became an official part of the Hono release. The adapter also supports
+tracking of request processing using OpenTracing but is still considered <em>experimental</em>.</li>
+<li>A lorawan provider has been added for the <em>loriot</em> network provider.</li>
+<li>Hono&rsquo;s protocol adapters now support Server Name Indication in order
+to allow devices to establish a TLS connection with adapters using a tenant specific
+server certificate and host name. Please refer to the <em>Secure Communication</em> admin
+guide for details.</li>
+<li>Hono now supports <em>auto-provisioning</em> of devices that authenticate with X.509 client certificates.
+For more information please refer to the <a href="https://www.eclipse.org/hono/docs/concepts/device-provisioning/">Device Provisioning</a>
+concept and for details to the <a href="https://www.eclipse.org/hono/docs/api/tenant/#trusted-ca-format">Tenant API</a>
+and the <a href="https://www.eclipse.org/hono/docs/api/credentials/#get-credentials">Credentials API</a>.</li>
+<li>The Hono Auth Server and Device Registry components now support configuring the SASL
+mechanisms advertised to a client connecting to these components. This can be used to
+restrict the support to only one of the SASL PLAIN and EXTERNAL mechanisms instead of both.</li>
+<li>A new metric namely <em>hono.connections.authenticated.duration</em> has been introduced to track the
+connection duration of the authenticated devices. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/api/metrics/">Metrics API</a> for more details.</li>
+<li>The protocol adapters that maintain <em>connection state</em> can now be configured to verify the <em>connection
+duration limit</em> for each tenant before accepting any new connection request from the devices. Please
+refer to the <a href="https://www.eclipse.org/hono/docs/concepts/resource-limits/#connection-duration-limit">resource-limits</a>
+section for more details.</li>
+<li>Hono&rsquo;s example device registry now supports configuring a time out for processing requests from clients.
+This is configured using the property <code>sendTimeOutInMs</code> in <code>org.eclipse.hono.config.ServiceConfigProperties</code>.</li>
+<li>Hono&rsquo;s Helm chart is now available from the
+<a href="https://www.eclipse.org/packages/repository/">Eclipse IoT Packages chart repository</a>.
+All future development of the chart will be done in the IoT Packages project only.
+The deployment guide has been adapted accordingly.</li>
+</ul>
+<h3 id="fixes--enhancements-44">Fixes &amp; Enhancements</h3>
+<ul>
+<li>Hono&rsquo;s Helm chart now supports configuring resource requests and limits of the container images.</li>
+<li>The MQTT adapter now includes a device&rsquo;s MQTT client ID in its request to retrieve the device&rsquo;s
+credentials. This additional information can be used by device registry implementations when determining
+the device identity.</li>
+<li>The domain name of the <a href="/hono/sandbox/">Hono Sandbox</a> has been changed to
+<code>hono.eclipseprojects.io</code>.
+It will still be available at the old domain name for some time as well, though.</li>
+<li>Hono&rsquo;s OpenTracing instrumentation has been upgraded to Opentracing 0.33.0.
+The example deployment now uses the Jaeger Java client in version 0.35.2 and the
+Jaeger 1.16 agent and back end components.</li>
+<li>Some of the environment variable names documented in the user guides which can be used for configuring
+Hono components had not been recognized during start up of the components.
+In particular, the names for configuring the connection to the Device Connection service
+and for configuring a heath check server have been fixed.</li>
+<li>The AMQP adapter now correctly accepts command response messages from devices that do not
+contain any payload. Such responses are useful to only convey a status code in reply to
+a command.</li>
+</ul>
+<h3 id="api-changes-12">API Changes</h3>
+<ul>
+<li>The already deprecated endpoints with the <code>control</code> prefix have been removed. The northbound and southbound
+Command &amp; Control endpoints can now only be used with the <code>command</code> and <code>command_response</code> prefixes
+(or the respective shorthand version). Note that the AMQP Messaging Network still needs to be
+configured in such a way that protocol adapters can send and receive messages on the <code>control/*</code>
+address pattern. This is now used for internal communication between protocol adapters only.</li>
+<li>The <code>create</code> method in <code>org.eclipse.hono.client.HonoConnection</code> now requires its Vertx parameter to be not null.</li>
+</ul>
+<h2 id="104">1.0.4</h2>
+<h3 id="api-changes-13">API Changes</h3>
+<ul>
+<li>The <code>org.eclipse.hono.client.DeviceRegistration</code> interface&rsquo;s <em>get</em> methods have been removed
+because the Device Registration API does not define a corresponding operation.
+Consequently, the C&amp;C functionality of the Kerlink Lora provider which relied on the <em>get</em>
+method has been removed.</li>
+</ul>
+<h2 id="103">1.0.3</h2>
+<h3 id="fixes--enhancements-45">Fixes &amp; Enhancements</h3>
+<ul>
+<li>Hono&rsquo;s Helm Chart now correctly configures Prometheus based resource limit checks if
+a Prometheus server is being used for collecting metrics.</li>
+<li>Some OpenTracing spans used for tracking processing of messages haven&rsquo;t properly been finished.
+This has been fixed.</li>
+<li>Protocol adapters are now able to process messages while still trying to re-establish connections
+to other services after a connection loss. This might result in fewer messages being rejected
+in such situations.</li>
+</ul>
+<h2 id="102">1.0.2</h2>
+<h3 id="fixes--enhancements-46">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The example deployment now also works with Kubernetes 1.16 using Helm 2.15 and later.</li>
+<li>The Hono chart can now also be deployed using the recently released Helm 3. In fact,
+Helm 3 is now the recommended way for deploying Hono as it doesn&rsquo;t require installation
+of any Helm specific components to the Kubernetes cluster.</li>
+<li>The example data grid which can be deployed using the Hono Helm chart can now be scaled
+out to more than one node.</li>
+<li>Under rare circumstances an HTTP adapter instance might have gotten into a state where
+a device&rsquo;s requests to receive commands could no longer be processed successfully
+anymore until the adapter instance had been restarted. This has been fixed.</li>
+<li>A potential issue has been identified where some command messages might not get sent to
+the corresponding gateway. The scenario here involves the gateway sending event/telemetry
+messages via HTTP with a <code>hono-ttd</code> header in order to receive commands, and doing so
+with multiple concurrent requests for <em>different</em> devices. To resolve this issue, the
+corresponding tenant can be configured with a <code>support-concurrent-gateway-device-command-requests</code>
+option set to <code>true</code> in the <code>ext</code> field of an <code>adapters</code> entry of type <code>hono-http</code>.
+Note that with this option it is not supported for the authenticated gateway to send
+<em>one</em> message with a <code>hono-ttd</code> header and no device id to receive commands for <em>any</em>
+device that has last sent a telemetry or event message via this gateway.</li>
+</ul>
+<h2 id="101">1.0.1</h2>
+<h3 id="fixes--enhancements-47">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The AMQP protocol adapter now requests devices to send traffic periodically in order
+to prevent a time out of the connection. This way the adapter is able to detect and
+close stale connections which is important to reliably close the device&rsquo;s corresponding
+command consumer. The time period after which the adapter should consider a connection stale
+can be configured using an environment variable. Please refer to the AMQP adapter&rsquo;s
+admin guide for details.</li>
+<li>The example deployment using the Helm chart correctly creates the <code>DEFAULT_TENANT</code> again.</li>
+</ul>
+<h2 id="100">1.0.0</h2>
+<h3 id="new-features-15">New Features</h3>
+<ul>
+<li>A tenant can now be configured with a <em>max-ttl</em> which is used as an upper boundary for default
+TTL values configured for devices/tenants. Please refer to the <a href="https://www.eclipse.org/hono/docs/api/tenant#resource-limits-configuration-format">Tenant API</a>
+for details.
+The AMQP, HTTP, MQTT and Kura protocol adapters consider this property when setting a TTL on
+downstream event messages.</li>
+<li>A protocol adapter can now be configured with a timeout for idle tenants. When there has been no
+communication between a protocol adapter instance and the devices of a tenant, the former one releases
+allocated resources of the tenant. Currently this means that it closes AMQP links and stops reporting
+metrics for this tenant. The timeout is configured with the property <code>tenantIdleTimeout</code> for a protocol
+adapter. Please refer to the protocol adapter <a href="https://www.eclipse.org/hono/docs/admin-guide/">configuration guides</a>
+for details.</li>
+<li>The accounting period for the <em>message limit</em> checks can now be configured as <code>monthly</code>.
+In this case the data usage for a tenant is calculated from the beginning till the end of the
+(Gregorian) calendar month. Refer <a href="https://www.eclipse.org/hono/docs/concepts/resource-limits/">resource limits</a>
+for more information.</li>
+<li>The devices can now indicate a <em>time-to-live</em> duration for event messages published using
+the HTTP and MQTT adapters by setting the <em>hono-ttl</em> property in requests explicitly. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/user-guide/http-adapter/#publish-an-event-authenticated-device">HTTP Adapter</a>
+and <a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/#publishing-events">MQTT Adapter</a> for details.</li>
+<li>The device registry HTTP management API now properly implements <em>cross-origin resource sharing (CORS)</em> support,
+by allowing the service to be exposed to configured domains (by default, it&rsquo;s exposed to all domains).</li>
+<li>The <code>org.eclipse.hono.util.MessageHelper</code> now provides convenience factory methods for creating
+new downstream messages from basic properties.
+<code>org.eclipse.hono.service.AbstractProtocolAdapterBase</code> has been adapted to delegate to these
+new factory methods.</li>
+<li>Hono&rsquo;s protocol adapters can now use multiple trusted certificate authorities per tenant to authenticate
+devices based on client certificates. The list of trusted certificate authorities can be managed at the
+tenant level using the Device Registry Management API.</li>
+<li>Authenticated gateway devices can now subscribe to commands for specific devices. Before, gateways
+could only subscribe to commands directed at any of the devices that the gateway has acted on behalf of.
+With the new feature of also being able to subscribe to commands for specific devices, northbound
+applications will get notified of such a subscription along with the specific device id.</li>
+<li>Now a <em>max-ttd</em> value, which is used as an upper boundary for the <em>hono-ttd</em> value specified by the devices,
+can be set as an <em>extension</em> property in the adapters section of the tenant configuration.</li>
+</ul>
+<h3 id="api-changes-14">API Changes</h3>
+<ul>
+<li>The already deprecated <em>legacy metrics</em> support has been removed.</li>
+<li>The already deprecated <em>legacy device registry</em> and the corresponding base classes, which had been deprecated
+as well, have been removed.</li>
+<li>The topic filters used by MQTT devices to subscribe to commands has been changed slightly
+to better fit the addressing scheme used by the other protocol adapters.
+The existing topic filters have been deprecated but are still supported.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/#command-control">MQTT adapter user guide</a>
+for details.</li>
+<li>The interface <code>ResourceLimitChecks</code> and its implementation classes have been moved to
+package <code>org.eclipse.hono.service.resourcelimits</code> from <code>org.eclipse.hono.service.plan</code>.
+Also the configuration parameters for the resource limits were renamed from <code>hono.plan</code>
+to <code>hono.resourceLimits</code>. Please refer to the protocol adapter <a href="https://www.eclipse.org/hono/docs/admin-guide/">configuration guides</a>
+for more information.</li>
+<li>The response payload of the <em>get Tenant</em> operation of the Tenant API has been changed to contain
+a list of trusted certificate authorities instead of just a single one. This way, protocol
+adapters can now authenticate devices based on client certificates signed by one of multiple
+different trusted root authorities defined for a tenant.
+All standard protocol adapters have been adapted to this change.
+The <em>Tenant</em> JSON schema object used in the tenant related resources of the Device Registry Management API
+has also been adapted to contain a list of trusted authorities instead of a single one.</li>
+</ul>
+<h3 id="deprecations-8">Deprecations</h3>
+<ul>
+<li>The OpenShift specific source-to-image deployment model has been removed in
+favor of the Helm charts and the Eclipse IoT Packages project. You can still
+deploy Hono on OpenShift using the Helm charts.</li>
+<li>Defining password secrets with user provided password hash, function and salt is deprecated in the device registry management
+API and will be removed in the upcoming versions. You should use <code>pwd-plain</code> property only going forward.</li>
+</ul>
+<h2 id="10-m7">1.0-M7</h2>
+<h3 id="new-features-16">New Features</h3>
+<ul>
+<li>The Hono Helm chart now supports to choose if the example Device Registry, example AMQP Messaging Network
+and/or the example Jaeger back end should be deployed and used with the Hono components or not.
+In the latter case, the chart now also supports setting configuration properties for using an already
+existing AMQP Messaging Network, Device Registry and/or Jaeger back end.</li>
+<li>A data grid based implementation of the Device Connection API has been added to Hono. This implementation
+can be used in production environments using a highly scalable data grid for storing device connection
+information. The service can be used instead of the simple implementation provided by the example Device
+Registry by means of setting a configuration property when <a href="https://www.eclipse.org/hono/docs/deployment/helm-based-deployment/#using-the-device-connection-service">deploying using the Helm chart</a>.</li>
+<li>A tenant can now be configured so that <em>all</em> OpenTracing spans created when processing messages for that
+specific tenant will be recorded in the tracing backend (overriding the default sampling strategy that
+might only record a certain percentage of traces). See
+<a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#enforcing-the-recording-of-traces-for-a-tenant">Monitoring &amp; Tracing</a>
+for more details.</li>
+</ul>
+<h3 id="api-changes-15">API Changes</h3>
+<ul>
+<li>The obsolete method variants of <code>reportTelemetry</code> in <code>org.eclipse.hono.service.metric.Metrics</code>
+have been removed. The new variants of this method accept an additional parameter of type <code>TenantObject</code>.</li>
+<li>The already deprecated <code>org.eclipse.hono.service.AbstractProtocolAdapterBase.getRegistrationAssertion</code>
+method has been removed. The alternate variant of the <code>getRegistrationAssertion</code> method which accepts an
+additional OpenTracing span parameter should be used.</li>
+<li>The already deprecated <code>getRegistrationAssertion</code>, <code>getTenantConfiguration</code>, <code>sendConnectedTtdEvent</code>,
+<code>sendDisconnectedTtdEvent</code> and <code>sendTtdEvent</code> methods in <code>org.eclipse.hono.service.AbstractProtocolAdapterBase</code>
+have been removed. The alternate variant of these methods which accepts an additional OpenTracing span parameter
+should be used.</li>
+</ul>
+<h3 id="deprecations-9">Deprecations</h3>
+<ul>
+<li>The deprecated Kura adapter is no longer deployed by default by the Helm chart.
+However, it can still be deployed by means of <a href="https://www.eclipse.org/hono/docs/deployment/helm-based-deployment/#deploying-optional-adapters">setting a configuration property</a>.</li>
+</ul>
+<h2 id="10-m6">1.0-M6</h2>
+<h3 id="new-features-17">New Features</h3>
+<ul>
+<li>Implementation of the new HTTP management API for tenants, devices and
+credentials.</li>
+<li>The health check endpoints of services can now be called securely via TLS.
+Please refer to the protocol adapter <a href="https://www.eclipse.org/hono/docs/admin-guide/">configuration guides</a>
+for the new parameters available.</li>
+<li>The <a href="https://www.eclipse.org/hono/docs/api/tenant/#resource-limits-configuration-format">Tenant API</a> now optionally allows
+specifying <em>minimum message size</em>. If it is specified, then the payload size of the incoming telemetry, event
+and command messages are calculated in accordance with the <em>minimum message size</em> by the AMQP, HTTP and MQTT
+protocol adapters and then recorded in the metrics system.
+See <a href="https://www.eclipse.org/hono/docs/api/metrics/#minimum-message-size">Metrics</a> for more details.</li>
+</ul>
+<h3 id="fixes--enhancements-48">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The automatic reconnect handling of the <code>HonoConnection</code> implementation has been
+improved and now applies an exponential back-off algorithm. The behavior can be
+configured using the <code>${PREFIX}_RECONNECT_*</code> configuration variables. Please
+refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/">Hono Client Configuration guide</a>
+for details regarding these new variables.</li>
+<li>The <em>message limit</em> checks is now extended to include command and control messages.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/concepts/resource-limits/">resource limits</a> for details.</li>
+<li>The health check server endpoint will now bind to a default port value of 8088 if no values
+are set explicitly in the configuration. It is also possible to start both a secure and an insecure
+server (using different ports)
+Refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config">Monitoring configuration guide</a>
+for details.</li>
+</ul>
+<h3 id="api-changes-16">API Changes</h3>
+<ul>
+<li>With the implementation of the new HTTP management API for the device registry,
+the class hierarchy for implementing device registry was significantly
+refactored. This also includes the deprecation of a list of classes and tests.
+Also see <a href="#device-registry-changes">Device registry changes</a> for more information.</li>
+<li>The <em>complete</em> interfaces, and the <em>base</em> and <em>complete</em> implementation
+classes for services got deprecated, and are planned to be removed in a future
+release. Also see <a href="#device-registry-changes">Device registry changes</a> for
+more information.</li>
+<li>The example Device Registry that comes with Hono now implements the new
+HTTP management API. Consequently, the URI endpoints for managing the content
+of the registry have changed accordingly.</li>
+<li>The configuration parameters for the health check endpoint were moved from
+<code>hono.app</code> to <code>hono.healthCheck</code> and renamed. <code>hono.app.healthCheckPort</code> is now
+<code>hono.healthCheck.insecurePort</code> and <code>hono.app.healthCheckBindAddress</code> is now
+<code>hono.healthCheck.insecurePortBindAdress</code>. Please refer to the protocol adapter
+<a href="https://www.eclipse.org/hono/docs/admin-guide/">configuration guides</a> for additional
+information on the new naming.</li>
+</ul>
+<h3 id="device-registry-changes">Device registry changes</h3>
+<p>The section summarizes changes made for 1.0-M5 in the device registry.</p>
+<p>During the development of Hono 1.0, we defined a new HTTP API for managing
+information stored in the device registry. This API replaces the current,
+provisional API, which was originally intended for tests to manipulate the file
+based device registry during system tests. The new HTTP based API is intended
+to replace the existing HTTP API, as well as the management part of the AMQP
+based API.</p>
+<p>The first major change is, that all the <em>complete</em> classes got deprecated. As
+they are based on the services for the protocol adapters. And those services
+are no longer considered to be used for managing information. The replacement
+for those classes are the new management APIs.</p>
+<p>Each of the three APIs got a companion API for <em>management</em>, which are located
+in the <code>org.eclipse.hono.service.management</code> base package.</p>
+<p>The class hierarchy was decoupled in order to make it easier to implement those
+services. The new design only requires to implement a service, which is not
+based on any other interface. And while your concrete implement still can
+implement the <code>Verticle</code> interface, this is no longer a requirement.</p>
+<p>Also the <em>base</em> classes got deprecated. Instead of inheriting the common
+functionality, to bind to the <em>event bus</em>, that functionality got moved into new
+<em>event bus adapter</em> classes, which take the reference of a service, and bind
+this service to the <em>event bus</em> instead of using inheritance. Those change
+make it possible to  re-use much of the functionality, but do not impose the
+requirement to inherit from either the <em>complete</em> or <em>base</em> classes. And
+this finally allows your service implementation to be extend your specific
+base class, and re-use common Hono functionality at the same time. This allows
+service implementations to implement both the standard API, as well as the
+management API in the same class. As Java does not allow inheritance
+from multiple classes, this was not possible before.</p>
+<p>The new default file based device registry, was modified to use the new class
+hierarchy and support the new management model.</p>
+<p>The device registry, which was provided in 1.0-M4 and before, is still part of
+the source tree, but was moved to <code>services/device-registry-legacy</code>. It is
+there to show the compatibility with the older class hierarchy, using the,
+now deprecated, <em>base</em> and <em>complete</em> classes. Newer implementations should not
+be build on this model.</p>
+<p>Clients of the <em>base</em> variants of the services, like the protocol adapters,
+do not need to make any changes.</p>
+<p>Implementations of the device registry services, using the existing <em>base</em> and
+<em>complete</em> can re-use that model, but are encouraged to migrate to the new model
+as soon as possible, as the legacy model is planned to be removed. The only
+impacting change is that the service interfaces no longer extend from
+<code>Verticle</code> directly, but that has been moved to the <em>base</em> implementation.</p>
+<p>Implementations of the services for protocol adapters (the non-management API),
+can switch to the new class hierarchy by dropping inheritance to the <em>base</em>
+class, and starting up a new instance of the corresponding <em>event bus adapter</em>,
+providing a reference to the service. For the <code>RegistrationService</code> it is also
+possible to inherit common functionality from <code>AbstractRegistrationService</code>.</p>
+<p>Implementations of the services for management need to simply inherit from the
+new management interfaces, and set up the <em>event bus adapters</em> the same way.</p>
+<p>The module <code>device-registry-legacy</code> as well as all classes and interfaces,
+which got deprecated, are planned to be dropped in 1.1.</p>
+<h2 id="10-m5">1.0-M5</h2>
+<h3 id="new-features-18">New Features</h3>
+<ul>
+<li>Hono&rsquo;s protocol adapters and the other components now support using ECC based server certificates.
+The protocol adapters also support authenticating devices which present an ECC based client certificate.
+The example configuration now uses ECC based certificates by default.</li>
+<li>Hono now specifies a <a href="https://www.eclipse.org/hono/docs/api/device-connection/">Device Connection API</a> and
+contains an exemplary implementation of this API included in the device registry component. The purpose of the API is
+to be able to set and retrieve information about the connections from devices or gateways to the protocol adapters.</li>
+<li>This version implements the new HTTP management API for tenants, devices, and credentials.</li>
+</ul>
+<h3 id="fixes--enhancements-49">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The Hono Sandbox&rsquo;s protocol adapters support using the gateway mode again.</li>
+<li>The <a href="https://www.eclipse.org/hono/docsgetting-started">Getting Started</a> guide has been rewritten
+to use the <a href="/hono/sandbox/">Hono Sandbox</a> or a local Minikube cluster
+instead of Docker Swarm.</li>
+<li>The MQTT adapter now closes the network connection to device on publish failures.</li>
+</ul>
+<h3 id="api-changes-17">API Changes</h3>
+<ul>
+<li>The optional methods of the <a href="https://www.eclipse.org/hono/docs/api/tenant/">Tenant API</a> have been
+removed. Implementations of the Tenant API are encouraged to expose the <em>tenants</em> endpoint defined by
+<a href="https://www.eclipse.org/hono/docs/api/management">Hono&rsquo;s HTTP based management API</a> instead.
+Several of the formerly mandatory to include properties of the request and response messages have
+been made optional or removed altogether. Existing clients should not be affected by these changes, though.</li>
+<li>The optional methods of the
+<a href="https://www.eclipse.org/hono/docs/api/device-registration/">Device Registration API</a> have been
+removed. Implementations of the Device Registration API are encouraged to expose the <em>devices</em> endpoint defined by
+<a href="https://www.eclipse.org/hono/docs/api/management">Hono&rsquo;s HTTP based management API</a> instead.
+Several of the formerly mandatory to include properties of the request and response messages have
+been made optional or removed altogether. Existing clients should not be affected by these changes, though.</li>
+<li>The response message format of the <em>assert Device Registration</em> operation of the Device Registration API
+has been changed, replacing the optional <code>gw-supported</code> boolean field with an optional <code>via</code> field.
+The value of this field contains the list of gateway that may act on behalf of the device on which
+the operation is invoked.</li>
+<li>The methods for invoking the optional operations of the Device Registration API have been removed
+from <code>org.eclipse.hono.client.RegistrationClient</code> and <code>org.eclipse.hono.client.impl.RegistrationClientImpl</code>.</li>
+<li>The optional methods of the <a href="https://www.eclipse.org/hono/docs/api/credentials/">Credentials API</a>
+have been removed. Implementations of the Credentials API are encouraged to expose the <em>credentials</em> endpoint defined
+by <a href="https://www.eclipse.org/hono/docs/api/management">Hono&rsquo;s HTTP based management API</a> instead.
+Several of the formerly mandatory to include properties of the request and response messages have
+been made optional or removed altogether. Existing clients should not be affected by these changes, though.</li>
+<li>The <code>control</code> prefix in the northbound and southbound Command &amp; Control endpoints has been renamed to <code>command</code>.
+The endpoint names with the <code>control</code> prefix are still supported but deprecated. The northbound endpoint for
+<em>business applications</em> to receive command responses has the <code>command_response</code> prefix now. The old <code>control</code> prefix
+for the receiver address is also still supported but deprecated.</li>
+<li>The <code>deviceId</code> parameter of the <code>getOrCreateCommandClient</code> and <code>getOrCreateAsyncCommandClient</code> methods of the
+<code>org.eclipse.hono.client.ApplicationClientFactory</code> interface has been removed.
+This means that a <code>CommandClient</code> or <code>AsyncCommandClient</code> instance can be used to send commands to arbitrary
+devices of a tenant now. Accordingly, the <code>CommandClient.sendCommand</code> and <code>AsyncCommandClient.sendAsyncCommand</code>
+methods now require an additional <code>deviceId</code> parameter.</li>
+<li>The deprecated methods of <code>org.eclipse.hono.client.HonoConnection</code> have been removed.</li>
+</ul>
+<h2 id="10-m4">1.0-M4</h2>
+<h3 id="new-features-19">New Features</h3>
+<ul>
+<li>Default properties can now also be set at the tenant level, affecting all devices
+belonging to the tenant. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/user-guide/">protocol adapter user guides</a> for details.</li>
+<li><code>CredentialsClientImpl</code> now supports caching of response data received from a Credentials service based on
+<em>cache directives</em>. The protocol adapters are now equipped to cache the response from the Credentials Service.
+The protocol adapters support configuration variables to set the default cache timeout, the minimum
+and maximum cache sizes for this service.</li>
+<li>The example device registry&rsquo;s Credentials service implementation now includes a <em>cache directive</em>
+in its response to the <em>get Credentials</em> operation which allows clients to cache credentials of
+type <em>hashed-password</em> and <em>x509-cert</em> for a configurable amount of time. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/device-registry-config/">Device Registry Admin Guide</a>
+for details regarding the configuration properties to use.</li>
+<li>There is now an official specification of an HTTP API for managing the content of a device registry.
+The <a href="https://www.eclipse.org/hono/docs/api/management">HTTP Management API</a> is defined using by
+means of OpenAPI v3. Note, that the API is not yet implemented by the example device registry that comes with Hono.</li>
+<li>The Command &amp; Control feature now supports gateway agnostic addressing of devices. This means that applications are
+able to send commands to devices without knowing the particular gateway they may be connected to.</li>
+<li>The concept and implementation of <em>message limit</em> have been added. The protocol adapters can be now
+enabled to verify this <em>message limit</em> for each tenant before accepting any telemetry/event messages.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/concepts/resource-limits/">resource limits</a> for details.</li>
+<li>A basic Sigfox protocol adapter, for use with the Sigfox backend. Please read
+the <a href="https://www.eclipse.org/hono/docs/user-guide/sigfox-adapter/">Sigfox protocol adapter</a>
+documentation to learn more about pre-requisites and limitations.</li>
+</ul>
+<h3 id="fixes--enhancements-50">Fixes &amp; Enhancements</h3>
+<ul>
+<li>vert.x has been updated to version 3.7.0.</li>
+</ul>
+<h3 id="api-changes-18">API Changes</h3>
+<ul>
+<li>The <code>org.eclipse.hono.util.RegistrationConstants.FIELD_DEFAULTS</code> constant
+has been renamed to <code>org.eclipse.hono.util.RegistrationConstants.FIELD_PAYLOAD_DEFAULTS</code>.</li>
+<li>The <code>org.eclipse.hono.service.AbstractProtocolAdapterBase.newMessage</code> and
+<code>org.eclipse.hono.service.AbstractProtocolAdapterBase.addProperties</code> methods have
+been changed to accept an additional parameter of type <code>TenantObject</code> which may contain default
+properties defined for the tenant to be included in downstream messages.</li>
+<li>The <em>get Registration Information</em> operation of the Device Registration API is not optional anymore,
+it is now mandatory to implement. For device registry implementations based on the
+<code>CompleteRegistrationService</code> interface, there is no change needed as the operation is already
+defined there.</li>
+<li>The response message of the <em>assert Device Registration</em> operation does not contain an assertion
+token anymore. The <code>org.eclipse.hono.service.registration.BaseRegistrationService</code> class
+has been adapted accordingly.</li>
+<li>The already deprecated <code>org.eclipse.hono.client.CommandConsumerFactory.closeCommandConsumer</code>
+method has been removed.</li>
+<li>The response message format of the <em>assert Device Registration</em> operation of the Device Registration API
+has been changed to include an optional <code>gw-supported</code> boolean field. The value of this field refers to
+whether the device on which the operation is invoked allows one or more gateways to act on its behalf.</li>
+<li>The AMQP sender link address to be used by <em>business applications</em> to send commands to devices has been
+changed from <code>control/${tenant_id}/${device_id}</code> to <code>control/${tenant_id}</code> with command messages requiring
+the <code>to</code> property to be set to <code>control/${tenant_id}/${device_id}</code>. Using <code>control/${tenant_id}/${device_id}</code>
+as sender link address is still possible but gateway agnostic addressing of devices is not supported for
+such command messages.</li>
+</ul>
+<h3 id="deprecations-10">Deprecations</h3>
+<ul>
+<li>Instructions for script based deployment to Kubernetes have been removed from the deployment guide.
+Using Helm is now the only supported way of deploying Hono to Kubernetes.</li>
+</ul>
+<h2 id="10-m3">1.0-M3</h2>
+<h3 id="fixes--enhancements-51">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The protocol adapters add tracing information about invocations of the Device Registry
+services again.</li>
+<li>The example deployment now uses Qpid Dispatch Router 1.6.0.</li>
+</ul>
+<h2 id="10-m2">1.0-M2</h2>
+<h3 id="new-features-20">New Features</h3>
+<ul>
+<li>A new <em>experimental</em> LoRa protocol adapter has been added which (so far) supports the reception
+of telemetry data and events from devices connected to LoRa network providers and/or
+LoRa gateways. Note that this adapter is <em>not</em> considered production ready yet.
+Any help in improving and enhancing the adapter is more than welcome.</li>
+<li>The concept and implementation of <em>resource limits</em> have been added. Now a connection limit to define
+the maximum number of device connections to be allowed per tenant can be configured. The MQTT and AMQP
+adapters can be enabled to verify this connection limit before accepting any new connections. Please
+refer to the <a href="https://www.eclipse.org/hono/docs/concepts/resource-limits/">resource limits</a> for details.</li>
+</ul>
+<h3 id="fixes--enhancements-52">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The base classes for implementing the AMQP and HTTP endpoints for the Credentials, Tenant
+and Device Registration APIs now create an OpenTracing Span for tracking the
+processing of requests at a high level.</li>
+<li>The <code>hono-client</code> and <code>hono-core</code> artifacts use Java 8 level again so that they
+can be used in applications using Java 8.</li>
+<li>The protocol adapters now always specify values for the <em>ttd</em> and <em>qos</em> tags when
+reporting telemetry messages using meter name <em>hono.messages.received</em>. This fixes
+an issue when using the Prometheus back end where the HTTP adapter failed to report
+messages that contained a TTD value and others that didn&rsquo;t.</li>
+<li>The Helm based deployment of the device registry has been fixed by adding the secret
+and deployment entries for the <code>device-identities.json</code>.</li>
+<li>Before uploading command responses, the MQTT and AMQP adapters now check whether the device is
+registered and also the adapter is enabled for the tenant.</li>
+</ul>
+<h3 id="api-changes-19">API Changes</h3>
+<ul>
+<li>The <code>hono-client</code> module has undergone several major and incompatible changes. The most
+important change affects the <code>HonoClient</code> interface which no longer serves as a factory
+for the arbitrary clients to the Hono service endpoints.
+It has been renamed to <code>HonoConnection</code> and now only represents the underlying
+AMQP connection to a peer and provides methods for managing the connection state
+and registering listeners for arbitrary life-cycle events of the connection.
+In addition to this, several factory interfaces have been added which can be used
+to create specific clients to Hono&rsquo;s arbitrary services. All of the former <code>HonoClient</code>
+interface&rsquo;s factory methods have been distributed accordingly to:
+<ul>
+<li><code>org.eclipse.hono.client.ApplicationClientFactory</code> for creating clients to
+Hono&rsquo;s north bound Telemetry, Event and Command &amp; Control API.</li>
+<li><code>org.eclipse.hono.client.DownstreamSenderFactory</code> for creating clients to
+Hono&rsquo;s south bound Telemetry and Event APIs.</li>
+<li><code>org.eclipse.hono.client.CommandConsumerFactory</code> for creating clients to
+Hono&rsquo;s south bound Command &amp; Control API.</li>
+<li><code>org.eclipse.hono.client.TenantClientFactory</code> for creating clients to
+Hono&rsquo;s Tenant API.</li>
+<li><code>org.eclipse.hono.client.RegistrationClientFactory</code> for creating clients to
+Hono&rsquo;s Device Registration API.</li>
+<li><code>org.eclipse.hono.client.CredentialsClientFactory</code> for creating clients to
+Hono&rsquo;s Credentials API.</li>
+</ul>
+</li>
+<li>In this context the <code>org.eclipse.hono.client.MessageSender</code> interface has been changed as follows:
+<ul>
+<li>The <em>send</em> methods have been changed to no longer accept a <em>registration assertion token</em>
+which became obsolete with the removal of the <em>Hono Messaging</em> component.</li>
+<li>The <em>isRegistrationAssertionRequired</em> method has been removed from the interface.</li>
+<li>All <em>send</em> method variants which accept specific message parameters have been moved into
+the new <code>org.eclipse.hono.client.DownstreamSender</code> interface which extends the existing
+<code>MessageSender</code>.</li>
+</ul>
+</li>
+<li>Several changes have been made to the <code>org.eclipse.hono.service.AbstractProtocolAdapterBase</code>
+class:
+<ul>
+<li>The <em>newMessage</em> and <em>addProperties</em> methods no longer require a boolean parameter indicating
+whether to include the assertion token in the message being created/amended.
+Custom protocol adapters should simply omit the corresponding parameter.</li>
+<li>The base class now uses <code>org.eclipse.hono.client.CommandConsumerFactory</code> instead of
+<code>org.eclipse.hono.client.CommandConnection</code> for creating
+<code>org.eclipse.hono.client.CommandConsumer</code> instances.
+The <em>setCommandConnection</em> and <em>getCommandConnection</em> methods have been
+renamed to <em>setCommandConsumerFactory</em> and <em>getCommandConsumerFactory</em>
+correspondingly.</li>
+<li>The base class now uses <code>org.eclipse.hono.client.TenantClientFactory</code> instead of
+<code>org.eclipse.hono.client.HonoClient</code> for creating <code>org.eclipse.hono.client.TenantClient</code>
+instances.
+The <em>setTenantServiceClient</em> and <em>getTenantServiceClient</em> methods have been
+renamed to <em>setTenantClientFactory</em> and <em>getTenantClientFactory</em> correspondingly.</li>
+<li>The base class now uses <code>org.eclipse.hono.client.RegistrationClientFactory</code> instead of
+<code>org.eclipse.hono.client.HonoClient</code> for creating
+<code>org.eclipse.hono.client.RegistrationClient</code> instances.
+The <em>setRegistrationServiceClient</em> and <em>getRegistrationServiceClient</em> methods have been
+renamed to <em>setRegistrationClientFactory</em> and <em>getRegistrationClientFactory</em> correspondingly.</li>
+<li>The base class now uses <code>org.eclipse.hono.client.CredentialsClientFactory</code> instead of
+<code>org.eclipse.hono.client.HonoClient</code> for creating
+<code>org.eclipse.hono.client.CredentialsClient</code> instances.
+The <em>setCredentialsServiceClient</em> and <em>getCredentialsServiceClient</em> methods have been
+renamed to <em>setCredentialsClientFactory</em> and <em>getCredentialsClientFactory</em> correspondingly.</li>
+<li>The base class now uses <code>org.eclipse.hono.client.DownstreamSendertFactory</code> instead of
+<code>org.eclipse.hono.client.HonoClient</code> for creating
+<code>org.eclipse.hono.client.DownstreamSender</code> instances.
+The <em>setHonoMessagingClient</em> and <em>getHonoMessagingClient</em> methods have been
+renamed to <em>setDownstreamSenderFactory</em> and <em>getDownstreamSenderFactory</em> correspondingly.</li>
+</ul>
+</li>
+<li>The <code>org.eclipse.hono.service.auth.device.UsernamePasswordAuthProvider</code> and the
+<code>org.eclipse.hono.service.auth.device.X509AuthProvider</code> now accept a
+<code>org.eclipse.hono.client.CredentialsClientFactory</code> instead of a
+<code>org.eclipse.hono.client.HonoClient</code> in their constructors.</li>
+<li>The <code>org.eclipse.hono.adapter.http.HonoBasicAuthHandler</code> and
+<code>org.eclipse.hono.adapter.http.X509AuthHandler</code> classes have been moved to
+package <code>org.eclipse.hono.service.http</code> in the <em>service-base</em> module for
+consistency reasons as all other reusable classes for implementing HTTP services/
+adapters are located in that package already.</li>
+<li>The <code>org.eclipse.hono.client.HonoClient</code> class has been renamed to
+<code>org.eclipse.hono.client.HonoConnection</code> to better reflect its sole responsibility
+for establishing (and maintaining) the connection to a Hono service endpoint.</li>
+</ul>
+<h3 id="deprecations-11">Deprecations</h3>
+<ul>
+<li>The optional operations defined by the Tenant, Device Registration and Credentials API
+have been deprecated. They will be removed from Hono 1.0 altogether.
+A new HTTP based API will be defined instead which can then be used to <em>manage</em> the content
+of a device registry.</li>
+<li><code>org.eclipse.hono.client.HonoConnection</code>&rsquo;s <em>connect</em> method variants accepting
+a disconnect handler have been deprecated and will be removed in Hono 1.0.
+Client code should use one of the other <em>connect</em> methods instead and register a
+<code>org.eclipse.hono.client.DisconnectListener</code> and/or a
+<code>org.eclipse.hono.client.ReconnectListener</code> to get notified about life-cycle
+events of the underlying AMQP connection.</li>
+</ul>
+<h2 id="10-m1">1.0-M1</h2>
+<h3 id="new-features-21">New Features</h3>
+<ul>
+<li>The AMQP adapter now supports limiting the number of concurrent connections in order
+to prevent Out of Memory errors. Please refer to
+<a href="https://www.eclipse.org/hono/docs/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a> for details.</li>
+<li>The <code>org.eclipse.hono.client.AsyncCommandClient</code> has been added to support the sending of
+commands to devices and the receiving of responses in an asynchronous way. This can be used
+to decouple the sender and receiver from each other.</li>
+<li>The <code>org.eclipse.hono.service.tenant.CompleteBaseTenantService</code> class now rejects malformed
+encodings of public keys/certificates included in a request to add a trust anchor to a tenant.</li>
+</ul>
+<h3 id="deprecations-12">Deprecations</h3>
+<ul>
+<li>The <code>HonoClient.closeCommandConsumer()</code> method will be removed in Hono 1.0.
+The <code>CommandConsumer.close()</code> method should be used instead.</li>
+</ul>
+<h2 id="09">0.9</h2>
+<h3 id="new-features-22">New Features</h3>
+<ul>
+<li>The MQTT adapter now supports commands to be published using QoS 1. Please refer to
+<a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/">MQTT adapter User Guide</a> for details.</li>
+<li>The MQTT adapter now supports limiting the number of concurrent connections in order
+to prevent running out of resources. Please refer to
+<a href="https://www.eclipse.org/hono/docs/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a> for details.</li>
+<li>The new <em>Helm deployment</em> for Kubernetes has been added. Please refer to
+<a href="https://www.eclipse.org/hono/docs/deployment/helm-based-deployment/">Helm based deployment guide</a> for details.</li>
+</ul>
+<h3 id="fixes--enhancements-53">Fixes &amp; Enhancements</h3>
+<ul>
+<li><code>org.eclipse.hono.util.RequestResponseResult</code> now provides access to AMQP application-properties conveyed in the
+response message.</li>
+<li>The <code>org.eclipse.hono.service.registration.BaseRegistrationService</code> class now supports authorization of gateways
+(acting on behalf of a device) against a list of gateway identifiers instead of a single identifier only. For that purpose
+the <code>via</code> property of the device&rsquo;s registration information may contain either a single string or a JSON array containing
+multiple strings. Based on this, a device can now be configured to connect via arbitrary gateways instead of just a single
+one.</li>
+</ul>
+<h3 id="api-changes-20">API Changes</h3>
+<ul>
+<li>The layout and structure of the metrics reported by Hono have been changed substantially. Many of the existing meters and tags
+have been changed or replaced in order to provide a more consistent set of metrics and increase the value of the information
+being reported. The legacy metrics still remain unchanged, though.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/api/metrics/">Metrics definition</a> for details.</li>
+<li>In case of a failed connection attempt, <code>HonoClientImpl</code> will now determine based on the error whether it will re-try
+to connect to the peer. Before, reconnect attempts were done unconditionally, by default infinitely or up to the
+number of times defined in the <em>reconnectAttempts</em> property in the <code>ClientConfigProperties</code>. Now, when the outcome
+of the SASL handshake received from the peer during connection establishment indicates that invalid credentials were
+provided or that the server encountered a permanent error when handling the request, no further reconnect attempts
+will be done.</li>
+<li>The deprecated methods have been removed from <code>org.eclipse.hono.client.MessageSender</code> and
+its implementations.</li>
+<li>The Command &amp; Control API&rsquo;s <em>send a request/response command</em> operation has been changed. The response
+message to a command now must include the device and tenant identifiers of the device. Including
+these two properties should make it much easier to implement competing command response consumers
+in business applications.
+As a consequence, the <code>org.eclipse.hono.client.CommandResponse</code>&rsquo;s factory methods have been changed to
+accept the tenant and device IDs as parameters.</li>
+<li>The <em>connectTimeout</em> configuration variable for the <code>HonoClient</code> now defines the time to wait not only for the TCP/TLS
+connection establishment but also for the SASL handshake and the exchange of the AMQP <em>open</em> frame.</li>
+<li>The (already deprecated) Hono Messaging component has been removed from Hono.</li>
+</ul>
+<h3 id="deprecations-13">Deprecations</h3>
+<ul>
+<li>The script based deployment to Kubernetes has been deprecated and will be removed in the next version.
+The Helm based deployment should be used instead.</li>
+<li>The <em>sendCommandResponse(String, String, Buffer, Map, int, SpanContext)</em> of the
+<code>org.eclipse.hono.client.CommandResponseSender</code> interface has been deprecated and
+will be removed in the next version. Custom protocol adapters should use
+<em>sendCommandResponse(CommandResponse, SpanContext)</em> instead.</li>
+</ul>
+<h2 id="09-m2">0.9-M2</h2>
+<h3 id="new-features-23">New Features</h3>
+<ul>
+<li>The MQTT protocol adapter now supports authentication of devices using X.509 client certificates. Please refer to
+the <a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/">MQTT adapter user guide</a> for details regarding configuration.</li>
+</ul>
+<h3 id="fixes--enhancements-54">Fixes &amp; Enhancements</h3>
+<ul>
+<li>
+<p>The OpenShift <em>source-to-image</em> (S2I) deployment is now the default
+OpenShift / OKD deployment. The plain OpenShift deployment, which had been deprecated
+in Hono 0.8, has been removed.</p>
+</li>
+<li>
+<p>The protocol adapters can now be configured with a custom <em>DNS timeout</em> value, limiting the time that the adapter
+will wait for the response to a DNS query. By default, a DNS query will time out after 5 seconds.
+Please refer to the protocol adapter admin guides for details regarding the new configuration variable.</p>
+</li>
+<li>
+<p>The following configuration variables have been added to <code>HonoClient</code>:</p>
+<ul>
+<li>
+<p><em>connectTimeout</em>: Sets a limit on the time that the client will wait for a TCP/TLS connection with the peer
+to be established. By default, a connection attempt will time out after 5 seconds.</p>
+</li>
+<li>
+<p><em>idleTimeout</em>: The idle timeout defines the amount of time after which a connection will be closed when no frames
+have been received from the remote peer. The default value is 16 seconds.</p>
+</li>
+<li>
+<p><em>sendMessageTimeout</em>: Limits the time to wait for a downstream consumer&rsquo;s acknowledgement of
+an event or command response message received from a device. The default value is 1 second.</p>
+<p>Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/">Hono Client Configuration guide</a>
+for details regarding the new configuration variables.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="api-changes-21">API Changes</h3>
+<ul>
+<li>Some of the <em>tags</em> used by Hono&rsquo;s components when reporting metrics have been changed. The common tag <em>component</em>
+has been renamed to <em>component-type</em>. The <em>protocol</em> tag formerly used by adapters to indicate the transport protocol
+that a message has been received over, has been replaced by the generic <em>component-name</em> tag which indicates the name
+of the component that a metric has been reported by. Please refer to the <a href="https://www.eclipse.org/hono/docs/api/metrics/">Metrics API</a>
+for details. Note that these changes do not affect the legacy Graphite based metrics back end.</li>
+</ul>
+<h3 id="deprecations-14">Deprecations</h3>
+<ul>
+<li>The Hono Messaging component is now  deprecated and will be removed from Hono in version 0.9 altogether.
+The example deployment has not been using Hono Messaging since 0.6 and there is no practical reason for
+using it anymore.</li>
+</ul>
+<h2 id="09-m1">0.9-M1</h2>
+<h3 id="new-features-24">New Features</h3>
+<ul>
+<li>The default Micrometer back end is now Prometheus, the Grafana dash boards have been updated
+to retrieve data from Prometheus instead of the old InfluxDB.
+The Graphite based legacy metrics format can still be used but requires building Hono from source and activating
+the <code>metrics-graphite</code> Maven build profile.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/">Monitoring admin guide</a> for details.</li>
+<li>The <code>org.eclipse.hono.service.credentials.CompleteBaseCredentialsService</code> class now supports the transparent
+<em>on-the-fly</em> hashing of clear text passwords contained in <em>hashed-password</em> credentials. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/user-guide/device-registry/#managing-credentials">Device Registry user guide</a> for details.</li>
+</ul>
+<h3 id="fixes--enhancements-55">Fixes &amp; Enhancements</h3>
+<ul>
+<li>The base classes for implementing the Device Registration and Tenant APIs have been instrumented
+with OpenTracing. New variants of the <code>RegistrationService.assertRegistration</code>, <code>TenantService.get</code> and <code>CredentialsService.get</code>
+methods have been added which also accept an OpenTracing span as a parameter.
+The default implementations of these methods still default to the previously existing methods.
+In <code>RegistrationService</code> implementations based on <code>BaseRegistrationService</code> an OpenTracing span will be created,
+passed on to the <code>assertRegistration</code> method and finished eventually. The same applies to <code>TenantService</code> implementations
+based on <code>BaseTenantService</code> concerning the <code>get</code> method and to <code>CredentialsService</code> implementations based on
+<code>BaseCredentialsService</code> concerning the <code>get</code> method.</li>
+</ul>
+<h3 id="api-changes-22">API Changes</h3>
+<ul>
+<li>The <code>org.eclipse.hono.service.credentials.CompleteBaseCredentialsService</code> class now requires an
+<code>org.eclipse.hono.auth.HonoPasswordEncoder</code> to be passed into its constructor.
+The <code>org.eclipse.hono.auth.SpringBasedHonoPasswordEncoder</code> has been added as a default implementation for
+this purpose.</li>
+<li>The <a href="https://www.eclipse.org/hono/docs/api/tenant/#trusted-ca-format">Tenant API</a> now optionally allows specifying an
+X.509 certificate instead of a public key when defining a trusted CA.</li>
+</ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
+            </div>
+            
+
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+
+        <div class="col-md-4 col-sm-6">
+            <h4>More</h4>
+
+            <ul>
+                <li><a href="https://github.com/eclipse-hono/hono" title="View Source Code on GitHub"><i class='fab fa-github'></i> GitHub Repository</a></li>
+                <li><a href="https://twitter.com/EclipseHono" title="Follow us on Twitter"><i class='fab fa-twitter'></i> Twitter</a></li>
+                <li><a href="https://gitter.im/eclipse/hono" title="Chat with us on Gitter"><i class='fab fa-gitter'></i> Chat with us</a></li>
+                <li><a href='/hono/community/thankyou/'>Thank you</a></li>
+            </ul>
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+
+        <div class="col-md-4 col-sm-6">
+
+            <h4>Eclipse Legal</h4>
+
+            <ul>
+                <li><a href="http://www.eclipse.org/legal/privacy.php" target="_blank">Privacy Policy</a></li>
+                <li><a href="http://www.eclipse.org/legal/termsofuse.php" target="_blank">Terms of Use</a></li>
+                <li><a href="http://www.eclipse.org/legal/copyright.php" target="_blank">Copyright Agent</a></li>
+                <li><a href="http://www.eclipse.org/legal/" target="_blank">Legal</a></li>
+                <li><a href="https://www.eclipse.org/legal/epl-2.0/" target="_blank">License</a></li>
+                <li><a href="https://eclipse.org/security/" target="_blank">Report a Vulnerability</a></li>
+            </ul>
+
+            <hr class="hidden-md hidden-lg">
+
+        </div>
+        
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="eclipse-logos">
+                <div class="pull-left">
+                    <a href="https://www.eclipse.org" target="_blank">
+                        <img src="https://www.eclipse.org/hono/img/eclipse_foundation_logo_wo.svg" id="logo-eclipse-foundation"/>
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a href="https://iot.eclipse.org" target="_blank">
+                        <img src="https://www.eclipse.org/hono/img/iot-logo.png"/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">&copy; 2019-2022 The Eclipse Hono Project</p>
+            
+            <p class="pull-right">
+              Template by <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
+              
+
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/hono/js/front.js"></script>
+
+
+<script src="/hono/js/owl.carousel.min.js"></script>
+
+
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+<script src="//iot.eclipse.org/assets/js/eclipsefdn.adopters.js"></script>
+<script>
+    eclipseFdnAdopters.getList({
+        project_id: "iot.hono",
+        selector: ".eclipsefdn-adopters",
+        logo_white: true
+    });
+</script>
+
+
+  </body>
+</html>
