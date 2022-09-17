@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Implement a Custom Hono HTTP Protocol Adapter :: Eclipse Hono&trade; Vers.: dev</title>
-    <link rel="icon" href="/images/favicon.ico?1663291266" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1663291266" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1663291266" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1663291266" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1663377697" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1663377697" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1663377697" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1663377697" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1663291266"></script>
+    <script src="/hono/docs/js/variant.js?1663377697"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1663291266"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1663377697"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -125,19 +125,25 @@ The default HTTP Adapter also serves as a blueprint for implementing a <em>custo
 <p>This section will guide you through the steps to build your own custom HTTP protocol adapter.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>You should be familiar with the setup and start of Hono. Refer to the
-<a href="https://www.eclipse.org/hono/getting-started/">Getting Started</a> guide.</p>
+<a href="/hono/docs/dev/getting-started/">Getting Started</a> guide.</p>
 <h2 id="the-standard-http-adapter">The standard HTTP Adapter</h2>
-<p>Hono&rsquo;s HTTP Adapter supports telemetry and event data processing. Please refer to the <a href="/hono/docs/dev/user-guide/http-adapter/">HTTP Adapter User Guide</a> and <a href="/hono/docs/dev/admin-guide/http-adapter-config/">HTTP Adapter Admin Guide</a> for details regarding the usage and configuration of the HTTP Adapter.</p>
+<p>Hono&rsquo;s HTTP Adapter supports telemetry and event data processing. Please refer to the
+<a href="/hono/docs/dev/user-guide/http-adapter/">HTTP Adapter User Guide</a> and
+<a href="/hono/docs/dev/admin-guide/http-adapter-config/">HTTP Adapter Admin Guide</a> for details regarding the usage and
+configuration of the HTTP Adapter.</p>
 <p>You can find the source of the HTTP Adapter at <a href="https://github.com/eclipse-hono/hono/tree/master/adapters/http">https://github.com/eclipse-hono/hono/tree/master/adapters/http</a>.</p>
 <h2 id="anatomy-of-the-standard-http-adapter">Anatomy of the standard HTTP Adapter</h2>
 <p>Like many other Hono components, the HTTP Adapter is built on top of the <a href="https://vertx.io">Vert.x</a> framework.</p>
-<p>The HTTP Adapter&rsquo;s <code>VertxBasedHttpProtocolAdapter</code> class is derived from an abstract base class. This base class implements the standard functionality for component initialization, receiving HTTP requests from devices or external clients, and forwarding of data to the downstream <em>AMQP Messaging Network</em>.</p>
+<p>The HTTP Adapter&rsquo;s <code>VertxBasedHttpProtocolAdapter</code> class is derived from an abstract base class. This base class implements the
+standard functionality for component initialization, receiving HTTP requests from devices or external clients, and forwarding
+of data to the downstream <em>AMQP Messaging Network</em>.</p>
 <h2 id="derive-a-custom-http-protocol-adapter">Derive a custom HTTP Protocol Adapter</h2>
 <p>Use the standard HTTP Adapter as a blueprint.</p>
 <h3 id="adding-routes">Adding Routes</h3>
 <p>In Vert.x, a <em>route</em> is a mapping of an HTTP request to a <em>handler</em>. Inside a route, Vert.x provides a <code>RoutingContext</code>
 instance which gives access to the HTTP request (and response) object containing the HTTP headers.</p>
-<p>The standard HTTP Adapter overrides the abstract method <code>addRoutes()</code>, provided by the base class, and adds routes for processing telemetry data and events.</p>
+<p>The standard HTTP Adapter overrides the abstract method <code>addRoutes()</code>, provided by the base class, and adds routes for
+processing telemetry data and events.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// route for uploading telemetry data
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>router<span style="color:#f92672">.</span><span style="color:#a6e22e">route</span><span style="color:#f92672">(</span>HttpMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">PUT</span><span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/telemetry/:%s/:%s&#34;</span><span style="color:#f92672">,</span> PARAM_TENANT<span style="color:#f92672">,</span> PARAM_DEVICE_ID<span style="color:#f92672">))</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">.</span><span style="color:#a6e22e">handler</span><span style="color:#f92672">(</span>ctx <span style="color:#f92672">-&gt;</span> uploadTelemetryMessage<span style="color:#f92672">(</span>ctx<span style="color:#f92672">,</span> getTenantParam<span style="color:#f92672">(</span>ctx<span style="color:#f92672">),</span> getDeviceIdParam<span style="color:#f92672">(</span>ctx<span style="color:#f92672">)));</span>
@@ -148,10 +154,12 @@ request URL path, and forwards the message payload to the method <code>uploadTel
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
     <div class="box-content">
 <p>Note the Vert.x place holder indicators <code>:</code> inside the URL path pattern <code>/telemetry/:%s/:%s</code>. Vert.x makes matching
-place holders available as request parameters. See <a href="https://vertx.io/docs/vertx-web/java/#_capturing_path_parameters">Capturing path parameters</a> in the Vert.x documentation.</p>
+place holders available as request parameters.
+See <a href="https://vertx.io/docs/vertx-web/java/#_capturing_path_parameters">Capturing path parameters</a> in the Vert.x documentation.</p>
     </div>
 </div>
-<p>The route for events looks very similar to the route for telemetry data. It forwards the event message payload to the <code>uploadEventMessage()</code> method.</p>
+<p>The route for events looks very similar to the route for telemetry data. It forwards the event message payload to the
+<code>uploadEventMessage()</code> method.</p>
 <p>Please refer to the <a href="/hono/docs/dev/api/telemetry/">Telemetry API</a> and <a href="/hono/docs/dev/api/event/">Event API</a>
 for details about the different Hono APIs.</p>
 <p>In the custom HTTP protocol adapter adapt the routes according to your needs.</p>
@@ -159,12 +167,16 @@ for details about the different Hono APIs.</p>
 <p>If you have Hono running, you can launch your custom HTTP protocol adapter as a Docker Container or a Quarkus application.</p>
 <p>You may adopt the Maven profile <code>build-docker-image</code> from the Maven POM file of the standard HTTP Adapter into your
 custom adapter&rsquo;s Maven POM file.</p>
-<p>Follow the guidelines for running the HTTP Adapter in <a href="/hono/docs/dev/admin-guide/http-adapter-config/">HTTP Adapter</a>. Don&rsquo;t forget to configure the custom protocol adapter to bind to a different port than the standard HTTP Adapter if you intend to run them both at the same time. See the <a href="https://www.eclipse.org/hono/docs/dev/admin-guide/http-adapter-config/#port-configuration">Port Configuration section</a> of the HTTP Adapter documentation for details.</p>
+<p>Follow the guidelines for running the HTTP Adapter in <a href="/hono/docs/dev/admin-guide/http-adapter-config/">HTTP Adapter</a>.
+Don&rsquo;t forget to configure the custom protocol adapter to bind to a different port than the standard HTTP Adapter if you intend
+to run them both at the same time. See the <a href="https://www.eclipse.org/hono/docs/dev/admin-guide/http-adapter-config/#port-configuration">Port Configuration section</a>
+of the HTTP Adapter documentation for details.</p>
 <h2 id="using-the-custom-http-protocol-adapter">Using the custom HTTP Protocol Adapter</h2>
 <p>Now that you have your custom HTTP protocol adapter up and running, you can use any HTTP client, like <code>curl</code> or
 <code>HTTPie</code>, to publish data to your custom adapter.</p>
-<p>Note that before publishing data to your custom HTTP protocol adapter, you need to start a <em>consumer</em> for the tenant you intend to publish data for.
-Otherwise you will not be able to successfully send data. For this purpose, you may use the example consumer as described in the <a href="https://www.eclipse.org/hono/getting-started/">Getting Started</a> guide.</p>
+<p>Note that before publishing data to your custom HTTP protocol adapter, you need to start a <em>consumer</em> for the tenant you
+intend to publish data for. Otherwise you will not be able to successfully send data. For this purpose, you may use the example
+consumer as described in the <a href="/hono/docs/dev/getting-started/">Getting Started</a> guide.</p>
 <h2 id="further-extend-the-custom-http-protocol-adapter">Further extend the custom HTTP Protocol Adapter</h2>
 <p>The abstract base class includes additional hooks which you may use to <em>plug into</em> the adapter&rsquo;s life cycle:</p>
 <table>
@@ -203,7 +215,7 @@ Otherwise you will not be able to successfully send data. For this purpose, you 
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
 <a href="https://www.eclipse.org/hono/">
-    <img src="/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+    <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
 </a>
 
         </div>
@@ -215,12 +227,12 @@ Otherwise you will not be able to successfully send data. For this purpose, you 
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1663291267"></script>
-        <script src="/hono/docs/js/lunr.min.js?1663291267"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663291267"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1663291267"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1663291267"></script>
-        <script src="/hono/docs/js/search.js?1663291267"></script>
+        <script src="/hono/docs/js/auto-complete.js?1663377697"></script>
+        <script src="/hono/docs/js/lunr.min.js?1663377697"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1663377697"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1663377697"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1663377697"></script>
+        <script src="/hono/docs/js/search.js?1663377697"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -355,10 +367,10 @@ Otherwise you will not be able to successfully send data. For this purpose, you 
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1663291267"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663291267"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1663291267"></script>
-    <script src="/hono/docs/js/theme.js?1663291267"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1663377698"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1663377698"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1663377698"></script>
+    <script src="/hono/docs/js/theme.js?1663377698"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
