@@ -51,7 +51,7 @@ is then known to be connected to a protocol adapter. &lt;em&gt;Devices&lt;/em&gt
       <link>https://www.eclipse.org/hono/docs/dev/concepts/command-and-control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.eclipse.org/hono/docs/dev/concepts/command-and-control/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Business applications&lt;/em&gt; can send commands to devices following the
+      <description>&lt;p&gt;&lt;em&gt;Business applications&lt;/em&gt; can send commands to devices by means of the
 &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/dev/api/command-and-control/&#34;&gt;Command &amp;amp; Control API&lt;/a&gt;. This concept page describes how this API is used
 by applications to send commands and describes how Hono&amp;rsquo;s protocol adapters process the commands so that they reach
 their target device.&lt;/p&gt;</description>
