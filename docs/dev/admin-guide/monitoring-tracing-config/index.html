@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Monitoring & Tracing :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1665018635" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1665018635" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1665018635" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1665018635" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1665105003" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1665105003" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1665105003" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1665105003" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1665018635"></script>
+    <script src="/hono/docs/js/variant.js?1665105003"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1665018635"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1665105003"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -226,9 +226,8 @@ to generate, emit, collect, process and export tracing data.
 The Hono container images all can be configured to send tracing data to an
 <a href="https://opentelemetry.io/docs/collector/">OpenTelemetry collector</a> from which data can be exported to a back-end like
 Jaeger. The decision, whether a trace should be sampled and exported, controlling the amount of tracing data to be
-collected, is configured by means of a sampler configuration.</p>
-<p>The table below provides an overview of the configuration properties regarding the sampler and the trace exporter, for
-exporting to an OpenTelemetry collector.</p>
+collected, is configured by means of a <em>Sampler</em> configuration.</p>
+<p>Hono supports configuration of the trace exporter by means of the following configuration properties:</p>
 <table>
 <thead>
 <tr>
@@ -240,28 +239,61 @@ exporting to an OpenTelemetry collector.</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><code>QUARKUS_OPENTELEMETRY_TRACER_SAMPLER</code><br><code>quarkus.opentelemetry.tracer.sampler</code></td>
-<td style="text-align:left"><em>string</em></td>
-<td style="text-align:left"><code>on</code></td>
-<td style="text-align:left">The sampler to use for tracing. Valid values are <code>off</code> to export no traces at all, <code>on</code> to export <em>all</em> traces and <code>ratio</code> to define a ratio of traces to be exported.<br>In order to configure a rate-limiting sampler, a system property or environment variable <code>OTEL_TRACES_SAMPLER</code> can be set with value <code>rate-limiting</code>. The limit in terms of maximum traces per seconds then needs to be configured using a <code>OTEL_TRACES_SAMPLER_ARG</code> system property or environment variable.</td>
-</tr>
-<tr>
-<td style="text-align:left"><code>QUARKUS_OPENTELEMETRY_TRACER_SAMPLER_RATIO</code><br><code>quarkus.opentelemetry.tracer.sampler.ratio</code></td>
-<td style="text-align:left"><em>double</em></td>
-<td style="text-align:left"></td>
-<td style="text-align:left">The ratio of traces to be exported. To be used if the sampler is set to <code>ratio</code>. Must be within <code>[0.0, 1.0]</code>. Note that in a YAML configuration, the <code>ratio</code> sampler has to be configured <a href="https://quarkus.io/guides/config-yaml#configuration-key-conflicts">using <code>~</code> as key</a>, in order to set the ratio value as well. Example:<br><code>sampler:<br>  ~: ratio<br>  ratio: 0.8</code></td>
-</tr>
-<tr>
 <td style="text-align:left"><code>QUARKUS_OPENTELEMETRY_TRACER_EXPORTER_OTLP_ENDPOINT</code><br><code>quarkus.opentelemetry.tracer.exporter.otlp.endpoint</code></td>
 <td style="text-align:left"><em>string</em></td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><code>-</code></td>
 <td style="text-align:left">The OTLP endpoint of the OpenTelemetry Collector to connect to. The endpoint must start with either <code>http://</code> or <code>https://</code>.</td>
 </tr>
 </tbody>
 </table>
 <p>Please refer to the
 <a href="https://quarkus.io/guides/opentelemetry#quarkus-opentelemetry-exporter-otlp_configuration">Quarkus OpenTelemetry documentation</a>
-for further configuration trace exporter options.</p>
+for further configuration options for the tracer exporter.</p>
+<p>The sampler can be configured using the following
+<a href="https://opentelemetry.io/docs/reference/specification/sdk-environment-variables/#general-sdk-configuration">OpenTelemetry SDK</a>
+configuration properties.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>OTEL_TRACES_SAMPLER</code><br><code>otel.traces.sampler</code></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left"><code>parentbased_always_on</code></td>
+<td style="text-align:left">The sampler to use for determining if a tracing span should be reported. Please refer to the <a href="https://opentelemetry.io/docs/reference/specification/sdk-environment-variables/#general-sdk-configuration">OpenTelemetry documentation</a> for supported values.<br>In addition to the standard samplers, a rate-limiting sampler can be configured by setting this property to <code>rate_limiting</code> or <code>rate-limiting</code> and using the <code>OTEL_TRACES_SAMPLER_ARG</code> property to set the maximum number of traces to report per second.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>OTEL_TRACES_SAMPLER_ARG</code><br><code>otel.traces.sampler.arg</code></td>
+<td style="text-align:left"><em>string</em></td>
+<td style="text-align:left"><code>-</code></td>
+<td style="text-align:left">A value to be used as the sampler argument. The specified value will only be used if <code>OTEL_TRACES_SAMPLER</code> is set. Each sampler type defines its own expected input, if any. Please refer to the <a href="https://opentelemetry.io/docs/reference/specification/sdk-environment-variables/#general-sdk-configuration">OpenTelemetry documentation</a> for details.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+    <div class="box-content">
+<p>The sampler being created will <em>always</em> be a parent based sampler. For example, configuring a sampler of type
+<code>parentbased_traceidratio</code> will yield the exact same result as configuring a sampler of type <code>traceidratio</code>.</p>
+    </div>
+</div>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Deprecated Sampler configuration properties</div>
+    <div class="box-content">
+<p>In previous versions of Hono, configuring the <em>Sampler</em> was also possible using the Quarkus specific configuration properties
+<code>quarkus.opentelemetry.tracer.sampler</code> and <code>quarkus.opentelemetry.tracer.sampler.ratio</code>. Usage of these properties for configuring an
+<em>always on</em>, <em>always off</em> or a <em>ratio</em> based sampler still works but is deprecated and their support will be removed
+completely in Hono 3.0.0. Please use the standard OpenTelemetry SDK properties instead.</p>
+    </div>
+</div>
 <p>In order to integrate traces from Hono with those from other applications, Hono supports reading and writing trace
 context information from and to messages exchanged with these applications. This is done according to the
 <a href="https://www.w3.org/TR/trace-context/">W3C Trace Context</a> and the <a href="https://www.w3.org/TR/baggage/">W3C Baggage</a>
@@ -300,12 +332,12 @@ in the Tenant Information for details.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1665018635"></script>
-        <script src="/hono/docs/js/lunr.min.js?1665018635"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1665018635"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1665018635"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1665018635"></script>
-        <script src="/hono/docs/js/search.js?1665018635"></script>
+        <script src="/hono/docs/js/auto-complete.js?1665105003"></script>
+        <script src="/hono/docs/js/lunr.min.js?1665105003"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1665105003"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1665105003"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1665105003"></script>
+        <script src="/hono/docs/js/search.js?1665105003"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -440,10 +472,10 @@ in the Tenant Information for details.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1665018636"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1665018636"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1665018636"></script>
-    <script src="/hono/docs/js/theme.js?1665018636"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1665105004"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1665105004"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1665105004"></script>
+    <script src="/hono/docs/js/theme.js?1665105004"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
