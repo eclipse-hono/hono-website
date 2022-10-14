@@ -19,66 +19,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/"
                 />
@@ -141,66 +81,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/concepts/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/concepts/"
                 />
@@ -226,66 +106,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/concepts/device-identity/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/concepts/device-identity/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -317,51 +137,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/tenancy/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/concepts/tenancy/"
                 />
@@ -387,61 +162,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/concepts/device-provisioning/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/concepts/device-provisioning/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -473,61 +193,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/concepts/connecting-devices/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/concepts/connecting-devices/"
                 />
@@ -553,51 +218,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/device-notifications/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/device-notifications/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -629,51 +249,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/concepts/command-and-control/"
                 />
@@ -699,66 +274,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/concepts/resource-limits/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/concepts/resource-limits/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -790,66 +305,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/concepts/connection-events/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/concepts/connection-events/"
                 />
@@ -875,66 +330,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -966,66 +361,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/user-guide/device-registry/"
                 />
@@ -1051,51 +386,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/file-based-device-registry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/file-based-device-registry/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1127,66 +417,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/http-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/user-guide/http-adapter/"
                 />
@@ -1212,66 +442,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/mqtt-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/mqtt-adapter/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1303,66 +473,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/amqp-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/user-guide/amqp-adapter/"
                 />
@@ -1388,56 +498,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/coap-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/coap-adapter/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1469,66 +529,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/kura-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/user-guide/kura-adapter/"
                 />
@@ -1554,66 +554,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/user-guide/sigfox-adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/user-guide/sigfox-adapter/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1645,66 +585,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/"
                 />
@@ -1730,66 +610,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/common-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/common-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1821,66 +641,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/auth-server-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/auth-server-config/"
                 />
@@ -1906,51 +666,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/mongodb-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/mongodb-device-registry-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -1982,41 +697,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/jdbc-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/jdbc-device-registry-config/"
                 />
@@ -2042,51 +722,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/file-based-device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/file-based-device-registry-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -2118,41 +753,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/command-router-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/command-router-config/"
                 />
@@ -2178,66 +778,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/device-connection-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/device-connection-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -2269,66 +809,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/http-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/http-adapter-config/"
                 />
@@ -2354,66 +834,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/mqtt-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/mqtt-adapter-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -2445,66 +865,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/amqp-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/amqp-adapter-config/"
                 />
@@ -2530,51 +890,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/coap-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/coap-adapter-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -2606,66 +921,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/kura-adapter-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/kura-adapter-config/"
                 />
@@ -2691,66 +946,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/hono-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/hono-client-configuration/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -2782,36 +977,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/hono-kafka-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/hono-kafka-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/hono-kafka-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/hono-kafka-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/hono-kafka-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/hono-kafka-client-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/hono-kafka-client-configuration/"
                 />
@@ -2837,66 +1002,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/amqp-network-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/amqp-network-config/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -2928,11 +1033,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/kafka-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/kafka-config/"
                 />
@@ -2958,66 +1058,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/secure_communication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/secure_communication/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -3049,66 +1089,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/monitoring-tracing-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/monitoring-tracing-config/"
                 />
@@ -3134,66 +1114,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/dev-guide/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/dev-guide/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -3225,66 +1145,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/dev-guide/building_hono/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/dev-guide/building_hono/"
                 />
@@ -3310,56 +1170,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/dev-guide/amqp_adapter_client/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/dev-guide/amqp_adapter_client/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -3391,66 +1201,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/dev-guide/java_client_consumer/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/dev-guide/java_client_consumer/"
                 />
@@ -3476,66 +1226,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/dev-guide/custom_http_adapter/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -3567,66 +1257,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/"
                 />
@@ -3652,66 +1282,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/telemetry/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/telemetry/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -3743,66 +1313,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/event/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/event/"
                 />
@@ -3828,66 +1338,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/command-and-control/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/command-and-control/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -3919,36 +1369,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/kafka-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/kafka-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/kafka-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/kafka-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/kafka-api/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/kafka-api/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/kafka-api/"
                 />
@@ -3974,36 +1394,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/telemetry-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/telemetry-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/telemetry-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/telemetry-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/telemetry-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/telemetry-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/telemetry-kafka/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -4035,36 +1425,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/event-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/event-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/event-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/event-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/event-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/event-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/event-kafka/"
                 />
@@ -4090,36 +1450,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/command-and-control-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/command-and-control-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/command-and-control-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/command-and-control-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/command-and-control-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/command-and-control-kafka/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/command-and-control-kafka/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -4151,66 +1481,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/tenant/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/tenant/"
                 />
@@ -4236,41 +1506,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/command-router/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/command-router/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -4302,66 +1537,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/device-connection/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/device-connection/"
                 />
@@ -4387,66 +1562,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/device-registration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/device-registration/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -4478,66 +1593,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/credentials/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/credentials/"
                 />
@@ -4563,66 +1618,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/authentication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/authentication/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -4654,66 +1649,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/management/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/management/"
                 />
@@ -4739,66 +1674,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/api/metrics/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/api/metrics/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -4830,66 +1705,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/deployment/"
                 />
@@ -4915,66 +1730,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/deployment/helm-based-deployment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/deployment/helm-based-deployment/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -5006,66 +1761,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/deployment/openshift/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/deployment/openshift/"
                 />
@@ -5091,66 +1786,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/deployment/create-kubernetes-cluster/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/deployment/create-kubernetes-cluster/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -5182,66 +1817,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/deployment/resource-limitation/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/deployment/resource-limitation/"
                 />
@@ -5267,66 +1842,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/architecture/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/architecture/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -5358,66 +1873,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/architecture/component-view/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/architecture/component-view/"
                 />
@@ -5443,66 +1898,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/architecture/auth/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/architecture/auth/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -5534,66 +1929,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/categories/"
                 />
@@ -5622,66 +1957,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/admin-guide/device-registry-config/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/admin-guide/device-registry-config/"
                 />
@@ -5707,66 +1982,6 @@
                 rel="alternate"
                 hreflang="2.0"
                 href="https://www.eclipse.org/hono/docs/2.0/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.11"
-                href="https://www.eclipse.org/hono/docs/1.11/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.10"
-                href="https://www.eclipse.org/hono/docs/1.10/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.9"
-                href="https://www.eclipse.org/hono/docs/1.9/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.8"
-                href="https://www.eclipse.org/hono/docs/1.8/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.7"
-                href="https://www.eclipse.org/hono/docs/1.7/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.6"
-                href="https://www.eclipse.org/hono/docs/1.6/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.5"
-                href="https://www.eclipse.org/hono/docs/1.5/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.4"
-                href="https://www.eclipse.org/hono/docs/1.4/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.3"
-                href="https://www.eclipse.org/hono/docs/1.3/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.2"
-                href="https://www.eclipse.org/hono/docs/1.2/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.1"
-                href="https://www.eclipse.org/hono/docs/1.1/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.0"
-                href="https://www.eclipse.org/hono/docs/1.0/tags/"
                 />
     <xhtml:link
                 rel="alternate"
