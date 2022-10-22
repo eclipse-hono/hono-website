@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>AMQP Adapter :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1666314602" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1666314602" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1666314602" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1666314602" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1666401038" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1666401038" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1666401038" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1666401038" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1666314602"></script>
+    <script src="/hono/docs/js/variant.js?1666401038"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1666314602"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1666401038"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -671,11 +671,13 @@ of the default device&rsquo;s.</p>
 <p>The AMQP adapter enables devices to receive commands that have been sent by business applications by means of opening
 a receiver link using a device specific <em>source address</em> as described below. When a device no longer wants to receive
 commands anymore, it can simply close the link.</p>
-<p>When a device has successfully opened a receiver link for commands, the adapter sends an
-<a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a> on behalf of the device to the downstream
-messaging infrastructure with the <em>ttd</em> header set to <code>-1</code>, indicating that the device will be ready to receive
-commands until further notice. Analogously, the adapter sends an empty notification with the <em>ttd</em> header set to <code>0</code>
-when a device closes the link or disconnects.</p>
+<p>When a device has successfully opened a receiver link for commands, the adapter initiates sending an
+<a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a> via the
+<a href="/hono/docs/dev/api/command-router/#register-command-consumer-for-device">Command Router</a> on behalf of the device to
+the downstream messaging infrastructure with the <em>ttd</em> header set to <code>-1</code>, indicating that the device will be ready to
+receive commands until further notice. Analogously, the adapter initiates sending an empty notification via the
+<a href="/hono/docs/dev/api/command-router/#unregister-command-consumer-for-device">Command Router</a> with the <em>ttd</em> header set
+to <code>0</code> when a device closes the link or disconnects.</p>
 <p>Devices send their responses to commands by means of sending an AMQP message with properties specific to the command
 that has been executed. The AMQP adapter accepts responses being published using either <em>at most once</em> (QoS 0) or
 <em>at least once</em> (QoS 1) delivery semantics. The device must send the command response messages using the same (sender)
@@ -950,12 +952,12 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1666314603"></script>
-        <script src="/hono/docs/js/lunr.min.js?1666314603"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1666314603"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1666314603"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1666314603"></script>
-        <script src="/hono/docs/js/search.js?1666314603"></script>
+        <script src="/hono/docs/js/auto-complete.js?1666401039"></script>
+        <script src="/hono/docs/js/lunr.min.js?1666401039"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1666401039"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1666401039"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1666401039"></script>
+        <script src="/hono/docs/js/search.js?1666401039"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1078,10 +1080,10 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1666314603"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1666314603"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1666314603"></script>
-    <script src="/hono/docs/js/theme.js?1666314603"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1666401039"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1666401039"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1666401039"></script>
+    <script src="/hono/docs/js/theme.js?1666401039"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

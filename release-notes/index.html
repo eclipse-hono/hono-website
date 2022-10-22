@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1666314577" rel="stylesheet">
+<link href="/hono/css/custom.css?1666401013" rel="stylesheet">
 
 
 
@@ -266,6 +266,12 @@ ECPrivateKey as described in <a href="https://datatracker.ietf.org/doc/html/rfc5
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
 <li>Documentation for versions up to 1.11 is removed as outdated.</li>
+<li>Optimized handling of MQTT / AMQP protocol adapter shutdown. The purpose is removal of redundant operations for all
+the time connected devices during adapter stop and following start. This prevents delays and possible errors due the
+higher rate of Command Consumer unregister calls.
+On stop, the adapter no longer explicitly unregisters Command Consumers and no longer sends <code>disconnectedTtdEvent</code>.
+The sending of <code>connectedTtdEvent</code> / <code>disconnectedTtdEvent</code> is moved from adapter to Command Router.
+Command Router config now also requires a <code>hono.messaging</code> configuration (in case AMQP messaging is used).</li>
 </ul>
 <h2 id="210">2.1.0</h2>
 <h3 id="new-features-1">New features</h3>
