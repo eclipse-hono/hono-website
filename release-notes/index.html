@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1667354976" rel="stylesheet">
+<link href="/hono/css/custom.css?1667441388" rel="stylesheet">
 
 
 
@@ -271,6 +271,9 @@ the time connected devices during adapter stop and following start. This prevent
 higher rate of Command Consumer unregister calls.
 On stop, the adapter no longer explicitly unregisters Command Consumers and no longer sends <code>disconnectedTtdEvent</code>.
 The sending of <code>connectedTtdEvent</code> / <code>disconnectedTtdEvent</code> is moved from adapter to Command Router.
+Command Router now sends a disconnectedTtdEvent when a command is received that is targeted at a device that got
+disconnected (and didn&rsquo;t reconnect) when a protocol adapter was stopped. This happens only once - during the
+processing of the first command.
 Command Router config now also requires a <code>hono.messaging</code> configuration (in case AMQP messaging is used).</li>
 </ul>
 <h2 id="210">2.1.0</h2>
