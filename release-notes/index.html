@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1669687762" rel="stylesheet">
+<link href="/hono/css/custom.css?1669774186" rel="stylesheet">
 
 
 
@@ -258,24 +258,35 @@
                           <h2 id="220">2.2.0</h2>
 <h3 id="new-features">New features</h3>
 <ul>
-<li>All Hono components now support reading ECC based keys from PEM files that contain the Base64 encoded DER-encoding of an
-ECPrivateKey as described in <a href="https://datatracker.ietf.org/doc/html/rfc5915#section-4">RFC 5915, Section 4</a>.</li>
+<li>All Hono components now support reading ECC based keys from PEM files that contain the Base64
+encoded DER-encoding of an ECPrivateKey as described in
+<a href="https://datatracker.ietf.org/doc/html/rfc5915#section-4">RFC 5915, Section 4</a>.</li>
 <li>The build process now supports creating container images for the <code>arm64</code> platform. Please refer to the
 <a href="https://www.eclipse.org/hono/docs/dev-guide/building_hono/">Developer Guide</a> for details.</li>
 <li>The LoraWAN protocol adapter has been extended with support for <em>Chirpstack V4</em> provider.</li>
+<li>Hono components now support producing JSON formatted log messages. Please refer to the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#logging">Admin Guide</a> for details.</li>
+<li>Hono components can now be configured to use the OTEL Jaeger Remote Sampler extension which allows
+the sampling strategy to be retrieved from a Jaeger back-end dynamically during runtime.
+Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#tracing">Admin Guide</a>
+for details.</li>
 </ul>
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
 <li>Documentation for versions up to 1.11 is removed as outdated.</li>
-<li>Optimized handling of MQTT / AMQP protocol adapter shutdown. The purpose is removal of redundant operations for all
-the time connected devices during adapter stop and following start. This prevents delays and possible errors due the
-higher rate of Command Consumer unregister calls.
-On stop, the adapter no longer explicitly unregisters Command Consumers and no longer sends <code>disconnectedTtdEvent</code>.
-The sending of <code>connectedTtdEvent</code> / <code>disconnectedTtdEvent</code> is moved from adapter to Command Router.
-Command Router now sends a disconnectedTtdEvent when a command is received that is targeted at a device that got
-disconnected (and didn&rsquo;t reconnect) when a protocol adapter was stopped. This happens only once - during the
-processing of the first command.
-Command Router config now also requires a <code>hono.messaging</code> configuration (in case AMQP messaging is used).</li>
+<li>Optimized handling of MQTT and AMQP protocol adapter shutdown. The purpose is removal of redundant
+operations for devices which maintain a permanent connection during the restarting of adapter
+instances. This prevents delays and possible errors due the higher rate of invocations of the
+<em>unregister Command Consumer</em> operation on the Command Router service.
+When shutting down, the adapters no longer explicitly unregister Command Consumers and no longer send
+<em>disconnectedTtdEvent</em>s. Instead, the Command Router now sends the <em>connectedTtdEvent</em> and
+<em>disconnectedTtdEvent</em> on behalf of the protocol adapters.
+The Command Router now also sends a <em>disconnectedTtdEvent</em> when a command is received that is
+targeted at a device that got disconnected (and didn&rsquo;t reconnect) when a protocol adapter was
+shut down. This happens only once - during the processing of the first command.
+The Command Router configuration now also requires <em>hono.messaging</em> configuration if AMQP 1.0
+based messaging infrastructure is being used.</li>
+<li>The Mongo DB based device registry is now continuously tested to work with Mongo DB 5.0.</li>
 </ul>
 <h2 id="210">2.1.0</h2>
 <h3 id="new-features-1">New features</h3>

@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Building from Source :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1669687767" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1669687767" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1669687767" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1669774191" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1669774191" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1669774191" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1669687767"></script>
+    <script src="/hono/docs/js/variant.js?1669774191"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1669687767"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1669774191"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -202,8 +202,34 @@ mutually exclusive. However, they can be built one after the other.</p>
 using the <code>docker-push-image</code> Maven profile:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn clean install -Pbuild-docker-image,metrics-prometheus,docker-push-image
 </span></span></code></pre></div><p>Note that the container registry might require authentication in order to push images. The build uses the Docker Maven
-Plugin for creating and pushing images. Please refer to the <a href="http://dmp.fabric8.io/#authentication">plugin documentation</a>
+Plugin for creating and pushing images. Please refer to the <a href="https://dmp.fabric8.io/#authentication">plugin documentation</a>
 for details regarding how to configure credentials for the registry.</p>
+<h4 id="building-images-for-the-arm64-platform">Building Images for the arm64 Platform</h4>
+<p>By default, the build process creates container images for the host system platform. For example when running the build
+on an <code>amd64</code> based system, the container images created will be for the <code>amd64</code> platform as well.</p>
+<p>Images for the <code>arm64</code> platform can, of course, be created by running the build on an <code>arm64</code> based system. However, it is also
+possible to create images for arbitrary platforms by means of <a href="https://docs.docker.com/build/buildx/">Docker&rsquo;s buildx command</a>.</p>
+<p>On Linux based hosts it is possible to use QEMU for building images for other platforms than the host system as described in this
+<a href="https://medium.com/@nshankar_88597/building-and-testing-multi-arch-images-with-docker-buildx-and-qemu-8f72c2f8728b">blog post</a>.</p>
+<p>Once QEMU and Docker buildx support have been set up, the <code>docker-multiarch-build</code> Maven profile can be used to build container
+images for both the <code>amd64</code> as well as the <code>arm64</code> platforms:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn clean install -Pbuild-docker-image,docker-multiarch-build,docker-push-image,metrics-prometheus -Ddocker.registry-name<span style="color:#f92672">=</span>registry.custom.org -Ddocker.image.org-name<span style="color:#f92672">=</span>my-repo
+</span></span></code></pre></div><p>Note that the <code>docker-push-image</code> profile has been activated as well. This is necessary because buildx currently does not support
+loading multiple platform build results into the local image cache. Therefore, the created images need to be pushed to a
+container registry instead. The <code>docker.registry-name</code> and <code>docker.image.org-name</code> Maven properties can be used to set
+the (host) name of the container registry and the name of the image repository to use for the container image names.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>While creating arm64 specific container images for Hono&rsquo;s components is necessary in order to run Hono on an arm64 based
+platform, it may not be sufficient to do so. That is because Hono depends on several other (external) services to be available.
+For example, the Mongo DB based registry implementation needs to be configured with a connection to a Mongo DB server and
+the Command Router should be configured with access to an Infinispan data grid in a production environment.
+Container images for these services may or may not be available for the arm64 platform, so these services might need to be
+deployed to an amd64 based platform or hosted externally.</p>
+    </div>
+</div>
 <h2 id="running-the-integration-tests">Running the Integration Tests</h2>
 <p>The source code for Hono comes with a test suite for integration testing. To trigger these tests, change to the <code>tests</code>
 folder and execute:</p>
@@ -256,12 +282,12 @@ The output looks best when using a dark IDE theme.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1669687767"></script>
-        <script src="/hono/docs/js/lunr.min.js?1669687767"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669687767"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1669687767"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1669687767"></script>
-        <script src="/hono/docs/js/search.js?1669687767"></script>
+        <script src="/hono/docs/js/auto-complete.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.min.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1669774191"></script>
+        <script src="/hono/docs/js/search.js?1669774191"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -343,7 +369,8 @@ The output looks best when using a dark IDE theme.</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/dev-guide/building_hono/" selected>stable (2.1)</option>
+                    <option id="stable" value="/hono/docs/dev-guide/building_hono/" selected>stable (2.2)</option>
+                    <option id="2.2" value="/hono/docs/2.2/dev-guide/building_hono/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/dev-guide/building_hono/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/dev-guide/building_hono/">2.0</option>
                     <option id="1.12" value="/hono/docs/1.12/dev-guide/building_hono/">1.12</option>
@@ -384,10 +411,10 @@ The output looks best when using a dark IDE theme.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1669687768"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669687768"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1669687768"></script>
-    <script src="/hono/docs/js/theme.js?1669687768"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1669774191"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669774191"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1669774191"></script>
+    <script src="/hono/docs/js/theme.js?1669774191"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

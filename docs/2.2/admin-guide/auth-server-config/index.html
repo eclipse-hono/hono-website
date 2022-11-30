@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="2.2">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Auth Server Configuration :: Eclipse Hono&trade; Vers.: 2.2</title>
+    <link href="/hono/docs/images/favicon.ico?1669774192" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1669774192" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1669774192" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1669774192" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1669774192"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/2.2/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1669774192"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Auth Server Configuration :: Eclipse Hono&amp;trade; Vers.: 2.2">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Auth Server Configuration :: Eclipse Hono&amp;trade; Vers.: 2.2" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/2.2/admin-guide/auth-server-config//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/2.2/admin-guide/auth-server-config/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>2.2</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/admin-guide/auth-server-config.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/2.2/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/2.2/admin-guide/"><span itemprop="name">Admin Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/2.2/admin-guide/auth-server-config/" aria-disabled="true"><span itemprop="name">Auth Server Configuration</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#service-configuration">Service Configuration</a>
+      <ul>
+        <li><a href="#yaml-file-based-configuration">YAML File based Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#port-configuration">Port Configuration</a>
+      <ul>
+        <li><a href="#secure-port-only">Secure Port Only</a></li>
+        <li><a href="#insecure-port-only">Insecure Port Only</a></li>
+        <li><a href="#dual-port">Dual Port</a></li>
+        <li><a href="#ephemeral-ports">Ephemeral Ports</a></li>
+      </ul>
+    </li>
+    <li><a href="#signing-key-configuration">Signing Key Configuration</a>
+      <ul>
+        <li><a href="#json-web-key-set-resource-configuration">JSON Web Key Set Resource Configuration</a></li>
+      </ul>
+    </li>
+    <li><a href="#metrics-configuration">Metrics Configuration</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Auth Server Configuration</h1>
+<p>The Auth Server component exposes a service endpoint implementing Eclipse Hono™&rsquo;s
+<a href="https://www.eclipse.org/hono/docs/2.2/api/authentication/">Authentication</a> API. Other services use this component for authenticating clients
+and retrieving a JSON Web Token (JWT) asserting the client&rsquo;s identity and corresponding authorities.</p>
+<p>This component serves as a default implementation of the <em>Authentication</em> API only. On startup, it reads in all
+identities and their authorities from a JSON file from the file system. All data is then kept in memory and there
+are no remote service APIs for managing the identities and their authorities.</p>
+<p>The Auth Server is implemented as a Quarkus application. It can be run either directly from the command line or by
+means of starting the corresponding <a href="https://hub.docker.com/r/eclipse/hono-service-auth/">Docker image</a> created
+from it.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The Auth Server had originally been implemented as a Spring Boot application. That variant has been removed in Hono
+2.0.0.</p>
+    </div>
+</div>
+<h2 id="service-configuration">Service Configuration</h2>
+<p>The following table provides an overview of the configuration variables and corresponding system properties for
+configuring the Auth Server component:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_APP_MAXINSTANCES</code><br><code>hono.app.maxInstances</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>#CPU cores</em></td>
+<td style="text-align:left">The number of verticle instances to deploy. If not set, one verticle per processor core is deployed.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_BINDADDRESS</code><br><code>hono.auth.amqp.bindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the secure port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_CERTPATH</code><br><code>hono.auth.amqp.certPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the PEM file containing the certificate that the server should use for authenticating to clients. This option must be used in conjunction with <code>HONO_AUTH_AMQP_KEYPATH</code>.<br>Alternatively, the <code>HONO_AUTH_AMQP_KEYSTOREPATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_INSECUREPORT</code><br><code>hono.auth.amqp.insecurePort</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The insecure port the server should listen on.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_INSECUREPORTBINDADDRESS</code><br><code>hono.auth.amqp.insecurePortBindAddress</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>127.0.0.1</code></td>
+<td style="text-align:left">The IP address of the network interface that the insecure port should be bound to.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_INSECUREPORTENABLED</code><br><code>hono.auth.amqp.insecurePortEnabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">If set to <code>true</code> the server will open an insecure port (not secured by TLS) using either the port number set via <code>HONO_AUTH_AMQP_INSECUREPORT</code> or the default AMQP port number (<code>5672</code>) if not set explicitly.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_KEYPATH</code><br><code>hono.auth.amqp.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for authenticating to clients. Note that the private key is not protected by a password. You should therefore make sure that the key file can only be read by the user that the server process is running under. This option must be used in conjunction with <code>HONO_AUTH_CERTPATH</code>.<br>Alternatively, the <code>HONO_AUTH_KEYSTOREPATH</code> option can be used to configure a key store containing both the key as well as the certificate.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_KEYSTOREPASSWORD</code><br><code>hono.auth.amqp.keyStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the key store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_KEYSTOREPATH</code><br><code>hono.auth.amqp.keyStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the private key and certificate that the server should use for authenticating to clients. Either this option or the <code>HONO_AUTH_AMQP_KEYPATH</code> and <code>HONO_AUTH_AMQP_CERTPATH</code> options need to be set in order to enable TLS secured connections with clients. The key store format can be either <code>JKS</code> or <code>PKCS12</code> indicated by a <code>.jks</code> or <code>.p12</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_NATIVETLSREQUIRED</code><br><code>hono.auth.amqp.nativeTlsRequired</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>false</code></td>
+<td style="text-align:left">The server will probe for OpenSSL on startup if a secure port is configured. By default, the server will fall back to the JVM&rsquo;s default SSL engine if not available. However, if set to <code>true</code>, the server will fail to start at all in this case.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_PORT</code><br><code>hono.auth.amqp.port</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>5671</code></td>
+<td style="text-align:left">The secure port that the server should listen on.<br>See <a href="#port-configuration">Port Configuration</a> below for details.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_SECUREPROTOCOLS</code><br><code>hono.auth.amqp.secureProtocols</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>TLSv1.2</code></td>
+<td style="text-align:left">A (comma separated) list of secure protocols that are supported when negotiating TLS sessions. Please refer to the <a href="https://vertx.io/docs/vertx-core/java/#ssl">vert.x documentation</a> for a list of supported protocol names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_SUPPORTEDCIPHERSUITES</code><br><code>hono.auth.amqp.supportedCipherSuites</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A (comma separated) list of names of cipher suites (in order of preference) that are supported when negotiating TLS sessions. Please refer to <a href="https://docs.oracle.com/en/java/javase/11/docs/specs/security/standard-names.html#jsse-cipher-suite-names">JSSE Cipher Suite Names</a> for a list of supported names.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_TRUSTSTOREPASSWORD</code><br><code>hono.auth.amqp.trustStorePassword</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password required to read the contents of the trust store.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_AMQP_TRUSTSTOREPATH</code><br><code>hono.auth.amqp.trustStorePath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the Java key store containing the CA certificates the service uses for authenticating clients. The key store format can be either <code>JKS</code>, <code>PKCS12</code> or <code>PEM</code> indicated by a <code>.jks</code>, <code>.p12</code> or <code>.pem</code> file suffix respectively.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_PERMISSIONSPATH</code><br><code>hono.auth.svc.permissionsPath</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The path to the JSON file defining the identities and corresponding authorities on Hono&rsquo;s endpoint resources. For backwards compatibility with previous releases, the path may contain a <code>file://</code> prefix.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_SUPPORTEDSASLMECHANISMS</code><br><code>hono.auth.svc.supportedSaslMechanisms</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>EXTERNAL, PLAIN</code></td>
+<td style="text-align:left">A (comma separated) list of the supported SASL mechanisms to be advertised to clients. This option may be set to specify only one of <code>EXTERNAL</code> or <code>PLAIN</code>, or to use a different order.</td>
+</tr>
+</tbody>
+</table>
+<p>The variables only need to be set if the default value does not match your environment.</p>
+<p>In addition to the options described in the table above, this component supports the following standard configuration
+options:</p>
+<ul>
+<li><a href="/hono/docs/2.2/admin-guide/common-config/#java-vm-options">Common Java VM Options</a></li>
+<li><a href="/hono/docs/2.2/admin-guide/common-config/#vertx-options">Common vert.x Options</a></li>
+<li><a href="/hono/docs/2.2/admin-guide/monitoring-tracing-config/">Monitoring Options</a></li>
+</ul>
+<h3 id="yaml-file-based-configuration">YAML File based Configuration</h3>
+<p>The configuration properties can also be set by means of a YAML file as described in the
+<a href="https://quarkus.io/guides/config-yaml">Quarkus documentation</a>.</p>
+<h2 id="port-configuration">Port Configuration</h2>
+<p>The Auth Server can be configured to listen for connections on</p>
+<ul>
+<li>a secure port only (default) or</li>
+<li>an insecure port only or</li>
+<li>both a secure and an insecure port (dual port configuration)</li>
+</ul>
+<p>The server will fail to start if none of the ports is configured properly.</p>
+<h3 id="secure-port-only">Secure Port Only</h3>
+<p>The server needs to be configured with a private key, a certificate holding the public key and a trust store in order
+to open a TLS secured port.</p>
+<p>There are two alternative ways for setting the private key and certificate:</p>
+<ol>
+<li>Setting the <code>HONO_AUTH_AMQP_KEYSTORE_PATH</code> and the <code>HONO_AUTH_AMQP_KEYSTOREPASSWORD</code> variables in order to load the key &amp;
+certificate from a password protected key store, or</li>
+<li>setting the <code>HONO_AUTH_AMQP_KEYPATH</code> and <code>HONO_AUTH_AMQPCERTPATH</code> variables in order to load the key and certificate from
+two separate PEM files in PKCS8 format.</li>
+</ol>
+<p>In order to set the trust store, the <code>HONO_AUTH_AMQP_TRUSTSTOREPATH</code> variable needs to be set to a key store containing the
+trusted root CA certificates. The <code>HONO_AUTH_AMQP_TRUSTSTOREPASSWORD</code> variable needs to be set if the key store requires a
+pass phrase for reading its contents.</p>
+<p>When starting up, the server will bind a TLS secured socket to the default secure AMQP port 5671. The port number can
+also be set explicitly using the <code>HONO_AUTH_AMQP_PORT</code> variable.</p>
+<p>The <code>HONO_AUTH_AMQP_BINDADDRESS</code> variable can be used to specify the network interface that the port should be exposed on.
+By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the local host.
+Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose
+the port unintentionally to the outside world).</p>
+<h3 id="insecure-port-only">Insecure Port Only</h3>
+<p>The secure port will mostly be required for production scenarios. However, it might be desirable to expose a non-TLS
+secured port instead, e.g. for testing purposes. In any case, the non-secure port needs to be explicitly enabled either
+by</p>
+<ul>
+<li>explicitly setting <code>HONO_AUTH_AMQP_INSECUREPORT</code> to a valid port number, or by</li>
+<li>implicitly configuring the default AMQP port (5672) by simply setting <code>HONO_AUTH_AMQP_INSECUREPORTENABLED</code> to <code>true</code>.</li>
+</ul>
+<p>The server issues a warning on the console if <code>HONO_AUTH_AMQP_INSECUREPORT</code> is set to the default secure AMQP port (5671).</p>
+<p>The <code>HONO_AUTH_AMQP_INSECUREPORTBINDADDRESS</code> variable can be used to specify the network interface that the port should be
+exposed on. By default the port is bound to the <em>loopback device</em> only, i.e. the port will only be accessible from the
+local host. This variable might be used to e.g. expose the non-TLS secured port on a local interface only, thus
+providing easy access from within the local network, while still requiring encrypted communication when accessed from
+the outside over public network infrastructure.</p>
+<p>Setting this variable to <code>0.0.0.0</code> will let the port being bound to <strong>all</strong> network interfaces (be careful not to expose
+the port unintentionally to the outside world).</p>
+<h3 id="dual-port">Dual Port</h3>
+<p>In test setups and some production scenarios Hono server may be configured to open one secure <strong>and</strong> one insecure port
+at the same time.</p>
+<p>This is achieved by configuring both ports correctly (see above). The server will fail to start if both ports are
+configured to use the same port number.</p>
+<p>Since the secure port may need different visibility in the network setup compared to the secure port, it has its own
+binding address <code>HONO_AUTH_AMQP_INSECUREPORTBINDADDRESS</code>. This can be used to narrow the visibility of the insecure port to a
+local network e.g., while the secure port may be visible worldwide.</p>
+<h3 id="ephemeral-ports">Ephemeral Ports</h3>
+<p>Both the secure as well as the insecure port numbers may be explicitly set to <code>0</code>. The Auth Server will then use
+arbitrary (unused) port numbers determined by the operating system during startup.</p>
+<h2 id="signing-key-configuration">Signing Key Configuration</h2>
+<p>The Auth server needs to be configured with key material that can be used to digitally sign the tokens that it creates.</p>
+<p>The following table provides an overview of the configuration variables and corresponding system properties for
+configuring the Auth server&rsquo;s signing process:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_SIGNING_AUDIENCE</code><br><code>hono.auth.svc.signing.audience</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The value to put into a created token&rsquo;s <em>aud</em> claim.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_SIGNING_ISSUER</code><br><code>hono.auth.svc.signing.issuer</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left"><code>https://hono.eclipse.org/auth-server</code></td>
+<td style="text-align:left">The value to put into a created token&rsquo;s <em>iss</em> claim.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_SIGNING_KEYPATH</code><br><code>hono.auth.svc.signing.keyPath</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The absolute path to the (PKCS8) PEM file containing the private key that the server should use for signing tokens asserting an authenticated client&rsquo;s identity and authorities. When using this variable, other services that need to validate the tokens issued by this service need to be configured with the corresponding certificate/public key. Alternatively, a symmetric key can be used for signing (and validating) by setting the <code>HONO_AUTH_SVC_SIGNING_SHAREDSECRET</code> variable. If none of these variables is set, the server falls back to the key indicated by the <code>HONO_AUTH_AMQP_KEYPATH</code> variable. If that variable is also not set, startup of the server fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_SIGNING_SHAREDSECRET</code><br><code>hono.auth.svc.signing.sharedSecret</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">A string to derive a symmetric key from that is used for signing tokens asserting an authenticated client&rsquo;s identity and authorities. The key is derived from the string by using the bytes of the String&rsquo;s UTF8 encoding. When setting the signing key using this variable, other services that need to validate the tokens issued by this service need to be configured with the same key. Alternatively, an asymmetric key pair can be used for signing (and validating) by setting the <code>HONO_AUTH_SVC_SIGNING_KEYPATH</code> variable. If none of these variables is set, startup of the server fails.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_AUTH_SVC_SIGNING_TOKENEXPIRATION</code><br><code>hono.auth.svc.signing.tokenExpiration</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">600</td>
+<td style="text-align:left">The number of seconds after which the tokens created by this service for asserting an authenticated client&rsquo;s identity should be considered invalid. Other Hono components will close AMQP connections with clients after this period in order to force the client to authenticate again and create a new token. In closed environments it should be save to set this value to a much higher value, e.g. several hours.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="json-web-key-set-resource-configuration">JSON Web Key Set Resource Configuration</h3>
+<p>The Auth server hosts an HTTP resource under URI <code>/validating-keys</code> that other components can use to retrieve a
+<a href="https://datatracker.ietf.org/doc/html/rfc7517">JSON Web Key</a> set that contains the keys to use for validating the
+signature of tokens created by the Auth server.</p>
+<p>The resource is served by the same HTTP server that is also used for hosting the health check resources described in
+the <a href="https://www.eclipse.org/hono/docs/2.2/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing Admin Guide</a>.</p>
+<h2 id="metrics-configuration">Metrics Configuration</h2>
+<p>See <a href="https://www.eclipse.org/hono/docs/2.2/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing Admin Guide</a> for details on how to
+configure the reporting of metrics.</p>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1669774192"></script>
+        <script src="/hono/docs/js/lunr.min.js?1669774192"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669774192"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1669774192"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1669774192"></script>
+        <script src="/hono/docs/js/search.js?1669774192"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/2.2/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><a href="/hono/docs/2.2/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/2.2/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/2.2/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/2.2/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/2.2/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/2.2/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/2.2/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/2.2/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/2.2/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/2.2/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/2.2/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/2.2/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.2/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/2.2/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.2/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/2.2/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/2.2/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/2.2/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.2/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/2.2/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.2/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/2.2/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.2/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/2.2/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.2/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/2.2/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/" title="Admin Guide" class="dd-item parent"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle" checked/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/2.2/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item active"><a href="/hono/docs/2.2/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/2.2/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/2.2/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/2.2/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/2.2/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/2.2/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.2/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/2.2/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.2/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/2.2/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/2.2/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/2.2/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/2.2/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/2.2/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/2.2/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/2.2/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.2/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/2.2/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/2.2/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.2/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.2/api/event-kafka/">Event API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/command-and-control-kafka/" title="Command &amp; Control API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.2/api/command-and-control-kafka/">Command &amp; Control API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/2.2/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.2/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.2/api/event/">Event API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.2/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/2.2/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/2.2/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/2.2/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/2.2/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/2.2/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/2.2/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/2.2/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/2.2/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.2/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/2.2/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/2.2/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/2.2/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/2.2/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/2.2/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/2.2/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/2.2/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/2.2/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/2.2/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.2/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/2.2/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/2.2/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/2.2/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/2.2/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/2.2/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/admin-guide/auth-server-config/">stable (2.2)</option>
+                    <option id="2.2" value="/hono/docs/2.2/admin-guide/auth-server-config/" selected>2.2</option>
+                    <option id="2.1" value="/hono/docs/2.1/admin-guide/auth-server-config/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/admin-guide/auth-server-config/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/admin-guide/auth-server-config/">1.12</option>
+                    <option id="dev" value="/hono/docs/dev/admin-guide/auth-server-config/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2022 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1669774192"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669774192"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1669774192"></script>
+    <script src="/hono/docs/js/theme.js?1669774192"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

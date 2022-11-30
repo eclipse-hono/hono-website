@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Command & Control :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1669687766" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1669687766" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1669687766" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1669687766" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1669774190" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1669774190" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1669774190" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1669687766"></script>
+    <script src="/hono/docs/js/variant.js?1669774190"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1669687766"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1669774190"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -115,7 +115,7 @@
           <article>
 
 <h1>Command &amp; Control</h1>
-<p><em>Business applications</em> can send commands to devices following the
+<p><em>Business applications</em> can send commands to devices by means of the
 <a href="/hono/docs/api/command-and-control/">Command &amp; Control API</a>. This concept page describes how this API is used
 by applications to send commands and describes how Hono&rsquo;s protocol adapters process the commands so that they reach
 their target device.</p>
@@ -125,60 +125,60 @@ always a response expected from the device.</p>
 <p>In order for devices to be able to receive commands, they first have to connect to a Hono protocol adapter and indicate
 their availability to receive commands. For devices communicating via AMQP or MQTT, this means connecting to an adapter
 and explicitly subscribing for commands. For devices sending messages via HTTP or CoAP, this means using the <code>ttd</code>
-(&ldquo;time till disconnect&rdquo;) parameter when sending an event or telemetry message, thereby indicating how long the device
+(<em>time till disconnect</em>) parameter when sending an event or telemetry message, thereby indicating for how long the device
 will wait for a command message.</p>
-<p>The protocol adapter will then forward a notification to the Business Application about the device being able to receive
-commands, also containing the time limit if the <code>ttd</code> parameter was given.</p>
-<p>The Business Application can send a command to such a device via the used messaging network. Hono will receive the
+<p>The protocol adapter will then forward a notification to downstream business applications about the device being able
+to receive commands and for how long.</p>
+<p>An application can send a command to such a device via the used messaging infrastructure. Hono will receive the
 command by means of the Command Router component and will forward it to the protocol adapter instance that the device
 is connected to. The protocol adapter will then send the command to the device. In case of a <em>request/response</em> command,
 the device is expected to send back a command response message.</p>
 <p>When the device explicitly ends the command subscription, the protocol adapter will send a corresponding notification
-to the Business Application.</p>
+to downstream applications.</p>
 <h4 id="command--control-involving-a-gateway">Command &amp; Control involving a gateway</h4>
-<p>Hono has special support for sending commands to devices that are connected via a gateway to Hono.
-Such devices are configured in the Hono device registration service in such a way, that certain gateways may act on
-behalf of the device.</p>
-<p>When sending commands, the northbound applications do not have to know to which gateway the command target device is
-connected to. The application sends the command with the device address and Hono will direct the command to a gateway
+<p>Hono has special support for sending commands to devices that are connected to Hono via a gateway device.
+The gateways that a device may use to connect to Hono&rsquo;s protocol adapters need to be configured in Hono&rsquo;s device registry
+as part of the device provisioning process.</p>
+<p>When sending commands, applications do not need to know to which gateway the command target device is connected to.
+An application sends the command with the device address and Hono will direct the command to a gateway
 that has subscribed for such commands and that is configured to act on behalf of the command target device. If there
 are multiple matching gateways, the one that the command target device was last connected to is chosen.
 The information about which gateways are subscribed and which gateway a device has last communicated by is managed via
 the <a href="/hono/docs/api/command-router/">Command Router API</a>.</p>
 <h2 id="message-flow-using-amqp-messaging-network">Message flow using AMQP messaging network</h2>
-<p>The following sections and the contained sequence diagrams give an overview of a device indicating its availability for
-receiving commands, of a business application sending a command to the device and of the device sending back a command
-response.</p>
+<p>The following sections and the contained sequence diagrams provide an overview of a device indicating its availability for
+receiving commands, of an application sending a command to the device and of the device sending back a command response.</p>
 <h3 id="device-indicating-availability-to-receive-commands">Device indicating availability to receive commands</h3>
 <figure><img src="command_control_concept_cmdrouter_1.svg"/><figcaption>
             <h4>Command subscription</h4>
         </figcaption>
 </figure>
 
-<p>When the device subscribes for commands (1), the protocol adapter
+<p>When the <em>Device</em> subscribes for commands (1), the <em>Protocol Adapter</em>
 <a href="/hono/docs/api/command-router/#register-command-consumer-for-device">registers the command consumer</a> with the
-Command Router service, associating the device with its protocol adapter instance identifier (2). The Command Router
+<em>Command Router</em> service, associating the device with its protocol adapter instance identifier (2). The <em>Command Router</em>
 service creates a receiver link scoped to the device&rsquo;s tenant (3) if it doesn&rsquo;t exist yet. Following that, the
-notification about the device subscription is sent to the business application via the AMQP messaging network (4).</p>
+notification about the device subscription is sent to the <em>Application</em> via the <em>AMQP messaging network</em> (4).</p>
 <h3 id="business-application-sending-a-command-to-the-device">Business application sending a command to the device</h3>
 <figure><img src="command_control_concept_cmdrouter_2.svg"/><figcaption>
             <h4>Command handling</h4>
         </figcaption>
 </figure>
 
-<p>Upon receiving the notification, the application prepares sender and command response receiver links (1,2) and sends
-the command message to the AMQP messaging network. The message is received by the Command Router service component (3),
-which will determine the protocol adapter instance #1 that is able to handle the command message. The command then gets
-forwarded to the AMQP messaging network on the address for adapter instance #1 (4). The protocol adapter instance #1
-will receive the message (5) and forward it to the device (6). As the last step, an <code>accepted</code> disposition will be sent
-back to the application (7).</p>
+<p>Upon receiving the notification, the <em>Application</em> prepares sender and command response receiver links (1,2) and sends
+the command message to the <em>AMQP messaging network</em>. The message is received by the <em>Command Router</em> service component (3),
+which will determine the <em>Protocol Adapter instance #1</em> that is able to handle the command message. The command then gets
+forwarded to the <em>AMQP messaging network</em> on the address for adapter instance #1 (4). The <em>Protocol Adapter instance #1</em>
+receives the message (5) and forwards it to the <em>Device</em> (6). As the last step, an <code>accepted</code> disposition will be sent
+back to the <em>Application</em> (7).</p>
 <h3 id="device-sending-a-command-response-message">Device sending a command response message</h3>
 <figure><img src="command_control_concept_cmdrouter_3.svg"/><figcaption>
             <h4>Command response handling</h4>
         </figcaption>
 </figure>
 
-<p>The command response message is sent back to the application from the protocol adapter via the AMQP messaging network.</p>
+<p>The command response message is sent back to the <em>Application</em> from the <em>Protocol Adapter</em> via the <em>AMQP messaging network</em>.
+Note that the <em>Command Router</em> is not involved in this transfer.</p>
             <footer class="footline">
             </footer>
           </article>
@@ -201,12 +201,12 @@ back to the application (7).</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.min.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1669687766"></script>
-        <script src="/hono/docs/js/search.js?1669687766"></script>
+        <script src="/hono/docs/js/auto-complete.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.min.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1669774190"></script>
+        <script src="/hono/docs/js/search.js?1669774190"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -288,7 +288,8 @@ back to the application (7).</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/concepts/command-and-control/" selected>stable (2.1)</option>
+                    <option id="stable" value="/hono/docs/concepts/command-and-control/" selected>stable (2.2)</option>
+                    <option id="2.2" value="/hono/docs/2.2/concepts/command-and-control/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/concepts/command-and-control/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/concepts/command-and-control/">2.0</option>
                     <option id="1.12" value="/hono/docs/1.12/concepts/command-and-control/">1.12</option>
@@ -329,10 +330,10 @@ back to the application (7).</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1669687766"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669687766"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1669687766"></script>
-    <script src="/hono/docs/js/theme.js?1669687766"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1669774190"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669774190"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1669774190"></script>
+    <script src="/hono/docs/js/theme.js?1669774190"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

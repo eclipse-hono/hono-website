@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Monitoring & Tracing :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1669687779" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1669687779" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1669687779" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1669687779" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1669774205" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1669774205" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1669774205" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1669774205" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1669687779"></script>
+    <script src="/hono/docs/js/variant.js?1669774205"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1669687779"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1669774205"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -199,17 +199,21 @@ specific default value that differs from the Quarkus default:</p>
 </tbody>
 </table>
 <h2 id="logging">Logging</h2>
-<p>By default, all Hono components will log to the system console and can be configured using environment variables
-with the <code>QUARKUS_LOG_CONSOLE_</code> prefix or using corresponding system properties. Logging to a file and syslog is
-also available. See the <a href="https://quarkus.io/guides/logging#quarkus-log-logging-log-config_quarkus.log.console-console-logging">configuration reference</a>
-for details. Log formatting can be configured by either setting <code>QUARKUS_LOG_CONSOLE_FORMAT</code>, or, to
-enable logging in JSON format, by setting <code>QUARKUS_LOG_CONSOLE_JSON</code> to <code>&quot;true&quot;</code>. Follow the <a href="https://quarkus.io/guides/logging#quarkus-logging-json_quarkus.log.console-json-console-logging">Quarkus documentation</a>
+<p>By default, all Hono components will log to the system console and can be configured using environment
+variables with the <code>QUARKUS_LOG_CONSOLE_</code> prefix or using corresponding system properties. Logging to a
+file and syslog is also available. See the
+<a href="https://quarkus.io/guides/logging#quarkus-log-logging-log-config_quarkus.log.console-console-logging">configuration reference</a>
+for details.</p>
+<p>Log formatting can be configured by either setting <code>QUARKUS_LOG_CONSOLE_FORMAT</code>, or, to enable logging in
+JSON format, by setting <code>QUARKUS_LOG_CONSOLE_JSON</code> to <code>true</code>. Follow the
+<a href="https://quarkus.io/guides/logging#quarkus-logging-json_quarkus.log.console-json-console-logging">Quarkus documentation</a>
 for more details.</p>
-<p>Additionally, the Hono components contain support for sending log messages to a centralized log management system like
-Graylog, Logstash or Fluentd. This is done by means of the <a href="https://quarkus.io/guides/centralized-log-management"><em>quarkus-logging-gelf</em> extension</a>,
-using TCP or UDP to send logs in the Graylog Extended Log Format (GELF). This can also be enabled using environment
-variables with the <code>QUARKUS_LOG_HANDLER_GELF_</code> prefix or using corresponding system properties. See the
-<a href="https://quarkus.io/guides/centralized-log-management#configuration-reference">configuration reference</a> for details.</p>
+<p>Additionally, the Hono components contain support for sending log messages to a centralized log
+management system like Graylog, Logstash or Fluentd. This is done by means of the
+<a href="https://quarkus.io/guides/centralized-log-management"><em>quarkus-logging-gelf</em> extension</a>,
+using TCP or UDP to send logs in the Graylog Extended Log Format (GELF). This can also be enabled using environment variables with the <code>QUARKUS_LOG_HANDLER_GELF_</code> prefix or using corresponding system properties.
+See the <a href="https://quarkus.io/guides/centralized-log-management#configuration-reference">configuration reference</a>
+for details.</p>
 <h2 id="tracing">Tracing</h2>
 <p>In normal operation the vast majority of messages should be flowing through the system without any noteworthy delays
 or problems. In fact, that is the whole purpose of Hono. However, that doesn&rsquo;t mean that nothing can go wrong.
@@ -338,12 +342,12 @@ in the Tenant Information for details.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1669687780"></script>
-        <script src="/hono/docs/js/lunr.min.js?1669687780"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669687780"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1669687780"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1669687780"></script>
-        <script src="/hono/docs/js/search.js?1669687780"></script>
+        <script src="/hono/docs/js/auto-complete.js?1669774205"></script>
+        <script src="/hono/docs/js/lunr.min.js?1669774205"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669774205"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1669774205"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1669774205"></script>
+        <script src="/hono/docs/js/search.js?1669774205"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -425,7 +429,8 @@ in the Tenant Information for details.</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/admin-guide/monitoring-tracing-config/">stable (2.1)</option>
+                    <option id="stable" value="/hono/docs/admin-guide/monitoring-tracing-config/">stable (2.2)</option>
+                    <option id="2.2" value="/hono/docs/2.2/admin-guide/monitoring-tracing-config/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/admin-guide/monitoring-tracing-config/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/admin-guide/monitoring-tracing-config/">2.0</option>
                     <option id="1.12" value="/hono/docs/1.12/admin-guide/monitoring-tracing-config/">1.12</option>
@@ -466,10 +471,10 @@ in the Tenant Information for details.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1669687780"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669687780"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1669687780"></script>
-    <script src="/hono/docs/js/theme.js?1669687780"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1669774205"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669774205"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1669774205"></script>
+    <script src="/hono/docs/js/theme.js?1669774205"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Command Router API Specification :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1669687765" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1669687765" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1669687765" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1669687765" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1669774190" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1669774190" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1669774190" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1669774190" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1669687765"></script>
+    <script src="/hono/docs/js/variant.js?1669774190"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1669687765"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1669774190"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -132,6 +132,7 @@
 
 <h2 id="register-command-consumer-for-device">Register command consumer for device</h2>
 <p>Clients use this command to <em>register</em> a protocol adapter instance as the consumer of command &amp; control messages for a device or gateway currently connected to that particular adapter instance.</p>
+<p>Clients can provide an optional <code>send_event</code> parameter with value <code>true</code> to trigger a <a href="/hono/docs/concepts/device-notifications/#time-until-disconnect-notification">Time until Disconnect Notification</a> with <em>ttd</em> value <code>-1</code> indicating the device is ready to receive commands.</p>
 <p>Clients can provide an optional <code>lifespan</code> parameter to make the registration entry expire after the given number of seconds. Note that implementations of this API have to support this feature, otherwise the Command Router service component might fail to correctly route command messages.</p>
 <p>This API doesn&rsquo;t mandate checks on the validity of the given device in order not to introduce a dependency on the <em>Device Registration API</em>. However, implementations of this API may choose to perform such checks or impose a restriction on the overall amount of data that can be stored per tenant in order to protect against malicious requests.</p>
 <p><strong>Message Flow</strong></p>
@@ -176,6 +177,13 @@
 <td style="text-align:left">MUST contain the ID of the device that is subject to the operation.</td>
 </tr>
 <tr>
+<td style="text-align:left"><em>send_event</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>application-properties</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left">If set to <code>true</code>, a <a href="/hono/docs/concepts/device-notifications/#time-until-disconnect-notification">Time until Disconnect Notification</a> with <em>ttd</em> value <code>-1</code> should be sent indicating the device is ready to receive commands.</td>
+</tr>
+<tr>
 <td style="text-align:left"><em>lifespan</em></td>
 <td style="text-align:center">no</td>
 <td style="text-align:left"><em>application-properties</em></td>
@@ -210,6 +218,7 @@
 <p>For status codes indicating an error (codes in the <code>400 - 499</code> range) the message body MAY contain a detailed description of the error that occurred.</p>
 <h2 id="unregister-command-consumer-for-device">Unregister command consumer for device</h2>
 <p>Clients use this command to <em>unregister</em> a command consumer for the given device. The consumer registration entry to be removed is identified by the provided protocol adapter instance handling command &amp; control messages for a given device. The registration entry for the device is only removed, if the adapter instance identifier of the current registration entry matches the one given in the request.</p>
+<p>Clients can provide an optional <code>send_event</code> parameter with value <code>true</code> to trigger a <a href="/hono/docs/concepts/device-notifications/#time-until-disconnect-notification">Time until Disconnect Notification</a> with <em>ttd</em> value <code>0</code> indicating the device is not ready to receive commands.</p>
 <p>This API doesn&rsquo;t mandate checks on the validity of the given device in order not to introduce a dependency on the <em>Device Registration API</em>. However, implementations of this API may choose to perform such checks or impose a restriction on the overall amount of data that can be stored per tenant in order to protect against malicious requests.</p>
 <p><strong>Message Flow</strong></p>
 <figure><img src="unregister_cmd_consumer.svg"
@@ -251,6 +260,13 @@
 <td style="text-align:left"><em>application-properties</em></td>
 <td style="text-align:left"><em>string</em></td>
 <td style="text-align:left">MUST contain the ID of the device that is subject to the operation.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>send_event</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>application-properties</em></td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left">If set to <code>true</code>, a <a href="/hono/docs/concepts/device-notifications/#time-until-disconnect-notification">Time until Disconnect Notification</a> with <em>ttd</em> value <code>0</code> should be sent indicating the device is not ready to receive commands.</td>
 </tr>
 </tbody>
 </table>
@@ -572,12 +588,12 @@ multiple consecutive requests to overcome this limitation.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.min.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1669687766"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1669687766"></script>
-        <script src="/hono/docs/js/search.js?1669687766"></script>
+        <script src="/hono/docs/js/auto-complete.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.min.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1669774190"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1669774190"></script>
+        <script src="/hono/docs/js/search.js?1669774190"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -659,7 +675,8 @@ multiple consecutive requests to overcome this limitation.</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/api/command-router/" selected>stable (2.1)</option>
+                    <option id="stable" value="/hono/docs/api/command-router/" selected>stable (2.2)</option>
+                    <option id="2.2" value="/hono/docs/2.2/api/command-router/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/api/command-router/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/api/command-router/">2.0</option>
                     <option id="1.12" value="/hono/docs/1.12/api/command-router/">1.12</option>
@@ -700,10 +717,10 @@ multiple consecutive requests to overcome this limitation.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1669687767"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669687767"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1669687767"></script>
-    <script src="/hono/docs/js/theme.js?1669687767"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1669774190"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669774190"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1669774190"></script>
+    <script src="/hono/docs/js/theme.js?1669774190"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

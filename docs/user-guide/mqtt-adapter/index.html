@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>MQTT Adapter :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1669687767" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1669687767" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1669687767" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1669687767" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1669774191" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1669774191" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1669774191" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1669774191" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1669687767"></script>
+    <script src="/hono/docs/js/variant.js?1669774191"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1669687767"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1669774191"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -300,10 +300,10 @@ configured to require devices to authenticate (which is the default). When using
 the device&rsquo;s tenant and device identity as part of the authentication process.</p>
 <p><strong>Example</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
 </span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> using a client certificate for authentication:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in base directory of Hono repository:</span>
-</span></span><span style="display:flex;"><span>mosquitto_pub -p <span style="color:#ae81ff">8883</span> -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> --cert demo-certs/certs/device-4711-cert.pem --key demo-certs/certs/device-4711-key.pem --cafile demo-certs/certs/trusted-certs.pem
+</span></span><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -p <span style="color:#ae81ff">8883</span> --cert demo-certs/certs/device-4711-cert.pem --key demo-certs/certs/device-4711-key.pem --cafile demo-certs/certs/trusted-certs.pem -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -339,7 +339,7 @@ has been defined for the origin device or its tenant (see <a href="#downstream-m
 <code>HONO_MQTT_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t t/DEFAULT_TENANT/4711 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -t t/DEFAULT_TENANT/4711 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
 </span></span></code></pre></div><h2 id="publish-telemetry-data-authenticated-gateway">Publish Telemetry Data (authenticated Gateway)</h2>
 <ul>
 <li>Topic:
@@ -375,7 +375,7 @@ retrieving a <em>registration assertion</em> for the device from the configured
 <a href="/hono/docs/admin-guide/common-config/#device-registration-service-connection-configuration">Device Registration service</a>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4712</code> via gateway <code>gw-1</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t t/DEFAULT_TENANT/4712 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t t/DEFAULT_TENANT/4712 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -440,9 +440,9 @@ has been defined for the origin device or its tenant (see <a href="#downstream-m
 to require devices to authenticate (which is the default).</p>
 <p><strong>Examples</strong></p>
 <p>Upload a JSON string for device <code>4711</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t e -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t e -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
 </span></span></code></pre></div><p>Upload a JSON string for device <code>4711</code> with <code>time-to-live</code> as 10 seconds:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t e/?hono-ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t e/?hono-ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span> -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
 </span></span></code></pre></div><h2 id="publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</h2>
 <ul>
 <li>Topic:
@@ -471,9 +471,9 @@ has been defined for the origin device or its tenant (see <a href="#downstream-m
 <code>HONO_MQTT_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t e/DEFAULT_TENANT/4711 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -t e/DEFAULT_TENANT/4711 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
 </span></span></code></pre></div><p>Publish some JSON data for device <code>4711</code> with <code>time-to-live</code> as 15 seconds:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t e/DEFAULT_TENANT/4711/?hono-ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span> -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -t e/DEFAULT_TENANT/4711/?hono-ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">15</span> -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
 </span></span></code></pre></div><h2 id="publish-an-event-authenticated-gateway">Publish an Event (authenticated Gateway)</h2>
 <ul>
 <li>Topic:
@@ -510,7 +510,7 @@ retrieving a <em>registration assertion</em> for the device from the configured
 <a href="/hono/docs/admin-guide/common-config/#device-registration-service-connection-configuration">Device Registration service</a>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4712</code> via gateway <code>gw-1</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t e//4712 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t e//4712 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -530,11 +530,13 @@ registering the command subscription. Devices should therefore retry sending an 
 packet with the <em>Failure</em> value is received, provided a valid filter is used. When a device no longer wants to receive
 commands anymore, it can send an MQTT <em>UNSUBSCRIBE</em> packet to the adapter, including the same topic filter that has been
 used to subscribe.</p>
-<p>When a device has successfully subscribed, the adapter sends an
-<a href="/hono/docs/api/event/#empty-notification">empty notification</a> on behalf of the device to the downstream
-messaging infrastructure with the <em>ttd</em> header set to <code>-1</code>, indicating that the device will be ready to receive commands
-until further notice. Analogously, the adapter sends an empty notification with the <em>ttd</em> header set to <code>0</code> when a
-device unsubscribes from commands.</p>
+<p>When a device has successfully subscribed, the adapter initiates sending an
+<a href="/hono/docs/api/event/#empty-notification">empty notification</a> via the
+<a href="/hono/docs/api/command-router/#register-command-consumer-for-device">Command Router</a> on behalf of the device to
+the downstream messaging infrastructure with the <em>ttd</em> header set to <code>-1</code>, indicating that the device will be ready to
+receive commands until further notice. Analogously, the adapter initiates sending an empty notification via the
+<a href="/hono/docs/api/command-router/#unregister-command-consumer-for-device">Command Router</a> with the <em>ttd</em> header set
+to <code>0</code> when a device unsubscribes from commands.</p>
 <p>Commands can be sent following a <em>request/response</em> pattern or being <em>one-way</em>.</p>
 <p>For <em>Request/Response</em> commands, devices send their responses to commands by means of sending an MQTT <em>PUBLISH</em> message
 to a topic that is specific to the command that has been executed. The MQTT adapter accepts responses being published
@@ -597,7 +599,7 @@ the device ID.</p>
 <p><strong>Examples</strong></p>
 <p>The following command can be used to subscribe to commands resulting in command messages being published to a
 topic that does not include tenant nor device ID:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t c///q/#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t c///q/#
 </span></span></code></pre></div><p>A request-response command with name <code>setBrightness</code> from an application might look like this:</p>
 <pre tabindex="0"><code>c///q/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
 {
@@ -611,7 +613,7 @@ topic that does not include tenant nor device ID:</p>
 </code></pre><p>Note that the topic in the latter case doesn&rsquo;t contain a request identifier.</p>
 <p>The following command can be used to subscribe to commands resulting in command messages being published to a
 topic that includes the tenant ID:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t command/DEFAULT_TENANT//req/#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t command/DEFAULT_TENANT//req/#
 </span></span></code></pre></div><p>Note the usage of the fully spelled out names (<code>command</code> and <code>req</code> instead of <code>c</code> and <code>q</code>) and the inclusion of the tenant ID
 in the topic filter.</p>
 <p>A corresponding request-response command with name <code>setBrightness</code> from an application might look like this:</p>
@@ -643,7 +645,7 @@ topic filter used for subscribing did contain the tenant ID as well.</p>
 <li><code>command/${tenant-id}/${device-id}/q/${req-id}/${command}</code></li>
 </ul>
 <p><strong>Example</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -t c/DEFAULT_TENANT/4711/q/#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -t c/DEFAULT_TENANT/4711/q/#
 </span></span></code></pre></div><p>A request-response command with name <code>setBrightness</code> from an application might look like this:</p>
 <pre tabindex="0"><code>c/DEFAULT_TENANT/4711/q/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
 {
@@ -710,7 +712,7 @@ on behalf of the command target device and that has an open subscription will be
 message.</p>
 <p><strong>Subscribe to Commands for all Devices</strong></p>
 <p>A subscription to commands for all devices that a gateway acts on behalf of looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c/DEFAULT_TENANT/+/q/#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c/DEFAULT_TENANT/+/q/#
 </span></span></code></pre></div><p>A request/response command for device <code>4711</code> with name <code>setBrightness</code> from an application might then look like this:</p>
 <pre tabindex="0"><code>c/DEFAULT_TENANT/4711/q/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/setBrightness
 {
@@ -720,7 +722,7 @@ message.</p>
 included in the topic filter used for subscribing to the commands.</p>
 <p><strong>Subscribe to Commands for a specific Device</strong></p>
 <p>A subscription to commands for a specific device can be done like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/q/#
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/q/#
 </span></span></code></pre></div><p>A corresponding <em>one-way</em> command might look like this:</p>
 <pre tabindex="0"><code>c//4711/q//setBrightness
 {
@@ -737,7 +739,7 @@ one of the following topics:</p>
 </ul>
 <p><strong>Example</strong></p>
 <p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t c///s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;sensor1@DEFAULT_TENANT&#39;</span> -P hono-secret -t c///s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
 </span></span></code></pre></div><h3 id="sending-a-response-to-a-command-unauthenticated-device">Sending a Response to a Command (unauthenticated Device)</h3>
 <p>An unauthenticated device MUST send the response to a previously received command to
 one of the following topics:</p>
@@ -747,7 +749,7 @@ one of the following topics:</p>
 </ul>
 <p><strong>Example</strong></p>
 <p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -t c/DEFAULT_TENANT/4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -t c/DEFAULT_TENANT/4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
 </span></span></code></pre></div><h3 id="sending-a-response-to-a-command-authenticated-gateway">Sending a Response to a Command (authenticated Gateway)</h3>
 <p>An authenticated gateway MUST send a device&rsquo;s response to a command it has received on behalf of the device to one of the following topics:</p>
 <ul>
@@ -756,7 +758,7 @@ one of the following topics:</p>
 </ul>
 <p><strong>Example</strong></p>
 <p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
 </span></span></code></pre></div><h2 id="error-reporting-via-error-topic">Error Reporting via Error Topic</h2>
 <p>The default behaviour when an error occurs while publishing telemetry, event or command response messages is for the
 MQTT adapter to close the network connection to the device, as mandated by the MQTT 3.1.1 spec.</p>
@@ -817,7 +819,7 @@ respectively:</p>
 <p>An example using the <a href="https://hivemq.github.io/mqtt-cli/">MQTT CLI</a> that will produce an error output if there is
 no downstream consumer for the device messages.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mqtt shell
-</span></span><span style="display:flex;"><span>con -V <span style="color:#ae81ff">3</span> -h <span style="color:#f92672">[</span>MQTT_ADAPTER_IP<span style="color:#f92672">]</span> -u <span style="color:#f92672">[</span>DEVICE<span style="color:#f92672">]</span>@<span style="color:#f92672">[</span>TENANT<span style="color:#f92672">]</span> -pw <span style="color:#f92672">[</span>PWD<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>con -V <span style="color:#ae81ff">3</span> -h hono.eclipseprojects.io  -u sensor1@DEFAULT_TENANT -pw hono-secret
 </span></span><span style="display:flex;"><span>sub -t e///# --qos <span style="color:#ae81ff">0</span> --outputToConsole
 </span></span><span style="display:flex;"><span>pub -t t -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> --qos <span style="color:#ae81ff">1</span>
 </span></span></code></pre></div><p>Using an explicit correlation id:</p>
@@ -1172,12 +1174,12 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1669687768"></script>
-        <script src="/hono/docs/js/lunr.min.js?1669687768"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669687768"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1669687768"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1669687768"></script>
-        <script src="/hono/docs/js/search.js?1669687768"></script>
+        <script src="/hono/docs/js/auto-complete.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.min.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1669774191"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1669774191"></script>
+        <script src="/hono/docs/js/search.js?1669774191"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1259,7 +1261,8 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/" selected>stable (2.1)</option>
+                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/" selected>stable (2.2)</option>
+                    <option id="2.2" value="/hono/docs/2.2/user-guide/mqtt-adapter/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/user-guide/mqtt-adapter/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/user-guide/mqtt-adapter/">2.0</option>
                     <option id="1.12" value="/hono/docs/1.12/user-guide/mqtt-adapter/">1.12</option>
@@ -1300,10 +1303,10 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1669687768"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669687768"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1669687768"></script>
-    <script src="/hono/docs/js/theme.js?1669687768"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1669774191"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1669774191"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1669774191"></script>
+    <script src="/hono/docs/js/theme.js?1669774191"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
