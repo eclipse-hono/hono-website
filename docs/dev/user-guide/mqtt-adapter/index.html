@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>MQTT Adapter :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1673143842" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1673143842" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1673143842" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1673143842" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1673316664" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1673316664" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1673316664" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1673316664" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1673143842"></script>
+    <script src="/hono/docs/js/variant.js?1673316664"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1673143842"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1673316664"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -716,6 +716,8 @@ In case the command target device has already sent a telemetry, event or command
 that gateway has created such a command subscription, that gateway will be chosen. Otherwise one gateway that may act
 on behalf of the command target device and that has an open subscription will be chosen randomly to receive the command
 message.</p>
+<p>It is not possible to use both topic names <code>command//+/req/#</code> and <code>command//[&lt;gateway-id&gt;]/req/#</code> at the same time. In
+that case only the last such subscription would be handled from the Command Router.</p>
 <p><strong>Subscribe to Commands for all Devices</strong></p>
 <p>A subscription to commands for all devices that a gateway acts on behalf of looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c/DEFAULT_TENANT/+/q/#
@@ -1180,12 +1182,12 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1673143843"></script>
-        <script src="/hono/docs/js/lunr.min.js?1673143843"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1673143843"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1673143843"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1673143843"></script>
-        <script src="/hono/docs/js/search.js?1673143843"></script>
+        <script src="/hono/docs/js/auto-complete.js?1673316665"></script>
+        <script src="/hono/docs/js/lunr.min.js?1673316665"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1673316665"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1673316665"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1673316665"></script>
+        <script src="/hono/docs/js/search.js?1673316665"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1309,10 +1311,10 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1673143843"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1673143843"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1673143843"></script>
-    <script src="/hono/docs/js/theme.js?1673143843"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1673316665"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1673316665"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1673316665"></script>
+    <script src="/hono/docs/js/theme.js?1673316665"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

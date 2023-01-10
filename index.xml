@@ -81,7 +81,7 @@ for upcoming Hono versions.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hono/release-notes/</guid>
-      <description>2.3.0 New features Hono services and adapters could be started locally (not in containers) for development/test purposes. 2.2.0 New features All Hono components now support reading ECC based keys from PEM files that contain the Base64 encoded DER-encoding of an ECPrivateKey as described in RFC 5915, Section 4. The build process now supports creating container images for the arm64 platform. Please refer to the Developer Guide for details. The LoraWAN protocol adapter has been extended with support for Chirpstack V4 provider.</description>
+      <description>2.3.0 New features Hono services and adapters could be started locally (not in containers) for development/test purposes. Fixes &amp;amp; Enhancements The MQTT adapter did forward command messages for devices behind a gateway when the gateway subscription was targeting the gateway itself with topic name command//[&amp;lt;gateway-id&amp;gt;]/req/#. This has been fixed. For a subscription with such a topic name, only commands for the gateway itself are forwarded, not commands for devices, that the gateway acts on behalf of.</description>
     </item>
     
   </channel>
