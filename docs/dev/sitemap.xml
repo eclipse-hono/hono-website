@@ -1057,6 +1057,9 @@
                 />
   </url>
   <url>
+    <loc>https://www.eclipse.org/hono/docs/dev/admin-guide/pubsub-config/</loc>
+  </url>
+  <url>
     <loc>https://www.eclipse.org/hono/docs/dev/admin-guide/secure_communication/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1550,6 +1553,12 @@
                 hreflang="dev"
                 href="https://www.eclipse.org/hono/docs/dev/api/command-and-control/"
                 />
+  </url>
+  <url>
+    <loc>https://www.eclipse.org/hono/docs/dev/api/telemetry-pubsub/</loc>
+  </url>
+  <url>
+    <loc>https://www.eclipse.org/hono/docs/dev/api/event-pubsub/</loc>
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/dev/api/tenant/</loc>
