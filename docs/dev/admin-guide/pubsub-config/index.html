@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Google Pub/Sub Messaging Configuration :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1675044571" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1675044571" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1675044571" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1675044571" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1675131071" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1675131071" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1675131071" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1675131071" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1675044571"></script>
+    <script src="/hono/docs/js/variant.js?1675131071"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1675044571"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1675131071"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -119,32 +119,14 @@
 <p>Hono can be configured to support Google Pub/Sub as the messaging infrastructure. Google Pub/Sub can only be used to forward
 Telemetry and Event messages, but not Command messages. The Pub/Sub client used for this purpose
 can be configured by means of operating system environment variables.</p>
-<p>Supporting Google Pub/Sub, Hono must run on Google Kubernetes Engine to authenticate to the Google Pub/Sub API. To authenticate to the Google Pub/Sub API, Workload Identity
-is used and has to be configured as described in the <a href="https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity">Google Cloud Documentation</a>.</p>
+<p>Supporting Google Pub/Sub, Hono must run on Google Kubernetes Engine to authenticate to the Google Pub/Sub API.
+To authenticate to the Google Pub/Sub API, Workload Identity is used and has to be configured as described in the
+<a href="https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity">Google Cloud Documentation</a>.</p>
 <h2 id="publisher-configuration">Publisher Configuration</h2>
 <p>The <code>org.eclipse.hono.client.pubsub.CachingPubSubPublisherFactory</code> factory can be used to create Pub/Sub publishers for Hono&rsquo;s
 Pub/Sub based APIs.</p>
-<p>The following table provides an overview of the environment variable for configuring a Pub/Sub publisher.
-Note that the variable map to the property of the class <code>org.eclipse.hono.client.pubsub.PubSubConfigProperties</code> which is
-used to configure a publisher.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
-<th style="text-align:center">Mandatory</th>
-<th style="text-align:left">Default Value</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><code>HONO_PUBSUB_PROJECTID</code><br><code>hono.pubsub.projectId</code></td>
-<td style="text-align:center">yes</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">The ID of the Google Cloud Project (GCP) where Pub/Sub is set up. The project ID is a globally unique identifier for a GCP Project used to differentiate the project from all others in Google Cloud.</td>
-</tr>
-</tbody>
-</table>
+<p>Please refer to the <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-google-cloud-services/main/index.html">Quarkus Google Cloud Services extension</a>
+documentation for details regarding configuration of the PubSub client.</p>
 <h2 id="configuring-tenants-to-use-pubsub-based-messaging">Configuring Tenants to use Pub/Sub based Messaging</h2>
 <p>Hono&rsquo;s components by default support using Kafka based messaging infrastructure to transmit messages hence and forth
 between devices and applications. Hono also supports using Pub/Sub as the messaging infrastructure either as a replacement
@@ -217,12 +199,12 @@ from which downstream applications will consume the messages:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1675044571"></script>
-        <script src="/hono/docs/js/lunr.min.js?1675044571"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1675044571"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1675044571"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1675044571"></script>
-        <script src="/hono/docs/js/search.js?1675044571"></script>
+        <script src="/hono/docs/js/auto-complete.js?1675131071"></script>
+        <script src="/hono/docs/js/lunr.min.js?1675131071"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1675131071"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1675131071"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1675131071"></script>
+        <script src="/hono/docs/js/search.js?1675131071"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -344,10 +326,10 @@ from which downstream applications will consume the messages:</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1675044571"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1675044571"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1675044571"></script>
-    <script src="/hono/docs/js/theme.js?1675044571"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1675131071"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1675131071"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1675131071"></script>
+    <script src="/hono/docs/js/theme.js?1675131071"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
