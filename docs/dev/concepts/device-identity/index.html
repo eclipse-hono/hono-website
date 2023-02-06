@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Device Identity :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1675563026" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1675563026" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1675563026" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1675563026" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1675649457" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1675649457" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1675649457" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1675649457" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1675563026"></script>
+    <script src="/hono/docs/js/variant.js?1675649457"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1675563026"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1675649457"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -103,6 +103,7 @@
         <li><a href="#usernamepassword-based-authentication">Username/Password based Authentication</a></li>
         <li><a href="#pre-shared-key-based-authentication">Pre-Shared Key based Authentication</a></li>
         <li><a href="#client-certificate-based-authentication">Client Certificate based Authentication</a></li>
+        <li><a href="#json-web-token-based-authentication">JSON Web Token based Authentication</a></li>
       </ul>
     </li>
   </ul>
@@ -140,7 +141,7 @@ status.</p>
 the particular <em>provisioning process</em> being used to bring devices into life. In such cases it makes sense to simply
 implement the Device Registration API as a <em>facade</em> on top of the existing component.</p>
 <p>In addition to that, Hono defines a <a href="/hono/docs/dev/api/management/">Device Registry Management API</a>, which can be
-implemented to take advantage of standardized  operations for managing devices and credentials. This API is optional
+implemented to take advantage of standardized operations for managing devices and credentials. This API is optional
 because Hono components do not require it during runtime.</p>
 <p>Hono comes with a <a href="/hono/docs/dev/admin-guide/mongodb-device-registry-config/">MongoDB</a> and a
 <a href="/hono/docs/dev/admin-guide/jdbc-device-registry-config/">JDBC</a> based implementation of both APIs.
@@ -233,6 +234,38 @@ extension.</p>
 the client certificate&rsquo;s <em>subject DN</em> and invokes the Credentials API&rsquo;s
 <a href="/hono/docs/dev/api/credentials/#get-credentials"><em>get Credentials</em></a> operation in order to retrieve the
 <a href="/hono/docs/dev/api/credentials/#x509-certificate"><em>x509-cert</em> type credentials</a> that are on record for the device.</p>
+<h3 id="json-web-token-based-authentication">JSON Web Token based Authentication</h3>
+<p>The MQTT protocol adapter supports authentication of devices with a JSON Web Token (JWT) based mechanism. In this case,
+the protocol adapter verifies the JWT by using the public key that is on record for the device in the
+device registry. Further more does the protocol adapter check if the JWT is valid. To be valid the JWT has to provide
+the following information in its header and payload.</p>
+<p>The JWT header has to provide two fields that indicate the type of token (<code>typ</code>) and the signing algorithm (<code>alg</code>).
+Both fields are mandatory and the type has to be <code>JWT</code>. For the signing algorithm <code>RS256</code>, <code>PS256</code>, <code>ES256</code> and their
+respective stronger variants are supported. The algorithm specified in the header must match at least one of the
+<a href="/hono/docs/dev/api/credentials/#raw-public-key"><em>raw public key</em> type credentials</a> registered for the device.</p>
+<p>The JWT payload must at least contain the claims <code>iat</code> (&ldquo;issued at&rdquo;) and <code>exp</code> (&ldquo;expiration time&rdquo;) with values provided
+in <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a>. The <code>iat</code> claim marks the timestamp the token was created at
+and will also represent the start of its validity period. It must not be too far in the past or the future (allowing 10
+minutes for skew). The <code>nbf</code> (&ldquo;not before&rdquo;) claim is therefore not required and will be ignored. The <code>exp</code> claim
+signifies the point in time after which the token becomes invalid. The lifetime of the token must be at most 24 hours
+plus skew.</p>
+<p>During connection establishment the device presents a client identifier, a username and a password to the protocol
+adapter. The JWT has to be provided in the password field. The username will be ignored; however, some MQTT client
+libraries will not send the password unless the username is specified. There are two ways the device can
+provide the information about its tenant and authentication identifier:</p>
+<ol>
+<li>Either as claims inside the JWT payload, in which case the <em>tenant-id</em> and <em>auth-id</em> must be provided in the <code>iss</code>
+(&ldquo;issuer&rdquo;) and <code>sub</code> (&ldquo;subject&rdquo;) claims, respectively, and the <code>aud</code> (&ldquo;audience&rdquo;) claim must contain &ldquo;hono-adapter&rdquo;</li>
+<li>or inside the client identifier, in which case the client identifier must have the following format:
+*/<em>tenant-id</em>/[^/]*/<em>auth-id</em>. For example, a device that belongs to tenant <code>example-tenant</code> and for which
+<em>rpk</em> (raw public key) credentials with an <em>auth-id</em> of <code>device-1</code> have been registered, would present a client identifier
+of <code>tenants/example-tenant/devices/device-1</code> when authenticating to the protocol adapter.</li>
+</ol>
+<p>The protocol adapter then extracts the tenant identifier and invokes the Credentials
+API&rsquo;s <a href="/hono/docs/dev/api/credentials/#get-credentials"><em>get Credentials</em></a> operation in order to retrieve the
+<em>rpk</em> (raw public key) type credentials that are on record for the device. The key contained in the credentials is then used
+by the protocol adapter to verify the JWT provided by the client. If both, the JWT and the key originate from
+the same private key and the JWT&rsquo;s header and claims are valid, than the device will be authenticated successfully.</p>
             <footer class="footline">
             </footer>
           </article>
@@ -255,12 +288,12 @@ the client certificate&rsquo;s <em>subject DN</em> and invokes the Credentials A
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1675563026"></script>
-        <script src="/hono/docs/js/lunr.min.js?1675563026"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1675563026"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1675563026"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1675563026"></script>
-        <script src="/hono/docs/js/search.js?1675563026"></script>
+        <script src="/hono/docs/js/auto-complete.js?1675649457"></script>
+        <script src="/hono/docs/js/lunr.min.js?1675649457"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1675649457"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1675649457"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1675649457"></script>
+        <script src="/hono/docs/js/search.js?1675649457"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -387,10 +420,10 @@ the client certificate&rsquo;s <em>subject DN</em> and invokes the Credentials A
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1675563026"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1675563026"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1675563026"></script>
-    <script src="/hono/docs/js/theme.js?1675563026"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1675649458"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1675649458"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1675649458"></script>
+    <script src="/hono/docs/js/theme.js?1675649458"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
