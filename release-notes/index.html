@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1676772603" rel="stylesheet">
+<link href="/hono/css/custom.css?1676859025" rel="stylesheet">
 
 
 
@@ -255,10 +255,14 @@
                     <div class="col-md-12">
 
                         <div>
-                          <h2 id="230">2.3.0</h2>
+                          <h2 id="230-not-released-yet">2.3.0 (not released yet)</h2>
 <h3 id="new-features">New features</h3>
 <ul>
 <li>Hono services and adapters could be started locally (not in containers) for development/test purposes.</li>
+<li>The MQTT adapter now has experimental support for authenticating devices using the JWT based authentication scheme
+employed by Google IoT Core.</li>
+<li>The protocol adapters now have experimental support for using Google Pub/Sub as the messaging infrastructure.
+Support is currently limited to publishing downstream events and telemetry messages to Pub/Sub.</li>
 </ul>
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
@@ -266,8 +270,8 @@
 the gateway itself with topic name <code>command//[&lt;gateway-id&gt;]/req/#</code>. This has been fixed. For a subscription with such a
 topic name, only commands for the gateway itself are forwarded, not commands for devices, that the gateway acts on
 behalf of.</li>
-<li>The LoRaWAN adapter now transforms all devEUIs hex encoded and uppercase. All LoRaWAN devices should therefor be
-registered uppercase and hex encoded.</li>
+<li>The LoRaWAN adapter now transforms all devEUIs hex encoded and upper case. All LoRaWAN devices should therefore be
+registered upper case and hex encoded.</li>
 </ul>
 <h2 id="220">2.2.0</h2>
 <h3 id="new-features-1">New features</h3>

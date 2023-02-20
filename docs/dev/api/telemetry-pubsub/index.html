@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Telemetry API Specification for Google Pub/Sub :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1676772625" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1676772625" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1676772625" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1676772625" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1676859055" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1676859055" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1676859055" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1676859055" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1676772625"></script>
+    <script src="/hono/docs/js/variant.js?1676859055"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1676772625"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1676859055"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -128,6 +128,13 @@ this page we will simply use <em>Pub/Sub</em> when referring to Google Pub/Sub.<
 <p>The Telemetry API for Pub/Sub is an alternative to the <a href="/hono/docs/dev/api/telemetry-kafka/">Telemetry API for Kafka</a>
 for applications that want to consume telemetry data from Pub/Sub instead of an Apache Kafka™
 broker.</p>
+
+<div class="box notices cstyle warn">
+    <div class="box-label"></div>
+    <div class="box-content">
+<p>Support for the Google Pub/Sub based Telemtetry API is considered experimental and may change without further notice.</p>
+    </div>
+</div>
 <h2 id="southbound-operations">Southbound Operations</h2>
 <p>The following operation can be used by <em>Protocol Adapters</em> to publish telemetry data received from devices to
 consumers like <em>Business Applications</em>.</p>
@@ -305,12 +312,12 @@ to the topic after the subscription is created are available to subscriber clien
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1676772625"></script>
-        <script src="/hono/docs/js/lunr.min.js?1676772625"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1676772625"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1676772625"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1676772625"></script>
-        <script src="/hono/docs/js/search.js?1676772625"></script>
+        <script src="/hono/docs/js/auto-complete.js?1676859055"></script>
+        <script src="/hono/docs/js/lunr.min.js?1676859055"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1676859055"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1676859055"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1676859055"></script>
+        <script src="/hono/docs/js/search.js?1676859055"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -432,10 +439,10 @@ to the topic after the subscription is created are available to subscriber clien
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1676772625"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1676772625"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1676772625"></script>
-    <script src="/hono/docs/js/theme.js?1676772625"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1676859056"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1676859056"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1676859056"></script>
+    <script src="/hono/docs/js/theme.js?1676859056"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
