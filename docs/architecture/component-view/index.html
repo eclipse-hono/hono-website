@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Component View :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1677031828" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1677031828" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1677031828" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1677118238" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1677118238" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1677118238" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1677118238" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1677031828"></script>
+    <script src="/hono/docs/js/variant.js?1677118238"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1677031828"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1677118238"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -97,6 +97,7 @@
       <ul>
         <li><a href="#kafka-based-messaging-infrastructure">Kafka based Messaging Infrastructure</a></li>
         <li><a href="#amqp-10-based-messaging-infrastructure">AMQP 1.0 based Messaging Infrastructure</a></li>
+        <li><a href="#google-pubsub-based-messaging-infrastructure">Google Pub/Sub based Messaging Infrastructure</a></li>
       </ul>
     </li>
   </ul>
@@ -163,7 +164,7 @@ to receive and forward Command &amp; Control messages as defined by the
 <a href="/hono/docs/api/command-and-control-kafka/">Command &amp; Control API</a>.</p>
 <h2 id="messaging-infrastructure">Messaging Infrastructure</h2>
 <p>The <em>Messaging Infrastructure</em> is not <em>per se</em> a component being developed as part of Hono. Instead, Hono supports
-Kafka and/or AMQP 1.0 based messaging infrastructure that is being developed by other open source projects.</p>
+Kafka, AMQP 1.0 and/or Google Pub/Sub based messaging infrastructure that is being developed by other open source projects.</p>
 <h3 id="kafka-based-messaging-infrastructure">Kafka based Messaging Infrastructure</h3>
 <p>The example deployment currently employs the <a href="https://bitnami.com/stack/kafka/helm">bitnami Kafka Helm chart</a> for
 installing a single-node <a href="https://kafka.apache.org">Apache Kafka™</a> broker instance. Note that this setup is
@@ -184,6 +185,18 @@ scalability of real world use cases.</p>
 <p>Scaling out messaging infrastructure is a not a trivial task. Hono <strong>does not</strong> provide an out-of-the-box solution to
 this problem but instead integrates with the <a href="https://enmasseproject.github.io">EnMasse</a> project which aims at
 providing <em>Messaging as a Service</em> infrastructure.</p>
+<h3 id="google-pubsub-based-messaging-infrastructure">Google Pub/Sub based Messaging Infrastructure</h3>
+<p>To use this setup, a Google project has to be provided with the Pub/Sub API enabled. There is no example deployment for
+this Messaging Infrastructure.</p>
+<p>Google Pub/Sub is an asynchronous messaging service designed to be highly scalable. There is no need to take care about scaling out
+messaging infrastructure.</p>
+
+<div class="box notices cstyle warning">
+    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+    <div class="box-content">
+<p>Support for Google Pub/Sub based messaging infrastructure is considered <strong>experimental</strong> and may change without further notice.</p>
+    </div>
+</div>
             <footer class="footline">
             </footer>
           </article>
@@ -206,12 +219,12 @@ providing <em>Messaging as a Service</em> infrastructure.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1677031828"></script>
-        <script src="/hono/docs/js/lunr.min.js?1677031828"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1677031828"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1677031828"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1677031828"></script>
-        <script src="/hono/docs/js/search.js?1677031828"></script>
+        <script src="/hono/docs/js/auto-complete.js?1677118238"></script>
+        <script src="/hono/docs/js/lunr.min.js?1677118238"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1677118238"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1677118238"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1677118238"></script>
+        <script src="/hono/docs/js/search.js?1677118238"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -246,6 +259,7 @@ providing <em>Messaging as a Service</em> infrastructure.</p>
           <li data-nav-id="/hono/docs/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
           <li data-nav-id="/hono/docs/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
           <li data-nav-id="/hono/docs/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/admin-guide/pubsub-config/" title="Google Pub/Sub Messaging Configuration" class="dd-item"><a href="/hono/docs/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a></li>
           <li data-nav-id="/hono/docs/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/admin-guide/secure_communication/">Secure Communication</a></li>
           <li data-nav-id="/hono/docs/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
           <li data-nav-id="/hono/docs/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
@@ -261,6 +275,8 @@ providing <em>Messaging as a Service</em> infrastructure.</p>
           <li data-nav-id="/hono/docs/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/event/">Event API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/event-pubsub/">Event API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/api/tenant/">Tenant API</a></li>
           <li data-nav-id="/hono/docs/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/api/command-router/">Command Router API</a></li>
           <li data-nav-id="/hono/docs/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/api/device-registration/">Device Registration API</a></li>
@@ -293,7 +309,8 @@ providing <em>Messaging as a Service</em> infrastructure.</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/architecture/component-view/" selected>stable (2.2)</option>
+                    <option id="stable" value="/hono/docs/architecture/component-view/" selected>stable (2.3)</option>
+                    <option id="2.3" value="/hono/docs/2.3/architecture/component-view/">2.3</option>
                     <option id="2.2" value="/hono/docs/2.2/architecture/component-view/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/architecture/component-view/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/architecture/component-view/">2.0</option>
@@ -335,10 +352,10 @@ providing <em>Messaging as a Service</em> infrastructure.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1677031829"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1677031829"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1677031829"></script>
-    <script src="/hono/docs/js/theme.js?1677031829"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1677118238"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1677118238"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1677118238"></script>
+    <script src="/hono/docs/js/theme.js?1677118238"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

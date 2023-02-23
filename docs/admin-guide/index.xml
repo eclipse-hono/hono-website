@@ -114,6 +114,14 @@ Messaging Network&lt;/em&gt; that is used in Hono&amp;rsquo;s example deployment
       <description>&lt;p&gt;Hono may use an &lt;em&gt;Apache Kafka cluster&lt;/em&gt; as messaging infrastructure.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Google Pub/Sub Messaging Configuration</title>
+      <link>https://www.eclipse.org/hono/docs/admin-guide/pubsub-config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/admin-guide/pubsub-config/</guid>
+      <description>Hono can be configured to support Google Pub/Sub as the messaging infrastructure. Google Pub/Sub can only be used to forward Telemetry and Event messages, but not Command messages. The Pub/Sub client used for this purpose can be configured by means of operating system environment variables.
+Supporting Google Pub/Sub, Hono must run on Google Kubernetes Engine to authenticate to the Google Pub/Sub API. To authenticate to the Google Pub/Sub API, Workload Identity is used and has to be configured as described in the Google Cloud Documentation.</description>
+    </item>
+    <item>
       <title>Secure Communication</title>
       <link>https://www.eclipse.org/hono/docs/admin-guide/secure_communication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1677031822" rel="stylesheet">
+<link href="/hono/css/custom.css?1677118230" rel="stylesheet">
 
 
 
@@ -255,7 +255,7 @@
                     <div class="col-md-12">
 
                         <div>
-                          <h2 id="230-not-released-yet">2.3.0 (not released yet)</h2>
+                          <h2 id="230">2.3.0</h2>
 <h3 id="new-features">New features</h3>
 <ul>
 <li>Hono services and adapters could be started locally (not in containers) for development/test purposes.</li>
@@ -263,13 +263,15 @@
 employed by Google IoT Core.</li>
 <li>The protocol adapters now have experimental support for using Google Pub/Sub as the messaging infrastructure.
 Support is currently limited to publishing downstream events and telemetry messages to Pub/Sub.</li>
+<li>The JDBC based registry now supports the Device Registry Management API&rsquo;s <em>search Tenants</em> and <em>search Devices</em>
+operations. However, sorting and filtering is not yet implemented.</li>
 </ul>
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
-<li>The MQTT adapter did forward command messages for devices behind a gateway when the gateway subscription was targeting
-the gateway itself with topic name <code>command//[&lt;gateway-id&gt;]/req/#</code>. This has been fixed. For a subscription with such a
-topic name, only commands for the gateway itself are forwarded, not commands for devices, that the gateway acts on
-behalf of.</li>
+<li>The MQTT adapter did forward command messages for devices behind a gateway when the gateway subscription was
+targeting the gateway itself with topic name <code>command//[&lt;gateway-id&gt;]/req/#</code>. This has been fixed.
+For a subscription with such a topic name, only commands for the gateway itself are forwarded, not commands for
+devices, that the gateway acts on behalf of.</li>
 <li>The LoRaWAN adapter now transforms all devEUIs hex encoded and upper case. All LoRaWAN devices should therefore be
 registered upper case and hex encoded.</li>
 </ul>

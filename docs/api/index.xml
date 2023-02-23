@@ -70,6 +70,22 @@ devices.&lt;/p&gt;
 software component or switching the state of an actuator.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Telemetry API Specification for Google Pub/Sub</title>
+      <link>https://www.eclipse.org/hono/docs/api/telemetry-pubsub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/api/telemetry-pubsub/</guid>
+      <description>The Telemetry API is used by Protocol Adapters to send telemetry data downstream. Business Applications and other consumers use the API to receive data published by devices belonging to a particular tenant.
+The Telemetry API is defined by means of Google Pub/Sub message exchanges, i.e. a client needs to connect to Hono and configure Hono for Google Pub/Sub messaging infrastructure in order to use it and invoke operations of the API as described in the following sections.</description>
+    </item>
+    <item>
+      <title>Event API Specification for Google Pub/Sub</title>
+      <link>https://www.eclipse.org/hono/docs/api/event-pubsub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/api/event-pubsub/</guid>
+      <description>The Event API is used by Protocol Adapters to send event messages downstream. Business Applications and other consumers use the API to receive messages published by devices belonging to a particular tenant.
+The Event API is defined by means of Google Pub/Sub message exchanges, i.e. a client needs to connect to Hono and configure Hono for Google Pub/Sub messaging infrastructure in order to use it and invoke operations of the API as described in the following sections.</description>
+    </item>
+    <item>
       <title>Tenant API Specification</title>
       <link>https://www.eclipse.org/hono/docs/api/tenant/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

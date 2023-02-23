@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>MQTT Adapter :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1677031828" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1677031828" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1677031828" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1677031828" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1677118239" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1677118239" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1677118239" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1677118239" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1677031828"></script>
+    <script src="/hono/docs/js/variant.js?1677118239"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1677031828"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1677118239"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -94,6 +94,7 @@
       <ul>
         <li><a href="#client-certificate">Client Certificate</a></li>
         <li><a href="#usernamepassword">Username/Password</a></li>
+        <li><a href="#json-web-token">JSON Web Token</a></li>
       </ul>
     </li>
     <li><a href="#resource-limit-checks">Resource Limit Checks</a>
@@ -206,6 +207,46 @@ credentials that the
 has on record for the client as described in
 <a href="/hono/docs/concepts/device-identity/#usernamepassword-based-authentication">Username/Password based Authentication</a>.
 If the credentials match, the client has been authenticated successfully and the connection is being established.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>There is a subtle difference between the <em>device identifier</em> (<em>device-id</em>) and the <em>auth-id</em> a device uses
+for authentication. See <a href="/hono/docs/concepts/device-identity/">Device Identity</a> for a discussion of the
+concepts.</p>
+    </div>
+</div>
+<h3 id="json-web-token">JSON Web Token</h3>
+<p>The MQTT adapter supports authenticating clients based on a JSON Web Token (JWT) provided during MQTT connection
+establishment. This requires a client to provide a <em>client identifier</em>, a <em>user</em> and a <em>password</em> field in its MQTT
+CONNECT packet as defined in
+<a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718028">MQTT Version 3.1.1, Section 3.1</a>
+when connecting to the MQTT adapter. The JWT must be sent in the password field. The content of the <em>user</em> field is
+ignored. The information about the tenant and the authentication identifier can be presented to the protocol adapter in
+one of two ways:</p>
+<ol>
+<li>
+<p>Either as claims inside the JWT payload, in which case the <em>tenant-id</em> and <em>auth-id</em> must be provided in the <code>iss</code>
+(<em>issuer</em>) and <code>sub</code> (<em>subject</em>) claims respectively, and the <code>aud</code> (<em>audience</em>) claim must contain <code>hono-adapter</code></p>
+</li>
+<li>
+<p>or inside the <em>client identifier</em>, in which case the <em>client identifier</em> must have the following format:</p>
+<p><code>*/${tenant-id}/[^/]*/${auth-id}</code></p>
+<p>For example, a client that belongs to tenant <code>example-tenant</code> and for which <em>rpk</em> (raw public key) credentials
+with an <em>auth-id</em> of <code>device-1</code> have been registered, might present a <em>client identifier</em>
+of <code>tenants/example-tenant/devices/device-1</code> when authenticating to the protocol adapter.</p>
+</li>
+</ol>
+<p>The adapter extracts the <em>auth-id</em>, <em>tenant</em> and JWT from the CONNECT packet and verifies them using the
+credentials that the
+<a href="/hono/docs/admin-guide/common-config/#credentials-service-connection-configuration">configured Credentials service</a>
+has on record for the client as described in
+<a href="/hono/docs/concepts/device-identity/#json-web-token-based-authentication">JSON Web Token based Authentication</a>.
+If the JWT is verified in combination with the credentials and within its validity period, the client has been
+authenticated successfully and the connection is being established. The validity period is defined within the JWT&rsquo;s
+payload by the mandatory claims <code>iat</code> (&ldquo;issued at&rdquo;) and <code>exp</code> (&ldquo;expiration time&rdquo;). Please refer to
+<a href="/hono/docs/concepts/device-identity/#json-web-token-based-authentication">JSON Web Token based Authentication</a>
+for more detailed information.</p>
 
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -710,6 +751,8 @@ In case the command target device has already sent a telemetry, event or command
 that gateway has created such a command subscription, that gateway will be chosen. Otherwise one gateway that may act
 on behalf of the command target device and that has an open subscription will be chosen randomly to receive the command
 message.</p>
+<p>It is not possible to use both topic names <code>command//+/req/#</code> and <code>command//[&lt;gateway-id&gt;]/req/#</code> at the same time. In
+that case only the last such subscription would be handled from the Command Router.</p>
 <p><strong>Subscribe to Commands for all Devices</strong></p>
 <p>A subscription to commands for all devices that a gateway acts on behalf of looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_sub -v -h hono.eclipseprojects.io -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c/DEFAULT_TENANT/+/q/#
@@ -1174,12 +1217,12 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1677031829"></script>
-        <script src="/hono/docs/js/lunr.min.js?1677031829"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1677031829"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1677031829"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1677031829"></script>
-        <script src="/hono/docs/js/search.js?1677031829"></script>
+        <script src="/hono/docs/js/auto-complete.js?1677118240"></script>
+        <script src="/hono/docs/js/lunr.min.js?1677118240"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1677118240"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1677118240"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1677118240"></script>
+        <script src="/hono/docs/js/search.js?1677118240"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1214,6 +1257,7 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
           <li data-nav-id="/hono/docs/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
           <li data-nav-id="/hono/docs/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
           <li data-nav-id="/hono/docs/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/admin-guide/pubsub-config/" title="Google Pub/Sub Messaging Configuration" class="dd-item"><a href="/hono/docs/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a></li>
           <li data-nav-id="/hono/docs/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/admin-guide/secure_communication/">Secure Communication</a></li>
           <li data-nav-id="/hono/docs/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
           <li data-nav-id="/hono/docs/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
@@ -1229,6 +1273,8 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
           <li data-nav-id="/hono/docs/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/event/">Event API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/event-pubsub/">Event API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/api/tenant/">Tenant API</a></li>
           <li data-nav-id="/hono/docs/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/api/command-router/">Command Router API</a></li>
           <li data-nav-id="/hono/docs/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/api/device-registration/">Device Registration API</a></li>
@@ -1261,7 +1307,8 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/" selected>stable (2.2)</option>
+                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/" selected>stable (2.3)</option>
+                    <option id="2.3" value="/hono/docs/2.3/user-guide/mqtt-adapter/">2.3</option>
                     <option id="2.2" value="/hono/docs/2.2/user-guide/mqtt-adapter/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/user-guide/mqtt-adapter/">2.1</option>
                     <option id="2.0" value="/hono/docs/2.0/user-guide/mqtt-adapter/">2.0</option>
@@ -1303,10 +1350,10 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1677031829"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1677031829"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1677031829"></script>
-    <script src="/hono/docs/js/theme.js?1677031829"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1677118240"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1677118240"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1677118240"></script>
+    <script src="/hono/docs/js/theme.js?1677118240"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
