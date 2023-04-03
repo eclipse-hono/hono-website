@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1680397803" rel="stylesheet">
+<link href="/hono/css/custom.css?1680484210" rel="stylesheet">
 
 
 
@@ -283,11 +283,11 @@ The components can be accessed as described in the <a href="https://www.eclipse.
 <tbody>
 <tr>
 <td style="text-align:left">Device Registry</td>
-<td style="text-align:left"><code>28080</code> (HTTP 1.1/TCP)<br><code>28443</code> (HTTP 1.1/TLS)</td>
+<td style="text-align:left"><code>28443</code> (HTTP 1.1/TLS)</td>
 </tr>
 <tr>
 <td style="text-align:left">AMQP Protocol Adapter</td>
-<td style="text-align:left"><code>5672</code> (AMQP 1.0/TCP)<br><code>5671</code> (AMQP 1.0/TLS)</td>
+<td style="text-align:left"><code>5671</code> (AMQP 1.0/TLS)</td>
 </tr>
 <tr>
 <td style="text-align:left">CoAP Protocol Adapter</td>
@@ -295,19 +295,19 @@ The components can be accessed as described in the <a href="https://www.eclipse.
 </tr>
 <tr>
 <td style="text-align:left">HTTP Protocol Adapter</td>
-<td style="text-align:left"><code>8080</code> (HTTP 1.1/TCP)<br><code>8443</code> (HTTP 1.1/TLS)</td>
+<td style="text-align:left"><code>8443</code> (HTTP 1.1/TLS)</td>
 </tr>
 <tr>
 <td style="text-align:left">MQTT Protocol Adapter</td>
-<td style="text-align:left"><code>1883</code> (MQTT 3.1.1/TCP)<br><code>8883</code> (MQTT 3.1.1/TLS)</td>
+<td style="text-align:left"><code>8883</code> (MQTT 3.1.1/TLS)</td>
 </tr>
 <tr>
 <td style="text-align:left">Messaging Infrastructure (AMQP 1.0)</td>
-<td style="text-align:left"><code>15672</code> (AMQP 1.0/TCP)<br><code>15671</code> (AMQP 1.0/TLS)</td>
+<td style="text-align:left"><code>15671</code> (AMQP 1.0/TLS)</td>
 </tr>
 <tr>
 <td style="text-align:left">Messaging Infrastructure (Kafka)</td>
-<td style="text-align:left"><code>9094</code> (Kafka/TCP)</td>
+<td style="text-align:left"><code>9094</code> (Kafka/TLS)</td>
 </tr>
 </tbody>
 </table>
@@ -335,12 +335,8 @@ can only buffer up to 1 MB of events (per tenant) without having any consumer co
 events. Once that limit is reached, no more events will be accepted by the protocol adapters for the corresponding
 tenant. In addition to that, events that are not consumed will automatically be removed from the queue(s) after
 five minutes.</li>
-<li>The sandbox exposes its API endpoints on both a TLS (&gt;= 1.2) secured as well as an unsecured port. The secure ports use a
-Let&rsquo;s Encrypt certificate so you should not need to configure a specific trust store on your client in order to
-interact with them. Please note that when using the unsecured ports, the information you exchange with the sandbox
-might be exposed to eavesdroppers. We therefore <strong>strongly suggest</strong> that you use the secure ports only, if possible!
-When using the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/">Hono Java client module</a> to access the sandbox'
-APIs, make sure to not set a trust store explicitly but instead set the <em>tlsEnabled</em> property to <code>true</code>.</li>
+<li>The sandbox exposes Hono&rsquo;s API endpoints on TLS (&gt;= 1.2) secured ports which are configured with a Let&rsquo;s Encrypt
+certificate so you should not need to configure a specific trust store on your client in order to interact with them.</li>
 <li>The command line client binary is available from the <a href="/hono/downloads/#binaries">downloads page</a>
 and can be used to consume telemetry/event messages from the sandbox and send commands to devices as described in
 the <a href="https://www.eclipse.org/hono/docs/getting-started/">Getting Started Guide</a></li>
