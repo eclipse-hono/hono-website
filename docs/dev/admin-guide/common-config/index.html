@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Common Configuration :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1681434603" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1681434603" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1681434603" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1681434603" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1681521072" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1681521072" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1681521072" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1681521072" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1681434603"></script>
+    <script src="/hono/docs/js/variant.js?1681521072"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1681434603"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1681521072"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -105,6 +105,7 @@
     <li><a href="#protocol-adapter-options">Protocol Adapter Options</a>
       <ul>
         <li><a href="#messaging-configuration">Messaging Configuration</a></li>
+        <li><a href="#google-pubsub-connection-configuration">Google Pub/Sub Connection Configuration</a></li>
         <li><a href="#tenant-service-connection-configuration">Tenant Service Connection Configuration</a></li>
         <li><a href="#device-registration-service-connection-configuration">Device Registration Service Connection Configuration</a></li>
         <li><a href="#credentials-service-connection-configuration">Credentials Service Connection Configuration</a></li>
@@ -187,7 +188,7 @@ applications using Hono.</p>
 <p>Hono&rsquo;s components support native transport out of the box.</p>
 <h2 id="protocol-adapter-options">Protocol Adapter Options</h2>
 <h3 id="messaging-configuration">Messaging Configuration</h3>
-<p>Protocol adapters use a connection to an <em>AMQP 1.0 Messaging Network</em> and/or an <em>Apache Kafka cluster</em> to</p>
+<p>Protocol adapters use a connection to an <em>AMQP 1.0 Messaging Network</em>, an <em>Apache Kafka cluster</em> and/or <em>Google Pub/Sub</em> to</p>
 <ul>
 <li>forward telemetry data and events received from devices so that they can be received by downstream consumers,</li>
 <li>receive command &amp; control messages sent from downstream applications (and forwarded by the command router component),</li>
@@ -195,12 +196,12 @@ applications using Hono.</p>
 <li>receive notification messages about changes to tenant/device/credentials data sent from the device registry.</li>
 </ul>
 <p>For telemetry and event messages a connection to a <em>Apache Kafka cluster</em> is used by default, if configured.
-If both kinds of messaging are configured, the decision which one to use is done according to the
+If more than one kind of messaging is configured, the decision which one to use is done according to the
 <a href="/hono/docs/dev/admin-guide/hono-kafka-client-configuration/#configuring-tenants-to-use-kafka-based-messaging">Tenant Configuration</a>.</p>
 <p>Command messages are received on each configured messaging system. Command response messages are sent on the kind of
 messaging system that was used for the corresponding command message.</p>
 <p>For notification messages, the Kafka connection is used by default, if configured. Otherwise the <em>AMQP messaging network</em>
-is used.</p>
+or <em>Google Pub/Sub</em> is used.</p>
 <h4 id="amqp-10-messaging-network-connection-configuration">AMQP 1.0 Messaging Network Connection Configuration</h4>
 <p>The connection to the <em>AMQP 1.0 Messaging Network</em> is configured according to the
 <a href="/hono/docs/dev/admin-guide/hono-client-configuration/">Hono Client Configuration</a> with <code>HONO_MESSAGING</code> (for telemetry and
@@ -247,6 +248,9 @@ respectively.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="google-pubsub-connection-configuration">Google Pub/Sub Connection Configuration</h3>
+<p>The connection to <em>Google Pub/Sub</em> is configured according to the
+<a href="/hono/docs/dev/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a>.</p>
 <h3 id="tenant-service-connection-configuration">Tenant Service Connection Configuration</h3>
 <p>Protocol adapters require a connection to an implementation of Hono&rsquo;s <a href="https://www.eclipse.org/hono/docs/dev/api/tenant/">Tenant API</a>
 in order to retrieve information for a tenant.</p>
@@ -416,12 +420,12 @@ for authentication.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1681434603"></script>
-        <script src="/hono/docs/js/lunr.min.js?1681434603"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1681434603"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1681434603"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1681434603"></script>
-        <script src="/hono/docs/js/search.js?1681434603"></script>
+        <script src="/hono/docs/js/auto-complete.js?1681521072"></script>
+        <script src="/hono/docs/js/lunr.min.js?1681521072"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1681521072"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1681521072"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1681521072"></script>
+        <script src="/hono/docs/js/search.js?1681521072"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -474,6 +478,7 @@ for authentication.</p>
           <li data-nav-id="/hono/docs/dev/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/dev/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/dev/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/dev/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/dev/api/tenant/">Tenant API</a></li>
           <li data-nav-id="/hono/docs/dev/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/dev/api/command-router/">Command Router API</a></li>
           <li data-nav-id="/hono/docs/dev/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/dev/api/device-registration/">Device Registration API</a></li>
@@ -549,10 +554,10 @@ for authentication.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1681434604"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1681434604"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1681434604"></script>
-    <script src="/hono/docs/js/theme.js?1681434604"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1681521072"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1681521072"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1681521072"></script>
+    <script src="/hono/docs/js/theme.js?1681521072"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

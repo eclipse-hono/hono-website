@@ -86,6 +86,15 @@ The Telemetry API is defined by means of Google Pub/Sub message exchanges, i.e. 
 The Event API is defined by means of Google Pub/Sub message exchanges, i.e. a client needs to connect to Hono and configure Hono for Google Pub/Sub messaging infrastructure in order to use it and invoke operations of the API as described in the following sections.</description>
     </item>
     <item>
+      <title>Command &amp; Control API Specification for Google Pub/Sub</title>
+      <link>https://www.eclipse.org/hono/docs/dev/api/command-and-control-pubsub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/dev/api/command-and-control-pubsub/</guid>
+      <description>The Command &amp;amp; Control API of Eclipse Hono™ is used by Business Applications to send commands to connected devices.
+Commands can be used to trigger actions on devices. Examples include updating a configuration property, installing a software component or switching the state of an actuator.
+Hono distinguishes two types of commands. The first type is one-way only. In this case the sender of the command does not expect the device to send back a message in response to the command.</description>
+    </item>
+    <item>
       <title>Tenant API Specification</title>
       <link>https://www.eclipse.org/hono/docs/dev/api/tenant/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
