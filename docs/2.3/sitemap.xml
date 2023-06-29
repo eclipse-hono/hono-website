@@ -1425,6 +1425,44 @@
                 />
   </url>
   <url>
+    <loc>https://www.eclipse.org/hono/docs/2.3/dev-guide/custom_http_adapter/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="stable"
+                href="https://www.eclipse.org/hono/docs/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.2"
+                href="https://www.eclipse.org/hono/docs/2.2/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.1"
+                href="https://www.eclipse.org/hono/docs/2.1/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.0"
+                href="https://www.eclipse.org/hono/docs/2.0/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="1.12"
+                href="https://www.eclipse.org/hono/docs/1.12/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="dev"
+                href="https://www.eclipse.org/hono/docs/dev/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.3"
+                href="https://www.eclipse.org/hono/docs/2.3/dev-guide/custom_http_adapter/"
+                />
+  </url>
+  <url>
     <loc>https://www.eclipse.org/hono/docs/2.3/dev-guide/java_client_consumer/</loc>
     <xhtml:link
                 rel="alternate"
@@ -1463,41 +1501,21 @@
                 />
   </url>
   <url>
-    <loc>https://www.eclipse.org/hono/docs/2.3/dev-guide/custom_http_adapter/</loc>
+    <loc>https://www.eclipse.org/hono/docs/2.3/dev-guide/coap_adapter/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="stable"
-                href="https://www.eclipse.org/hono/docs/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="2.2"
-                href="https://www.eclipse.org/hono/docs/2.2/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="2.1"
-                href="https://www.eclipse.org/hono/docs/2.1/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="2.0"
-                href="https://www.eclipse.org/hono/docs/2.0/dev-guide/custom_http_adapter/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="1.12"
-                href="https://www.eclipse.org/hono/docs/1.12/dev-guide/custom_http_adapter/"
+                href="https://www.eclipse.org/hono/docs/dev-guide/coap_adapter/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="dev"
-                href="https://www.eclipse.org/hono/docs/dev/dev-guide/custom_http_adapter/"
+                href="https://www.eclipse.org/hono/docs/dev/dev-guide/coap_adapter/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
-                href="https://www.eclipse.org/hono/docs/2.3/dev-guide/custom_http_adapter/"
+                href="https://www.eclipse.org/hono/docs/2.3/dev-guide/coap_adapter/"
                 />
   </url>
   <url>

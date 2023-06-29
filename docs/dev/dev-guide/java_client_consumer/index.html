@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Consuming Messages from Java :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1687914665" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1687914665" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1687914665" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1687914665" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1688001068" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1688001068" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1688001068" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1688001068" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1687914665"></script>
+    <script src="/hono/docs/js/variant.js?1688001068"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1687914665"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1688001068"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -96,12 +96,12 @@
             <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#configure-the-example">Configure the example</a></li>
-    <li><a href="#run-the-example">Run the example</a>
+    <li><a href="#configure-the-example">Configure the Example</a></li>
+    <li><a href="#run-the-example">Run the Example</a>
       <ul>
         <li><a href="#telemetry-and-event-messages">Telemetry and Event messages</a></li>
         <li><a href="#command-and-control">Command and Control</a></li>
-        <li><a href="#encryption-of-communication">Encryption of communication</a></li>
+        <li><a href="#encryption-of-communication">Encryption of Communication</a></li>
         <li><a href="#kafka-based-messaging">Kafka based Messaging</a></li>
       </ul>
     </li>
@@ -118,19 +118,24 @@
           <article>
 
 <h1>Consuming Messages from Java</h1>
-<p>To illustrate how Eclipse Hono™ can be integrated with Java code, a simple application is provided that consumes telemetry and event data
-for devices belonging to the default tenant.</p>
-<p>It also includes support for Command and Control:</p>
-<p>if indicated by a received downstream message that contains a <code>ttd</code> value (refer to <a href="/hono/docs/dev/concepts/device-notifications/">Device notifications</a> for details) it tries to send a command to the device.
-If the value of <code>ttd</code> indicates that the device stays connected for an unlimited time (<code>ttd == -1</code>), the application will periodically repeat to send a command until
-notified the device is disconnected again (<code>ttd == 0</code>).</p>
-<p>This application shall serve as a blueprint to integrate your existing java source code with Hono.
-Its code is found in the <a href="https://github.com/eclipse-hono/hono/tree/master/examples">example</a> module in the package <a href="https://github.com/eclipse-hono/hono/tree/master/examples/hono-client-examples/src/main/java/org/eclipse/hono/vertx/example">org.eclipse.hono.vertx.example</a>.</p>
-<p>The provided classes are kept as simple as possible (in the tradition of a classical &ldquo;Hello World&rdquo; implementation) while still
+<p>To illustrate how Eclipse Hono™ can be integrated with Java code, a simple application is provided that
+consumes telemetry and event data for devices belonging to the default tenant.</p>
+<p>It also includes support for Command &amp; Control:</p>
+<ul>
+<li>If indicated by a received downstream message that contains a <code>ttd</code> value (refer to
+<a href="/hono/docs/dev/concepts/device-notifications/">Device notifications</a> for details) it tries to send a command
+to the device.</li>
+<li>If the value of <code>ttd</code> indicates that the device stays connected for an unlimited time (<code>ttd == -1</code>), the application will
+periodically repeat to send a command until notified the device is disconnected again (<code>ttd == 0</code>).</li>
+</ul>
+<p>This application shall serve as a blueprint to integrate your existing Java source code with Hono.
+Its code is found in the <a href="https://github.com/eclipse-hono/hono/tree/master/examples">example</a> module in the package
+<a href="https://github.com/eclipse-hono/hono/tree/master/examples/hono-client-examples/src/main/java/org/eclipse/hono/vertx/example">org.eclipse.hono.vertx.example</a>.</p>
+<p>The provided classes are kept as simple as possible (in the tradition of a classical <em>Hello World</em> implementation) while still
 covering the most relevant messaging patterns (downstream and upstream messages).
 For this purpose they make use of simple constant definitions and deal with exceptions as rarely as possible.
 You may want to change the level of detail that should be logged to the console by editing the contained <code>resources/logback.xml</code> file.</p>
-<p>Please refer to the javadoc of the classes for details.</p>
+<p>Please refer to the JavaDoc of the classes for details.</p>
 
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -138,39 +143,44 @@ You may want to change the level of detail that should be logged to the console 
 <p>Note that production ready code likely has to think more about error handling and logging than this simple blueprint.</p>
     </div>
 </div>
-<h2 id="configure-the-example">Configure the example</h2>
-<p>For simplicity, all configurations are defined as Java constants inside the class <a href="https://github.com/eclipse-hono/hono/blob/master/examples/hono-client-examples/src/main/java/org/eclipse/hono/vertx/example/base/HonoExampleConstants.java">HonoExampleConstants</a>.</p>
+<h2 id="configure-the-example">Configure the Example</h2>
+<p>For simplicity, all configurations are defined as Java constants inside the class
+<a href="https://github.com/eclipse-hono/hono/blob/master/examples/hono-client-examples/src/main/java/org/eclipse/hono/vertx/example/base/HonoExampleConstants.java">HonoExampleConstants</a>.</p>
 <p>If you have Hono running in Docker under <code>localhost</code>, the example should work out of the box.</p>
 <p>Some configuration values can be overridden by providing them as property to the application.</p>
 <p>This includes the <code>host</code> and the <code>port</code> of the AMQP network.
-In the standard setup of Hono they should be configured to the <a href="https://qpid.apache.org/components/dispatch-router/index.html">qdrouter</a> from the Apache Qpid project.
-In production scenarios this might be a large setup of AMQP routers, brokers, etc.</p>
+In the standard setup of Hono they should be configured to the <a href="https://qpid.apache.org/components/dispatch-router/index.html">qdrouter</a>
+from the Apache Qpid project. In production scenarios this might be a large setup of AMQP routers, brokers, etc.</p>
 <p>Please refer to the class <code>HonoExampleConstants</code> to find out which part of the application can be configured by properties.</p>
-<h2 id="run-the-example">Run the example</h2>
+<h2 id="run-the-example">Run the Example</h2>
 <p>The application waits for messages until you press any key or kill it.</p>
 <p>It is started by</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/examples/hono-client-examples/</span>
 </span></span><span style="display:flex;"><span>mvn clean package
 </span></span><span style="display:flex;"><span>mvn exec:java -Dexec.mainClass<span style="color:#f92672">=</span>org.eclipse.hono.vertx.example.HonoExampleApplication
-</span></span></code></pre></div><p>or &mdash; if e.g. the host of the AMQP network should be changed &mdash;</p>
+</span></span></code></pre></div><p>or (if e.g. the host of the AMQP network should be changed):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn exec:java -Dexec.mainClass<span style="color:#f92672">=</span>org.eclipse.hono.vertx.example.HonoExampleApplication -Dconsumer.host<span style="color:#f92672">=</span>192.168.99.100
 </span></span></code></pre></div><h3 id="telemetry-and-event-messages">Telemetry and Event messages</h3>
 <p>Depending on the logger configuration, all received downstream messages are printed to the console.</p>
 <p>Please note that consumers do not connect with Hono directly, but rather with an AMQP router network.</p>
 <h3 id="command-and-control">Command and Control</h3>
-<p>By using a helper class provided by Hono, a callback in the application code is invoked when a downstream message was received
-that signals the device will stay connected to the protocol adapter for some time (see <a href="/hono/docs/dev/concepts/device-notifications/">Device notifications</a> for details).</p>
-<p>Inside this callback an arbitrary simple command is sent down to the device (once or periodically) and the response is logged to the console.</p>
-<h3 id="encryption-of-communication">Encryption of communication</h3>
+<p>By using a helper class provided by Hono, a callback in the application code is invoked when a downstream
+message was received that signals the device will stay connected to the protocol adapter for some time (see
+<a href="/hono/docs/dev/concepts/device-notifications/">Device notifications</a> for details).</p>
+<p>Inside this callback an arbitrary simple command is sent down to the device (once or periodically) and the
+response is logged to the console.</p>
+<h3 id="encryption-of-communication">Encryption of Communication</h3>
 <p>For the encrypted communication with Hono, the necessary truststore is already installed and used by the Hono client.</p>
-<p>If you want to integrate the code with your own software, please copy the provided truststore (<code>hono/demo-certs/certs/trusted-certs.pem</code>)
-from the Hono project to the <code>resources</code> directory of your project
+<p>If you want to integrate the code with your own software, please copy the provided truststore
+(<code>hono/demo-certs/certs/trusted-certs.pem</code>) from the Hono project to the <code>resources</code> directory of your project
 and adopt the code pointing to the file location.</p>
 <h3 id="kafka-based-messaging">Kafka based Messaging</h3>
-<p>To use Kafka based messaging instead of an AMQP network, set the property <code>kafka</code> to <code>true</code> provide the host and port of a bootstrap server:</p>
+<p>To use Kafka based messaging instead of an AMQP network, set the property <code>kafka</code> to <code>true</code> provide the host and port
+of a bootstrap server:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn exec:java -Dexec.mainClass<span style="color:#f92672">=</span>org.eclipse.hono.vertx.example.HonoExampleApplication -Dconsumer.host<span style="color:#f92672">=</span>192.168.99.100 -Dconsumer.port<span style="color:#f92672">=</span><span style="color:#ae81ff">9092</span> -Dkafka<span style="color:#f92672">=</span>true
-</span></span></code></pre></div><p>Additional properties for the Kafka producers and consumers can be added in the code, for example to enable encrypted communication.
-For the available configuration options refer to the <a href="">Kafka documentation</a><a href="https://kafka.apache.org/documentation/#configuration">https://kafka.apache.org/documentation/#configuration</a>.</p>
+</span></span></code></pre></div><p>Additional properties for the Kafka producers and consumers can be added in the code, for example to enable
+encrypted communication. For the available configuration options refer to the
+<a href="https://kafka.apache.org/documentation/#configuration">Kafka documentation</a>.</p>
 
             <footer class="footline">
             </footer>
@@ -194,12 +204,12 @@ For the available configuration options refer to the <a href="">Kafka documentat
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1687914665"></script>
-        <script src="/hono/docs/js/lunr.min.js?1687914665"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1687914665"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1687914665"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1687914665"></script>
-        <script src="/hono/docs/js/search.js?1687914665"></script>
+        <script src="/hono/docs/js/auto-complete.js?1688001068"></script>
+        <script src="/hono/docs/js/lunr.min.js?1688001068"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1688001068"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1688001068"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1688001068"></script>
+        <script src="/hono/docs/js/search.js?1688001068"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -240,8 +250,9 @@ For the available configuration options refer to the <a href="">Kafka documentat
           <li data-nav-id="/hono/docs/dev/dev-guide/" title="Developer Guide" class="dd-item parent"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle" checked/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/dev/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
           <li data-nav-id="/hono/docs/dev/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/dev/dev-guide/building_hono/">Building from Source</a></li>
           <li data-nav-id="/hono/docs/dev/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/dev/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li>
           <li data-nav-id="/hono/docs/dev/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item active"><a href="/hono/docs/dev/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
-          <li data-nav-id="/hono/docs/dev/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/coap_adapter/" title="Considerations for extending the CoAP Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/coap_adapter/">Considerations for extending the CoAP Adapter</a></li></ul></li>
           <li data-nav-id="/hono/docs/dev/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/dev/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
           <li data-nav-id="/hono/docs/dev/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
           <li data-nav-id="/hono/docs/dev/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/event-kafka/">Event API (Kafka)</a></li>
@@ -328,10 +339,10 @@ For the available configuration options refer to the <a href="">Kafka documentat
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1687914666"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1687914666"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1687914666"></script>
-    <script src="/hono/docs/js/theme.js?1687914666"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1688001068"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1688001068"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1688001068"></script>
+    <script src="/hono/docs/js/theme.js?1688001068"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
