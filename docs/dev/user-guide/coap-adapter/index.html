@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>CoAP Adapter :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1688001069" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1688001069" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1688001069" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1688001069" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1688087484" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1688087484" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1688087484" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1688087484" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1688001069"></script>
+    <script src="/hono/docs/js/variant.js?1688087484"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1688001069"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1688087484"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -212,11 +212,16 @@ The content type corresponding to the given content format, if not empty, will b
 downstream. Otherwise, the content type of the downstream message will be set to <code>application/octet-stream</code>, if the payload
 is not empty and no default content type has been defined for the origin device or its tenant (see
 <a href="#downstream-meta-data">Downstream Meta Data</a>).</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: Request that the response include the server time.
+If this option is present in the request, the server will add the same option to its response where the value will
+indicate the server time (as milliseconds since UNIX epoch). The request option does not need to have a value, and
+any value will, in fact, be ignored.</li>
 </ul>
 </li>
 <li>Query Parameters:
 <ul>
 <li>(optional) <em>hono-ttd</em>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <em>hono-time</em>: Indicates that the client wants to receive the server time as a response option.</li>
 <li>(optional) <em>empty</em>: Marks the request as an <a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a>.</li>
 </ul>
 </li>
@@ -239,6 +244,10 @@ by the device. The location path is <code>c</code> or <code>command</code> for o
 In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending
 its response to the command. <code>command</code> and <code>command_response</code> will be used if the request also uses the fully spelled
 out endpoint name.</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: This option will only be present if the request contained this
+option (with or without value) or the request contained the <code>hono-time</code> query parameter. The value of this option
+in a response will indicate the server timestamp (as milliseconds since UNIX epoch) at the time the response was
+sent.</li>
 </ul>
 </li>
 <li>Response Body:
@@ -341,11 +350,16 @@ The content type corresponding to the given content format, if not empty, will b
 downstream. Otherwise, the content type of the downstream message will be set to <code>application/octet-stream</code>, if the payload
 is not empty and no default content type has been defined for the origin device or its tenant (see
 <a href="#downstream-meta-data">Downstream Meta Data</a>).</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: Request that the response include the server time.
+If this option is present in the request, the server will add the same option to its response where the value will
+indicate the server time (as milliseconds since UNIX epoch). The request option does not need to have a value, and
+any value will, in fact, be ignored.</li>
 </ul>
 </li>
 <li>Query Parameters:
 <ul>
 <li>(optional) <em>hono-ttd</em>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <em>hono-time</em>: Indicates that the client wants to receive the server time as a response option.</li>
 <li>(optional) <em>empty</em>: Marks the request as an <a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a>.</li>
 </ul>
 </li>
@@ -368,6 +382,10 @@ a command to be executed by the device. The location path is <code>c</code> or <
 expecting  a response. In the latter case, the <em>location-path</em> option contains exactly the URI-path that the
 device must use when sending its response to the command. <code>command</code> and <code>command_response</code> will be used if the request
 also uses the fully spelled out endpoint name.</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: This option will only be present if the request contained this
+option (with or without value) or the request contained the <code>hono-time</code> query parameter. The value of this option
+in a response will indicate the server timestamp (as milliseconds since UNIX epoch) at the time the response was
+sent.</li>
 </ul>
 </li>
 <li>Response Body:
@@ -471,11 +489,16 @@ The content type corresponding to the given content format, if not empty, will b
 downstream. Otherwise, the content type of the downstream message will be set to <code>application/octet-stream</code>, if the payload
 is not empty and no default content type has been defined for the origin device or its tenant (see
 <a href="#downstream-meta-data">Downstream Meta Data</a>).</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: Request that the response include the server time.
+If this option is present in the request, the server will add the same option to its response where the value will
+indicate the server time (as milliseconds since UNIX epoch). The request option does not need to have a value, and
+any value will, in fact, be ignored.</li>
 </ul>
 </li>
 <li>Query Parameters:
 <ul>
 <li>(optional) <em>hono-ttd</em>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <em>hono-time</em>: Indicates that the client wants to receive the server time as a response option.</li>
 <li>(optional) <em>empty</em>: Marks the request as an <a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a>.</li>
 </ul>
 </li>
@@ -499,6 +522,10 @@ expecting a response. In the latter case, the <em>location-path</em> option cont
 must use when sending its response to the command. Note that in both cases the <code>${deviceId}</code> path segment indicates
 the device that the command is targeted at. <code>command</code> and <code>command_response</code> will be used if the request also uses
 the fully spelled out endpoint name.</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: This option will only be present if the request contained this
+option (with or without value) or the request contained the <code>hono-time</code> query parameter. The value of this option
+in a response will indicate the server timestamp (as milliseconds since UNIX epoch) at the time the response was
+sent.</li>
 </ul>
 </li>
 <li>Response Body:
@@ -595,11 +622,16 @@ The content type corresponding to the given content format, if not empty, will b
 downstream. Otherwise, the content type of the downstream message will be set to <code>application/octet-stream</code>, if the payload
 is not empty and no default content type has been defined for the origin device or its tenant (see
 <a href="#downstream-meta-data">Downstream Meta Data</a>).</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: Request that the response include the server time.
+If this option is present in the request, the server will add the same option to its response where the value will
+indicate the server time (as milliseconds since UNIX epoch). The request option does not need to have a value, and
+any value will, in fact, be ignored.</li>
 </ul>
 </li>
 <li>Query Parameters:
 <ul>
 <li>(optional) <em>hono-ttd</em>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <em>hono-time</em>: Indicates that the client wants to receive the server time as a response option.</li>
 <li>(optional) <em>empty</em>: Marks the request as an <a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a>.</li>
 </ul>
 </li>
@@ -622,6 +654,10 @@ by the device. The location path is <code>c</code> or <code>command</code> for o
 In the latter case, the <em>location-path</em> option contains exactly the URI-path that the device must use when sending
 its response to the command. <code>command</code> and <code>command_response</code> will be used if the request also uses the fully spelled
 out endpoint name.</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: This option will only be present if the request contained this
+option (with or without value) or the request contained the <code>hono-time</code> query parameter. The value of this option
+in a response will indicate the server timestamp (as milliseconds since UNIX epoch) at the time the response was
+sent.</li>
 </ul>
 </li>
 <li>Response Body:
@@ -707,11 +743,16 @@ The content type corresponding to the given content format, if not empty, will b
 downstream. Otherwise, the content type of the downstream message will be set to <code>application/octet-stream</code>, if the payload
 is not empty and no default content type has been defined for the origin device or its tenant (see
 <a href="#downstream-meta-data">Downstream Meta Data</a>).</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: Request that the response include the server time.
+If this option is present in the request, the server will add the same option to its response where the value will
+indicate the server time (as milliseconds since UNIX epoch). The request option does not need to have a value, and
+any value will, in fact, be ignored.</li>
 </ul>
 </li>
 <li>Query Parameters:
 <ul>
 <li>(optional) <em>hono-ttd</em>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <em>hono-time</em>: Indicates that the client wants to receive the server time as a response option.</li>
 <li>(optional) <em>empty</em>: Marks the request as an <a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a>.</li>
 </ul>
 </li>
@@ -734,6 +775,10 @@ a command to be executed by the device. The location path is <code>c</code> or <
 expecting  a response. In the latter case, the <em>location-path</em> option contains exactly the URI-path that the
 device must use when sending its response to the command. <code>command</code> and <code>command_response</code> will be used if the request
 also uses the fully spelled out endpoint name.</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: This option will only be present if the request contained this
+option (with or without value) or the request contained the <code>hono-time</code> query parameter. The value of this option
+in a response will indicate the server timestamp (as milliseconds since UNIX epoch) at the time the response was
+sent.</li>
 </ul>
 </li>
 <li>Response Body:
@@ -820,11 +865,16 @@ The content type corresponding to the given content format, if not empty, will b
 downstream. Otherwise, the content type of the downstream message will be set to <code>application/octet-stream</code>, if the payload
 is not empty and no default content type has been defined for the origin device or its tenant (see
 <a href="#downstream-meta-data">Downstream Meta Data</a>).</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: Request that the response include the server time.
+If this option is present in the request, the server will add the same option to its response where the value will
+indicate the server time (as milliseconds since UNIX epoch). The request option does not need to have a value, and
+any value will, in fact, be ignored.</li>
 </ul>
 </li>
 <li>Query Parameters:
 <ul>
 <li>(optional) <em>hono-ttd</em>: The number of seconds the device will wait for the response.</li>
+<li>(optional) <em>hono-time</em>: Indicates that the client wants to receive the server time as a response option.</li>
 <li>(optional) <em>empty</em>: Marks the request as an <a href="/hono/docs/dev/api/event/#empty-notification">empty notification</a>.</li>
 </ul>
 </li>
@@ -848,6 +898,10 @@ expecting a response. In the latter case, the <em>location-path</em> option cont
 must use when sending its response to the command. Note that in both cases the <code>${deviceId}</code> path segment indicates
 the device that the command is targeted at. <code>command</code> and <code>command_response</code> will be used if the request also uses
 the fully spelled out endpoint name.</li>
+<li>(optional) <em>experimental option 0xfde8 (time)</em>: This option will only be present if the request contained this
+option (with or without value) or the request contained the <code>hono-time</code> query parameter. The value of this option
+in a response will indicate the server timestamp (as milliseconds since UNIX epoch) at the time the response was
+sent.</li>
 </ul>
 </li>
 <li>Response Body:
@@ -1266,12 +1320,12 @@ The following properties are (currently) supported:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1688001069"></script>
-        <script src="/hono/docs/js/lunr.min.js?1688001069"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1688001069"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1688001069"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1688001069"></script>
-        <script src="/hono/docs/js/search.js?1688001069"></script>
+        <script src="/hono/docs/js/auto-complete.js?1688087485"></script>
+        <script src="/hono/docs/js/lunr.min.js?1688087485"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1688087485"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1688087485"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1688087485"></script>
+        <script src="/hono/docs/js/search.js?1688087485"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1401,10 +1455,10 @@ The following properties are (currently) supported:</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1688001069"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1688001069"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1688001069"></script>
-    <script src="/hono/docs/js/theme.js?1688001069"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1688087485"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1688087485"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1688087485"></script>
+    <script src="/hono/docs/js/theme.js?1688087485"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
