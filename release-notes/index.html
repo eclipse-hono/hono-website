@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1692148213" rel="stylesheet">
+<link href="/hono/css/custom.css?1692234597" rel="stylesheet">
 
 
 
@@ -255,7 +255,7 @@
                     <div class="col-md-12">
 
                         <div>
-                          <h2 id="240-not-released-yet">2.4.0 (not released yet)</h2>
+                          <h2 id="240">2.4.0</h2>
 <h3 id="new-features">New features</h3>
 <ul>
 <li>Hono now supports using Google Pub/Sub as the messaging infrastructure. The Admin Guide and the API documentation have
@@ -263,11 +263,21 @@ been amended with corresponding information on how to configure Hono and applica
 <li>Hono&rsquo;s MQTT and HTTP adapters now support using JSON Web Tokens (JWT) for authentication. In particular, the adapters
 allow devices that have been connected to Google&rsquo;s IoT Core endpoints to connect to Hono instead. The User Guides have
 been amended with corresponding information regarding configuration and usage.</li>
+<li>The CoAP adapter now allows clients to retrieve the CoAP adapter&rsquo;s current time by means of including a query parameter
+and/or request option.</li>
+<li>The HTTP protocol adapter now supports authenticating devices using the JWT based authentication scheme employed by
+Google IoT Core.</li>
+<li>The command router now has experimental support for routing commands received via Google Pub/Sub to connected devices.</li>
+<li>The authentication identifier being created for devices that are using client certificate based auto-provising can now
+be specified as a pattern based on fields from the certificate&rsquo;s subject DN.</li>
 </ul>
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
-<li>The JDBC based device registry now supports searching for tenants and devices including paging. However, filtering and
-sorting is not implemented yet.</li>
+<li>The JDBC based device registry now supports searching for tenants and devices including paging. However, sorting is not
+implemented (yet) and the number of filter predicates is (currently) limited to one.</li>
+<li>The MQTT adapter failed to close a connection with a client after the JWT used by the client for authentication had expired.
+This has been fixed.</li>
+<li>Hono could not be built using Maven 3.9.0 and newer. This has been fixed.</li>
 </ul>
 <h2 id="231">2.3.1</h2>
 <h3 id="fixes--enhancements-1">Fixes &amp; Enhancements</h3>

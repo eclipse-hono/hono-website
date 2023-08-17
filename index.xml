@@ -81,7 +81,7 @@ for upcoming Hono versions.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hono/release-notes/</guid>
-      <description>2.4.0 (not released yet) New features Hono now supports using Google Pub/Sub as the messaging infrastructure. The Admin Guide and the API documentation have been amended with corresponding information on how to configure Hono and applications for using Pub/Sub. Hono&amp;rsquo;s MQTT and HTTP adapters now support using JSON Web Tokens (JWT) for authentication. In particular, the adapters allow devices that have been connected to Google&amp;rsquo;s IoT Core endpoints to connect to Hono instead.</description>
+      <description>2.4.0 New features Hono now supports using Google Pub/Sub as the messaging infrastructure. The Admin Guide and the API documentation have been amended with corresponding information on how to configure Hono and applications for using Pub/Sub. Hono&amp;rsquo;s MQTT and HTTP adapters now support using JSON Web Tokens (JWT) for authentication. In particular, the adapters allow devices that have been connected to Google&amp;rsquo;s IoT Core endpoints to connect to Hono instead. The User Guides have been amended with corresponding information regarding configuration and usage.</description>
     </item>
     
   </channel>
