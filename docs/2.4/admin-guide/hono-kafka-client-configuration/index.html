@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="2.4">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Hono Kafka Client Configuration :: Eclipse Hono&trade; Vers.: 2.4</title>
+    <link href="/hono/docs/images/favicon.ico?1692321052" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1692321052" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1692321052" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1692321052" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1692321052"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/2.4/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1692321052"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Hono Kafka Client Configuration :: Eclipse Hono&amp;trade; Vers.: 2.4">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Hono Kafka Client Configuration :: Eclipse Hono&amp;trade; Vers.: 2.4" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/2.4/admin-guide/hono-kafka-client-configuration//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>2.4</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/admin-guide/hono-kafka-client-configuration.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/2.4/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/2.4/admin-guide/"><span itemprop="name">Admin Guide</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/" aria-disabled="true"><span itemprop="name">Hono Kafka Client Configuration</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#producer-configuration-properties">Producer Configuration Properties</a></li>
+    <li><a href="#consumer-configuration-properties">Consumer Configuration Properties</a></li>
+    <li><a href="#admin-client-configuration-properties">Admin Client Configuration Properties</a></li>
+    <li><a href="#common-configuration-properties">Common Configuration Properties</a></li>
+    <li><a href="#using-tls">Using TLS</a></li>
+    <li><a href="#kafka-client-metrics-configuration">Kafka client metrics configuration</a></li>
+    <li><a href="#kafka-client-version">Kafka Client Version</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Hono Kafka Client Configuration</h1>
+<p>Several Hono components can be configured to support Kafka as the messaging infrastructure. The Kafka client used
+for this purpose can be configured by means of operating system environment variables and/or Java system properties.</p>
+<p>A Hono component can use multiple Kafka clients for different tasks. Each client has a type (producer, consumer, or
+admin client) and a name which is part of the prefix of the configuration properties used to configure the client. The
+name is part of the prefix of the configuration properties used to configure a client. For the clients and their names,
+please refer to the admin guide of the respective component.</p>
+<p>The configuration properties are directly passed to the Kafka clients (without the prefixes) without Hono parsing or
+validating them.</p>
+<h2 id="producer-configuration-properties">Producer Configuration Properties</h2>
+<p>The <code>org.eclipse.hono.client.kafka.CachingKafkaProducerFactory</code> factory can be used to create Kafka producers for Hono&rsquo;s
+Kafka based APIs. The producers created by the factory are configured with instances of the class
+<code>org.eclipse.hono.client.kafka.producer.MessagingKafkaProducerConfigProperties</code> which can be used to programmatically
+configure a producer.</p>
+<p>The configuration needs to be provided in the form <code>HONO_KAFKA_${CLIENTNAME}_PRODUCERCONFIG_${PROPERTY}</code> as an
+environment variable or as a Java system property in the form <code>hono.kafka.${clientName}.producerConfig.${property}</code>,
+where <code>${PROPERTY}</code> respectively <code>${property}</code> is any of the Kafka client&rsquo;s
+<a href="https://kafka.apache.org/documentation/#producerconfigs">producer properties</a>
+and <code>${CLIENTNAME}</code> respectively <code>${clientName}</code> is the name of the client to be configured, as documented in the
+component&rsquo;s admin guide.</p>
+<p>The following default properties are used, differing from the Kafka client defaults:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property Name</th>
+<th style="text-align:left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>delivery.timeout.ms</code></td>
+<td style="text-align:left"><code>2500</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>request.timeout.ms</code></td>
+<td style="text-align:left"><code>750</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>max.block.ms</code></td>
+<td style="text-align:left"><code>500</code></td>
+</tr>
+</tbody>
+</table>
+<p>The following properties can <em>not</em> be set because
+<code>org.eclipse.hono.client.kafka.producer.MessagingKafkaProducerConfigProperties</code> uses fixed values instead in order to
+implement the message delivery semantics defined by Hono&rsquo;s Telemetry and Event APIs.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property Name</th>
+<th style="text-align:left">Fixed Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>key.serializer</code></td>
+<td style="text-align:left"><code>org.apache.kafka.common.serialization.StringSerializer</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>value.serializer</code></td>
+<td style="text-align:left"><code>io.vertx.kafka.client.serialization.BufferSerializer</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>enable.idempotence</code></td>
+<td style="text-align:left"><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>Kafka clients used in Hono will get a unique client identifier, containing client name and component identifier.
+If the property <code>client.id</code> is provided, its value will be used as prefix for the created client identifier.</p>
+<h2 id="consumer-configuration-properties">Consumer Configuration Properties</h2>
+<p>Consumers for Hono&rsquo;s Kafka based APIs are configured with instances of the class
+<code>org.eclipse.hono.client.kafka.consumer.MessagingKafkaConsumerConfigProperties</code> which can be used to programmatically configure
+a consumer.</p>
+<p>The configuration needs to be provided in the form <code>HONO_KAFKA_${CLIENTNAME}_CONSUMERCONFIG_${PROPERTY}</code> as an
+environment variable or as a Java system property in the form <code>hono.kafka.${clientName}.consumerConfig.${property}</code>,
+where <code>${PROPERTY}</code> respectively <code>${property}</code> is any of the Kafka client&rsquo;s
+<a href="https://kafka.apache.org/documentation/#consumerconfigs">consumer properties</a>
+and <code>${CLIENTNAME}</code> respectively <code>${clientName}</code> is the name of the client to be configured, as documented in the
+component&rsquo;s admin guide.</p>
+<p>The following properties can <em>not</em> be set because
+<code>org.eclipse.hono.client.kafka.consumer.MessagingKafkaConsumerConfigProperties</code> uses fixed values instead.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property Name</th>
+<th style="text-align:left">Fixed Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>key.deserializer</code></td>
+<td style="text-align:left"><code>org.apache.kafka.common.serialization.StringDeserializer</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>value.deserializer</code></td>
+<td style="text-align:left"><code>io.vertx.kafka.client.serialization.BufferDeserializer</code></td>
+</tr>
+</tbody>
+</table>
+<p>Kafka clients used in Hono will get a unique client identifier, containing client name and component identifier.
+If the property <code>client.id</code> is provided, its value will be used as prefix for the created client identifier.</p>
+<p>Apart from the standard Kafka client consumer properties, this additional property may be set:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_${CLIENTNAME}_POLLTIMEOUT</code><br><code>hono.kafka.${clientName}.pollTimeout</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>250</code></td>
+<td style="text-align:left">The maximum number of milliseconds to wait for records on each consumer poll operation. Setting the timeout to a lower value will make the client more responsive, for example concerning consumer-group membership changes, in times when no messages are available for the consumer to poll. At the same time, the client will poll more frequently and thus will potentially create a higher load on the Kafka Broker.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="admin-client-configuration-properties">Admin Client Configuration Properties</h2>
+<p>Admin clients for Hono&rsquo;s Kafka based APIs are configured with instances of the class
+<code>org.eclipse.hono.client.kafka.KafkaAdminClientConfigProperties</code> which can be used to programmatically configure an admin client.</p>
+<p>The configuration needs to be provided in the form <code>HONO_KAFKA_${CLIENTNAME}_ADMINCLIENTCONFIG_${PROPERTY}</code> as an
+environment variable or as a Java system property in the form <code>hono.kafka.${clientName}.adminClientConfig.${property}</code>,
+where <code>${PROPERTY}</code> respectively <code>${property}</code> is any of the Kafka client&rsquo;s
+<a href="https://kafka.apache.org/documentation/#adminclientconfigs">admin client properties</a> and <code>${CLIENTNAME}</code>
+respectively <code>${clientName}</code> is the name of the client to be configured, as documented in the component&rsquo;s admin guide.</p>
+<p>Kafka clients used in Hono will get a unique client identifier, containing client name and component identifier.
+If the property <code>client.id</code> is provided, its value will be used as prefix for the created client identifier.</p>
+<h2 id="common-configuration-properties">Common Configuration Properties</h2>
+<p>Usually, all Kafka clients will connect to the same Kafka cluster and need the same configuration properties to
+establish the connection, like <code>bootstrap.servers</code> and the properties related to authentication and TLS configuration.
+Such configuration properties that are common to all the clients of a Hono component can be put in a common
+configuration section. This will avoid having to define duplicate configuration properties for the different client
+types.</p>
+<p>The properties must be prefixed with <code>HONO_KAFKA_COMMONCLIENTCONFIG_</code> and <code>hono.kafka.commonClientConfig.</code> respectively.</p>
+<p>A property with the same name defined in the configuration of one of the specific client types above will have precedence
+over the common property.</p>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+    <div class="box-content">
+<p>The Kafka clients require at least the <code>bootstrap.servers</code> property to be set. This is the minimal configuration
+required to enable Kafka based messaging.</p>
+    </div>
+</div>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+    <div class="box-content">
+<p>The Kafka client configuration is composed of a number of properties that have an ambiguous mapping to environment
+variable names. For example, the property key <code>&quot;bootstrap.servers&quot;</code> in the <code>hono.kafka.commonClientConfig</code> map would
+have the same mapping to an environment variable as <code>&quot;bootstrap-servers&quot;</code> and <code>&quot;bootstrap_servers&quot;</code> (they would all map
+to <code>__BOOTSTRAP_SERVERS__</code>).</p>
+<p>To resolve this ambiguity and allow ambiguous properties to be overridden using environment variables, the configuration
+framework relies on the correct property being defined in a configuration source which uses unambiguous property key
+representations and has a lower precedence than the environment variable configuration source. It&rsquo;s therefore necessary
+to provide any such configuration property in the <code>application.yml</code> file or as a Java system property to help the
+configuration system disambiguate the property key, even if only providing a placeholder value.</p>
+    </div>
+</div>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+    <div class="box-content">
+<p>Some of the Kafka configuration options beneath <code>hono.kafka.commonClientConfig</code> need to be quoted as the keys themselves
+can contain hierarchical delimiters such as a period (<code>.</code>). An example of that is <code>bootstrap.servers</code> which is a single
+key within the <code>hono.kafka.commonClientConfig</code> configuration map.
+To represent such a key with an environment variable, you must use double underscores for representing the quoted key.
+For example, the environment variable to represent <code>hono.kafka.commonClientConfig.&quot;bootstrap.servers&quot;</code> is
+<code>HONO_KAFKA_COMMONCLIENTCONFIG__BOOTSTRAP_SERVERS__</code>.</p>
+    </div>
+</div>
+<h2 id="using-tls">Using TLS</h2>
+<p>The factory can be configured to use TLS for authenticating the brokers in the Kafka cluster during connection
+establishment and optionally for authenticating to the broker using a client certificate.
+To use this, a Kafka client configuration as described in
+<a href="https://kafka.apache.org/documentation/#security_configclients">Kafka documentation - section &ldquo;Security&rdquo;</a> needs to be
+provided, either in the common configuration or individually per client as shown above.</p>
+<h2 id="kafka-client-metrics-configuration">Kafka client metrics configuration</h2>
+<p>Protocol adapters, the Command Router component and the device registry components by default report a set of metrics
+concerning the Kafka clients used for sending and receiving messages.</p>
+<p>The metrics support can be configured using the following environment variables or corresponding system properties:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_METRICS_ENABLED</code><br><code>hono.kafka.metrics.enabled</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:center"><code>true</code></td>
+<td style="text-align:left">If set to <code>false</code>, no Kafka client metrics will be reported.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_METRICS_USEDEFAULTMETRICS</code><br><code>hono.kafka.metrics.useDefaultMetrics</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:center"><code>true</code></td>
+<td style="text-align:left">If set to <code>true</code>, a set of Kafka consumer and producer related default metrics will be reported. Additional metrics can be added via the <code>HONO_KAFKA_METRICS_METRICSPREFIXES</code> property described below.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>HONO_KAFKA_METRICS_METRICSPREFIXES</code><br><code>hono.kafka.metrics.metricsPrefixes</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">A comma separated list of prefixes of the metrics to be reported for the Kafka clients (in addition to the default metrics if these are used). The complete list of metrics can be viewed in the <a href="https://kafka.apache.org/documentation.html#selector_monitoring">Kafka documentation</a>. The metric names to be used here have the form <code>kafka.[metric group].[metric name]</code>. The metric group can be obtained from the <em>type</em> value in the <em>MBean name</em>, omitting the <code>-metrics</code> suffix. E.g. for an MBean name containing <code>kafka.consumer:type=consumer-fetch-manager-metrics</code>, the group is <code>consumer.fetch.manager</code> (all dashes are to be replaced by dots in metric group and name). An example of a corresponding metric name would be <code>kafka.consumer.fetch.manager.bytes.consumed.total</code> <br>To include all metrics, the property value can be set to the <code>kafka</code> prefix.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="kafka-client-version">Kafka Client Version</h2>
+<p>Hono components include a recent version of the Kafka client as defined by the Quarkus framework. In general, the
+included client should work with recent versions of Kafka brokers. However, no cross version testing is being done
+as part of the Hono build process. If you experience any issues using Hono with an older Kafka version, please try
+to connect it to a recent Kafka cluster instead before raising an issue.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1692321052"></script>
+        <script src="/hono/docs/js/lunr.min.js?1692321052"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692321052"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1692321052"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1692321052"></script>
+        <script src="/hono/docs/js/search.js?1692321052"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/2.4/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><a href="/hono/docs/2.4/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle"/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/2.4/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/2.4/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/2.4/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/2.4/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/2.4/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/2.4/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/2.4/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/2.4/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/2.4/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/2.4/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/2.4/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.4/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/2.4/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/" title="Admin Guide" class="dd-item parent"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle" checked/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/2.4/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/2.4/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item active"><a href="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/pubsub-config/" title="Google Pub/Sub Messaging Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/2.4/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/2.4/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/2.4/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/2.4/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/2.4/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/2.4/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/2.4/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/coap_adapter/" title="Considerations for extending the CoAP Adapter" class="dd-item"><a href="/hono/docs/2.4/dev-guide/coap_adapter/">Considerations for extending the CoAP Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/2.4/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/2.4/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.4/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.4/api/event-kafka/">Event API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-and-control-kafka/" title="Command &amp; Control API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.4/api/command-and-control-kafka/">Command &amp; Control API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/2.4/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.4/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.4/api/event/">Event API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.4/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/2.4/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/2.4/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/2.4/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/2.4/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/2.4/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/2.4/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/2.4/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/2.4/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/2.4/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/2.4/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/2.4/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/2.4/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/2.4/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/2.4/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/2.4/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/2.4/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/2.4/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/2.4/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/2.4/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/2.4/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/2.4/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/admin-guide/hono-kafka-client-configuration/">stable (2.4)</option>
+                    <option id="2.4" value="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/" selected>2.4</option>
+                    <option id="2.3" value="/hono/docs/2.3/admin-guide/hono-kafka-client-configuration/">2.3</option>
+                    <option id="2.2" value="/hono/docs/2.2/admin-guide/hono-kafka-client-configuration/">2.2</option>
+                    <option id="2.1" value="/hono/docs/2.1/admin-guide/hono-kafka-client-configuration/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/admin-guide/hono-kafka-client-configuration/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/">1.12</option>
+                    <option id="dev" value="/hono/docs/dev/admin-guide/hono-kafka-client-configuration/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2023 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1692321052"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692321052"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1692321052"></script>
+    <script src="/hono/docs/js/theme.js?1692321052"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

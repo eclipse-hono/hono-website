@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Device Provisioning :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1692234603" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1692234603" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1692234603" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1692234603" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1692321048" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1692321048" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1692321048" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1692321048" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1692234603"></script>
+    <script src="/hono/docs/js/variant.js?1692321048"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1692234603"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1692321048"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -155,6 +155,11 @@ is configured in the corresponding tenant&rsquo;s CA entry, then the device regi
 the configured template. If not configured, then a random unique device identifier is generated. Refer to the
 <a href="https://www.eclipse.org/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a> for more details on how to
 configure a tenant&rsquo;s trusted CA authority for that.</p>
+<p>The Device Registry creates device credentials during auto-provisioning. If <em>auth-id-template</em> is configured in the
+corresponding tenant’s CA entry, then the device registry generates the credentials authentication identity based on the
+configured template. If not configured, then subject DN of the device certificate is used as authentication identity.
+Refer to the <a href="https://www.eclipse.org/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a> for more details on
+how to configure a tenant&rsquo;s trusted CA authority for that.</p>
 <h5 id="step-2-connect-an-unregistered-device-to-hono">Step 2: Connect an unregistered Device to Hono</h5>
 <figure><img src="auto-provisioning.svg"
          alt="A unregistered device connects to a protocol adapter which uses the Credentials API to provision it"/><figcaption>
@@ -242,12 +247,12 @@ forwards the telemetry data to the AMQP network (8).</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1692234603"></script>
-        <script src="/hono/docs/js/lunr.min.js?1692234603"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692234603"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1692234603"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1692234603"></script>
-        <script src="/hono/docs/js/search.js?1692234603"></script>
+        <script src="/hono/docs/js/auto-complete.js?1692321048"></script>
+        <script src="/hono/docs/js/lunr.min.js?1692321048"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692321048"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1692321048"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1692321048"></script>
+        <script src="/hono/docs/js/search.js?1692321048"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -301,6 +306,7 @@ forwards the telemetry data to the AMQP network (8).</p>
           <li data-nav-id="/hono/docs/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/api/tenant/">Tenant API</a></li>
           <li data-nav-id="/hono/docs/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/api/command-router/">Command Router API</a></li>
           <li data-nav-id="/hono/docs/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/api/device-registration/">Device Registration API</a></li>
@@ -333,7 +339,8 @@ forwards the telemetry data to the AMQP network (8).</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/concepts/device-provisioning/" selected>stable (2.3)</option>
+                    <option id="stable" value="/hono/docs/concepts/device-provisioning/" selected>stable (2.4)</option>
+                    <option id="2.4" value="/hono/docs/2.4/concepts/device-provisioning/">2.4</option>
                     <option id="2.3" value="/hono/docs/2.3/concepts/device-provisioning/">2.3</option>
                     <option id="2.2" value="/hono/docs/2.2/concepts/device-provisioning/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/concepts/device-provisioning/">2.1</option>
@@ -376,10 +383,10 @@ forwards the telemetry data to the AMQP network (8).</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1692234603"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692234603"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1692234603"></script>
-    <script src="/hono/docs/js/theme.js?1692234603"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1692321049"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692321049"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1692321049"></script>
+    <script src="/hono/docs/js/theme.js?1692321049"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

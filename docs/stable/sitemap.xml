@@ -4,6 +4,11 @@
     <loc>https://www.eclipse.org/hono/docs/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/"
                 />
@@ -40,6 +45,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/getting-started/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/getting-started/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -80,6 +90,11 @@
     <loc>https://www.eclipse.org/hono/docs/concepts/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/concepts/"
                 />
@@ -116,6 +131,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/concepts/device-identity/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/device-identity/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -156,6 +176,11 @@
     <loc>https://www.eclipse.org/hono/docs/concepts/tenancy/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/tenancy/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/concepts/tenancy/"
                 />
@@ -192,6 +217,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/concepts/device-provisioning/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/device-provisioning/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -232,6 +262,11 @@
     <loc>https://www.eclipse.org/hono/docs/concepts/connecting-devices/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/connecting-devices/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/concepts/connecting-devices/"
                 />
@@ -268,6 +303,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/concepts/device-notifications/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/device-notifications/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -308,6 +348,11 @@
     <loc>https://www.eclipse.org/hono/docs/concepts/command-and-control/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/command-and-control/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/concepts/command-and-control/"
                 />
@@ -344,6 +389,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/concepts/resource-limits/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/resource-limits/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -384,6 +434,11 @@
     <loc>https://www.eclipse.org/hono/docs/concepts/connection-events/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/concepts/connection-events/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/concepts/connection-events/"
                 />
@@ -420,6 +475,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/user-guide/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -460,6 +520,11 @@
     <loc>https://www.eclipse.org/hono/docs/user-guide/device-registry/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/device-registry/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/user-guide/device-registry/"
                 />
@@ -496,6 +561,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/user-guide/http-adapter/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/http-adapter/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -536,6 +606,11 @@
     <loc>https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/mqtt-adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/user-guide/mqtt-adapter/"
                 />
@@ -572,6 +647,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/user-guide/amqp-adapter/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/amqp-adapter/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -612,6 +692,11 @@
     <loc>https://www.eclipse.org/hono/docs/user-guide/coap-adapter/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/coap-adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/user-guide/coap-adapter/"
                 />
@@ -648,6 +733,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/user-guide/sigfox-adapter/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/sigfox-adapter/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -688,6 +778,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/"
                 />
@@ -724,6 +819,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/common-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/common-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -764,6 +864,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/auth-server-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/auth-server-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/auth-server-config/"
                 />
@@ -800,6 +905,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/mongodb-device-registry-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/mongodb-device-registry-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -840,6 +950,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/jdbc-device-registry-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/jdbc-device-registry-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/jdbc-device-registry-config/"
                 />
@@ -876,6 +991,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/command-router-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/command-router-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -916,6 +1036,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/http-adapter-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/http-adapter-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/http-adapter-config/"
                 />
@@ -952,6 +1077,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/mqtt-adapter-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/mqtt-adapter-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -992,6 +1122,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/amqp-adapter-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/amqp-adapter-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/amqp-adapter-config/"
                 />
@@ -1028,6 +1163,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/coap-adapter-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/coap-adapter-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1068,6 +1208,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/hono-client-configuration/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/hono-client-configuration/"
                 />
@@ -1104,6 +1249,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1144,6 +1294,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/amqp-network-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/amqp-network-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/amqp-network-config/"
                 />
@@ -1180,6 +1335,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/kafka-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/kafka-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1220,6 +1380,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/pubsub-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/pubsub-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/pubsub-config/"
                 />
@@ -1236,6 +1401,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/secure_communication/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/secure_communication/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1276,6 +1446,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/monitoring-tracing-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/monitoring-tracing-config/"
                 />
@@ -1312,6 +1487,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/dev-guide/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/dev-guide/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1352,6 +1532,11 @@
     <loc>https://www.eclipse.org/hono/docs/dev-guide/building_hono/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/dev-guide/building_hono/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/dev-guide/building_hono/"
                 />
@@ -1388,6 +1573,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/dev-guide/amqp_adapter_client/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/dev-guide/amqp_adapter_client/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1428,6 +1618,11 @@
     <loc>https://www.eclipse.org/hono/docs/dev-guide/custom_http_adapter/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/dev-guide/custom_http_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/dev-guide/custom_http_adapter/"
                 />
@@ -1464,6 +1659,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/dev-guide/java_client_consumer/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/dev-guide/java_client_consumer/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1504,6 +1704,11 @@
     <loc>https://www.eclipse.org/hono/docs/dev-guide/coap_adapter/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/dev-guide/coap_adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/dev-guide/coap_adapter/"
                 />
@@ -1520,6 +1725,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1560,6 +1770,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/telemetry-kafka/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/telemetry-kafka/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/telemetry-kafka/"
                 />
@@ -1596,6 +1811,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/event-kafka/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/event-kafka/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1636,6 +1856,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/command-and-control-kafka/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/command-and-control-kafka/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/command-and-control-kafka/"
                 />
@@ -1672,6 +1897,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/kafka-api/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/kafka-api/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1712,6 +1942,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/telemetry/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/telemetry/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/telemetry/"
                 />
@@ -1748,6 +1983,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/event/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/event/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1788,6 +2028,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/command-and-control/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/command-and-control/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/command-and-control/"
                 />
@@ -1826,6 +2071,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/telemetry-pubsub/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/telemetry-pubsub/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/telemetry-pubsub/"
                 />
@@ -1844,6 +2094,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/event-pubsub/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/event-pubsub/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/event-pubsub/"
                 />
@@ -1859,7 +2114,30 @@
                 />
   </url>
   <url>
+    <loc>https://www.eclipse.org/hono/docs/api/command-and-control-pubsub/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/command-and-control-pubsub/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="dev"
+                href="https://www.eclipse.org/hono/docs/dev/api/command-and-control-pubsub/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="stable"
+                href="https://www.eclipse.org/hono/docs/api/command-and-control-pubsub/"
+                />
+  </url>
+  <url>
     <loc>https://www.eclipse.org/hono/docs/api/tenant/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/tenant/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1900,6 +2178,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/command-router/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/command-router/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/command-router/"
                 />
@@ -1936,6 +2219,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/device-registration/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/device-registration/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -1976,6 +2264,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/credentials/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/credentials/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/credentials/"
                 />
@@ -2012,6 +2305,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/authentication/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/authentication/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2052,6 +2350,11 @@
     <loc>https://www.eclipse.org/hono/docs/api/management/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/management/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/api/management/"
                 />
@@ -2088,6 +2391,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/metrics/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/metrics/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2128,6 +2436,11 @@
     <loc>https://www.eclipse.org/hono/docs/deployment/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/deployment/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/deployment/"
                 />
@@ -2164,6 +2477,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/deployment/helm-based-deployment/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/deployment/helm-based-deployment/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2204,6 +2522,11 @@
     <loc>https://www.eclipse.org/hono/docs/deployment/openshift/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/deployment/openshift/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/deployment/openshift/"
                 />
@@ -2240,6 +2563,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/deployment/create-kubernetes-cluster/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/deployment/create-kubernetes-cluster/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2280,6 +2608,11 @@
     <loc>https://www.eclipse.org/hono/docs/deployment/resource-limitation/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/deployment/resource-limitation/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/deployment/resource-limitation/"
                 />
@@ -2316,6 +2649,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/architecture/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/architecture/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2356,6 +2694,11 @@
     <loc>https://www.eclipse.org/hono/docs/architecture/component-view/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/architecture/component-view/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/architecture/component-view/"
                 />
@@ -2392,6 +2735,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/architecture/auth/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/architecture/auth/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2432,6 +2780,11 @@
     <loc>https://www.eclipse.org/hono/docs/categories/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/categories/"
                 />
@@ -2468,6 +2821,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/api/device-connection/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/api/device-connection/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2508,6 +2866,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/device-connection-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/device-connection-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/device-connection-config/"
                 />
@@ -2544,6 +2907,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/device-registry-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/device-registry-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2584,6 +2952,11 @@
     <loc>https://www.eclipse.org/hono/docs/user-guide/file-based-device-registry/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/file-based-device-registry/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/user-guide/file-based-device-registry/"
                 />
@@ -2620,6 +2993,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/admin-guide/file-based-device-registry-config/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/file-based-device-registry-config/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"
@@ -2660,6 +3038,11 @@
     <loc>https://www.eclipse.org/hono/docs/user-guide/kura-adapter/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/user-guide/kura-adapter/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/user-guide/kura-adapter/"
                 />
@@ -2698,6 +3081,11 @@
     <loc>https://www.eclipse.org/hono/docs/admin-guide/kura-adapter-config/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/admin-guide/kura-adapter-config/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="2.3"
                 href="https://www.eclipse.org/hono/docs/2.3/admin-guide/kura-adapter-config/"
                 />
@@ -2734,6 +3122,11 @@
   </url>
   <url>
     <loc>https://www.eclipse.org/hono/docs/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="2.4"
+                href="https://www.eclipse.org/hono/docs/2.4/tags/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="2.3"

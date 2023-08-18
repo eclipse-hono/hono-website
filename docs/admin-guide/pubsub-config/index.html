@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Google Pub/Sub Messaging Configuration :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1692234602" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1692234602" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1692234602" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1692234602" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1692321047" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1692321047" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1692321047" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1692234602"></script>
+    <script src="/hono/docs/js/variant.js?1692321047"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1692234602"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1692321047"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -90,11 +90,12 @@
             <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#publisher-configuration">Publisher Configuration</a></li>
+    <li><a href="#publisher-and-subscriber-configuration">Publisher and Subscriber Configuration</a></li>
     <li><a href="#configuring-tenants-to-use-pubsub-based-messaging">Configuring Tenants to use Pub/Sub based Messaging</a></li>
-    <li><a href="#used-topics">Used Topics</a>
+    <li><a href="#used-topics-and-subscriptions">Used Topics and Subscriptions</a>
       <ul>
-        <li><a href="#for-telemetry--event-messages">For Telemetry &amp; Event Messages</a></li>
+        <li><a href="#for-telemetry-event-and-command--control-messages">For Telemetry, Event and Command &amp; Control Messages</a></li>
+        <li><a href="#for-hono-internal-messages">For Hono internal messages</a></li>
       </ul>
     </li>
   </ul>
@@ -110,8 +111,8 @@
           <article>
 
 <h1>Google Pub/Sub Messaging Configuration</h1>
-<p>Hono can be configured to support Google Pub/Sub as the messaging infrastructure. Google Pub/Sub can only be used to forward
-Telemetry and Event messages, but not Command messages. The Pub/Sub client used for this purpose
+<p>Hono can be configured to support Google Pub/Sub as the messaging infrastructure. The Pub/Sub client used for this
+purpose
 can be configured by means of operating system environment variables.</p>
 <p>Supporting Google Pub/Sub, Hono must run on Google Kubernetes Engine to authenticate to the Google Pub/Sub API.
 To authenticate to the Google Pub/Sub API, Workload Identity is used and has to be configured as described in the
@@ -123,11 +124,12 @@ To authenticate to the Google Pub/Sub API, Workload Identity is used and has to 
 <p>Support for Google Pub/Sub based messaging infrastructure is considered <strong>experimental</strong> and may change without further notice.</p>
     </div>
 </div>
-<h2 id="publisher-configuration">Publisher Configuration</h2>
-<p>The <code>org.eclipse.hono.client.pubsub.CachingPubSubPublisherFactory</code> factory can be used to create Pub/Sub publishers for Hono&rsquo;s
-Pub/Sub based APIs.</p>
+<h2 id="publisher-and-subscriber-configuration">Publisher and Subscriber Configuration</h2>
+<p>The <code>org.eclipse.hono.client.pubsub.publisher.CachingPubSubPublisherFactory</code> factory can be used to create Pub/Sub
+publishers for Hono&rsquo;s Pub/Sub based APIs. The <code>org.eclipse.hono.client.pubsub.subscriber.CachingPubSubSubscriberFactory</code>
+factory can be used to create Pub/Sub subscribers for Hono&rsquo;s Pub/Sub based APIs.</p>
 <p>Please refer to the <a href="https://quarkiverse.github.io/quarkiverse-docs/quarkus-google-cloud-services/main/index.html">Quarkus Google Cloud Services extension</a>
-documentation for details regarding configuration of the PubSub client.</p>
+documentation for details regarding configuration of the Pub/Sub client.</p>
 <h2 id="configuring-tenants-to-use-pubsub-based-messaging">Configuring Tenants to use Pub/Sub based Messaging</h2>
 <p>Hono&rsquo;s components by default support using Kafka based messaging infrastructure to transmit messages hence and forth
 between devices and applications. Hono also supports using Pub/Sub as the messaging infrastructure either as a replacement
@@ -155,10 +157,10 @@ for the tenant.</p>
 type configuration is ignored.</p>
     </div>
 </div>
-<h2 id="used-topics">Used Topics</h2>
-<h3 id="for-telemetry--event-messages">For Telemetry &amp; Event Messages</h3>
+<h2 id="used-topics-and-subscriptions">Used Topics and Subscriptions</h2>
+<h3 id="for-telemetry-event-and-command--control-messages">For Telemetry, Event and Command &amp; Control Messages</h3>
 <p>The Hono components publish messages to the following, tenant-specific Pub/Sub topics,
-from which downstream applications will consume the messages:</p>
+from which downstream applications can create subscriptions and consume the messages:</p>
 <table>
 <thead>
 <tr>
@@ -175,8 +177,95 @@ from which downstream applications will consume the messages:</p>
 <td style="text-align:left"><code>projects/${google_project_id}/topics/${tenant_id}.event</code></td>
 <td style="text-align:left">Topic for event messages.</td>
 </tr>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/topics/${tenant_id}.command_response</code></td>
+<td style="text-align:left">Topic for command response messages.</td>
+</tr>
 </tbody>
 </table>
+<p>For command &amp; control messages published by downstream applications, the following topic is used:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Topic name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/topics/${tenant_id}.command</code></td>
+<td style="text-align:left">Topic for command &amp; control messages.</td>
+</tr>
+</tbody>
+</table>
+<p>For command &amp; control messages consumed by the Hono command router, the following subscription is used:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Subscription name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/subscriptions/${tenant_id}.command</code></td>
+<td style="text-align:left">Subscription for command &amp; control messages.</td>
+</tr>
+</tbody>
+</table>
+<p>The above topics and subscriptions must be created in advance.</p>
+<h3 id="for-hono-internal-messages">For Hono internal messages</h3>
+<p>For messages published only by Hono components, the following topics are used:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Topic name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/topics/${adapter_instance_id}.command_internal</code></td>
+<td style="text-align:left">Topic used for routing of command &amp; control messages between Hono components.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/topics/registry-tenant.notification</code></td>
+<td style="text-align:left">Topic used for notification messages between Hono components about changes to tenant registration data.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/topics/registry-device.notification</code></td>
+<td style="text-align:left">Topic used for notification messages between Hono components about changes to device registration data.</td>
+</tr>
+</tbody>
+</table>
+<p>For messages consumed only by Hono components, the following subscriptions are used:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Subscription name</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/subscriptions/${adapter_instance_id}.command_internal</code></td>
+<td style="text-align:left">Subscription used for routing of command &amp; control messages between Hono components.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/subscriptions/registry-tenant.notification</code></td>
+<td style="text-align:left">Subscription used for notification messages between Hono components about changes to tenant registration data.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>projects/${google_project_id}/subscriptions/registry-device.notification</code></td>
+<td style="text-align:left">Subscription used for notification messages between Hono components about changes to device registration data.</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>projects/${google_project_id}/topics/${adapter_instance_id}.command_internal</code> topic
+and the <code>projects/${google_project_id}/subscriptions/${adapter_instance_id}.command_internal</code> subscription name contains
+a unique identifier as prefix, created dynamically on protocol adapter start. Therefore, this topic cannot be created in
+advance. It is created by a Pub/Sub based admin client in the protocol adapters.</p>
+<p>The <code>projects/${google_project_id}/topics/${PREFIX}.notification</code> topics and subscriptions need to be created in advance.</p>
 
             <footer class="footline">
             </footer>
@@ -200,12 +289,12 @@ from which downstream applications will consume the messages:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1692234602"></script>
-        <script src="/hono/docs/js/lunr.min.js?1692234602"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692234602"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1692234602"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1692234602"></script>
-        <script src="/hono/docs/js/search.js?1692234602"></script>
+        <script src="/hono/docs/js/auto-complete.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.min.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1692321047"></script>
+        <script src="/hono/docs/js/search.js?1692321047"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -259,6 +348,7 @@ from which downstream applications will consume the messages:</p>
           <li data-nav-id="/hono/docs/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/api/tenant/">Tenant API</a></li>
           <li data-nav-id="/hono/docs/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/api/command-router/">Command Router API</a></li>
           <li data-nav-id="/hono/docs/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/api/device-registration/">Device Registration API</a></li>
@@ -291,7 +381,8 @@ from which downstream applications will consume the messages:</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/admin-guide/pubsub-config/" selected>stable (2.3)</option>
+                    <option id="stable" value="/hono/docs/admin-guide/pubsub-config/" selected>stable (2.4)</option>
+                    <option id="2.4" value="/hono/docs/2.4/admin-guide/pubsub-config/">2.4</option>
                     <option id="2.3" value="/hono/docs/2.3/admin-guide/pubsub-config/">2.3</option>
                     <option id="dev" value="/hono/docs/dev/admin-guide/pubsub-config/">dev</option>
                   </select>
@@ -330,10 +421,10 @@ from which downstream applications will consume the messages:</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1692234602"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692234602"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1692234602"></script>
-    <script src="/hono/docs/js/theme.js?1692234602"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1692321047"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692321048"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1692321048"></script>
+    <script src="/hono/docs/js/theme.js?1692321048"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

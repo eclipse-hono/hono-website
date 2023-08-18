@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>File Based Device Registry Configuration :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1692234601" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1692234601" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1692234601" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1692234601" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1692321047" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1692321047" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1692321047" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1692321047" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1692234601"></script>
+    <script src="/hono/docs/js/variant.js?1692321047"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1692234601"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1692321047"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -109,6 +109,7 @@
       <ul>
         <li><a href="#amqp-10-messaging-network-connection-configuration">AMQP 1.0 Messaging Network Connection Configuration</a></li>
         <li><a href="#kafka-based-messaging-configuration">Kafka based Messaging Configuration</a></li>
+        <li><a href="#google-pubsub-messaging-configuration">Google Pub/Sub Messaging Configuration</a></li>
       </ul>
     </li>
   </ul>
@@ -681,17 +682,17 @@ device that connects directly to the adapter.</p>
 <p>The example configuration file (located at <code>$HONO/services/device-registry-file/src/test/resources/device-identities.json</code>)
 includes a device and a corresponding gateway configured in this way.</p>
 <h2 id="messaging-configuration">Messaging Configuration</h2>
-<p>The Device Registry uses a connection to an <em>AMQP 1.0 Messaging Network</em> and/or an <em>Apache Kafka cluster</em> to</p>
+<p>The Device Registry uses a connection to an <em>AMQP 1.0 Messaging Network</em>, an <em>Apache Kafka cluster</em> and/or <em>Google Pub/Sub</em> to</p>
 <ul>
 <li>send <a href="/hono/docs/api/event/#device-provisioning-notification">Device Provisioning Notification</a> event messages
 to convey provisioning related changes regarding a device, to be received by downstream applications,</li>
 <li>send notification messages about changes to tenant/device/credentials data, to be processed by other Hono components.</li>
 </ul>
 <p>For the event messages a connection to a <em>Apache Kafka cluster</em> is used by default, if configured.
-If both kinds of messaging are configured, the decision which one to use is done according to the
+If more than one kind of messaging is configured, the decision which one to use is done according to the
 <a href="/hono/docs/admin-guide/hono-kafka-client-configuration/#configuring-tenants-to-use-kafka-based-messaging">Tenant Configuration</a>.</p>
 <p>For notification messages, the Kafka connection is used by default, if configured. Otherwise the <em>AMQP messaging network</em>
-is used.</p>
+or <em>Google Pub/Sub</em> is used.</p>
 <h3 id="amqp-10-messaging-network-connection-configuration">AMQP 1.0 Messaging Network Connection Configuration</h3>
 <p>The connection to the <em>AMQP 1.0 Messaging Network</em> is configured according to the
 <a href="/hono/docs/admin-guide/hono-client-configuration/">Hono Client Configuration</a> with <code>HONO_MESSAGING</code> being used as <code>${PREFIX}</code>.
@@ -721,6 +722,9 @@ respectively.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="google-pubsub-messaging-configuration">Google Pub/Sub Messaging Configuration</h3>
+<p>The connection to <em>Google Pub/Sub</em> is configured according to the
+<a href="/hono/docs/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a>.</p>
             <footer class="footline">
             </footer>
           </article>
@@ -743,12 +747,12 @@ respectively.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1692234601"></script>
-        <script src="/hono/docs/js/lunr.min.js?1692234601"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692234601"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1692234601"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1692234601"></script>
-        <script src="/hono/docs/js/search.js?1692234601"></script>
+        <script src="/hono/docs/js/auto-complete.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.min.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1692321047"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1692321047"></script>
+        <script src="/hono/docs/js/search.js?1692321047"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -803,6 +807,7 @@ respectively.</p>
           <li data-nav-id="/hono/docs/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
           <li data-nav-id="/hono/docs/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
           <li data-nav-id="/hono/docs/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/api/tenant/">Tenant API</a></li>
           <li data-nav-id="/hono/docs/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/api/command-router/">Command Router API</a></li>
           <li data-nav-id="/hono/docs/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/api/device-registration/">Device Registration API</a></li>
@@ -835,7 +840,8 @@ respectively.</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/admin-guide/file-based-device-registry-config/" selected>stable (2.3)</option>
+                    <option id="stable" value="/hono/docs/admin-guide/file-based-device-registry-config/" selected>stable (2.4)</option>
+                    <option id="2.4" value="/hono/docs/2.4/admin-guide/file-based-device-registry-config/">2.4</option>
                     <option id="2.3" value="/hono/docs/2.3/admin-guide/file-based-device-registry-config/">2.3</option>
                     <option id="2.2" value="/hono/docs/2.2/admin-guide/file-based-device-registry-config/">2.2</option>
                     <option id="2.1" value="/hono/docs/2.1/admin-guide/file-based-device-registry-config/">2.1</option>
@@ -878,10 +884,10 @@ respectively.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1692234602"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692234602"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1692234602"></script>
-    <script src="/hono/docs/js/theme.js?1692234602"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1692321048"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692321048"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1692321048"></script>
+    <script src="/hono/docs/js/theme.js?1692321048"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

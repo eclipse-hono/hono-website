@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="2.4">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.102.3" />
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Multi-Tenancy :: Eclipse Hono&trade; Vers.: 2.4</title>
+    <link href="/hono/docs/images/favicon.ico?1692321054" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1692321054" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1692321054" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1692321054" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1692321054"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/2.4/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1692321054"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Multi-Tenancy :: Eclipse Hono&amp;trade; Vers.: 2.4">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Multi-Tenancy :: Eclipse Hono&amp;trade; Vers.: 2.4" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/2.4/concepts/tenancy//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/2.4/concepts/tenancy/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>2.4</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/concepts/tenancy/index.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/2.4/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/2.4/concepts/"><span itemprop="name">Concepts</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/2.4/concepts/tenancy/" aria-disabled="true"><span itemprop="name">Multi-Tenancy</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-tenant-api">The Tenant API</a></li>
+    <li><a href="#protocol-adapters-respect-the-tenant-api">Protocol Adapters respect the Tenant API</a></li>
+    <li><a href="#protocol-adapter-configuration">Protocol Adapter Configuration</a></li>
+    <li><a href="#amqp-10-endpoints">AMQP 1.0 Endpoints</a></li>
+    <li><a href="#devices-and-tenants">Devices and Tenants</a></li>
+    <li><a href="#tenant-based-flow-control">Tenant based Flow Control</a></li>
+    <li><a href="#authorization-at-tenant-level">Authorization at Tenant Level</a></li>
+    <li><a href="#business-applications-and-tenants">Business Applications and Tenants</a></li>
+    <li><a href="#separation-of-tenants">Separation of Tenants</a></li>
+    <li><a href="#hints-for-production">Hints for Production</a></li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Multi-Tenancy</h1>
+<p>Hono is designed to structure the set of all internally managed data and data streams into strictly isolated subsets.
+This includes the registration data and credentials of devices, internal users that are used for authentication,
+and the <em>Business Applications</em> that are part of such subsets as well.</p>
+<p>This way of <em>strict</em> isolation is generally known as multi-tenancy, where a <strong>tenant</strong> is the term for such a subset.
+Such an isolation is essential for enabling a scalable distributed architecture to handle independent subsets as if each subset had its
+own installation (which would be much harder to maintain and would not benefit from runtime cost sharing).</p>
+<p>Hono&rsquo;s multi-tenancy concept is based on handling tenants as own <em>entities</em>. All functionality of Hono is
+provided in the context of a previously created tenant - except the creation of a tenant itself.</p>
+<p>In the following the different aspects of multi-tenancy in Hono are addressed and a full overview of the concept is given.</p>
+<h2 id="the-tenant-api">The Tenant API</h2>
+<p>By means of the <a href="/hono/docs/2.4/api/tenant/">Tenant API</a> Hono handles tenants as own <em>entities</em>.
+The API defines how to <em>retrieve</em> the details of a specific tenant. This offers the possibility to handle arbitrary
+properties on the level of a tenant (see e.g. <a href="#protocol-adapter-configuration">Protocol adapter configuration</a>).
+For convenience, there are CRUD operations for the handling of tenants, which can be found in the
+<a href="/hono/docs/2.4/api/management/">Device Registry Management API</a>.</p>
+<h2 id="protocol-adapters-respect-the-tenant-api">Protocol Adapters respect the Tenant API</h2>
+<p>When a device connects to one of Hono&rsquo;s protocol adapters, the adapter determines the tenant this device belongs to.
+How this is done is described in the User Guide.
+After the tenant is determined, the adapter retrieves the details of the determined tenant by means of the Tenant API.
+Only if the tenant exists and is enabled the adapter further processes the data of the device that is connecting. Otherwise
+the connection will be closed.</p>
+<h2 id="protocol-adapter-configuration">Protocol Adapter Configuration</h2>
+<p>Protocol adapters retrieve parts of their configuration on a tenant level by using the details of the determined tenant.
+This includes e.g. if a specific protocol adapter is enabled at all for this tenant, allowing to define tenants with
+only a subset of Hono&rsquo;s functionality. This feature is foreseen to be especially important for production setups.</p>
+<p><em>Example</em>: a tenant that</p>
+<ul>
+<li>can use the MQTT protocol adapter</li>
+<li>but is not allowed to use the HTTP protocol adapter</li>
+</ul>
+<p>Please refer to the <a href="/hono/docs/2.4/api/tenant/">Tenant API</a> to find out which protocol adapter properties
+can be configured at the tenant level.</p>
+<h2 id="amqp-10-endpoints">AMQP 1.0 Endpoints</h2>
+<p>The AMQP 1.0 endpoints for all APIs of Hono are scoped to a tenant, by using the scheme <code>&lt;api-name&gt;/TENANT/...</code>.</p>
+<p><em>Examples</em>:</p>
+<ul>
+<li><code>telemetry/TENANT</code></li>
+<li><code>event/TENANT</code></li>
+<li><code>registration/TENANT</code></li>
+</ul>
+<p>This separates the AMQP endpoints from each other on a tenant level.</p>
+<p>The only exception to this is the <a href="/hono/docs/2.4/api/tenant/">Tenant API</a> which does not follow this scheme since it
+is addressing the tenants themselves.</p>
+<h2 id="devices-and-tenants">Devices and Tenants</h2>
+<p>A physical device will usually be represented in Hono as an entity in the device registry, having a unique identity
+and belonging to exactly one tenant. All data sent from a device, as well as from the application to the device,
+is therefore treated as belonging to the corresponding tenant.</p>
+<p>The following diagram shows the relation between tenants, devices and their credentials:</p>
+<figure><img src="tenants-devices-credentials.svg" width="60%"/><figcaption>
+            <h4>Tenants, Devices and Credentials</h4>
+        </figcaption>
+</figure>
+
+<h2 id="tenant-based-flow-control">Tenant based Flow Control</h2>
+<p>An important detail in Hono&rsquo;s architecture is that data sent downstream is transported via the tenant
+scoped AMQP 1.0 links from the protocol adapters to the AMQP 1.0 network.
+Each tenant has its own pair of AMQP 1.0 links and is treated
+independently from other tenants regarding the back pressure mechanism that AMQP 1.0 offers.
+This enables a <em>Business application</em> to limit the rate at which it consumes AMQP 1.0 messages per tenant.</p>
+<p>For the other direction, when commands are sent from the application to the device, the rate is also limited per tenant.</p>
+<h2 id="authorization-at-tenant-level">Authorization at Tenant Level</h2>
+<p>Hono&rsquo;s components authenticate each other by means of the <a href="https://www.eclipse.org/hono/docs/2.4/api/authentication/">Authentication API</a>.
+The returned token for a successful authentication contains authorization information that is addressing the AMQP 1.0
+endpoints. Since the endpoints (as outlined above) are scoped to a tenant, this enables to configure tenants that are
+authorized to only a subset of Hono&rsquo;s full functionality.</p>
+<p><em>Example</em>: a tenant (defined by means of authorization configuration) that</p>
+<ul>
+<li>is allowed to send telemetry data downstream</li>
+<li>but is not allowed to send event data</li>
+</ul>
+<p>This is done by not including the event endpoint in the authorization token for these tenants.</p>
+<h2 id="business-applications-and-tenants">Business Applications and Tenants</h2>
+<p>The northbound <em>Business applications</em> are always connecting to the AMQP 1.0 endpoints of Hono.
+By means of the authentication and authorization setup and the fact that the endpoints are scoped to a tenant, the
+<em>Business application</em> is only acting in the context of one tenant.</p>
+<h2 id="separation-of-tenants">Separation of Tenants</h2>
+<p>Tenants are separated from each other in all of Hono&rsquo;s components.
+Here is a summary of how this is implemented:</p>
+<ul>
+<li>the registration of devices are strictly scoped to a tenant</li>
+<li>the credentials of devices are strictly scoped to a tenant</li>
+<li>protocol adapters can be enabled/disabled for a tenant</li>
+<li>the downstream data flow is isolated for every tenant</li>
+<li>the upstream data flow (<a href="https://www.eclipse.org/hono/docs/2.4/concepts/command-and-control/">Command &amp; Control</a>) is isolated for every tenant</li>
+<li><em>Business applications</em> need to authenticate to the AMQP 1.0 network and are by that mechanism scoped to their tenant</li>
+</ul>
+<h2 id="hints-for-production">Hints for Production</h2>
+<p>To be flexible for the different needs of production setups, Hono tries to make as few assumptions about the combination
+of the different APIs as possible.
+This means e.g. that the Device Registry does not enforce referential integrity of the APIs:</p>
+<ul>
+<li>devices can be created for a tenant that is not existing (yet)</li>
+<li>credentials can be created for a tenant and/or a device that is not existing (yet)</li>
+<li>tenants can be deleted and leave their scoped devices and credentials still in the configuration (which may not be usable
+anymore, since the tenant is missing)</li>
+</ul>
+<p>These are points that production setups may want to implement differently.</p>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1692321054"></script>
+        <script src="/hono/docs/js/lunr.min.js?1692321054"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1692321054"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1692321054"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1692321054"></script>
+        <script src="/hono/docs/js/search.js?1692321054"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/2.4/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><a href="/hono/docs/2.4/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/" title="Concepts" class="dd-item parent"><input type="checkbox" id="section-dc8a1c63e6da60163016ce21cae1faa0" class="toggle" checked/><label for="section-dc8a1c63e6da60163016ce21cae1faa0" ></label><a href="/hono/docs/2.4/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/2.4/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/2.4/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/tenancy/" title="Multi-Tenancy" class="dd-item active"><a href="/hono/docs/2.4/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/2.4/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/2.4/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/2.4/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/2.4/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/2.4/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/2.4/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/2.4/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-43170fd4b1d999bb931c5c3267a4cd69" class="toggle"/><label for="section-43170fd4b1d999bb931c5c3267a4cd69" ></label><a href="/hono/docs/2.4/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.4/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/2.4/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/2.4/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-b96db1f2fa4ff40a114a4f60a142e6b6" class="toggle"/><label for="section-b96db1f2fa4ff40a114a4f60a142e6b6" ></label><a href="/hono/docs/2.4/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/2.4/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/pubsub-config/" title="Google Pub/Sub Messaging Configuration" class="dd-item"><a href="/hono/docs/2.4/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/2.4/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/2.4/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/2.4/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-cfdebad2e0dcabb97438624bf96f05a4" class="toggle"/><label for="section-cfdebad2e0dcabb97438624bf96f05a4" ></label><a href="/hono/docs/2.4/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/2.4/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/2.4/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/2.4/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/2.4/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/2.4/dev-guide/coap_adapter/" title="Considerations for extending the CoAP Adapter" class="dd-item"><a href="/hono/docs/2.4/dev-guide/coap_adapter/">Considerations for extending the CoAP Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/api/" title="API" class="dd-item"><input type="checkbox" id="section-1b3eda2e8317c0686a4d41cefa0a3453" class="toggle"/><label for="section-1b3eda2e8317c0686a4d41cefa0a3453" ></label><a href="/hono/docs/2.4/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/2.4/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.4/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.4/api/event-kafka/">Event API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-and-control-kafka/" title="Command &amp; Control API Specification for Kafka" class="dd-item"><a href="/hono/docs/2.4/api/command-and-control-kafka/">Command &amp; Control API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/2.4/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.4/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.4/api/event/">Event API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/2.4/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/2.4/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/2.4/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/2.4/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/2.4/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/2.4/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/2.4/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/2.4/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/2.4/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/2.4/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/2.4/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/2.4/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-9196179b4df48fe4f393bf8626001e89" class="toggle"/><label for="section-9196179b4df48fe4f393bf8626001e89" ></label><a href="/hono/docs/2.4/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/2.4/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/2.4/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/2.4/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/2.4/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/2.4/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/2.4/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/2.4/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-a81d732c785e3254a4a6686c290336fc" class="toggle"/><label for="section-a81d732c785e3254a4a6686c290336fc" ></label><a href="/hono/docs/2.4/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/2.4/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/2.4/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/2.4/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/2.4/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/concepts/tenancy/">stable (2.4)</option>
+                    <option id="2.4" value="/hono/docs/2.4/concepts/tenancy/" selected>2.4</option>
+                    <option id="2.3" value="/hono/docs/2.3/concepts/tenancy/">2.3</option>
+                    <option id="2.2" value="/hono/docs/2.2/concepts/tenancy/">2.2</option>
+                    <option id="2.1" value="/hono/docs/2.1/concepts/tenancy/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/concepts/tenancy/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/concepts/tenancy/">1.12</option>
+                    <option id="dev" value="/hono/docs/dev/concepts/tenancy/">dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2023 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1692321054"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1692321054"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1692321054"></script>
+    <script src="/hono/docs/js/theme.js?1692321054"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>
