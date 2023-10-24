@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1698023481" rel="stylesheet">
+<link href="/hono/css/custom.css?1698109825" rel="stylesheet">
 
 
 
@@ -261,6 +261,14 @@
 <li>When running in a Kubernetes cluster with nodes using cgroups v2, the &lsquo;hono.command_internal.*&rsquo; Kafka topics were not
 being cleaned up. This has been fixed. Note that the solution requires the Hono protocol adapter pods to have
 a service account with an assigned RBAC role that allows to perform &ldquo;get&rdquo; on the &ldquo;pods&rdquo; resource.</li>
+</ul>
+<h3 id="deprecations">Deprecations</h3>
+<ul>
+<li>According to the <a href="https://www.mongodb.com/support-policy/lifecycles">MongoDB Software Lifecycle Schedule</a> support
+for MongoDB 4.4 will end Feb 2024.
+Until that date the MongoDB based Device Registry will be tested with MongoDB 4.4, 5.0, 6.0 and 7.0 in the CI workflows.
+However, support for MongoDB 4.4 in Hono has been deprecated and will be removed in a future version altogether.
+Users are encouraged to migrate to MongoDB 6.0 or later.</li>
 </ul>
 <h2 id="240">2.4.0</h2>
 <h3 id="new-features">New features</h3>
@@ -550,7 +558,7 @@ configuration properties and not via <em>hono.healthCheck</em> properties any mo
 <a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#health-check-server-configuration">Monitoring &amp; Tracing guide</a>
 for details on how to configure the health check server.</li>
 </ul>
-<h3 id="deprecations">Deprecations</h3>
+<h3 id="deprecations-1">Deprecations</h3>
 <ul>
 <li>Support for implementing readiness and liveness checks based on Vert.x Health Checks has been deprecated and will be
 removed in a future version. New health checks should be implemented according to MicroProfile Health.</li>
@@ -625,7 +633,7 @@ password hashes were created in lower case instead of upper case. This has been 
 This has been fixed.</li>
 <li>There was an issue trying to send connection events concerning unauthenticated MQTT/AMQP devices. This has been fixed.</li>
 </ul>
-<h3 id="deprecations-1">Deprecations</h3>
+<h3 id="deprecations-2">Deprecations</h3>
 <ul>
 <li>The Spring Boot based variant of the MongoDB device registry has been deprecated and marked for removal in Hono 2.0.0.</li>
 </ul>
@@ -716,7 +724,7 @@ SCRAM. This has been fixed.</li>
 Please refer to the <a href="https://www.eclipse.org/hono/docs/admin-guide/hono-kafka-client-configuration/#consumer-configuration-properties">Hono Kafka Client Configuration Guide</a>
 for details.</li>
 </ul>
-<h2 id="deprecations-2">Deprecations</h2>
+<h2 id="deprecations-3">Deprecations</h2>
 <ul>
 <li>The Spring Boot based variant of the protocol adapters has been deprecated and marked for removal in Hono 2.0.0.</li>
 <li>The Kura 3 protocol adapter has been deprecated and marked for removal in Hono 2.0.0. Support for Kura version 4 and
@@ -861,7 +869,7 @@ the configured <code>max.poll.records</code> Kafka consumer configuration value.
 &ldquo;messaging-type&rdquo;: <code>kafka</code> (if not set, it defaults to AMQP-based messaging). For details refer to the file
 <code>application.yml</code> of the CLI module.</li>
 </ul>
-<h3 id="deprecations-3">Deprecations</h3>
+<h3 id="deprecations-4">Deprecations</h3>
 <ul>
 <li>The file based device registry implementation has been deprecated and will be removed in a future version of Hono.
 Please use the Mongo DB or JDBC based registry implementations instead. The JDBC based registry can be configured
@@ -975,7 +983,7 @@ processing sampling strategy configuration retrieved from the Jaeger Collector.<
 <code>org.eclipse.hono.application.client.kafka.impl.KafkaApplicationClientImpl</code> now supports sending commands and
 receiving responses in a <em>request/response</em> fashion.</li>
 </ul>
-<h3 id="deprecations-4">Deprecations</h3>
+<h3 id="deprecations-5">Deprecations</h3>
 <ul>
 <li>The <code>org.eclipse.hono.client.ApplicationClientFactory</code>, <code>org.eclipse.hono.client.AsyncCommandClient</code> and
 <code>org.eclipse.hono.client.CommandClient</code> classes have been deprecated. Client code should use
@@ -1184,7 +1192,7 @@ now correctly indicate a server related problem instead.</li>
 Command Router services did not shut down gracefully upon receiving a SIGTERM signal. This has been fixed.</li>
 <li>The LoRA protocol adapter failed to start due to a missing bean declaration. This has been fixed.</li>
 </ul>
-<h3 id="deprecations-5">Deprecations</h3>
+<h3 id="deprecations-6">Deprecations</h3>
 <ul>
 <li>The <code>org.eclipse.hono.service.cache.SpringCacheProvider</code> and <code>org.eclipse.hono.service.cache.SpringBasedExpiringValueCache</code>
 classes have been deprecated to further reduce the dependency on Spring Boot. Clients should use
@@ -1373,7 +1381,7 @@ paging and sorting options.</li>
 <ul>
 <li>The MongoDB based device registry now checks for tenant existence during device registration and credentials management operations.</li>
 </ul>
-<h3 id="deprecations-6">Deprecations</h3>
+<h3 id="deprecations-7">Deprecations</h3>
 <ul>
 <li>The configuration property <code>singleTenant</code> of the protocol adapters and the device registry is now deprecated
 and planned to be removed in a future release. The use case of a system with just a single tenant should be
@@ -1514,7 +1522,7 @@ valid identifiers. Please refer to the
 <a href="https://www.eclipse.org/hono/docs/admin-guide/mongodb-device-registry-config/#service-configuration">MongoDB based registry</a>
 configuration guide for details.</li>
 </ul>
-<h3 id="deprecations-7">Deprecations</h3>
+<h3 id="deprecations-8">Deprecations</h3>
 <ul>
 <li>The configuration property <code>HONO_MQTT_COMMAND_ACK_TIMEOUT</code> of the MQTT adapter is now deprecated
 and planned to be removed in a future release. Use <code>HONO_MQTT_SEND_MESSAGE_TO_DEVICE_TIMEOUT</code> instead.</li>
@@ -1829,7 +1837,7 @@ All standard protocol adapters have been adapted to this change.
 The <em>Tenant</em> JSON schema object used in the tenant related resources of the Device Registry Management API
 has also been adapted to contain a list of trusted authorities instead of a single one.</li>
 </ul>
-<h3 id="deprecations-8">Deprecations</h3>
+<h3 id="deprecations-9">Deprecations</h3>
 <ul>
 <li>The OpenShift specific source-to-image deployment model has been removed in
 favor of the Helm charts and the Eclipse IoT Packages project. You can still
@@ -1866,7 +1874,7 @@ additional OpenTracing span parameter should be used.</li>
 have been removed. The alternate variant of these methods which accepts an additional OpenTracing span parameter
 should be used.</li>
 </ul>
-<h3 id="deprecations-9">Deprecations</h3>
+<h3 id="deprecations-10">Deprecations</h3>
 <ul>
 <li>The deprecated Kura adapter is no longer deployed by default by the Helm chart.
 However, it can still be deployed by means of <a href="https://www.eclipse.org/hono/docs/deployment/helm-based-deployment/#deploying-optional-adapters">setting a configuration property</a>.</li>
@@ -2083,7 +2091,7 @@ the <code>to</code> property to be set to <code>control/${tenant_id}/${device_id
 as sender link address is still possible but gateway agnostic addressing of devices is not supported for
 such command messages.</li>
 </ul>
-<h3 id="deprecations-10">Deprecations</h3>
+<h3 id="deprecations-11">Deprecations</h3>
 <ul>
 <li>Instructions for script based deployment to Kubernetes have been removed from the deployment guide.
 Using Helm is now the only supported way of deploying Hono to Kubernetes.</li>
@@ -2206,7 +2214,7 @@ adapters are located in that package already.</li>
 <code>org.eclipse.hono.client.HonoConnection</code> to better reflect its sole responsibility
 for establishing (and maintaining) the connection to a Hono service endpoint.</li>
 </ul>
-<h3 id="deprecations-11">Deprecations</h3>
+<h3 id="deprecations-12">Deprecations</h3>
 <ul>
 <li>The optional operations defined by the Tenant, Device Registration and Credentials API
 have been deprecated. They will be removed from Hono 1.0 altogether.
@@ -2231,7 +2239,7 @@ to decouple the sender and receiver from each other.</li>
 <li>The <code>org.eclipse.hono.service.tenant.CompleteBaseTenantService</code> class now rejects malformed
 encodings of public keys/certificates included in a request to add a trust anchor to a tenant.</li>
 </ul>
-<h3 id="deprecations-12">Deprecations</h3>
+<h3 id="deprecations-13">Deprecations</h3>
 <ul>
 <li>The <code>HonoClient.closeCommandConsumer()</code> method will be removed in Hono 1.0.
 The <code>CommandConsumer.close()</code> method should be used instead.</li>
@@ -2281,7 +2289,7 @@ accept the tenant and device IDs as parameters.</li>
 connection establishment but also for the SASL handshake and the exchange of the AMQP <em>open</em> frame.</li>
 <li>The (already deprecated) Hono Messaging component has been removed from Hono.</li>
 </ul>
-<h3 id="deprecations-13">Deprecations</h3>
+<h3 id="deprecations-14">Deprecations</h3>
 <ul>
 <li>The script based deployment to Kubernetes has been deprecated and will be removed in the next version.
 The Helm based deployment should be used instead.</li>
@@ -2336,7 +2344,7 @@ that a message has been received over, has been replaced by the generic <em>comp
 of the component that a metric has been reported by. Please refer to the <a href="https://www.eclipse.org/hono/docs/api/metrics/">Metrics API</a>
 for details. Note that these changes do not affect the legacy Graphite based metrics back end.</li>
 </ul>
-<h3 id="deprecations-14">Deprecations</h3>
+<h3 id="deprecations-15">Deprecations</h3>
 <ul>
 <li>The Hono Messaging component is now  deprecated and will be removed from Hono in version 0.9 altogether.
 The example deployment has not been using Hono Messaging since 0.6 and there is no practical reason for
