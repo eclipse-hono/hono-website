@@ -9,17 +9,17 @@
     <meta name="author" content="The Eclipse Hono Project">
     <title>Getting started with Eclipse Hono :: Eclipse Hono&trade; Vers.: 2.3</title>
     <link rel="alternate" type="application/rss&#43;xml" href="/hono/docs/2.3/getting-started/index.xml" title="Eclipse Hono&trade; Vers.: 2.3" />
-    <link href="/hono/docs/images/favicon.ico?1698977477" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1698977477" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1698977477" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1698977477" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1699172048" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1699172048" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1699172048" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1699172048" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -30,7 +30,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1698977477"></script>
+    <script src="/hono/docs/js/variant.js?1699172048"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -46,7 +46,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1698977477"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1699172048"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -259,7 +259,7 @@ and refresh some environment variables:</p>
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export HTTP_ADAPTER_IP=hono.eclipseprojects.io
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export MQTT_ADAPTER_IP=hono.eclipseprojects.io
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export KAFKA_IP=hono.eclipseprojects.io
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export APP_OPTIONS=&#34;-H hono.eclipseprojects.io -P 9094 --ca-file /etc/ssl/certs/ca-certificates.crt -u hono -p hono-secret&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export APP_OPTIONS=&#34;--sandbox --ca-file /etc/ssl/certs/ca-certificates.crt&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export CURL_OPTIONS=
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">export MOSQUITTO_OPTIONS=&#39;--cafile /etc/ssl/certs/ca-certificates.crt&#39;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOS</span>
@@ -269,7 +269,7 @@ and refresh some environment variables:</p>
 export HTTP_ADAPTER_IP=hono.eclipseprojects.io
 export MQTT_ADAPTER_IP=hono.eclipseprojects.io
 export KAFKA_IP=hono.eclipseprojects.io
-export APP_OPTIONS=&#34;-H hono.eclipseprojects.io -P 9094 --ca-file /etc/ssl/certs/ca-certificates.crt -u hono -p hono-secret&#34;
+export APP_OPTIONS=&#34;--sandbox --ca-file /etc/ssl/certs/ca-certificates.crt&#34;
 export CURL_OPTIONS=
 export MOSQUITTO_OPTIONS=&#39;--cafile /etc/ssl/certs/ca-certificates.crt&#39;
 </code></pre>
@@ -631,12 +631,12 @@ explain this in more detail.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1698977477"></script>
-        <script src="/hono/docs/js/lunr.min.js?1698977477"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1698977477"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1698977477"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1698977477"></script>
-        <script src="/hono/docs/js/search.js?1698977477"></script>
+        <script src="/hono/docs/js/auto-complete.js?1699172048"></script>
+        <script src="/hono/docs/js/lunr.min.js?1699172048"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1699172048"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1699172048"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1699172048"></script>
+        <script src="/hono/docs/js/search.js?1699172048"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -766,10 +766,10 @@ explain this in more detail.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1698977477"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1698977477"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1698977477"></script>
-    <script src="/hono/docs/js/theme.js?1698977477"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1699172048"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1699172048"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1699172048"></script>
+    <script src="/hono/docs/js/theme.js?1699172048"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
