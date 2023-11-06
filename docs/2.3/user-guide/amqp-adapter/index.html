@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>AMQP Adapter :: Eclipse Hono&trade; Vers.: 2.3</title>
-    <link href="/hono/docs/images/favicon.ico?1699236605" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1699236605" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1699236605" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1699236605" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1699292500" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1699292500" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1699292500" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1699292500" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1699236605"></script>
+    <script src="/hono/docs/js/variant.js?1699292500"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1699236605"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1699292500"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -271,17 +271,9 @@ option, the client provides an overview of the supported commands and their syno
 <p>The following command starts the client in interactive shell mode, establishes a connection to Hono Sandbox&rsquo;s AMQP
 adapter and prompts the user for a command to execute:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox
 </span></span></code></pre></div><pre tabindex="0"><code>hono-cli/amqp-device&gt;
 </code></pre><p>A list of available commands can be displayed using the <code>help</code> command, <code>exit</code> will close the client.</p>
-
-<div class="box notices cstyle info">
-    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
-    <div class="box-content">
-<p>The example command above uses the default path to a Linux based system&rsquo;s trusted CA certificates.
-The path may need to be adapted when running on a different type of operating system.</p>
-    </div>
-</div>
 <h2 id="publishing-telemetry-data">Publishing Telemetry Data</h2>
 <p>A client device indicates the delivery mode to use when uploading telemetry messages by means of the <em>settled</em> and
 <em>rcv-settle-mode</em> properties of the AMQP <em>transfer</em> frame(s) it uses for uploading a message.
@@ -358,7 +350,7 @@ and tenant during the authentication process.</p>
 <p><strong>Examples</strong></p>
 <p>Start the client in interactive mode:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp -H hono.eclipseprojects.io -P <span style="color:#ae81ff">5672</span> -u sensor1@DEFAULT_TENANT -p hono-secret
 </span></span></code></pre></div><pre tabindex="0"><code>hono-cli/amqp-device&gt;
 </code></pre>
 <div class="box notices cstyle tip">
@@ -377,7 +369,7 @@ single <code>--sandbox</code> option. In that case, the client will authenticate
     <div class="box-content">
 <p>The message can also be sent in non-interactive mode:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt telemetry --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox telemetry --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
 </span></span></code></pre></div><p>Note that sending the message this way will take a little longer than in interactive mode because the connection to the
 AMQP adapter needs to be established first. In interactive mode the connection is established during startup of the
 client and can then be (re-)used for sending multiple messages.</p>
@@ -432,7 +424,7 @@ adapter&rsquo;s <em>HONO_AMQP_AUTHENTICATION_REQUIRED</em> configuration propert
 <p>The Hono Sandbox does not support connections from unauthenticated devices. However, if it did, the command for
 publishing some JSON data on behalf of device <code>4711</code> of tenant <code>DEFAULT_TENANT</code> would look like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt telemetry --tenant DEFAULT_TENANT --device <span style="color:#ae81ff">4711</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox telemetry --tenant DEFAULT_TENANT --device <span style="color:#ae81ff">4711</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -496,7 +488,7 @@ failed for the tenant that the client belongs to.</li>
 <p>A gateway connecting to the adapter using <code>gw@DEFAULT_TENANT</code> as username and <code>gw-secret</code> as password and then publishing
 some JSON data on behalf of device <code>4712</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt -u gw@DEFAULT_TENANT -p gw-secret telemetry --device <span style="color:#ae81ff">4712</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox -u gw@DEFAULT_TENANT -p gw-secret telemetry --device <span style="color:#ae81ff">4712</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -558,7 +550,7 @@ configured to require devices to authenticate (which is the default).</p>
 <p><strong>Example</strong></p>
 <p>Publish a JSON string for the authenticated device (<code>4711</code>):</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt event --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox event --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
 </span></span></code></pre></div><h2 id="publish-an-event-unauthenticated-device">Publish an Event (unauthenticated Device)</h2>
 <ul>
 <li>Authentication: SASL PLAIN or SASL EXTERNAL</li>
@@ -608,7 +600,7 @@ adapter&rsquo;s <em>HONO_AMQP_AUTHENTICATION_REQUIRED</em> configuration propert
 <p>The Hono Sandbox does not support connections from unauthenticated devices. However, if it did, the command for
 publishing some JSON data on behalf of device <code>4711</code> of tenant <code>DEFAULT_TENANT</code> would look like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt event --tenant DEFAULT_TENANT --device <span style="color:#ae81ff">4711</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox event --tenant DEFAULT_TENANT --device <span style="color:#ae81ff">4711</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -666,7 +658,7 @@ failed for the tenant that the client belongs to.</li>
 <p>A gateway connecting to the adapter using <code>gw@DEFAULT_TENANT</code> as username and <code>gw-secret</code> as password and then publishing
 some JSON data on behalf of device <code>4712</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt -u gw@DEFAULT_TENANT -p gw-secret event --device <span style="color:#ae81ff">4712</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox -u gw@DEFAULT_TENANT -p gw-secret event --device <span style="color:#ae81ff">4712</span> --payload <span style="color:#e6db74">&#39;{&#34;foo&#34;: &#34;bar&#34;}&#39;</span> --content-type application/json
 </span></span></code></pre></div>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
@@ -829,7 +821,7 @@ failed for the tenant that the client belongs to.</li>
 application.</p>
 <p>Start the client in interactive mode:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt 
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp -H hono.eclipseprojects.io -P <span style="color:#ae81ff">5672</span> -u sensor1@DEFAULT_TENANT -p hono-secret
 </span></span><span style="display:flex;"><span>hono-cli/amqp-device&gt;
 </span></span></code></pre></div>
 <div class="box notices cstyle tip">
@@ -867,12 +859,12 @@ one of the devices that it may act on behalf of.</p>
 can also be used to simulate a business application. For that purpose, open another terminal and run the following
 command to send a request-response command to device <code>4711</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt command req -d <span style="color:#ae81ff">4711</span> -n setColor --payload <span style="color:#e6db74">&#39;{&#34;r&#34;: 128,&#34;g&#34;: 100,&#34;b&#34;: 50}&#39;</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox --amqp command req -d <span style="color:#ae81ff">4711</span> -n setColor --payload <span style="color:#e6db74">&#39;{&#34;r&#34;: 128,&#34;g&#34;: 100,&#34;b&#34;: 50}&#39;</span>
 </span></span></code></pre></div><p>This will result in the device&rsquo;s response being printed to the console:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>res 4711 204 text/plain automatic response to [setColor] command
 </span></span></code></pre></div><p>It is also possible to send a one-way command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox --ca-file /etc/ssl/certs/ca-certificates.crt command ow -d <span style="color:#ae81ff">4711</span> -n setVolume --payload <span style="color:#e6db74">&#39;{&#34;level&#34;: 50}&#39;</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox --amqp command ow -d <span style="color:#ae81ff">4711</span> -n setVolume --payload <span style="color:#e6db74">&#39;{&#34;level&#34;: 50}&#39;</span>
 </span></span></code></pre></div><h2 id="downstream-meta-data">Downstream Meta Data</h2>
 <p>The adapter includes the following meta data in messages being sent downstream:</p>
 <table>
@@ -961,12 +953,12 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1699236605"></script>
-        <script src="/hono/docs/js/lunr.min.js?1699236605"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1699236605"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1699236605"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1699236605"></script>
-        <script src="/hono/docs/js/search.js?1699236605"></script>
+        <script src="/hono/docs/js/auto-complete.js?1699292501"></script>
+        <script src="/hono/docs/js/lunr.min.js?1699292501"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1699292501"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1699292501"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1699292501"></script>
+        <script src="/hono/docs/js/search.js?1699292501"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1096,10 +1088,10 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1699236605"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1699236605"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1699236605"></script>
-    <script src="/hono/docs/js/theme.js?1699236605"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1699292501"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1699292501"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1699292501"></script>
+    <script src="/hono/docs/js/theme.js?1699292501"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
