@@ -9,17 +9,17 @@
     <meta name="author" content="The Eclipse Hono Project">
     <title>Getting started with Eclipse Hono :: Eclipse Hono&trade; Vers.: dev</title>
     <link rel="alternate" type="application/rss&#43;xml" href="/hono/docs/dev/getting-started/index.xml" title="Eclipse Hono&trade; Vers.: dev" />
-    <link href="/hono/docs/images/favicon.ico?1699841465" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1699841465" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1699841465" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1699841465" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1699927908" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1699927908" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1699927908" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1699927908" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -30,7 +30,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1699841465"></script>
+    <script src="/hono/docs/js/variant.js?1699927908"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -46,7 +46,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1699841465"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1699927908"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -216,7 +216,7 @@ tab below that matches your chosen type of messaging infrastructure and follow t
   </div>
   <div class="tab-content">
     <div data-tab-item="Sandbox" data-tab-group="hono-instance" class="tab-item active">
-<p>Hono consists of a set of micro services which are deployed as Docker containers. The diagram below provides
+<p>Hono consists of a set of microservices which are deployed as Docker containers. The diagram below provides
 an overview of the containers that are part of the Hono Sandbox deployment.</p>
 <figure><img src="Hono_instance_kafka.svg"
          alt="The Docker containers representing the services of the example Hono Sandbox deployment using Kafka based messaging infrastructure"/><figcaption>
@@ -245,7 +245,7 @@ events from devices and to send Command &amp; Control messages to devices.</li>
 <li>Monitoring Infrastructure
 <ul>
 <li>A <em>Prometheus</em> instance for storing metrics data from services and protocol adapters.</li>
-<li>A <em>Grafana</em> instance providing a dash board visualizing the collected metrics data.</li>
+<li>A <em>Grafana</em> instance providing a dashboard visualizing the collected metrics data.</li>
 </ul>
 </li>
 </ul>
@@ -284,7 +284,7 @@ for setting up a local single-node Minikube cluster.</li>
 <li>Follow the instructions given in the <a href="https://github.com/eclipse/packages/blob/master/charts/hono/README.md">README</a>
 of Hono&rsquo;s Helm chart in order to install Hono with a single-node Kafka instance to your local Minikube cluster.</li>
 </ol>
-<p>Hono consists of a set of micro services which are deployed as Docker containers. The diagram below provides an overview
+<p>Hono consists of a set of microservices which are deployed as Docker containers. The diagram below provides an overview
 of the containers that are part of the example deployment of Hono on the local Minikube cluster.</p>
 <figure><img src="Hono_instance_kafka.svg"
          alt="The Docker containers representing the services of the example Hono deployment using Kafka based messaging infrastructure"/><figcaption>
@@ -313,7 +313,7 @@ events from devices and to send Command &amp; Control messages to devices.</li>
 <li>Monitoring Infrastructure
 <ul>
 <li>A <em>Prometheus</em> instance for storing metrics data from services and protocol adapters.</li>
-<li>A <em>Grafana</em> instance providing a dash board visualizing the collected metrics data.</li>
+<li>A <em>Grafana</em> instance providing a dashboard visualizing the collected metrics data.</li>
 </ul>
 </li>
 </ul>
@@ -327,18 +327,18 @@ be used during the remainder of this guide to set and refresh some environment v
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MQTT_ADAPTER_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-mqtt --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; hono.env
 </span></span><span style="display:flex;"><span>KAFKA_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-kafka-0-external --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>TRUSTSTORE_PATH<span style="color:#f92672">=</span>/tmp/truststore.pem
-</span></span><span style="display:flex;"><span>kubectl get secrets eclipse-hono-kafka-example-keys --template<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{index .data \&#34;ca.crt\&#34; | base64decode}}&#34;</span> -n hono &gt; <span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>kubectl get configmaps eclipse-hono-example-trust-store --template<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{index .data \&#34;ca.crt\&#34;}}&#34;</span> -n hono &gt; <span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export APP_OPTIONS=&#39;-H </span><span style="color:#e6db74">${</span>KAFKA_IP<span style="color:#e6db74">}</span><span style="color:#e6db74"> -P 9094 -u hono -p hono-secret --ca-file </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74"> --disable-hostname-verification&#39;&#34;</span> &gt;&gt; hono.env
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export CURL_OPTIONS=&#39;--cacert </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span> &gt;&gt; hono.env
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MOSQUITTO_OPTIONS=&#39;--cafile </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span> &gt;&gt; hono.env
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export CURL_OPTIONS=&#39;--insecure&#39;&#34;</span> &gt;&gt; hono.env
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MOSQUITTO_OPTIONS=&#39;--cafile </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74"> --insecure&#39;&#34;</span> &gt;&gt; hono.env
 </span></span></code></pre></div><p>Verify that the <code>hono.env</code> file has been created in your current working directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat hono.env
 </span></span></code></pre></div><pre tabindex="0"><code>export REGISTRY_IP=(host name/IP address)
 export HTTP_ADAPTER_IP=(host name/IP address)
 export MQTT_ADAPTER_IP=(host name/IP address)
 export APP_OPTIONS=&#39;-H (host name/IP address) -P 9094 -u hono -p hono-secret --ca-file /tmp/truststore.pem --disable-hostname-verification&#39;
-export CURL_OPTIONS=&#39;--cacert /tmp/truststore.pem&#39;
-export MOSQUITTO_OPTIONS=&#39;--cafile /tmp/truststore.pem&#39;
+export CURL_OPTIONS=&#39;--insecure&#39;
+export MOSQUITTO_OPTIONS=&#39;--cafile /tmp/truststore.pem --insecure&#39;
 </code></pre>
     </div>
     <div data-tab-item="Local Instance using AMQP 1.0" data-tab-group="hono-instance" class="tab-item ">
@@ -353,7 +353,7 @@ for setting up a local single-node Minikube cluster.</li>
 of Hono&rsquo;s Helm chart in order to install Hono with a single-node Qpid Dispatch Router instance to your local Minikube
 cluster.</li>
 </ol>
-<p>Hono consists of a set of micro services which are deployed as Docker containers. The diagram below provides an overview
+<p>Hono consists of a set of microservices which are deployed as Docker containers. The diagram below provides an overview
 of the containers that are part of the example deployment of Hono on the local Minikube cluster.</p>
 <figure><img src="Hono_instance_amqp.svg"
          alt="The Docker containers representing the services of the example Hono deployment using AMQP 1.0 based messaging infrastructure"/><figcaption>
@@ -382,7 +382,7 @@ data and events from devices and to send Command &amp; Control messages to devic
 <li>Monitoring Infrastructure
 <ul>
 <li>A <em>Prometheus</em> instance for storing metrics data from services and protocol adapters.</li>
-<li>A <em>Grafana</em> instance providing a dash board visualizing the collected metrics data.</li>
+<li>A <em>Grafana</em> instance providing a dashboard visualizing the collected metrics data.</li>
 </ul>
 </li>
 </ul>
@@ -394,21 +394,20 @@ be used during the remainder of this guide to set and refresh some environment v
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export REGISTRY_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-service-device-registry-ext --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt; hono.env
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export HTTP_ADAPTER_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-http --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; hono.env
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MQTT_ADAPTER_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-mqtt --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; hono.env
-</span></span><span style="display:flex;"><span>KAFKA_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-kafka-0-external --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
 </span></span><span style="display:flex;"><span>TRUSTSTORE_PATH<span style="color:#f92672">=</span>/tmp/truststore.pem
-</span></span><span style="display:flex;"><span>kubectl get secrets eclipse-hono-dispatch-router-example-keys --template<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{index .data \&#34;ca.crt\&#34; | base64decode}}&#34;</span> -n hono &gt; <span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>kubectl get configmaps eclipse-hono-example-trust-store --template<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{index .data \&#34;ca.crt\&#34;}}&#34;</span> -n hono &gt; <span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span>AMQP_NETWORK_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-dispatch-router-ext --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export APP_OPTIONS=&#39;--amqp -H </span><span style="color:#e6db74">${</span>AMQP_NETWORK_IP<span style="color:#e6db74">}</span><span style="color:#e6db74"> -P 15671 -u consumer@HONO -p verysecret --ca-file </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; --disable-hostname-verification&#34;</span> &gt;&gt; hono.env
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export CURL_OPTIONS=&#39;--cacert </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span> &gt;&gt; hono.env
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MOSQUITTO_OPTIONS=&#39;--cafile </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span> &gt;&gt; hono.env
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export APP_OPTIONS=&#39;--amqp -H </span><span style="color:#e6db74">${</span>AMQP_NETWORK_IP<span style="color:#e6db74">}</span><span style="color:#e6db74"> -P 15671 -u consumer@HONO -p verysecret --ca-file </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74"> --disable-hostname-verification&#39;&#34;</span> &gt;&gt; hono.env
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export CURL_OPTIONS=&#39;--insecure&#39;&#34;</span> &gt;&gt; hono.env
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MOSQUITTO_OPTIONS=&#39;--cafile </span><span style="color:#e6db74">${</span>TRUSTSTORE_PATH<span style="color:#e6db74">}</span><span style="color:#e6db74"> --insecure&#39;&#34;</span> &gt;&gt; hono.env
 </span></span></code></pre></div><p>Verify that the <code>hono.env</code> file has been created in your current working directory:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat hono.env
 </span></span></code></pre></div><pre tabindex="0"><code>export REGISTRY_IP=(host name/IP address)
 export HTTP_ADAPTER_IP=(host name/IP address)
 export MQTT_ADAPTER_IP=(host name/IP address)
 export APP_OPTIONS=&#39;--amqp -H (host name/IP address) -P 15671 -u consumer@HONO -p verysecret --ca-file /tmp/truststore.pem --disable-hostname-verification&#39;
-export CURL_OPTIONS=&#39;--cacert /tmp/truststore.pem&#39;
-export MOSQUITTO_OPTIONS=&#39;--cafile /tmp/truststore.pem&#39;
+export CURL_OPTIONS=&#39;--insecure&#39;
+export MOSQUITTO_OPTIONS=&#39;--cafile /tmp/truststore.pem --insecure&#39;
 </code></pre>
     </div>
   </div>
@@ -631,12 +630,12 @@ explain this in more detail.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1699841465"></script>
-        <script src="/hono/docs/js/lunr.min.js?1699841465"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1699841465"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1699841465"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1699841465"></script>
-        <script src="/hono/docs/js/search.js?1699841465"></script>
+        <script src="/hono/docs/js/auto-complete.js?1699927908"></script>
+        <script src="/hono/docs/js/lunr.min.js?1699927908"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1699927908"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1699927908"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1699927908"></script>
+        <script src="/hono/docs/js/search.js?1699927908"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -767,10 +766,10 @@ explain this in more detail.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1699841465"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1699841465"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1699841465"></script>
-    <script src="/hono/docs/js/theme.js?1699841465"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1699927908"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1699927908"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1699927908"></script>
+    <script src="/hono/docs/js/theme.js?1699927908"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
