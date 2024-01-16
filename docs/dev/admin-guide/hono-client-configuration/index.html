@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Hono Client Configuration :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1705284648" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1705284648" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1705284648" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1705284648" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1705371069" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1705371069" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1705371069" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1705371069" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1705284648"></script>
+    <script src="/hono/docs/js/variant.js?1705371069"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1705284648"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1705371069"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -328,6 +328,12 @@ property prefix <code>hono.credentials</code>.</p>
 <td style="text-align:left">The password required to read the contents of the trust store. If the value starts with <code>file:</code> then the string after the prefix is interpreted as the path to a file to read the password from.</td>
 </tr>
 <tr>
+<td style="text-align:left"><code>${PREFIX}_USELEGACYTRACECONTEXTFORMAT</code><br><code>${prefix}.useLegacyTraceContextFormat</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>true</code></td>
+<td style="text-align:left">This flag determines where OpenTelemetry trace context information will be stored in an AMQP 1.0 message sent via the client. If set to <code>true</code>, the legacy format will be used, writing trace context information as <code>traceparent</code> and <code>tracestate</code> properties in an <code>x-opt-trace-context</code> map in the message-annotations of the message. <br/>When set to <code>false</code>, the tracing properties will be written to the application properties of the message instead.  The latter is a more generic approach, adhering to the <a href="https://w3c.github.io/trace-context-amqp/">Trace Context: AMQP protocol</a> specification draft and being compatible with Eclipse Ditto, for example. It will be the default in Hono 3.0.</td>
+</tr>
+<tr>
 <td style="text-align:left"><code>${PREFIX}_USERNAME</code><br><code>${prefix}.username</code></td>
 <td style="text-align:center">no</td>
 <td style="text-align:left">-</td>
@@ -462,12 +468,12 @@ syntax. The pattern should match the address or otherwise the original address w
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1705284648"></script>
-        <script src="/hono/docs/js/lunr.min.js?1705284648"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1705284648"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1705284648"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1705284648"></script>
-        <script src="/hono/docs/js/search.js?1705284648"></script>
+        <script src="/hono/docs/js/auto-complete.js?1705371069"></script>
+        <script src="/hono/docs/js/lunr.min.js?1705371069"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1705371069"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1705371069"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1705371069"></script>
+        <script src="/hono/docs/js/search.js?1705371069"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -598,10 +604,10 @@ syntax. The pattern should match the address or otherwise the original address w
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1705284649"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1705284649"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1705284649"></script>
-    <script src="/hono/docs/js/theme.js?1705284649"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1705371069"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1705371069"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1705371069"></script>
+    <script src="/hono/docs/js/theme.js?1705371069"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

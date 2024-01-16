@@ -82,7 +82,7 @@ for upcoming Hono versions.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hono/release-notes/</guid>
-      <description>2.5.0 (not released yet) Fixes &amp;amp; Enhancements When running in a Kubernetes cluster with nodes using cgroups v2, the &amp;lsquo;hono.command_internal.*&amp;rsquo; Kafka topics were not being cleaned up. This has been fixed. Note that the solution requires the Hono protocol adapter pods to have a service account with an assigned RBAC role that allows to perform &amp;ldquo;get&amp;rdquo; on the &amp;ldquo;pods&amp;rdquo; resource. When using Pub/Sub messaging, there were potentially issues concerning the AMQP connection between protocol adapter and command router, leading for example to timeouts when MQTT devices subscribed/unsubscribed to the command topic.</description>
+      <description>2.5.0 (not released yet) Fixes &amp;amp; Enhancements When running in a Kubernetes cluster with nodes using cgroups v2, the hono.command_internal.* Kafka topics were not being cleaned up. This has been fixed. Note that the solution requires the Hono protocol adapter pods to have a service account with an assigned RBAC role that allows to perform get on the pods resource. When using Pub/Sub messaging, there were potentially issues concerning the AMQP connection between protocol adapter and command router, leading for example to timeouts when MQTT devices subscribed/unsubscribed to the command topic.</description>
     </item>
     
   </channel>
