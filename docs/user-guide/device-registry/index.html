@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Device Registry :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1705457447" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1705457447" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1705457447" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1705543857" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1705543857" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1705543857" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1705457447"></script>
+    <script src="/hono/docs/js/variant.js?1705543857"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1705457447"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1705543857"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -156,11 +156,11 @@ to the registry&rsquo;s corresponding Admin Guide.</p>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
     <div class="box-content">
-<p>The JDBC based registry implementation does not support the following features:</p>
+<p>The JDBC based registry implementation currently has the following limitations:</p>
 <ul>
 <li>Tenants can be retrieved using the <a href="/hono/docs/api/management/#tenants/searchTenants">search tenants</a>
-operation defined by the Device Registry Management API, but the <em>sortJson</em> query parameter is
-(currently) being ignored. The result set will always be sorted by the tenant Id in ascending order.</li>
+operation defined by the Device Registry Management API, but the <em>filterJson</em> and <em>sortJson</em> query parameters are
+(currently) being ignored. The result set will always be sorted by the tenant ID in ascending order.</li>
 <li>The <em>alias</em> and <em>trust-anchor-group</em> properties defined on a tenant are being ignored by the registry. Consequently,
 multiple tenants can not be configured to use the same trust anchor(s).</li>
 </ul>
@@ -222,13 +222,13 @@ is used as the limit.</li>
 <div class="box notices cstyle info">
     <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
     <div class="box-content">
-<p>The JDBC based registry implementation does not support the following features:</p>
+<p>The JDBC based registry implementation currently has the following limitations:</p>
 <ul>
 <li>Registration information can be retrieved using the
 <a href="/hono/docs/api/management/#devices/searchDevicesForTenant">search devices</a> operation defined by the Device
-Registry Management API. The  <em>filterJson</em> query parameter currently only allows one filter expression per request,
+Registry Management API. The <em>filterJson</em> query parameter currently only allows one filter expression per request,
 the <em>sortJson</em> query parameter is (currently) being ignored.
-The result set will always be sorted by the device Id in ascending order.</li>
+The result set will always be sorted by the device ID in ascending order.</li>
 </ul>
     </div>
 </div>
@@ -257,12 +257,12 @@ The result set will always be sorted by the device Id in ascending order.</li>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.min.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1705457448"></script>
-        <script src="/hono/docs/js/search.js?1705457448"></script>
+        <script src="/hono/docs/js/auto-complete.js?1705543857"></script>
+        <script src="/hono/docs/js/lunr.min.js?1705543857"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1705543857"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1705543857"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1705543857"></script>
+        <script src="/hono/docs/js/search.js?1705543857"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -349,7 +349,8 @@ The result set will always be sorted by the device Id in ascending order.</li>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/user-guide/device-registry/" selected>stable (2.4)</option>
+                    <option id="stable" value="/hono/docs/user-guide/device-registry/" selected>stable (2.5)</option>
+                    <option id="2.5" value="/hono/docs/2.5/user-guide/device-registry/">2.5</option>
                     <option id="2.4" value="/hono/docs/2.4/user-guide/device-registry/">2.4</option>
                     <option id="2.3" value="/hono/docs/2.3/user-guide/device-registry/">2.3</option>
                     <option id="2.2" value="/hono/docs/2.2/user-guide/device-registry/">2.2</option>
@@ -393,10 +394,10 @@ The result set will always be sorted by the device Id in ascending order.</li>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1705457448"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1705457448"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1705457448"></script>
-    <script src="/hono/docs/js/theme.js?1705457448"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1705543858"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1705543858"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1705543858"></script>
+    <script src="/hono/docs/js/theme.js?1705543858"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

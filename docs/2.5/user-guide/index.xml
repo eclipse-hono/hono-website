@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User Guide on Eclipse Hono&amp;trade; Vers.: 2.5</title>
+    <link>https://www.eclipse.org/hono/docs/2.5/user-guide/</link>
+    <description>Recent content in User Guide on Eclipse Hono&amp;trade; Vers.: 2.5</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/2.5/user-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Device Registry</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/device-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/device-registry/</guid>
+      <description>&lt;p&gt;The Device Registry component provides implementations of Hono&amp;rsquo;s &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/tenant/&#34;&gt;Tenant API&lt;/a&gt;,
+&lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/device-registration/&#34;&gt;Device Registration API&lt;/a&gt; and &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/credentials/&#34;&gt;Credentials API&lt;/a&gt;.
+Protocol adapters use these AMQP 1.0 based APIs to determine a device&amp;rsquo;s registration status during runtime. For example,
+when a device tries to connect to a protocol adapter, the adapter uses information retrieved from the device registry
+to check if the device is &lt;em&gt;enabled&lt;/em&gt;, whether the tenant that it belongs to requires devices to authenticate before
+accepting any data from it and if so, for verifying the device&amp;rsquo;s credentials.&lt;/p&gt;
+&lt;p&gt;In addition to the above APIs, the Device Registry also exposes HTTP endpoints for managing the content of the registry
+according to the &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/management/&#34;&gt;Device Registry Management API&lt;/a&gt;. This API is used by administrators
+to create and configure tenants and provision devices into the system. Without these steps, no devices can connect to
+any of Hono&amp;rsquo;s protocol adapters. The &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/concepts/device-provisioning/&#34;&gt;Device Provisioning concept page&lt;/a&gt; describes
+the steps necessary to manually provision a device and also provides information about how devices can be provisioned
+automatically based on X.509 client certificates.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HTTP Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/http-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/http-adapter/</guid>
+      <description>&lt;p&gt;The HTTP protocol adapter exposes HTTP based endpoints for Eclipse Hono™&amp;rsquo;s south bound Telemetry, Event and
+Command &amp;amp; Control APIs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MQTT Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/mqtt-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/mqtt-adapter/</guid>
+      <description>&lt;p&gt;The MQTT protocol adapter exposes an MQTT topic hierarchy for publishing telemetry data and events to downstream
+consumers and for receiving commands from applications and sending back responses.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AMQP Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/amqp-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/amqp-adapter/</guid>
+      <description>&lt;p&gt;The AMQP protocol adapter allows clients (devices or gateway components) supporting the AMQP 1.0 protocol to publish
+messages to Eclipse Hono™&amp;rsquo;s Telemetry, Event and Command &amp;amp; Control endpoints.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CoAP Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/coap-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/coap-adapter/</guid>
+      <description>&lt;p&gt;The CoAP protocol adapter exposes &lt;a href=&#34;https://tools.ietf.org/html/rfc7252&#34;&gt;CoAP&lt;/a&gt; based endpoints for Eclipse Hono™&amp;rsquo;s
+south bound Telemetry, Event and Command &amp;amp; Control APIs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sigfox Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/sigfox-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/sigfox-adapter/</guid>
+      <description>&lt;p&gt;The Sigfox protocol adapter exposes an HTTP endpoint for connecting up with
+the Sigfox backend for publishing telemetry, events and use command &amp;amp; control.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>File Based Device Registry</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/file-based-device-registry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/file-based-device-registry/</guid>
+      <description>&lt;p&gt;The Device Registry component provides exemplary implementations of Hono&amp;rsquo;s &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/tenant/&#34;&gt;Tenant API&lt;/a&gt;,
+&lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/device-registration/&#34;&gt;Device Registration API&lt;/a&gt; and &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/2.5/api/credentials/&#34;&gt;Credentials API&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Kura Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/2.5/user-guide/kura-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/2.5/user-guide/kura-adapter/</guid>
+      <description>&lt;p&gt;The Kura protocol adapter exposes an MQTT topic hierarchy allowing Eclipse Kura™ based gateways to publish
+&lt;em&gt;control&lt;/em&gt; and &lt;em&gt;data&lt;/em&gt; messages to Eclipse Hono™&amp;rsquo;s Telemetry and Event endpoints.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

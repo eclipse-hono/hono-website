@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1705457441" rel="stylesheet">
+<link href="/hono/css/custom.css?1705543852" rel="stylesheet">
 
 
 
@@ -255,7 +255,20 @@
                     <div class="col-md-12">
 
                         <div>
-                          <h2 id="250-not-released-yet">2.5.0 (not released yet)</h2>
+                          <h2 id="250">2.5.0</h2>
+<h3 id="new-features">New Features</h3>
+<ul>
+<li>A more generic format for storing the OpenTelemetry trace context information in an AMQP 1.0 message can now be
+configured, writing the corresponding properties in the message application properties. This is for example relevant
+when using AMQP 1.0 messaging in connection with Eclipse Ditto, resulting in combined traces of Hono and Ditto.
+Please refer to the <code>${prefix}.useLegacyTraceContextFormat</code> connection property documentation in the
+<a href="https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/#connection-properties">Hono Client Configuration Guide</a>
+for additional information.</li>
+<li>The JDBC based Device Registry implementation now has limited support for filter criteria when searching devices.
+Please refer to the Device Registry User Guide for details.</li>
+<li>The Device Registry Management API&rsquo;s <em>search Devices</em> operation now supports restricting the result set to gateway or
+edge devices only using the newly added <code>isGateway</code> query parameter.</li>
+</ul>
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
 <li>When running in a Kubernetes cluster with nodes using cgroups v2, the <code>hono.command_internal.*</code> Kafka topics were not
@@ -269,16 +282,7 @@ instance and thus simplifies test setup and configuration.</li>
 <li>The command line client was still trying to connect to the insecure ports of the Sandbox. This has been changed so that
 the client now uses the TLS endpoints and requires the user to specify a trust store for validating the server certificate.</li>
 <li>All components now use Quarkus 3.2.9.Final.</li>
-<li>A more generic format for storing the OpenTelemetry trace context information in an AMQP 1.0 message can now be
-configured, writing the corresponding properties in the message application properties. This is for example relevant
-when using AMQP 1.0 messaging in connection with Eclipse Ditto, resulting in combined traces of Hono and Ditto.
-Please refer to the <code>${prefix}.useLegacyTraceContextFormat</code> connection property documentation in the
-<a href="https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/#connection-properties">Hono Client Configuration Guide</a>
-for additional information.</li>
-<li>The JDBC based Device Registry implementation now has limited support for filter criteria when searching devices.
-Please refer to the Device Registry User Guide for details.</li>
-<li>The Device Registry Management API&rsquo;s <em>search Devices</em> operation now supports restricting the result set to gateway or
-edge devices only using the newly added <code>isGateway</code> query parameter.</li>
+<li>The CoAP adapter now uses Californium 3.10.0.</li>
 </ul>
 <h3 id="deprecations">Deprecations</h3>
 <ul>
@@ -303,7 +307,7 @@ This has been fixed.</li>
 the client now uses the TLS endpoints and requires the user to specify a trust store for validating the server certificate.</li>
 </ul>
 <h2 id="240">2.4.0</h2>
-<h3 id="new-features">New features</h3>
+<h3 id="new-features-1">New features</h3>
 <ul>
 <li>Hono now supports using Google Pub/Sub as the messaging infrastructure. The Admin Guide and the API documentation have
 been amended with corresponding information on how to configure Hono and applications for using Pub/Sub.</li>
@@ -346,7 +350,7 @@ using a PEM file.</li>
 <li>The demo keys and certificates that come with Hono for testing purposes had expired and have been recreated.</li>
 </ul>
 <h2 id="230">2.3.0</h2>
-<h3 id="new-features-1">New features</h3>
+<h3 id="new-features-2">New features</h3>
 <ul>
 <li>Hono services and adapters could be started locally (not in containers) for development/test purposes.</li>
 <li>The MQTT adapter now has experimental support for authenticating devices using the JWT based authentication scheme
@@ -366,7 +370,7 @@ devices, that the gateway acts on behalf of.</li>
 registered upper case and hex encoded.</li>
 </ul>
 <h2 id="220">2.2.0</h2>
-<h3 id="new-features-2">New features</h3>
+<h3 id="new-features-3">New features</h3>
 <ul>
 <li>All Hono components now support reading ECC based keys from PEM files that contain the Base64
 encoded DER-encoding of an ECPrivateKey as described in
@@ -399,7 +403,7 @@ based messaging infrastructure is being used.</li>
 <li>The Mongo DB based device registry is now continuously tested to work with Mongo DB 5.0.</li>
 </ul>
 <h2 id="210">2.1.0</h2>
-<h3 id="new-features-3">New features</h3>
+<h3 id="new-features-4">New features</h3>
 <ul>
 <li>The tracing configuration has been extended to now also support a rate-limiting sampler. See the
 <a href="https://www.eclipse.org/hono/docs/admin-guide/monitoring-tracing-config/#tracing">Monitoring &amp; Tracing guide</a> for details.</li>
@@ -480,7 +484,7 @@ adds additional precautions within JJWT in case an application team is not able 
 This has been fixed.</li>
 </ul>
 <h2 id="200">2.0.0</h2>
-<h3 id="new-features-4">New features</h3>
+<h3 id="new-features-5">New features</h3>
 <ul>
 <li>The HTTP protocol adapter now allows authenticated gateway devices to omit the tenant ID from the URI of requests
 used to upload telemetry, event or command response messages.</li>
@@ -656,7 +660,7 @@ guide. This has been fixed.</li>
 didn&rsquo;t support using property names in camel-case. This has been fixed.</li>
 </ul>
 <h2 id="1120">1.12.0</h2>
-<h3 id="new-features-5">New Features</h3>
+<h3 id="new-features-6">New Features</h3>
 <ul>
 <li>The Mongo DB based device registry now supports multiple tenants to use the same trust anchors for authenticating
 devices based on client certificates. The devices belonging to such tenants need to indicate the tenant identifier
@@ -712,7 +716,7 @@ This has been fixed.</li>
 infrastructure. This has been fixed.</li>
 </ul>
 <h2 id="1110">1.11.0</h2>
-<h3 id="new-features-6">New Features</h3>
+<h3 id="new-features-7">New Features</h3>
 <ul>
 <li>The Authentication Server now also reports the <code>hono.connections.attempts</code> metric which counts the number of authentication
 attempts made by clients.</li>
@@ -809,7 +813,7 @@ SCRAM. This has been fixed.</li>
 <li>The lora adapter supports unconfirmed uplink data for the firefly provider.</li>
 </ul>
 <h2 id="1100">1.10.0</h2>
-<h3 id="new-features-7">New Features</h3>
+<h3 id="new-features-8">New Features</h3>
 <ul>
 <li>The JDBC and Mongo DB based registry implementations now support configuration of a regular expression that should
 be used to validate authentication identifiers (user names) of hashed-password credentials. Please refer to the
@@ -866,7 +870,7 @@ in the Device Registry Management API. This has been fixed.</li>
 set of trusted CAs. This has been fixed.</li>
 </ul>
 <h2 id="190">1.9.0</h2>
-<h3 id="new-features-8">New Features</h3>
+<h3 id="new-features-9">New Features</h3>
 <ul>
 <li>The Mongo DB based registry now supports enforcement of registration limits configured at the tenant level.
 In particular, the maximum number of devices and the maximum number of credentials per device can be set in
@@ -979,7 +983,7 @@ yet. The <code>/devices</code> resources have been added to the scope of the fea
 accordingly.</li>
 </ul>
 <h2 id="180">1.8.0</h2>
-<h3 id="new-features-9">New Features</h3>
+<h3 id="new-features-10">New Features</h3>
 <ul>
 <li>The CoAP adapter now supports authentication of client certificates using ECDSA based cipher suites.</li>
 <li>The JDBC-based device registry implementation now supports the automatic creation of the database schema, both for
@@ -1075,7 +1079,7 @@ replication factor defined in the broker <code>default.replication.factor</code>
 This has been fixed.</li>
 </ul>
 <h2 id="170">1.7.0</h2>
-<h3 id="new-features-10">New Features</h3>
+<h3 id="new-features-11">New Features</h3>
 <ul>
 <li>Apache Kafka is now supported as a messaging system for command messages.
 This can be enabled by configuring protocol adapters to use Hono&rsquo;s new Kafka-based
@@ -1182,7 +1186,7 @@ commands when using the Command Router service. The problem occurred when a Comm
 restarted while one or more protocol adapters where connected to it. This has been fixed.</li>
 </ul>
 <h2 id="160">1.6.0</h2>
-<h3 id="new-features-11">New Features</h3>
+<h3 id="new-features-12">New Features</h3>
 <ul>
 <li>Apache Kafka is now supported as a messaging system for events and telemetry messages.
 This can be enabled by configuring protocol adapters to use Hono&rsquo;s new Kafka-based
@@ -1278,7 +1282,7 @@ be established quickly enough. This has been fixed by decoupling the creation of
 conditions. This has been fixed.</li>
 </ul>
 <h2 id="150">1.5.0</h2>
-<h3 id="new-features-12">New Features</h3>
+<h3 id="new-features-13">New Features</h3>
 <ul>
 <li>The CoAP adapter has been promoted from <em>experimental</em> to <em>fully supported</em>.</li>
 <li>The Hono Client now supports several configuration properties that can be used
@@ -1399,7 +1403,7 @@ max-message-size. This has been fixed and the adapter now closes the link to the
 implementations now also contains a colon (<code>:</code>) for compatibility with Eclipse Ditto.</li>
 </ul>
 <h2 id="140">1.4.0</h2>
-<h3 id="new-features-13">New Features</h3>
+<h3 id="new-features-14">New Features</h3>
 <ul>
 <li>The protocol adapters now report connection attempts made by devices
 in a new metric. In particular, the metric includes a tag reflecting the outcome
@@ -1468,7 +1472,7 @@ max-message-size. This has been fixed and the adapter now closes the link to the
 implementations now also contains a colon (<code>:</code>) for compatibility with Eclipse Ditto.</li>
 </ul>
 <h2 id="130">1.3.0</h2>
-<h3 id="new-features-14">New Features</h3>
+<h3 id="new-features-15">New Features</h3>
 <ul>
 <li>The LoraWAN protocol adapter has been extended with support for the <em>ChirpStack</em> provider.</li>
 <li>Hono&rsquo;s integration tests can now be run with a Jaeger back end in order to collect tracing
@@ -1621,7 +1625,7 @@ vulnerabilities.</li>
 in response to a request that contains a payload exceeding the configured maximum size.</li>
 </ul>
 <h2 id="120">1.2.0</h2>
-<h3 id="new-features-15">New Features</h3>
+<h3 id="new-features-16">New Features</h3>
 <ul>
 <li>The protocol adapters can now be configured with a direct connection to a data grid
 for storing device connection information.
@@ -1705,7 +1709,7 @@ AMQP adapter set the gateway&rsquo;s ID instead of the device&rsquo;s ID in the 
 to the application. This has been fixed.</li>
 </ul>
 <h2 id="110">1.1.0</h2>
-<h3 id="new-features-16">New Features</h3>
+<h3 id="new-features-17">New Features</h3>
 <ul>
 <li>The Sigfox and LoRaWAN adapters now report metrics analogously to the other protocol
 adapters.</li>
@@ -1820,7 +1824,7 @@ admin guide for details.</li>
 <li>The example deployment using the Helm chart correctly creates the <code>DEFAULT_TENANT</code> again.</li>
 </ul>
 <h2 id="100">1.0.0</h2>
-<h3 id="new-features-17">New Features</h3>
+<h3 id="new-features-18">New Features</h3>
 <ul>
 <li>A tenant can now be configured with a <em>max-ttl</em> which is used as an upper boundary for default
 TTL values configured for devices/tenants. Please refer to the <a href="https://www.eclipse.org/hono/docs/api/tenant#resource-limits-configuration-format">Tenant API</a>
@@ -1889,7 +1893,7 @@ deploy Hono on OpenShift using the Helm charts.</li>
 API and will be removed in the upcoming versions. You should use <code>pwd-plain</code> property only going forward.</li>
 </ul>
 <h2 id="10-m7">1.0-M7</h2>
-<h3 id="new-features-18">New Features</h3>
+<h3 id="new-features-19">New Features</h3>
 <ul>
 <li>The Hono Helm chart now supports to choose if the example Device Registry, example AMQP Messaging Network
 and/or the example Jaeger back end should be deployed and used with the Hono components or not.
@@ -1923,7 +1927,7 @@ should be used.</li>
 However, it can still be deployed by means of <a href="https://www.eclipse.org/hono/docs/deployment/helm-based-deployment/#deploying-optional-adapters">setting a configuration property</a>.</li>
 </ul>
 <h2 id="10-m6">1.0-M6</h2>
-<h3 id="new-features-19">New Features</h3>
+<h3 id="new-features-20">New Features</h3>
 <ul>
 <li>Implementation of the new HTTP management API for tenants, devices and
 credentials.</li>
@@ -2024,7 +2028,7 @@ new management interfaces, and set up the <em>event bus adapters</em> the same w
 <p>The module <code>device-registry-legacy</code> as well as all classes and interfaces,
 which got deprecated, are planned to be dropped in 1.1.</p>
 <h2 id="10-m5">1.0-M5</h2>
-<h3 id="new-features-20">New Features</h3>
+<h3 id="new-features-21">New Features</h3>
 <ul>
 <li>Hono&rsquo;s protocol adapters and the other components now support using ECC based server certificates.
 The protocol adapters also support authenticating devices which present an ECC based client certificate.
@@ -2078,7 +2082,7 @@ methods now require an additional <code>deviceId</code> parameter.</li>
 <li>The deprecated methods of <code>org.eclipse.hono.client.HonoConnection</code> have been removed.</li>
 </ul>
 <h2 id="10-m4">1.0-M4</h2>
-<h3 id="new-features-21">New Features</h3>
+<h3 id="new-features-22">New Features</h3>
 <ul>
 <li>Default properties can now also be set at the tenant level, affecting all devices
 belonging to the tenant. Please refer to the
@@ -2147,7 +2151,7 @@ services again.</li>
 <li>The example deployment now uses Qpid Dispatch Router 1.6.0.</li>
 </ul>
 <h2 id="10-m2">1.0-M2</h2>
-<h3 id="new-features-22">New Features</h3>
+<h3 id="new-features-23">New Features</h3>
 <ul>
 <li>A new <em>experimental</em> LoRa protocol adapter has been added which (so far) supports the reception
 of telemetry data and events from devices connected to LoRa network providers and/or
@@ -2271,7 +2275,7 @@ Client code should use one of the other <em>connect</em> methods instead and reg
 events of the underlying AMQP connection.</li>
 </ul>
 <h2 id="10-m1">1.0-M1</h2>
-<h3 id="new-features-23">New Features</h3>
+<h3 id="new-features-24">New Features</h3>
 <ul>
 <li>The AMQP adapter now supports limiting the number of concurrent connections in order
 to prevent Out of Memory errors. Please refer to
@@ -2288,7 +2292,7 @@ encodings of public keys/certificates included in a request to add a trust ancho
 The <code>CommandConsumer.close()</code> method should be used instead.</li>
 </ul>
 <h2 id="09">0.9</h2>
-<h3 id="new-features-24">New Features</h3>
+<h3 id="new-features-25">New Features</h3>
 <ul>
 <li>The MQTT adapter now supports commands to be published using QoS 1. Please refer to
 <a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/">MQTT adapter User Guide</a> for details.</li>
@@ -2342,7 +2346,7 @@ will be removed in the next version. Custom protocol adapters should use
 <em>sendCommandResponse(CommandResponse, SpanContext)</em> instead.</li>
 </ul>
 <h2 id="09-m2">0.9-M2</h2>
-<h3 id="new-features-25">New Features</h3>
+<h3 id="new-features-26">New Features</h3>
 <ul>
 <li>The MQTT protocol adapter now supports authentication of devices using X.509 client certificates. Please refer to
 the <a href="https://www.eclipse.org/hono/docs/user-guide/mqtt-adapter/">MQTT adapter user guide</a> for details regarding configuration.</li>
@@ -2394,7 +2398,7 @@ The example deployment has not been using Hono Messaging since 0.6 and there is 
 using it anymore.</li>
 </ul>
 <h2 id="09-m1">0.9-M1</h2>
-<h3 id="new-features-26">New Features</h3>
+<h3 id="new-features-27">New Features</h3>
 <ul>
 <li>The default Micrometer back end is now Prometheus, the Grafana dash boards have been updated
 to retrieve data from Prometheus instead of the old InfluxDB.

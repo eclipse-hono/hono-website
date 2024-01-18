@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>AMQP Adapter :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1705457447" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1705457447" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1705457447" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1705457447" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1705543857" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1705543857" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1705543857" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1705543857" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1705457447"></script>
+    <script src="/hono/docs/js/variant.js?1705543857"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1705457447"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1705543857"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -242,8 +242,8 @@ delivery semantics as described in the following sections.</p>
 <p>The AMQP adapter distinguishes between two types of errors when a message is published using <em>AT LEAST ONCE</em> delivery
 semantics:</p>
 <ul>
-<li>An error caused by the client side, e.g invalid message address, content-type, adapter disabled for tenant etc.</li>
-<li>An error caused by the server side, e.g no downstream consumers registered, downstream connection loss etc.</li>
+<li>An error caused by the client side, e.g. invalid message address, content-type, adapter disabled for tenant etc.</li>
+<li>An error caused by the server side, e.g. no downstream consumers registered, downstream connection loss etc.</li>
 </ul>
 <p>For a client side error, the adapter settles the message transfer with the <em>rejected</em> outcome and provides an error
 description in the corresponding disposition frame. In the case of a server-side error, the adapter settles the
@@ -268,6 +268,14 @@ adapter and prompts the user for a command to execute:</p>
 </span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox
 </span></span></code></pre></div><pre tabindex="0"><code>hono-cli/amqp-device&gt;
 </code></pre><p>A list of available commands can be displayed using the <code>help</code> command, <code>exit</code> will close the client.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The example command above uses the default path to a Linux based system&rsquo;s trusted CA certificates.
+The path may need to be adapted when running on a different type of operating system.</p>
+    </div>
+</div>
 <h2 id="publishing-telemetry-data">Publishing Telemetry Data</h2>
 <p>A client device indicates the delivery mode to use when uploading telemetry messages by means of the <em>settled</em> and
 <em>rcv-settle-mode</em> properties of the AMQP <em>transfer</em> frame(s) it uses for uploading a message.
@@ -344,7 +352,7 @@ and tenant during the authentication process.</p>
 <p><strong>Examples</strong></p>
 <p>Start the client in interactive mode:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp -H hono.eclipseprojects.io -P <span style="color:#ae81ff">5672</span> -u sensor1@DEFAULT_TENANT -p hono-secret
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox
 </span></span></code></pre></div><pre tabindex="0"><code>hono-cli/amqp-device&gt;
 </code></pre>
 <div class="box notices cstyle tip">
@@ -815,7 +823,7 @@ failed for the tenant that the client belongs to.</li>
 application.</p>
 <p>Start the client in interactive mode:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp -H hono.eclipseprojects.io -P <span style="color:#ae81ff">5672</span> -u sensor1@DEFAULT_TENANT -p hono-secret
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar amqp --sandbox 
 </span></span><span style="display:flex;"><span>hono-cli/amqp-device&gt;
 </span></span></code></pre></div>
 <div class="box notices cstyle tip">
@@ -853,12 +861,12 @@ one of the devices that it may act on behalf of.</p>
 can also be used to simulate a business application. For that purpose, open another terminal and run the following
 command to send a request-response command to device <code>4711</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox --amqp command req -d <span style="color:#ae81ff">4711</span> -n setColor --payload <span style="color:#e6db74">&#39;{&#34;r&#34;: 128,&#34;g&#34;: 100,&#34;b&#34;: 50}&#39;</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox command req -d <span style="color:#ae81ff">4711</span> -n setColor --payload <span style="color:#e6db74">&#39;{&#34;r&#34;: 128,&#34;g&#34;: 100,&#34;b&#34;: 50}&#39;</span>
 </span></span></code></pre></div><p>This will result in the device&rsquo;s response being printed to the console:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>res 4711 204 text/plain automatic response to [setColor] command
 </span></span></code></pre></div><p>It is also possible to send a one-way command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># in directory: hono/cli/target/</span>
-</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox --amqp command ow -d <span style="color:#ae81ff">4711</span> -n setVolume --payload <span style="color:#e6db74">&#39;{&#34;level&#34;: 50}&#39;</span>
+</span></span><span style="display:flex;"><span>java -jar hono-cli-*-exec.jar app --sandbox command ow -d <span style="color:#ae81ff">4711</span> -n setVolume --payload <span style="color:#e6db74">&#39;{&#34;level&#34;: 50}&#39;</span>
 </span></span></code></pre></div><h2 id="downstream-meta-data">Downstream Meta Data</h2>
 <p>The adapter includes the following meta data in messages being sent downstream:</p>
 <table>
@@ -947,12 +955,12 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.min.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1705457448"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1705457448"></script>
-        <script src="/hono/docs/js/search.js?1705457448"></script>
+        <script src="/hono/docs/js/auto-complete.js?1705543858"></script>
+        <script src="/hono/docs/js/lunr.min.js?1705543858"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1705543858"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1705543858"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1705543858"></script>
+        <script src="/hono/docs/js/search.js?1705543858"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1039,7 +1047,8 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/user-guide/amqp-adapter/" selected>stable (2.4)</option>
+                    <option id="stable" value="/hono/docs/user-guide/amqp-adapter/" selected>stable (2.5)</option>
+                    <option id="2.5" value="/hono/docs/2.5/user-guide/amqp-adapter/">2.5</option>
                     <option id="2.4" value="/hono/docs/2.4/user-guide/amqp-adapter/">2.4</option>
                     <option id="2.3" value="/hono/docs/2.3/user-guide/amqp-adapter/">2.3</option>
                     <option id="2.2" value="/hono/docs/2.2/user-guide/amqp-adapter/">2.2</option>
@@ -1083,10 +1092,10 @@ configuration</em> for adapter type <code>hono-amqp</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1705457448"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1705457448"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1705457448"></script>
-    <script src="/hono/docs/js/theme.js?1705457448"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1705543858"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1705543858"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1705543858"></script>
+    <script src="/hono/docs/js/theme.js?1705543858"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
