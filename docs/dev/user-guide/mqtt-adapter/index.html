@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>MQTT Adapter :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1709346323" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1709346323" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1709346323" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1709346323" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1709863892" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1709863892" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1709863892" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1709863892" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1709346323"></script>
+    <script src="/hono/docs/js/variant.js?1709863892"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1709346323"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1709863892"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -383,7 +383,7 @@ has been defined for the origin device or its tenant (see <a href="#downstream-m
 </li>
 </ul>
 <p>This topic can be used by devices that have not authenticated to the protocol adapter. Note that this requires the
-<code>HONO_MQTT_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<code>HONO_MQTT_AUTHENTICATIONREQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -t t/DEFAULT_TENANT/4711 -m <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span>
@@ -515,7 +515,7 @@ has been defined for the origin device or its tenant (see <a href="#downstream-m
 </li>
 </ul>
 <p>This topic can be used by devices that have not authenticated to the protocol adapter. Note that this requires the
-<code>HONO_MQTT_AUTHENTICATION_REQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
+<code>HONO_MQTT_AUTHENTICATIONREQUIRED</code> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h hono.eclipseprojects.io -t e/DEFAULT_TENANT/4711 -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: 1}&#39;</span>
@@ -1228,12 +1228,12 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1709346324"></script>
-        <script src="/hono/docs/js/lunr.min.js?1709346324"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1709346324"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1709346324"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1709346324"></script>
-        <script src="/hono/docs/js/search.js?1709346324"></script>
+        <script src="/hono/docs/js/auto-complete.js?1709863893"></script>
+        <script src="/hono/docs/js/lunr.min.js?1709863893"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1709863893"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1709863893"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1709863893"></script>
+        <script src="/hono/docs/js/search.js?1709863893"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1365,10 +1365,10 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1709346324"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1709346324"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1709346324"></script>
-    <script src="/hono/docs/js/theme.js?1709346324"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1709863893"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1709863893"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1709863893"></script>
+    <script src="/hono/docs/js/theme.js?1709863893"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

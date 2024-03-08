@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Device Identity :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1709346322" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1709346322" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1709346322" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1709346322" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1709863891" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1709863891" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1709863891" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1709863891" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1709346322"></script>
+    <script src="/hono/docs/js/variant.js?1709863891"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1709346322"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1709863891"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -234,6 +234,25 @@ extension.</p>
 the client certificate&rsquo;s <em>subject DN</em> and invokes the Credentials API&rsquo;s
 <a href="/hono/docs/dev/api/credentials/#get-credentials"><em>get Credentials</em></a> operation in order to retrieve the
 <a href="/hono/docs/dev/api/credentials/#x509-certificate"><em>x509-cert</em> type credentials</a> that are on record for the device.</p>
+<h4 id="certificate-revocation-checking-experimental">Certificate Revocation Checking (experimental)</h4>
+<p>Hono supports <a href="https://www.ietf.org/rfc/rfc2560.txt">OCSP</a> based certificate revocation checking for client certificates
+presented by devices using client certificate based authentication. If this feature is enabled, the protocol adapter
+tries to verify the client certificate&rsquo;s revocation status. The device with revoked or unknown certificate status is not
+allowed to connect to the protocol adapter. The adapter uses the OCSP responder URL that has been configured for the
+tenant or <em>Authority Information Access</em> (AIA) extension in the client certificate to retrieve the OCSP response. The
+response is then used to verify the client certificate&rsquo;s revocation status. Revocation check can be configured using the
+<a href="/hono/docs/api/management/#/tenants">Tenant</a> resource of Device Registry Management API.</p>
+<p>OCSP revocation check is supported for all protocol adapters.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>This feature is experimental and may be subject to change in future releases without further notice. Current
+implementation checks the revocation of end entity certificates only (with CA:FALSE in basic constraints extension). If
+OCSP revocation check is enabled and revocation status cannot be determined, the protocol adapter will reject the
+connection. Hono currently does not cache OCSP responses so frequent connections may cause high load on OCSP responders.</p>
+    </div>
+</div>
 <h3 id="json-web-token-based-authentication">JSON Web Token based Authentication</h3>
 <p>The HTTP and MQTT protocol adapters support authentication of devices with a signed
 <a href="https://www.rfc-editor.org/rfc/rfc7519">JSON Web Token</a> (JWT) based mechanism.
@@ -285,12 +304,12 @@ The key contained in the credentials is then used by the protocol adapter to ver
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1709346322"></script>
-        <script src="/hono/docs/js/lunr.min.js?1709346322"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1709346322"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1709346322"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1709346322"></script>
-        <script src="/hono/docs/js/search.js?1709346322"></script>
+        <script src="/hono/docs/js/auto-complete.js?1709863891"></script>
+        <script src="/hono/docs/js/lunr.min.js?1709863891"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1709863891"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1709863891"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1709863891"></script>
+        <script src="/hono/docs/js/search.js?1709863891"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -422,10 +441,10 @@ The key contained in the credentials is then used by the protocol adapter to ver
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1709346322"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1709346322"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1709346322"></script>
-    <script src="/hono/docs/js/theme.js?1709346322"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1709863891"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1709863891"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1709863891"></script>
+    <script src="/hono/docs/js/theme.js?1709863891"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
