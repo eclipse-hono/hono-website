@@ -82,7 +82,7 @@ for upcoming Hono versions.&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.eclipse.org/hono/release-notes/</guid>
-      <description>2.6.0 (not yet released) Fixes &amp;amp; Enhancements Updated to jjwt 0.12.5 which allowed us to replace a lot of manually crafted code for creating a JWK Set based on vert.x JWK with generic jjwt code. Updated CoAP adapter to use Eclipse Californium 3.11.0. 2.5.1 Fixes &amp;amp; Enhancements Updated Quarkus to 3.2.12 which includes fixes for CVE-2024-2700 CVE-2024-29025 CVE-2023-51775 CVE-2024-29025 Also push JDBC Registry native executable image to Docker Hub. 2.5.0 New Features A more generic format for storing the OpenTelemetry trace context information in an AMQP 1.</description>
+      <description>2.6.0 New Features The protocol adapters now have experimental support for doing OCSP based client certificate revocation checks. Fixes &amp;amp; Enhancements The Command Router code has been split up into a base module and an Infinispan based implementation. This is in preparation of a Redis based implementation which is to be added in one of the upcoming minor versions. Updated to latest Quarkus LTS version (3.8). Updated to jjwt 0.12.5 which allowed us to replace a lot of manually crafted code for creating a JWK Set based on vert.</description>
     </item>
     
   </channel>

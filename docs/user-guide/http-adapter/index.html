@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>HTTP Adapter :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1716858685" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1716858685" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1716858685" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1716858685" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1716958369" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1716958369" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1716958369" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1716958369" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1716958369" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1716958370" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1716958370" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1716958370" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1716958370" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1716958370" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1716958370" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1716858685"></script>
+    <script src="/hono/docs/js/variant.js?1716958370"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1716858685"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1716958370"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -417,7 +417,7 @@ that it may receive further messages (not giving credits).</li>
 </li>
 </ul>
 <p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the
-<em>HONO_HTTP_AUTHENTICATION_REQUIRED</em> configuration property to be explicitly set to <code>false</code>.</p>
+<em>HONO_HTTP_AUTHENTICATIONREQUIRED</em> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;temp&#34;: 5}&#39;</span> http://hono.eclipseprojects.io:8080/telemetry/DEFAULT_TENANT/4711
@@ -712,7 +712,7 @@ tenant connected to Hono, or the consumer didn&rsquo;t process the event.</li>
 </li>
 </ul>
 <p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the
-<em>HONO_HTTP_AUTHENTICATION_REQUIRED</em> configuration property to be explicitly set to <code>false</code>.</p>
+<em>HONO_HTTP_AUTHENTICATIONREQUIRED</em> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Publish some JSON data for device <code>4711</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -i -X PUT -H <span style="color:#e6db74">&#39;content-type: application/json&#39;</span> --data-binary <span style="color:#e6db74">&#39;{&#34;alarm&#34;: true}&#39;</span> http://hono.eclipseprojects.io:8080/event/DEFAULT_TENANT/4711
@@ -1006,7 +1006,7 @@ is exceeded.</li>
 </li>
 </ul>
 <p>This resource MUST be used by devices that have not authenticated to the protocol adapter. Note that this requires the
-<em>HONO_HTTP_AUTHENTICATION_REQUIRED</em> configuration property to be explicitly set to <code>false</code>.</p>
+<em>HONO_HTTP_AUTHENTICATIONREQUIRED</em> configuration property to be explicitly set to <code>false</code>.</p>
 <p><strong>Examples</strong></p>
 <p>Send a response to a previously received command with the command-request-id <code>req-id-uuid</code> for the unauthenticated
 device <code>4711</code>:</p>
@@ -1193,12 +1193,12 @@ The following properties are (currently) supported:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1716858686"></script>
-        <script src="/hono/docs/js/lunr.min.js?1716858686"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1716858686"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1716858686"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1716858686"></script>
-        <script src="/hono/docs/js/search.js?1716858686"></script>
+        <script src="/hono/docs/js/auto-complete.js?1716958370"></script>
+        <script src="/hono/docs/js/lunr.min.js?1716958370"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1716958370"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1716958370"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1716958370"></script>
+        <script src="/hono/docs/js/search.js?1716958370"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1285,7 +1285,8 @@ The following properties are (currently) supported:</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/user-guide/http-adapter/" selected>stable (2.5)</option>
+                    <option id="stable" value="/hono/docs/user-guide/http-adapter/" selected>stable (2.6)</option>
+                    <option id="2.6" value="/hono/docs/2.6/user-guide/http-adapter/">2.6</option>
                     <option id="2.5" value="/hono/docs/2.5/user-guide/http-adapter/">2.5</option>
                     <option id="2.4" value="/hono/docs/2.4/user-guide/http-adapter/">2.4</option>
                     <option id="2.3" value="/hono/docs/2.3/user-guide/http-adapter/">2.3</option>
@@ -1330,10 +1331,10 @@ The following properties are (currently) supported:</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1716858686"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1716858686"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1716858686"></script>
-    <script src="/hono/docs/js/theme.js?1716858686"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1716958370"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1716958370"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1716958370"></script>
+    <script src="/hono/docs/js/theme.js?1716958370"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
