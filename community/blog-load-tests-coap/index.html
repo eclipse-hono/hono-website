@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="robots" content="all,follow">
+<meta name="googlebot" content="index,follow,snippet,archive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hono Load Tests with CoAP devices :: Eclipse Hono&trade;</title>
+<meta name="author" content="The Eclipse Hono Project" />
+
+
+
+
+
+<meta name="description" content="This page is presenting load tests of an Eclipse Hono deployment with simulated CoAP client devices.">
+
+<meta name="generator" content="Hugo 0.102.3" />
+
+
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link href="/hono/css/animate.css" rel="stylesheet">
+
+
+
+  <link href="/hono/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+
+
+<link href="/hono/css/custom.css?1721038335" rel="stylesheet">
+
+
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+<link rel="shortcut icon" href="/hono/img/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/hono/img/apple-touch-icon.png" />
+
+
+<link rel="alternate" href="/hono/index.xml" type="application/rss+xml" title="Eclipse Hono&amp;trade;">
+
+
+
+
+
+
+
+
+<meta property="og:locale" content="en_us">
+<meta property="og:site_name" content="Eclipse Hono&amp;trade;">
+<meta property="og:title" content="Hono Load Tests with CoAP devices">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.eclipse.org/hono/community/blog-load-tests-coap/" />
+<meta property="og:description" content="This page is presenting load tests of an Eclipse Hono deployment with simulated CoAP client devices.">
+<meta property="og:image" content="https://www.eclipse.org/hono/img/sharing-default.png">
+<meta property="og:image:type" content="image/png">
+
+
+
+  <meta property="og:image:width" content="700">
+  <meta property="og:image:height" content="498">
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Hono Load Tests with CoAP devices">
+
+<meta name="twitter:image" content="https://www.eclipse.org/hono/img/sharing-default.png">
+
+<meta name="twitter:description" content="This page is presenting load tests of an Eclipse Hono deployment with simulated CoAP client devices.">
+
+
+    
+  </head>
+
+  <body>
+
+    <div id="all">
+        
+
+
+        <header class="navbar-affixed-top" data-spy="affix" data-offset-top="62">
+    <div class="navbar navbar-default yamm " role="navigation" id="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand home" href="/">
+                    
+                      <img src="/hono/img/HONO-Logo_Bild-Wort_quer-s-310x120px.svg" alt="Hono Load Tests with CoAP devices logo" class="hidden-xs hidden-sm" />
+                      <img src="/hono/img/HONO-Logo_Bild-Wort_quer-s-310x120px.svg" alt="Hono Load Tests with CoAP devices logo" class="visible-xs visible-sm" />
+                    
+                    <span class="sr-only">Hono Load Tests with CoAP devices - go to homepage</span>
+                </a>
+                <div class="navbar-buttons">
+                    <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                      <span class="sr-only">Toggle Navigation</span>
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+            </div>
+            
+
+            <div class="navbar-collapse collapse" id="navigation">
+                <ul class="nav navbar-nav navbar-right">
+                  
+
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/docs/getting-started/">Getting Started</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/docs/">Documentation</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/downloads/">Download</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                  <li class="dropdown ">
+                    <a href="/hono/sandbox/">Sandbox</a>
+                  </li>
+                  
+                  
+                  
+                  
+
+                  
+
+                  
+
+                  
+
+                  
+                    
+                    
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Community <span class="caret"></span></a>
+                        
+                        <ul class="dropdown-menu">
+                            
+                            <li><a href="/hono/community/contributing/">Contributing</a></li>
+                            
+                            <li><a href="/hono/community/presentations/">Resources</a></li>
+                            
+                            <li><a href="/hono/community/get-in-touch/">Get in Touch</a></li>
+                            
+                            <li><a href="/hono/community/road-map/">Road Map</a></li>
+                            
+                            <li><a href="/hono/community/thankyou/">Thank you</a></li>
+                            
+                        </ul>
+                        
+                    </li>
+                  
+                  
+                </ul>
+            </div>
+            
+
+            <div class="collapse clearfix" id="search">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                    <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                </span>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+
+
+
+        <div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Hono Load Tests with CoAP devices</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <div id="content">
+            
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div>
+                          <p>This page is presenting load tests of an Eclipse Hono deployment with simulated CoAP client devices. It shows how the system is configured and what load it could handle.</p>
+<h2 id="components">Components</h2>
+<p>The setup consists of following components.</p>
+<h3 id="kubernetes">Kubernetes</h3>
+<p>The Kubernetes is AWS EKS cluster using 3 x <code>c5a.large machines</code>.</p>
+<h3 id="hono">Hono</h3>
+<p>Hono is deployed using <a href="https://github.com/eclipse/packages/tree/master/charts/hono">Eclipse IoT Packages helm chart</a>, version 2.6.0.</p>
+<p>Specific helm values:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Configuration properties for protocol adapters.</span>
+</span></span><span style="display:flex;"><span>adapters:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># kafkaMessagingSpec contains the configuration used by all protocol</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># adapters for connecting to the Kafka cluster to be used for messaging.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># This property MUST be set if &#34;messagingNetworkTypes&#34; contains &#34;kafka&#34; and</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># &#34;kafkaMessagingClusterExample.enabled&#34; is set to false.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Please refer to https://www.eclipse.org/hono/docs/admin-guide/common-config/#kafka-based-messaging-configuration</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of supported properties.</span>
+</span></span><span style="display:flex;"><span>  kafkaMessagingSpec:
+</span></span><span style="display:flex;"><span>    commonClientConfig:
+</span></span><span style="display:flex;"><span>      bootstrap.servers: <span style="color:#e6db74">&#34;xxx&#34;</span>
+</span></span><span style="display:flex;"><span>      ssl.endpoint.identification.algorithm: https
+</span></span><span style="display:flex;"><span>      security.protocol: SSL
+</span></span><span style="display:flex;"><span>      connections.max.idle.ms: <span style="color:#ae81ff">240000</span>
+</span></span><span style="display:flex;"><span>    command:
+</span></span><span style="display:flex;"><span>      consumerConfig:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;compression.type&#34;</span>: none
+</span></span><span style="display:flex;"><span>    commandInternal:
+</span></span><span style="display:flex;"><span>      adminClientConfig:
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;compression.type&#34;</span>: none
+</span></span><span style="display:flex;"><span>    commandResponse:
+</span></span><span style="display:flex;"><span>      producerConfig:
+</span></span><span style="display:flex;"><span>        acks: all
+</span></span><span style="display:flex;"><span>        delivery.timeout.ms: <span style="color:#ae81ff">5000</span>
+</span></span><span style="display:flex;"><span>        request.timeout.ms: <span style="color:#ae81ff">1250</span>
+</span></span><span style="display:flex;"><span>        max.block.ms: <span style="color:#ae81ff">2500</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;compression.type&#34;</span>: none
+</span></span><span style="display:flex;"><span>    event:
+</span></span><span style="display:flex;"><span>      producerConfig:
+</span></span><span style="display:flex;"><span>        acks: all
+</span></span><span style="display:flex;"><span>        delivery.timeout.ms: <span style="color:#ae81ff">5000</span>
+</span></span><span style="display:flex;"><span>        request.timeout.ms: <span style="color:#ae81ff">1250</span>
+</span></span><span style="display:flex;"><span>        max.block.ms: <span style="color:#ae81ff">2500</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;compression.type&#34;</span>: none
+</span></span><span style="display:flex;"><span>    telemetry:
+</span></span><span style="display:flex;"><span>      producerConfig:
+</span></span><span style="display:flex;"><span>        acks: all
+</span></span><span style="display:flex;"><span>        delivery.timeout.ms: <span style="color:#ae81ff">5000</span>
+</span></span><span style="display:flex;"><span>        request.timeout.ms: <span style="color:#ae81ff">1250</span>
+</span></span><span style="display:flex;"><span>        max.block.ms: <span style="color:#ae81ff">2500</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;compression.type&#34;</span>: none
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># tenantSpec contains Hono client properties used by all protocol adapters for</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># connecting to the Tenant service.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># This property MUST be set if &#34;deviceRegistryExample.enabled&#34; is set to false.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Please refer to https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of supported properties.</span>
+</span></span><span style="display:flex;"><span>  tenantSpec:
+</span></span><span style="display:flex;"><span>    flowLatency: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>    requestTimeout: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># deviceRegistrationSpec contains Hono client properties used by all protocol adapters for</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># connecting to the Device Registration service.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># This property MUST be set if &#34;deviceRegistryExample.enabled&#34; is set to false.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Please refer to https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of supported properties.</span>
+</span></span><span style="display:flex;"><span>  deviceRegistrationSpec:
+</span></span><span style="display:flex;"><span>    flowLatency: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>    responseCacheMaxSize: <span style="color:#ae81ff">10000</span>
+</span></span><span style="display:flex;"><span>    requestTimeout: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># credentialsSpec contains Hono client properties used by all protocol adapters for</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># connecting to the Credentials service.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># This property MUST be set if &#34;deviceRegistryExample.enabled&#34; is set to false.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Please refer to https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of supported properties.</span>
+</span></span><span style="display:flex;"><span>  credentialsSpec:
+</span></span><span style="display:flex;"><span>    flowLatency: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>    requestTimeout: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># commandRouterSpec contains Hono client properties used by all protocol adapters for</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># connecting to the Command Router service.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># If not set, default properties will be used for establishing a TLS based connection</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># to the command router server.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Please refer to https://www.eclipse.org/hono/docs/admin-guide/hono-client-configuration/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of supported properties.</span>
+</span></span><span style="display:flex;"><span>  commandRouterSpec:
+</span></span><span style="display:flex;"><span>    flowLatency: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>    requestTimeout: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  amqp:
+</span></span><span style="display:flex;"><span>    enabled: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  coap:
+</span></span><span style="display:flex;"><span>    enabled: true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># quarkusLoggingProfile indicates at which level the Quarkus based variant of the component should log.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Supported values are &#34;prod&#34;, &#34;dev&#34; or &#34;trace&#34;</span>
+</span></span><span style="display:flex;"><span>    quarkusLoggingProfile: <span style="color:#e6db74">&#34;prod&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># resources contains the container&#39;s requests and limits for CPU and memory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># as defined by the Kubernetes API.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Refer to https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># for a description of the properties&#39; semantics.</span>
+</span></span><span style="display:flex;"><span>    resources:
+</span></span><span style="display:flex;"><span>      requests:
+</span></span><span style="display:flex;"><span>        cpu: <span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>        memory: <span style="color:#e6db74">&#34;640Mi&#34;</span>
+</span></span><span style="display:flex;"><span>      limits:
+</span></span><span style="display:flex;"><span>        cpu: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>        memory: <span style="color:#e6db74">&#34;2048Mi&#34;</span>
+</span></span><span style="display:flex;"><span>    svc:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Provide Network Load Balancer service to make the CoAP server accessible from internet</span>
+</span></span><span style="display:flex;"><span>      annotations:
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-type: <span style="color:#e6db74">&#34;nlb&#34;</span>
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: <span style="color:#e6db74">&#34;instance&#34;</span>
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-scheme: <span style="color:#e6db74">&#34;internet-facing&#34;</span>
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: <span style="color:#e6db74">&#34;true&#34;</span>
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-healthcheck-interval: <span style="color:#e6db74">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-healthcheck-timeout: <span style="color:#e6db74">&#34;6&#34;</span>
+</span></span><span style="display:flex;"><span>        service.beta.kubernetes.io/aws-load-balancer-healthcheck-unhealthy-threshold: <span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># hono contains the adapter&#39;s configuration properties</span>
+</span></span><span style="display:flex;"><span>    hono:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># coap contains configuration properties for the adapter&#39;s</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># exposed CoAP endpoints.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># If not set, the adapter by default exposes the secure port</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># using an example key and certificate.</span>
+</span></span><span style="display:flex;"><span>      coap:
+</span></span><span style="display:flex;"><span>         tenantIdleTimeout: <span style="color:#e6db74">&#34;1h&#34;</span>
+</span></span><span style="display:flex;"><span>         maxPayloadSize: <span style="color:#ae81ff">64000</span>
+</span></span><span style="display:flex;"><span>         timeoutToAck: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>         coapThreads: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>         dtlsThreads: <span style="color:#ae81ff">8</span>
+</span></span><span style="display:flex;"><span>         maxConnections: <span style="color:#ae81ff">80000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  http:
+</span></span><span style="display:flex;"><span>    enabled: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  mqtt:
+</span></span><span style="display:flex;"><span>    enabled: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># authServer contains configuration properties for the Auth Server component.</span>
+</span></span><span style="display:flex;"><span>authServer:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># quarkusLoggingProfile indicates at which level the Quarkus based variant of the component should log.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Supported values are &#34;prod&#34;, &#34;dev&#34; or &#34;trace&#34;</span>
+</span></span><span style="display:flex;"><span>  quarkusLoggingProfile: <span style="color:#e6db74">&#34;prod&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># resources contains the container&#39;s requests and limits for CPU and memory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># as defined by the Kubernetes API.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Refer to https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of the properties&#39; semantics.</span>
+</span></span><span style="display:flex;"><span>  resources:
+</span></span><span style="display:flex;"><span>    requests:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;512Mi&#34;</span>
+</span></span><span style="display:flex;"><span>    limits:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;1Gi&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># deviceRegistryExample contains configuration properties for the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># example Device Registry.</span>
+</span></span><span style="display:flex;"><span>deviceRegistryExample:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Sets the type of the device registry to be deployed. The following types are defined:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># - embedded: Embedded JDBC based device registry. Also refer to the section &#34;embeddedJdbcDeviceRegistry&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for additional configuration.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># - mongodb: MongoDB based device registry. Also refer to the section &#34;mongoDBBasedDeviceRegistry&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for additional configuration.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># - jdbc: JDBC based device registry. Also refer to the section &#34;jdbcBasedDeviceRegistry&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for additional configuration.</span>
+</span></span><span style="display:flex;"><span>  type: <span style="color:#e6db74">&#34;mongodb&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># addExampleData indicates whether example data is inserted after the device registry is deployed</span>
+</span></span><span style="display:flex;"><span>  addExampleData: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># hono contains the Device Registry&#39;s configuration properties as defined in</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># https://www.eclipseorg/hono/docs/admin-guide/device-registry-config/</span>
+</span></span><span style="display:flex;"><span>  hono:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># auth contains Hono client properties used by the example registry for</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># connecting to the Authentication service.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If not set, the registry by default uses the Auth Server component to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># authenticate clients.</span>
+</span></span><span style="display:flex;"><span>    auth:
+</span></span><span style="display:flex;"><span>      flowLatency: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>      connectTimeout: <span style="color:#ae81ff">2000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># mongoDBBasedDeviceRegistry contains configuration properties specific to the</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># MongoDB based device registry.</span>
+</span></span><span style="display:flex;"><span>  mongoDBBasedDeviceRegistry:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># quarkusLoggingProfile indicates at which level the Quarkus based variant of the component should log.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Supported values are &#34;prod&#34;, &#34;dev&#34; or &#34;trace&#34;</span>
+</span></span><span style="display:flex;"><span>    quarkusLoggingProfile: <span style="color:#e6db74">&#34;prod&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># resources contains the container&#39;s requests and limits for CPU and memory</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># as defined by the Kubernetes API.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Refer to https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># for a description of the properties&#39; semantics.</span>
+</span></span><span style="display:flex;"><span>    resources:
+</span></span><span style="display:flex;"><span>      requests:
+</span></span><span style="display:flex;"><span>        cpu: <span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>        memory: <span style="color:#e6db74">&#34;512Mi&#34;</span>
+</span></span><span style="display:flex;"><span>      limits:
+</span></span><span style="display:flex;"><span>        cpu: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>        memory: <span style="color:#e6db74">&#34;2Gi&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># mongodb contains the configuration properties to connect to the MongoDB database instance.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If you would like to use an already existing MongoDB database instance, then configure</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># the below section accordingly.</span>
+</span></span><span style="display:flex;"><span>    mongodb:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># The connection string for MongoDb.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Could be taken from Atlas UI with username and password substitution and adding the database name as a suffix.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Optional parameters could be passed as well (using &#39;?&#39;)</span>
+</span></span><span style="display:flex;"><span>      connectionString: <span style="color:#e6db74">&#34;xxx&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># commandRouterService contains configuration properties for the</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Command Router service.</span>
+</span></span><span style="display:flex;"><span>commandRouterService:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># quarkusLoggingProfile indicates at which level the Quarkus based variant of the component should log.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Supported values are &#34;prod&#34;, &#34;dev&#34; or &#34;trace&#34;</span>
+</span></span><span style="display:flex;"><span>  quarkusLoggingProfile: <span style="color:#e6db74">&#34;prod&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># resources contains the container&#39;s requests and limits for CPU and memory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># as defined by the Kubernetes API.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Refer to https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of the properties&#39; semantics.</span>
+</span></span><span style="display:flex;"><span>  resources:
+</span></span><span style="display:flex;"><span>    requests:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;512Mi&#34;</span>
+</span></span><span style="display:flex;"><span>    limits:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;1Gi&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># hono contains the service&#39;s configuration properties as defined in</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># https://www.eclipse.org/hono/docs/admin-guide/command-router-config/</span>
+</span></span><span style="display:flex;"><span>  hono:
+</span></span><span style="display:flex;"><span>    app:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># maxInstances defines the number of adapter Verticle instances to deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># to the vert.x runtime during start-up.</span>
+</span></span><span style="display:flex;"><span>      maxInstances: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># auth contains Hono client properties used by the service for</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># connecting to the Authentication service.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If not set, the service by default uses the Auth Server component to</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># authenticate clients.</span>
+</span></span><span style="display:flex;"><span>    auth:
+</span></span><span style="display:flex;"><span>      flowLatency: <span style="color:#ae81ff">1000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    commandRouter:
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># cache contains properties configuring the embedded or remote cache that</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># the Command Router uses for storing routing information. Please refer to Hono&#39;s Command Router admin guide at</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># https://www.eclipse.org/hono/docs/admin-guide/command-router-config/#data-grid-connection-configuration for</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># details regarding cache configuration.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># If not set explicitly here and &#34;dataGridExample.enabled&#34; is &#34;true&#34;, the example data grid is used.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># If &#34;dataGridExample.enabled&#34; is &#34;false&#34;, an embedded cache with a default configuration will be used.</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># Note that when using the embedded cache, the Command Router pod does NOT support scaling up to a replica</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># count &gt; 1</span>
+</span></span><span style="display:flex;"><span>      cache:
+</span></span><span style="display:flex;"><span>        remote:
+</span></span><span style="display:flex;"><span>          serverList: <span style="color:#e6db74">&#34;eclipse-hono-data-grid:11222&#34;</span>
+</span></span><span style="display:flex;"><span>          authServerName: <span style="color:#e6db74">&#34;eclipse-hono-data-grid&#34;</span>
+</span></span><span style="display:flex;"><span>          authUsername: <span style="color:#e6db74">&#34;xxx&#34;</span>
+</span></span><span style="display:flex;"><span>          authPassword: <span style="color:#e6db74">&#34;xxx&#34;</span>
+</span></span><span style="display:flex;"><span>          authRealm: <span style="color:#e6db74">&#34;ApplicationRealm&#34;</span>
+</span></span><span style="display:flex;"><span>          saslMechanism: <span style="color:#e6db74">&#34;SCRAM-SHA-512&#34;</span>
+</span></span><span style="display:flex;"><span>          connectTimeout: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>          socketTimeout: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>          connectionPool:
+</span></span><span style="display:flex;"><span>            minIdle: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>            maxActive: <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>            maxWait: <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>            maxPendingRequests: <span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span>          defaultExecutorFactory:
+</span></span><span style="display:flex;"><span>            poolSize: <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># kafkaMessagingClusterExample contains properties for configuring an example Kafka cluster</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to be used for messaging if &#34;messagingNetworkTypes&#34; contains &#34;kafka&#34;</span>
+</span></span><span style="display:flex;"><span>kafkaMessagingClusterExample:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># set to false as external Kafka is used (MSK)</span>
+</span></span><span style="display:flex;"><span>  enabled: false
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>jaegerBackendExample:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># resources contains the container&#39;s requests and limits for CPU and memory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># as defined by the Kubernetes API.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Refer to https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of the properties&#39; semantics.</span>
+</span></span><span style="display:flex;"><span>  resources:
+</span></span><span style="display:flex;"><span>    requests:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;1Gi&#34;</span>
+</span></span><span style="display:flex;"><span>    limits:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;2Gi&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># env contains environment variables to set for the Jaeger all-in-one container.</span>
+</span></span><span style="display:flex;"><span>  env:
+</span></span><span style="display:flex;"><span>  - name: <span style="color:#e6db74">&#34;MEMORY_MAX_TRACES&#34;</span>
+</span></span><span style="display:flex;"><span>    value: <span style="color:#e6db74">&#34;20000&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dataGridExample contains properties for configuring an example data grid</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># to be used by the Command Router component</span>
+</span></span><span style="display:flex;"><span>dataGridExample:
+</span></span><span style="display:flex;"><span>  enabled: true
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># resources contains the container&#39;s requests and limits for CPU and memory</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># as defined by the Kubernetes API.</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Refer to https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># for a description of the properties&#39; semantics.</span>
+</span></span><span style="display:flex;"><span>  resources:
+</span></span><span style="display:flex;"><span>    requests:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;512Mi&#34;</span>
+</span></span><span style="display:flex;"><span>    limits:
+</span></span><span style="display:flex;"><span>      cpu: <span style="color:#e6db74">&#34;3&#34;</span>
+</span></span><span style="display:flex;"><span>      memory: <span style="color:#e6db74">&#34;2Gi&#34;</span>
+</span></span></code></pre></div><p>Additional configuration.
+This is applied manually after helm install as the settings were not possible via helm chart.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Remove device-registry public access manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace delete svc eclipse-hono-service-device-registry-ext
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Remove jaeger query public access manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace patch svc eclipse-hono-jaeger-query -p <span style="color:#e6db74">&#39;{&#34;spec&#34;: {&#34;type&#34;:&#34;ClusterIP&#34;}}&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Increase data grid memory as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl get cm eclipse-hono-data-grid-conf -n hono -o yaml | sed -e<span style="color:#e6db74">&#39;s|max-size=\&#34;30 MB\&#34;|max-size=\&#34;100 MB\&#34;|&#39;</span> | kubectl apply -f -
+</span></span><span style="display:flex;"><span>kubectl -n $namespace rollout restart statefulset eclipse-hono-data-grid
+</span></span><span style="display:flex;"><span>kubectl -n $namespace rollout status statefulset eclipse-hono-data-grid
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale infinispan manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace scale statefulset eclipse-hono-data-grid --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale auth service manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace scale deployment eclipse-hono-service-auth --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale device registry manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace scale deployment eclipse-hono-service-device-registry --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale command router manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace scale deployment eclipse-hono-service-command-router --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale coap adapter manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace scale deployment eclipse-hono-adapter-coap --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Scale command router manually as not possible via the helm chart</span>
+</span></span><span style="display:flex;"><span>kubectl -n $namespace scale deployment eclipse-hono-service-command-router --replicas<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h3 id="mongodb">MongoDB</h3>
+<p>The device registry is MongoDB based using MongoDB Atlas service with M2 cluster tier.
+The network access between Atlas and AWS is via peering connection.</p>
+<h3 id="kafka">Kafka</h3>
+<p>The Messaging infrastructure is AWS MSK with <code>kafka.m5.large</code> broker size.</p>
+<h3 id="device-simulator">Device simulator</h3>
+<p>It is developed and used a device simulator that could produce configurable amount of load.</p>
+<h3 id="backend-simulator">Backend simulator</h3>
+<p>It is developed and used backend simulator that acts as business application connected to the Kafka broker.</p>
+<h2 id="scenarios-and-configuration">Scenarios and configuration</h2>
+<p>The load tests are covering device connectivity with CoAP protocol only.
+Device authentication is <code>pre-shared</code> (PSK) based. All devices belong to single tenant.
+The Hono communication patterns under test are:</p>
+<ul>
+<li>Publishing Telemetry data with fixed rate.</li>
+<li>Publishing Event data with fixed rate.</li>
+<li>Command and Control with fixed rate via publishing specific telemetry message (command query) that activates command from the backend side.</li>
+</ul>
+<p>The payload format is <a href="https://eclipse.dev/ditto/protocol-specification.html">Ditto</a> with message size less than 1k bytes.</p>
+<p>The backend simulator is started first and then the device simulator is started for the period of the test.</p>
+<p>The configuration of tenant, devices and credentials is done via a script writing directly to MongoDB.
+This is faster than calling the <a href="https://www.eclipse.org/hono/docs/api/management/">Device Registry Management REST API</a> but requires knowledge of the database record structure.</p>
+<p>Kafka topics are configured with following partition count:</p>
+<style>
+table th, td, tr {
+border: 1px solid;
+padding: 5px
+}
+
+thead th {
+background-color: rgba(134, 134, 134, .166)
+}
+</style>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Topic</th>
+<th style="text-align:left">Partition Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>hono.telemetry.tload_tests</em></td>
+<td style="text-align:left">10</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>hono.event.tload_tests</em></td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>hono.command.tload_tests</em></td>
+<td style="text-align:left">3</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>hono.command_response.tload_tests</em></td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>hono.notification.registry-device</em></td>
+<td style="text-align:left">4</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>hono.notification.registry-tenant</em></td>
+<td style="text-align:left">4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="results">Results</h2>
+<p>Table below illustrates results from two tests. Both of them are executed on a clean system.
+The device simulator is running for 15 minutes. Here is description of the terms:</p>
+<ul>
+<li>coapRttSendTelemetry: round-trip time between publishing telemetry and receiving adapter response</li>
+<li>coapRttSendEvent: round-trip time between publishing event and receiving adapter response</li>
+<li>coapRttSendCommandRequest: round-trip time between publishing command query and receiving adapter response with backend command</li>
+<li>coapRttSendCommandResponse:  round-trip time between publishing command response and receiving adapter response</li>
+<li>coapErrorsSendTelemetry: errors during publishing telemetry</li>
+<li>coapErrorsSendEvent: errors during publishing event</li>
+<li>coapErrorsSendCommandRequest: errors during publishing command query</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Test number</th>
+<th>Number of connected devices</th>
+<th>Telemetry<br/>req/sec</th>
+<th>Events<br/>req/sec</th>
+<th>CommandQuery<br/>req/sec</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td>1</td>
+<td>2500</td>
+<td>300</td>
+<td>300</td>
+<td>300</td>
+<td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;device-simulator&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientSuccessfulConnects&#34;</span> : <span style="color:#ae81ff">2500</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientDisconnects&#34;</span> : <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientConnectFailureClients&#34;</span> : <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientExceptionWhileOpening&#34;</span> : <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;publishedTelemetryCount&#34;</span> : <span style="color:#ae81ff">127026</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;publishedEventsCount&#34;</span> : <span style="color:#ae81ff">127026</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;answeredCommandsCount&#34;</span> : <span style="color:#ae81ff">125602</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;receivedCommands&#34;</span> : <span style="color:#ae81ff">125784</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;publishedCommandQueries&#34;</span> : <span style="color:#ae81ff">127026</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendTelemetry&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">126824</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;14 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;39 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;74 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;519 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;965 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendEvent&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">126824</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;15 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;39 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;74 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;509 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;2654 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendCommandRequest&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">125784</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;68 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;164 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;279 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;854 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;9953 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendCommandResponse&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">125602</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;18 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;44 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;64 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;99 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;384 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapErrorsSendTelemetry&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;5.03&#34;</span> : <span style="color:#ae81ff">94</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;unknownCoapError&#34;</span> : <span style="color:#ae81ff">107</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapErrorsSendEvent&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;5.03&#34;</span> : <span style="color:#ae81ff">79</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;unknownCoapError&#34;</span> : <span style="color:#ae81ff">123</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapErrorsSendCommandRequest&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;missingCommand&#34;</span> : <span style="color:#ae81ff">1031</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;5.03&#34;</span> : <span style="color:#ae81ff">90</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;unknownCoapError&#34;</span> : <span style="color:#ae81ff">121</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;runtimeInMinutes&#34;</span> : <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></td>
+</tr>
+<tr>
+<td>2</td>
+<td>2500</td>
+<td>600</td>
+<td>600</td>
+<td>600</td>
+<td>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;type&#34;</span> : <span style="color:#e6db74">&#34;device-simulator&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientSuccessfulConnects&#34;</span> : <span style="color:#ae81ff">2500</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientDisconnects&#34;</span> : <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientConnectFailureClients&#34;</span> : <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;numClientExceptionWhileOpening&#34;</span> : <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;publishedTelemetryCount&#34;</span> : <span style="color:#ae81ff">508118</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;publishedEventsCount&#34;</span> : <span style="color:#ae81ff">506539</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;answeredCommandsCount&#34;</span> : <span style="color:#ae81ff">491054</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;receivedCommands&#34;</span> : <span style="color:#ae81ff">492646</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;publishedCommandQueries&#34;</span> : <span style="color:#ae81ff">494335</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendTelemetry&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">507157</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;60 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;139 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;564 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;2799 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;8946 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendEvent&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">505797</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;65 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;144 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;544 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;2819 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;8901 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendCommandRequest&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">492645</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;185 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;369 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;1649 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;3094 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;9318 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapRttSendCommandResponse&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;all&#34;</span> : <span style="color:#ae81ff">491054</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;avg&#34;</span> : <span style="color:#e6db74">&#34;41 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;95%&#34;</span> : <span style="color:#e6db74">&#34;79 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99%&#34;</span> : <span style="color:#e6db74">&#34;129 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;99.9%&#34;</span> : <span style="color:#e6db74">&#34;494 ms&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max&#34;</span> : <span style="color:#e6db74">&#34;3005 ms&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapErrorsSendTelemetry&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;5.03&#34;</span> : <span style="color:#ae81ff">349</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;unknownCoapError&#34;</span> : <span style="color:#ae81ff">605</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapErrorsSendEvent&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;5.03&#34;</span> : <span style="color:#ae81ff">218</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;unknownCoapError&#34;</span> : <span style="color:#ae81ff">516</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;coapErrorsSendCommandRequest&#34;</span> : {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;missingCommand&#34;</span> : <span style="color:#ae81ff">570</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;5.03&#34;</span> : <span style="color:#ae81ff">719</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;unknownCoapError&#34;</span> : <span style="color:#ae81ff">392</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;runtimeInMinutes&#34;</span> : <span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></td>
+</tr>
+</table>
+<h2 id="findings">Findings</h2>
+<ul>
+<li>The Hono deployment configured as described is working stable for the loads less than those in test number 2.</li>
+<li>A bottleneck is the initial filling of the Infinispan cache required by the command flow, where it is involved Hotrod client in Command Router.</li>
+<li>Infinispan cache requires fine-tuning of the Hotrod client connection as the default helm chart values are not production grade.</li>
+<li>Log level should be set to <em>prod</em> in order to optimize Hono throughput and service performance.</li>
+<li>Increasing the load, increases the errors of type <code>5.03</code> that happen on a cold start (clean system).</li>
+<li>If the tests are executed against a system that was already running, the errors of type <code>5.03</code> are less.</li>
+<li>If telemetry and event flow is used only (no commands), the message rate could be much higher.</li>
+</ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                
+
+            </div>
+            
+
+            
+        </div>
+        
+
+        <footer id="footer">
+    <div class="container">
+
+        <div class="col-md-4 col-sm-6">
+            <h4>More</h4>
+
+            <ul>
+                <li><a href="https://github.com/eclipse-hono/hono" title="View Source Code on GitHub"><i class='fab fa-github'></i> GitHub Repository</a></li>
+                <li><a href="https://twitter.com/EclipseHono" title="Follow us on Twitter"><i class='fab fa-twitter'></i> Twitter</a></li>
+                <li><a href="https://gitter.im/eclipse/hono" title="Chat with us on Gitter"><i class='fab fa-gitter'></i> Chat with us</a></li>
+                <li><a href='/hono/community/thankyou/'>Thank you</a></li>
+            </ul>
+
+            <hr class="hidden-md hidden-lg hidden-sm">
+
+        </div>
+        
+
+        <div class="col-md-4 col-sm-6">
+
+            <h4>Eclipse Legal</h4>
+
+            <ul>
+                <li><a href="http://www.eclipse.org/legal/privacy.php" target="_blank">Privacy Policy</a></li>
+                <li><a href="http://www.eclipse.org/legal/termsofuse.php" target="_blank">Terms of Use</a></li>
+                <li><a href="http://www.eclipse.org/legal/copyright.php" target="_blank">Copyright Agent</a></li>
+                <li><a href="http://www.eclipse.org/legal/" target="_blank">Legal</a></li>
+                <li><a href="https://www.eclipse.org/legal/epl-2.0/" target="_blank">License</a></li>
+                <li><a href="https://eclipse.org/security/" target="_blank">Report a Vulnerability</a></li>
+            </ul>
+
+            <hr class="hidden-md hidden-lg">
+
+        </div>
+        
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="eclipse-logos">
+                <div class="pull-left">
+                    <a href="https://www.eclipse.org" target="_blank">
+                        <img src="https://www.eclipse.org/hono/img/eclipse_foundation_logo_wo.svg" id="logo-eclipse-foundation"/>
+                    </a>
+                </div>
+                <div class="pull-right">
+                    <a href="https://iot.eclipse.org" target="_blank">
+                        <img src="https://www.eclipse.org/hono/img/iot-logo.png"/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+
+    </div>
+    
+</footer>
+
+
+
+
+
+
+
+<div id="copyright">
+    <div class="container">
+        <div class="col-md-12">
+            
+            <p class="pull-left">&copy; 2019-2022 The Eclipse Hono Project</p>
+            
+            <p class="pull-right">
+              Template by <a href="https://bootstrapious.com/p/universal-business-e-commerce-template">Bootstrapious</a>.
+              
+
+              Ported to Hugo by <a href="https://github.com/devcows/hugo-universal-theme">DevCows</a>.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+    
+
+    
+<script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js"></script>
+
+
+<script src="/hono/js/front.js"></script>
+
+
+<script src="/hono/js/owl.carousel.min.js"></script>
+
+
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="//www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+<script src="//iot.eclipse.org/assets/js/eclipsefdn.adopters.js"></script>
+<script>
+    eclipseFdnAdopters.getList({
+        project_id: "iot.hono",
+        selector: ".eclipsefdn-adopters",
+        logo_white: true
+    });
+</script>
+
+
+  </body>
+</html>

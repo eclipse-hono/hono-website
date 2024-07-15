@@ -48,6 +48,20 @@ for upcoming Hono versions.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Hono Load Tests with CoAP devices</title>
+      <link>https://www.eclipse.org/hono/community/blog-load-tests-coap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.eclipse.org/hono/community/blog-load-tests-coap/</guid>
+      <description>This page is presenting load tests of an Eclipse Hono deployment with simulated CoAP client devices. It shows how the system is configured and what load it could handle.
+Components The setup consists of following components.
+Kubernetes The Kubernetes is AWS EKS cluster using 3 x c5a.large machines.
+Hono Hono is deployed using Eclipse IoT Packages helm chart, version 2.6.0.
+Specific helm values:
+# Configuration properties for protocol adapters. adapters: # kafkaMessagingSpec contains the configuration used by all protocol # adapters for connecting to the Kafka cluster to be used for messaging.</description>
+    </item>
+    
+    <item>
       <title>Organizations supporting the Development of Hono</title>
       <link>https://www.eclipse.org/hono/community/thankyou/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
