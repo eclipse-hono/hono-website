@@ -5,7 +5,7 @@
     <link>https://www.eclipse.org/hono/docs/1.12/getting-started/</link>
     <description>Recent content in Getting started with Eclipse Hono on Eclipse Hono&amp;trade; Vers.: 1.12</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    <language>1.12</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/getting-started/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting started with Eclipse Hono using Apache Kafka</title>
       <link>https://www.eclipse.org/hono/docs/1.12/getting-started/kafka/</link>

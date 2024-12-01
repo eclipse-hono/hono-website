@@ -5,7 +5,7 @@
     <link>https://www.eclipse.org/hono/docs/2.5/admin-guide/</link>
     <description>Recent content in Admin Guide on Eclipse Hono&amp;trade; Vers.: 2.5</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/2.5/admin-guide/index.xml" rel="self" type="application/rss+xml" />
+    <language>2.5</language><atom:link href="https://www.eclipse.org/hono/docs/2.5/admin-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Common Configuration</title>
       <link>https://www.eclipse.org/hono/docs/2.5/admin-guide/common-config/</link>

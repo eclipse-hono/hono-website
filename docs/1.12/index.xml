@@ -5,7 +5,7 @@
     <link>https://www.eclipse.org/hono/docs/1.12/</link>
     <description>Recent content in Documentation on Eclipse Hono&amp;trade; Vers.: 1.12</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/index.xml" rel="self" type="application/rss+xml" />
+    <language>1.12</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting started with Eclipse Hono</title>
       <link>https://www.eclipse.org/hono/docs/1.12/getting-started/</link>

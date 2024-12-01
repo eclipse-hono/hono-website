@@ -5,6 +5,6 @@
     <link>https://www.eclipse.org/hono/docs/dev/tags/</link>
     <description>Recent content in Tags on Eclipse Hono&amp;trade; Vers.: dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>dev</language><atom:link href="https://www.eclipse.org/hono/docs/dev/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

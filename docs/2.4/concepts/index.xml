@@ -5,7 +5,7 @@
     <link>https://www.eclipse.org/hono/docs/2.4/concepts/</link>
     <description>Recent content in Concepts on Eclipse Hono&amp;trade; Vers.: 2.4</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/2.4/concepts/index.xml" rel="self" type="application/rss+xml" />
+    <language>2.4</language><atom:link href="https://www.eclipse.org/hono/docs/2.4/concepts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Device Identity</title>
       <link>https://www.eclipse.org/hono/docs/2.4/concepts/device-identity/</link>

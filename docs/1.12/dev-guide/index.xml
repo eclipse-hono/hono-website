@@ -5,7 +5,7 @@
     <link>https://www.eclipse.org/hono/docs/1.12/dev-guide/</link>
     <description>Recent content in Developer Guide on Eclipse Hono&amp;trade; Vers.: 1.12</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/dev-guide/index.xml" rel="self" type="application/rss+xml" />
+    <language>1.12</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/dev-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building from Source</title>
       <link>https://www.eclipse.org/hono/docs/1.12/dev-guide/building_hono/</link>

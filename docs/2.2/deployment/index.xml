@@ -5,7 +5,7 @@
     <link>https://www.eclipse.org/hono/docs/2.2/deployment/</link>
     <description>Recent content in Deployment on Eclipse Hono&amp;trade; Vers.: 2.2</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.eclipse.org/hono/docs/2.2/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <language>2.2</language><atom:link href="https://www.eclipse.org/hono/docs/2.2/deployment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Helm based Deployment</title>
       <link>https://www.eclipse.org/hono/docs/2.2/deployment/helm-based-deployment/</link>
