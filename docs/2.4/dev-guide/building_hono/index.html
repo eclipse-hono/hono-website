@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Building from Source :: Eclipse Hono&trade; Vers.: 2.4</title>
-    <link href="/hono/docs/images/favicon.ico?1733796662" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1733796662" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1733796662" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1733796662" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1733883063" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1733883063" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1733883063" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1733883063" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1733796662"></script>
+    <script src="/hono/docs/js/variant.js?1733883063"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1733796662"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1733883063"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -206,7 +206,7 @@ mutually exclusive. However, they can be built one after the other.</p>
 <h4 id="pushing-images">Pushing Images</h4>
 <p>The container images that are created as part of the build process can be automatically pushed to a container registry
 using the <code>docker-push-image</code> Maven profile:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn clean install -Pbuild-docker-image,metrics-prometheus,docker-push-image
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn clean install <span style="color:#960050;background-color:#1e0010">-</span>Pbuild-docker-image,metrics-prometheus,docker-push-image
 </span></span></code></pre></div><p>Note that the container registry might require authentication in order to push images. The build uses the Docker Maven
 Plugin for creating and pushing images. Please refer to the <a href="https://dmp.fabric8.io/#authentication">plugin documentation</a>
 for details regarding how to configure credentials for the registry.</p>
@@ -288,12 +288,12 @@ The output looks best when using a dark IDE theme.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1733796662"></script>
-        <script src="/hono/docs/js/lunr.min.js?1733796662"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1733796662"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1733796662"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1733796662"></script>
-        <script src="/hono/docs/js/search.js?1733796662"></script>
+        <script src="/hono/docs/js/auto-complete.js?1733883063"></script>
+        <script src="/hono/docs/js/lunr.min.js?1733883063"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1733883063"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1733883063"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1733883063"></script>
+        <script src="/hono/docs/js/search.js?1733883063"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -425,10 +425,10 @@ The output looks best when using a dark IDE theme.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1733796662"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1733796662"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1733796662"></script>
-    <script src="/hono/docs/js/theme.js?1733796662"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1733883063"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1733883063"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1733883063"></script>
+    <script src="/hono/docs/js/theme.js?1733883063"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
