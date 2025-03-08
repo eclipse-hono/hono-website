@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>MQTT Adapter :: Eclipse Hono&trade; Vers.: 2.1</title>
-    <link href="/hono/docs/images/favicon.ico?1741313498" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1741313498" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1741313498" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1741313498" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1741399887" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1741399887" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1741399887" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1741399887" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1741313498"></script>
+    <script src="/hono/docs/js/variant.js?1741399887"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1741313498"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1741399887"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -762,7 +762,7 @@ one of the following topics:</p>
 </ul>
 <p><strong>Example</strong></p>
 <p>Sending a response to a command using the <code>${req-id}</code> from the command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#e6db74">&#39;gw@DEFAULT_TENANT&#39;</span> -P gw-secret -t c//4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m <span style="color:#e6db74">&#39;{&#34;lumen&#34;: 200}&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -u <span style="color:#960050;background-color:#1e0010">&#39;</span>gw@DEFAULT_TENANT<span style="color:#e6db74">&#39; -P gw-secret -t c//4711/s/1010f8ab0b53-bd96-4d99-9d9c-56b868474a6a/200 -m &#39;</span><span style="color:#f92672">{</span><span style="color:#e6db74">&#34;lumen&#34;</span>: 200<span style="color:#f92672">}</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
 </span></span></code></pre></div><h2 id="error-reporting-via-error-topic">Error Reporting via Error Topic</h2>
 <p>The default behaviour when an error occurs while publishing telemetry, event or command response messages is for the
 MQTT adapter to close the network connection to the device, as mandated by the MQTT 3.1.1 spec.</p>
@@ -1178,12 +1178,12 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1741313498"></script>
-        <script src="/hono/docs/js/lunr.min.js?1741313498"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1741313498"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1741313498"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1741313498"></script>
-        <script src="/hono/docs/js/search.js?1741313498"></script>
+        <script src="/hono/docs/js/auto-complete.js?1741399888"></script>
+        <script src="/hono/docs/js/lunr.min.js?1741399888"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1741399888"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1741399888"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1741399888"></script>
+        <script src="/hono/docs/js/search.js?1741399888"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1310,10 +1310,10 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1741313498"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1741313498"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1741313498"></script>
-    <script src="/hono/docs/js/theme.js?1741313498"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1741399888"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1741399888"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1741399888"></script>
+    <script src="/hono/docs/js/theme.js?1741399888"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
