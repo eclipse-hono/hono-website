@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>AMQP 1.0 Messaging Network Configuration :: Eclipse Hono&trade; Vers.: 2.2</title>
-    <link href="/hono/docs/images/favicon.ico?1744765901" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1744765901" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1744765901" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1744765901" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1744852339" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1744852339" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1744852339" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1744852339" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1744765901"></script>
+    <script src="/hono/docs/js/variant.js?1744852339"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1744765901"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1744852339"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -130,12 +130,12 @@ registered for a tenant</a> support the <code>ext/messaging-type</code> property
 which can have a value of either <code>amqp</code> or <code>kafka</code>.</p>
 <p>The following example shows a tenant that is configured to use the AMQP 1.0 messaging infrastructure:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;tenant-id&#34;</span>: <span style="color:#960050;background-color:#1e0010">&#34;TEST_TENANT</span><span style="color:#e6db74">&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;</span><span style="color:#960050;background-color:#1e0010">enabled</span><span style="color:#e6db74">&#34;: true,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;</span><span style="color:#960050;background-color:#1e0010">ext</span><span style="color:#e6db74">&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;</span><span style="color:#960050;background-color:#1e0010">messaging-type</span><span style="color:#e6db74">&#34;: &#34;</span><span style="color:#960050;background-color:#1e0010">amqp&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;tenant-id&#34;</span>: <span style="color:#e6db74">&#34;TEST_TENANT&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;ext&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;messaging-type&#34;</span>: <span style="color:#e6db74">&#34;amqp&#34;</span>
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>If not explicitly set, the <code>ext/messaging-type</code> property&rsquo;s value is <code>kafka</code> which indicates that Kafka is to be used
 for the tenant.</p>
 
@@ -188,12 +188,12 @@ regarding the configuration file format and options.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1744765901"></script>
-        <script src="/hono/docs/js/lunr.min.js?1744765901"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1744765901"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1744765901"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1744765901"></script>
-        <script src="/hono/docs/js/search.js?1744765901"></script>
+        <script src="/hono/docs/js/auto-complete.js?1744852339"></script>
+        <script src="/hono/docs/js/lunr.min.js?1744852339"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1744852339"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1744852339"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1744852339"></script>
+        <script src="/hono/docs/js/search.js?1744852339"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -320,10 +320,10 @@ regarding the configuration file format and options.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1744765901"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1744765901"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1744765901"></script>
-    <script src="/hono/docs/js/theme.js?1744765901"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1744852339"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1744852339"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1744852339"></script>
+    <script src="/hono/docs/js/theme.js?1744852339"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
