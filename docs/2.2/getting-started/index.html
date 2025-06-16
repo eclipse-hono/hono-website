@@ -9,17 +9,17 @@
     <meta name="author" content="The Eclipse Hono Project">
     <title>Getting started with Eclipse Hono :: Eclipse Hono&trade; Vers.: 2.2</title>
     <link rel="alternate" type="application/rss&#43;xml" href="/hono/docs/2.2/getting-started/index.xml" title="Eclipse Hono&trade; Vers.: 2.2" />
-    <link href="/hono/docs/images/favicon.ico?1749949899" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1749949899" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1749949899" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1749949899" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1750036299" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1750036299" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1750036299" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1750036299" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -30,7 +30,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1749949899"></script>
+    <script src="/hono/docs/js/variant.js?1750036299"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -46,7 +46,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1749949899"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1750036299"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -318,7 +318,7 @@ order to publish telemetry data and events. The devices will be authenticated us
 Registry. The data is then forwarded downstream to the example application via the Kafka broker.</p>
 <p>Once Hono has been deployed to your local cluster, run the following commands to create the <code>hono.env</code> file which will
 be used during the remainder of this guide to set and refresh some environment variables:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export REGISTRY_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-service-device-registry-ext --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt; hono.env
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export REGISTRY_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-service-device-registry-ext --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> <span style="color:#960050;background-color:#1e0010">-</span>n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt; hono.env
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export HTTP_ADAPTER_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-http --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; hono.env
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;export MQTT_ADAPTER_IP=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-adapter-mqtt --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> &gt;&gt; hono.env
 </span></span><span style="display:flex;"><span>KAFKA_IP<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get service eclipse-hono-kafka-0-external --output<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;jsonpath={.status.loadBalancer.ingress[0][&#39;hostname&#39;,&#39;ip&#39;]}&#34;</span> -n hono<span style="color:#66d9ef">)</span>
@@ -616,12 +616,12 @@ explain this in more detail.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1749949899"></script>
-        <script src="/hono/docs/js/lunr.min.js?1749949899"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1749949899"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1749949899"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1749949899"></script>
-        <script src="/hono/docs/js/search.js?1749949899"></script>
+        <script src="/hono/docs/js/auto-complete.js?1750036299"></script>
+        <script src="/hono/docs/js/lunr.min.js?1750036299"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1750036299"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1750036299"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1750036299"></script>
+        <script src="/hono/docs/js/search.js?1750036299"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -748,10 +748,10 @@ explain this in more detail.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1749949899"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1749949899"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1749949899"></script>
-    <script src="/hono/docs/js/theme.js?1749949899"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1750036300"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1750036300"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1750036300"></script>
+    <script src="/hono/docs/js/theme.js?1750036300"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
