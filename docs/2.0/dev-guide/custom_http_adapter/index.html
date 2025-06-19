@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Implement a Custom Hono HTTP Protocol Adapter :: Eclipse Hono&trade; Vers.: 2.0</title>
-    <link href="/hono/docs/images/favicon.ico?1750209108" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1750209108" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1750209108" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1750209108" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1750295499" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1750295499" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1750295499" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1750295499" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1750209108"></script>
+    <script src="/hono/docs/js/variant.js?1750295499"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1750209108"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1750295499"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -145,7 +145,7 @@ instance which gives access to the HTTP request (and response) object containing
 <p>The standard HTTP Adapter overrides the abstract method <code>addRoutes()</code>, provided by the base class, and adds routes for
 processing telemetry data and events.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">// route for uploading telemetry data</span>
-</span></span><span style="display:flex;"><span>router.<span style="color:#a6e22e">route</span>(HttpMethod.<span style="color:#a6e22e">PUT</span>, String.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#34;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#e6db74">telemetry/:%s/:%s&#34;</span>, PARAM_TENANT, PARAM_DEVICE_ID))
+</span></span><span style="display:flex;"><span>router.<span style="color:#a6e22e">route</span>(HttpMethod.<span style="color:#a6e22e">PUT</span>, String.<span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#34;/telemetry/:%s/:%s&#34;</span>, PARAM_TENANT, PARAM_DEVICE_ID))
 </span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">handler</span>(ctx <span style="color:#f92672">-&gt;</span> uploadTelemetryMessage(ctx, getTenantParam(ctx), getDeviceIdParam(ctx)));
 </span></span></code></pre></div><p>The route for telemetry data parses the HTTP request, extracts the <em>tenant</em> and <em>deviceId</em> parameters from the
 request URL path, and forwards the message payload to the method <code>uploadTelemetryMessage()</code>, provided by the base class.</p>
@@ -227,12 +227,12 @@ consumer as described in the <a href="/hono/docs/2.0/getting-started/">Getting S
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1750209108"></script>
-        <script src="/hono/docs/js/lunr.min.js?1750209108"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1750209108"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1750209108"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1750209108"></script>
-        <script src="/hono/docs/js/search.js?1750209108"></script>
+        <script src="/hono/docs/js/auto-complete.js?1750295499"></script>
+        <script src="/hono/docs/js/lunr.min.js?1750295499"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1750295499"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1750295499"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1750295499"></script>
+        <script src="/hono/docs/js/search.js?1750295499"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -359,10 +359,10 @@ consumer as described in the <a href="/hono/docs/2.0/getting-started/">Getting S
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1750209108"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1750209108"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1750209108"></script>
-    <script src="/hono/docs/js/theme.js?1750209108"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1750295499"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1750295499"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1750295499"></script>
+    <script src="/hono/docs/js/theme.js?1750295499"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
