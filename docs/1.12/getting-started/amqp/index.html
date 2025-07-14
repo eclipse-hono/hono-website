@@ -10,17 +10,17 @@ applications can consume the data published by devices.
 ">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Getting started with Eclipse Hono using AMQP 1.0 :: Eclipse Hono&trade; Vers.: 1.12</title>
-    <link href="/hono/docs/images/favicon.ico?1752369132" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1752369132" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1752369132" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1752369132" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1752455509" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1752455509" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1752455509" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1752455509" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -31,7 +31,7 @@ applications can consume the data published by devices.
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1752369132"></script>
+    <script src="/hono/docs/js/variant.js?1752455509"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -47,7 +47,7 @@ applications can consume the data published by devices.
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1752369132"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1752455509"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -394,8 +394,8 @@ and additional examples for interacting with Hono via MQTT, please refer to the
 <a href="/hono/docs/1.12/user-guide/mqtt-adapter/">MQTT Adapter&rsquo;s User Guide</a>.</p>
 <h2 id="publishing-events-to-the-mqtt-adapter">Publishing Events to the MQTT Adapter</h2>
 <p>In a similar way you can upload events:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h $MQTT_ADAPTER_IP -u $MY_DEVICE@$MY_TENANT -P $MY_PWD -t event -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: &#34;fire&#34;}&#39;</span>
-</span></span></code></pre></div><p>Again, you should now see the telemetry message being logged to console of the downstream application.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mosquitto_pub -h $MQTT_ADAPTER_IP -u $MY_DEVICE@$MY_TENANT -P $MY_PWD -t event -q <span style="color:#ae81ff">1</span> -m <span style="color:#e6db74">&#39;{&#34;alarm&#34;: &#34;fire&#34;}&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>Again, you should now see the telemetry message being logged to console of the downstream application.</p>
 
 <div class="box notices cstyle tip">
     <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Congratulations</div>
@@ -512,12 +512,12 @@ explain this in more detail.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1752369132"></script>
-        <script src="/hono/docs/js/lunr.min.js?1752369132"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1752369132"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1752369132"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1752369132"></script>
-        <script src="/hono/docs/js/search.js?1752369132"></script>
+        <script src="/hono/docs/js/auto-complete.js?1752455509"></script>
+        <script src="/hono/docs/js/lunr.min.js?1752455509"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1752455509"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1752455509"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1752455509"></script>
+        <script src="/hono/docs/js/search.js?1752455509"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -643,10 +643,10 @@ explain this in more detail.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1752369132"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1752369132"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1752369132"></script>
-    <script src="/hono/docs/js/theme.js?1752369132"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1752455509"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1752455509"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1752455509"></script>
+    <script src="/hono/docs/js/theme.js?1752455509"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
