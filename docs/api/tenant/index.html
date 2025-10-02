@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Tenant API Specification :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1759281148" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1759281148" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1759281148" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1759281148" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1759367546" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1759367546" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1759367546" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1759367546" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1759281148"></script>
+    <script src="/hono/docs/js/variant.js?1759367546"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1759281148"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1759367546"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -222,7 +222,7 @@ Please refer to <a href="/hono/docs/concepts/tenancy/">Multi Tenancy</a> for det
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The following request payload may be used to look up the tenant for which a trusted certificate authority with subject DN <code>O=ACME Corporation, CN=devices</code> has been configured:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;subject-dn&#34;</span>: <span style="color:#e6db74">&#34;CN=devices,O=ACME Corporation&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#960050;background-color:#1e0010">&#34;subject-dn</span><span style="color:#f92672">&#34;: &#34;</span><span style="color:#960050;background-color:#1e0010">CN=devices</span>,<span style="color:#960050;background-color:#1e0010">O=ACME</span> <span style="color:#960050;background-color:#1e0010">Corporation&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p><strong>Response Message Format</strong></p>
 <p>The following table provides an overview of the properties contained in a response message to a <em>get tenant information</em> request:</p>
@@ -821,12 +821,12 @@ This allows for future <em>well-known</em> additions and also allows to add furt
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1759281148"></script>
-        <script src="/hono/docs/js/lunr.min.js?1759281148"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1759281148"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1759281148"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1759281148"></script>
-        <script src="/hono/docs/js/search.js?1759281148"></script>
+        <script src="/hono/docs/js/auto-complete.js?1759367547"></script>
+        <script src="/hono/docs/js/lunr.min.js?1759367547"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1759367547"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1759367547"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1759367547"></script>
+        <script src="/hono/docs/js/search.js?1759367547"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -958,10 +958,10 @@ This allows for future <em>well-known</em> additions and also allows to add furt
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1759281148"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1759281148"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1759281148"></script>
-    <script src="/hono/docs/js/theme.js?1759281148"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1759367547"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1759367547"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1759367547"></script>
+    <script src="/hono/docs/js/theme.js?1759367547"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
