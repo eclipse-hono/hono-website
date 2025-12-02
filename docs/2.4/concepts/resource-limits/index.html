@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Resource limits :: Eclipse Hono&trade; Vers.: 2.4</title>
-    <link href="/hono/docs/images/favicon.ico?1764555153" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1764555153" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1764555153" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1764555153" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1764641560" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1764641560" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1764641560" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1764641560" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1764555153"></script>
+    <script src="/hono/docs/js/variant.js?1764641560"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1764555153"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1764641560"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -148,7 +148,7 @@
 <p>In the <code>monthly</code> mode, the message limit check ensures that the data usage from the beginning till the end of a (Gregorian) calendar month does not exceed the <em>max-bytes</em> value. But for the first month on which the message limit became effective, the <em>effective max-bytes</em> are calculated based on the <em>max-bytes</em> with respect to the remaining days in that month from the <em>effective-since</em> date.</p>
 <p>Below is a sample resource limit configuration for a tenant and it has been defined that the message limit became effective on 10.Jul.2019 and the maximum bytes allowed for a month is 2 GB. It means that from August 2019, the message limit check ensures that the data usage in a month does not exceed 2 GB. But in case of July 2019, the month on which the message limit became effective, the <em>effective max-bytes</em> is calculated by finding the average limit for a day from the <em>max-bytes</em> and multiplying it with the number of days from the <em>effective-since</em> date till the end of that month. In this case it is calculated as <em>(2 GB / 31 days) x  22 days</em> which is 1.4 GB. It means that for the month of July 2019, the data usage should not exceed 1.4GB.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#e6db74">&#34;resource-limits&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;data-volume&#34;</span>: {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;data-volume&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;effective-since&#34;</span>: <span style="color:#e6db74">&#34;2019-07-10T14:30:00Z&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;max-bytes&#34;</span>: <span style="color:#ae81ff">2147483648</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;period&#34;</span>: {
@@ -190,12 +190,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1764555153"></script>
-        <script src="/hono/docs/js/lunr.min.js?1764555153"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1764555153"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1764555153"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1764555153"></script>
-        <script src="/hono/docs/js/search.js?1764555153"></script>
+        <script src="/hono/docs/js/auto-complete.js?1764641561"></script>
+        <script src="/hono/docs/js/lunr.min.js?1764641561"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1764641561"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1764641561"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1764641561"></script>
+        <script src="/hono/docs/js/search.js?1764641561"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -327,10 +327,10 @@
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1764555154"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1764555154"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1764555154"></script>
-    <script src="/hono/docs/js/theme.js?1764555154"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1764641561"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1764641561"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1764641561"></script>
+    <script src="/hono/docs/js/theme.js?1764641561"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
