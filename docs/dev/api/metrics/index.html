@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="dev">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Metrics :: Eclipse Hono&trade; Vers.: dev</title>
+    <link href="/hono/docs/images/favicon.ico?1770208025" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1770208025" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1770208025" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1770208025"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/dev/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1770208025"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Metrics :: Eclipse Hono&amp;trade; Vers.: dev">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Metrics :: Eclipse Hono&amp;trade; Vers.: dev" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/dev/api/metrics//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/dev/api/metrics/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>dev</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/api/Metrics.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/dev/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/dev/api/"><span itemprop="name">API</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/dev/api/metrics/" aria-disabled="true"><span itemprop="name">Metrics</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#reported-metrics">Reported Metrics</a>
+      <ul>
+        <li><a href="#common-metrics">Common Metrics</a></li>
+        <li><a href="#protocol-adapter-metrics">Protocol Adapter Metrics</a></li>
+        <li><a href="#service-metrics">Service Metrics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Metrics</h1>
+<p>Eclipse Hono™&rsquo;s components report several metrics which may be used to gain some insight
+into the running system. For instance, the HTTP adapter reports the number of successfully
+processed telemetry messages. Some of these metrics are considered part of Hono&rsquo;s external
+interface. This section describes the semantics and format of the metrics, how they can be retrieved
+and how to interpret actual values.</p>
+<h2 id="reported-metrics">Reported Metrics</h2>
+<p>Hono uses <a href="https://micrometer.io/">Micrometer</a> for collecting metrics. Those metrics can be exported to different
+back ends. Please refer to <a href="/hono/docs/dev/admin-guide/monitoring-tracing-config/#enabling-collection-of-metrics">Configuring Metrics</a>
+for details.</p>
+<p>The container images published on Docker Hub have been compiled with support for <a href="https://prometheus.io/">Prometheus</a>
+as the metrics back end.</p>
+<p>When deploying to Kubernetes/OpenShift, the metrics reported by Hono may contain
+environment specific tags (like the <em>pod</em> name) which are added by the Prometheus
+scraper. However, those tags are not part of the Hono metrics definition.</p>
+<p>Hono applications may report other metrics in addition to the ones defined here.
+In particular, all components report metrics regarding the JVM&rsquo;s internal state, e.g.
+memory consumption and garbage collection status. Those metrics are not considered
+part of Hono&rsquo;s <em>official</em> metrics definition. However, all those metrics
+will still contain the common tags described below.</p>
+<h3 id="common-metrics">Common Metrics</h3>
+<p>Tags for common metrics are:</p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>host</em></td>
+<td><em>string</em></td>
+<td>The name of the host that the component reporting the metric is running on</td>
+</tr>
+<tr>
+<td><em>component-type</em></td>
+<td><code>adapter</code>, <code>service</code></td>
+<td>The type of component reporting the metric</td>
+</tr>
+<tr>
+<td><em>component-name</em></td>
+<td><em>string</em></td>
+<td>The name of the component reporting the metric.</td>
+</tr>
+</tbody>
+</table>
+<p>The names of Hono&rsquo;s standard components are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th><em>component-name</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auth Server</td>
+<td><code>hono-auth</code></td>
+</tr>
+<tr>
+<td>Device Registry</td>
+<td><code>hono-registry</code></td>
+</tr>
+<tr>
+<td>Command Router</td>
+<td><code>hono-command-router</code></td>
+</tr>
+<tr>
+<td>AMQP adapter</td>
+<td><code>hono-amqp</code></td>
+</tr>
+<tr>
+<td>CoAP adapter</td>
+<td><code>hono-coap</code></td>
+</tr>
+<tr>
+<td>HTTP adapter</td>
+<td><code>hono-http</code></td>
+</tr>
+<tr>
+<td>MQTT adapter</td>
+<td><code>hono-mqtt</code></td>
+</tr>
+<tr>
+<td>Lora adapter</td>
+<td><code>hono-lora</code></td>
+</tr>
+<tr>
+<td>Sigfox adapter</td>
+<td><code>hono-sigfox</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="protocol-adapter-metrics">Protocol Adapter Metrics</h3>
+<p>Additional tags used for metrics reported by protocol adapters are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>direction</em></td>
+<td><code>one-way</code>, <code>request</code>, <code>response</code></td>
+<td>The direction in which a Command &amp; Control message is being sent:<br><code>one-way</code> indicates a command sent to a device for which the sending application doesn&rsquo;t expect to receive a response.<br><code>request</code> indicates a command request message sent to a device.<br><code>response</code> indicates a command response received from a device.</td>
+</tr>
+<tr>
+<td><em>qos</em></td>
+<td><code>0</code>, <code>1</code>, <code>unknown</code></td>
+<td>The quality of service used for a telemetry or event message.<br><code>0</code> indicates <em>at most once</em>,<br><code>1</code> indicates <em>at least once</em> and<br> <code>none</code> indicates unknown delivery semantics.</td>
+</tr>
+<tr>
+<td><em>status</em></td>
+<td><code>forwarded</code>, <code>unprocessable</code>, <code>undeliverable</code></td>
+<td>The processing status of a message.<br><code>forwarded</code> indicates that the message has been forwarded to a downstream consumer<br><code>unprocessable</code> indicates that the message has not been processed not forwarded, e.g. because the message was malformed<br><code>undeliverable</code> indicates that the message could not be forwarded, e.g. because there is no downstream consumer or due to an infrastructure problem</td>
+</tr>
+<tr>
+<td><em>tenant</em></td>
+<td><em>string</em></td>
+<td>The identifier of the tenant that the metric is being reported for.</td>
+</tr>
+<tr>
+<td><em>ttd</em></td>
+<td><code>command</code>, <code>expired</code>, <code>none</code></td>
+<td>A status indicating the outcome of processing a TTD value contained in a message received from a device.<br><code>command</code> indicates that a command for the device has been included in the response to the device&rsquo;s request for uploading the message.<br><code>expired</code> indicates that a response without a command has been sent to the device.<br><code>none</code> indicates that either no TTD value has been specified by the device or that the protocol adapter does not support it.</td>
+</tr>
+<tr>
+<td><em>type</em></td>
+<td><code>command_response</code>, <code>credentials</code>, <code>event</code>, <code>registration</code>, <code>telemetry</code>, <code>tenant</code></td>
+<td>The type of message that the metric is being reported for.</td>
+</tr>
+</tbody>
+</table>
+<p>Additional tags for <em>hono.connections.attempts</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>cipher-suite</em></td>
+<td><em>string</em></td>
+<td>The name of the cipher suite that is used for the device&rsquo;s connection to the adapter. The specific value depends on the TLS implementation used by the protocol adapter.<br/>The value <code>UNKNOWN</code> is used if the connection does not use TLS or the cipher suite could not be determined, e.g. because the connection attempt failed before the cipher suite has been negotiated.</td>
+</tr>
+<tr>
+<td><em>outcome</em></td>
+<td><code>adapter-disabled</code>, <code>connection-duration-exceeded</code>,<br/><code>data-volume-exceeded</code>, <code>registration-assertion-failure</code>,<br/><code>succeeded</code>, <code>tenant-connections-exceeded</code>,<br/><code>unauthorized</code>, <code>unavailable</code>, <code>unknown</code></td>
+<td>The outcome of a device&rsquo;s connection attempt.<br/><code>adapter-connections-exceeded</code> indicates that the maximum number of connections that the adapter instance can handle are exceeded<br/><code>adapter-disabled</code> indicates that the protocol adapter is not enabled for the device&rsquo;s tenant<br/><code>connection-duration-exceeded</code> indicates that the overall amount of time that a tenant&rsquo;s devices may be connected to an adapter has exceeded<br/><code>data-volume-exceeded</code> indicates that the overall amount of data that a tenant&rsquo;s device may transfer per time period has exceeded<br/><code>registration-assertion-failure</code> indicates that the device is either unknown or disabled<br/><code>succeeded</code> indicates a successfully established connection<br/><code>tenant-connections-exceeded</code> indicates that the maximum number of devices that may be connected simultaneously for a tenant has been exceeded<br/><code>unauthorized</code> indicates that the device failed to authenticate<br/><code>unavailable</code> indicates that some of Hono&rsquo;s (required) services are not available<br/><code>unknown</code> indicates an unknown reason.</td>
+</tr>
+</tbody>
+</table>
+<p>Additional tags for <em>hono.amqp.delivery.duration</em>:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>outcome</em></td>
+<td><code>received</code>, <code>accepted</code>, <code>rejected</code>, <code>released</code>, <code>modified</code>, <code>declared</code>, <code>transactionalState</code>, and <code>aborted</code></td>
+<td>Any of the AMQP 1.0 disposition states, as well as <code>aborted</code>, in the case the connection/link was closed before the disposition could be read.</td>
+</tr>
+</tbody>
+</table>
+<p>Metrics provided by the protocol adapters are:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Type</th>
+<th>Tags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>hono.amqp.delivery.duration</em></td>
+<td>Timer</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>outcome</em></td>
+<td>The time it took to send an AMQP 1.0 message and receive the remote peers disposition.</td>
+</tr>
+<tr>
+<td><em>hono.amqp.nocredit</em></td>
+<td>Counter</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em></td>
+<td>The number of times an AMQP 1.0 message should be sent, but could not because the sender was out of credit.</td>
+</tr>
+<tr>
+<td><em>hono.amqp.timeout</em></td>
+<td>Counter</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em></td>
+<td>The number of times sending an AMQP 1.0 message timed out, meaning that no disposition was received in the appropriate amount of time.</td>
+</tr>
+<tr>
+<td><em>hono.command.payload</em></td>
+<td>DistributionSummary</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>status</em>, <em>direction</em></td>
+<td>The number of bytes conveyed in the payload of a command message.</td>
+</tr>
+<tr>
+<td><em>hono.command.processing.duration</em></td>
+<td>Timer</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>status</em>, <em>direction</em></td>
+<td>The time it took to process a message conveying a command or a response to a command.</td>
+</tr>
+<tr>
+<td><em>hono.connections.authenticated</em></td>
+<td>Gauge</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em></td>
+<td>Current number of connected, authenticated devices. <br/> <strong>NB</strong> This metric is only supported by protocol adapters that maintain <em>connection state</em> with authenticated devices. In particular, the HTTP adapter does not support this metric.</td>
+</tr>
+<tr>
+<td><em>hono.connections.unauthenticated</em></td>
+<td>Gauge</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em></td>
+<td>Current number of connected, unauthenticated devices. <br/> <strong>NB</strong> This metric is only supported by protocol adapters that maintain <em>connection state</em> with authenticated devices. In particular, the HTTP adapter does not support this metric.</td>
+</tr>
+<tr>
+<td><em>hono.connections.authenticated.duration</em></td>
+<td>Timer</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em></td>
+<td>The overall amount of time that authenticated devices have been connected to protocol adapters. <br/> <strong>NB</strong> This metric is only supported by protocol adapters that maintain <em>connection state</em> with authenticated devices. In particular, the HTTP adapter does not support this metric.</td>
+</tr>
+<tr>
+<td><em>hono.connections.attempts</em></td>
+<td>Counter</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>outcome</em>, <em>cipher-suite</em></td>
+<td>The number of attempts made by devices to connect to a protocol adapter. The <em>outcome</em> tag&rsquo;s value determines if the attempt was successful or not. In the latter case the outcome also indicates the reason for the failure to connect.<br/><strong>NB</strong> This metric is only supported by protocol adapters that maintain <em>connection state</em> with authenticated devices. In particular, the HTTP adapter does not support this metric.</td>
+</tr>
+<tr>
+<td><em>hono.telemetry.payload</em></td>
+<td>DistributionSummary</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>status</em></td>
+<td>The number of bytes conveyed in the payload of a telemetry or event message.</td>
+</tr>
+<tr>
+<td><em>hono.telemetry.processing.duration</em></td>
+<td>Timer</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>status</em>, <em>qos</em>, <em>ttd</em></td>
+<td>The time it took to process a message conveying telemetry data or an event.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="minimum-message-size">Minimum Message Size</h4>
+<p>If a minimum message size is configured for a <a href="/hono/docs/dev/api/tenant/#tenant-information-format">tenant</a>,
+then the payload size of the telemetry, event and command messages are calculated in accordance with the configured
+value and then reported to the metrics by the AMQP, HTTP and MQTT protocol adapters. If minimum message size is not
+configured for a tenant then the actual message payload size is reported.</p>
+<p>Assume that the minimum message size for a tenant is configured as 4096 bytes (4KB). The payload size of
+an incoming message with size 1KB is calculated as 4KB by the protocol adapters and reported to the metrics system.
+For an incoming message of size 10KB, it is reported as 12KB.</p>
+<h3 id="service-metrics">Service Metrics</h3>
+<h4 id="authentication-server">Authentication Server</h4>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Type</th>
+<th>Tags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>hono.authentication.attempts</em></td>
+<td>Counter</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>outcome</em>, <em>client-type</em></td>
+<td>The number of attempts made by clients to authenticate to the server.<br/><br/>The <em>outcome</em> tag&rsquo;s value determines if the attempt was successful or not:<br/><code>succeeded</code> indicates that the client has been authenticated successfully,<br/><code>unauthorized</code> indicates that the client failed to authenticate, e.g. because of wrong credentials and<br/><code>unavailable</code> indicates that some of the services required for verifying the client&rsquo;s credentials are (temporarily) not available.<br/><br/>The <em>client-type</em> tag indicates what type of client has attempted to authenticate:<br/><code>auth-service</code> indicates that the client tried to use the server as an implementation of the <a href="/hono/docs/dev/api/authentication/">Hono Authentication Service</a>,<br/><code>dispatch-router</code> indicates that the client tried to use the server as an implementation of the <a href="https://qpid.apache.org/releases/qpid-dispatch-1.17.0/man/qdrouterd.conf.html#_authserviceplugin">Qpid Dispatch Router AuthService</a>.<br/><code>unknown</code> indicates that the type of client is unknown.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="command-router">Command Router</h4>
+<p>Command messages get first received by the Command Router component and then get forwarded to the matching protocol adapter
+instance, where the command will be reflected in the corresponding protocol adapter metrics with the <em>hono.command</em> prefix.
+If the command could not be forwarded to a protocol adapter, the Command Router will report the command in its metrics,
+as listed below.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Type</th>
+<th>Tags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>hono.command.payload</em></td>
+<td>DistributionSummary</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>status</em>, <em>direction</em></td>
+<td>The number of bytes conveyed in the payload of a command message that could not be forwarded to a protocol adapter.</td>
+</tr>
+<tr>
+<td><em>hono.command.processing.duration</em></td>
+<td>Timer</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em>, <em>tenant</em>, <em>type</em>, <em>status</em>, <em>direction</em></td>
+<td>The time it took to process a message conveying a command that could not be forwarded to a protocol adapter.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="device-registry">Device Registry</h4>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Type</th>
+<th>Tags</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>hono.tenants.total</em></td>
+<td>Gauge</td>
+<td><em>host</em>, <em>component-type</em>, <em>component-name</em></td>
+<td>The total number of tenants registered. All registry instances will report the same (total) number of tenants so no aggregation along the <em>host</em> dimension should be performed.</td>
+</tr>
+</tbody>
+</table>
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.min.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1770208025"></script>
+        <script src="/hono/docs/js/search.js?1770208025"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/dev/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><a href="/hono/docs/dev/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-c731eb3eada0765f704948e2d3b9bb48" class="toggle"/><label for="section-c731eb3eada0765f704948e2d3b9bb48" ></label><a href="/hono/docs/dev/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/dev/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/dev/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/dev/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/dev/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/dev/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/dev/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/dev/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/dev/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/dev/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-d6fec25116b4d5e6be18ed86b8fad672" class="toggle"/><label for="section-d6fec25116b4d5e6be18ed86b8fad672" ></label><a href="/hono/docs/dev/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/dev/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/dev/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-d5a22025c42b01588145d66a651ce55e" class="toggle"/><label for="section-d5a22025c42b01588145d66a651ce55e" ></label><a href="/hono/docs/dev/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/dev/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/dev/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/pubsub-config/" title="Google Pub/Sub Messaging Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/dev/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/dev/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-8cd7d3d625f0001d9daa22a0ffaa6ea8" class="toggle"/><label for="section-8cd7d3d625f0001d9daa22a0ffaa6ea8" ></label><a href="/hono/docs/dev/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/dev/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/dev/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/dev/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/dev/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/coap_adapter/" title="Considerations for extending the CoAP Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/coap_adapter/">Considerations for extending the CoAP Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/api/" title="API" class="dd-item parent"><input type="checkbox" id="section-bf46fc2fa4ee13191d05ad068b8b42a5" class="toggle" checked/><label for="section-bf46fc2fa4ee13191d05ad068b8b42a5" ></label><a href="/hono/docs/dev/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/dev/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/event-kafka/">Event API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control-kafka/" title="Command &amp; Control API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/command-and-control-kafka/">Command &amp; Control API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/kafka-api/" title="Kafka-based APIs" class="dd-item"><a href="/hono/docs/dev/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/dev/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/event/">Event API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/dev/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/dev/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/dev/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/dev/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/dev/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/dev/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/metrics/" title="Metrics" class="dd-item active"><a href="/hono/docs/dev/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-b97a17cf6230383a529850e14cb84165" class="toggle"/><label for="section-b97a17cf6230383a529850e14cb84165" ></label><a href="/hono/docs/dev/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/dev/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/dev/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/dev/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/dev/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/dev/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/dev/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/dev/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/dev/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-e069f043da2440ea34dcdf43b57fa860" class="toggle"/><label for="section-e069f043da2440ea34dcdf43b57fa860" ></label><a href="/hono/docs/dev/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/dev/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/dev/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/dev/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/dev/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/api/metrics/">stable (2.6)</option>
+                    <option id="2.6" value="/hono/docs/2.6/api/metrics/">2.6</option>
+                    <option id="2.5" value="/hono/docs/2.5/api/metrics/">2.5</option>
+                    <option id="2.4" value="/hono/docs/2.4/api/metrics/">2.4</option>
+                    <option id="2.3" value="/hono/docs/2.3/api/metrics/">2.3</option>
+                    <option id="2.2" value="/hono/docs/2.2/api/metrics/">2.2</option>
+                    <option id="2.1" value="/hono/docs/2.1/api/metrics/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/api/metrics/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/api/metrics/">1.12</option>
+                    <option id="dev" value="/hono/docs/dev/api/metrics/" selected>dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2026 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1770208025"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1770208025"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1770208025"></script>
+    <script src="/hono/docs/js/theme.js?1770208025"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

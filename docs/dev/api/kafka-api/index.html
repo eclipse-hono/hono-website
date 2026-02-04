@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="dev">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.123.8">
+    <meta name="generator" content="Relearn 4.2.5">
+    <meta name="description" content="A set of micro-services for connecting millions of devices.">
+    <meta name="author" content="The Eclipse Hono Project">
+    <title>Kafka-based APIs :: Eclipse Hono&trade; Vers.: dev</title>
+    <link href="/hono/docs/images/favicon.ico?1770208025" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1770208025" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1770208025" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1770208025" rel="stylesheet" media="print">
+    <style>
+      :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
+        display: none;
+      }
+      :not(pre) > code.copy-to-clipboard-code {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        border-right-width: 1px;
+      }
+    </style>
+    <script src="/hono/docs/js/variant.js?1770208025"></script>
+    <script>
+      // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
+      // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
+      var index_url="/hono/docs/dev/index.json";
+      var root_url="/";
+      var baseUri=root_url.replace(/\/$/, '');
+      // translations
+      window.T_Copy_to_clipboard = 'Copy to clipboard';
+      window.T_Copied_to_clipboard = 'Copied to clipboard!';
+      window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
+      window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
+      // some further base stuff
+      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      variants.init( [ 'hono' ] );
+    </script>
+    <script src="/hono/docs/js/jquery.min.js?1770208025"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+<link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@EclipseHono">
+<meta name="twitter:title" content="Kafka-based APIs :: Eclipse Hono&amp;trade; Vers.: dev">
+<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
+
+
+<meta property="og:title" content="Kafka-based APIs :: Eclipse Hono&amp;trade; Vers.: dev" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.eclipse.org/hono/docs/dev/api/kafka-api//" />
+<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+
+  </head>
+  <body class="mobile-support" data-url="/hono/docs/dev/api/kafka-api/">
+    <div id="body" class="default-animation">
+      <div id="sidebar-overlay"></div>
+      <div id="toc-overlay"></div>
+    <div class="old-version-hint">
+        <p>This page refers to version <em>dev</em>.
+            You might want to use the <a href="https://www.eclipse.org/hono/docs/">current stable</a> version instead.
+        </p>
+    </div>
+
+
+      <nav id="topbar" class="highlightable">
+        <div>
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page (CTRL+ALT+e)' href="https://github.com/eclipse-hono/hono/edit/master/site/documentation/content/api/kafka-api/index.md" target="blank">
+              <i class="fas fa-pen fa-fw"></i>
+            </a>
+          </div>
+          <div id="breadcrumbs">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" title='Menu (CTRL+ALT+m)'><i class="fas fa-bars fa-fw"></i></a>
+            </span>
+            <span id="toc-menu" title='Table of Contents (CTRL+ALT+t)'><i class="fas fa-list-alt fa-fw"></i></span>
+            <ol class="links" itemscope itemtype="http://schema.org/BreadcrumbList">
+              <meta itemprop="itemListOrder" content="Descending" />
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="3" /><a itemprop="item" href="/hono/docs/dev/"><span itemprop="name">Documentation</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="2" /><a itemprop="item" href="/hono/docs/dev/api/"><span itemprop="name">API</span></a> > </li>
+              <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><meta itemprop="position" content="1" /><a itemprop="item" href="/hono/docs/dev/api/kafka-api/" aria-disabled="true"><span itemprop="name">Kafka-based APIs</span></a></li>
+            </ol>
+          </div>
+          <div class="default-animation progress">
+            <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#kafka-based-messaging">Kafka-based Messaging</a>
+      <ul>
+        <li><a href="#quality-of-service">Quality of Service</a></li>
+        <li><a href="#message-ordering">Message Ordering</a></li>
+        <li><a href="#at-least-once-producers">AT LEAST ONCE Producers</a></li>
+        <li><a href="#at-most-once-producers">AT MOST ONCE Producers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main id="body-inner" class="highlightable" tabindex="-1">
+        <div class="flex-block-wrapper">
+          <div id="head-tags">
+          </div>
+          <article>
+
+<h1>Kafka-based APIs</h1>
+<p>The Kafka-based APIs of Eclipse Hono™ provide an alternative to the existing APIs based on AMQP 1.0.
+With these APIs, clients publish data to as well as consume data from an Apache Kafka® cluster instead of using an
+AMQP messaging network.</p>
+<h2 id="kafka-based-messaging">Kafka-based Messaging</h2>
+<p>Using Kafka instead of AMQP comes with slightly different behavior. Kafka provides a Publish/Subscribe messaging style.
+Every message is sent by a <em>producer</em> to a <em>topic</em> in a Kafka cluster, where it will be persisted by (multiple) <em>brokers</em>.
+Each topic consists of a configurable number of <em>partitions</em>. The <em>key</em> of a message determines to which partition it
+will be written. Each partition is <em>replicated</em> to a configurable number of brokers in the cluster to provide
+fault-tolerance if a broker goes down.</p>
+<p>A Kafka message (also called record) consists of a key, a value, a timestamp, and headers.</p>
+<p>Multiple <em>consumers</em> can read the messages at the same time and they can read them repeatedly (if an error occurred).
+This decoupling of producer and consumers has the consequence that a producer does not get feedback about the consumption
+of messages, it does not know <em>if</em> and <em>when</em> a message will be read by any consumer(s).
+For example, a protocol adapter can only confirm to the device that the Kafka cluster successfully persisted a telemetry
+message, not if a <em>Business Application</em> received it.</p>
+<p>Messages are usually deleted from a topic at some point – regardless of whether they have been processed by a
+consumer. Care should therefore be taken to set each topic&rsquo;s <em>log retention time</em> to a reasonable value in the Kafka
+configuration.</p>
+<p>See the <a href="https://kafka.apache.org/documentation/#configuration">Kafka documentation</a> for details about Kafka&rsquo;s
+configuration properties.</p>
+<h3 id="quality-of-service">Quality of Service</h3>
+<p>The Kafka client&rsquo;s <a href="https://kafka.apache.org/documentation/#acks"><em>acks</em></a> configuration property is used to
+configure what acknowledgements a producer expects from the cluster for each message.
+The value of this property determines the maximum <em>Quality of Service</em> level the producer can achieve.
+Kafka supports the following settings:</p>
+<ul>
+<li><code>0</code>: the producer does not wait for any acknowledgements. This provides no guarantees.</li>
+<li><code>1</code>: the producer requests only an acknowledgement from one broker. If the broker goes down before others finished
+replication, then the message will be lost.</li>
+<li><code>all</code> (or equivalent <code>-1</code>): the producer requests an acknowledgement that confirms that the message has successfully
+been replicated to the required number of brokers. This guarantees that the message will not be lost as long as
+at least one of the replicas remains alive.</li>
+</ul>
+<h3 id="message-ordering">Message Ordering</h3>
+<p>For each <em>partition</em> of a topic, Kafka guarantees that consumers receive messages in the same order that the producer
+has written them to the partition. Hono&rsquo;s protocol adapters, therefore, use the device identifier as the key when
+writing messages to downstream topics, thus making sure that messages originating from the same device always end up
+in the same partition.
+For example, each protocol adapter must always send telemetry data reported by a particular device to the same partition
+(e.g. by using the same <a href="https://kafka.apache.org/documentation/#partitioner.class">partitioner</a> implementation)
+in the same order that they have been received in.</p>
+<p>The following producer configuration properties influence if the order of the messages can be guaranteed by Kafka:</p>
+<ul>
+<li><a href="https://kafka.apache.org/documentation/#retries"><em>retries</em></a></li>
+<li><a href="https://kafka.apache.org/documentation/#max.in.flight.requests.per.connection"><em>max.in.flight.requests.per.connection</em></a></li>
+<li><a href="https://kafka.apache.org/documentation/#enable.idempotence"><em>enable.idempotence</em></a></li>
+</ul>
+<p>Setting <em>acks</em> to <code>0</code> effectively disables retries. If <em>retries</em> are set to a value greater than zero and
+<em>max.in.flight.requests.per.connection</em> is set to a value greater than <code>1</code>, Kafka no longer guarantees that messages
+are stored in the order they have been sent.
+The only exception is the <em>idempotent</em> producer, which can handle <em>max.in.flight.requests.per.connection</em> to be up to <code>5</code>
+with retries enabled while still maintaining the message order (since Kafka version 1.0.0).
+Note that the <em>idempotent</em> producer option requires special privileges for the producer&rsquo;s user to be configured.</p>
+<h3 id="at-least-once-producers">AT LEAST ONCE Producers</h3>
+<p>To provide <em>AT LEAST ONCE</em> delivery semantics, a producer MUST wait for the acknowledgements from all <em>in-sync replicas</em>
+before sending the acknowledgement back to the client.
+This can be achieved e.g. by setting <em>acks</em> to <code>all</code> or, implicitly, by setting <em>enable.idempotence</em> to <code>true</code>.</p>
+<p>The producer MUST retain the order in which it received messages from a client.
+This requires that if <em>retries</em> is set to a value greater than zero, <em>max.in.flight.requests.per.connection</em> must be
+set to <code>1</code>. Alternatively, <em>enable.idempotence</em> can be set to <code>true</code>.
+Disabling retries might cause messages to fail in case of high load or transient transmission failures, so this is not
+recommended.</p>
+<p>The recommended configuration for <em>AT LEAST ONCE</em> producers has the following properties:
+<code>enable.idempotence=true</code>, <code>acks=all</code>, <code>max.in.flight.requests.per.connection=5</code>, leaving <em>retries</em> unset (which defaults to
+<code>Integer.MAX</code>), and setting <em>delivery.timeout.ms</em> to a reasonable value. This configuration is supported from Kafka
+version 1.0.0 on.</p>
+<h3 id="at-most-once-producers">AT MOST ONCE Producers</h3>
+<p>Every producer that does not wait for acknowledgements from all <em>in-sync replicas</em> or does not consider them before
+sending an acknowledgement back to the client, is considered to provide only <em>AT MOST ONCE</em> delivery semantics.
+To achieve this, several strategies are possible:</p>
+<ol>
+<li>The producer can disable acknowledgements (<code>acks=0</code>). This is the fastest mode of delivery but has the drawback of
+a potential loss of messages without notice.</li>
+<li>The producer can enable acknowledgements, but not wait for the acknowledgements from the Kafka cluster before
+acknowledging the message to <em>its</em> client.</li>
+</ol>
+<p>The producer MUST retain the order in which it received messages from a client.
+This requires to either set <em>retries</em> to <code>0</code> or to set <em>max.in.flight.requests.per.connection</em> to <code>1</code>.</p>
+
+<div class="box notices cstyle tip">
+    <div class="box-label"><i class="fa-fw fas fa-lightbulb"></i> Tip</div>
+    <div class="box-content">
+<p>To send messages with both delivery semantics with the same producer, it MUST be configured for <em>AT LEAST ONCE</em>.
+Such a producer may ignore the outcome of the <em>produce</em> operation for <em>AT MOST ONCE</em> messages.</p>
+    </div>
+</div>
+
+            <footer class="footline">
+            </footer>
+          </article>
+        </div>
+      </main>
+    </div>
+    <aside id="sidebar" class="default-animation">
+      <div id="header-wrapper" class="default-animation">
+        <div id="header" class="default-animation">
+<a href="https://www.eclipse.org/hono/">
+    <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
+</a>
+
+        </div>
+        <div class="searchbox default-animation">
+          <label for="search-by"><i class="fas fa-search"></i></label>
+          <input data-search-input id="search-by" type="search" placeholder="Search...">
+          <span data-search-clear=""><i class="fas fa-times"></i></span>
+        </div>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/hono/docs/js/auto-complete.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.min.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1770208025"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1770208025"></script>
+        <script src="/hono/docs/js/search.js?1770208025"></script>
+      </div>
+      <div id="content-wrapper" class="highlightable">
+        <ul class="topics">
+          <li data-nav-id="/hono/docs/dev/getting-started/" title="Getting started with Eclipse Hono" class="dd-item"><a href="/hono/docs/dev/getting-started/"><i class="fas fa-plane-departure"></i> Getting started</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/" title="Concepts" class="dd-item"><input type="checkbox" id="section-c731eb3eada0765f704948e2d3b9bb48" class="toggle"/><label for="section-c731eb3eada0765f704948e2d3b9bb48" ></label><a href="/hono/docs/dev/concepts/"><i class="far fa-lightbulb"></i> Concepts</a><ul>
+          <li data-nav-id="/hono/docs/dev/concepts/device-identity/" title="Device Identity" class="dd-item"><a href="/hono/docs/dev/concepts/device-identity/">Device Identity</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/tenancy/" title="Multi-Tenancy" class="dd-item"><a href="/hono/docs/dev/concepts/tenancy/">Multi-Tenancy</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/device-provisioning/" title="Device Provisioning" class="dd-item"><a href="/hono/docs/dev/concepts/device-provisioning/">Device Provisioning</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/connecting-devices/" title="Connecting Devices" class="dd-item"><a href="/hono/docs/dev/concepts/connecting-devices/">Connecting Devices</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/device-notifications/" title="Device Notifications" class="dd-item"><a href="/hono/docs/dev/concepts/device-notifications/">Device Notifications</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/command-and-control/" title="Command &amp; Control" class="dd-item"><a href="/hono/docs/dev/concepts/command-and-control/">Command &amp; Control</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/resource-limits/" title="Resource limits" class="dd-item"><a href="/hono/docs/dev/concepts/resource-limits/">Resource limits</a></li>
+          <li data-nav-id="/hono/docs/dev/concepts/connection-events/" title="Connection Events" class="dd-item"><a href="/hono/docs/dev/concepts/connection-events/">Connection Events</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/" title="User Guide" class="dd-item"><input type="checkbox" id="section-d6fec25116b4d5e6be18ed86b8fad672" class="toggle"/><label for="section-d6fec25116b4d5e6be18ed86b8fad672" ></label><a href="/hono/docs/dev/user-guide/"><i class="fas fa-book-reader"></i> User Guide</a><ul>
+          <li data-nav-id="/hono/docs/dev/user-guide/device-registry/" title="Device Registry" class="dd-item"><a href="/hono/docs/dev/user-guide/device-registry/">Device Registry</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/http-adapter/" title="HTTP Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/http-adapter/">HTTP Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/mqtt-adapter/" title="MQTT Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/mqtt-adapter/">MQTT Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/amqp-adapter/" title="AMQP Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/amqp-adapter/">AMQP Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/coap-adapter/" title="CoAP Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/coap-adapter/">CoAP Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/user-guide/sigfox-adapter/" title="Sigfox Adapter" class="dd-item"><a href="/hono/docs/dev/user-guide/sigfox-adapter/">Sigfox Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/" title="Admin Guide" class="dd-item"><input type="checkbox" id="section-d5a22025c42b01588145d66a651ce55e" class="toggle"/><label for="section-d5a22025c42b01588145d66a651ce55e" ></label><a href="/hono/docs/dev/admin-guide/"><i class="fas fa-sliders-h"></i> Admin Guide</a><ul>
+          <li data-nav-id="/hono/docs/dev/admin-guide/common-config/" title="Common Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/common-config/">Common Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/auth-server-config/" title="Auth Server Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/auth-server-config/">Auth Server Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/mongodb-device-registry-config/" title="MongoDB Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/mongodb-device-registry-config/">MongoDB Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/jdbc-device-registry-config/" title="JDBC Based Device Registry Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/jdbc-device-registry-config/">JDBC Based Device Registry Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/command-router-config/" title="Configuring the Command Router Service" class="dd-item"><a href="/hono/docs/dev/admin-guide/command-router-config/">Command Router Service Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/http-adapter-config/" title="HTTP Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/http-adapter-config/">HTTP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/mqtt-adapter-config/" title="MQTT Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/mqtt-adapter-config/">MQTT Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/amqp-adapter-config/" title="AMQP Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/amqp-adapter-config/">AMQP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/coap-adapter-config/" title="CoAP Adapter Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/coap-adapter-config/">CoAP Adapter Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/hono-client-configuration/" title="Hono Client Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/hono-client-configuration/">Hono Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/hono-kafka-client-configuration/" title="Hono Kafka Client Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/hono-kafka-client-configuration/">Hono Kafka Client Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/amqp-network-config/" title="AMQP 1.0 Messaging Network Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/amqp-network-config/">AMQP 1.0 Messaging Network Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/kafka-config/" title="Kafka Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/kafka-config/">Kafka Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/pubsub-config/" title="Google Pub/Sub Messaging Configuration" class="dd-item"><a href="/hono/docs/dev/admin-guide/pubsub-config/">Google Pub/Sub Messaging Configuration</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/secure_communication/" title="Secure Communication" class="dd-item"><a href="/hono/docs/dev/admin-guide/secure_communication/">Secure Communication</a></li>
+          <li data-nav-id="/hono/docs/dev/admin-guide/monitoring-tracing-config/" title="Monitoring &amp; Tracing" class="dd-item"><a href="/hono/docs/dev/admin-guide/monitoring-tracing-config/">Monitoring &amp; Tracing</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/" title="Developer Guide" class="dd-item"><input type="checkbox" id="section-8cd7d3d625f0001d9daa22a0ffaa6ea8" class="toggle"/><label for="section-8cd7d3d625f0001d9daa22a0ffaa6ea8" ></label><a href="/hono/docs/dev/dev-guide/"><i class="fas fa-tools"></i> Developer Guide</a><ul>
+          <li data-nav-id="/hono/docs/dev/dev-guide/building_hono/" title="Building from Source" class="dd-item"><a href="/hono/docs/dev/dev-guide/building_hono/">Building from Source</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/amqp_adapter_client/" title="AMQP Adapter Client for Java" class="dd-item"><a href="/hono/docs/dev/dev-guide/amqp_adapter_client/">AMQP Adapter Client for Java</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/custom_http_adapter/" title="Implement a Custom Hono HTTP Protocol Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/custom_http_adapter/">Implement a Custom Hono HTTP Protocol Adapter</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/java_client_consumer/" title="Consuming Messages from Java" class="dd-item"><a href="/hono/docs/dev/dev-guide/java_client_consumer/">Consuming Messages from Java</a></li>
+          <li data-nav-id="/hono/docs/dev/dev-guide/coap_adapter/" title="Considerations for extending the CoAP Adapter" class="dd-item"><a href="/hono/docs/dev/dev-guide/coap_adapter/">Considerations for extending the CoAP Adapter</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/api/" title="API" class="dd-item parent"><input type="checkbox" id="section-bf46fc2fa4ee13191d05ad068b8b42a5" class="toggle" checked/><label for="section-bf46fc2fa4ee13191d05ad068b8b42a5" ></label><a href="/hono/docs/dev/api/">&nbsp;<i class='fas fa-plug'></i>&nbsp;API</a><ul>
+          <li data-nav-id="/hono/docs/dev/api/telemetry-kafka/" title="Telemetry API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/telemetry-kafka/">Telemetry API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/event-kafka/" title="Event API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/event-kafka/">Event API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control-kafka/" title="Command &amp; Control API Specification for Kafka" class="dd-item"><a href="/hono/docs/dev/api/command-and-control-kafka/">Command &amp; Control API (Kafka)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/kafka-api/" title="Kafka-based APIs" class="dd-item active"><a href="/hono/docs/dev/api/kafka-api/">Kafka-based APIs</a></li>
+          <li data-nav-id="/hono/docs/dev/api/telemetry/" title="Telemetry API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/telemetry/">Telemetry API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/event/" title="Event API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/event/">Event API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control/" title="Command &amp; Control API Specification for AMQP 1.0" class="dd-item"><a href="/hono/docs/dev/api/command-and-control/">Command &amp; Control API (AMQP 1.0)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/telemetry-pubsub/" title="Telemetry API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/telemetry-pubsub/">Telemetry API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/event-pubsub/" title="Event API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/event-pubsub/">Event API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-and-control-pubsub/" title="Command &amp; Control API Specification for Google Pub/Sub" class="dd-item"><a href="/hono/docs/dev/api/command-and-control-pubsub/">Command &amp; Control API (Pub/Sub)</a></li>
+          <li data-nav-id="/hono/docs/dev/api/tenant/" title="Tenant API Specification" class="dd-item"><a href="/hono/docs/dev/api/tenant/">Tenant API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/command-router/" title="Command Router API Specification" class="dd-item"><a href="/hono/docs/dev/api/command-router/">Command Router API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/device-registration/" title="Device Registration API Specification" class="dd-item"><a href="/hono/docs/dev/api/device-registration/">Device Registration API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/credentials/" title="Credentials API Specification" class="dd-item"><a href="/hono/docs/dev/api/credentials/">Credentials API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/authentication/" title="Authentication API Specification" class="dd-item"><a href="/hono/docs/dev/api/authentication/">Authentication API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/management/" title="Device Registry Management API Specification" class="dd-item"><a href="/hono/docs/dev/api/management/">Device Registry Management API</a></li>
+          <li data-nav-id="/hono/docs/dev/api/metrics/" title="Metrics" class="dd-item"><a href="/hono/docs/dev/api/metrics/">Metrics</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/deployment/" title="Deployment" class="dd-item"><input type="checkbox" id="section-b97a17cf6230383a529850e14cb84165" class="toggle"/><label for="section-b97a17cf6230383a529850e14cb84165" ></label><a href="/hono/docs/dev/deployment/"><i class="fas fa-shipping-fast"></i> Deployment</a><ul>
+          <li data-nav-id="/hono/docs/dev/deployment/helm-based-deployment/" title="Helm based Deployment" class="dd-item"><a href="/hono/docs/dev/deployment/helm-based-deployment/">Helm based Deployment</a></li>
+          <li data-nav-id="/hono/docs/dev/deployment/openshift/" title="OpenShift / OKD" class="dd-item"><a href="/hono/docs/dev/deployment/openshift/">OpenShift / OKD</a></li>
+          <li data-nav-id="/hono/docs/dev/deployment/create-kubernetes-cluster/" title="Setting up a Kubernetes Cluster" class="dd-item"><a href="/hono/docs/dev/deployment/create-kubernetes-cluster/">Setting up a Kubernetes Cluster</a></li>
+          <li data-nav-id="/hono/docs/dev/deployment/resource-limitation/" title="Limiting Resource Usage" class="dd-item"><a href="/hono/docs/dev/deployment/resource-limitation/">Limiting Resource Usage</a></li></ul></li>
+          <li data-nav-id="/hono/docs/dev/architecture/" title="Architecture" class="dd-item"><input type="checkbox" id="section-e069f043da2440ea34dcdf43b57fa860" class="toggle"/><label for="section-e069f043da2440ea34dcdf43b57fa860" ></label><a href="/hono/docs/dev/architecture/"><i class="fas fa-landmark"></i> Architecture</a><ul>
+          <li data-nav-id="/hono/docs/dev/architecture/component-view/" title="Component View" class="dd-item"><a href="/hono/docs/dev/architecture/component-view/">Component View</a></li>
+          <li data-nav-id="/hono/docs/dev/architecture/auth/" title="Authentication/Authorization" class="dd-item"><a href="/hono/docs/dev/architecture/auth/">Authentication/Authorization</a></li></ul></li>
+        </ul>
+        <div id="shortcuts">
+          <div class="nav-title"></div>
+          <ul>
+            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+          </ul>
+        </div>
+        <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
+        <hr class="default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"/>
+        <div id="prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks showLangSwitch">
+          <ul>
+            <li id="select-language-container" class="footerLangSwitch showLangSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-language fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-language" onchange="location = baseUri + this.value;">
+                    <option id="stable" value="/hono/docs/api/kafka-api/">stable (2.6)</option>
+                    <option id="2.6" value="/hono/docs/2.6/api/kafka-api/">2.6</option>
+                    <option id="2.5" value="/hono/docs/2.5/api/kafka-api/">2.5</option>
+                    <option id="2.4" value="/hono/docs/2.4/api/kafka-api/">2.4</option>
+                    <option id="2.3" value="/hono/docs/2.3/api/kafka-api/">2.3</option>
+                    <option id="2.2" value="/hono/docs/2.2/api/kafka-api/">2.2</option>
+                    <option id="2.1" value="/hono/docs/2.1/api/kafka-api/">2.1</option>
+                    <option id="2.0" value="/hono/docs/2.0/api/kafka-api/">2.0</option>
+                    <option id="1.12" value="/hono/docs/1.12/api/kafka-api/">1.12</option>
+                    <option id="dev" value="/hono/docs/dev/api/kafka-api/" selected>dev</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+            </li>
+            <li id="select-variant-container" class="footerVariantSwitch">
+              <a class="padding select-container">
+                <i class="fas fa-paint-brush fa-fw"></i>
+                <span>&nbsp;</span>
+                <div class="select-style">
+                  <select id="select-variant" onchange="variants.changeVariant( this.value );">
+                    <option id="hono" value="hono" selected>Hono</option>
+                  </select>
+                </div>
+                <div class="select-clear"></div>
+              </a>
+              <script>variants.markSelectedVariant();</script>
+            </li>
+            <li class="footerVisitedLinks"><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+          </ul>
+        </div>
+        <div id="footer" class="footerFooter showFooter">
+
+<p>&copy; 2026 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+
+<p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+
+<div class="eclipse-logo">
+    <a href="https://www.eclipse.org" target="_blank">
+        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+    </a>
+</div>
+
+        </div>
+      </div>
+    </aside>
+    <script src="/hono/docs/js/clipboard.min.js?1770208025"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1770208025"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1770208025"></script>
+    <script src="/hono/docs/js/theme.js?1770208025"></script>
+
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WLCZXC');
+</script>
+
+
+<script src="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/javascript/vendor/cookieconsent/default.min.js"></script>
+
+  </body>
+</html>

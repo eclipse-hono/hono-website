@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Developer Guide on Eclipse Hono&amp;trade; Vers.: dev</title>
+    <link>https://www.eclipse.org/hono/docs/dev/dev-guide/</link>
+    <description>Recent content in Developer Guide on Eclipse Hono&amp;trade; Vers.: dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>dev</language><atom:link href="https://www.eclipse.org/hono/docs/dev/dev-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building from Source</title>
+      <link>https://www.eclipse.org/hono/docs/dev/dev-guide/building_hono/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/dev/dev-guide/building_hono/</guid>
+      <description>Hono can be deployed using the pre-built Docker images available from our Docker Hub repositories. However, customizing and/or extending Hono&amp;rsquo;s functionality requires building the images from source code.
+This page provides step by step instructions for getting the source code and building the Hono&amp;rsquo;s Docker images from it.
+Prerequisites for building Hono Docker Creating Hono&amp;rsquo;s container images using the Hono build process requires a Docker daemon running either locally or on another host you have access to.</description>
+    </item>
+    <item>
+      <title>AMQP Adapter Client for Java</title>
+      <link>https://www.eclipse.org/hono/docs/dev/dev-guide/amqp_adapter_client/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/dev/dev-guide/amqp_adapter_client/</guid>
+      <description>Eclipse Hono™ comes with a Java client for the AMQP adapter. It is intended for the implementation of (prototype) devices, (protocol) gateways and/or (end-to-end) tests. The client is based on Eclipse Vert.x.
+The client is represented by the AmqpAdapterClient class in the hono-client-device-amqp module. Instances can be created using the create(HonoConnection) factory method.
+The client provides methods for each of the following operations:
+Getting a receiver for receiving command &amp;amp; control messages (via the AmqpAdapterClient createCommandConsumer / createDeviceSpecificCommandConsumer methods) Sending a telemetry message (via the inherited TelemetrySender sendTelemetry method) Sending an event message (via the inherited EventSender sendEvent method) Sending a response to a previously received command (via the inherited CommandResponder sendCommandResponse method) Please refer to the javadoc of the classes for details.</description>
+    </item>
+    <item>
+      <title>Implement a Custom Hono HTTP Protocol Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/dev/dev-guide/custom_http_adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/dev/dev-guide/custom_http_adapter/</guid>
+      <description>&lt;p&gt;Eclipse Hono™ comes with a default &lt;em&gt;HTTP Adapter&lt;/em&gt; which can be used to interact with devices via HTTP.
+The default HTTP Adapter also serves as a blueprint for implementing a &lt;em&gt;custom&lt;/em&gt; HTTP protocol adapter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Consuming Messages from Java</title>
+      <link>https://www.eclipse.org/hono/docs/dev/dev-guide/java_client_consumer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/dev/dev-guide/java_client_consumer/</guid>
+      <description>To illustrate how Eclipse Hono™ can be integrated with Java code, a simple application is provided that consumes telemetry and event data for devices belonging to the default tenant.
+It also includes support for Command &amp;amp; Control:
+If indicated by a received downstream message that contains a ttd value (refer to Device notifications for details) it tries to send a command to the device. If the value of ttd indicates that the device stays connected for an unlimited time (ttd == -1), the application will periodically repeat to send a command until notified the device is disconnected again (ttd == 0).</description>
+    </item>
+    <item>
+      <title>Considerations for extending the CoAP Adapter</title>
+      <link>https://www.eclipse.org/hono/docs/dev/dev-guide/coap_adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.eclipse.org/hono/docs/dev/dev-guide/coap_adapter/</guid>
+      <description>This page provides some hints worth considering when extending the CoAP protocol adapter&amp;rsquo;s functionality.
+Option Numbers The CoAP adapter uses several of the standard options defined by RFC 7252. Unlike HTTP header fields which are simple strings, the options used in CoAP request and response messages are defined by means of integer numbers. The assignment and registration of option numbers is defined in RFC 7252, Section 12.2. In particular, the RFC reserves the number range 65000-65535 for experimental use.</description>
+    </item>
+  </channel>
+</rss>
