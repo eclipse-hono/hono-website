@@ -33,9 +33,8 @@ jobs:
     permissions:
       contents: write
     env:
-      HONO_DIR: "${{ github.workspace }}/hono"
-      HONO_HOMEPAGE_DIR: "${HONO_DIR}/site/homepage"
-      HONO_DOCUMENTATION_DIR: "${HONO_DIR}/site/documentation"
+      HONO_HOMEPAGE_DIR: "${{ github.workspace }}/hono/site/homepage"
+      HONO_DOCUMENTATION_DIR: "${{ github.workspace }}/hono/site/documentation"
       WEBSITE_REPO_DIR: "${{ github.workspace }}/hono-website"
       DOC_ASSEMBLY_DIR: "${{ github.workspace }}/hono-documentation-assembly"
 
@@ -52,8 +51,8 @@ jobs:
             --no-single-branch \
             --recurse-submodules \
             --shallow-submodules \
-            https://github.com/eclipse-hono/hono.git
-            "${HONO_DIR}"
+            https://github.com/eclipse-hono/hono.git \
+            hono
 
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v2
