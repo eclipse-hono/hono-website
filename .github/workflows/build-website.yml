@@ -14,9 +14,9 @@
 name: Build Website
 
 on:
-  #schedule:
+  schedule:
   # run every night at 4:11 AM (UTC)
-  #- cron: '11 4 * * *'
+  - cron: '11 4 * * *'
   workflow_dispatch:
     inputs:
       dry-run:
