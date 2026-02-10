@@ -1,0 +1,153 @@
+# Copyright (c) 2025 Contributors to the Eclipse Foundation
+#
+# See the NOTICE file(s) distributed with this work for additional
+# information regarding copyright ownership.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Public License 2.0 which is available at
+# http://www.eclipse.org/legal/epl-2.0
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+# Builds Hono's website using Hugo.
+
+name: Build Website
+
+on:
+  schedule:
+  # run every night at 4:11 AM (UTC)
+  - cron: '11 4 * * *'
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        type: boolean
+        description: |
+          Set to `true` to build the website but do not push changes to the repository.
+          This will prevent any changes from being published.
+        required: false
+        default: false
+
+jobs:
+  build-website:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      HONO_HOMEPAGE_DIR: "${{ github.workspace }}/hono/site/homepage"
+      HONO_DOCUMENTATION_DIR: "${{ github.workspace }}/hono/site/documentation"
+      WEBSITE_REPO_DIR: "${{ github.workspace }}/hono-website"
+      DOC_ASSEMBLY_DIR: "${{ github.workspace }}/hono-documentation-assembly"
+
+    steps:
+      - name: Checkout website repository
+        uses: actions/checkout@v6
+        with:
+          path: "hono-website"
+
+      - name: Checkout Hono repository
+        run: |
+          git clone \
+            --depth 1 \
+            --no-single-branch \
+            --recurse-submodules \
+            --shallow-submodules \
+            https://github.com/eclipse-hono/hono.git \
+            hono
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.123.8"
+          extended: true
+
+      - name: Prepare workspace
+        run: |
+          echo "Scrubbing web site folder..."
+          (cd "${WEBSITE_REPO_DIR}"; git rm -r --quiet -- ':!README.md' ':!LICENSE' ':!.github')
+
+          echo "Adding Documentation from master branch as DEV version..."
+          cp -r -p "${HONO_DOCUMENTATION_DIR}" "${DOC_ASSEMBLY_DIR}"
+          mv "${DOC_ASSEMBLY_DIR}/content" "${DOC_ASSEMBLY_DIR}/dev"
+          mkdir "${DOC_ASSEMBLY_DIR}/content"
+          mv "${DOC_ASSEMBLY_DIR}/dev" "${DOC_ASSEMBLY_DIR}/content/"
+
+      - name: Build Landing Page
+        run: |
+          cd "${HONO_HOMEPAGE_DIR}"
+          echo "Using $(hugo version)"
+          echo "Removing obsolete images that come with theme used for landing page ..."
+          # we do not need the pictures that come with the theme
+          # removing them, so they don't get deployed.
+          rm themes/hugo-universal-theme/static/img/*
+          echo "Building landing page..."
+          hugo -d "${WEBSITE_REPO_DIR}"
+
+      - name: Build Documentation Site
+        run: |
+          echo "Determining supported versions of documentation"
+          function prepare_stable {
+            version="$1.$2"
+            {
+              echo "  [Languages.stable]"
+              echo "    weight = -20000"
+              echo "    languageName = \"stable ($version)\""
+              echo "    contentDir = \"content/stable\""
+              echo "    [Languages.stable.params]"
+              echo "      honoVersion = \"stable\""
+            } >> "${DOC_ASSEMBLY_DIR}/config_version.toml"
+            cp -r -p "${HONO_DOCUMENTATION_DIR}/content" "${DOC_ASSEMBLY_DIR}/content/stable"
+          }
+
+          function prepare_docu_version {
+            local pad=00
+            local minor="${2//[!0-9]/}" # make sure that minor only contains numbers  
+            weight="-$1${pad:${#minor}:${#pad}}${minor}"
+            version="$1.$2"
+            {
+              echo "  [Languages.\"${version}\"]"
+              echo "    title = \"Eclipse Hono&trade; Vers.: ${version}\""
+              echo "    weight = ${weight}"
+              echo "    languageName = \"${version}\""
+              echo "    contentDir = \"content/${version}\""
+              echo "    [Languages.\"${version}\".params]"
+              echo "      honoVersion = \"${version}\""
+            } >> "${DOC_ASSEMBLY_DIR}/config_version.toml"
+            cp -r -p "${HONO_DOCUMENTATION_DIR}/content" "${DOC_ASSEMBLY_DIR}/content/${version}"
+          }
+
+          cd "${HONO_DOCUMENTATION_DIR}"
+
+          tag_stable=$(cat "${DOC_ASSEMBLY_DIR}/tag_stable.txt")
+          while IFS=";" read -r major minor tag
+          do
+            git checkout --recurse-submodules "${tag}"
+            if [[ "${tag}" == "${tag_stable}" ]]; then
+              prepare_stable "${major}" "${minor}"
+            fi
+            prepare_docu_version "${major}" "${minor}"
+          done < <(tail -n+3 "${DOC_ASSEMBLY_DIR}/versions_supported.csv")  # skip header line and comment
+
+          echo "Documentation source content folder layout:"
+          du -h -d 2 "${DOC_ASSEMBLY_DIR}/content"
+
+      - name: Build Site with Hugo
+        run: |
+          cd "${DOC_ASSEMBLY_DIR}"
+          echo "Using $(hugo version)"
+          echo "Building documentation site..."
+          hugo --config "config.toml,config_version.toml" -d "${WEBSITE_REPO_DIR}/docs"
+
+      - name: Commit and Push changes
+        if: ${{ ! inputs.dry-run }}
+        run: |
+          cd "${WEBSITE_REPO_DIR}"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes have been detected since last build, nothing to publish"
+          else
+            echo "Changes have been detected, publishing to Hono website repo on GitHub"
+            git config user.email "hono-bot@eclipse.org"
+            git config user.name "Hono Bot"
+            git commit -s -m "Website build ${{ github.workflow }}-${{ github.run_number }}"
+            git push origin HEAD:refs/heads/main
+          fi
