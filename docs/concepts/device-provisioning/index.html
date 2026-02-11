@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Device Provisioning :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1770689660" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1770689660" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1770689660" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1770689660" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1770785659" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1770785659" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1770785659" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1770785659" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1770689660"></script>
+    <script src="/hono/docs/js/variant.js?1770785659"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -42,24 +42,24 @@
       window.T_Copy_link_to_clipboard = 'Copy link to clipboard';
       window.T_Link_copied_to_clipboard = 'Copied link to clipboard!';
       // some further base stuff
-      var baseUriFull='https:\/\/www.eclipse.org\/hono\/docs/';
+      var baseUriFull='https:\/\/eclipse.dev\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1770689660"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1770785659"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@EclipseHono">
 <meta name="twitter:title" content="Device Provisioning :: Eclipse Hono&amp;trade;">
-<meta name="twitter:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png">
+<meta name="twitter:image" content="https://eclipse.dev/hono/docs/images/twitter_image.png">
 <meta name="twitter:description" content="A set of micro-services for connecting millions of devices.">
 
 
 <meta property="og:title" content="Device Provisioning :: Eclipse Hono&amp;trade;" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.eclipse.org/hono/docs/concepts/device-provisioning//" />
-<meta property="og:image" content="https://www.eclipse.org/hono/docs/images/twitter_image.png" />
+<meta property="og:url" content="https://eclipse.dev/hono/docs/concepts/device-provisioning//" />
+<meta property="og:image" content="https://eclipse.dev/hono/docs/images/twitter_image.png" />
 
   </head>
   <body class="mobile-support" data-url="/hono/docs/concepts/device-provisioning/">
@@ -148,17 +148,17 @@ Since the main part of the <em>Auto-Provisioning</em> has to be done by the Devi
 <li>Configure the trusted CA for the tenant</li>
 <li>Enable the feature for the CA</li>
 </ol>
-<p>If the Device Registry implementation provides the <a href="https://www.eclipse.org/hono/docs/api/management/">Management API</a>, this could be done in a single step.
-For details refer to the <a href="https://www.eclipse.org/hono/docs/api/tenant/#trusted-ca-format">Tenant API specification</a>.</p>
+<p>If the Device Registry implementation provides the <a href="https://eclipse.dev/hono/docs/api/management/">Management API</a>, this could be done in a single step.
+For details refer to the <a href="https://eclipse.dev/hono/docs/api/tenant/#trusted-ca-format">Tenant API specification</a>.</p>
 <p>The Device Registry generates a unique device identifier during auto-provisioning. If <em>auto-provisioning-device-id-template</em>
 is configured in the corresponding tenant&rsquo;s CA entry, then the device registry generates the device identifier based on
 the configured template. If not configured, then a random unique device identifier is generated. Refer to the
-<a href="https://www.eclipse.org/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a> for more details on how to
+<a href="https://eclipse.dev/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a> for more details on how to
 configure a tenant&rsquo;s trusted CA authority for that.</p>
 <p>The Device Registry creates device credentials during auto-provisioning. If <em>auth-id-template</em> is configured in the
 corresponding tenant’s CA entry, then the device registry generates the credentials authentication identity based on the
 configured template. If not configured, then subject DN of the device certificate is used as authentication identity.
-Refer to the <a href="https://www.eclipse.org/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a> for more details on
+Refer to the <a href="https://eclipse.dev/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a> for more details on
 how to configure a tenant&rsquo;s trusted CA authority for that.</p>
 <h5 id="step-2-connect-an-unregistered-device-to-hono">Step 2: Connect an unregistered Device to Hono</h5>
 <figure><img src="auto-provisioning.svg"
@@ -167,7 +167,7 @@ how to configure a tenant&rsquo;s trusted CA authority for that.</p>
         </figcaption>
 </figure>
 
-<p>Hono&rsquo;s protocol adapters query the APIs of the Device Registry during <a href="https://www.eclipse.org/hono/docs/concepts/device-identity/">Device Authentication</a>.
+<p>Hono&rsquo;s protocol adapters query the APIs of the Device Registry during <a href="https://eclipse.dev/hono/docs/concepts/device-identity/">Device Authentication</a>.
 First, the Tenant API is queried. If the Tenant configuration returned contains the CA used for authentication and the
 feature is switched on for this CA, the protocol adapter assumes that automatic provisioning must be performed.
 It puts the device&rsquo;s certificate into the query to enable the device registry to do the provisioning.</p>
@@ -178,7 +178,7 @@ certificate to create both credentials and device registration data for it.</p>
 <li>Generate a unique device-id</li>
 <li>Create device</li>
 <li>Create credentials</li>
-<li>Send a <a href="https://www.eclipse.org/hono/docs/api/event/#device-provisioning-notification">Device Provisioning Notification</a></li>
+<li>Send a <a href="https://eclipse.dev/hono/docs/api/event/#device-provisioning-notification">Device Provisioning Notification</a></li>
 <li>Optional: Provision device in external systems</li>
 </ol>
 <p>After successfully sending a device provisioning notification, the corresponding device registration is updated with
@@ -191,19 +191,19 @@ is to ensure that the notification is sent at least once.</p>
 <p>The provisioning is, of course, a one-time action, on subsequent connections the APIs simply return the stored records.</p>
 <h2 id="automatic-gateway-provisioning">Automatic Gateway Provisioning</h2>
 <p>Auto-provisioning of gateways involves the same steps as
-<a href="https://www.eclipse.org/hono/docs/concepts/device-provisioning/#automatic-device-provisioning">Automatic Device Provisioning</a>.
+<a href="https://eclipse.dev/hono/docs/concepts/device-provisioning/#automatic-device-provisioning">Automatic Device Provisioning</a>.
 An extra attribute namely <em>auto-provision-as-gateway</em> is needed in the tenant&rsquo;s trusted CA configuration to enable
 auto-provisioning of gateways. If this attribute is set to <code>true</code> then the device registry provisions any unregistered
 devices that authenticate with a client certificate issued by this tenant&rsquo;s trusted CA as gateways, provided that the
 attribute <em>auto-provisioning-enabled</em> is also set to <code>true</code>. Refer to the
-<a href="https://www.eclipse.org/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a>
+<a href="https://eclipse.dev/hono/docs/api/management/#tenants/createTenant">Device Registry Management API</a>
 for more details on the tenant&rsquo;s trusted CA configuration.</p>
 <h2 id="gateway-based-auto-provisioning">Gateway based Auto-Provisioning</h2>
 <p>It refers to auto-provisioning of edge devices that are connected via gateways.
 Enabling gateway based auto-provisioning requires configuration of the gateway device:</p>
 <h5 id="step-1-configure-the-gateway-device">Step 1: Configure the Gateway Device</h5>
 <p>The gateway device must have the corresponding authority (<code>auto-provisioning-enabled</code>) set.
-Refer to the <a href="https://www.eclipse.org/hono/docs/api/management/">Management API</a> for creating or updating a
+Refer to the <a href="https://eclipse.dev/hono/docs/api/management/">Management API</a> for creating or updating a
 corresponding device.</p>
 <h5 id="step-2-connect-an-unregistered-device-via-gateway-to-hono">Step 2: Connect an unregistered Device via Gateway to Hono</h5>
 <figure><img src="auto-provisioning-gateway.svg"
@@ -217,7 +217,7 @@ edge device is already registered by calling the <em>assert</em> operation of De
 registration service finds that the device isn&rsquo;t registered yet and the gateway has the <code>auto-provisioning-enabled</code>
 authority set, it creates the edge device (3).</p>
 <p>Subsequently, after it made sure that it hasn&rsquo;t already done so, it sends an
-<a href="https://www.eclipse.org/hono/docs/api/event/#device-provisioning-notification">Device Provisioning Notification</a> with the  <code>hono_registration_status</code> application
+<a href="https://eclipse.dev/hono/docs/api/event/#device-provisioning-notification">Device Provisioning Notification</a> with the  <code>hono_registration_status</code> application
 property being set to <code>NEW</code> to the AMQP network (4). Once the event has been accepted by the peer (5), the registration
 service marks the event as delivered (6). The persistent flag guarantees that the Device Provisioning Notification is sent
 AT_LEAST_ONCE.
@@ -234,7 +234,7 @@ forwards the telemetry data to the AMQP network (8).</p>
     <aside id="sidebar" class="default-animation">
       <div id="header-wrapper" class="default-animation">
         <div id="header" class="default-animation">
-<a href="https://www.eclipse.org/hono/">
+<a href="https://eclipse.dev/hono/">
     <img src="/hono/docs/images/HONO-Logo_Bild-Wort_quer-w-310x120px.svg" alt="Hono logo" class="logo-img">
 </a>
 
@@ -247,12 +247,12 @@ forwards the telemetry data to the AMQP network (8).</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1770689660"></script>
-        <script src="/hono/docs/js/lunr.min.js?1770689660"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1770689660"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1770689660"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1770689660"></script>
-        <script src="/hono/docs/js/search.js?1770689660"></script>
+        <script src="/hono/docs/js/auto-complete.js?1770785659"></script>
+        <script src="/hono/docs/js/lunr.min.js?1770785659"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1770785659"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1770785659"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1770785659"></script>
+        <script src="/hono/docs/js/search.js?1770785659"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -326,7 +326,7 @@ forwards the telemetry data to the AMQP network (8).</p>
         <div id="shortcuts">
           <div class="nav-title"></div>
           <ul>
-            <li><a class="padding" href="https://www.eclipse.org/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
+            <li><a class="padding" href="https://eclipse.dev/hono/"><i class='fas fa-home'></i> Hono Home</a></li>
           </ul>
         </div>
         <div class="footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showLangSwitch showFooter"></div>
@@ -372,23 +372,23 @@ forwards the telemetry data to the AMQP network (8).</p>
         </div>
         <div id="footer" class="footerFooter showFooter">
 
-<p>&copy; 2026 <a href="https://www.eclipse.org/hono/">The Eclipse Hono Project</a></p>
+<p>&copy; 2026 <a href="https://eclipse.dev/hono/">The Eclipse Hono Project</a></p>
 
 <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
 
 <div class="eclipse-logo">
     <a href="https://www.eclipse.org" target="_blank">
-        <img src="https://www.eclipse.org/hono/docs/images/eclipse_foundation_logo.svg"/>
+        <img src="https://eclipse.dev/hono/docs/images/eclipse_foundation_logo.svg"/>
     </a>
 </div>
 
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1770689661"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1770689661"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1770689661"></script>
-    <script src="/hono/docs/js/theme.js?1770689661"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1770785659"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1770785659"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1770785659"></script>
+    <script src="/hono/docs/js/theme.js?1770785659"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

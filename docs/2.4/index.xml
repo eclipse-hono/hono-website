@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Documentation on Eclipse Hono&amp;trade; Vers.: 2.4</title>
-    <link>https://www.eclipse.org/hono/docs/2.4/</link>
+    <link>https://eclipse.dev/hono/docs/2.4/</link>
     <description>Recent content in Documentation on Eclipse Hono&amp;trade; Vers.: 2.4</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>2.4</language><atom:link href="https://www.eclipse.org/hono/docs/2.4/index.xml" rel="self" type="application/rss+xml" />
+    <language>2.4</language><atom:link href="https://eclipse.dev/hono/docs/2.4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting started with Eclipse Hono</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/getting-started/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/getting-started/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/getting-started/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/getting-started/</guid>
       <description>This guide will walk you through an interactive example usage scenario of Eclipse Hono. You will learn how devices can use Hono&amp;rsquo;s protocol adapters to publish telemetry data and events using both HTTP and/or MQTT. You will also see how downstream applications can consume this data using Hono&amp;rsquo;s north bound API regardless of the communication protocols used by the devices.
 Prerequisites for the Getting started Guide This guide requires several tools to be installed on your computer.</description>
     </item>
     <item>
       <title>Concepts</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/concepts/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/concepts/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/concepts/</guid>
       <description>Concepts Understand the concepts behind Eclipse Hono™.</description>
     </item>
     <item>
       <title>User Guide</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/user-guide/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/user-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/user-guide/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/user-guide/</guid>
       <description>User Guide Learn how Eclipse Hono™ enables you to quickly send data from devices to business applications and vice versa.</description>
     </item>
     <item>
       <title>Admin Guide</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/admin-guide/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/admin-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/admin-guide/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/admin-guide/</guid>
       <description>Admin Guide Learn how to operate Eclipse Hono™ and look up the configuration options of its components.</description>
     </item>
     <item>
       <title>Developer Guide</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/dev-guide/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/dev-guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/dev-guide/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/dev-guide/</guid>
       <description>Developer Guide Learn how to build Eclipse Hono™ and how to integrate your custom components with it.</description>
     </item>
     <item>
       <title>API</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/api/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/api/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/api/</guid>
       <description>API Documentation of the APIs defined by Eclipse Hono™.
 For an overview of the available APIs, see the architecture documentation.</description>
     </item>
     <item>
       <title>Deployment</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/deployment/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/deployment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/deployment/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/deployment/</guid>
       <description>Deployment Learn how to deploy Eclipse Hono™ to various container orchestration platforms.</description>
     </item>
     <item>
       <title>Architecture</title>
-      <link>https://www.eclipse.org/hono/docs/2.4/architecture/</link>
+      <link>https://eclipse.dev/hono/docs/2.4/architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/2.4/architecture/</guid>
+      <guid>https://eclipse.dev/hono/docs/2.4/architecture/</guid>
       <description>Architecture Get an overview of the architecture of Eclipse Hono™.</description>
     </item>
   </channel>

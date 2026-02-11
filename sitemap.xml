@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.eclipse.org/hono/downloads/</loc>
+    <loc>https://eclipse.dev/hono/downloads/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/sandbox/</loc>
+    <loc>https://eclipse.dev/hono/sandbox/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/contributing/</loc>
+    <loc>https://eclipse.dev/hono/community/contributing/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/presentations/</loc>
+    <loc>https://eclipse.dev/hono/community/presentations/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/get-in-touch/</loc>
+    <loc>https://eclipse.dev/hono/community/get-in-touch/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/road-map/</loc>
+    <loc>https://eclipse.dev/hono/community/road-map/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/blog-load-tests-coap/</loc>
+    <loc>https://eclipse.dev/hono/community/blog-load-tests-coap/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/thankyou/</loc>
+    <loc>https://eclipse.dev/hono/community/thankyou/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/categories/</loc>
+    <loc>https://eclipse.dev/hono/categories/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/community/</loc>
+    <loc>https://eclipse.dev/hono/community/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/</loc>
+    <loc>https://eclipse.dev/hono/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/release-notes/</loc>
+    <loc>https://eclipse.dev/hono/release-notes/</loc>
   </url><url>
-    <loc>https://www.eclipse.org/hono/tags/</loc>
+    <loc>https://eclipse.dev/hono/tags/</loc>
   </url>
 </urlset>

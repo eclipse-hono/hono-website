@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Community on Eclipse Hono&amp;trade;</title>
-    <link>https://www.eclipse.org/hono/community/</link>
+    <link>https://eclipse.dev/hono/community/</link>
     <description>Recent content in Community on Eclipse Hono&amp;trade;</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://www.eclipse.org/hono/community/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://eclipse.dev/hono/community/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to get involved in the Hono Project</title>
-      <link>https://www.eclipse.org/hono/community/contributing/</link>
+      <link>https://eclipse.dev/hono/community/contributing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/community/contributing/</guid>
+      <guid>https://eclipse.dev/hono/community/contributing/</guid>
       <description>&lt;p&gt;Thank you for considering to contribute to Eclipse Hono™. We really appreciate the time and effort you want to&#xA;spend helping to improve things around here. And help we can use :-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Additional Resources covering Hono</title>
-      <link>https://www.eclipse.org/hono/community/presentations/</link>
+      <link>https://eclipse.dev/hono/community/presentations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/community/presentations/</guid>
+      <guid>https://eclipse.dev/hono/community/presentations/</guid>
       <description>&lt;p&gt;On this page you can find links to arbitrary resources covering Eclipse Hono™ which have been presented at events, conferences&#xA;and meet-ups or are available online.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to get in touch with the Hono Community</title>
-      <link>https://www.eclipse.org/hono/community/get-in-touch/</link>
+      <link>https://eclipse.dev/hono/community/get-in-touch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/community/get-in-touch/</guid>
+      <guid>https://eclipse.dev/hono/community/get-in-touch/</guid>
       <description>&lt;p&gt;Wanna tell us what you think about Eclipse Hono™? What we can improve? Which feature is missing? Or just discuss&#xA;architectural issues?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Overview of past and future Hono Releases</title>
-      <link>https://www.eclipse.org/hono/community/road-map/</link>
+      <link>https://eclipse.dev/hono/community/road-map/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/community/road-map/</guid>
+      <guid>https://eclipse.dev/hono/community/road-map/</guid>
       <description>&lt;p&gt;We are trying our best to anticipate the needs and requirements of users based on the feedback we get from users. From this&#xA;information we create and maintain &lt;a href=&#34;https://github.com/eclipse-hono/hono/projects?type=classic&#34;&gt;Project Boards&lt;/a&gt; on GitHub&#xA;for upcoming Hono versions.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hono Load Tests with CoAP devices</title>
-      <link>https://www.eclipse.org/hono/community/blog-load-tests-coap/</link>
+      <link>https://eclipse.dev/hono/community/blog-load-tests-coap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/community/blog-load-tests-coap/</guid>
+      <guid>https://eclipse.dev/hono/community/blog-load-tests-coap/</guid>
       <description>This page is presenting load tests of an Eclipse Hono deployment with simulated CoAP client devices. It shows how the system is configured and what load it could handle.&#xA;Components The setup consists of following components.&#xA;Kubernetes The Kubernetes is AWS EKS cluster using 3 x c5a.large machines.&#xA;Hono Hono is deployed using Eclipse IoT Packages helm chart, version 2.6.0.&#xA;Specific helm values:&#xA;# Configuration properties for protocol adapters. adapters: # kafkaMessagingSpec contains the configuration used by all protocol # adapters for connecting to the Kafka cluster to be used for messaging.</description>
     </item>
     <item>
       <title>Organizations supporting the Development of Hono</title>
-      <link>https://www.eclipse.org/hono/community/thankyou/</link>
+      <link>https://eclipse.dev/hono/community/thankyou/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/community/thankyou/</guid>
+      <guid>https://eclipse.dev/hono/community/thankyou/</guid>
       <description>YourKit is kindly supporting this open source project with its full-featured Java Profiler. YourKit, LLC is the creator of innovative and intelligent tools for profiling Java and .NET applications. Take a look at YourKit&amp;rsquo;s leading software products: YourKit Java Profiler and YourKit .NET Profiler.</description>
     </item>
   </channel>

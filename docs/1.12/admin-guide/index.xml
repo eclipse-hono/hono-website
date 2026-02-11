@@ -2,147 +2,147 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Admin Guide on Eclipse Hono&amp;trade; Vers.: 1.12</title>
-    <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/</link>
+    <link>https://eclipse.dev/hono/docs/1.12/admin-guide/</link>
     <description>Recent content in Admin Guide on Eclipse Hono&amp;trade; Vers.: 1.12</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>1.12</language><atom:link href="https://www.eclipse.org/hono/docs/1.12/admin-guide/index.xml" rel="self" type="application/rss+xml" />
+    <language>1.12</language><atom:link href="https://eclipse.dev/hono/docs/1.12/admin-guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Common Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/common-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/common-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/common-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/common-config/</guid>
       <description>&lt;p&gt;Many Hono components support a common set of configuration options. This section
 describes those options.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Auth Server Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/auth-server-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/auth-server-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/auth-server-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/auth-server-config/</guid>
       <description>&lt;p&gt;The Auth Server component exposes a service endpoint implementing Eclipse Hono™&amp;rsquo;s
-&lt;a href=&#34;https://www.eclipse.org/hono/docs/1.12/api/authentication/&#34;&gt;Authentication&lt;/a&gt; API. Other services use this component for authenticating clients
+&lt;a href=&#34;https://eclipse.dev/hono/docs/1.12/api/authentication/&#34;&gt;Authentication&lt;/a&gt; API. Other services use this component for authenticating clients
 and retrieving a token asserting the client&amp;rsquo;s identity and corresponding authorities.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MongoDB Based Device Registry Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/mongodb-device-registry-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/mongodb-device-registry-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/mongodb-device-registry-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/mongodb-device-registry-config/</guid>
       <description>The MongoDB based Device Registry component provides an implementation of Eclipse Hono™&amp;rsquo;s Device Registration, Credentials and Tenant APIs. Protocol adapters use these APIs to determine a device&amp;rsquo;s registration status, e.g. if it is enabled and if it is registered with a particular tenant, and to authenticate a device before accepting any data for processing from it. In addition to the above, this Device Registry also provides an implementation of Device Registry Management APIs for managing tenants, registration information and credentials of devices.</description>
     </item>
     <item>
       <title>JDBC Based Device Registry Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/jdbc-device-registry-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/jdbc-device-registry-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/jdbc-device-registry-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/jdbc-device-registry-config/</guid>
       <description>The JDBC based Device Registry components provides an implementation of Eclipse Hono™&amp;rsquo;s Device Registration, Credentials and Tenant APIs. Protocol adapters use these APIs to determine a device&amp;rsquo;s registration status, e.g. if it is enabled and if it is registered with a particular tenant, and to authenticate a device before accepting any data for processing from it. In addition to the above, this Device Registry also provides an implementation of Device Registry Management APIs for managing tenants, registration information and credentials of devices.</description>
     </item>
     <item>
       <title>File Based Device Registry Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/file-based-device-registry-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/file-based-device-registry-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/file-based-device-registry-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/file-based-device-registry-config/</guid>
       <description>&lt;p&gt;The File based Device Registry component provides an exemplary implementation of Eclipse Hono™&amp;rsquo;s
-&lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/api/device-registration/&#34;&gt;Device Registration&lt;/a&gt;, &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/api/credentials/&#34;&gt;Credentials&lt;/a&gt;,
-&lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/api/tenant/&#34;&gt;Tenant&lt;/a&gt; and &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/api/device-connection/&#34;&gt;Device Connection&lt;/a&gt; APIs.&lt;/p&gt;
+&lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/api/device-registration/&#34;&gt;Device Registration&lt;/a&gt;, &lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/api/credentials/&#34;&gt;Credentials&lt;/a&gt;,
+&lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/api/tenant/&#34;&gt;Tenant&lt;/a&gt; and &lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/api/device-connection/&#34;&gt;Device Connection&lt;/a&gt; APIs.&lt;/p&gt;
 &lt;p&gt;Protocol adapters use these APIs to determine a device&amp;rsquo;s registration status, e.g. if it is enabled and if it is
 registered with a particular tenant, and to authenticate a device before accepting any data for processing from it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configuring the Command Router Service</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/command-router-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/command-router-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/command-router-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/command-router-config/</guid>
       <description>&lt;p&gt;The Command Router service provides an implementation of Eclipse Hono™&amp;rsquo;s
-&lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/api/command-router/&#34;&gt;Command Router API&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/api/command-router/&#34;&gt;Command Router API&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Protocol Adapters&lt;/em&gt; use the &lt;em&gt;Command Router API&lt;/em&gt; to supply information that the Command Router service component
 can use to route command &amp;amp; control messages to the particular protocol adapter instances that the target devices are
 connected to.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Configuring the Device Connection Service</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/device-connection-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/device-connection-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/device-connection-config/</guid>
-      <description>&lt;p&gt;The Device Connection service provides an implementation of Eclipse Hono™&amp;rsquo;s &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/api/device-connection/&#34;&gt;Device Connection API&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/device-connection-config/</guid>
+      <description>&lt;p&gt;The Device Connection service provides an implementation of Eclipse Hono™&amp;rsquo;s &lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/api/device-connection/&#34;&gt;Device Connection API&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Protocol adapters use this API to store and retrieve information about the gateway that a device is using to connect
 to Hono&amp;rsquo;s protocol adapters. This information is necessary for routing commands to the particular protocol adapter
 instance that the gateway used by the device is connected to.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HTTP Adapter Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/http-adapter-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/http-adapter-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/http-adapter-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/http-adapter-config/</guid>
       <description>&lt;p&gt;The HTTP protocol adapter exposes HTTP based endpoints for Eclipse Hono™&amp;rsquo;s south bound Telemetry, Event and
 Command &amp;amp; Control APIs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MQTT Adapter Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/mqtt-adapter-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/mqtt-adapter-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/mqtt-adapter-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/mqtt-adapter-config/</guid>
       <description>&lt;p&gt;The MQTT protocol adapter exposes an MQTT topic hierarchy for Eclipse Hono™&amp;rsquo;s south bound Telemetry, Event
 and Command &amp;amp; Control APIs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AMQP Adapter Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/amqp-adapter-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/amqp-adapter-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/amqp-adapter-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/amqp-adapter-config/</guid>
       <description>&lt;p&gt;The AMQP protocol adapter exposes AMQP based endpoints for Eclipse Hono™&amp;rsquo;s south bound Telemetry, Event and
 Command &amp;amp; Control APIs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>CoAP Adapter Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/coap-adapter-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/coap-adapter-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/coap-adapter-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/coap-adapter-config/</guid>
       <description>&lt;p&gt;The CoAP protocol adapter exposes CoAP based endpoints for Eclipse Hono™&amp;rsquo;s south bound Telemetry, Event and
 Command &amp;amp; Control APIs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kura Adapter Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/kura-adapter-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/kura-adapter-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/kura-adapter-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/kura-adapter-config/</guid>
       <description>&lt;p&gt;The Kura protocol adapter exposes an MQTT topic hierarchy allowing Eclipse Kura™ 3 based gateways to access
 Eclipse Hono™&amp;rsquo;s south bound Telemetry, Event and Command &amp;amp; Control APIs.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hono Client Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/hono-client-configuration/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/hono-client-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/hono-client-configuration/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/hono-client-configuration/</guid>
       <description>&lt;p&gt;The &lt;code&gt;org.eclipse.hono.client.HonoConnection&lt;/code&gt; factory can be used to create AMQP 1.0 connections to Hono&amp;rsquo;s service components.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hono Kafka Client Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/hono-kafka-client-configuration/</guid>
       <description>Several Hono components can be configured to support Kafka as the messaging infrastructure. The Kafka client used for this purpose can be configured by means of operating system environment variables and/or Java system properties.
 A Hono component can use multiple Kafka clients for different tasks. Each client has a type (producer, consumer, or admin client) and a name which is part of the prefix of the configuration properties used to configure the client.</description>
     </item>
     <item>
       <title>AMQP 1.0 Messaging Network Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/amqp-network-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/amqp-network-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/amqp-network-config/</guid>
-      <description>&lt;p&gt;The &lt;em&gt;Qpid Dispatch Router&lt;/em&gt;, together with the &lt;em&gt;Apache Artemis&lt;/em&gt; message broker, serves as the default &lt;em&gt;AMQP 1.0 Messaging Network&lt;/em&gt; that is used in Hono&amp;rsquo;s example deployment as described in the &lt;a href=&#34;https://www.eclipse.org/hono/docs/hono/docs/1.12/deployment/&#34;&gt;Deployment Guides&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/amqp-network-config/</guid>
+      <description>&lt;p&gt;The &lt;em&gt;Qpid Dispatch Router&lt;/em&gt;, together with the &lt;em&gt;Apache Artemis&lt;/em&gt; message broker, serves as the default &lt;em&gt;AMQP 1.0 Messaging Network&lt;/em&gt; that is used in Hono&amp;rsquo;s example deployment as described in the &lt;a href=&#34;https://eclipse.dev/hono/docs/hono/docs/1.12/deployment/&#34;&gt;Deployment Guides&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kafka Configuration</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/kafka-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/kafka-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/kafka-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/kafka-config/</guid>
       <description>&lt;p&gt;Hono may use an &lt;em&gt;Apache Kafka cluster&lt;/em&gt; as messaging infrastructure.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Secure Communication</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/secure_communication/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/secure_communication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/secure_communication/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/secure_communication/</guid>
       <description>&lt;p&gt;The individual components of an Eclipse Hono™ installation, e.g. the protocol adapters, &lt;em&gt;AMQP Messaging Network&lt;/em&gt;,
 &lt;em&gt;Hono Auth&lt;/em&gt; etc. and the clients attaching to Hono in order to send and receive data all communicate with each other
 using AMQP 1.0 over TCP. The Hono components and the clients will usually not be located on the same local network but
@@ -153,9 +153,9 @@ and how to configure it.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Monitoring &amp; Tracing</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/monitoring-tracing-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/monitoring-tracing-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/monitoring-tracing-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/monitoring-tracing-config/</guid>
       <description>&lt;p&gt;The individual components of an Eclipse Hono™ installation need to work together in order to provide their
 functionality to devices and applications. Under normal circumstances these interactions work flawlessly.
 However, due to the nature of distributed systems, any one (or more) of the components may crash or become otherwise
@@ -165,9 +165,9 @@ tracing the processing of individual messages through the system.&lt;/p&gt;</des
     </item>
     <item>
       <title>Device Registry Configurations</title>
-      <link>https://www.eclipse.org/hono/docs/1.12/admin-guide/device-registry-config/</link>
+      <link>https://eclipse.dev/hono/docs/1.12/admin-guide/device-registry-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/1.12/admin-guide/device-registry-config/</guid>
+      <guid>https://eclipse.dev/hono/docs/1.12/admin-guide/device-registry-config/</guid>
       <description>The configuration of Eclipse Hono™s Device Registry implementations for the File Based Device Registry and for the MongoDB Based Device Registry.</description>
     </item>
   </channel>

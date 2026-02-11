@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deployment on Eclipse Hono&amp;trade; Vers.: dev</title>
-    <link>https://www.eclipse.org/hono/docs/dev/deployment/</link>
+    <link>https://eclipse.dev/hono/docs/dev/deployment/</link>
     <description>Recent content in Deployment on Eclipse Hono&amp;trade; Vers.: dev</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>dev</language><atom:link href="https://www.eclipse.org/hono/docs/dev/deployment/index.xml" rel="self" type="application/rss+xml" />
+    <language>dev</language><atom:link href="https://eclipse.dev/hono/docs/dev/deployment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Helm based Deployment</title>
-      <link>https://www.eclipse.org/hono/docs/dev/deployment/helm-based-deployment/</link>
+      <link>https://eclipse.dev/hono/docs/dev/deployment/helm-based-deployment/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/dev/deployment/helm-based-deployment/</guid>
+      <guid>https://eclipse.dev/hono/docs/dev/deployment/helm-based-deployment/</guid>
       <description>Eclipse Hono™&amp;rsquo;s components are provided as container images which can be run on arbitrary container orchestration platforms. The Helm package manager can be used to install Hono to a Kubernetes cluster by means of the chart maintained in the Eclipse IoT Packages™ chart repository.
 Please refer to the chart&amp;rsquo;s README for instructions regarding installation and configuration.</description>
     </item>
     <item>
       <title>OpenShift / OKD</title>
-      <link>https://www.eclipse.org/hono/docs/dev/deployment/openshift/</link>
+      <link>https://eclipse.dev/hono/docs/dev/deployment/openshift/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/dev/deployment/openshift/</guid>
+      <guid>https://eclipse.dev/hono/docs/dev/deployment/openshift/</guid>
       <description>The OpenShift specific deployment using the source-to-image (S2I) model has been dropped in Hono version 1.0 in favor of the Helm charts and the Eclipse IoT Packages™ project.
 You can still deploy to OpenShift and OKD, using the Helm charts. And you can also use routes to expose services. Deploying using S2I is also still possible, however the Hono project simply no longer provides out-of-the box scripts for doing so.</description>
     </item>
     <item>
       <title>Setting up a Kubernetes Cluster</title>
-      <link>https://www.eclipse.org/hono/docs/dev/deployment/create-kubernetes-cluster/</link>
+      <link>https://eclipse.dev/hono/docs/dev/deployment/create-kubernetes-cluster/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/dev/deployment/create-kubernetes-cluster/</guid>
+      <guid>https://eclipse.dev/hono/docs/dev/deployment/create-kubernetes-cluster/</guid>
       <description>A common option for running Eclipse Hono™ is to install it to a Kubernetes cluster. Please refer to the Eclipse IoT Packages™ project for an overview of options for setting up a Kubernetes environment that Hono can be installed to.</description>
     </item>
     <item>
       <title>Limiting Resource Usage</title>
-      <link>https://www.eclipse.org/hono/docs/dev/deployment/resource-limitation/</link>
+      <link>https://eclipse.dev/hono/docs/dev/deployment/resource-limitation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.eclipse.org/hono/docs/dev/deployment/resource-limitation/</guid>
+      <guid>https://eclipse.dev/hono/docs/dev/deployment/resource-limitation/</guid>
       <description>&lt;p&gt;Deploying Eclipse Hono™ to a container orchestration platform is easy thanks to the provided Docker images.
 This page provides some guidance for configuring the resource consumption of these containers in order to make sure
 that they get enough memory and CPU to run properly, but to also make sure that individual containers do not use up
