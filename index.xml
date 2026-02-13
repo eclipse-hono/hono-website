@@ -68,7 +68,7 @@
       <link>https://eclipse.dev/hono/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hono/release-notes/</guid>
-      <description>2.6.0 New Features The protocol adapters now have experimental support for doing OCSP based client certificate revocation checks. Fixes &amp;amp; Enhancements The Command Router code has been split up into a base module and an Infinispan based implementation. This is in preparation of a Redis based implementation which is to be added in one of the upcoming minor versions. Updated to latest Quarkus LTS version (3.8). Updated to jjwt 0.12.5 which allowed us to replace a lot of manually crafted code for creating a JWK Set based on vert.</description>
+      <description>2.7.0 Breaking Changes The name of the organization used for the container images created by the Hono build process has changed from eclipse to eclipsehono. For example, the container image for the Authentication server had previously been named eclipse/hono-service-auth but is now named eclipsehono/hono-service-auth This change had been necessary due to limitations on the number of user accounts per organization on the free tier of Docker Hub. Having our own organization provides us with the necessary flexibility to grant access rights to the container image registries.</description>
     </item>
   </channel>
 </rss>

@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1770871842" rel="stylesheet">
+<link href="/hono/css/custom.css?1770958133" rel="stylesheet">
 
 
 
@@ -255,7 +255,28 @@
                     <div class="col-md-12">
 
                         <div>
-                          <h2 id="260">2.6.0</h2>
+                          <h2 id="270">2.7.0</h2>
+<h3 id="breaking-changes">Breaking Changes</h3>
+<ul>
+<li>The name of the organization used for the container images created by the Hono build process has changed from <code>eclipse</code> to
+<code>eclipsehono</code>. For example, the container image for the Authentication server had previously been named
+<br>
+<code>eclipse/hono-service-auth</code>
+<br>
+but is now named
+<br>
+<code>eclipsehono/hono-service-auth</code>
+<br>
+This change had been necessary due to limitations on the number of user accounts per organization on the free tier of Docker Hub.
+Having our own organization provides us with the necessary flexibility to grant access rights to the container image registries.
+<br>
+However, it is still possible to build the images using the previous organization name by means of setting the
+<code>docker.image.org-name</code> Maven property when running the build process, e.g.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>mvn -Ddocker.image.org-name<span style="color:#f92672">=</span>eclipse -Pbuild-docker-image,metrics-prometheus install
+</span></span></code></pre></div>will tag all images using the <code>eclipse</code> organization name. This might be helpful if you cannot adapt existing deployment
+scripts or Helm charts to reflect the new origanization name.</li>
+</ul>
+<h2 id="260">2.6.0</h2>
 <h3 id="new-features">New Features</h3>
 <ul>
 <li>The protocol adapters now have experimental support for doing OCSP based client certificate revocation
