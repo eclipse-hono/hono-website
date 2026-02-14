@@ -68,7 +68,7 @@
       <link>https://eclipse.dev/hono/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hono/release-notes/</guid>
-      <description>2.7.0 Breaking Changes The name of the organization used for the container images created by the Hono build process has changed from eclipse to eclipsehono. For example, the container image for the Authentication server had previously been named eclipse/hono-service-auth but is now named eclipsehono/hono-service-auth This change had been necessary due to limitations on the number of user accounts per organization on the free tier of Docker Hub. Having our own organization provides us with the necessary flexibility to grant access rights to the container image registries.</description>
+      <description>2.7.0 New Features The duration after which cached metrics, which are maintained by protocol adapters for adhering to messaging limits, are being refreshed, can now be adjusted as a fixed fraction of the overall cache timeout duration. This allows fine tuning of the adapters&#39; behavior with regard to accepting/rejecting messages from devices of tenants for which the message limits are being exceeded. Please refer to the Admin Guide for details.</description>
     </item>
   </channel>
 </rss>
