@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Command & Control API Specification for Google Pub/Sub :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1771217485" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1771217485" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1771217485" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1771217485" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1771303719" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1771303719" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1771303719" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1771217485"></script>
+    <script src="/hono/docs/js/variant.js?1771303719"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/eclipse.dev\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1771217485"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1771303719"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -188,8 +188,7 @@ from <em>Pub/Sub</em> and forwards it to the device, provided that the target de
 </table>
 <p>The command message MAY contain arbitrary payload, set as message value, to be sent to the device. The value of the
 message&rsquo;s <em>subject</em> attribute may provide a hint to the device regarding the format, encoding and semantics of the
-payload
-data.</p>
+payload data.</p>
 <h2 id="send-a-requestresponse-command">Send a (Request/Response) Command</h2>
 <p><em>Business Applications</em> use this operation to send a command to a device for which they expect the device to send back
 a response.
@@ -198,9 +197,30 @@ For that, the Business Application connects to <em>Pub/Sub</em> and writes a mes
 project and <code>${tenant_id}</code> is the ID of the tenant that the client wants to send the command for.</p>
 <p>The Business Application can consume the corresponding command response by creating a subscription from the
 <code>projects/${google_project_id}/topics/${tenant_id}.command_response</code> topic.</p>
-<p>In contrast to a one-way command, a request/response command contains a <em>response-required</em> attribute with value <code>true</code>
-and a <em>correlation-id</em> attribute, providing the identifier that is used to correlate a response message to the original
-request.</p>
+<p>In contrast to a one-way command, a request/response command contains <em>either</em> a <em>response-required</em> <em>or</em> an
+<em>ack-required</em> attribute with value <code>true</code> and a <em>correlation-id</em> attribute, providing the identifier that is used to
+correlate a response message to the original request.</p>
+<p>Devices can vary in their ability to respond to commands (e.g. firmware limitations). The Business Application can
+tailor its expectations based on this:</p>
+<ol>
+<li>
+<p><strong>Device Response Expected:</strong> For devices that can send a response, set <code>response-required</code> to true. This is the
+default behavior for sending request/response commands. The command is sent with the <em>correlation-id</em> to the device,
+which is then expected to send a corresponding command response.</p>
+</li>
+<li>
+<p><strong>Acknowledgement Only:</strong> For devices lacking response capability, set <code>ack-required</code> to true. The command is sent
+without the <em>correlation-id</em> to the device, and the protocol adapter sends a positive acknowledgement as a command
+response on behalf of the device upon receiving a transport layer confirmation (e.g., MQTT PUBACK) from the device.</p>
+</li>
+</ol>
+
+<div class="box notices cstyle warning">
+    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+    <div class="box-content">
+<p>Setting both <em>response-required</em> and <em>ack-required</em> to <code>true</code> is invalid and will result in the command being rejected.</p>
+    </div>
+</div>
 <p><strong>Preconditions</strong></p>
 <ol>
 <li>The topics <code>projects/${google_project_id}/topics/${tenant_id}.command</code>
@@ -212,14 +232,25 @@ topic <code>projects/${google_project_id}/topics/${tenant_id}.command</code> exi
 topic and read from the subscriptions.</li>
 </ol>
 <p><strong>Message Flow</strong></p>
+<p>Device sends response (<em>response-required</em> set to <code>true</code>):</p>
 <ol>
-<li>The <em>Business Application</em> writes a command message to the
+<li>The <em>Business Application</em> writes a command message with <em>response-required</em> set to <code>true</code> to the
 <code>projects/${google_project_id}/topics/${tenant_id}.command</code> topic on <em>Pub/Sub</em>.</li>
 <li>Hono consumes the message from <em>Pub/Sub</em> and forwards it to the device, provided that the target device is
 connected and is accepting commands.</li>
 <li>The device sends a command response message. Hono writes that message to
-the <code>projects/${google_project_id}/topics/${tenant_id}.command_response</code> topic
-on <em>Pub/Sub</em>.</li>
+the <code>projects/${google_project_id}/topics/${tenant_id}.command_response</code> topic on <em>Pub/Sub</em>.</li>
+<li>The <em>Business Application</em> consumes the command response message from an independently created subscription to
+the <code>projects/${google_project_id}/topics/${tenant_id}.command_response</code> topic.</li>
+</ol>
+<p>Protocol adapter sends response on behalf of device (<em>ack-required</em> set to <code>true</code>):</p>
+<ol>
+<li>The <em>Business Application</em> writes a command message with <em>ack-required</em> set to <code>true</code> to the
+<code>projects/${google_project_id}/topics/${tenant_id}.command</code> topic on <em>Pub/Sub</em>.</li>
+<li>Hono consumes the message from <em>Pub/Sub</em> and forwards it to the device as a one-way command, provided that the
+target device is connected and is accepting commands.</li>
+<li>The device acknowledges reception of the command on the transport layer. Hono writes an acknowledgement message to
+the <code>projects/${google_project_id}/topics/${tenant_id}.command_response</code> topic on <em>Pub/Sub</em>.</li>
 <li>The <em>Business Application</em> consumes the command response message from an independently created subscription to
 the <code>projects/${google_project_id}/topics/${tenant_id}.command_response</code> topic.</li>
 </ol>
@@ -251,9 +282,15 @@ command message.</p>
 </tr>
 <tr>
 <td style="text-align:left"><em>response-required</em></td>
-<td style="text-align:center">yes</td>
+<td style="text-align:center">no</td>
 <td style="text-align:left"><em>boolean</em></td>
-<td style="text-align:left">MUST be set with a value of <code>true</code>, meaning that the device is required to send a response for the command.</td>
+<td style="text-align:left"><code>true</code> if the device is required to send a response for the command. <em>response-required</em> and <em>ack-required</em> MUST NOT both be set to <code>true</code> at the same time.</td>
+</tr>
+<tr>
+<td style="text-align:left"><em>ack-required</em></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><em>boolean</em></td>
+<td style="text-align:left"><code>true</code> if the protocol adapter should send an acknowledgement response for the command on behalf of the device in case the command was successfully received by the device. This mechanism has some limitations which are described in the info field below. <em>response-required</em> and <em>ack-required</em> MUST NOT both be set to <code>true</code> at the same time.</td>
 </tr>
 <tr>
 <td style="text-align:left"><em>subject</em></td>
@@ -276,11 +313,23 @@ command message.</p>
 </tbody>
 </table>
 <p>The command message MAY contain arbitrary payload, set as message value, to be sent to the device. The value of the
-message&rsquo;s <em>subject</em> attribute may provide a hint to the device regarding the format, encoding and semantics of the payload
-data.</p>
+message&rsquo;s <em>subject</em> attribute may provide a hint to the device regarding the format, encoding and semantics of the
+payload data.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The acknowledgement mechanism is based on the transport level acknowledgement of the different communication protocols
+and indicates that a command was received from the device. For MQTT devices this means they must subscribe on the
+command topic with a Quality of Service (QoS) level of 1. Since the HTTP protocol doesn&rsquo;t support a transport level
+acknowledgement, acknowledgements are considered best-effort, indicating the message was sent, not necessarily received.</p>
+<p>Currently, the acknowledgement mechanism only works with devices connected via the MQTT and HTTP protocol.</p>
+    </div>
+</div>
 <p>An application can determine the overall outcome of the operation by means of the response to the command. The response
-is either sent back by the device, or in case the command could not be successfully forwarded to the device, an error
-command response message is sent by the Hono protocol adapter or Command Router component.</p>
+is either sent back by the device (<em>response-required</em>) or the adapter (<em>ack-required</em>), or in case the command could not be
+successfully forwarded to the device, an error command response message is sent by the Hono protocol adapter or Command
+Router component.</p>
 <p><strong>Response Message Format</strong></p>
 <p>Metadata MUST be set as Pub/Sub attributes on a message.
 The following table provides an overview of the attributes set on a message sent in response to a command.</p>
@@ -368,6 +417,8 @@ application.</p>
 <p>The semantics of the individual codes are specific to the device and command. For status codes indicating an error
 (codes in the <code>400 - 599</code> range) the message body MAY contain a detailed description of the error that occurred.</p>
 <p><strong>Response Message sent from Hono Component</strong></p>
+<p>If the command response is an acknowledgement of a command by the Hono protocol adapter, it has a status code
+of <em>202</em> and the <em>content-type</em> attribute is set to <em>application/vnd.eclipse-hono-delivery-success-notification+json</em>.</p>
 <p>If the command response message represents an error message sent by the Hono protocol adapter or Command Router
 component, with the <em>content-type</em> attribute set to <em>application/vnd.eclipse-hono-delivery-failure-notification+json</em>,
 the possible status codes are:</p>
@@ -431,12 +482,12 @@ the possible status codes are:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1771217485"></script>
-        <script src="/hono/docs/js/lunr.min.js?1771217485"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1771217485"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1771217485"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1771217485"></script>
-        <script src="/hono/docs/js/search.js?1771217485"></script>
+        <script src="/hono/docs/js/auto-complete.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.min.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1771303719"></script>
+        <script src="/hono/docs/js/search.js?1771303719"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -523,7 +574,8 @@ the possible status codes are:</p>
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/api/command-and-control-pubsub/" selected>stable (2.6)</option>
+                    <option id="stable" value="/hono/docs/api/command-and-control-pubsub/" selected>stable (2.7)</option>
+                    <option id="2.7" value="/hono/docs/2.7/api/command-and-control-pubsub/">2.7</option>
                     <option id="2.6" value="/hono/docs/2.6/api/command-and-control-pubsub/">2.6</option>
                     <option id="2.5" value="/hono/docs/2.5/api/command-and-control-pubsub/">2.5</option>
                     <option id="2.4" value="/hono/docs/2.4/api/command-and-control-pubsub/">2.4</option>
@@ -564,10 +616,10 @@ the possible status codes are:</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1771217485"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1771217485"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1771217485"></script>
-    <script src="/hono/docs/js/theme.js?1771217485"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1771303719"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1771303719"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1771303719"></script>
+    <script src="/hono/docs/js/theme.js?1771303719"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

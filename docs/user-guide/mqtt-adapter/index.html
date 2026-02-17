@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>MQTT Adapter :: Eclipse Hono&trade;</title>
-    <link href="/hono/docs/images/favicon.ico?1771217486" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1771217486" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1771217486" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1771217486" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1771303719" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1771303719" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1771303719" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1771303719" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1771217486"></script>
+    <script src="/hono/docs/js/variant.js?1771303719"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/eclipse.dev\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1771217486"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1771303719"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -164,7 +164,7 @@
 consumers and for receiving commands from applications and sending back responses.</p>
 <p>The MQTT adapter is <strong>not</strong> a general purpose MQTT broker. In particular the adapter</p>
 <ul>
-<li>supports MQTT 3.1.1 only.</li>
+<li>supports clients connecting using MQTT 3.1.1 or 5.0 only.</li>
 <li>does not maintain session state for clients and thus always sets the <em>session present</em> flag in its CONNACK packet
 to <code>0</code>, regardless of the value  of the <em>clean session</em> flag provided in a client&rsquo;s CONNECT packet.</li>
 <li>ignores any <em>Will</em> included in a client&rsquo;s CONNECT packet.</li>
@@ -177,7 +177,7 @@ this annotation.</li>
 </ul>
 <h2 id="authentication">Authentication</h2>
 <p>The MQTT adapter by default requires clients (devices or gateway components) to authenticate during connection
-establishment. The adapter supports both the authentication based on the username/password provided in an MQTT CONNECT
+establishment. The adapter supports both authentication based on the username/password provided in an MQTT CONNECT
 packet as well as client certificate based authentication as part of a TLS handshake for that purpose.</p>
 <p>The adapter tries to authenticate the device using these mechanisms in the following order</p>
 <h3 id="client-certificate">Client Certificate</h3>
@@ -198,7 +198,8 @@ in order to support this mechanism.</p>
 <h3 id="usernamepassword">Username/Password</h3>
 <p>The MQTT adapter supports authenticating clients based on credentials provided during MQTT connection establishment.
 This means that clients need to provide a <em>user</em> and a <em>password</em> field in their MQTT CONNECT packet as defined in
-<a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718028">MQTT Version 3.1.1, Section 3.1</a>
+<a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718031">MQTT Version 3.1.1, Section 3.1.3</a>
+and <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901058">MQTT Version 5.0, Section 3.1.3</a>
 when connecting to the MQTT adapter. The username provided in the <em>user</em> field must match the pattern
 <em>auth-id@tenant</em>, e.g. <code>sensor1@DEFAULT_TENANT</code>.</p>
 <p>The adapter extracts the <em>auth-id</em>, <em>tenant</em> and password from the CONNECT packet and verifies them using the
@@ -220,8 +221,9 @@ concepts.</p>
 <p>The MQTT adapter supports authenticating clients based on a signed
 <a href="https://www.rfc-editor.org/rfc/rfc7519">JSON Web Token</a> (JWT) provided during MQTT connection establishment. This requires
 a client to provide a <em>client identifier</em>, a <em>user</em> and a <em>password</em> field in its MQTT CONNECT packet as defined in
-<a href="http://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718028">MQTT Version 3.1.1, Section 3.1</a>
-when connecting to the MQTT adapter. The JWT must be sent in the password field. The content of the <em>user</em> field is
+<a href="https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718031">MQTT Version 3.1.1, Section 3.1.3</a>
+and <a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901058">MQTT Version 5.0, Section 3.1.3</a>
+when connecting to the MQTT adapter. The JWT must be sent in the <em>password</em> field. The content of the <em>user</em> field is
 ignored. The information about the tenant and the authentication identifier can be presented to the protocol adapter in
 one of two ways:</p>
 <ol>
@@ -260,23 +262,33 @@ concepts.</p>
 <p>The adapter performs additional checks regarding <a href="https://eclipse.dev/hono/docs/concepts/resource-limits/">resource limits</a> when
 a client tries to connect and/or send a message to the adapter.</p>
 <h3 id="connection-limits">Connection Limits</h3>
-<p>The adapter rejects a client’s connection attempt with return code</p>
+<p>The adapter rejects a client’s attempt to connect using</p>
 <ul>
-<li><code>0x03</code> (<em>Connection Refused: server unavailable</em>), if the maximum number of connections per protocol adapter instance
-is reached</li>
-<li><code>0x05</code> (<em>Connection Refused: not authorized</em>), if the maximum number of simultaneously connected devices for the
-tenant is reached.</li>
+<li>MQTT 3.1.1 with return code <code>0x03</code> (<em>Server Unavailable</em>),</li>
+<li>MQTT 5.0 with reason code <code>0x9C</code> (<em>Use Another Server</em>),</li>
 </ul>
+<p>if the maximum number of connections per protocol adapter instance is reached.</p>
+<p>The adapter rejects a client’s attempt to connect using</p>
+<ul>
+<li>MQTT 3.1.1 with return code <code>0x05</code> (<em>Not Authorized</em>),</li>
+<li>MQTT 5.0 with reason code <code>0x97</code> (<em>Quota Exceeded</em>),</li>
+</ul>
+<p>if the maximum number of simultaneously connected devices for the tenant is reached.</p>
 <h3 id="connection-duration-limits">Connection Duration Limits</h3>
-<p>The adapter rejects a client’s connection attempt with return code <code>0x05</code> (<em>Connection Refused: not authorized</em>), if the
-<a href="/hono/docs/concepts/resource-limits/#connection-duration-limit">connection duration limit</a> that has been
-configured for the client’s tenant is exceeded.</p>
+<p>The adapter rejects a client’s attempt to connect using</p>
+<ul>
+<li>MQTT 3.1.1 with return code <code>0x05</code> (<em>Not Authorized</em>)</li>
+<li>MQTT 5.0 with reason code <code>0x97</code> (<em>Quota Exceeded</em>)</li>
+</ul>
+<p>if the <a href="/hono/docs/concepts/resource-limits/#connection-duration-limit">connection duration limit</a>
+that has been configured for the client’s tenant is exceeded.</p>
 <h3 id="message-limits">Message Limits</h3>
 <p>The adapter</p>
 <ul>
-<li>rejects a client&rsquo;s connection attempt with return code <code>0x05</code> (<em>Connection Refused: not authorized</em>),</li>
+<li>rejects a client&rsquo;s attempt to connect using MQTT 3.1.1 with return code <code>0x05</code> (<em>Not Authorized</em>),</li>
+<li>rejects a client&rsquo;s attempt to connect using MQTT 5.0 with reason code <code>0x97</code> (<em>Quota Exceeded</em>),</li>
 <li>discards any MQTT PUBLISH packet containing telemetry data or an event that is sent by a client and</li>
-<li>rejects any AMQP 1.0 message containing a command sent by a north bound application</li>
+<li>rejects any command messages sent by a north bound application</li>
 </ul>
 <p>if the <a href="/hono/docs/concepts/resource-limits/">message limit</a> that has been configured for the device’s tenant
 is exceeded.</p>
@@ -1222,12 +1234,12 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1771217486"></script>
-        <script src="/hono/docs/js/lunr.min.js?1771217486"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1771217486"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1771217486"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1771217486"></script>
-        <script src="/hono/docs/js/search.js?1771217486"></script>
+        <script src="/hono/docs/js/auto-complete.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.min.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1771303719"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1771303719"></script>
+        <script src="/hono/docs/js/search.js?1771303719"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -1314,7 +1326,8 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
                 <span>&nbsp;</span>
                 <div class="select-style">
                   <select id="select-language" onchange="location = baseUri + this.value;">
-                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/" selected>stable (2.6)</option>
+                    <option id="stable" value="/hono/docs/user-guide/mqtt-adapter/" selected>stable (2.7)</option>
+                    <option id="2.7" value="/hono/docs/2.7/user-guide/mqtt-adapter/">2.7</option>
                     <option id="2.6" value="/hono/docs/2.6/user-guide/mqtt-adapter/">2.6</option>
                     <option id="2.5" value="/hono/docs/2.5/user-guide/mqtt-adapter/">2.5</option>
                     <option id="2.4" value="/hono/docs/2.4/user-guide/mqtt-adapter/">2.4</option>
@@ -1360,10 +1373,10 @@ configuration</em> for adapter type <code>hono-mqtt</code>. The following proper
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1771217486"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1771217486"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1771217486"></script>
-    <script src="/hono/docs/js/theme.js?1771217486"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1771303719"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1771303719"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1771303719"></script>
+    <script src="/hono/docs/js/theme.js?1771303719"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
