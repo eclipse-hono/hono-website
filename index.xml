@@ -68,7 +68,7 @@
       <link>https://eclipse.dev/hono/release-notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://eclipse.dev/hono/release-notes/</guid>
-      <description>2.7.0 New Features The duration after which cached metrics, which are maintained by protocol adapters for adhering to messaging limits, are being refreshed, can now be adjusted as a fixed fraction of the overall cache timeout duration. This allows fine tuning of the adapters&#39; behavior with regard to accepting/rejecting messages from devices of tenants for which the message limits are being exceeded. Please refer to the Admin Guide for details.</description>
+      <description>2.8.0 Fixes &amp;amp; Enhancements Hono has been updated to the 3.27.4.1 Long Term Support (LTS) version of Quarkus whcih includes bug fixes and updates to other libraries that Hono depends on like vert.x, infinispan, Mongo DB client, Kafka Client etc. 2.7.0 New Features The duration after which cached metrics, which are maintained by protocol adapters for adhering to messaging limits, are being refreshed, can now be adjusted as a fixed fraction of the overall cache timeout duration.</description>
     </item>
   </channel>
 </rss>
