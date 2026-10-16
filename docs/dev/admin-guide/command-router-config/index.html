@@ -8,17 +8,17 @@
     <meta name="description" content="A set of micro-services for connecting millions of devices.">
     <meta name="author" content="The Eclipse Hono Project">
     <title>Configuring the Command Router Service :: Eclipse Hono&trade; Vers.: dev</title>
-    <link href="/hono/docs/images/favicon.ico?1792038340" rel="icon" type="image/x-icon">
-    <link href="/hono/docs/css/nucleus.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/fontawesome-all.min.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/featherlight.min.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/perfect-scrollbar.min.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/auto-complete.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/theme.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/theme-hono.css?1792038340" rel="stylesheet" id="variant-style">
-    <link href="/hono/docs/css/ie.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/variant.css?1792038340" rel="stylesheet">
-    <link href="/hono/docs/css/print.css?1792038340" rel="stylesheet" media="print">
+    <link href="/hono/docs/images/favicon.ico?1792124744" rel="icon" type="image/x-icon">
+    <link href="/hono/docs/css/nucleus.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/fontawesome-all.min.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/featherlight.min.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/perfect-scrollbar.min.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/auto-complete.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/theme.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/theme-hono.css?1792124744" rel="stylesheet" id="variant-style">
+    <link href="/hono/docs/css/ie.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/variant.css?1792124744" rel="stylesheet">
+    <link href="/hono/docs/css/print.css?1792124744" rel="stylesheet" media="print">
     <style>
       :not(pre) > code.copy-to-clipboard-code + span.copy-to-clipboard-button {
         display: none;
@@ -29,7 +29,7 @@
         border-right-width: 1px;
       }
     </style>
-    <script src="/hono/docs/js/variant.js?1792038340"></script>
+    <script src="/hono/docs/js/variant.js?1792124744"></script>
     <script>
       // hack to let hugo tell us how to get to the root when using relativeURLs, it needs to be called *url= for it to do its magic:
       // https://github.com/gohugoio/hugo/blob/145b3fcce35fbac25c7033c91c1b7ae6d1179da8/transform/urlreplacers/absurlreplacer.go#L72
@@ -45,7 +45,7 @@
       var baseUriFull='https:\/\/eclipse.dev\/hono\/docs/';
       variants.init( [ 'hono' ] );
     </script>
-    <script src="/hono/docs/js/jquery.min.js?1792038340"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
+    <script src="/hono/docs/js/jquery.min.js?1792124744"></script><link rel="stylesheet" href="/hono/docs/css/hono.css" />
 <link rel="stylesheet" href="https://www.eclipse.org/eclipse.org-common/themes/solstice/public/stylesheets/vendor/cookieconsent/cookieconsent.min.css">
 
 
@@ -116,8 +116,8 @@
     <li><a href="#device-registration-service-connection-configuration">Device Registration Service Connection Configuration</a></li>
     <li><a href="#data-grid-connection-configuration">Data Grid Connection Configuration</a>
       <ul>
-        <li><a href="#remote-cache">Remote cache</a></li>
-        <li><a href="#embedded-cache">Embedded cache</a></li>
+        <li><a href="#infinispan-cache">Infinispan cache</a></li>
+        <li><a href="#redis-cache">Redis cache</a></li>
       </ul>
     </li>
     <li><a href="#authentication-service-connection-configuration">Authentication Service Connection Configuration</a></li>
@@ -372,10 +372,16 @@ If the response doesn&rsquo;t contain a <em>cache directive</em> no data will be
 Consequently, the Device Registration Service client configuration&rsquo;s <em>responseCacheMinSize</em> and <em>responseCacheMaxSize</em> properties
 determine the overall number of responses that can be cached.</p>
 <h2 id="data-grid-connection-configuration">Data Grid Connection Configuration</h2>
-<p>The Command Router component requires either an embedded cache or a remote
-data grid, using the Infinispan Hotrod protocol to store device information.</p>
+<p>The Command Router component uses a cache to store device connection information. Two implementations are
+provided, each built into its own Docker image. A deployment uses exactly one of them:</p>
+<ul>
+<li>the <em>Infinispan</em> based variant (<code>hono-service-command-router-infinispan</code>) which uses either an embedded cache or a
+remote data grid, accessed via the Infinispan Hotrod protocol, and</li>
+<li>the <em>Redis</em> based variant (<code>hono-service-command-router-redis</code>) which uses a remote Redis server.</li>
+</ul>
+<h3 id="infinispan-cache">Infinispan cache</h3>
 <p>The following table provides an overview of the configuration variables and corresponding command line options for
-configuring the common aspects of the service:</p>
+configuring the common aspects of the Infinispan based variant:</p>
 <table>
 <thead>
 <tr>
@@ -409,7 +415,7 @@ configuring the common aspects of the service:</p>
 <p>The type of cache (embedded or remote) is determined during startup by means of the <code>HONO_COMMANDROUTER_CACHE_REMOTE_SERVERLIST</code>
 configuration variable. If the variable has a non empty value, a <a href="#remote-cache">remote cache</a> is configured.
 Otherwise, an <a href="#embedded-cache">embedded cache</a> is configured.</p>
-<h3 id="remote-cache">Remote cache</h3>
+<h4 id="remote-cache">Remote cache</h4>
 <p>The following table provides an overview of the configuration variables and corresponding system properties for configuring the connection to the data grid:</p>
 <table>
 <thead>
@@ -604,7 +610,7 @@ Otherwise, an <a href="#embedded-cache">embedded cache</a> is configured.</p>
 </tbody>
 </table>
 <p>See also the <a href="https://docs.jboss.org/infinispan/13.0/apidocs/org/infinispan/client/hotrod/configuration/package-summary.html#package.description">Infinispan Hotrod client documentation</a>.</p>
-<h3 id="embedded-cache">Embedded cache</h3>
+<h4 id="embedded-cache">Embedded cache</h4>
 <p>The following table provides an overview of the configuration variables and corresponding system properties for configuring the embedded cache:</p>
 <table>
 <thead>
@@ -624,6 +630,94 @@ Otherwise, an <a href="#embedded-cache">embedded cache</a> is configured.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="redis-cache">Redis cache</h3>
+
+<div class="box notices cstyle warning">
+    <div class="box-label"><i class="fa-fw fas fa-exclamation-triangle"></i> Warning</div>
+    <div class="box-content">
+<p>The Redis based variant is a recent addition that has not yet undergone extensive real-world validation. It is
+considered experimental and its configuration and behavior may change in future releases. Using it in production
+environments is not recommended at this stage.</p>
+    </div>
+</div>
+<p>The Redis based variant (<code>hono-service-command-router-redis</code>) stores device connection information in a remote Redis
+server. It uses the <a href="https://quarkus.io/guides/redis-reference">Quarkus Redis client</a> to connect to the server, so you
+configure the connection with that client&rsquo;s standard <code>quarkus.redis</code> properties.</p>
+<p>The following table provides an overview of the most commonly used configuration variables and corresponding system
+properties for configuring the connection to the Redis server:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">OS Environment Variable<br>Java System Property</th>
+<th style="text-align:center">Mandatory</th>
+<th style="text-align:left">Default</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>QUARKUS_REDIS_HOSTS</code><br><code>quarkus.redis.hosts</code></td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The connection URI of the Redis server, in the form <code>redis://[username:password@]host:port</code>. For a TLS secured connection use the <code>rediss://</code> scheme.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QUARKUS_REDIS_PASSWORD</code><br><code>quarkus.redis.password</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">The password to use for authenticating to the server. May alternatively be provided as part of the connection URI.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QUARKUS_REDIS_CLIENT_TYPE</code><br><code>quarkus.redis.client-type</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>standalone</code></td>
+<td style="text-align:left">The type of Redis deployment to connect to. Must be set to <code>cluster</code> when connecting to a Redis Cluster. With the default value, the client does not follow the cluster&rsquo;s redirects, so operations on keys that are stored on another node of the cluster fail.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QUARKUS_REDIS_MAX_POOL_SIZE</code><br><code>quarkus.redis.max-pool-size</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>32</code></td>
+<td style="text-align:left">The maximum number of connections held in the connection pool. The pool closes connections that stay unused for longer than <code>quarkus.redis.pool-recycle-timeout</code>, so a higher maximum adds Redis connections only during bursts. This component raises the value from the Quarkus default of <code>6</code> to <code>32</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>QUARKUS_REDIS_MAX_POOL_WAITING</code><br><code>quarkus.redis.max-pool-waiting</code></td>
+<td style="text-align:center">no</td>
+<td style="text-align:left"><code>512</code></td>
+<td style="text-align:left">The maximum number of connection acquisitions that may be queued while the pool is exhausted. The vert.x Redis client acquires a pooled connection per command, so a burst of commands to route can easily exceed <code>max-pool-size</code> concurrent commands. Acquisitions beyond this limit are rejected, failing command delivery, so a deep wait queue is used to absorb such bursts. This component raises the value from the Quarkus default of <code>24</code> to <code>512</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="https://quarkus.io/guides/redis-reference">Quarkus Redis client reference</a> for the full set of supported
+properties.</p>
+
+<div class="box notices cstyle info">
+    <div class="box-label"><i class="fa-fw fas fa-info-circle"></i> Info</div>
+    <div class="box-content">
+<p>The Redis based variant implements its atomic cache operations as server-side Lua scripts and therefore requires the
+<code>EVAL</code> command (Redis 2.6 or later) to be permitted for the configured user. When using Redis ACLs, the <code>@scripting</code>
+command category must not be denied. The component verifies this at startup and fails to start with a descriptive
+error if scripting is not permitted.</p>
+<p>The component also runs the <code>INFO</code> command to find out whether the server is part of a Redis Cluster. <code>INFO</code> belongs
+to the <code>@dangerous</code> command category, so an ACL that denies <code>@dangerous</code> must allow <code>INFO</code> explicitly, e.g.
+<code>+@all -@dangerous +info</code>. If <code>INFO</code> is not permitted, the component treats the server as a Redis Cluster and repeats
+the check before each operation on multiple keys, which adds a round trip to the Redis server.</p>
+    </div>
+</div>
+<h4 id="connection-pool-sizing">Connection pool sizing</h4>
+<p>The Redis client sends each Redis command over a connection from its pool. If all <code>quarkus.redis.max-pool-size</code>
+connections are busy, further Redis commands wait in a queue that holds up to <code>quarkus.redis.max-pool-waiting</code>
+entries. The client rejects the Redis commands that do not fit into the queue, and delivery of the affected device
+commands fails. The trace of such a failed delivery shows an <code>io.vertx.core.http.ConnectionPoolTooBusyException</code> with
+the message <code>Connection pool reached max wait queue size of &lt;n&gt;</code>. The <code>redis_pool_rejected_total</code> metric counts the
+rejected Redis commands. The <code>redis_pool_ratio</code> metric shows the share of the pool&rsquo;s connections in use, and the
+<code>redis_pool_queue_size</code> metric shows the number of waiting Redis commands. If <code>redis_pool_rejected_total</code> increases,
+change the pool settings as follows:</p>
+<ul>
+<li>Raise <code>quarkus.redis.max-pool-waiting</code> first. Queueing usually adds only a few milliseconds to a Redis command.</li>
+<li>Raise <code>quarkus.redis.max-pool-size</code> if the queueing latency matters for command delivery.</li>
+<li>Keep the number of Command Router instances multiplied by <code>quarkus.redis.max-pool-size</code> below the connection limit
+of the Redis server (<code>maxclients</code>, which is <code>10000</code> by default) or of the managed Redis service.</li>
+</ul>
 <h2 id="authentication-service-connection-configuration">Authentication Service Connection Configuration</h2>
 <p>The service requires a connection to an implementation of Hono&rsquo;s Authentication API in order to authenticate and
 authorize client requests.</p>
@@ -715,12 +809,12 @@ Hono&rsquo;s Authentication Service does not allow caching of responses.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/hono/docs/js/auto-complete.js?1792038340"></script>
-        <script src="/hono/docs/js/lunr.min.js?1792038340"></script>
-        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1792038340"></script>
-        <script src="/hono/docs/js/lunr.multi.min.js?1792038340"></script>
-        <script src="/hono/docs/js/lunr.en.min.js?1792038340"></script>
-        <script src="/hono/docs/js/search.js?1792038340"></script>
+        <script src="/hono/docs/js/auto-complete.js?1792124744"></script>
+        <script src="/hono/docs/js/lunr.min.js?1792124744"></script>
+        <script src="/hono/docs/js/lunr.stemmer.support.min.js?1792124744"></script>
+        <script src="/hono/docs/js/lunr.multi.min.js?1792124744"></script>
+        <script src="/hono/docs/js/lunr.en.min.js?1792124744"></script>
+        <script src="/hono/docs/js/search.js?1792124744"></script>
       </div>
       <div id="content-wrapper" class="highlightable">
         <ul class="topics">
@@ -854,10 +948,10 @@ Hono&rsquo;s Authentication Service does not allow caching of responses.</p>
         </div>
       </div>
     </aside>
-    <script src="/hono/docs/js/clipboard.min.js?1792038340"></script>
-    <script src="/hono/docs/js/perfect-scrollbar.min.js?1792038340"></script>
-    <script src="/hono/docs/js/featherlight.min.js?1792038340"></script>
-    <script src="/hono/docs/js/theme.js?1792038340"></script>
+    <script src="/hono/docs/js/clipboard.min.js?1792124744"></script>
+    <script src="/hono/docs/js/perfect-scrollbar.min.js?1792124744"></script>
+    <script src="/hono/docs/js/featherlight.min.js?1792124744"></script>
+    <script src="/hono/docs/js/theme.js?1792124744"></script>
 
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
