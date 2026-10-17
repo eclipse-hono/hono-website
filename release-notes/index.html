@@ -34,7 +34,7 @@
 
 
 
-<link href="/hono/css/custom.css?1792124737" rel="stylesheet">
+<link href="/hono/css/custom.css?1792211045" rel="stylesheet">
 
 
 
@@ -258,8 +258,17 @@
                           <h2 id="280">2.8.0</h2>
 <h3 id="fixes--enhancements">Fixes &amp; Enhancements</h3>
 <ul>
+<li>The JDBC based Device Registry did not properly consider the TTL (<code>max-cache-age</code>) values configured for entities returned
+by the registry&rsquo;s service APIs. This has been fixed so that the semantics of the properties are now aligned with the
+corresponding properties of the MongoDB based registry. The management HTTP API endpoints of both the JDBC and MongoDB based
+variants have been altered to always return a <code>no-cache</code> directive in their responses.</li>
 <li>Hono has been updated to the 3.27.6 Long Term Support (LTS) version of Quarkus which includes bug fixes and updates
 to other libraries that Hono depends on.</li>
+</ul>
+<h3 id="breaking-configuration-changes">Breaking Configuration Changes</h3>
+<ul>
+<li>The JDBC based Device Registry&rsquo;s (erroneous) <code>hono.tenant.svc.tenant-ttl</code> configuration property has been fixed to
+match the name documented in the Admin Guide (<code>hono.tenant.svc.tenantTtl</code>).</li>
 </ul>
 <h2 id="270">2.7.0</h2>
 <h3 id="new-features">New Features</h3>
